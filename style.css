@@ -804,10 +804,15 @@ nav .menu {
 .footer-column a:hover{
     text-decoration: underline;
     color: darkgreen;
-    padding-left:0.2vw;
+    padding-left:0.0355vw;
 }
 
 
 .footer-picture-horizontal img{
     max-width: 30px;
+}
+
+.footer-picture-horizontal a:hover{
+    text-decoration: none;
+    padding: 0;
 }
