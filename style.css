@@ -804,7 +804,7 @@ nav .menu {
 .footer-column a:hover{
     text-decoration: underline;
     color: darkgreen;
-    padding-left:0.0355vw;
+    padding-left: 10px;
 }
 
 
@@ -815,4 +815,27 @@ nav .menu {
 .footer-picture-horizontal a:hover{
     text-decoration: none;
     padding: 0;
+}
+
+/*Acknowledgement*/
+.acknowledgment-text a{
+    text-decoration: none;
+    color: black;
+}
+
+.acknowledgment-text{
+    font-size: 24px;
+    display: inline-block;
+    margin: 0.5vw;
+    padding: 0.5vw;
+    border: 1px solid black;
+}
+
+.acknowledgment-text:hover{
+    border:none;
+    background-color:darkgreen;
+}
+
+.acknowledgment-text a:hover{
+    color: #ffffff;
 }
