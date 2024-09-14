@@ -453,6 +453,13 @@ nav .menu {
     max-width: 75px;
 }
 
+@media (max-width: 1080px) {
+
+    .sticky_note img{
+        max-width: 70px;
+    }
+}
+
 /*Index*/
 .image-text {
     position: relative;
@@ -510,6 +517,49 @@ nav .menu {
     color: white;
 }
 
+@media (max-width: 1300px) {
+    
+    .image-text img{
+        
+        max-width: 610px;
+
+    }
+
+}
+
+@media (max-width: 1080px) {
+
+    .desc1 h3{
+        font-size:30px;
+    }
+
+    .desc1 p{
+        font-size:18px;
+    }
+
+    .image-text img{
+        
+        max-width: 500px;
+
+    }
+
+    .button-index p a{
+        font-size: 12px;
+    }
+}
+
+@media (max-width: 860px) {
+
+}
+
+@media (max-width: 768px) {
+
+    
+}
+@media (max-width: 768px) {
+
+}
+
 /*rate*/
 .rate-text {
     position: relative;
@@ -551,6 +601,17 @@ nav .menu {
 .rating-form input[type="radio"]:checked +label.star ~ label.star {
     color: gray;
 }
+
+@media (max-width: 1080px) {
+
+    .rate-text-desc {
+        font-size: 22px;
+    }
+    .rating-form input + label.star {
+        font-size: 32px;
+    }
+}
+
 
 /* White Region */
 .white_region {
