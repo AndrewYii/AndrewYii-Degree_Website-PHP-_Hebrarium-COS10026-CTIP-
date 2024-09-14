@@ -5,6 +5,10 @@
     font-family: 'Outfit', Arial, Helvetica, sans-serif;
 }
 
+.space_button{
+    display: none;
+}
+
 .line {
     flex:1;
     width: 100%;
@@ -378,7 +382,7 @@ nav .menu {
     }
 
     .menu .dropdown-menu-search input[type="text"] {
-        width: 50%; 
+        width: 75%; 
     }
 
     .menu .dropdown-menu-search button img {
@@ -594,7 +598,14 @@ nav .menu {
         display: block;
     }
     .button-index {
-        margin:0;
+        margin:0
+    }
+
+}
+@media (max-width: 440px) {
+
+    .space_button{
+        display: inline-block;
     }
 }
 
@@ -706,6 +717,46 @@ nav .menu {
     padding: 0.7vw 0 1.5vw 2vw;
 }
 
+@media (max-width: 1102px) {
+    .desc1white_region .white_region-green_region p{
+        font-size:20px;
+    }
+    .desc1white_region h3 {
+        font-size: 32px;
+    }
+    .heading_white_region_layout{
+        text-align: center;
+    }
+    .line{
+        display: none;
+    }
+    .forline{
+        display: none;
+    }
+
+}
+@media (max-width: 926px) {
+    .desc1white_region .white_region-green_region p{
+        font-size:16px;
+    }
+
+    .desc1white_region h3 {
+        font-size: 28px;
+    }
+
+}
+@media (max-width: 811px) {
+    .desc1white_region .white_region-green_region p{
+        font-size:16px;
+    }
+
+    .desc1white_region h3 {
+        font-size: 22px;
+    }
+
+}
+
+
 /*Animation for box under the tools index*/
 .grid_tutorial{
     position: relative;
@@ -727,6 +778,16 @@ nav .menu {
 	position: relative;
 	transition: 0.5s ease-in-out;
     margin: 0.7vw 1.5vw 1.5vw 5vw;
+}
+
+.desc_grid_tutorial a{
+    color: lightgreen;
+}
+
+.hiddenword{
+    display: none;
+    text-align: left;
+    font-weight: 600;
 }
 
 .desc_grid_tutorial{
@@ -770,6 +831,54 @@ nav .menu {
     border: none;
     color: white;
 }
+
+
+
+@media (max-width: 1400px) {
+    .grid_tutorial{
+        margin-left:1vw ;
+    }
+    .grid_tutorial img{
+        max-width: 313px;
+    }
+}
+@media (max-width: 1219px) {
+    .grid_tutorial img{
+        max-width: 263px;
+    }
+    .grid_tutorial{
+        margin-left:3vw ;
+    }
+    .button-grid{
+        margin: 0.7vw 8.5vw 1.5vw 15vw;
+    }
+}
+@media (max-width: 1113px) {
+    .grid_tutorial img{
+        max-width: 200px;
+    }
+    .grid_tutorial{
+        margin-left:5vw ;
+    }
+    .button-grid{
+        margin: 0.5vw 7.5vw 1.5vw 15vw;
+    }
+}
+@media (max-width: 926px) {
+    .grid_tutorial{
+        margin: 5vw 0;
+        display: flex;
+        flex-direction: column; 
+        align-items: center; 
+    }
+    .button-grid{
+        display: none;
+    }
+    .hiddenword{
+        display: block;
+    }
+}
+
 
 /*Extend-box*/
 .extend-box-layout{
@@ -817,15 +926,64 @@ nav .menu {
 	padding-bottom: 20px;
 	color: white;
 }
+
 .extend-box-info a{
 	color: white;
 }
+
 .extend-box-info a:hover{
 	color: lightgreen;
 }
+
 .extend-box:hover .extend-box-layer .extend-box-info{
 	opacity: 1;
 	transition: 0.3s ease-in-out;
+}
+
+.hiddenword_extend{
+    display: none;
+}
+
+@media screen and (max-width:1350px){
+    .extend-box .extend-box-layer{
+        margin-top: -330px;
+    }
+}
+
+@media screen and (max-width:1000px){
+	.extend-box:hover{
+		width: 100%;
+	}
+    .extend-box .extend-box-layer .extend-box-info{
+		width: 300px;
+	}
+}
+
+@media screen and (max-width:768px){
+
+	.card .layer .info{
+		width: 200px;
+	}
+}
+
+@media screen and (max-width:600px){
+    
+	.card .layer .info{
+		width: 150px;
+	}
+    .extend-box-info h3{
+        font-size: 20px;
+    }
+    .extend-box-info a{
+        font-size: 12px;
+    }
+    .hiddingthesmallword{
+        display: none;
+    }
+    .hiddenword_extend{
+        display: block;
+    }
+    
 }
 
 /*flip-box*/
