@@ -335,7 +335,7 @@ nav .menu {
 }
 
 
-@media (max-width: 1080px) {
+@media (max-width: 1020px) {
     .menu {
         padding: 0 15px; /* Reduce padding for small screens */
         margin-left: 0; /* Remove margin-left for full-width on mobile */
@@ -441,6 +441,7 @@ nav .menu {
 
 }
 
+
 /*Sticky Note*/
 .sticky_note{
     position: fixed;
@@ -450,14 +451,7 @@ nav .menu {
 }
 
 .sticky_note img{
-    max-width: 75px;
-}
-
-@media (max-width: 1080px) {
-
-    .sticky_note img{
-        max-width: 70px;
-    }
+    max-width: 4.5vw;
 }
 
 /*Index*/
@@ -493,16 +487,14 @@ nav .menu {
 }
 
 .button-index {
-    position: absolute;
-    bottom: 5px; 
-    right: 10px; 
-    margin: 1vw; 
+    position: relative;
+    margin-left: 70%;
 }
 
 .button-index p a{
     background-color: #ddf5e1;
-    padding: 10px 20px;
-    border: 1px solid black;
+    padding: 0.61vw 1.21vw;
+    border: 0.06vw solid black;
     text-align: center;
     font-size: 18px;
     margin: 0; 
@@ -517,48 +509,47 @@ nav .menu {
     color: white;
 }
 
-@media (max-width: 1300px) {
+@media (max-width: 1400px) {
+    .image-text img{
+        max-width: 500px;
+    }
+}
+@media (max-width: 1180px) {
+    .button-index {
+        margin-left: 55%;
+    }
+}
+@media (max-width: 1102px) {
+    .desc1 h3{
+        font-size:32px;
+    }
     
     .image-text img{
-        
-        max-width: 610px;
-
+        max-width: 400px;
     }
-
-}
-
-@media (max-width: 1080px) {
-
-    .desc1 h3{
-        font-size:30px;
-    }
-
     .desc1 p{
-        font-size:18px;
+        font-size:20px;
     }
-
+    .button-index p a{
+        font-size: 16px;
+    }
+}
+@media (max-width: 926px) {
+    .desc1 h3{
+        font-size:28px;
+    }
+    
     .image-text img{
-        
-        max-width: 500px;
-
+        max-width: 350px;
     }
-
+    .desc1 p{
+        font-size:16px;
+    }
     .button-index p a{
         font-size: 12px;
     }
 }
 
-@media (max-width: 860px) {
-
-}
-
-@media (max-width: 768px) {
-
-    
-}
-@media (max-width: 768px) {
-
-}
 
 /*rate*/
 .rate-text {
@@ -579,15 +570,15 @@ nav .menu {
 .rating-form {
     display: flex;
     align-items: center;
-    margin-left: 10px;
+    margin-left: 0.61vw;
 }
 
 .rating-form input + label.star {
     font-size: 36px;
     color: darkgreen;
     cursor: pointer;
-    text-shadow: 1px 1px 0 darkgreen;
-    padding: 0 5px;
+    text-shadow: 0.06vw 0.06vw 0 darkgreen;
+    padding: 0 0.3vw;
 }
 
 .rating-form input{
@@ -600,16 +591,6 @@ nav .menu {
 
 .rating-form input[type="radio"]:checked +label.star ~ label.star {
     color: gray;
-}
-
-@media (max-width: 1080px) {
-
-    .rate-text-desc {
-        font-size: 22px;
-    }
-    .rating-form input + label.star {
-        font-size: 32px;
-    }
 }
 
 
