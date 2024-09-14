@@ -987,6 +987,11 @@ nav .menu {
 }
 
 /*flip-box*/
+.flip-box-layout a{
+    text-decoration: none;
+}
+
+
 .flip-box-layout{
     margin: 2vw 15vw;
 }
@@ -1049,6 +1054,84 @@ nav .menu {
     transform: rotateY(180deg);
   }
 
+@media screen and (max-width:1350px){
+
+    .flip-box {
+        width: 200px;
+        height: 200px;
+      }
+
+    .flip-box img{
+        width: 200px;
+        height: 200px;
+      }
+    
+    .flip-box-back img{
+        width: 100px;
+        height: 100px;
+    }
+    
+}
+
+@media screen and (max-width:1046px){
+    .flip-box {
+        width: 150px;
+        height: 150px;
+      }
+
+    .flip-box img{
+        width: 150px;
+        height: 150px;
+      }
+    
+    .flip-box-back img{
+        width: 50px;
+        height: 50px;
+    }
+}
+
+@media screen and (max-width:787px){
+
+    .flip-box {
+        width: 125px;
+        height: 125px;
+      }
+
+    .flip-box img{
+        width: 125px;
+        height: 125px;
+      }
+    
+    .flip-box-back img{
+        width: 40px;
+        height: 40px;
+    }
+}
+
+@media screen and (max-width:658px){
+    
+    .flip-box {
+        margin:2vw 0.9vw;
+        width: 80px;
+        height: 80px;
+      }
+
+    .flip-box img{
+        width: 80px;
+        height: 80px;
+      }
+    
+    .flip-box-back img{
+        width: 25px;
+        height: 25px;
+    }
+    .flip-box h3{
+        font-size: 15px;
+    }
+    
+}
+
+
   /*Disclaimer*/
 .disclaimer-layout{
     border: 1px solid black;
@@ -1060,6 +1143,25 @@ nav .menu {
     font-size: 32px;
     padding: 2vw 7vw;
 }
+
+@media (max-width: 1102px) {
+    .disclaimer-content{
+        font-size:24px;
+    }
+
+}
+@media (max-width: 926px) {
+    .disclaimer-content{
+        font-size:20px;
+    }
+}
+@media (max-width: 811px) {
+
+    .disclaimer-content{
+        font-size:16px;
+    }
+}
+
 
 /*Footer*/
 .footer-layout {
@@ -1097,6 +1199,33 @@ nav .menu {
     text-decoration: none;
     padding: 0;
 }
+
+@media (max-width: 1350px) {
+    .footer-column{
+        padding : 1vw;
+    }
+
+}
+@media (max-width: 1216px) {
+    .footer-column{
+        padding : 2vw 4vw;
+    }
+
+}
+@media (max-width: 500px) {
+
+    .footer-column{
+        padding : 4vw 3vw;
+        max-width: 40%;
+        padding : 2vw;
+        font-size: 18px;
+    }
+
+    .hiddenfooter{
+        display: none;
+    }
+}
+
 
 /*Acknowledgement*/
 .acknowledgment-text a{
