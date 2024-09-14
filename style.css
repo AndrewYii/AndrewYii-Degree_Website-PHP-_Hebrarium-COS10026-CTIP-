@@ -839,3 +839,33 @@ nav .menu {
 .acknowledgment-text a:hover{
     color: #ffffff;
 }
+
+/*IDENTIFY.HTML*/
+
+.identify-article{
+    position: relative;
+    top: 100px;
+    background-color: lightgreen;
+    padding: 10px;
+}
+
+.identify{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.identify h1{
+    font-size: 45px;
+    margin: 2%;
+}
+
+.identify-article p{
+    padding: 10px 30px ;
+}
+
+.identify-detail{
+    outline: 1px solid black;
+    margin: 20px 50px;
+    border-radius: 10px;
+}
