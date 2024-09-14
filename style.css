@@ -446,12 +446,28 @@ nav .menu {
 .sticky_note{
     position: fixed;
     z-index: 100000;
-    bottom: 1vw;
-    right: 1vw;
+    bottom: 15px;
+    right: 15px;
 }
 
 .sticky_note img{
-    max-width: 4.5vw;
+    max-width: 74px;
+}
+
+@media (max-width: 1400px) {
+    .sticky_note img{
+        max-width: 69px;
+    }
+}
+@media (max-width: 1102px) {
+    .sticky_note img{
+        max-width: 64px;
+    }
+}
+@media (max-width: 926px) {
+    .sticky_note img{
+        max-width: 59px;
+    }
 }
 
 /*Index*/
@@ -502,6 +518,9 @@ nav .menu {
     color:black;
 }
 
+.non-displayfirst{
+    display: none;
+}
 
 .button-index p a:hover {
     background-color: #4CAF50; 
@@ -536,7 +555,7 @@ nav .menu {
 }
 @media (max-width: 926px) {
     .desc1 h3{
-        font-size:28px;
+        font-size:26px;
     }
     
     .image-text img{
@@ -546,9 +565,39 @@ nav .menu {
         font-size:16px;
     }
     .button-index p a{
-        font-size: 12px;
+        font-size: 14px;
     }
 }
+@media (max-width: 811px) {
+    .desc1 h3{
+        font-size:26px;
+    }
+    
+    .image-text img{
+        max-width: 350px;
+    }
+    .desc1 p{
+        font-size:16px;
+    }
+    .button-index p a{
+        font-size: 14px;
+    }
+    .image-text {
+        display: flex;
+        flex-direction: column; 
+        align-items: center; 
+    }
+    .image-text #special_case{
+        display:none;
+    }
+    .non-displayfirst{
+        display: block;
+    }
+    .button-index {
+        margin:0;
+    }
+}
+
 
 
 /*rate*/
@@ -593,6 +642,38 @@ nav .menu {
     color: gray;
 }
 
+
+
+@media (max-width: 1102px) {
+    .rate-text-desc{
+        font-size:24px;
+    }
+
+    .rating-form input + label.star {
+        font-size: 32px;
+    }
+
+}
+@media (max-width: 926px) {
+    .rate-text-desc{
+        font-size:20px;
+    }
+
+    .rating-form input + label.star {
+        font-size: 28px;
+    }
+}
+@media (max-width: 811px) {
+    .rate-text-desc{
+        text-align: center;
+        font-size:20px;
+    }
+
+    .rating-form input + label.star {
+        font-size: 28px;
+    }
+
+}
 
 /* White Region */
 .white_region {
