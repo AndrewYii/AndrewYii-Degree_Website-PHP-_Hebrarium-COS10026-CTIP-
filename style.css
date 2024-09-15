@@ -1813,6 +1813,25 @@ nav .menu {
     padding: 30px 40px;
 }
 
+.login-form .word{
+    position: absolute;
+    right: 20px;
+    top: 15px;
+    border: none; 
+    background: none; 
+    padding: 0; 
+    margin: 0; 
+    outline: none; 
+    color: #fff;
+    font-size: 20px;
+    cursor: pointer;
+}
+
+.login-form .word:hover{
+    color: #ddf5e1;
+    text-decoration: underline;
+}
+
 .login-form h1{
     font-size:36px;
     text-align: center;
