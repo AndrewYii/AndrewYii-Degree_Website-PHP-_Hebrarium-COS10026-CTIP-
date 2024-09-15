@@ -1659,6 +1659,14 @@ nav .menu {
         flex-direction: column;
         align-items: center;
      }
+
+     .footer-column{
+        padding : 1vw;
+    }
+
+    .hiddenfooter{
+        display: none;
+    }
 }
 
 
