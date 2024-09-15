@@ -428,7 +428,7 @@ nav .menu {
         transition: transform 0.3s ease;
         position: relative;
         top: -30px;
-        right: -315px;
+        right: -73vw;
         cursor: pointer;
         z-index: 100;
     }
@@ -468,11 +468,17 @@ nav .menu {
     .mobile-menu {
         width: 100%;
     }
+    .next img {
+        right: -90vw;
+    }
 }
 
 @media (max-width: 550px){
     .pushing_logo2{
         display: none;
+    }
+    .next img {
+        right: -82vw;
     }
 }
 
