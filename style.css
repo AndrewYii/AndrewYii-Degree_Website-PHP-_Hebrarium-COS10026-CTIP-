@@ -1656,12 +1656,13 @@ nav .menu {
     
     .footer-layout{
         display: flex;
+        left: 125px;
         flex-direction: column;
-        align-items: center;
+        flex-wrap: wrap;
      }
 
      .footer-column{
-        padding : 1vw;
+        padding : 2vw 0;
     }
 
     .hiddenfooter{
