@@ -1692,12 +1692,18 @@ nav .menu {
     top: 100px;
     background-color: lightgreen;
     padding: 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
 }
 
 .identify{
     display: flex;
     justify-content: center;
     align-items: center;
+    min-width: 550px;
+    margin: 10px;
 }
 
 .identify h1{
@@ -1710,7 +1716,67 @@ nav .menu {
 }
 
 .identify-detail{
+    margin: 0 auto;
+    max-width: 700px;
     outline: 1px solid black;
-    margin: 20px 50px;
+    margin: 20px 50px 50px 50px;
     border-radius: 10px;
+}
+
+.identify-img{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.identify-upload{
+    width: 450px;
+    background-color: white;
+    margin: 0 auto;
+    border-radius: 20px;
+    padding: 10px 50px 50px 50px;
+}
+
+.identify-img p{
+    font-size: 25px;
+    font-weight: bold;
+    position: relative;
+    top: -70px;
+}
+
+.identify-table{
+    width: 70%;
+    background-color: white;
+    margin: 10px;
+}
+
+.identify-table legend{
+    margin: 0 auto;
+}
+
+.identify-table fieldset{
+    margin: 20px;
+}
+
+.identify-table table{
+    width: 100%;
+    margin: 0 auto;
+    padding: 5px;
+}
+
+.identify-table table th{
+    width: 20%;
+    min-width: 100px;
+    text-align: end;
+    padding: 5px;
+}
+
+.identify-table table td{
+    width: 100%;
+}
+
+.identify-table legend{
+    font-size: 30px;
+    font-weight: bold;
 }
