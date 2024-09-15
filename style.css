@@ -1013,14 +1013,14 @@ nav .menu {
 	}
 }
 
-@media  (max-width:768px){
+@media  (max-width:868px){
 
 	.card .layer .info{
 		width: 200px;
 	}
 }
 
-@media (max-width:600px){
+@media (max-width:800px){
     
 	.card .layer .info{
 		width: 150px;
