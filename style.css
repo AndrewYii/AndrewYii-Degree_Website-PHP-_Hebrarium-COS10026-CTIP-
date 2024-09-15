@@ -1656,9 +1656,8 @@ nav .menu {
     
     .footer-layout{
         display: flex;
-        left: 125px;
         flex-direction: column;
-        flex-wrap: wrap;
+        align-items: center;
      }
 
      .footer-column{
