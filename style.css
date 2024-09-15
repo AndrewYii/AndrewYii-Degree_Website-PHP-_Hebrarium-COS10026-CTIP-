@@ -532,7 +532,12 @@ nav .menu {
     color: white;
 }
 
-@media (max-width: 1400px) {
+@media (max-width: 1508px) {
+    .button-index {
+        margin-left: 60%;
+    }
+}
+@media (max-width: 1488px) {
     .image-text img{
         max-width: 500px;
     }
@@ -834,17 +839,20 @@ nav .menu {
 
 
 
-@media (max-width: 1400px) {
+@media (max-width: 1575px) {
     .grid_tutorial{
         margin-left:1vw ;
     }
     .grid_tutorial img{
-        max-width: 313px;
+        max-width: 283px;
+    }
+    .button-grid{
+        margin: 0.7vw 2.5vw 1.5vw 15vw;
     }
 }
 @media (max-width: 1219px) {
     .grid_tutorial img{
-        max-width: 263px;
+        max-width: 253px;
     }
     .grid_tutorial{
         margin-left:3vw ;
@@ -862,6 +870,9 @@ nav .menu {
     }
     .button-grid{
         margin: 0.5vw 7.5vw 1.5vw 15vw;
+    }
+    .desc_grid_tutorial{
+        bottom: -20px;
     }
 }
 @media (max-width: 926px) {
@@ -944,13 +955,13 @@ nav .menu {
     display: none;
 }
 
-@media screen and (max-width:1350px){
+@media (max-width:1350px){
     .extend-box .extend-box-layer{
         margin-top: -330px;
     }
 }
 
-@media screen and (max-width:1000px){
+@media (max-width:1000px){
 	.extend-box:hover{
 		width: 100%;
 	}
@@ -959,14 +970,14 @@ nav .menu {
 	}
 }
 
-@media screen and (max-width:768px){
+@media  (max-width:768px){
 
 	.card .layer .info{
 		width: 200px;
 	}
 }
 
-@media screen and (max-width:600px){
+@media (max-width:600px){
     
 	.card .layer .info{
 		width: 150px;
@@ -1054,9 +1065,31 @@ nav .menu {
     transform: rotateY(180deg);
   }
 
-@media screen and (max-width:1350px){
+ @media  (max-width:1570px){
 
     .flip-box {
+        margin: 2vw 1vw;
+        width: 250px;
+        height: 250px;
+ 
+      }
+
+    .flip-box img{
+        width: 250px;
+        height: 250px;
+      }
+    
+    .flip-box-back img{
+        width: 150px;
+        height: 150px;
+    }
+
+}
+
+@media (max-width:1350px){
+
+    .flip-box {
+        margin: 2vw 2vw;
         width: 200px;
         height: 200px;
       }
@@ -1073,7 +1106,7 @@ nav .menu {
     
 }
 
-@media screen and (max-width:1046px){
+@media  (max-width:1046px){
     .flip-box {
         width: 150px;
         height: 150px;
@@ -1090,7 +1123,7 @@ nav .menu {
     }
 }
 
-@media screen and (max-width:787px){
+@media  (max-width:787px){
 
     .flip-box {
         width: 125px;
@@ -1108,28 +1141,47 @@ nav .menu {
     }
 }
 
-@media screen and (max-width:658px){
+@media (max-width:658px){
     
     .flip-box {
-        margin:2vw 0.9vw;
-        width: 80px;
-        height: 80px;
+        margin: 2vw 2vw;
+        width: 100px;
+        height: 100px;
       }
 
     .flip-box img{
-        width: 80px;
-        height: 80px;
+        width: 100px;
+        height: 100px;
       }
     
     .flip-box-back img{
-        width: 25px;
-        height: 25px;
+        width: 45px;
+        height: 45px;
     }
     .flip-box h3{
-        font-size: 15px;
+        font-size: 18px;
     }
     
 }
+@media (max-width:529px){
+    
+    .flip-box {
+        margin: 2vw 0.3vw;
+        width: 85px;
+        height: 85px;
+      }    
+
+      .flip-box img{
+        width: 85px;
+        height: 85px;
+      }
+    
+    .flip-box-back img{
+        width: 35px;
+        height: 35px;
+    }
+}
+
 
 
   /*Disclaimer*/
