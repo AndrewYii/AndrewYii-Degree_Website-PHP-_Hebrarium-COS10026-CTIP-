@@ -1936,7 +1936,9 @@ nav .menu {
     display: flex;
     overflow: hidden;
     min-height: 100vh;
-    background-color: #ddf5e1;
+    background:url(images/introduct_profile_background.jpg) no-repeat;
+    background-size: cover;
+    background-position: center;
     width: 100%;
     padding: 40px 0;
     position: relative;
