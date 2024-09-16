@@ -1951,7 +1951,7 @@ nav .menu {
     align-items: center;
     transition: transform 0.5s ease-in-out;
     flex-shrink: 0; 
-    animation: slide 6s infinite;
+    animation: slide 25s infinite;
 }
 @keyframes slide {
     0% {
