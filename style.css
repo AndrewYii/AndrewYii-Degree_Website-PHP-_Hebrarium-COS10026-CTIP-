@@ -2069,4 +2069,10 @@ nav .menu {
 }
 */
 
+@media (max-width:1350px){
+    .sliding-content{
+        margin-left:35px;
+    }
+
+}
 
