@@ -1944,6 +1944,7 @@ nav .menu {
     position: relative;
     top:100px;
 }
+
 .sliding-intro-layout{
     position: relative;
 	display: flex;
@@ -1953,6 +1954,7 @@ nav .menu {
     flex-shrink: 0; 
     animation: slide 25s infinite;
 }
+
 @keyframes slide {
     0% {
         transform: translateX(0);
@@ -2071,6 +2073,13 @@ nav .menu {
 }
 */
 
+@media (max-width: 1020px) {
+    .handle-sliding-layout{
+        top: 80px;
+    }
+
+}
+
 @media (max-width:1350px){
     .sliding-content{
         margin-left:35px;
@@ -2079,4 +2088,167 @@ nav .menu {
 }
 
 /*Profile*/
+#change_box{
+    display: none;
+}
 
+.profile-table-layout {
+    display: flex;
+    min-height: 100vh;
+    background: #ddf5e1;
+    width: 100%;
+    padding: 40px 0;
+    position: relative;
+    top: 50px;
+}
+
+.adjust-location-profile-table {
+    margin: 0 auto;
+    position: relative;
+    top: 30px;
+}
+
+.profile-heading {
+    font-size: 24px; 
+    font-weight: bold; 
+    color: #333; 
+    margin-bottom: 20px; 
+}
+
+.profile-heading, .profile-picture-content, .profile-info {
+    padding: 10px 14px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.transform-box {
+    width: 250px;
+    height: 250px;
+    background-color: darkgreen;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    color: white;
+    cursor: pointer;
+    border-radius: 0;
+    transition: all 1s ease; 
+    overflow: hidden;
+    position: relative;
+}
+
+.box-text {
+    z-index: 1;
+    font-size: 20px;
+}
+
+.box-img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius:150px;
+    transition: opacity 1s ease; 
+    opacity: 0;
+}
+
+#change_box:checked + .transform-box {
+    background-color: transparent;
+    border-radius: 150px;
+    background-image: url('images/Andrew.jpg');
+    background-size: cover;
+    background-position: center;
+    border: 5px groove darkgreen;
+}
+
+#change_box:checked + .transform-box .box-text {
+    opacity: 0; 
+}
+
+#change_box:checked + .transform-box .box-img {
+    opacity: 1; 
+}
+
+#change_box:checked + .transform-box:hover {
+    padding: 130px;
+}
+
+.profile-info{
+    font-size: 20px;
+}
+
+.profile-info .profile-Name{
+    font-size: 200%;
+}
+
+.profile-info .profile-course{
+    color:darkgreen
+}
+
+
+.profile-table {
+    margin: 0 auto;
+    width: 50%;
+    border-collapse: separate; 
+    border-spacing: 0; 
+    font-size: 16px;
+}
+
+.profile-table th {
+    padding: 12px; 
+    text-align: left; 
+    font-weight: bold; 
+}
+
+.profile-table td {
+    padding: 12px; 
+}
+
+.odd-row{
+    background-color: darkgreen;
+    color: #fff;
+}
+
+.even-row{
+    background-color: #fff;
+    color: black;
+}
+
+
+
+.profile-table tr {
+    transition: transform 0.3s ease; 
+}
+
+.profile-table tr:hover {
+    transform: scale(1.05);
+}
+
+.email-button{
+    text-align: center;
+}
+
+.email-me{
+    font-size: 18px;
+    padding:14px;
+    border-radius: 50px;
+    cursor: pointer;
+}
+
+.email-me:hover{
+    padding: 16px 25px;
+    color:#fff;
+    background-color: darkgreen;
+    border:none;
+    outline: none;
+}
+
+@media (max-width: 1020px) {
+    .profile-table-layout{
+        top: 30px;
+    }
+
+}
