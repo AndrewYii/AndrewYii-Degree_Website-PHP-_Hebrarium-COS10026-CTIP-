@@ -2298,7 +2298,7 @@ nav .menu {
     border-radius: 50px;
 }
 
-form{
+.enquiry-form-01{
     display: flex;
     flex-direction: column;
     justify-content: center;
