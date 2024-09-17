@@ -2274,3 +2274,81 @@ nav .menu {
     }
 }
 
+/*Enquiry.html*/
+
+.enquiry-head{
+    font-size: 40px;
+    padding: 10px 0px 20px 0px;
+}
+
+.identify-enquiry{
+    position: relative;
+    top: 100px;
+    background-color: white;
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.enquiry-form{
+    background-color: lightgreen;
+    padding: 50px;
+    border-radius: 50px;
+}
+
+form{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+
+.enquiry-legend{
+    font-size: 25px;
+    font-weight: bold;
+    text-align: center;
+    padding: 15px;
+}
+
+.enquiry-table{
+    width: 100%;
+  }
+
+  .enquiry-table td{
+    padding: 4px;
+}
+
+.enquiry-address{
+    padding: 0px 20px 0px 20px;
+}
+
+.enquiry-data{
+    width: 100%;
+    border: 0;
+    border-bottom: 2px solid #9b9b9b;
+    outline: 0;
+    font-size: 15px;
+    padding: 5px;
+}
+
+.enquiry-fd{
+    min-width: 400px;
+    border: 2px solid black;
+    border-right: none;
+    border-left: none;
+    border-bottom: none;
+}
+
+.enquiry-end input{
+    font-size: 20px;
+    appearance: None;
+    margin: 10px;
+    padding: 5px;
+    border-radius: 20px;
+  }
+
+.enquiry-end input:hover{
+    background-color: rgba(250, 50, 0, 0.909);
+}
