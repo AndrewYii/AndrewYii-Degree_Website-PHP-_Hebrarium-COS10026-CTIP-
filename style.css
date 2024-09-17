@@ -1780,3 +1780,16 @@ nav .menu {
     font-size: 30px;
     font-weight: bold;
 }
+
+/*Enquiry.html*/
+
+.identify-enquiry{
+    position: relative;
+    top: 100px;
+    background-color: lightgreen;
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
