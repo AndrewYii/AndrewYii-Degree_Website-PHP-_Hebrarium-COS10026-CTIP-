@@ -1786,7 +1786,7 @@ nav .menu {
 /*Login & Register */
 .login-form-layout{
     position: relative;
-    min-height: 100vh;
+    min-height: 120vh;
     top: 100px;
 	display: flex;
 	justify-content: center;
