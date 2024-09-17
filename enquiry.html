@@ -377,6 +377,7 @@
                     </div>
                 </div>
             </nav>
+            </header>
             <article class="identify-enquiry">
                 <a href="introduction.html">
                     <div class="chatbot-container">
@@ -392,48 +393,66 @@
                         </div>
                     </div>
                 </a>
-                <h1>Enquiry</h1>
+                <h1 class="enquiry-head">Enquiry</h1>
                 <form name="Feedback" method="post" action="mailto:aniqnazhan1234@gmail.com" enctype="text/plain">
-                    <fieldset class="inquiry-fd">
-                        <legend class="inquiry-legend">User's Information</legend>
-                        <table class="inquiry-table">
+                    <fieldset class="enquiry-fd">
+                        <legend class="enquiry-legend">User's Information</legend>
+                        <table class="enquiry-table">
                             <tr>
                                 <td class="feedback-cont"><label for="first_name">First Name</label></td>
                                 <td class="feedback-cont"><label for="last_name">Last Name</label></td>
                             </tr>
                             <tr>
-                                <td><input class="feedback-data" type="text" name="first_name" placeholder="First Name" size="30" maxlength="25" required="required" id="first_name"></td>
-                                <td><input class="feedback-data" type="text" name="last_name" placeholder="Last Name" size="30" maxlength="25" required="required" id="last_name"></td>
+                                <td><input class="enquiry-data" type="text" name="first_name" placeholder="First Name" size="25" maxlength="25" required="required" id="first_name"></td>
+                                <td><input class="enquiry-data" type="text" name="last_name" placeholder="Last Name" size="25" maxlength="25" required="required" id="last_name"></td>
                             </tr>
                             <tr>
                                 <td class="feedback-cont"><label for="email">Email</label></td>
                                 <td class="feedback-cont"><label for="tel">Phone</label> Number</td>
                             </tr>
                             <tr>
-                                <td><input class="feedback-data" type="email" id="email" name="email" placeholder="example@gmail.com" required="required" id="email"></td>
-                                <td><input class="feedback-data" type="tel" id="tel" name="phone" pattern="[0-9]{10}" placeholder="0123456789" maxlength="10" required="required" id="tel"></td>
-                            </tr>
-                        </table>
-                    </fieldset>
-                    <fieldset>
-                        <legend>Address</legend>
-                        <table>
-                            <tr>
-                                <td>Street: </td>
-                                <td><input class="feedback-data" type="text" name="Street" placeholder="Street" size="30" maxlength="100" required="required" id="street"></td>
-                            </tr>
-                            <tr>
-                                <td>City: </td>
-                                <td><input class="feedback-data" type="text" name="City" placeholder="City" size="30" maxlength="100" required="required" id="city"></td>
-                            </tr>
-                            <tr>
-                                <td>Postcode: </td>
-                                <td><input class="feedback-data" type="number" name="Postcode" placeholder="Postocde" size="30" maxlength="100" required="required" id="Postcode"></td>
+                                <td><input class="enquiry-data" type="email" id="email" name="email" placeholder="example@gmail.com" required="required" id="email"></td>
+                                <td><input class="enquiry-data" type="tel" id="tel" name="phone" pattern="[0-9]{10}" placeholder="0123456789" maxlength="10" required="required" id="tel"></td>
                             </tr>
                         </table>
                     </fieldset>
                     <fieldset class="enquiry-fd">
-                        <legend class="inquiry-Feedback">Feedback</legend>
+                        <legend>Address</legend>
+                        <table>
+                            <tr>
+                                <td>Street: </td>
+                                <td><input class="enquiry-data" type="text" name="Street" placeholder="Street" size="40" maxlength="100" required="required" id="street"></td>
+                            </tr>
+                            <tr>
+                                <td>City: </td>
+                                <td><input class="enquiry-data" type="text" name="City" placeholder="City" size="30" maxlength="100" required="required" id="city"></td>
+                            </tr>
+                            <tr>
+                                <td>Postcode: </td>
+                                <td><input class="enquiry-data" type="number" name="Postcode" size="30" maxlength="100" required="required" id="Postcode"></td>
+                            </tr>
+                            <tr>
+                                <td>State: </td>
+                                <td><select name="State" id="state">
+                                    <option value="Johor">Johor</option>
+                                    <option value="Kedah">Kedah</option>
+                                    <option value="Kelantan">Kelantan</option>
+                                    <option value="Kuala Lumpur">Kuala Lumpur</option>
+                                    <option value="Labuan">Labuan</option>
+                                    <option value="Malacca">Malacca</option>
+                                    <option value="Negeri Sembilan">Negeri Sembilan</option>
+                                    <option value="Pahang">Pahang</option>
+                                    <option value="Perak">Perak</option>
+                                    <option value="Putrajaya">Putrajaya</option>
+                                    <option value="Sabah">Sabah</option>
+                                    <option value="Sarawak">Sarawak</option>
+                                    <option value="Selangor">Selangor</option>
+                                </select></td>
+                            </tr>
+                        </table>
+                    </fieldset>
+                    <fieldset class="enquiry-fd">
+                        <legend class="enquiry-Feedback">Feedback</legend>
                             <table class="inquriry-table">
                                 <tr>
                                     <td>Select Page</td>
@@ -457,6 +476,5 @@
                     <div class="feedback-end"><input class="feedback-butn" type="submit" value="Submit"> <input class="feedback-butn" type="reset" value="Reset"></div>
                 </form>
             </article>
-        </header>
     </body>
 </html>

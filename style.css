@@ -2276,6 +2276,11 @@ nav .menu {
 
 /*Enquiry.html*/
 
+.enquiry-head{
+    font-size: 40px;
+    padding: 10px 0px 20px 0px;
+}
+
 .identify-enquiry{
     position: relative;
     top: 100px;
@@ -2295,6 +2300,7 @@ form{
   }
 
 legend{
+font-size: 20px;
 font-weight: bold;
 text-align: center;
 }
@@ -2303,12 +2309,23 @@ text-align: center;
     width: 100%;
   }
 
-.feedback-data{
+  .enquiry-table td{
+    padding: 4px;
+}
+
+.enquiry-data{
     width: 100%;
     border: 0;
     border-bottom: 2px solid #9b9b9b;
     outline: 0;
     font-size: 15px;
-    color: #fff;
     padding: 5px;
+}
+
+.enquiry-fd{
+    min-width: 400px;
+    border: 2px solid black;
+    border-right: none;
+    border-left: none;
+    border-bottom: none;
 }
