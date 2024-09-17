@@ -2483,7 +2483,6 @@ button.contribute-btn:hover {
     transform: scale(1.05); 
 }
 
-/* Responsive Design */
 @media (max-width: 768px) {
     .contribute-form-layout {
         padding: 20px;
