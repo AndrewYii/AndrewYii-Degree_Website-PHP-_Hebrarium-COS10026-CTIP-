@@ -1624,6 +1624,7 @@ nav .menu {
     padding-left: 10px;
 }
 
+/*
 .footer-picture-horizontal {
     display: flex; 
     gap: 10px; 
@@ -1644,6 +1645,7 @@ nav .menu {
         padding: 1vw;
     }
 }
+*/
 
 @media (max-width: 711px) {
     .footer-layout {
@@ -1659,9 +1661,6 @@ nav .menu {
         text-align: center; 
     }
 
-    .hiddenfooter {
-        display: none; 
-    }
 }
 
 
