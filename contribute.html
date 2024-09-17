@@ -399,31 +399,154 @@
 
             <div class="contribute-form-background-layout">
                 <div class="contribute-form-layout">
-                    <div class="contribute-form-title">
-                        Share Your Findings
-                    </div>
                     <form action="php">
-                        <div class="personal-info-details">
+
+                        <input type="reset" class="contribute-word">
+
+                        <h1>
+                            Contribute Your Finds!
+                        </h1>
+
+                        <fieldset class="contribute-fieldset">
+
+                            <legend>
+                                Personalise Your Contribute Card
+                            </legend>
+
                             <div class="contribute-input">
-                                <span class="contribute-details">Full Name</span>
-                                <input type="text" placeholder="Enter Your Name" maxlength="25" required="required">
+                                <span class="contribute-form-info">Select The Photo You Prefer</span>
+                                <br>
+                                <input type="radio" id="picture1" name="Picture_Option" value="picture1" checked="checked" required="required">
+                                <label for="picture1">
+                                    <img src="images/boy_icon.png" alt="Boy Profile Picture" class="contribute-form-picture">
+                                </label>
+                                <input type="radio" id="picture2" name="Picture_Option" value="picture2" required="required">
+                                <label for="picture2">
+                                    <img src="images/girl_icon.png" alt="Girl Profile Picture" class="contribute-form-picture">
+                                </label>
+                                <input type="radio" id="picture3" name="Picture_Option" value="picture3" required="required">
+                                <label for="picture3">
+                                    <img src="images/man_icon.png" alt="Man Profile Picture" class="contribute-form-picture">
+                                </label>
+                                <input type="radio" id="picture4" name="Picture_Option" value="picture4" required="required">
+                                <label for="picture4">
+                                    <img src="images/woman_icon.png" alt="Woman Profile Picture" class="contribute-form-picture">
+                                </label>
+                            </div>
+
+
+                            <div class="contribute-input">
+                                <span class="contribute-form-info">Select Some Description About You</span>
+                                <br>
+                                <input type="checkbox" id="tag1" name="Tag[]" value="None" checked="checked" required="required">
+                                <label for="tag1">
+                                    None
+                                </label>
                             </div>
                             <div class="contribute-input">
-                                <span class="contribute-details">Full Name</span>
-                                <input type="text" placeholder="Enter Your Name" maxlength="25" required="required">
+                                <input type="checkbox" id="tag2" name="Tag[]" value="Botanical Nomenclature Expert">
+                                <label for="tag2">
+                                    Botanical Nomenclature Expert
+                                </label>
                             </div>
                             <div class="contribute-input">
-                                <span class="contribute-details">Full Name</span>
-                                <input type="text" placeholder="Enter Your Name" maxlength="25" required="required">
+                                <input type="checkbox" id="tag3" name="Tag[]" value="Plant Taxonomist">
+                                <label for="tag3">
+                                    Plant Taxonomist
+                                </label>
                             </div>
                             <div class="contribute-input">
-                                <span class="contribute-details">Full Name</span>
-                                <input type="text" placeholder="Enter Your Name" maxlength="25" required="required">
+                                <input type="checkbox" id="tag4" name="Tag[]" value="Plant Systematics Expert">
+                                <label for="tag4">
+                                    Plant Systematics Expert
+                                </label>
                             </div>
-                        </div>
+                            <div class="contribute-input">
+                                <input type="checkbox" id="tag5" name="Tag[]" value="Herbarium Specimen Identifier">
+                                <label for="tag5">
+                                    Herbarium Specimen Identifier
+                                </label>
+                            </div>
+                        </fieldset>
+
+                        <fieldset class="contribute-fieldset">
+
+                            <legend>Voice Out Your Find</legend>
+
+                            <div class="contribute-input">
+                                <label for="plant-name">
+                                    <span class="contribute-form-info">Plant's Name</span>
+                                </label>
+                                <input type="text" max-length="25"  id="plant-name" name="Plant's Name">
+                            </div>
+
+                            <div class="contribute-input">
+                                <label for="plant-family">
+                                    <span class="contribute-form-info">Plant's Family</span>
+                                </label>
+
+                                <select name="plant-family" id="plant-family" required="required">
+                                  <option value="">Select The Plant Family</option>
+                                  <option value="1"></option>
+                                  <option value="2"></option>
+                                  <option value="3"></option>
+                                </select>
+                            </div>
+
+                            <div class="contribute-input">
+                                <label for="plant-genus">
+                                    <span class="contribute-form-info">Plant's Genus</span>
+                                </label>
+
+                                <select name="plant-genus" id="plant-genus" required="required">
+                                  <option value="">Select The Plant Genus</option>
+                                  <option value="1"></option>
+                                  <option value="2"></option>
+                                  <option value="3"></option>
+                                </select>
+                            </div>
+
+                            
+                            <div class="contribute-input">
+                                <label for="plant-species">
+                                    <span class="contribute-form-info">Plant's Species</span>
+                                </label>
+
+                                <select name="plant-species" id="plant-species" required="required">
+                                  <option value="">Select The Plant Species</option>
+                                  <option value="1"></option>
+                                  <option value="2"></option>
+                                  <option value="3"></option>
+                                </select>
+                            </div>
+
+                            <div class="contribute-input">
+                                <div class="upload-photo-left">
+                                    <label for="plant-leaf-photo">
+                                        <span class="contribute-form-info">Plant's Leaf Photos</span>
+                                    </label>
+                                    <br>
+                                    <input type="file" required="required" id="plant-leaf-photo">
+                                </div>
+                                <div class="upload-photo-right">
+                                    <label for="herbarium-photo">
+                                        <span class="contribute-form-info">Herbarium Photos</span>
+                                    </label>
+                                    <br>
+                                    <input type="file" required="required" id="herbarium-photo">
+                                </div>
+                            </div>
+
+                        </fieldset>
+
+                        <button type="submit" class="contribute-btn">
+                            Submit
+                        </button>
+
                     </form>
                 </div>
             </div>
+
         </article>
 
         <footer>
