@@ -2296,6 +2296,7 @@ nav .menu {
     background-color: lightgreen;
     padding: 50px;
     border-radius: 50px;
+    width: 600px;
 }
 
 .enquiry-form-01{
@@ -2334,6 +2335,7 @@ nav .menu {
 }
 
 .enquiry-fd{
+    width: 100%;
     min-width: 400px;
     border: 2px solid black;
     border-right: none;
@@ -2343,12 +2345,25 @@ nav .menu {
 
 .enquiry-end input{
     font-size: 20px;
+    border: none;
     appearance: None;
     margin: 10px;
-    padding: 5px;
-    border-radius: 20px;
+    padding: 10px;
+    border-radius: 30px;
   }
 
 .enquiry-end input:hover{
-    background-color: rgba(250, 50, 0, 0.909);
+    border: 1px solid black;
 }
+
+.enquiry-fd select{
+    width: 100%;
+    height: 30px;
+}
+
+.enquiry-fd table{
+    margin: auto;
+}
+
+
+
