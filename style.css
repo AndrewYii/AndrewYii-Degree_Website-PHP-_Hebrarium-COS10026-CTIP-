@@ -1607,6 +1607,7 @@ nav .menu {
     max-width: 20%; 
     padding: 2vw;
     font-size: 18px;
+    font-style: italic;
     box-sizing: border-box; 
 }
 
@@ -1786,7 +1787,19 @@ nav .menu {
 /*Login & Register */
 .login-form-layout{
     position: relative;
-    min-height: 120vh;
+    min-height: 100vh;
+    top: 100px;
+	display: flex;
+	justify-content: center;
+    align-items: center;
+    background: url(images/login_background.jpg) no-repeat;
+    background-size: cover;
+    background-position: center;
+}
+
+.register-form-layout{
+    position: relative;
+    min-height: 150vh;
     top: 100px;
 	display: flex;
 	justify-content: center;
@@ -1915,6 +1928,11 @@ nav .menu {
 .register-link p a:hover{
     color:#ddf5e1;
     text-decoration: underline;
+}
+
+.register-fieldset{
+    border: none;
+    padding:10px;
 }
 
 @media (max-width: 1020px) {
