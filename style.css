@@ -2284,12 +2284,18 @@ nav .menu {
 .identify-enquiry{
     position: relative;
     top: 100px;
-    background-color: lightgreen;
+    background-color: white;
     padding: 10px;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
+}
+
+.enquiry-form{
+    background-color: lightgreen;
+    padding: 50px;
+    border-radius: 50px;
 }
 
 form{
@@ -2299,10 +2305,11 @@ form{
     align-items: center;
   }
 
-legend{
-font-size: 20px;
-font-weight: bold;
-text-align: center;
+.enquiry-legend{
+    font-size: 25px;
+    font-weight: bold;
+    text-align: center;
+    padding: 15px;
 }
 
 .enquiry-table{
@@ -2311,6 +2318,10 @@ text-align: center;
 
   .enquiry-table td{
     padding: 4px;
+}
+
+.enquiry-address{
+    padding: 0px 20px 0px 20px;
 }
 
 .enquiry-data{
@@ -2328,4 +2339,16 @@ text-align: center;
     border-right: none;
     border-left: none;
     border-bottom: none;
+}
+
+.enquiry-end input{
+    font-size: 20px;
+    appearance: None;
+    margin: 10px;
+    padding: 5px;
+    border-radius: 20px;
+  }
+
+.enquiry-end input:hover{
+    background-color: rgba(250, 50, 0, 0.909);
 }

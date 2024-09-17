@@ -394,6 +394,7 @@
                     </div>
                 </a>
                 <h1 class="enquiry-head">Enquiry</h1>
+                <div class="enquiry-form">
                 <form name="Feedback" method="post" action="mailto:aniqnazhan1234@gmail.com" enctype="text/plain">
                     <fieldset class="enquiry-fd">
                         <legend class="enquiry-legend">User's Information</legend>
@@ -403,8 +404,8 @@
                                 <td class="feedback-cont"><label for="last_name">Last Name</label></td>
                             </tr>
                             <tr>
-                                <td><input class="enquiry-data" type="text" name="first_name" placeholder="First Name" size="25" maxlength="25" required="required" id="first_name"></td>
-                                <td><input class="enquiry-data" type="text" name="last_name" placeholder="Last Name" size="25" maxlength="25" required="required" id="last_name"></td>
+                                <td><input class="enquiry-data" type="text" name="first_name" placeholder="First Name" size="22" maxlength="25" required="required" id="first_name"></td>
+                                <td><input class="enquiry-data" type="text" name="last_name" placeholder="Last Name" size="22" maxlength="25" required="required" id="last_name"></td>
                             </tr>
                             <tr>
                                 <td class="feedback-cont"><label for="email">Email</label></td>
@@ -417,22 +418,22 @@
                         </table>
                     </fieldset>
                     <fieldset class="enquiry-fd">
-                        <legend>Address</legend>
+                        <legend class="enquiry-legend">Address</legend>
                         <table>
                             <tr>
-                                <td>Street: </td>
+                                <td class="enquiry-address">Street: </td>
                                 <td><input class="enquiry-data" type="text" name="Street" placeholder="Street" size="40" maxlength="100" required="required" id="street"></td>
                             </tr>
                             <tr>
-                                <td>City: </td>
+                                <td class="enquiry-address">City: </td>
                                 <td><input class="enquiry-data" type="text" name="City" placeholder="City" size="30" maxlength="100" required="required" id="city"></td>
                             </tr>
                             <tr>
-                                <td>Postcode: </td>
+                                <td class="enquiry-address">Postcode: </td>
                                 <td><input class="enquiry-data" type="number" name="Postcode" size="30" maxlength="100" required="required" id="Postcode"></td>
                             </tr>
                             <tr>
-                                <td>State: </td>
+                                <td class="enquiry-address">State: </td>
                                 <td><select name="State" id="state">
                                     <option value="Johor">Johor</option>
                                     <option value="Kedah">Kedah</option>
@@ -452,7 +453,7 @@
                         </table>
                     </fieldset>
                     <fieldset class="enquiry-fd">
-                        <legend class="enquiry-Feedback">Feedback</legend>
+                        <legend class="enquiry-legend">Feedback</legend>
                             <table class="inquriry-table">
                                 <tr>
                                     <td>Select Page</td>
@@ -469,12 +470,209 @@
                                     </td>
                                 </tr>
                                 <tr>
-                                    <td><textarea name="comment" rows="4" cols="50" placeholder="comment" required="required" id="comment"></textarea></td>
+                                    <td><textarea name="comment" rows="4" cols="70" placeholder="comment" required="required" id="comment"></textarea></td>
                                 </tr>
                             </table>
                     </fieldset>
                     <div class="feedback-end"><input class="feedback-butn" type="submit" value="Submit"> <input class="feedback-butn" type="reset" value="Reset"></div>
                 </form>
+                </div>
             </article>
+            <footer>
+                <div class="footer-layout">
+                    <div class="footer-column">
+                        <div>
+                            <strong>
+                                <a href="classify.html">
+                                    Classification
+                                </a>
+                            </strong>
+                        </div>
+                        <div>
+                            <a>
+                                Plant's Genus
+                            </a>
+                        </div>
+                        <div>
+                            <a>
+                                Plant's Family
+                            </a>
+                        </div>
+                        <div>
+                            <a>
+                                Plant's Species
+                            </a>
+                        </div>
+                    </div>
+                    <div class="footer-column">
+                        <div>
+                            <strong>
+                                <a href="tutorial.html">
+                                    Tutorial
+                                </a>
+                            </strong>
+                        </div>
+                        <div>
+                            <a href="tools.html" title="Go To The Tools Page">
+                                Tools for Prepare
+                            </a>
+                        </div>
+                        <div>
+                            <a href="tutorial.html" title="Go To The Tutorial Page">
+                                Ways for Make
+                            </a>
+                        </div>
+                        <div>
+                            <a href="care.html" title="Go To The Care Page">
+                                Techniques for Preserve
+                            </a>
+                        </div>
+                    </div>
+                    <div class="footer-column">
+                        <div>
+                            <strong>
+                                <a href="identify.html">
+                                    Identify
+                                </a>
+                            </strong>
+                        </div>
+                        <div>
+                            <a>
+                                Plant's Common Name
+                            </a>
+                        </div>
+                        <div>
+                            <a>
+                                Plant's Scientific Name
+                            </a>
+                        </div>
+                        <div>
+                            <a>
+                                Plant's Specimen
+                            </a>
+                        </div>
+                    </div>
+                    <div class="footer-column">
+                        <div>
+                            <strong>
+                                <a href="contribute.html">
+                                    Contribution
+                                </a>
+                            </strong>
+                        </div>
+                        <div>
+                            <a>
+                                Plant's Common Name
+                            </a>
+                        </div>
+                        <div>
+                            <a>
+                                Plant's Scientific Name
+                            </a>
+                        </div>
+                        <div>
+                            <a>
+                                Plant's Specimen
+                            </a>
+                        </div>
+                        <div>
+                            <a>
+                                Plant's Leaf (Photos)
+                            </a>
+                        </div>
+                        <div>
+                            <a>
+                                Plant's Specimen (Photos)
+                            </a>
+                        </div>
+                    </div>
+                    <div class="footer-column">
+                        <div>
+                            <strong>
+                                <a href="enquiry.html">
+                                    Enquiry
+                                </a>
+                            </strong>
+                        </div>
+                        <div>
+                            <a>
+                                Name
+                            </a>
+                        </div>
+                        <div>
+                            <a>
+                                 Contact Number
+                            </a>
+                        </div>
+                        <div>
+                            <a>
+                                Email Address
+                            </a>
+                        </div>
+                        <div>
+                            <a>
+                                Address
+                            </a>
+                        </div>
+                        <div>
+                            <a>
+                                Question
+                            </a>
+                        </div>
+                    </div>
+                    
+                    <div class="footer-column">
+                        <div>
+                            <strong>
+                                <a href="acknowledgment.html">
+                                    Acknowledgement
+                                </a>
+                            </strong>
+                        </div>
+                        <div>
+                            <strong>
+                                <a href="enhancement.html">
+                                    Enhancement
+                                </a>
+                            </strong>
+                        </div>
+                        <div>
+                            <strong>
+                                Stay Connected:
+                            </strong>
+                        </div>
+                        <div>
+                            <a href="mailto:104386568@students.swinburne.edu.my">
+                                Andrew Yii
+                            </a>
+                        </div>
+                        <div>
+                            <a href="mailto:104386568@students.swinburne.edu.my">
+                                Aniq
+                            </a>
+                        </div>
+                        <div>
+                            <a href="mailto:104386568@students.swinburne.edu.my">
+                                Assufi
+                            </a>
+                        </div>
+                        <div>
+                            <a href="mailto:104386568@students.swinburne.edu.my">
+                                Faiz
+                            </a>
+                        </div>
+                        <div>
+                            <strong>
+                                &#169; Plant's Notebook
+                            </strong>
+                        </div>
+                        <div>
+                            <strong>
+                                Last updated:
+                            </strong>
+                        </div>
+                    </div>
+                </div>
+            </footer>
     </body>
 </html>
