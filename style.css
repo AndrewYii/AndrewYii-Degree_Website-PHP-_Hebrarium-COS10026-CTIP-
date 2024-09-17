@@ -2274,3 +2274,41 @@ nav .menu {
     }
 }
 
+/*Enquiry.html*/
+
+.identify-enquiry{
+    position: relative;
+    top: 100px;
+    background-color: lightgreen;
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+form{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+
+legend{
+font-weight: bold;
+text-align: center;
+}
+
+.enquiry-table{
+    width: 100%;
+  }
+
+.feedback-data{
+    width: 100%;
+    border: 0;
+    border-bottom: 2px solid #9b9b9b;
+    outline: 0;
+    font-size: 15px;
+    color: #fff;
+    padding: 5px;
+}
