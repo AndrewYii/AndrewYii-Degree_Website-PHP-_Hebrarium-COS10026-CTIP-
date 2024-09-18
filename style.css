@@ -2499,7 +2499,7 @@ button.contribute-btn:hover {
 /*Contribution/Contributor Sharing*/
 .contributor-layout-heading{
     font-size: 36px;
-    padding: 2vw;
+    padding: 5vw;
     text-align: center;
 }
 
@@ -2527,7 +2527,6 @@ button.contribute-btn:hover {
     width: 320px;
     border-radius: 25px;
     background-color: #fff;
-    transition: all 0.3s ease;
 }
 
 .contributor-image-content,.contributor-content{
@@ -2604,7 +2603,11 @@ button.contribute-btn:hover {
     color:#5A5A5A;
 }
 
-.contributor-button-comments,.contributor-card-comment-section input[type="submit"]{
+.button-contribute a{
+    text-decoration: none;
+}
+
+.contributor-button-comments,.contributor-card-comment-section input[type="submit"],.button-contribute a{
     border:none;
     font-size: 16px;
     color:#fff;
@@ -2614,6 +2617,11 @@ button.contribute-btn:hover {
     margin: 14px;
     cursor: pointer;
     transition: all 0.3s ease;
+}
+
+.button-contribute a{
+    text-decoration: none;
+    font-size: 20px;
 }
 
 #open-comment:not(:checked) ~ textarea, #open-comment:not(:checked) ~ input[type="submit"], #open-comment:not(:checked)~ label .contributor-close-comments {
@@ -2716,7 +2724,7 @@ button.contribute-btn:hover {
     margin-top: 10px; 
 }
 
-.contributor-button-comments:hover,.contributor-card-comment-section input[type="submit"]:hover{
+.contributor-button-comments:hover,.contributor-card-comment-section input[type="submit"]:hover,.button-contribute a:hover{
     background-color: #486856;
 }
 
@@ -2732,6 +2740,7 @@ button.contribute-btn:hover {
     display: none; 
     border-radius: 50px;
     border:1px solid darkgreen;
+    transition: all 0.3s ease;
 }
 
 .contributor-card-wrapper:hover .picture-findings-contributor {
@@ -2741,12 +2750,78 @@ button.contribute-btn:hover {
 }
 
 .picture-findings-contributor figure {
-    margin:50px;
+    margin:30px;
+    transition: all 0.3s ease;
 }
 
 .picture-findings-contributor figure img {
-    width: 100px;
-    height: 100px;
-    border-radius: 50px; 
+    width: 125px;
+    height: 125px;
+    border-radius: 70px; 
     border: 1px solid darkgreen;
+}
+
+.tag1{
+    border:1px solid #FFA500;
+    border-radius: 50px;
+    padding:3px;
+    color:#fff;
+    background-color: #FFA500;
+    transition: all 0.3s ease;
+}
+
+.tag1:hover{
+    background-color:#FF8C00;
+}
+
+.tag2 {
+    border: 1px solid #1E90FF;
+    border-radius: 50px;
+    padding: 3px;
+    color: #fff;
+    background-color: #1E90FF;
+    transition: all 0.3s ease;
+}
+
+.tag2:hover {
+    background-color: #4169E1;
+}
+
+.tag3 {
+    border: 1px solid #32CD32;
+    border-radius: 50px;
+    padding: 3px;
+    color: #fff;
+    background-color: #32CD32;
+    transition: all 0.3s ease;
+}
+
+.tag3:hover {
+    background-color: #228B22;
+}
+
+.tag4 {
+    border: 1px solid #FF6347;
+    border-radius: 50px;
+    padding: 3px;
+    color: #fff;
+    background-color: #FF6347;
+    transition: all 0.3s ease;
+}
+
+.tag4:hover {
+    background-color: #FF4500;
+}
+
+.tag5 {
+    border: 1px solid #9370DB;
+    border-radius: 50px;
+    padding: 3px;
+    color: #fff;
+    background-color: #9370DB;
+    transition: all 0.3s ease;
+}
+
+.tag5:hover {
+    background-color: #6A5ACD;
 }
