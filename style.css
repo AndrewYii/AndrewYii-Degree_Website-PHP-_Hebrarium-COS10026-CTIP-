@@ -2739,7 +2739,6 @@ button.contribute-btn:hover {
     left: 100%; 
     display: none; 
     border-radius: 50px;
-    border:1px solid darkgreen;
     transition: all 0.3s ease;
 }
 
@@ -2759,7 +2758,13 @@ button.contribute-btn:hover {
     height: 125px;
     border-radius: 70px; 
     border: 1px solid darkgreen;
+    transition: transform 0.3s ease;
 }
+
+.picture-findings-contributor:hover figure img {
+    transform: scale(1.1); 
+}
+
 
 .tag1{
     border:1px solid #FFA500;
@@ -2825,3 +2830,4 @@ button.contribute-btn:hover {
 .tag5:hover {
     background-color: #6A5ACD;
 }
+
