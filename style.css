@@ -2463,7 +2463,6 @@ button.contribute-btn:hover {
     transform: scale(1.05); 
 }
 
-/* Reset Button */
 .contribute-form-layout input[type="reset"] {
     position: absolute;
     top: 15px;
@@ -2490,5 +2489,9 @@ button.contribute-btn:hover {
 
     .contribute-form-picture {
         max-width: 100px; 
+    }
+
+    .contribute-form-layout input[type="reset"] {
+        padding: 10px 15px;
     }
 }
