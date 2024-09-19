@@ -2960,3 +2960,8 @@ button.contribute-btn:hover {
     padding-right: 100px;
     padding-bottom: 60px;
 }
+
+.step1 {
+    width: 700px;
+    padding-left: 100px;
+}
