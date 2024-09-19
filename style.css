@@ -2284,7 +2284,7 @@ nav .menu {
 .identify-enquiry{
     position: relative;
     top: 100px;
-    background-color: white;
+    background-color: #ddf5e1;
     padding: 10px;
     display: flex;
     flex-direction: column;
@@ -2293,10 +2293,11 @@ nav .menu {
 }
 
 .enquiry-form{
-    background-color: lightgreen;
+    background-color: white;
     padding: 50px;
     border-radius: 50px;
     width: 600px;
+    box-shadow: 0 5px 10px rgba(0, 0, 0, .1);
 }
 
 .enquiry-form-01{
@@ -2353,7 +2354,7 @@ nav .menu {
   }
 
 .enquiry-end input:hover{
-    border: 1px solid black;
+    background-color: #ddf5e1;
 }
 
 .enquiry-fd select{
