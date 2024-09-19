@@ -2624,57 +2624,18 @@ button.contribute-btn:hover {
     font-size: 20px;
 }
 
-#open-comment:not(:checked) ~ textarea, #open-comment:not(:checked) ~ input[type="submit"], #open-comment:not(:checked)~ label .contributor-close-comments {
-    display: none;
-}
-
-#open-comment1:not(:checked) ~ textarea, #open-comment1:not(:checked) ~ input[type="submit"], #open-comment1:not(:checked)~ label .contributor-close-comments {
-    display: none;
-}
-
-#open-comment2:not(:checked) ~ textarea, #open-comment2:not(:checked) ~ input[type="submit"], #open-comment2:not(:checked)~ label .contributor-close-comments {
-    display: none;
-}
-
-#open-comment3:not(:checked) ~ textarea, #open-comment3:not(:checked) ~ input[type="submit"], #open-comment3:not(:checked)~ label .contributor-close-comments {
-    display: none;
-}
-
-#open-comment3:checked~ label .contributor-button-comments{
+#open-comment:not(:checked) ~ textarea, #open-comment:not(:checked) ~ input[type="submit"], #open-comment:not(:checked)~ label .contributor-close-comments,#open-comment1:not(:checked) ~ textarea, #open-comment1:not(:checked) ~ input[type="submit"], #open-comment1:not(:checked)~ label .contributor-close-comments,#open-comment2:not(:checked) ~ textarea, #open-comment2:not(:checked) ~ input[type="submit"], #open-comment2:not(:checked)~ label .contributor-close-comments,#open-comment3:not(:checked) ~ textarea, #open-comment3:not(:checked) ~ input[type="submit"], #open-comment3:not(:checked)~ label .contributor-close-comments  {
     display: none;
 }
 
 
-#open-comment2:checked~ label .contributor-button-comments{
+#open-comment:checked~ label .contributor-button-comments,#open-comment1:checked~ label .contributor-button-comments,#open-comment2:checked~ label .contributor-button-comments,#open-comment3:checked~ label .contributor-button-comments{
     display: none;
 }
 
-
-#open-comment1:checked~ label .contributor-button-comments{
+#open-comment,#open-comment1,#open-comment2,#open-comment3{
     display: none;
 }
-
-
-#open-comment:checked~ label .contributor-button-comments{
-    display: none;
-}
-
-#open-comment{
-    display: none;
-}
-
-#open-comment1{
-    display: none;
-}
-
-#open-comment2{
-    display: none;
-}
-
-#open-comment3{
-    display: none;
-}
-
 
 .contributor-close-comments {
     position: relative;
@@ -2704,22 +2665,7 @@ button.contribute-btn:hover {
     right:-160px;
 }
 
-#open-comment:checked ~ textarea,#open-comment:checked ~ input[type="submit"]{
-    display: block; 
-    margin-top: 10px; 
-}
-
-#open-comment1:checked ~ textarea,#open-comment1:checked ~ input[type="submit"]{
-    display: block; 
-    margin-top: 10px; 
-}
-
-#open-comment2:checked ~ textarea,#open-comment2:checked ~ input[type="submit"]{
-    display: block; 
-    margin-top: 10px; 
-}
-
-#open-comment3:checked ~ textarea,#open-comment3:checked ~ input[type="submit"]{
+#open-comment:checked ~ textarea,#open-comment:checked ~ input[type="submit"],#open-comment1:checked ~ textarea,#open-comment1:checked ~ input[type="submit"],#open-comment2:checked ~ textarea,#open-comment2:checked ~ input[type="submit"],#open-comment3:checked ~ textarea,#open-comment3:checked ~ input[type="submit"]{
     display: block; 
     margin-top: 10px; 
 }
@@ -2831,3 +2777,121 @@ button.contribute-btn:hover {
     background-color: #6A5ACD;
 }
 
+.column-display-contribute{
+    display: none;
+}
+
+@media (max-width: 1400px){
+    .horizontal-contributecard-layout-line{
+        display: block; 
+    }
+    .column-display-contribute{
+        display: block;
+    }
+    
+} 
+
+@media (max-width: 800px) {
+
+    .picture-findings-contributor figure {
+        margin:10px 0px;
+        position: relative;
+        left:-40px;
+        top:20px;
+    }
+
+    .picture-findings-contributor figure img {
+        width: 100px;
+        height: 100px;
+        border-radius: 70px; 
+    }
+
+    .contributor-layout-heading{
+        font-size: 24px;
+        padding: 5vw;
+        text-align: center;
+    }
+    .contributor-card {
+        position: relative;
+        left:-40px;
+        width: 90%; 
+        max-width: 280px; 
+        margin: 0 auto; 
+    }
+
+    .contributor-card-wrapper {
+        width: 90%; 
+        padding: 10px; 
+        margin: 0 auto; 
+    }
+
+    .contributor-overlay {
+        height: 80%; 
+        width: 75%; 
+        top: 0; 
+        border-radius: 20px 20px 0 20px; 
+    }
+
+    .contributor-overlay::before,.contributor-overlay::after {
+        content: " ";
+        position: absolute;
+        right: 0;
+        bottom: -20px; 
+        height: 20px; 
+        width: 20px; 
+        background-color: darkgreen; 
+    }
+
+    .contributor-overlay::after {
+        border-radius: 0 10px 0 0; 
+        background-color: #fff; 
+    }
+
+    .contributor-image {
+        height: 80px; 
+        width: 80px; 
+        position: relative;
+        right:40px;
+        bottom:15px;
+    }
+
+    .contributor-name {
+        font-size: 18px; 
+    }
+
+    .contributor-description {
+        font-size: 14px; 
+    }
+
+    .button-contribute a,.contributor-button-comments,.contributor-card-comment-section input[type="submit"] {
+        font-size: 14px; 
+        padding: 6px 12px; 
+    }
+
+    .contributor-card-comment-section textarea {
+        width: 110%; 
+        height: 150px;
+        position: relative;
+        left:-10px;
+    }
+
+    .contributor-card-comment-section input[type="submit"]{
+        position: relative;
+        right:-120px;
+    }
+
+    .contributor-close-comments{
+        position: relative;
+        left:170px;
+    }
+
+    .tag1, .tag2, .tag3, .tag4, .tag5 {
+        padding: 5px; 
+        font-size: 12px; 
+    }
+
+    .horizontal-contributecard-layout-line {
+        flex-direction: column; 
+        gap: 15px; 
+    }
+}
