@@ -2921,4 +2921,16 @@ button.contribute-btn:hover {
 
 
 /*classify page*/
-.classification1
+.classification1 {
+    display: block;
+    margin: 0 auto;
+    width: 700px;
+    height: 500px;
+    top: 200px;
+}
+
+.classification1 img {
+    width: 100%;
+    display: block;
+    height: auto;
+}
