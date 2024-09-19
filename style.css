@@ -2985,3 +2985,8 @@ button.contribute-btn:hover {
     margin-top: 10px;
     margin-bottom: 10px;
 }
+
+.description1 {
+    margin-top: 0;
+    margin-bottom: 0;
+}
