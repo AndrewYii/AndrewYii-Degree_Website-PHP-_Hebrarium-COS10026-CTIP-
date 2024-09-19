@@ -1631,6 +1631,12 @@ nav .menu {
     border: 1px solid black;
 }
 
+.acknowledgment-heading{
+    font-size: 28px;
+    margin: 0.5vw;
+    padding: 0.5vw;
+}
+
 .acknowledgment-text:hover{
     border:none;
     background-color:darkgreen;
