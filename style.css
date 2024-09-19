@@ -2870,11 +2870,10 @@ button.contribute-btn:hover {
     display: block;
     margin: 0 auto;
     width: 500px;
-    height: auto;
 }
 
 .classification1 img {
-    width: 100%;
+    width: 350px;
     display: block;
     height: auto;
 }
