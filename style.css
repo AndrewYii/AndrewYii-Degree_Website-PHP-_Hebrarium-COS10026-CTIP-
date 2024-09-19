@@ -2922,7 +2922,7 @@ button.contribute-btn:hover {
 
 /*classify page*/
 
-.classify_heading {
+.classify_heading h1{
     top: 500px;
     text-align: center;
 }
