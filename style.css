@@ -2930,7 +2930,7 @@ button.contribute-btn:hover {
 
 .classification1 img {
     width: 100%;
-    display: block;
+    display: relative;
     height: auto;
     top: 200px;
 }
