@@ -2971,6 +2971,6 @@ button.contribute-btn:hover {
     height: auto;
 }
 
-.step1 .caption1 {
-    margin: 0 auto;
+.caption1 {
+    text-align: center;
 }
