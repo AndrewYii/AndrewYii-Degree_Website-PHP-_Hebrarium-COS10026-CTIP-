@@ -2864,9 +2864,7 @@ button.contribute-btn:hover {
         font-size: 14px; 
     }
 
-    .button-contribute a,
-    .contributor-button-comments,
-    .contributor-card-comment-section input[type="submit"] {
+    .button-contribute a,.contributor-button-comments,.contributor-card-comment-section input[type="submit"] {
         font-size: 14px; 
         padding: 6px 12px; 
     }
