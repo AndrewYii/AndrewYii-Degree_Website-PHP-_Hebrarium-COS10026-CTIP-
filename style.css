@@ -2871,7 +2871,7 @@ button.contribute-btn:hover {
     margin: 0 auto;
     width: 700px;
     height: 500px;
-    margin-top: 200px;
+    top: 200px;
 }
 
 .classification1 img {
