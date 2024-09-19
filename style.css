@@ -2926,11 +2926,11 @@ button.contribute-btn:hover {
     margin: 0 auto;
     width: 700px;
     height: 500px;
-    top: 200px;
 }
 
 .classification1 img {
     width: 100%;
-    display: block;
+    display: relative;
     height: auto;
+    top: 200px;
 }
