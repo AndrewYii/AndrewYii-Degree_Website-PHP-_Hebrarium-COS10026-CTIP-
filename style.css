@@ -2953,7 +2953,8 @@ button.contribute-btn:hover {
 }
 
 .classify_explaination {
-    text-align: center;
+    text-align: justify;
+    margin: 0 auto;
     padding-top: 20px;
     padding-left: 100px;
     padding-right: 100px;
