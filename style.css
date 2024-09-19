@@ -2958,4 +2958,15 @@ button.contribute-btn:hover {
     padding-top: 20px;
     padding-left: 100px;
     padding-right: 100px;
+    padding-bottom: 60px;
+}
+
+.step1 {
+    display: block;
+    padding-left: 100px;
+}
+
+.step1 img {
+    width: 600px;
+    height: auto;
 }
