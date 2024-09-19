@@ -2970,3 +2970,7 @@ button.contribute-btn:hover {
     width: 600px;
     height: auto;
 }
+
+.caption1 {
+    margin: 0 auto;
+}
