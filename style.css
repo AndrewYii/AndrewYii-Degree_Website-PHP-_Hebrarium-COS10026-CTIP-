@@ -484,17 +484,6 @@ nav .menu {
 
 
 /*Sticky Note*/
-/*.sticky_note{
-    position: fixed;
-    z-index: 100000;
-    bottom: 15px;
-    right: 15px;
-}*/
-
-/*.sticky_note img{
-    max-width: 74px;
-}*/
-
 .chatbot-container {
     border-radius: 100px;
     border: 1px solid black;
@@ -708,26 +697,6 @@ nav .menu {
       100% { transform: translate(0); }
     }
     
-  
-/*
-@media (max-width: 1400px) {
-    .sticky_note img{
-        max-width: 69px;
-    }
-}
-@media (max-width: 1102px) {
-    .sticky_note img{
-        max-width: 64px;
-    }
-}
-@media (max-width: 926px) {
-    .sticky_note img{
-        max-width: 59px;
-    }
-}
-*/
-
-
 @media (max-width: 926px) {
 
     #chatbot {
@@ -1194,16 +1163,16 @@ nav .menu {
 
 @media (max-width: 1575px) {
     .grid_tutorial{
-        margin-left:1vw ;
+        margin-left:4vw ;
     }
     .grid_tutorial img{
         max-width: 283px;
     }
     .button-grid{
-        margin: 0.7vw 2.5vw 1.5vw 15vw;
+        margin: 0.7vw 8vw 1.5vw 15vw;
     }
 }
-@media (max-width: 1219px) {
+@media (max-width: 1279px) {
     .grid_tutorial img{
         max-width: 253px;
     }
@@ -1214,7 +1183,7 @@ nav .menu {
         margin: 0.7vw 8.5vw 1.5vw 15vw;
     }
 }
-@media (max-width: 1113px) {
+@media (max-width: 1240px) {
     .grid_tutorial img{
         max-width: 200px;
     }
@@ -1228,7 +1197,7 @@ nav .menu {
         bottom: -20px;
     }
 }
-@media (max-width: 926px) {
+@media (max-width: 950px) {
     .grid_tutorial{
         margin: 5vw 0;
         display: flex;
@@ -1420,6 +1389,10 @@ nav .menu {
 
  @media  (max-width:1570px){
 
+    .flip-box-layout{
+        margin: 2vw 20vw;
+    }
+
     .flip-box {
         margin: 2vw 1vw;
         width: 250px;
@@ -1440,6 +1413,10 @@ nav .menu {
 }
 
 @media (max-width:1350px){
+
+    .flip-box-layout{
+        margin: 2vw 15vw;
+    }
 
     .flip-box {
         margin: 2vw 2vw;
@@ -1624,29 +1601,6 @@ nav .menu {
     padding-left: 10px;
 }
 
-/*
-.footer-picture-horizontal {
-    display: flex; 
-    gap: 10px; 
-}
-
-.footer-picture-horizontal img {
-    max-width: 30px;
-    vertical-align: middle; 
-}
-
-.footer-picture-horizontal a:hover {
-    text-decoration: none;
-}
-
-@media (max-width: 1350px) {
-    .footer-column {
-        max-width: 25%; 
-        padding: 1vw;
-    }
-}
-*/
-
 @media (max-width: 811px) {
     .footer-layout {
         flex-direction: column; 
@@ -1662,7 +1616,6 @@ nav .menu {
     }
 
 }
-
 
 /*Acknowledgement*/
 .acknowledgment-text a{
