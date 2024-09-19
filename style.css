@@ -2922,6 +2922,10 @@ button.contribute-btn:hover {
 
 /*classify page*/
 
+.classify_background {
+    background-color: DDF5E1;
+}
+
 .classify_heading {
     padding-top: 150px;
     text-align: center;
