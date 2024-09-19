@@ -2921,6 +2921,13 @@ button.contribute-btn:hover {
 
 
 /*classify page*/
+
+.classify_header {
+    top: 500px;
+    text-align: center;
+}
+
+
 .classification1 {
     display: block;
     margin: 0 auto;
