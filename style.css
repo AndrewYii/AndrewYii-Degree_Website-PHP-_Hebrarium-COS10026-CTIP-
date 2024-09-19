@@ -2832,8 +2832,7 @@ button.contribute-btn:hover {
         border-radius: 20px 20px 0 20px; 
     }
 
-    .contributor-overlay::before,
-    .contributor-overlay::after {
+    .contributor-overlay::before,.contributor-overlay::after {
         content: " ";
         position: absolute;
         right: 0;
