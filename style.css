@@ -2964,6 +2964,7 @@ button.contribute-btn:hover {
 .step1 {
     display: block;
     padding-left: 100px;
+    text-align: center;
 }
 
 .step1 img {
@@ -2972,5 +2973,5 @@ button.contribute-btn:hover {
 }
 
 .caption1 {
-    text-align: center;
+    margin-top: 8px;
 }
