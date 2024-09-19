@@ -2087,7 +2087,7 @@ nav .menu {
     text-align: center;
 }
 
-.transform-box {
+.transform-box,.transform-box1,.transform-box2,.transform-box3{
     width: 250px;
     height: 250px;
     background-color: darkgreen;
@@ -2129,15 +2129,42 @@ nav .menu {
     border: 5px groove darkgreen;
 }
 
-#change_box:checked + .transform-box .box-text {
+#change_box:checked + .transform-box1 {
+    background-color: transparent;
+    border-radius: 150px;
+    background-image: url('images/aniq.jpeg');
+    background-size: cover;
+    background-position: center;
+    border: 5px groove darkgreen;
+}
+
+#change_box:checked + .transform-box2 {
+    background-color: transparent;
+    border-radius: 150px;
+    background-image: url('images/Assufi.jpg');
+    background-size: cover;
+    background-position: center;
+    border: 5px groove darkgreen;
+}
+
+#change_box:checked + .transform-box3 {
+    background-color: transparent;
+    border-radius: 150px;
+    background-image: url('images/Faiz.jpg');
+    background-size: cover;
+    background-position: center;
+    border: 5px groove darkgreen;
+}
+
+#change_box:checked + .transform-box .box-text,#change_box:checked + .transform-box1 .box-text,#change_box:checked + .transform-box2 .box-text,#change_box:checked + .transform-box3 .box-text {
     opacity: 0; 
 }
 
-#change_box:checked + .transform-box .box-img {
+#change_box:checked + .transform-box .box-img,#change_box:checked + .transform-box1 .box-img,#change_box:checked + .transform-box2 .box-img,#change_box:checked + .transform-box3 .box-img{
     opacity: 1; 
 }
 
-#change_box:checked + .transform-box:hover {
+#change_box:checked + .transform-box:hover,#change_box:checked + .transform-box1:hover,#change_box:checked + .transform-box2:hover,#change_box:checked + .transform-box3:hover{
     padding: 130px;
 }
 
@@ -2172,6 +2199,7 @@ nav .menu {
     padding: 12px; 
 }
 
+/*Andrew-Profile*/
 .odd-row{
     background-color: darkgreen;
     color: #fff;
@@ -2180,6 +2208,33 @@ nav .menu {
 .even-row{
     background-color: #fff;
     color: black;
+}
+
+/*Aniq-Profile*/
+.odd-row1{
+
+}
+
+.even-row1{
+
+}
+
+/*Assufi-Profile*/
+.odd-row2{
+
+}
+
+.even-row2{
+
+}
+
+/*Faiz-Profile*/
+.odd-row3{
+
+}
+
+.even-row3{
+
 }
 
 
