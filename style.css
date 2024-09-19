@@ -2495,3 +2495,403 @@ button.contribute-btn:hover {
         padding: 10px 15px;
     }
 }
+
+/*Contribution/Contributor Sharing*/
+.contributor-layout-heading{
+    font-size: 36px;
+    padding: 5vw;
+    text-align: center;
+}
+
+.horizontal-contributecard-layout-line{
+    display: flex; 
+    gap: 300px;
+    padding: 20px; 
+}
+
+.contributor-background-layout {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+    min-height: 100vh;
+    width: 100%;
+    padding: 40px 0;
+    position: relative;
+    background-color: #ddf5e1;
+    top: 30px;
+}
+
+.contributor-card{
+    width: 320px;
+    border-radius: 25px;
+    background-color: #fff;
+}
+
+.contributor-image-content,.contributor-content{
+    padding: 10px 14px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.contributor-image-content{
+    position: relative;
+    flex: 1;
+    min-width: 300px;
+    row-gap: 5px;
+    padding: 25px 0;
+}
+
+.contributor-overlay{
+    position: absolute;
+    left: 0;
+    top: 0;
+    height: 100%;
+    width: 100%;
+    background-color: darkgreen;
+    border-radius: 25px 25px 0 25px;
+}
+
+.contributor-overlay::before, .contributor-overlay::after{
+    content: " ";
+    position: absolute;
+    right:0;
+    bottom: -40px;
+    height:40px;
+    width: 40px;
+    background-color: darkgreen;
+}
+
+.contributor-overlay::after{
+    border-radius: 0 25px 0 0;
+    background-color: #fff;
+}
+
+.contributor-image{
+    position: relative;
+    height: 150px;
+    width: 150px;
+    border-radius: 50%;
+    background: #fff;
+    padding: 3px;
+}
+
+.contributor-image .contributor-img{
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+    border-radius: 50%;
+    border:4px solid darkgreen;
+}
+
+.contributor-name{
+    font-size: 24px;
+    font-weight: 500;
+    color:#333;
+}
+
+.contributor-description{
+    list-style-type:none;
+    font-size: 16px;
+    color: #707070;
+    text-align: center;
+}
+
+.contributor-description-heading{
+    color:#5A5A5A;
+}
+
+.button-contribute a{
+    text-decoration: none;
+}
+
+.contributor-button-comments,.contributor-card-comment-section input[type="submit"],.button-contribute a{
+    border:none;
+    font-size: 16px;
+    color:#fff;
+    padding: 8px 16px;
+    background-color: #588970;
+    border-radius: 6px;
+    margin: 14px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.button-contribute a{
+    text-decoration: none;
+    font-size: 20px;
+}
+
+#open-comment:not(:checked) ~ textarea, #open-comment:not(:checked) ~ input[type="submit"], #open-comment:not(:checked)~ label .contributor-close-comments,#open-comment1:not(:checked) ~ textarea, #open-comment1:not(:checked) ~ input[type="submit"], #open-comment1:not(:checked)~ label .contributor-close-comments,#open-comment2:not(:checked) ~ textarea, #open-comment2:not(:checked) ~ input[type="submit"], #open-comment2:not(:checked)~ label .contributor-close-comments,#open-comment3:not(:checked) ~ textarea, #open-comment3:not(:checked) ~ input[type="submit"], #open-comment3:not(:checked)~ label .contributor-close-comments  {
+    display: none;
+}
+
+
+#open-comment:checked~ label .contributor-button-comments,#open-comment1:checked~ label .contributor-button-comments,#open-comment2:checked~ label .contributor-button-comments,#open-comment3:checked~ label .contributor-button-comments{
+    display: none;
+}
+
+#open-comment,#open-comment1,#open-comment2,#open-comment3{
+    display: none;
+}
+
+.contributor-close-comments {
+    position: relative;
+    right:-230px;
+    top:10px;
+}
+
+.contributor-card-comment-section textarea{
+    position: relative;
+    right:50px;
+    width: 150%;
+    height: 150px; 
+    padding: 10px; 
+    font-size: 16px; 
+    border: 1px solid #ccc; 
+    border-radius: 6px; 
+    box-sizing: border-box;
+
+}
+
+.contributor-close-comments{
+    max-width: 30px;
+}
+
+.contributor-card-comment-section input[type="submit"]{
+    position: relative;
+    right:-160px;
+}
+
+#open-comment:checked ~ textarea,#open-comment:checked ~ input[type="submit"],#open-comment1:checked ~ textarea,#open-comment1:checked ~ input[type="submit"],#open-comment2:checked ~ textarea,#open-comment2:checked ~ input[type="submit"],#open-comment3:checked ~ textarea,#open-comment3:checked ~ input[type="submit"]{
+    display: block; 
+    margin-top: 10px; 
+}
+
+.contributor-button-comments:hover,.contributor-card-comment-section input[type="submit"]:hover,.button-contribute a:hover{
+    background-color: #486856;
+}
+
+.contributor-card-wrapper {
+    position: relative;
+    display: inline-block; 
+}
+
+.picture-findings-contributor {
+    position: absolute;
+    top: 30px;
+    left: 100%; 
+    display: none; 
+    border-radius: 50px;
+    transition: all 0.3s ease;
+}
+
+.contributor-card-wrapper:hover .picture-findings-contributor {
+    display: flex; 
+    flex-direction: column;
+    gap: 10px; 
+}
+
+.picture-findings-contributor figure {
+    margin:30px;
+    transition: all 0.3s ease;
+}
+
+.picture-findings-contributor figure img {
+    width: 125px;
+    height: 125px;
+    border-radius: 70px; 
+    border: 1px solid darkgreen;
+    transition: transform 0.3s ease;
+}
+
+.picture-findings-contributor:hover figure img {
+    transform: scale(1.1); 
+}
+
+
+.tag1{
+    border:1px solid #FFA500;
+    border-radius: 10px;
+    padding:7px;
+    color:#fff;
+    background-color: #FFA500;
+    transition: all 0.3s ease;
+}
+
+.tag1:hover{
+    background-color:#FF8C00;
+}
+
+.tag2 {
+    border: 1px solid #1E90FF;
+    border-radius: 10px;
+    padding: 7px;
+    color: #fff;
+    background-color: #1E90FF;
+    transition: all 0.3s ease;
+}
+
+.tag2:hover {
+    background-color: #4169E1;
+}
+
+.tag3 {
+    border: 1px solid #32CD32;
+    border-radius: 10px;
+    padding: 7px;
+    color: #fff;
+    background-color: #32CD32;
+    transition: all 0.3s ease;
+}
+
+.tag3:hover {
+    background-color: #228B22;
+}
+
+.tag4 {
+    border: 1px solid #FF6347;
+    border-radius: 10px;
+    padding: 7px;
+    color: #fff;
+    background-color: #FF6347;
+    transition: all 0.3s ease;
+}
+
+.tag4:hover {
+    background-color: #FF4500;
+}
+
+.tag5 {
+    border: 1px solid #9370DB;
+    border-radius: 10px;
+    padding: 7px;
+    color: #fff;
+    background-color: #9370DB;
+    transition: all 0.3s ease;
+}
+
+.tag5:hover {
+    background-color: #6A5ACD;
+}
+
+.column-display-contribute{
+    display: none;
+}
+
+@media (max-width: 1400px){
+    .horizontal-contributecard-layout-line{
+        display: block; 
+    }
+    .column-display-contribute{
+        display: block;
+    }
+    
+} 
+
+@media (max-width: 800px) {
+
+    .picture-findings-contributor figure {
+        margin:10px 0px;
+        position: relative;
+        left:-40px;
+        top:20px;
+    }
+
+    .picture-findings-contributor figure img {
+        width: 100px;
+        height: 100px;
+        border-radius: 70px; 
+    }
+
+    .contributor-layout-heading{
+        font-size: 24px;
+        padding: 5vw;
+        text-align: center;
+    }
+    .contributor-card {
+        position: relative;
+        left:-40px;
+        width: 90%; 
+        max-width: 280px; 
+        margin: 0 auto; 
+    }
+
+    .contributor-card-wrapper {
+        width: 90%; 
+        padding: 10px; 
+        margin: 0 auto; 
+    }
+
+    .contributor-overlay {
+        height: 80%; 
+        width: 75%; 
+        top: 0; 
+        border-radius: 20px 20px 0 20px; 
+    }
+
+    .contributor-overlay::before,.contributor-overlay::after {
+        content: " ";
+        position: absolute;
+        right: 0;
+        bottom: -20px; 
+        height: 20px; 
+        width: 20px; 
+        background-color: darkgreen; 
+    }
+
+    .contributor-overlay::after {
+        border-radius: 0 10px 0 0; 
+        background-color: #fff; 
+    }
+
+    .contributor-image {
+        height: 80px; 
+        width: 80px; 
+        position: relative;
+        right:40px;
+        bottom:15px;
+    }
+
+    .contributor-name {
+        font-size: 18px; 
+    }
+
+    .contributor-description {
+        font-size: 14px; 
+    }
+
+    .button-contribute a,.contributor-button-comments,.contributor-card-comment-section input[type="submit"] {
+        font-size: 14px; 
+        padding: 6px 12px; 
+    }
+
+    .contributor-card-comment-section textarea {
+        width: 110%; 
+        height: 150px;
+        position: relative;
+        left:-10px;
+    }
+
+    .contributor-card-comment-section input[type="submit"]{
+        position: relative;
+        right:-120px;
+    }
+
+    .contributor-close-comments{
+        position: relative;
+        left:170px;
+    }
+
+    .tag1, .tag2, .tag3, .tag4, .tag5 {
+        padding: 5px; 
+        font-size: 12px; 
+    }
+
+    .horizontal-contributecard-layout-line {
+        flex-direction: column; 
+        gap: 15px; 
+    }
+}
