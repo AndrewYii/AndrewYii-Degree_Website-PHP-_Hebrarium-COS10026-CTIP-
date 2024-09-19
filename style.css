@@ -2938,7 +2938,6 @@ button.contribute-btn:hover {
     margin: 0 auto;
     width: 700px;
     height: 500px;
-    clip-path: inset(0 0 150px 0);
 }
 
 .classification1 img {
@@ -2949,6 +2948,7 @@ button.contribute-btn:hover {
 }
 
 .classify_h2 {
+    padding-top: 25px;
     text-align: center;
 }
 
