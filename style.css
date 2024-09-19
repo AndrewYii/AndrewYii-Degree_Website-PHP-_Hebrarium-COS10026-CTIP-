@@ -1601,29 +1601,6 @@ nav .menu {
     padding-left: 10px;
 }
 
-/*
-.footer-picture-horizontal {
-    display: flex; 
-    gap: 10px; 
-}
-
-.footer-picture-horizontal img {
-    max-width: 30px;
-    vertical-align: middle; 
-}
-
-.footer-picture-horizontal a:hover {
-    text-decoration: none;
-}
-
-@media (max-width: 1350px) {
-    .footer-column {
-        max-width: 25%; 
-        padding: 1vw;
-    }
-}
-*/
-
 @media (max-width: 811px) {
     .footer-layout {
         flex-direction: column; 
@@ -1639,7 +1616,6 @@ nav .menu {
     }
 
 }
-
 
 /*Acknowledgement*/
 .acknowledgment-text a{
