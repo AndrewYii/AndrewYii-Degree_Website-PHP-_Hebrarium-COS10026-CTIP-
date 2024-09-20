@@ -2970,6 +2970,7 @@ button.contribute-btn:hover {
 .step-container {
     display: flex;
     align-items: flex-start;
+    gap: 20px;
 }
 
 .step1 {
@@ -2988,7 +2989,7 @@ button.contribute-btn:hover {
 }
 
 .assignandrecord {
-    margin-top: 10px;
+    margin-top: 0px;
     margin-bottom: 10px;
 }
 
