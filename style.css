@@ -2911,10 +2911,27 @@ button.contribute-btn:hover {
     margin-left: 0px;
 }
 
+.care_bottom {
+    display: flex;
+    justify-content: flex-start;
+    gap: 20px;
+    padding: 20px;
+}
+
 .preservation_tips {
     margin-left: 40px;
-    background-color: #D3D3D3;
+    background-color: white;
     width: 250px;
     padding: 30px;
     border-radius: 20px;
+    border: #777 solid 1px;
+}
+
+.care_definition {
+    margin-left: 40px;
+    background-color: white;
+    width: 1000px;
+    padding: 30px;
+    border-radius: 20px;
+    border: #777 solid 1px;
 }
