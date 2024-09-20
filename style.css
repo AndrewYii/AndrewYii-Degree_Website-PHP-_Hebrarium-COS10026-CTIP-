@@ -2480,6 +2480,10 @@ button.contribute-btn:hover {
     text-align: center;
 }
 
+.contributor-description li{
+    text-align: left;
+}
+
 .contributor-description-heading{
     color:#5A5A5A;
 }
