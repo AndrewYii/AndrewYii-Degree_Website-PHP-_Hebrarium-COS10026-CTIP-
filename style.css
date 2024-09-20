@@ -1767,11 +1767,13 @@ nav .menu {
 
 .login-form{
     width: 420px;
-    border: 2px solid rgba(255,255,255,.2);
+    border: 1px solid #4CAF50; 
     color: black;
     border-radius: 10px;
     padding: 30px 40px;
     background-color: #fff;
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1); 
+    transition: box-shadow 0.4s ease, transform 0.3s ease; 
 }
 
 .login-form .word{
@@ -1834,6 +1836,11 @@ nav .menu {
 .register-link p a:hover{
     color:#388E3C;
     text-decoration: underline;
+}
+
+.login-form:hover {
+    box-shadow: 0 12px 24px rgba(0, 0, 0, 0.2); 
+    transform: scale(1.02); 
 }
 
 @media (max-width: 1020px) {
