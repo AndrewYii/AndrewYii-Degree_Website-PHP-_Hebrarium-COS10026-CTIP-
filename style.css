@@ -2860,10 +2860,10 @@ button.contribute-btn:hover {
 
 .assignandrecord {
     margin-top: 40px;
-    margin-bottom: 60px;
+    margin-bottom: 0;
 }
 
 .description1 {
-    margin-top: 0;
+    margin-top: 40px;
     margin-bottom: 0;
 }
