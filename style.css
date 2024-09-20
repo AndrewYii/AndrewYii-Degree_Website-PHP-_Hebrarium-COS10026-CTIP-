@@ -930,8 +930,6 @@ nav .menu {
     }
 }
 
-
-
 /*rate*/
 .rate-text {
     position: relative;
@@ -2036,12 +2034,6 @@ nav .menu {
 .intro-button:hover{
     background-color: #486856;
 }
-
-/*
-.sliding-intro-layout:hover .sliding-intro-layout {
-    animation-play-state: paused; 
-}
-*/
 
 @media (max-width: 1020px) {
     .handle-sliding-layout{
