@@ -697,6 +697,7 @@ nav .menu {
       100% { transform: translate(0); }
     }
     
+
 /*Index*/
 .image-text {
     position: relative;
@@ -1301,7 +1302,9 @@ nav .menu {
  @media  (max-width:1570px){
 
     .flip-box-layout{
-        margin: 2vw 20vw;
+        margin: 2vw 20w;
+        position: relative;
+        left:5vw;
     }
 
     .flip-box {
@@ -1553,7 +1556,7 @@ nav .menu {
     background-color:darkgreen;
 }
 
-.acknowledgment-text a:hover{
+.acknowledgment-text:hover a{
     color: #ffffff;
 }
 
