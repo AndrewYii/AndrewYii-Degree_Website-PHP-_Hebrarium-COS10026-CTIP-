@@ -2846,8 +2846,7 @@ button.contribute-btn:hover {
     background-color: white;
     border-radius: 0px;
     box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
-    width: 1200px; 
-    max-width: 1200px; 
+    width: 2000px; 
     height: auto; 
     max-height: 800px;
 }
