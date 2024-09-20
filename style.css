@@ -2843,6 +2843,13 @@ button.contribute-btn:hover {
     align-items: center;
     padding: 20px;
     gap: 20px;
+    background-color: white;
+    border-radius: 0px;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+    width: 100%; 
+    max-width: 1200px; 
+    height: auto; 
+    max-height: 800px;
 }
 
 .step1 {
@@ -2864,9 +2871,6 @@ button.contribute-btn:hover {
 
 .text-content {
     max-width: 600px;
-    background-color: white;
-    border-radius: 0px;
-    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
 }
 
 .assignandrecord {
