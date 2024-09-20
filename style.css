@@ -2884,28 +2884,6 @@ button.contribute-btn:hover {
     max-width: 600px;
 }
 
-.text-content::before {
-    content: '';
-    position: absolute;
-    top: -10px; /* Shift the top border upwards */
-    left: -10px; /* Shift the left border inwards */
-    right: 0;
-    height: 10px; /* Make the top border smaller */
-    background-color: #ccc; /* Same color as the border */
-    z-index: -1;
-}
-
-.text-content::after {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: -10px; /* Negative value to visually shrink the left border */
-    bottom: 0;
-    width: 10px; /* Make the left border smaller */
-    background-color: #ccc; /* Same color as the border */
-    z-index: -1;
-}
-
 .assignandrecord {
     margin-bottom: 20px;
 }
