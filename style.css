@@ -2839,8 +2839,16 @@ button.contribute-btn:hover {
 
 .step-container {
     display: flex;
-    align-items: flex-start;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px;
     gap: 20px;
+    background-color: white;
+    border-radius: 0px;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+    width: 1400px; 
+    height: auto; 
+    max-height: 800px;
 }
 
 .step1 {
@@ -2855,15 +2863,20 @@ button.contribute-btn:hover {
 }
 
 .caption1 {
-    margin-left: 110px;
+    margin-top: 10px;
+    text-align: center;
+    font-size: 14px;
+}
+
+.text-content {
+    max-width: 600px;
 }
 
 .assignandrecord {
-    margin-top: 0px;
-    margin-bottom: 10px;
+    margin-bottom: 20px;
 }
 
 .description1 {
-    margin-top: 0;
+    margin-top: 40px;
     margin-bottom: 0;
 }
