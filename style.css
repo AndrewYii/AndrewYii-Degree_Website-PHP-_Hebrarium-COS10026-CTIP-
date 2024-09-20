@@ -2798,37 +2798,37 @@ button.contribute-btn:hover {
 
 /*care page*/
 
-.classify_background {
+.care_background {
     background-color: #DDF5E1;
 }
 
-.classify_heading {
+.care_heading {
     padding-top: 130px;
     padding-bottom: 30px;
     text-align: center;
 }
 
 
-.classification1 {
+.care1 {
     display: block;
     margin: 0 auto;
     width: 700px;
     height: 500px;
 }
 
-.classification1 img {
+.care1 img {
     width: 100%;
     display: relative;
     height: auto;
     top: 200px;
 }
 
-.classify_h2 {
+.care_h2 {
     padding-top: 25px;
     text-align: center;
 }
 
-.classify_explaination {
+.care_explaination {
     text-align: justify;
     margin: 0 auto;
     padding-top: 20px;
