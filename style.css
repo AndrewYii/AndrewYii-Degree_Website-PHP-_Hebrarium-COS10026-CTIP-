@@ -2844,6 +2844,7 @@ button.contribute-btn:hover {
     justify-content: center;
     gap: 20px;
     padding: 20px;
+    margin-bottom: 50px;
 }
 
 .bordered-content {
@@ -2875,7 +2876,7 @@ button.contribute-btn:hover {
     background-color: white;   
     padding: 99px;
     gap: 0px; 
-    margin-left: -10px; 
+    margin-left: 0px; 
 }
 
 .assignandrecord {
@@ -2899,6 +2900,12 @@ button.contribute-btn:hover {
 
 .step2 img {
     width: 633px;
-    height: auto;
-    margin-right: 10px;
+    height: 405px;
+    margin-left: 0px;
+}
+
+.step3 img {
+    width: 633px;
+    height: 425px;
+    margin-left: 0px;
 }
