@@ -2863,7 +2863,6 @@ button.contribute-btn:hover {
 }
 
 .text-content {
-    max-width: 600px;
     background-color: white; 
     border: 2px solid #ccc;  
     padding: 20px;  
