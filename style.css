@@ -1302,7 +1302,7 @@ nav .menu {
  @media  (max-width:1570px){
 
     .flip-box-layout{
-        margin: 2vw 20w;
+        margin: 2vw 20vw;
         position: relative;
         left:5vw;
     }
@@ -1322,6 +1322,15 @@ nav .menu {
     .flip-box-back img{
         width: 150px;
         height: 150px;
+    }
+
+}
+@media  (max-width:1401px){
+
+    .flip-box-layout{
+        margin: 2vw 19vw;
+        position: relative;
+        left:5vw;
     }
 
 }
