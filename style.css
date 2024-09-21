@@ -2845,6 +2845,21 @@ button.contribute-btn:hover {
     gap: 20px;
     padding: 20px;
     margin-bottom: 50px;
+    opacity: 0; 
+    transform: translateY(-100px); 
+    animation: fadeInUp 0.8s forwards; 
+    animation-timeline: view();
+}
+
+@keyframes fadeInUp {
+    0% {
+        opacity: 0;
+        transform: translateY(-100px);
+    }
+    100% {
+        opacity: 1; 
+        transform: translateY(0); 
+    }
 }
 
 .bordered-content {
