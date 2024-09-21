@@ -2499,6 +2499,7 @@ button.contribute-btn:hover {
     background-color: #588970;
     border-radius: 6px;
     margin: 14px;
+    display: block;
     cursor: pointer;
     transition: all 0.3s ease;
 }
