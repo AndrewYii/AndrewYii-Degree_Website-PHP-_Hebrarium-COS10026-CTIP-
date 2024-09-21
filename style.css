@@ -2096,6 +2096,15 @@ nav .menu {
     color: black;
 }
 
+/*Aniq-Profile*/
+.odd-row1{
+
+}
+
+.even-row1{
+
+}
+
 /*Assufi-Profile*/
 .odd-row2{
 
@@ -2828,7 +2837,6 @@ button.contribute-btn:hover {
 
 
 
-
 /*care page*/
 
 .care_background {
@@ -2852,7 +2860,6 @@ button.contribute-btn:hover {
 
 .care1 img {
     width: 100%;
-    display: relative;
     height: auto;
     top: 200px;
 }
