@@ -3157,7 +3157,7 @@ button.contribute-btn:hover {
 
 .tutorial-intrduction-background-layout1 ul {
     border: 1px solid darkgreen;
-    padding: 0.6vw; 
+    padding: 0.1vw; 
     border-radius: 15px;
     background-color: #228B22;
     list-style: none; 
@@ -3166,7 +3166,7 @@ button.contribute-btn:hover {
 }
 
 .tutorial-intrduction-background-layout1 ul li {
-    padding: 1.5vw; 
+    padding: 0.8vw; 
     font-size: 3vh; 
     color: #fff;
     margin: 0 1vw; 
