@@ -3050,11 +3050,48 @@ button.contribute-btn:hover {
     background-color: white;
 }
 
-.classify2 img{
-    height: 400px;
-    width: auto;
-    margin-left: 50px;
-    margin-top: 100px;
+.dipte {
+    text-align: center;
+    font-size: 26px;
+    margin-top: 20px;
+}
+
+.caption_dipte1 {
+    margin-left: 250px;
+}
+
+.dipte_defi {
+    max-width: 600px;
+    font-size: 24px;
+}
+
+.dipte-container {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    padding: 20px;
+    margin-bottom: 50px;
+}
+
+.dipte-content {
+    display: flex;
+    flex-direction: row; 
+    align-items: center;
+}
+
+.classify2 {
+    display: block;
+    padding-left: 0px;
+    margin-right: 20px;
+}
+
+.classify2 img {
+    width: autopx;
+    height: 500px;
+    margin-right: 10px;
+    margin-left: 20px;
+    margin-top: 0px;
     border-radius: 70px;
 }
+
 
