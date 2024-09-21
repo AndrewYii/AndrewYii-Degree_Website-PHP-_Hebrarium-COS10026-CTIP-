@@ -3082,7 +3082,7 @@ button.contribute-btn:hover {
     justify-content: center;
     align-items: center;
     overflow: hidden;
-    min-height: 100vh;
+    min-height: 20vh;
     width: 100%;
     padding: 40px 0;
     position: relative;
@@ -3122,13 +3122,13 @@ button.contribute-btn:hover {
 
 
 .tutorial-intrduction-background-layout h3{
-    font-size: 36px;
+    font-size: 4.53vh;
     margin:5px;
     text-align: center;
 }
 
 .tutorial-intrduction-background-layout p{
-    font-size: 24px;
+    font-size: 3.02vh;
     margin:5px;
     font-weight: 300;
     text-align: center;
@@ -3150,3 +3150,98 @@ button.contribute-btn:hover {
 #change-background-tutorial:checked + label .start-section {
     display:none;
 }
+
+#tools, #tutorial, #care{
+    display: none;
+}
+
+.tutorial-intrduction-background-layout1 ul {
+    border: 1px solid darkgreen;
+    padding: 0.6vw; 
+    border-radius: 15px;
+    background-color: #228B22;
+    list-style: none; 
+    display: flex; 
+    flex-wrap: wrap; 
+}
+
+.tutorial-intrduction-background-layout1 ul li {
+    padding: 1.5vw; 
+    font-size: 3vh; 
+    color: #fff;
+    margin: 0 1vw; 
+}
+
+.tutorial-intrduction-background-layout1 ul li label{
+    cursor: pointer;
+}
+
+#tools:checked + input + input + ul li#tools-section,#tutorial:checked + input  + ul li#tutorial-section,#care:checked + ul li#care-section{
+    text-decoration: underline;
+}
+
+.toolssection,.caresection,.tutorialsection {
+    display: flex;
+    flex-direction: row;
+    align-items: stretch;
+    align-items: center; 
+    justify-content: space-between; 
+    padding: 20px;
+    max-width: 1200px;
+    margin: auto; 
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+.toolssection h3,.caresection h3,.tutorialsection h3 {
+    font-size: 4vh;
+    text-align: center;
+    margin-bottom: 10px;
+}
+.toolssection p,.caresection p,.tutorialsection p {
+    font-size: 3vh;
+    justify-content: space-between;
+}
+
+.tutorial-introduction-text-content {
+    flex: 1; 
+    padding-right: 20px; 
+}
+
+.tutorial-introduction-image-content {
+    flex: 0 0 40%;
+    margin-right: 20px;
+}
+
+.tutorial-introduction-image-content img {
+    max-width: 100%;
+    max-height: 100%; 
+    object-fit: cover;
+}
+
+#tools:not(:checked) + input + input + ul + br + .toolssection,#tutorial:not(:checked) + input  + ul + br + .toolssection +.tutorialsection,#care:not(:checked) + ul + br + .toolssection +.tutorialsection +.caresection {
+    display: none;
+}
+
+#tools:checked + input + input + ul + br + .toolssection,#tutorial:checked  + input + ul + br + .toolssection +.tutorialsection,#care:checked + ul + br + .toolssection +.tutorialsection+.caresection{
+    display: blocked;
+}
+
+@media (max-width: 768px) {
+    .toolssection,.caresection,.tutorialsection {
+        flex-direction: column; 
+        align-items: flex-start; 
+    }
+    .tutorial-intrduction-background-layout1 ul {
+        padding: 3vw; 
+    }
+
+    .tutorial-introduction-image-content {
+        margin-top: 20px; 
+        flex: none; 
+        width: 100%; 
+    }
+    .tutorial-intrduction-background-layout1 ul li {
+        font-size: 2.5vh; 
+        padding: 2vw; 
+    }
+}
+
