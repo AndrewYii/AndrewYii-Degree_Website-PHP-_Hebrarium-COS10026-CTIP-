@@ -1325,6 +1325,15 @@ nav .menu {
     }
 
 }
+@media  (max-width:1401px){
+
+    .flip-box-layout{
+        margin: 2vw 19vw;
+        position: relative;
+        left:5vw;
+    }
+
+}
 
 @media (max-width:1350px){
 
