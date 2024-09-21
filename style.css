@@ -3086,7 +3086,7 @@ button.contribute-btn:hover {
 }
 
 .classify2 img {
-    width: autopx;
+    width: auto;
     height: 500px;
     margin-right: 10px;
     margin-left: 20px;
@@ -3094,4 +3094,25 @@ button.contribute-btn:hover {
     border-radius: 70px;
 }
 
+.vatica_content {
+    position: relative; 
+    display: inline-block;
+    width: auto;
+    margin-left: 20px;
+    margin-top: 50px;
+}
+
+.vatica_content img{
+    width: auto;
+    height: 500px;
+    margin-left: 20px;
+    margin-top: -40px;
+    border-radius: 70px;
+}
+
+.vatica_title {
+    font-size: 26px;
+    margin-left: 330px;
+    margin-top: 40px;
+}
 
