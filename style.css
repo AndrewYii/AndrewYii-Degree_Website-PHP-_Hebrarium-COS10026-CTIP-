@@ -3019,10 +3019,10 @@ button.contribute-btn:hover {
 
 .classify1 img{
     height: auto;
-    width: 600px;
-    margin-left: 30px;
+    width: 550px;
+    margin-left: 70px;
     border-radius: 260px;
-    margin-top: 60px;
+    margin-top: 50px;
 }
 
 .classification1 {
@@ -3034,110 +3034,27 @@ button.contribute-btn:hover {
 
 .defi1 {
     font-size: 24px;
-    margin-bottom: 10px;
+    margin-bottom: 50px;
+    margin-top: 60px;
+    margin-right: 140px;
 }
 
 .defi1-container {
     display: block;
 }
 
-
-
-
-
-
-
-
-/*Tutorial-Intoduction*/
-.tutorial-intrduction-background-layout {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    overflow: hidden;
-    min-height: 100vh;
-    width: 100%;
-    padding: 40px 0;
-    position: relative;
-    background-color: #ddf5e1;
-    top: 30px;
-    transition: background 1.5s ease; 
-    cursor:pointer;
-    box-shadow: inset 100px 100px 100000px rgba(56, 142, 60, 0.5);
-}
-
-.tutorial-intrduction-background-layout1{
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    overflow: hidden;
-    min-height: 100vh;
-    width: 100%;
-    padding: 40px 0;
-    position: relative;
-    background-color: #ddf5e1;
-    top: 30px;
-}
-.start-section,.end-section{
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    overflow: hidden;
-}
-
-.start-section p, .start-section h3{
-    background: linear-gradient(90deg, #4caf50, #81c784, #a5d6a7); 
-    background-clip: text;
-    background-size: 200% 200%;
-    color: transparent;
-    animation: gradientAnimation 2s ease infinite; 
-    font-size: 36px; 
-    margin: 5px;
+.family_title {
     text-align: center;
+    font-size: 28px;
+    margin-top: 50px;
+    background-color: white;
 }
 
-@keyframes gradientAnimation {
-    0% {
-        background-position: 0% 50%;
-    }
-    50% {
-        background-position: 100% 50%;
-    }
-    100% {
-        background-position: 0% 50%;
-    }
-}
-
-
-.tutorial-intrduction-background-layout h3{
-    font-size: 36px;
-    margin:5px;
-    text-align: center;
-}
-
-.tutorial-intrduction-background-layout p{
-    font-size: 24px;
-    margin:5px;
-    font-weight: 300;
-    text-align: center;
-}
-
-#change-background-tutorial{
-    display: none;
-}
-
-#change-background-tutorial:checked + label .tutorial-intrduction-background-layout {
-    background: url(images/herbarium_specimen_introduction_background.jpg) no-repeat center;
-    background-size: cover;
-}
-
-#change-background-tutorial:not(:checked) + label .end-section,#change-background-tutorial:not(:checked) + label +.tutorial-intrduction-background-layout1{
-    display: none;
-}
-
-#change-background-tutorial:checked + label .start-section {
-    display:none;
+.classify2 img{
+    height: 400px;
+    width: auto;
+    margin-left: 50px;
+    margin-top: 100px;
+    border-radius: 70px;
 }
 
