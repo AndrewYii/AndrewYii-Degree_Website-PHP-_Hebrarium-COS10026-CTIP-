@@ -2174,7 +2174,7 @@ nav .menu {
     box-shadow: 0 5px 10px rgba(0, 0, 0, .1);
 }
 
-.enquiry-form-01{
+.enquiry-form{
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -2182,10 +2182,9 @@ nav .menu {
   }
 
 .enquiry-legend{
+    text-align: left;
     font-size: 25px;
     font-weight: bold;
-    text-align: center;
-    padding: 15px;
 }
 
 .enquiry-table{
@@ -2212,7 +2211,7 @@ nav .menu {
 .enquiry-fd{
     width: 100%;
     min-width: 400px;
-    border: 2px solid black;
+    border: none;
     border-right: none;
     border-left: none;
     border-bottom: none;
