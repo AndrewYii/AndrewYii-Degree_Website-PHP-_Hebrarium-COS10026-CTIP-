@@ -497,7 +497,15 @@ nav .menu {
     animation: up-down 7.5s infinite ease-in-out;
     z-index: 100000;
 }
-    
+
+.chatbot-container:hover{
+    height: 120px;
+    width: 120px;
+    border-color: #388E3C; 
+    outline: none; 
+    box-shadow: 0 0 100px rgba(56, 142, 60, 0.5); 
+}
+
 #chatbot {
         margin: auto;
         position: absolute;
@@ -2584,6 +2592,12 @@ button.contribute-btn:hover {
 
 }
 
+.contributor-card-comment-section textarea:focus{
+    border-color: #388E3C; 
+    outline: none; 
+    box-shadow: 0 0 5px rgba(56, 142, 60, 0.5); 
+}
+
 .contributor-close-comments{
     max-width: 30px;
 }
@@ -2886,17 +2900,17 @@ button.contribute-btn:hover {
     padding: 20px;
     margin-bottom: 50px;
     opacity: 0; 
-    animation: fadeInUp 50s forwards; 
+    animation: fadeInUp 2s forwards; 
     animation-timeline: view();
 }
 
 @keyframes fadeInUp {
     0% {
-        opacity: 0.2;
+        opacity: 0.5;
         transform: translateY(-128px);
     }
     25% {
-        opacity: 0.4;
+        opacity: 0.5;
         transform: translateY(-96px);
     }
     50% {
