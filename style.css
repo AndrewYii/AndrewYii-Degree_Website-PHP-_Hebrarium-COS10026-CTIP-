@@ -3027,10 +3027,10 @@ button.contribute-btn:hover {
 
 .classify1 img{
     height: auto;
-    width: 600px;
-    margin-left: 30px;
+    width: 550px;
+    margin-left: 70px;
     border-radius: 260px;
-    margin-top: 60px;
+    margin-top: 50px;
 }
 
 .classification1 {
@@ -3042,9 +3042,27 @@ button.contribute-btn:hover {
 
 .defi1 {
     font-size: 24px;
-    margin-bottom: 10px;
+    margin-bottom: 50px;
+    margin-top: 60px;
+    margin-right: 140px;
 }
 
 .defi1-container {
     display: block;
 }
+
+.family_title {
+    text-align: center;
+    font-size: 28px;
+    margin-top: 50px;
+    background-color: white;
+}
+
+.classify2 img{
+    height: 400px;
+    width: auto;
+    margin-left: 50px;
+    margin-top: 100px;
+    border-radius: 70px;
+}
+
