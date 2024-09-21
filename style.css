@@ -2935,3 +2935,36 @@ button.contribute-btn:hover {
     border-radius: 20px;
     border: #777 solid 1px;
 }
+
+/* Classify page */
+
+.classify_heading {
+    padding-top: 130px;
+    padding-bottom: 30px;
+    text-align: center;
+    font-size: 36px;
+}
+
+.classify1 img{
+    height: auto;
+    width: 600px;
+    margin-left: 30px;
+    border-radius: 260px;
+    margin-top: 60px;
+}
+
+.classification1 {
+    display: flex;           
+    align-items: center;      
+    gap: 20px;               
+    margin-top: 0px;
+}
+
+.defi1 {
+    font-size: 24px;
+    margin-bottom: 10px;
+}
+
+.defi1-container {
+    display: block;
+}
