@@ -497,7 +497,15 @@ nav .menu {
     animation: up-down 7.5s infinite ease-in-out;
     z-index: 100000;
 }
-    
+
+.chatbot-container:hover{
+    height: 120px;
+    width: 120px;
+    border-color: #388E3C; 
+    outline: none; 
+    box-shadow: 0 0 100px rgba(56, 142, 60, 0.5); 
+}
+
 #chatbot {
         margin: auto;
         position: absolute;
@@ -1302,7 +1310,7 @@ nav .menu {
  @media  (max-width:1570px){
 
     .flip-box-layout{
-        margin: 2vw 20w;
+        margin: 2vw 20vw;
         position: relative;
         left:5vw;
     }
@@ -1322,6 +1330,15 @@ nav .menu {
     .flip-box-back img{
         width: 150px;
         height: 150px;
+    }
+
+}
+@media  (max-width:1401px){
+
+    .flip-box-layout{
+        margin: 2vw 19vw;
+        position: relative;
+        left:5vw;
     }
 
 }
@@ -2078,6 +2095,17 @@ nav .menu {
 
 /*Aniq-Profile*/
 .odd-row1{
+    background-color: blue;
+    color: #fff;
+}
+
+.even-row1{
+    background-color: #fff;
+    color: black;
+}
+
+/*Aniq-Profile*/
+.odd-row1{
 
 }
 
@@ -2172,27 +2200,31 @@ nav .menu {
     border-radius: 50px;
     width: 600px;
     box-shadow: 0 5px 10px rgba(0, 0, 0, .1);
-}
-
-.enquiry-form-01{
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-  }
-
-.enquiry-legend{
-    font-size: 25px;
-    font-weight: bold;
-    text-align: center;
-    padding: 15px;
 }
 
-.enquiry-table{
+
+.enquiry-legend{
+    padding: 20px 0px 10px 0px;
+    text-align: left;
+    font-size: 25px;
+    font-weight: bold;
+    color: #4CAF50; 
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.2);
+}
+
+.enquiry-table, .address-table{
     width: 100%;
   }
 
-  .enquiry-table td{
+.enquiry-table td{
+    padding: 4px;
+}
+
+.address-table td{
     padding: 4px;
 }
 
@@ -2202,17 +2234,23 @@ nav .menu {
 
 .enquiry-data{
     width: 100%;
-    border: 0;
-    border-bottom: 2px solid #9b9b9b;
-    outline: 0;
-    font-size: 15px;
-    padding: 5px;
+    padding: 12px;
+    border: 1px solid #4CAF50; 
+    border-radius: 8px; 
+    box-sizing: border-box;
+    transition: border-color 0.4s ease, box-shadow 0.4s ease; 
+}
+
+.enquiry-data:focus, .enquiry-comment:focus{
+    border-color: #388E3C; 
+    outline: none; 
+    box-shadow: 0 0 5px rgba(56, 142, 60, 0.5); 
 }
 
 .enquiry-fd{
     width: 100%;
     min-width: 400px;
-    border: 2px solid black;
+    border: none;
     border-right: none;
     border-left: none;
     border-bottom: none;
@@ -2236,9 +2274,21 @@ nav .menu {
     height: 30px;
 }
 
-.enquiry-fd table{
-    margin: auto;
+.feedback-cont{
+    color: #4CAF50; 
+    font-size: 17px;
+    font-weight: bold;
 }
+
+.enquiry-comment{
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #4CAF50; 
+    border-radius: 8px; 
+    box-sizing: border-box;
+    transition: border-color 0.4s ease, box-shadow 0.4s ease; 
+}
+
 
 /* Contribute Form */
 .contribute-form-background-layout {
@@ -2294,8 +2344,8 @@ nav .menu {
     font-size: 1.6em; 
     font-weight: bold;
     color: #4CAF50; 
-    margin-bottom: 15px; 
     text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.2);
+    margin-bottom: 15px; 
 }
 
 .contribute-input {
@@ -2500,6 +2550,7 @@ button.contribute-btn:hover {
     background-color: #588970;
     border-radius: 6px;
     margin: 14px;
+    display: block;
     cursor: pointer;
     transition: all 0.3s ease;
 }
@@ -2539,6 +2590,12 @@ button.contribute-btn:hover {
     border-radius: 6px; 
     box-sizing: border-box;
 
+}
+
+.contributor-card-comment-section textarea:focus{
+    border-color: #388E3C; 
+    outline: none; 
+    box-shadow: 0 0 5px rgba(56, 142, 60, 0.5); 
 }
 
 .contributor-close-comments{
@@ -2793,8 +2850,6 @@ button.contribute-btn:hover {
 
 
 
-
-
 /*care page*/
 
 .care_background {
@@ -2818,7 +2873,6 @@ button.contribute-btn:hover {
 
 .care1 img {
     width: 100%;
-    display: relative;
     height: auto;
     top: 200px;
 }
@@ -2845,6 +2899,32 @@ button.contribute-btn:hover {
     gap: 20px;
     padding: 20px;
     margin-bottom: 50px;
+    opacity: 0; 
+    animation: fadeInUp 2s forwards; 
+    animation-timeline: view();
+}
+
+@keyframes fadeInUp {
+    0% {
+        opacity: 0.5;
+        transform: translateY(-128px);
+    }
+    25% {
+        opacity: 0.5;
+        transform: translateY(-96px);
+    }
+    50% {
+        opacity: 1;
+        transform: translateY(-64px);
+    }
+    75% {
+        opacity: 1;
+        transform: translateY(-32px);
+    }
+    100% {
+        opacity: 1; 
+        transform: translateY(0); 
+    }
 }
 
 .bordered-content {
