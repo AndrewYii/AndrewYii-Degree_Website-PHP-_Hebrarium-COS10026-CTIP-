@@ -2846,15 +2846,26 @@ button.contribute-btn:hover {
     padding: 20px;
     margin-bottom: 50px;
     opacity: 0; 
-    transform: translateY(-100px); 
-    animation: fadeInUp 0.8s forwards; 
+    animation: fadeInUp 50s forwards; 
     animation-timeline: view();
 }
 
 @keyframes fadeInUp {
     0% {
-        opacity: 0;
-        transform: translateY(-100px);
+        opacity: 0.2;
+        transform: translateY(-128px);
+    }
+    25% {
+        opacity: 0.4;
+        transform: translateY(-96px);
+    }
+    50% {
+        opacity: 1;
+        transform: translateY(-64px);
+    }
+    75% {
+        opacity: 1;
+        transform: translateY(-32px);
     }
     100% {
         opacity: 1; 
