@@ -414,8 +414,8 @@
                             <td class="feedback-cont"><label for="tel">Phone</label> Number</td>
                         </tr>
                         <tr>
-                            <td><input class="enquiry-data" type="email" id="email" name="email" placeholder="example@gmail.com" required="required" id="email"></td>
-                            <td><input class="enquiry-data" type="tel" id="tel" name="phone" pattern="[0-9]{10}" placeholder="0123456789" maxlength="10" required="required" id="tel"></td>
+                            <td><input class="enquiry-data" type="email" id="email" name="email" placeholder="example@gmail.com" required="required"></td>
+                            <td><input class="enquiry-data" type="tel" id="tel" name="phone" pattern="[0-9]{10}" placeholder="0123456789" maxlength="10" required="required"></td>
                         </tr>
                     </table>
                 </fieldset>
@@ -423,21 +423,21 @@
                     <legend class="enquiry-legend">Address</legend>
                     <table class="address-table">
                         <tr>
-                            <td class="enquiry-address">Street: </td>
-                            <td><input class="enquiry-data" type="text" name="Street" placeholder="Street" size="30" maxlength="100" required="required" id="street"></td>
+                            <td> class="feedback-cont">Street: </td>
+                            <td><input class="enquiry-data" type="text" name="Street" placeholder="Street" maxlength="100" required="required" id="street"></td>
                         </tr>
                         <tr>
-                            <td class="enquiry-address">City: </td>
-                            <td><input class="enquiry-data" type="text" name="City" placeholder="City" size="30" maxlength="100" required="required" id="city"></td>
+                            <td> class="feedback-cont">City: </td>
+                            <td><input class="enquiry-data" type="text" name="City" placeholder="City" maxlength="100" required="required" id="city"></td>
                         </tr>
                         <tr>
-                            <td class="enquiry-address">Postcode: </td>
-                            <td><input class="enquiry-data" type="number" name="Postcode" size="30" maxlength="100" required="required" id="Postcode"></td>
+                            <td> class="feedback-cont">Postcode: </td>
+                            <td><input class="enquiry-data" type="number" name="Postcode" maxlength="100" required="required" id="Postcode"></td>
                         </tr>
                         <tr>
-                            <td class="enquiry-address">State: </td>
+                            <td> class="feedback-cont">State: </td>
                             <td>
-                                <select name="State" id="state">
+                                <select name="State" id="state" class="enquiry-data">
                                 <option value="Johor">Johor</option>
                                 <option value="Kedah">Kedah</option>
                                 <option value="Kelantan">Kelantan</option>
@@ -460,11 +460,11 @@
                     <legend class="enquiry-legend">Feedback</legend>
                         <table class="enquriry-table"></table>
                                 <tr>
-                                    <td>Select Page</td>
+                                    <td>Enquiry</td>
                                 </tr>
                                 <tr>
                                     <td>
-                                    <select name="page" id="page" size="1" class="feedback-select">
+                                    <select name="page" id="page" size="1" class="enquiry-data">
                                         <option value="acknowledgment">acknowledgment</option>
                                         <option value="andrew">Andrew</option>
                                         <option value="aniq">Aniq</option>
@@ -492,7 +492,7 @@
                                     </td>
                                 </tr>
                                 <tr>
-                                    <td><textarea name="comment" rows="4" cols="70" placeholder="comment" required="required" id="comment"></textarea></td>
+                                    <td><textarea name="comment" rows="4" cols="70" placeholder="comment" required="required" id="comment" class="enquiry-comment"></textarea></td>
                                 </tr>
                             </table>
                     </fieldset>
