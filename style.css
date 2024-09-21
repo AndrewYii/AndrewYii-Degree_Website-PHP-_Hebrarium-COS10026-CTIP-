@@ -2170,6 +2170,18 @@ nav .menu {
 
 /*Enquiry.html*/
 
+.enquiry-reset input{
+    position: relative;
+    left: 200px;
+    top: 20px;
+    font-size: 20px;
+    border: none;
+    appearance: None;
+    margin: 10px;
+    padding: 10px;
+    border-radius: 30px;
+}
+
 .enquiry-head{
     font-size: 40px;
     padding: 10px 0px 20px 0px;
