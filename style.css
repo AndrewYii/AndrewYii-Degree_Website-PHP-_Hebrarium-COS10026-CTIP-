@@ -2235,6 +2235,7 @@ nav .menu {
     border: none;
     appearance: None;
     border-radius: 5px;
+    transition: background-color 0.4s ease, transform 0.3s ease;
 }
 
 .enquiry-head{
@@ -2256,6 +2257,7 @@ nav .menu {
 .enquiry-form{
     background-color: white;
     padding: 0px 50px 50px 50px;
+    margin: 20px;
     border-radius: 10px;
     width: 600px;
     box-shadow: 0 5px 10px rgba(0, 0, 0, .1);
@@ -2316,20 +2318,30 @@ nav .menu {
 }
 
 .enquiry-end input{
+    color: white;
     font-size: 20px;
     border: none;
     appearance: None;
-    margin: 10px;
     padding: 10px;
-    border-radius: 30px;
+    margin: 10px;
+    border-radius: 10px;
+    background-color: #4CAF50;
+    transition: background-color 0.4s ease, transform 0.3s ease;
   }
 
+.enquiry-end{
+    width: 100%;
+    text-align: center;
+}
+
 .enquiry-end input:hover{
-    background-color: #ddf5e1;
+    background-color: #388E3C; 
+    transform: scale(1.05); 
 }
 
 .enquiry-reset input:hover{
-    background-color: #ddf5e1;
+    background-color: #E64A19; 
+    transform: scale(1.05); 
 }
 
 .enquiry-fd select{
