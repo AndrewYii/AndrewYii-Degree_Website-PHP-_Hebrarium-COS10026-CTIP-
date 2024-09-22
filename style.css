@@ -2107,23 +2107,29 @@ nav .menu {
 
 /*Assufi-Profile*/
 .odd-row2{
+    background-color: yellow;
+    color: #fff;
 
 }
 
 .even-row2{
+    background-color: #fff;
+    color: black;
 
 }
 
 /*Faiz-Profile*/
 .odd-row3{
+    background-color: orange;
+    color: #fff;
 
 }
 
 .even-row3{
+    background-color: #fff;
+    color: black;
 
 }
-
-
 
 .profile-table tr {
     transition: transform 0.3s ease; 
