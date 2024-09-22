@@ -3135,7 +3135,6 @@ button.contribute-btn:hover {
     position: relative;
     background-color: #ddf5e1;
     top: 30px;
-    transition: slideBackground 1s linear forwards;
     box-shadow: inset 100px 100px 100000px rgba(56, 142, 60, 0.5);
 }
 
@@ -3218,7 +3217,7 @@ button.contribute-btn:hover {
 }
 
 #change-background-tutorial:checked + label +.tutorial-intrduction-background-layout {
-    animation: slideBackground 1s linear forwards;
+    animation: slideBackground 2.5s forwards;
 }
 
 #change-background-tutorial:not(:checked) + label +.tutorial-intrduction-background-layout .end-section,#change-background-tutorial:not(:checked) + label +.tutorial-intrduction-background-layout +.tutorial-intrduction-background-layout1{
@@ -3301,7 +3300,7 @@ button.contribute-btn:hover {
 }
 
 #tools:checked + input + input + ul + br + .toolssection,#tutorial:checked  + input + ul + br + .toolssection +.tutorialsection,#care:checked + ul + br + .toolssection +.tutorialsection+.caresection{
-    display: blocked;
+    display: flex;
 }
 
 @media (max-width: 768px) {
@@ -3319,7 +3318,7 @@ button.contribute-btn:hover {
         width: 100%; 
     }
     .tutorial-intrduction-background-layout1 ul li {
-        font-size: 1.7vh; 
+        font-size: 2vh; 
     }
 }
 
