@@ -2885,6 +2885,214 @@ button.contribute-btn:hover {
 }
 
 /*Tutorial Page CSS*/
+.select-area{
+    position:absolute;
+    top:100px;
+    font-size: 450px;
+    padding:2vw 5vw 8vw 1.21vw;
+    opacity: 0;
+    z-index:10;
+    cursor:pointer;
+}
+
+.tutorial-intrduction-background-layout {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+    min-height: 100vh;
+    width: 100%;
+    padding: 40px 0;
+    position: relative;
+    background-color: #ddf5e1;
+    top: 30px;
+    box-shadow: inset 100px 100px 100000px rgba(56, 142, 60, 0.5);
+}
+
+@keyframes slideBackground {
+    0% {
+        background: url(images/herbarium_specimen_introduction_background.jpg) no-repeat center bottom;
+        background-size: cover;
+    }
+    100% {
+        background: url(images/herbarium_specimen_introduction_background.jpg) no-repeat center top;
+        background-size: cover;
+    }
+}
+
+.tutorial-intrduction-background-layout1{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+    min-height: 20vh;
+    width: 100%;
+    padding: 40px 0;
+    position: relative;
+    background-color: #ddf5e1;
+    top: 30px;
+}
+.start-section,.end-section{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+    background-color: #fff;
+    opacity: 0.85;
+    border-radius:30px ;
+}
+
+
+.start-section p, .start-section h3{
+    background: linear-gradient(90deg, #4caf50, #81c784, #a5d6a7); 
+    background-clip: text;
+    background-size: 200% 200%;
+    color: transparent;
+    animation: gradientAnimation 2s ease infinite; 
+    font-size: 36px; 
+    margin: 8px;
+    text-align: center;
+    opacity: 1;
+}
+
+@keyframes gradientAnimation {
+    0% {
+        background-position: 0% 50%;
+    }
+    50% {
+        background-position: 100% 50%;
+    }
+    100% {
+        background-position: 0% 50%;
+    }
+}
+
+
+.tutorial-intrduction-background-layout h3{
+    font-size: 4.53vh;
+    margin:5px;
+    text-align: center;
+}
+
+.tutorial-intrduction-background-layout p{
+    font-size: 3.02vh;
+    margin:5px;
+    font-weight: 300;
+    text-align: center;
+}
+
+#change-background-tutorial{
+    display: none;
+}
+
+#change-background-tutorial:checked + label +.tutorial-intrduction-background-layout {
+    animation: slideBackground 2.5s forwards;
+}
+
+#change-background-tutorial:not(:checked) + label +.tutorial-intrduction-background-layout .end-section,#change-background-tutorial:not(:checked) + label +.tutorial-intrduction-background-layout +.tutorial-intrduction-background-layout1{
+    display: none;
+}
+
+#change-background-tutorial:checked + label +.tutorial-intrduction-background-layout .start-section{
+    display:none;
+}
+
+#tools, #tutorial, #care{
+    display: none;
+}
+
+.tutorial-intrduction-background-layout1 ul {
+    border: 1px solid darkgreen;
+    padding: 1.04vw; 
+    border-radius: 15px;
+    background-color: #228B22;
+    list-style: none; 
+    display: flex; 
+    flex-wrap: wrap; 
+}
+
+.tutorial-intrduction-background-layout1 ul li {
+    padding: 0.05vw; 
+    font-size: 2.8vh; 
+    color: #fff;
+    margin: 0 1vw; 
+}
+
+.tutorial-intrduction-background-layout1 ul li label{
+    cursor: pointer;
+}
+
+#tools:checked + input + input + ul li#tools-section,#tutorial:checked + input  + ul li#tutorial-section,#care:checked + ul li#care-section{
+    text-decoration: underline;
+    color:black;
+}
+
+.toolssection,.caresection,.tutorialsection {
+    display: flex;
+    flex-direction: row;
+    align-items: stretch;
+    align-items: center; 
+    justify-content: space-between; 
+    padding: 20px;
+    max-width: 1200px;
+    margin: auto; 
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+.toolssection h3,.caresection h3,.tutorialsection h3 {
+    font-size: 4vh;
+    text-align: center;
+    margin-bottom: 10px;
+}
+.toolssection p,.caresection p,.tutorialsection p {
+    font-size: 3vh;
+    justify-content: space-between;
+}
+
+.tutorial-introduction-text-content {
+    flex: 1; 
+    padding-right: 20px; 
+}
+
+.tutorial-introduction-image-content {
+    flex: 0 0 40%;
+    margin-right: 20px;
+}
+
+.tutorial-introduction-image-content img {
+    max-width: 100%;
+    max-height: 100%; 
+    object-fit: cover;
+}
+
+#tools:not(:checked) + input + input + ul + br + .toolssection,#tutorial:not(:checked) + input  + ul + br + .toolssection +.tutorialsection,#care:not(:checked) + ul + br + .toolssection +.tutorialsection +.caresection {
+    display: none;
+}
+
+#tools:checked + input + input + ul + br + .toolssection,#tutorial:checked  + input + ul + br + .toolssection +.tutorialsection,#care:checked + ul + br + .toolssection +.tutorialsection+.caresection{
+    display: flex;
+}
+
+@media (max-width: 768px) {
+    .toolssection,.caresection,.tutorialsection {
+        flex-direction: column; 
+        align-items: flex-start; 
+    }
+    .tutorial-intrduction-background-layout1 ul {
+        padding: 3vw; 
+    }
+
+    .tutorial-introduction-image-content {
+        margin-top: 20px; 
+        flex: none; 
+        width: 100%; 
+    }
+    .tutorial-intrduction-background-layout1 ul li {
+        font-size: 2vh; 
+    }
+}
 
 
 
