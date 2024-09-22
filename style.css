@@ -3360,6 +3360,14 @@ button.contribute-btn:hover {
     border-radius: 70px;
 }
 
+.genus_container {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin-top: 20px;
+    gap: 20px;
+}
+
 .vatica_content {
     position: relative; 
     display: inline-block;
@@ -3371,7 +3379,7 @@ button.contribute-btn:hover {
 .vatica_content img{
     width: auto;
     height: 500px;
-    margin-left: 20px;
+    margin-left: 40px;
     margin-top: -40px;
     border-radius: 70px;
 }
@@ -3380,6 +3388,40 @@ button.contribute-btn:hover {
     font-size: 26px;
     margin-left: 330px;
     margin-top: 40px;
+}
+
+.vatica_explain {
+    margin-left: 60px;
+    width: 650px;
+    font-size: 24px;
+}
+
+.hopea_content {
+    position: relative; 
+    display: inline-block;
+    width: auto;
+    margin-left: 20px;
+    margin-top: 50px;
+}
+
+.hopea_content img{
+    width: auto;
+    height: 500px;
+    margin-right: 40px;
+    margin-top: -40px;
+    border-radius: 70px;
+}
+
+.hopea_title {
+    font-size: 26px;
+    margin-left: 330px;
+    margin-top: 40px;
+}
+
+.hopea_explain {
+    margin-left: 60px;
+    width: 650px;
+    font-size: 24px;
 }
 
 
