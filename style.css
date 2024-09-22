@@ -2443,7 +2443,7 @@ button.contribute-btn:hover {
 .contribute-form-layout input[type="reset"] {
     position: absolute;
     top: 15px;
-    right: 15px;
+    right: 5px;
     background-color: #FF5722; 
     color: white;
     border: none;
@@ -2469,7 +2469,7 @@ button.contribute-btn:hover {
     }
 
     .contribute-form-layout input[type="reset"] {
-        padding: 10px 15px;
+        padding: 10px 12px;
     }
 }
 
