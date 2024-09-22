@@ -3192,6 +3192,20 @@ button.contribute-btn:hover {
         transform: translateY(0); 
     }
 }
+.caption-in-small{
+    display: none;
+}
+
+.figure-hidden{
+    display: none;
+    padding-left: 0px;
+    margin-right: 20px;
+}
+.figure-hidden img{
+    width: 500px;
+    height: 423px;
+    margin-right: -19px;
+}
 
 .bordered-content {
     display: flex;
@@ -3207,7 +3221,7 @@ button.contribute-btn:hover {
 
 .step1 img {
     width: 633px;
-    height: auto;
+    height: 423px;
     margin-right: -19px;
 }
 
@@ -3239,7 +3253,7 @@ button.contribute-btn:hover {
 
 .step2 img {
     width: 633px;
-    height: 405px;
+    height: 423px;
     margin-left: 0px;
 }
 
@@ -3265,6 +3279,169 @@ button.contribute-btn:hover {
     padding: 30px; 
     border-radius: 20px; 
     box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1); 
+}
+
+@media (max-width: 1399px) {
+    .step2 img {
+        width: 550px;
+    }
+    
+    .step3 img {
+        width: 550px;
+    }
+    .step1 img {
+        width: 550px;
+    }
+    .text-content {
+        padding: 50px;
+        width: 550px;
+    }
+}
+@media (max-width: 1189px) {
+    .step2 img {
+        width: 450px;
+    }
+    
+    .step3 img {
+        width: 450px;
+    }
+    .step1 img {
+        width: 450px;
+    }
+    .text-content {
+        padding: 50px;
+        width: 450px;
+    }
+}
+@media (max-width: 1020px) {
+    .care_container {
+        flex-direction: column;
+        gap: 20px;
+    }
+    .care1 {
+        display: flex;
+        width: 700px;
+        margin:0 auto;
+    }
+    .preservation_tips{
+        margin: 0 auto;
+        width:600px;
+    }
+}
+@media (max-width: 974px) {
+    .bordered-content {
+        flex-direction: column;
+    }
+    .step2 img {
+        display: none;
+    }
+
+    .caption-in-small{
+        font-size: 18px;
+        display: block;
+        text-align: center;
+        position: relative;
+        top:-35px;
+    }
+
+    .step2 .caption1 {
+        display: none;
+    }
+    
+    .step3 img {
+        width: 500px;
+    }
+    .step1 img {
+        width: 500px;
+    }
+    .text-content {
+        padding: 55px;
+        width: 500px;
+    }
+    .figure-hidden{
+        display: block;
+    }
+}
+
+@media (max-width: 850px) {
+    .care_definition {
+        width: 500px;
+    }
+    .care1 {
+        width: 500px;
+        height: 300px;
+    }
+    .preservation_tips{
+        width:400px;
+    }
+}
+@media (max-width: 600px) {
+    .care_definition {
+        width: 300px;
+    }
+    .care1 {
+        width: 300px;
+        height: 400px;
+    }
+    .preservation_tips{
+        width:200px;
+    }
+    .step3 img {
+        width: 300px;
+        height: 200px;
+    }
+    .step1 img {
+        width: 300px;
+        height: 200px;
+    }
+    .step1{
+        margin:20px 20px 0px 0px;
+        position:relative;
+        top:10px;
+    }
+    .step1 .caption1{
+        display: none;
+    }
+    .text-content {
+        width: 300px;
+        height: 700px;
+    }
+    .figure-hidden img{
+        width: 300px;
+        height: 200px;
+    }
+}
+@media (max-width: 550px) {
+    .care_heading {
+        font-size: 32px;
+    }
+    .care_h2 {
+        font-size: 24px;
+    }
+    .care_explaination {
+        font-size: 20px;
+        width: 400px;
+        margin-left:-40px ;
+    }
+    .description1{
+        font-size: 20px;
+        text-align: center;
+    }
+    .assignandrecord {
+        font-size: 22px;
+        text-align: center;
+    }
+
+    .care_definition {
+        font-size: 16px;
+    }
+    .caption-in-small{
+        font-size: 14px;
+    }
+    .text-content {
+        width: 300px;
+        height: 500px;
+    }
 }
 
 /* Classify page */
