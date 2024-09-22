@@ -3135,8 +3135,19 @@ button.contribute-btn:hover {
     position: relative;
     background-color: #ddf5e1;
     top: 30px;
-    transition: background 1.5s ease; 
+    transition: slideBackground 1s linear forwards;
     box-shadow: inset 100px 100px 100000px rgba(56, 142, 60, 0.5);
+}
+
+@keyframes slideBackground {
+    0% {
+        background: url(images/herbarium_specimen_introduction_background.jpg) no-repeat center bottom;
+        background-size: cover;
+    }
+    100% {
+        background: url(images/herbarium_specimen_introduction_background.jpg) no-repeat center top;
+        background-size: cover;
+    }
 }
 
 .tutorial-intrduction-background-layout1{
@@ -3158,7 +3169,11 @@ button.contribute-btn:hover {
     justify-content: center;
     align-items: center;
     overflow: hidden;
+    background-color: #fff;
+    opacity: 0.85;
+    border-radius:30px ;
 }
+
 
 .start-section p, .start-section h3{
     background: linear-gradient(90deg, #4caf50, #81c784, #a5d6a7); 
@@ -3167,8 +3182,9 @@ button.contribute-btn:hover {
     color: transparent;
     animation: gradientAnimation 2s ease infinite; 
     font-size: 36px; 
-    margin: 5px;
+    margin: 8px;
     text-align: center;
+    opacity: 1;
 }
 
 @keyframes gradientAnimation {
@@ -3202,8 +3218,7 @@ button.contribute-btn:hover {
 }
 
 #change-background-tutorial:checked + label +.tutorial-intrduction-background-layout {
-    background: url(images/herbarium_specimen_introduction_background.jpg) no-repeat center;
-    background-size: cover;
+    animation: slideBackground 1s linear forwards;
 }
 
 #change-background-tutorial:not(:checked) + label +.tutorial-intrduction-background-layout .end-section,#change-background-tutorial:not(:checked) + label +.tutorial-intrduction-background-layout +.tutorial-intrduction-background-layout1{
@@ -3241,6 +3256,7 @@ button.contribute-btn:hover {
 
 #tools:checked + input + input + ul li#tools-section,#tutorial:checked + input  + ul li#tutorial-section,#care:checked + ul li#care-section{
     text-decoration: underline;
+    color:black;
 }
 
 .toolssection,.caresection,.tutorialsection {
