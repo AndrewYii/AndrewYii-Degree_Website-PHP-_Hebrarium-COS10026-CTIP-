@@ -3059,6 +3059,16 @@ button.contribute-btn:hover {
 }
 
 /*Tutorial-Intoduction*/
+.select-area{
+    position:absolute;
+    top:100px;
+    font-size: 450px;
+    padding:2vw 5vw 8vw 1.21vw;
+    opacity: 0;
+    z-index:1000;
+    cursor:pointer;
+}
+
 .tutorial-intrduction-background-layout {
     display: flex;
     flex-direction: column;
@@ -3072,7 +3082,6 @@ button.contribute-btn:hover {
     background-color: #ddf5e1;
     top: 30px;
     transition: background 1.5s ease; 
-    cursor:pointer;
     box-shadow: inset 100px 100px 100000px rgba(56, 142, 60, 0.5);
 }
 
@@ -3138,16 +3147,16 @@ button.contribute-btn:hover {
     display: none;
 }
 
-#change-background-tutorial:checked + label .tutorial-intrduction-background-layout {
+#change-background-tutorial:checked + label +.tutorial-intrduction-background-layout {
     background: url(images/herbarium_specimen_introduction_background.jpg) no-repeat center;
     background-size: cover;
 }
 
-#change-background-tutorial:not(:checked) + label .end-section,#change-background-tutorial:not(:checked) + label +.tutorial-intrduction-background-layout1{
+#change-background-tutorial:not(:checked) + label +.tutorial-intrduction-background-layout .end-section,#change-background-tutorial:not(:checked) + label +.tutorial-intrduction-background-layout +.tutorial-intrduction-background-layout1{
     display: none;
 }
 
-#change-background-tutorial:checked + label .start-section {
+#change-background-tutorial:checked + label +.tutorial-intrduction-background-layout .start-section{
     display:none;
 }
 
