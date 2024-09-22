@@ -3111,6 +3111,7 @@ button.contribute-btn:hover {
 
 .care_container {
     display: flex;
+    flex-direction: row;
     align-items: flex-start;
     gap: 20px;
 }
@@ -3118,29 +3119,24 @@ button.contribute-btn:hover {
 
 .care1 {
     display: block;
-    margin: 0 auto;
     width: 700px;
     height: 500px;
-    margin-left: 30%;
+    margin-left: 20%;
 }
 
 .care1 img {
     width: 100%;
     height: auto;
-    top: 200px;
 }
 
 .preservation_tips {
-    max-width: 300px; 
+    margin-right: 5%;
     background-color: #f1f1f1; 
     padding: 30px; 
     border-radius: 20px; 
     box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1); 
-    margin-right: 40px;
     width: 250px;
 }
-
-
 
 
 .care_h2 {
@@ -3164,7 +3160,7 @@ button.contribute-btn:hover {
     justify-content: center;
     gap: 20px;
     padding: 20px;
-    margin-bottom: 50px;
+    margin-bottom: 60px;
     opacity: 0; 
     animation: fadeInUp 2s forwards; 
     animation-timeline: view();
@@ -3172,20 +3168,24 @@ button.contribute-btn:hover {
 
 @keyframes fadeInUp {
     0% {
-        opacity: 0.5;
-        transform: translateY(-128px);
+        opacity: 0.01;
+        transform: translateY(-80px);
     }
     25% {
-        opacity: 0.5;
-        transform: translateY(-96px);
+        opacity: 0.1;
+        transform: translateY(-60px);
+    }
+    40% {
+        opacity: 0.8;
+        transform: translateY(-50px);
     }
     50% {
         opacity: 1;
-        transform: translateY(-64px);
+        transform: translateY(-40px);
     }
     75% {
         opacity: 1;
-        transform: translateY(-32px);
+        transform: translateY(-20px);
     }
     100% {
         opacity: 1; 
@@ -3237,14 +3237,6 @@ button.contribute-btn:hover {
     font-size: 24px;
 }
 
-.text-content2 {
-    max-width: 633px;
-    background-color: white;   
-    padding: 90px;
-    gap: 0px; 
-    margin-right: 0px; 
-}
-
 .step2 img {
     width: 633px;
     height: 405px;
@@ -3265,7 +3257,8 @@ button.contribute-btn:hover {
 }
 
 .care_definition {
-    margin-left: 450px;
+    font-size: 20px;
+    margin: 0 auto;
     width: 800px;
     padding: 30px;
     background-color: #f1f1f1; 
@@ -3578,6 +3571,52 @@ button.contribute-btn:hover {
 #tools:checked + input + input + ul + br + .toolssection,#tutorial:checked  + input + ul + br + .toolssection +.tutorialsection,#care:checked + ul + br + .toolssection +.tutorialsection+.caresection{
     display: flex;
 }
+@media (max-width: 1323px) {
+    .select-area{
+        font-size: 400px;
+    }
+}
+@media (max-width: 1182px) {
+    .select-area{
+        font-size: 350px;
+    }
+}
+@media (max-width: 1055px) {
+    .select-area{
+        font-size: 300px;
+        padding:2vw 7vw 20vw 1.21vw;
+    }
+}
+@media (max-width: 895px) {
+    .select-area{
+        font-size: 250px;
+        padding:2vw 6.5vw 25vw 1.21vw;
+    }
+}
+@media (max-width: 738px) {
+    .select-area{
+        font-size: 200px;
+        padding:2vw 7vw 30vw 1.21vw;
+    }
+}
+@media (max-width: 601px) {
+    .select-area{
+        font-size: 150px;
+        padding:2vw 7vw 35vw 1.21vw;
+    }
+}
+@media (max-width: 441px) {
+    .select-area{
+        font-size: 100px;
+        padding:2vw 7vw 40vw 1.21vw;
+    }
+}
+@media (max-width: 294px) {
+    .select-area{
+        font-size: 50px;
+        padding:2vw 7vw 45vw 1.21vw;
+    }
+}
 
 @media (max-width: 768px) {
     .toolssection,.caresection,.tutorialsection {
@@ -3594,6 +3633,6 @@ button.contribute-btn:hover {
         width: 100%; 
     }
     .tutorial-intrduction-background-layout1 ul li {
-        font-size: 2vh; 
+        font-size: 1.8vh; 
     }
 }
