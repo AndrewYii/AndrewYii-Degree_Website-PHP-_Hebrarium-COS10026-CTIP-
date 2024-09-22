@@ -2171,20 +2171,21 @@ nav .menu {
 /*Enquiry.html*/
 
 .enquiry-reset input{
+    background-color: #FF5722;
+    color: white;
     position: relative;
-    left: 200px;
-    top: 20px;
-    font-size: 20px;
+    left: 257px;
+    top: 10px;
+    font-size: 15px;
+    padding: 10px 15px;
     border: none;
     appearance: None;
-    margin: 10px;
-    padding: 10px;
-    border-radius: 30px;
+    border-radius: 5px;
 }
 
 .enquiry-head{
     font-size: 40px;
-    padding: 10px 0px 20px 0px;
+    padding: 0px 0px 20px 0px;
 }
 
 .identify-enquiry{
@@ -2200,8 +2201,8 @@ nav .menu {
 
 .enquiry-form{
     background-color: white;
-    padding: 50px;
-    border-radius: 50px;
+    padding: 0px 50px 50px 50px;
+    border-radius: 10px;
     width: 600px;
     box-shadow: 0 5px 10px rgba(0, 0, 0, .1);
     display: flex;
@@ -2270,6 +2271,10 @@ nav .menu {
   }
 
 .enquiry-end input:hover{
+    background-color: #ddf5e1;
+}
+
+.enquiry-reset input:hover{
     background-color: #ddf5e1;
 }
 
