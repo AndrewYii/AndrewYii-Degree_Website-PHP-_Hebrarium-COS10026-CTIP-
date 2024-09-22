@@ -3370,7 +3370,7 @@ button.contribute-btn:hover {
 }
 
 .vatica_content img{
-    width: auto;
+    width: 700px;
     height: 500px;
     margin-left: 40px;
     margin-top: -40px;
@@ -3398,7 +3398,7 @@ button.contribute-btn:hover {
 }
 
 .hopea_content img{
-    width: auto;
+    width: 700px;
     height: 500px;
     margin-right: 40px;
     margin-top: -40px;
@@ -3417,6 +3417,12 @@ button.contribute-btn:hover {
     font-size: 24px;
 }
 
+.vatica_details {
+    font-size: 24px;
+    width: 650px;
+    margin-left: 60px;
+    margin-top: 20px;
+}
 
 
 
