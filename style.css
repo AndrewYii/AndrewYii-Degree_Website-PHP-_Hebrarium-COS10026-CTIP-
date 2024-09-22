@@ -2018,7 +2018,7 @@ nav .menu {
     background-image: url('images/aniq.jpeg');
     background-size: cover;
     background-position: center;
-    border: 5px groove darkgreen;
+    border: 5px groove blue;
 }
 
 #change_box:checked + .transform-box2 {
@@ -2027,7 +2027,7 @@ nav .menu {
     background-image: url('images/Assufi.jpg');
     background-size: cover;
     background-position: center;
-    border: 5px groove darkgreen;
+    border: 5px groove purple;
 }
 
 #change_box:checked + .transform-box3 {
@@ -2036,7 +2036,7 @@ nav .menu {
     background-image: url('images/Faiz.jpg');
     background-size: cover;
     background-position: center;
-    border: 5px groove darkgreen;
+    border: 5px groove orange;
 }
 
 #change_box:checked + .transform-box .box-text,#change_box:checked + .transform-box1 .box-text,#change_box:checked + .transform-box2 .box-text,#change_box:checked + .transform-box3 .box-text {
