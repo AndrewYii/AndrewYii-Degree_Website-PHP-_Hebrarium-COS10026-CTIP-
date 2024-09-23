@@ -2915,8 +2915,36 @@ button.contribute-btn:hover {
 
 /*Tutorial Page CSS*/
 
+.tuto_background {
+    background-color: #DDF5E1;
+}
+
+.tutorial_heading {
+    padding-top: 130px;
+    padding-bottom: 30px;
+    text-align: center;
+    font: bold 36px "Outfit", sans-serif;
+}
+
+.tuto_container {
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    gap: 20px;
+}
 
 
+.tuto1 {
+    display: block;
+    width: 700px;
+    height: 500px;
+    margin-left: 20%;
+}
+
+.tuto1 img {
+    width: 100%;
+    height: auto;
+}
 
 /*care page*/
 
