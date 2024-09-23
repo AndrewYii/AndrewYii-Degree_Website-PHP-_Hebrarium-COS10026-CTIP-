@@ -3321,6 +3321,10 @@ button.contribute-btn:hover {
     margin-top: 50px;
 }
 
+.plantfamtree {
+    margin-left: 300px;
+}
+
 .classification1 {
     display: flex; 
     flex-direction: row;       
@@ -3449,6 +3453,10 @@ button.contribute-btn:hover {
     margin-top: 40px;
 }
 
+.picofvatica {
+    margin-left: 350px;
+}
+
 
 .vatica_explain {
     margin-left: 180px;
@@ -3501,6 +3509,18 @@ button.contribute-btn:hover {
     margin-top: 40px;
     font-size: 26px;
     margin-left: 325px;
+}
+
+.picofhopea {
+    margin-right: 250px;
+}
+
+.picofyeechongii {
+    margin-left: 300px;
+}
+
+.picofparviflora {
+    margin-right: 250px;
 }
 
 .hopea_explain {
