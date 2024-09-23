@@ -3838,6 +3838,22 @@ button.contribute-btn:hover {
     .classify1 img{
         width: 350px;
     }
+    .defi1-heading{
+        width: 400px;
+    }
+}
+@media (max-width: 707px){
+    .vatica_part{
+        position: relative;
+        top:0;
+        right: 0;
+        margin-left: 15px;
+    }
+    .hopea_part1{
+        position: relative;
+        top:0;
+        right: 0;
+    }
 }
 
 /*Tutorial-Intoduction*/
