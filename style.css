@@ -2919,6 +2919,13 @@ button.contribute-btn:hover {
     background-color: #DDF5E1;
 }
 
+.tutorial_heading {
+    padding-top: 130px;
+    padding-bottom: 30px;
+    text-align: center;
+    font: bold 36px "Outfit", sans-serif;
+}
+
 /*care page*/
 
 .care_background {
