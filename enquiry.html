@@ -8,7 +8,7 @@
     	<meta name="viewport" content="width=device-width, initial-scale=1.0">
         <meta name="description" content="Unlock the secrets of plant identification with Plant's Notebook. Learn to identify various plant species, understand their characteristics, and explore the tools and techniques used by botanists. Ideal for botanists, hobbyists, and nature enthusiasts." />
         <meta name="keywords" content="Herbarium Specimen Tutorial, Classify Plant, Herbarium Specimen Preserve, Herbarium Specimen Tools, Plant Identifier, Botany, Plant Preservation, Plant Classification, Botanical Tools, Plant Identification, Botanical Education, Nature Enthusiasts, Botanical Hobbyists, Plant Collection, Herbarium Techniques,Plant Common Name, Plant Scientific Name,Herbarium Specimen" />
-        <meta name="author" content=" Aniq"  />
+        <meta name="author" content="Aniq Nazhan bin Mazlan"  />
         <title>Plant's Notebook | Enquiry</title>
         <link rel="stylesheet" href="style.css">
     	<link rel="icon" type="image/x-icon" href="Images/logo.png">
@@ -100,12 +100,12 @@
                         </li>
 
                         <li class="dropdown">
-                            <a href="tutorial.html">Tutorial</a>
+                            <a href="tutorial-introduction.html">Tutorial</a>
                             <ul class="dropdown-menu">
                                 <li>
                                     <div class="dropdown-content">
                                         <div class="dropdown-text">
-                                            <h3><a href="tutorial.html">Herbarium Specimen Tutorial</a></h3>
+                                            <h3><a href="tutorial-introduction.html">Herbarium Specimen Tutorial</a></h3>
                                             <p>Master the craft of turning fresh leaves into preserved treasures. Follow our easy steps to document and safeguard plant diversity like a pro.</p>
                                         </div>
                                         <div class="dropdown-description">
@@ -272,7 +272,7 @@
 
                         <div class="side-menubar">
                             <div class="side-menubar-maintitle">
-                                <a href="tutorial.html">Tutorial</a>
+                                <a href="tutorial-introduction.html">Tutorial</a>
                             </div>
                             <label for="next_side1" class="next">
                                 <img src="images/next_icon.png" alt="Next Icon">
@@ -381,7 +381,7 @@
             </nav>
         </header>
         <article class="identify-enquiry">
-            <a href="introduction.html">
+            <a href="profile-introduction.html">
                 <div class="chatbot-container">
                     <div id="chatbot">
                         <div class="dot"></div>
@@ -395,8 +395,9 @@
                     </div>
                 </div>
             </a>
-            <h1 class="enquiry-head">Enquiry</h1>
             <div class="enquiry-form">
+            <div class="enquiry-reset"><input class="feedback-butn" type="reset" value="Reset"></div>
+            <h1 class="enquiry-head">Enquiry</h1>
             <form name="Feedback" method="post" action="mailto:aniqnazhan1234@gmail.com" enctype="text/plain" class="enquiry-form-01">
                 <fieldset class="enquiry-fd">
                     <legend class="enquiry-legend">User's Information</legend>
@@ -414,8 +415,8 @@
                             <td class="feedback-cont"><label for="tel">Phone</label> Number</td>
                         </tr>
                         <tr>
-                            <td><input class="enquiry-data" type="email" id="email" name="email" placeholder="example@gmail.com" required="required" id="email"></td>
-                            <td><input class="enquiry-data" type="tel" id="tel" name="phone" pattern="[0-9]{10}" placeholder="0123456789" maxlength="10" required="required" id="tel"></td>
+                            <td><input class="enquiry-data" type="email" id="email" name="email" placeholder="example@gmail.com" required="required"></td>
+                            <td><input class="enquiry-data" type="tel" id="tel" name="phone" pattern="[0-9]{10}" placeholder="0123456789" maxlength="10" required="required"></td>
                         </tr>
                     </table>
                 </fieldset>
@@ -423,21 +424,21 @@
                     <legend class="enquiry-legend">Address</legend>
                     <table class="address-table">
                         <tr>
-                            <td class="enquiry-address">Street: </td>
-                            <td><input class="enquiry-data" type="text" name="Street" placeholder="Street" size="30" maxlength="100" required="required" id="street"></td>
+                            <td class="feedback-cont">Street: </td>
+                            <td><input class="enquiry-data" type="text" name="Street" placeholder="Street" maxlength="100" required="required" id="street"></td>
                         </tr>
                         <tr>
-                            <td class="enquiry-address">City: </td>
-                            <td><input class="enquiry-data" type="text" name="City" placeholder="City" size="30" maxlength="100" required="required" id="city"></td>
+                            <td class="feedback-cont">City: </td>
+                            <td><input class="enquiry-data" type="text" name="City" placeholder="City" maxlength="100" required="required" id="city"></td>
                         </tr>
                         <tr>
-                            <td class="enquiry-address">Postcode: </td>
-                            <td><input class="enquiry-data" type="number" name="Postcode" size="30" maxlength="100" required="required" id="Postcode"></td>
+                            <td class="feedback-cont">Postcode: </td>
+                            <td><input class="enquiry-data" type="number" name="Postcode" maxlength="100" required="required" id="Postcode"></td>
                         </tr>
                         <tr>
-                            <td class="enquiry-address">State: </td>
+                            <td class="feedback-cont">State: </td>
                             <td>
-                                <select name="State" id="state">
+                                <select name="State" id="state" class="enquiry-data">
                                 <option value="Johor">Johor</option>
                                 <option value="Kedah">Kedah</option>
                                 <option value="Kelantan">Kelantan</option>
@@ -458,244 +459,227 @@
                 </fieldset>
                 <fieldset class="enquiry-fd">
                     <legend class="enquiry-legend">Feedback</legend>
-                        <table class="enquriry-table"></table>
+                        <table class="enquriry-table">
                                 <tr>
-                                    <td>Select Page</td>
+                                    <td class="feedback-cont">Enquiry</td>
                                 </tr>
                                 <tr>
+                                    <!-- ADD STUFF -->
                                     <td>
-                                    <select name="page" id="page" size="1" class="feedback-select">
-                                        <option value="acknowledgment">acknowledgment</option>
-                                        <option value="andrew">Andrew</option>
-                                        <option value="aniq">Aniq</option>
-                                        <option value="assufi">Assufi</option>
-                                        <option value="care">Care</option>
-                                        <option value="classiify">Classify</option>
-                                        <option value="contribute">Contribute</option>
-                                        <option value="contribution">Contribution</option>
-                                        <option value="enhancement">Enhancement</option>
-                                        <option value="enquiry">Enquiry</option>
-                                        <option value="faiz">Faiz</option>
-                                        <option value="identify">Identify</option>
-                                        <option value="index">Index</option>
-                                        <option value="introduction">Introduction</option>
-                                        <option value="login">Login</option>
-                                        <option value="registration">Registration</option>
-                                        <option value="tools">Tools</option>
-                                        <option value="tutorial">Tutorial</option>
+                                        <select name="page" id="page" size="1" class="enquiry-data">
+                                            <option value=""></option> 
                                         </select> 
                                     </td>
                                 </tr>
                                 <tr>
                                     <td>
-                                        <label for="comment">Comment</label>
+                                        <label for="comment" class="feedback-cont">Comment</label>
                                     </td>
                                 </tr>
                                 <tr>
-                                    <td><textarea name="comment" rows="4" cols="70" placeholder="comment" required="required" id="comment"></textarea></td>
+                                    <td><textarea name="comment" rows="4" cols="70" placeholder="comment" required="required" id="comment" class="enquiry-comment"></textarea></td>
                                 </tr>
                             </table>
                     </fieldset>
-                    <div class="enquiry-end"><input class="feedback-butn" type="submit" value="Submit"> <input class="feedback-butn" type="reset" value="Reset"></div>
+                    <div class="enquiry-end"><input class="feedback-butn" type="submit" value="Submit"></div>
                 </form>
+            </div>
+        </article>    
+        <footer>
+            <div class="footer-layout">
+                <div class="footer-column">
+                    <div>
+                        <strong>
+                            <a href="classify.html">
+                                Classification
+                            </a>
+                        </strong>
+                    </div>
+                    <div>
+                        <a>
+                            Plant's Genus
+                        </a>
+                    </div>
+                    <div>
+                        <a>
+                            Plant's Family
+                        </a>
+                    </div>
+                    <div>
+                        <a>
+                            Plant's Species
+                        </a>
+                    </div>
                 </div>
-            </article>    
-            <footer>
-                <div class="footer-layout">
-                    <div class="footer-column">
-                        <div>
-                            <strong>
-                                <a href="classify.html">
-                                    Classification
-                                </a>
-                            </strong>
-                        </div>
-                        <div>
-                            <a>
-                                Plant's Genus
+                <div class="footer-column">
+                    <div>
+                        <strong>
+                            <a href="tutorial-introduction.html">
+                                Tutorial
                             </a>
-                        </div>
-                        <div>
-                            <a>
-                                Plant's Family
-                            </a>
-                        </div>
-                        <div>
-                            <a>
-                                Plant's Species
-                            </a>
-                        </div>
+                        </strong>
                     </div>
-                    <div class="footer-column">
-                        <div>
-                            <strong>
-                                <a href="tutorial.html">
-                                    Tutorial
-                                </a>
-                            </strong>
-                        </div>
-                        <div>
-                            <a href="tools.html" title="Go To The Tools Page">
-                                Tools for Prepare
-                            </a>
-                        </div>
-                        <div>
-                            <a href="tutorial.html" title="Go To The Tutorial Page">
-                                Ways for Make
-                            </a>
-                        </div>
-                        <div>
-                            <a href="care.html" title="Go To The Care Page">
-                                Techniques for Preserve
-                            </a>
-                        </div>
+                    <div>
+                        <a href="tools.html" title="Go To The Tools Page">
+                            Tools for Prepare
+                        </a>
                     </div>
-                    <div class="footer-column">
-                        <div>
-                            <strong>
-                                <a href="identify.html">
-                                    Identify
-                                </a>
-                            </strong>
-                        </div>
-                        <div>
-                            <a>
-                                Plant's Common Name
-                            </a>
-                        </div>
-                        <div>
-                            <a>
-                                Plant's Scientific Name
-                            </a>
-                        </div>
-                        <div>
-                            <a>
-                                Plant's Specimen
-                            </a>
-                        </div>
+                    <div>
+                        <a href="tutorial.html" title="Go To The Tutorial Page">
+                            Ways for Make
+                        </a>
                     </div>
-                    <div class="footer-column">
-                        <div>
-                            <strong>
-                                <a href="contribution.html">
-                                    Contribution
-                                </a>
-                            </strong>
-                        </div>
-                        <div>
-                            <a>
-                                Plant's Common Name
-                            </a>
-                        </div>
-                        <div>
-                            <a>
-                                Plant's Scientific Name
-                            </a>
-                        </div>
-                        <div>
-                            <a>
-                                Plant's Specimen
-                            </a>
-                        </div>
-                        <div>
-                            <a>
-                                Plant's Leaf (Photos)
-                            </a>
-                        </div>
-                        <div>
-                            <a>
-                                Plant's Specimen (Photos)
-                            </a>
-                        </div>
+                    <div>
+                        <a href="care.html" title="Go To The Care Page">
+                            Techniques for Preserve
+                        </a>
                     </div>
-                    <div class="footer-column">
-                        <div>
-                            <strong>
-                                <a href="enquiry.html">
-                                    Enquiry
-                                </a>
-                            </strong>
-                        </div>
-                        <div>
-                            <a>
-                                Name
+                </div>
+                <div class="footer-column">
+                    <div>
+                        <strong>
+                            <a href="identify.html">
+                                Identify
                             </a>
-                        </div>
-                        <div>
-                            <a>
-                                 Contact Number
-                            </a>
-                        </div>
-                        <div>
-                            <a>
-                                Email Address
-                            </a>
-                        </div>
-                        <div>
-                            <a>
-                                Address
-                            </a>
-                        </div>
-                        <div>
-                            <a>
-                                Question
-                            </a>
-                        </div>
+                        </strong>
                     </div>
+                    <div>
+                        <a>
+                            Plant's Common Name
+                        </a>
+                    </div>
+                    <div>
+                        <a>
+                            Plant's Scientific Name
+                        </a>
+                    </div>
+                    <div>
+                        <a>
+                            Plant's Specimen
+                        </a>
+                    </div>
+                </div>
+                <div class="footer-column">
+                    <div>
+                        <strong>
+                            <a href="contribution.html">
+                                Contribution
+                            </a>
+                        </strong>
+                    </div>
+                    <div>
+                        <a>
+                            Plant's Common Name
+                        </a>
+                    </div>
+                    <div>
+                        <a>
+                            Plant's Scientific Name
+                        </a>
+                    </div>
+                    <div>
+                        <a>
+                            Plant's Specimen
+                        </a>
+                    </div>
+                    <div>
+                        <a>
+                            Plant's Leaf (Photos)
+                        </a>
+                    </div>
+                    <div>
+                        <a>
+                            Plant's Specimen (Photos)
+                        </a>
+                    </div>
+                </div>
+                <div class="footer-column">
+                    <div>
+                        <strong>
+                            <a href="enquiry.html">
+                                Enquiry
+                            </a>
+                        </strong>
+                    </div>
+                    <div>
+                        <a>
+                            Name
+                        </a>
+                    </div>
+                    <div>
+                        <a>
+                             Contact Number
+                        </a>
+                    </div>
+                    <div>
+                        <a>
+                            Email Address
+                        </a>
+                    </div>
+                    <div>
+                        <a>
+                            Address
+                        </a>
+                    </div>
+                    <div>
+                        <a>
+                            Question
+                        </a>
+                    </div>
+                </div>
                     
-                    <div class="footer-column">
-                        <div>
-                            <strong>
-                                <a href="acknowledgment.html">
-                                    Acknowledgement
-                                </a>
-                            </strong>
-                        </div>
-                        <div>
-                            <strong>
-                                <a href="enhancement.html">
-                                    Enhancement
-                                </a>
-                            </strong>
-                        </div>
-                        <div>
-                            <strong>
-                                Stay Connected:
-                            </strong>
-                        </div>
-                        <div>
-                            <a href="mailto:104386568@students.swinburne.edu.my">
-                                Andrew Yii
+                <div class="footer-column">
+                    <div>
+                        <strong>
+                            <a href="acknowledgment.html">
+                                Acknowledgement
                             </a>
-                        </div>
-                        <div>
-                            <a href="mailto:104384915@students.swinburne.edu.my">
-                                Aniq Nazhan
+                        </strong>
+                    </div>
+                    <div>
+                        <strong>
+                            <a href="enhancement.html">
+                                Enhancement
                             </a>
-                        </div>
-                        <div>
-                            <a href="mailto:104381877@students.swinburne.edu.my">
-                                Assufi Luqman
-                            </a>
-                        </div>
-                        <div>
-                            <a href="mailto:104384313@students.swinburne.edu.my">
-                                Faiz Halek
-                            </a>
-                        </div>
-                        <div>
-                            <strong>
-                                &#169; Plant's Notebook
-                            </strong>
-                        </div>
-                        <div>
-                            <strong>
-                                Last updated:
-                            </strong>
-                        </div>
+                        </strong>
+                    </div>
+                    <div>
+                        <strong>
+                            Stay Connected:
+                        </strong>
+                    </div>
+                    <div>
+                        <a href="mailto:104386568@students.swinburne.edu.my">
+                            Andrew Yii
+                        </a>
+                    </div>
+                    <div>
+                        <a href="mailto:104384915@students.swinburne.edu.my">
+                            Aniq Nazhan
+                        </a>
+                    </div>
+                    <div>
+                        <a href="mailto:104381877@students.swinburne.edu.my">
+                            Assufi Luqman
+                        </a>
+                    </div>
+                    <div>
+                        <a href="mailto:104384313@students.swinburne.edu.my">
+                            Faiz Halek
+                        </a>
+                    </div>
+                    <div>
+                        <strong>
+                            &#169; Plant's Notebook
+                        </strong>
+                    </div>
+                    <div>
+                        <strong>
+                            Last updated:
+                        </strong>
                     </div>
                 </div>
-            </footer>
-    
+            </div>
+        </footer>    
     </body>
 </html>
