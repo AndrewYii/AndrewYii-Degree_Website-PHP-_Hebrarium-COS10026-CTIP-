@@ -2921,7 +2921,7 @@ button.contribute-btn:hover {
 
 .tutorial_heading {
     padding-top: 130px;
-    padding-bottom: 30px;
+    padding-bottom: 60px;
     text-align: center;
     font: bold 36px "Outfit", sans-serif;
 }
@@ -2940,21 +2940,65 @@ button.contribute-btn:hover {
     margin-left: 20%;
 }
 
+.tuto_1 img {
+    display: block;
+    width: 50%;
+    margin-right: auto;
+    margin-left: auto;
+    margin-bottom: 100px;
+}
+
 .tuto1 img {
     width: 100%;
     height: auto;
+    display: block
 }
 
 .tuto_h2 {
     font-size: 26px;
     text-align: center;
+    padding-bottom: 25px;
 }
 
 .tuto_explaination {
+    padding-bottom: 25px;
     text-align: center;
     margin-left: 30px;
     margin-right: 30px;
     font-size: 24px;
+}
+
+.tuto-text-content {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: #f1f1f1; /* light green background */
+    margin: 2px 0;
+}
+
+.step-image {
+    flex: 1;
+    padding-right: 20px;
+}
+
+.step-image img {
+    width: 100%;
+    height: auto;
+}
+
+.step-text {
+    flex: 1;
+    padding-left: 20px;
+}
+
+.step-text h3 {
+    font-size: 1.5rem;
+    margin-bottom: 10px;
+}
+
+.step-text p {
+    font-size: 1rem;
+    line-height: 1.6;
 }
 
 /*care page*/
@@ -3363,8 +3407,7 @@ button.contribute-btn:hover {
 }
 
 .family_title {
-    position: relative;
-    top: 20px;
+    margin-top: 10px;
     text-align: center;
     font-size: 28px;
     padding:20px;
@@ -3412,6 +3455,7 @@ button.contribute-btn:hover {
     padding-left: 0px;
     margin-right: 20px;
 }
+
 
 .classify2 img {
     width: 650px;
@@ -3723,6 +3767,9 @@ button.contribute-btn:hover {
     }
 }
 @media (max-width: 763px) {
+    .section-classify{
+        width: 96.09vh;
+    }
     .defi1-container1{
         position: relative;
         left:-50px;
