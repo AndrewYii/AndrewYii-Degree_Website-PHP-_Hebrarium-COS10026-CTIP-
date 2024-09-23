@@ -2915,13 +2915,13 @@ button.contribute-btn:hover {
 
 /*Tutorial Page CSS*/
 
-.tuto_background {
+.tutorial_bg {
     background-color: #DDF5E1;
 }
 
-.tutorial_heading {
+.tuto_heading {
     padding-top: 130px;
-    padding-bottom: 60px;
+    padding-bottom: 30px;
     text-align: center;
     font: bold 36px "Outfit", sans-serif;
 }
@@ -2935,70 +2935,306 @@ button.contribute-btn:hover {
 
 .tuto1 {
     display: block;
-    width: 443px;
-    height: auto;
-    margin-left: 20%;
-}
-
-.tuto_1 img {
-    display: block;
-    width: 50%;
-    margin-right: auto;
-    margin-left: auto;
-    margin-bottom: 100px;
+    width: 700px;
+    height: 475px;
+    margin: 0 auto;
 }
 
 .tuto1 img {
+    padding-top: 20px;
     width: 100%;
     height: auto;
-    display: block
 }
 
 .tuto_h2 {
-    font-size: 26px;
+    padding-top: 25px;
     text-align: center;
-    padding-bottom: 25px;
+    font-size: 28px;
 }
 
 .tuto_explaination {
-    padding-bottom: 25px;
-    text-align: center;
-    margin-left: 30px;
-    margin-right: 30px;
+    text-align: justify;
+    margin: 0 auto;
+    padding: 20px 100px 60px 100px;
     font-size: 24px;
 }
 
-.tuto-text-content {
+.step-container {
     display: flex;
+    justify-content: center;
+    gap: 20px;
+    padding: 20px;
+    margin-bottom: 60px;
+    opacity: 0; 
+    animation: fadeInUp 2s forwards; 
+    animation-timeline: view();
+}
+
+@keyframes fadeInUp {
+    0% {
+        opacity: 0.01;
+        transform: translateY(-80px);
+    }
+    25% {
+        opacity: 0.1;
+        transform: translateY(-60px);
+    }
+    40% {
+        opacity: 0.8;
+        transform: translateY(-50px);
+    }
+    50% {
+        opacity: 1;
+        transform: translateY(-40px);
+    }
+    75% {
+        opacity: 1;
+        transform: translateY(-20px);
+    }
+    100% {
+        opacity: 1; 
+        transform: translateY(0); 
+    }
+}
+.caption-in-small{
+    display: none;
+}
+
+.figure-hidden{
+    display: none;
+    padding-left: 0px;
+    margin-right: 20px;
+}
+.figure-hidden img{
+    width: 500px;
+    height: 423px;
+    margin-right: -19px;
+}
+
+.bordered-content {
+    display: flex;
+    flex-direction: row; 
     align-items: center;
-    justify-content: space-between;
-    background-color: #f1f1f1; /* light green background */
-    margin: 2px 0;
 }
 
-.step-image {
-    flex: 1;
-    padding-right: 20px;
+.step1 {
+    display: block;
+    padding-left: 0px;
+    margin-right: 20px;
 }
 
-.step-image img {
-    width: 100%;
-    height: auto;
+.step1 img {
+    width: 633px;
+    height: 423px;
+    margin-right: -19px;
 }
 
-.step-text {
-    flex: 1;
-    padding-left: 20px;
+.caption1 {
+    text-align: center;
+    font-size: 18px;
+    margin-bottom: -27px;
 }
 
-.step-text h3 {
-    font-size: 1.5rem;
-    margin-bottom: 10px;
+.text-content {
+    width: 633px;
+    height: 423px;
+    background-color: white;   
+    padding: 99px;
+    gap: 0px; 
+    margin-left: 0px; 
 }
 
-.step-text p {
-    font-size: 1rem;
-    line-height: 1.6;
+.assignandrecord {
+    margin-bottom: 15px;
+    font-size: 26px;
+}
+
+.description1 {
+    margin-top: 40px;
+    margin-bottom: 0;
+    font-size: 24px;
+}
+
+.step2 img {
+    width: 633px;
+    height: 423px;
+    margin-left: 0px;
+}
+
+.step3 img {
+    width: 633px;
+    height: 423px;
+    margin-left: 0px;
+}
+
+.care_bottom {
+    display: flex;
+    justify-content: flex-start;
+    gap: 20px;
+    padding: 20px;
+}
+
+@media (max-width: 1399px) {
+    .step2 img {
+        width: 550px;
+    }
+    
+    .step3 img {
+        width: 550px;
+    }
+    .step1 img {
+        width: 550px;
+    }
+    .text-content {
+        padding: 50px;
+        width: 550px;
+    }
+}
+@media (max-width: 1189px) {
+    .step2 img {
+        width: 450px;
+    }
+    
+    .step3 img {
+        width: 450px;
+    }
+    .step1 img {
+        width: 450px;
+    }
+    .text-content {
+        padding: 50px;
+        width: 450px;
+    }
+}
+@media (max-width: 1020px) {
+    .care_container {
+        flex-direction: column;
+        gap: 20px;
+    }
+    .care1 {
+        display: flex;
+        width: 700px;
+        margin:0 auto;
+    }
+    .preservation_tips{
+        margin: 0 auto;
+        width:600px;
+    }
+}
+@media (max-width: 974px) {
+    .bordered-content {
+        flex-direction: column;
+    }
+    .step2 img {
+        display: none;
+    }
+
+    .caption-in-small{
+        font-size: 18px;
+        display: block;
+        text-align: center;
+        position: relative;
+        top:-35px;
+    }
+
+    .step2 .caption1 {
+        display: none;
+    }
+    
+    .step3 img {
+        width: 500px;
+    }
+    .step1 img {
+        width: 500px;
+    }
+    .text-content {
+        padding: 55px;
+        width: 500px;
+    }
+    .figure-hidden{
+        display: block;
+    }
+}
+
+@media (max-width: 850px) {
+    .care_definition {
+        width: 500px;
+    }
+    .care1 {
+        width: 500px;
+        height: 300px;
+    }
+    .preservation_tips{
+        width:400px;
+    }
+}
+@media (max-width: 600px) {
+    .care_definition {
+        width: 300px;
+    }
+    .care1 {
+        width: 300px;
+        height: 400px;
+    }
+    .preservation_tips{
+        width:200px;
+    }
+    .step3 img {
+        width: 300px;
+        height: 200px;
+    }
+    .step1 img {
+        width: 300px;
+        height: 200px;
+    }
+    .step1{
+        margin:20px 20px 0px 0px;
+        position:relative;
+        top:10px;
+    }
+    .step1 .caption1{
+        display: none;
+    }
+    .text-content {
+        width: 300px;
+        height: 700px;
+    }
+    .figure-hidden img{
+        width: 300px;
+        height: 200px;
+    }
+}
+@media (max-width: 550px) {
+    .care_heading {
+        font-size: 32px;
+    }
+    .care_h2 {
+        font-size: 24px;
+    }
+    .care_explaination {
+        font-size: 20px;
+        padding: 20px 0px 20px 0px;
+        width: 325px;
+    }
+    .description1{
+        font-size: 20px;
+        text-align: center;
+    }
+    .assignandrecord {
+        font-size: 22px;
+        text-align: center;
+    }
+
+    .care_definition {
+        font-size: 16px;
+    }
+    .caption-in-small{
+        font-size: 14px;
+    }
+    .text-content {
+        width: 300px;
+        height: 500px;
+    }
 }
 
 /*care page*/
