@@ -2021,7 +2021,7 @@ nav .menu {
 .transform-box3{
     width: 250px;
     height: 250px;
-    background-color: orange;
+    background-color: red;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -2084,7 +2084,7 @@ nav .menu {
     background-image: url('images/Faiz.jpg');
     background-size: cover;
     background-position: center;
-    border: 5px groove orange;
+    border: 5px groove red;
 }
 
 #change_box:checked + .transform-box .box-text,#change_box:checked + .transform-box1 .box-text,#change_box:checked + .transform-box2 .box-text,#change_box:checked + .transform-box3 .box-text {
@@ -2168,7 +2168,7 @@ nav .menu {
 
 /*Faiz-Profile*/
 .odd-row3{
-    background-color: orange;
+    background-color: red;
     color: #fff;
 
 }
