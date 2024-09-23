@@ -2915,8 +2915,9 @@ button.contribute-btn:hover {
 
 /*Tutorial Page CSS*/
 
-
-
+.tuto_background {
+    background-color: #DDF5E1;
+}
 
 /*care page*/
 
