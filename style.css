@@ -3056,6 +3056,12 @@ button.contribute-btn:hover {
     font-size: 24px;
 }
 
+.description5 {
+    margin-top: -20px;
+    margin-bottom: 100px;
+    font-size: 24px;
+}
+
 .step2 img {
     width: 633px;
     height: 423px;
@@ -3067,6 +3073,7 @@ button.contribute-btn:hover {
     width: 633px;
     height: 423px;
     margin-left: 0px;
+    margin-bottom: 23px;
 }
 
 .care_bottom {
