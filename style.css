@@ -3359,8 +3359,7 @@ button.contribute-btn:hover {
 }
 
 .family_title {
-    position: relative;
-    top: 20px;
+    margin-top: 10px;
     text-align: center;
     font-size: 28px;
     padding:20px;
@@ -3408,6 +3407,7 @@ button.contribute-btn:hover {
     padding-left: 0px;
     margin-right: 20px;
 }
+
 
 .classify2 img {
     width: 650px;
@@ -3703,6 +3703,9 @@ button.contribute-btn:hover {
     }
 }
 @media (max-width: 763px) {
+    .section-classify{
+        width: 96.09vh;
+    }
     .defi1-container1{
         position: relative;
         left:-50px;
