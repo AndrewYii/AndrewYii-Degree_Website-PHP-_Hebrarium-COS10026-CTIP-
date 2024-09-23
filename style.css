@@ -3295,6 +3295,8 @@ button.contribute-btn:hover {
 
 /* Classify page */
 
+
+
 .classify_heading {
     padding-top: 130px;
     padding-bottom: 30px;
@@ -3346,10 +3348,11 @@ button.contribute-btn:hover {
 }
 
 .family_title {
+    position: relative;
+    top: 20px;
     text-align: center;
     font-size: 28px;
-    margin-top: 30px;
-    padding:30px;
+    padding:20px;
     background-color: white;
 }
 
@@ -3677,7 +3680,88 @@ button.contribute-btn:hover {
         position: relative;
         left:-30px;
     }
+    .classify_definition{
+        width: 400px;
+    }
 }
+@media (max-width: 863px) {
+    .classification1{
+        position: relative;
+        left:150px;
+        width: 300px;
+    }
+}
+@media (max-width: 763px) {
+    .defi1-container1{
+        position: relative;
+        left:-50px;
+    }
+    .defi_taxo_container{
+        flex-direction: column;
+        width: 300px;
+    }
+    .classify2 img {
+        position: relative;
+        width: 350px;
+        height: 200px;
+        border-radius: 20px;
+    }
+    .dipte_defi{
+        width: 350px;
+    }
+    .caption_dipte1{
+        margin-left: 80px;
+    }
+    .taxonomic_hierarchy1{
+        width: 300px;
+        height: 210px;
+    }
+    .classify_heading{
+        font-size: 32px;
+    }.defi1-heading{
+        font-size: 24px;
+    }
+    .defi1 {
+        font-size: 20px;
+    }
+    .family_title {
+        font-size: 24px;
+    }
+    .dipte {
+        font-size: 22px;
+    }
+    .dipte_defi {
+        font-size: 20px;
+    }
+    .vatica_title {
+        font-size: 22px;
+    }
+    .vatica_title1{
+        font-size: 22px;
+    }
+    .vatica_explain {
+        font-size: 20px;
+    }
+    .hopea_title {
+        font-size: 22px;
+    }
+    .hopea_title1 {
+        font-size: 22px;
+    }
+    .hopea_explain {
+        font-size: 20px;
+    }
+    .vatica_details,.vatica_details1 {
+        font-size: 20px;
+    }
+    .classify_definition {
+        font-size: 16px;
+    }
+    .classify1 img{
+        width: 350px;
+    }
+}
+
 /*Tutorial-Intoduction*/
 .select-area{
     position:absolute;
