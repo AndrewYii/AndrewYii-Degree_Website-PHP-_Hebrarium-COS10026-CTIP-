@@ -3032,6 +3032,7 @@ button.contribute-btn:hover {
 .care1 img {
     width: 100%;
     height: auto;
+    border-radius: 80px;
 }
 
 .preservation_tips {
@@ -3041,7 +3042,9 @@ button.contribute-btn:hover {
     border:1px solid black; 
     border-radius: 20px; 
     box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1); 
-    width: 250px;
+    width: 30%;
+    position: relative;
+    top:100px;
 }
 
 
@@ -3186,6 +3189,12 @@ button.contribute-btn:hover {
 }
 
 @media (max-width: 1399px) {
+    
+    .preservation_tips {
+        position: relative;
+        top:50px;
+    }
+    
     .step2 img {
         width: 550px;
     }
@@ -3215,6 +3224,10 @@ button.contribute-btn:hover {
     .text-content {
         padding: 50px;
         width: 450px;
+    }
+    .preservation_tips {
+        position: relative;
+        top:0px;
     }
 }
 @media (max-width: 1020px) {
@@ -3390,7 +3403,7 @@ button.contribute-btn:hover {
     border-radius: 20px;
     border:1px solid black;
     box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1); 
-    width: 250px;
+    width: 30%;
 }
 
 .defi1-heading{
