@@ -3350,7 +3350,9 @@ button.contribute-btn:hover {
 
 /* Classify page */
 
-
+.classify-article{
+    overflow: hidden;
+}
 
 .classify_heading {
     padding-top: 130px;
@@ -3854,6 +3856,151 @@ button.contribute-btn:hover {
         top:0;
         right: 0;
     }
+}
+@media (max-width: 579px){
+    .plantfamtree{
+        position: relative;
+        left:-80px;
+    }
+    .classification1{
+        position: relative;
+        left:100px;
+    }
+    .dipte-text{
+        position: relative;
+        left:50px;
+    }
+    .hopea_part{
+        position: relative;
+        left:140px;
+        top:-70px;
+    }
+    .picofvatica{
+        position: relative;
+        left:-50px;
+    }
+    .picofyeechongii{
+        position: relative;
+        left: -50px;
+    }
+    .vatica_part{
+        position: relative;
+        left:-120px;
+        top:-70px;
+    }
+    .hopea_part1{
+        position: relative;
+        left: -110px;
+    }
+}
+@media (max-width: 497px){
+    .defi1-container1{
+        width: 475px;
+    }
+    .plantfamtree{
+        position: relative;
+        left:-210px;
+    }
+    .defi_taxo_container{
+        width: 300px;
+        position: relative;
+        left: -30px;
+    }
+    .taxonomic_hierarchy1{
+        width: 250px;
+        position: relative;
+        left: -20px;
+    }
+    .classify1 img{
+        width: 300px;
+        height: 250px;
+        position: relative;
+        left:-120px;
+    }
+    .dipte-text{
+        width: 300px;
+        position: relative;
+        left: 70px;
+    }
+    .classify2 img{
+        width: 300px;
+        height: 250px;
+        position: relative;
+        left:10px;
+    }
+    .family_title {
+        padding:10px;
+    }
+    .picofvatica{
+        position: relative;
+        left:-70px;
+    }
+    .classify_definition{
+        width: 350px;
+        position: relative;
+        top:-40px;
+    }
+
+    .vatica_part img{
+        width: 300px;
+        height: 250px;
+    }
+    .vatica_part{
+        position: relative;
+        left:-155px;
+        top:-50px;
+    }
+    .vatica_title{
+        position: relative;
+        left:-45px;
+    }
+    .vatica_explain{
+        width: 300px;
+    }
+    .hopea_part {
+        position: relative;
+        left: 115px;
+    }
+    .hopea_explain{
+        position: relative;
+        left: -80px;
+    }
+    .hopea_part img{
+        width: 300px;
+        height: 250px;
+    }
+    .hopea_part1{
+        position: relative;
+        left: -180px;
+    }
+    .hopea_explain{
+        width: 300px;
+    }
+    .vatica_title1{
+        position: relative;
+        left:-50px;
+    }
+    .vatica_part1{
+        position: relative;
+        left:-160px;
+    }
+    .vatica_part1 img{
+        width: 300px;
+        height: 250px;
+    }
+    .vatica_details{
+        width: 300px;
+    }
+    .vatica_details1{
+        width: 300px;
+        position: relative;
+        left:30px;
+    }
+    .hopea_content1 img{
+        width: 300px;
+        height: 250px;
+    }
+
 }
 
 /*Tutorial-Intoduction*/
