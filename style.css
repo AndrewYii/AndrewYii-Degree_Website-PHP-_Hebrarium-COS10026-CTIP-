@@ -3271,39 +3271,57 @@ button.contribute-btn:hover {
     padding-top: 130px;
     padding-bottom: 30px;
     text-align: center;
-    font-size: 36px;
+    font: bold 36px "Outfit", sans-serif;
 }
 
 .classify1 img{
     height: auto;
     width: 550px;
-    margin-left: 70px;
+    margin-left: 100px;
     border-radius: 260px;
     margin-top: 50px;
 }
 
 .classification1 {
-    display: flex;           
+    display: flex; 
+    flex-direction: row;       
     align-items: center;      
-    gap: 20px;               
+    gap: 30px;               
     margin-top: 0px;
+}
+
+.taxonomic_hierarchy {
+    position: relative;
+    top:-30px;
+    left:-150px;
+    background-color: #f1f1f1; 
+    padding: 30px; 
+    border-radius: 20px;
+    border:1px solid black;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1); 
+    width: 250px;
+}
+
+.defi1-heading{
+    font-size: 28px;
+    margin-bottom: 10px;
 }
 
 .defi1 {
     font-size: 24px;
-    margin-bottom: 50px;
-    margin-top: 60px;
+    margin-bottom: 30px;
     margin-right: 140px;
 }
 
 .defi1-container {
-    display: block;
+    width:400px;
 }
 
 .family_title {
     text-align: center;
     font-size: 28px;
-    margin-top: 50px;
+    margin-top: 30px;
+    padding:30px;
     background-color: white;
 }
 
@@ -3314,12 +3332,19 @@ button.contribute-btn:hover {
 }
 
 .caption_dipte1 {
-    margin-left: 250px;
+    margin-left:250px;
+    margin-top: 20px;
+}
+
+.dipte-text{
+    margin-left: 50px;
+    justify-content: center;
+    max-width: 450px;
 }
 
 .dipte_defi {
-    max-width: 600px;
     font-size: 24px;
+    text-align: center;
 }
 
 .dipte-container {
@@ -3343,11 +3368,9 @@ button.contribute-btn:hover {
 }
 
 .classify2 img {
-    width: auto;
+    width: 650px;
     height: 500px;
-    margin-right: 10px;
-    margin-left: 20px;
-    margin-top: 0px;
+    margin-top: 20px;
     border-radius: 70px;
 }
 
@@ -3368,69 +3391,93 @@ button.contribute-btn:hover {
 }
 
 .vatica_content img{
-    width: 700px;
-    height: 500px;
-    margin-left: 40px;
+    width: 500px;
+    height: 400px;
+    margin-left: 150px;
     margin-top: -40px;
     border-radius: 70px;
 }
 
 .vatica_title {
     font-size: 26px;
-    margin-left: 330px;
+    margin-left: 380px;
     margin-top: 40px;
 }
 
-.vatica_explain {
-    margin-left: 60px;
-    width: 650px;
-    font-size: 24px;
-    margin-top: 15px;
-}
-
-.hopea_content {
-    position: relative; 
-    display: inline-block;
-    width: auto;
-    margin-left: 20px;
-    margin-top: 50px;
-}
-
-.hopea_content img{
-    width: 700px;
-    height: 500px;
-    margin-right: 40px;
-    margin-top: -40px;
-    border-radius: 70px;
-}
-
-.hopea_title {
+.vatica_title1{
     font-size: 26px;
     margin-left: 330px;
     margin-top: 40px;
 }
 
-.hopea_explain {
-    margin-left: 60px;
-    width: 650px;
-    font-size: 24px;
-    margin-top: 15px;
-}
 
-.vatica_details {
+.vatica_explain {
+    margin-left: 180px;
+    text-align: center;
+    width: 500px;
     font-size: 24px;
-    width: 650px;
-    margin-left: 60px;
     margin-top: 20px;
 }
 
-.taxonomic_hierarchy {
-    margin-right: 5%;
-    background-color: #f1f1f1; 
-    padding: 30px; 
-    border-radius: 20px; 
-    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1); 
-    width: 250px;
+.hopea_content {
+    text-align: center;
+    width: 500px;
+    margin-top: 50px;
+}
+
+.hopea_content1 {
+    margin-left: 300px;
+    text-align: center;
+    width: 500px;
+    margin-top: 50px;
+}
+.hopea_content1 img{
+    margin-left: -270px;
+    width: 500px;
+    height: 400px;
+    margin-top: -40px;
+    border-radius: 70px;
+}
+
+.hopea_content img{
+    margin-left: -270px;
+    width: 500px;
+    height: 400px;
+    margin-top: -40px;
+    border-radius: 70px;
+}
+
+.vatica_part{
+    margin-left: -30px;
+}
+
+.hopea_title {
+    font-size: 26px;
+    margin-top: 40px;
+    font-size: 26px;
+    margin-left: 80px;
+}
+.hopea_title1 {
+    font-size: 26px;
+    margin-top: 40px;
+    font-size: 26px;
+    margin-left: 325px;
+}
+
+.hopea_explain {
+    position: relative;
+    left:-140px;
+    text-align: center;
+    width: 500px;
+    font-size: 24px;
+    margin-top: 20px;
+}
+
+.vatica_details,.vatica_details1 {
+    font-size: 24px;
+    width: 500px;
+    margin-left: 190px;
+    margin-top: 20px;
 }
 
 .classify_definition {
@@ -3440,11 +3487,169 @@ button.contribute-btn:hover {
     padding: 30px;
     background-color: #f1f1f1; 
     padding: 30px; 
+    border:1px solid black;
     border-radius: 20px; 
     box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1); 
     margin-top: 50px;
 }
 
+.defi_taxo_container{
+    display:none;
+}
+
+@media (max-width: 1509px) {
+    .hopea_content1 {
+        margin-left: 200px;
+    }
+    .hopea_title1{
+        margin-left: 200px;
+    }
+    .vatica_details1{
+        margin-left: 100px;
+    }
+}
+@media (max-width: 1389px) {
+    .classify1 img{
+        width: 450px;
+    }
+    .defi1-container {
+        width:300px;
+    }
+    .taxonomic_hierarchy {
+        width: 200px;
+    }
+    .dipte-text{
+        max-width: 350px;
+    }
+    .classify2 img {
+        width: 550px;
+        height: 400px;
+    }
+    .caption_dipte1{
+        margin-left: 200px;
+    }
+    .vatica_content img{
+        width: 400px;
+        height: 300px;
+    }
+    .vatica_title{
+        margin-left: 325px;
+    }
+    .vatica_explain {
+        width: 400px;
+    }
+    .hopea_content {
+        width: 400px;
+    }
+    .hopea_content {
+        text-align: center;
+        width: 400px;
+        margin-top: 50px;
+    }
+    
+    .hopea_content1 {
+        margin-left: 300px;
+        width: 400px;
+    }
+    .hopea_content1 img{
+        margin-left: -270px;
+        width: 400px;
+        height: 300px;
+    }
+    .hopea_content img{
+        margin-left: -270px;
+        width: 400px;
+        height: 300px;
+    }
+    .hopea_explain {
+        position: relative;
+        left:-140px;
+        text-align: center;
+        width: 400px;
+        font-size: 24px;
+        margin-top: 20px;
+    }
+    .vatica_details,.vatica_details1 {
+        width: 400px;
+    }
+    .vatica_details1 {
+        margin-left: 200px;
+    }
+    .vatica_title1{
+        margin-left: 275px;
+    }
+    .hopea_title{
+        margin-left: 30px;
+    }
+    .hopea_title1{
+        margin-left: 275px;
+    }
+}
+@media (max-width: 1281px) {
+    .classification1{
+        flex-direction: column;
+        justify-content: center;
+        align-items: center; 
+    }
+    .defi_container {
+        display: none;
+    }
+    .taxonomic_hierarchy{
+        display: none;
+    }
+    .defi_taxo_container{
+        margin-top: 20px;
+        display: flex;
+        flex-direction: row;
+    }
+    .defi1-container1{
+        width: 600px;
+        position: relative;
+        left:150px;
+    }
+    .taxonomic_hierarchy1{
+        background-color: #f1f1f1; 
+        padding: 30px; 
+        border-radius: 20px;
+        border:1px solid black;
+        box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1); 
+        width: 250px;
+        height:250px;
+    }
+    .dipte-content{
+        flex-direction: column;
+    }
+    .caption_dipte1{
+        margin-bottom: 20px;
+        margin-left: 175px;
+    }
+    .classify2 img {
+        width: 550px;
+        height: 450px;
+    }
+    .dipte_defi{
+        width: 550px;
+        margin-left: -120px;
+    }
+    .genus_container{
+        flex-direction: column;
+    }
+    .hopea_part{
+        margin: 0 auto;
+        position: relative;
+        left:160px;
+    }
+    .vatica_part{
+        margin: 0 auto;
+        position: relative;
+        left:-70px;
+    }
+    .hopea_part1{
+        margin: 0 auto;
+        position: relative;
+        left:-30px;
+    }
+}
 /*Tutorial-Intoduction*/
 .select-area{
     position:absolute;
