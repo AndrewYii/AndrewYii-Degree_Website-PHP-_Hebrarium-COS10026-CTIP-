@@ -2933,17 +2933,28 @@ button.contribute-btn:hover {
     gap: 20px;
 }
 
-
 .tuto1 {
     display: block;
-    width: 700px;
-    height: 500px;
+    width: 443px;
+    height: auto;
     margin-left: 20%;
 }
 
 .tuto1 img {
     width: 100%;
     height: auto;
+}
+
+.tuto_h2 {
+    font-size: 26px;
+    text-align: center;
+}
+
+.tuto_explaination {
+    text-align: center;
+    margin-left: 30px;
+    margin-right: 30px;
+    font-size: 24px;
 }
 
 /*care page*/
