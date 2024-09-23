@@ -3027,6 +3027,7 @@ button.contribute-btn:hover {
     width: 633px;
     height: 423px;
     margin-right: -19px;
+    margin-bottom: 23px;
 }
 
 .caption1 {
@@ -3059,6 +3060,7 @@ button.contribute-btn:hover {
     width: 633px;
     height: 423px;
     margin-left: 0px;
+    margin-bottom: 23px;
 }
 
 .step3 img {
