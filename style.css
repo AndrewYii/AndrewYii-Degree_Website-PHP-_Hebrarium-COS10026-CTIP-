@@ -3540,13 +3540,19 @@ button.contribute-btn:hover {
 @media (max-width: 600px) {
     .care_definition {
         width: 300px;
+        position: relative;
+        top:-100px;
     }
     .care1 {
         width: 300px;
         height: 250px;
     }
+    .text-content1{
+        position: relative;
+        top:-50px;
+    }
     .preservation_tips{
-        width:200px;
+        width:300px;
     }
     .step3 img {
         width: 300px;
