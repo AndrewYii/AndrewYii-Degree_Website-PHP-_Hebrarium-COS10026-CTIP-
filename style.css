@@ -4303,17 +4303,7 @@ button.contribute-btn:hover {
     background-color: #ddf5e1;
     top: 30px;
     box-shadow: inset 100px 100px 100000px rgba(56, 142, 60, 0.5);
-}
-
-@keyframes slideBackground {
-    0% {
-        background: url(images/herbarium_specimen_introduction_background.jpg) no-repeat center bottom;
-        background-size: cover;
-    }
-    100% {
-        background: url(images/herbarium_specimen_introduction_background.jpg) no-repeat center top;
-        background-size: cover;
-    }
+    transition: opacity 2s ease-in; 
 }
 
 .tutorial-intrduction-background-layout1{
@@ -4385,7 +4375,34 @@ button.contribute-btn:hover {
 }
 
 #change-background-tutorial:checked + label +.tutorial-intrduction-background-layout {
-    animation: slideBackground 2.5s forwards;
+    animation: slideBackground 3s forwards;
+}
+@keyframes slideBackground {
+    0% {
+        background: url(images/herbarium_specimen_introduction_background.jpg) no-repeat center bottom;
+        background-size: cover;
+    }
+    100% {
+        background: url(images/herbarium_specimen_introduction_background.jpg) no-repeat center top;
+        background-size: cover;
+    }
+}
+
+#read-more{
+    display: none;
+}
+
+#read-more:not(:checked) +h3 +p +br +p{
+    display: none;
+}
+
+#read-more:checked +h3 +p label .read_more{
+    display: none;
+}
+
+.read_more{
+    color:darkgreen;
+    cursor: pointer;
 }
 
 #change-background-tutorial:not(:checked) + label +.tutorial-intrduction-background-layout .end-section,#change-background-tutorial:not(:checked) + label +.tutorial-intrduction-background-layout +.tutorial-intrduction-background-layout1{
@@ -4421,10 +4438,12 @@ button.contribute-btn:hover {
     cursor: pointer;
 }
 
+
 #tools:checked + input + input + ul li#tools-section,#tutorial:checked + input  + ul li#tutorial-section,#care:checked + ul li#care-section{
     text-decoration: underline;
-    color:black;
+    transition: color 0.3s ease, text-decoration 0.3s ease;
 }
+
 
 .toolssection,.caresection,.tutorialsection {
     display: flex;
@@ -4443,13 +4462,15 @@ button.contribute-btn:hover {
     margin-bottom: 10px;
 }
 .toolssection p,.caresection p,.tutorialsection p {
-    font-size: 3vh;
+    font-size: 2.8vh;
     justify-content: space-between;
 }
 
 .tutorial-introduction-text-content {
     flex: 1; 
     padding-right: 20px; 
+    text-align: justify;
+    font-size: 18px;
 }
 
 .tutorial-introduction-image-content {
