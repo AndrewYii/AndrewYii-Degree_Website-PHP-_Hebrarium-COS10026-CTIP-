@@ -1582,7 +1582,7 @@ nav .menu {
 .identify-article{
     position: relative;
     top: 100px;
-    background-color: lightgreen;
+    background-color: #ddf5e1;
     padding: 10px;
     display: flex;
     flex-direction: column;
@@ -2265,8 +2265,12 @@ nav .menu {
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    transition: border-color 0.4s ease, box-shadow 0.4s ease, transform 0.4s ease;
 }
 
+.enquiry-form:hover{
+    transform: scale(1.03); 
+}
 
 .enquiry-legend{
     padding: 20px 0px 10px 0px;
