@@ -492,117 +492,117 @@ nav .menu {
     position: fixed;
     bottom: 3px;
     right: 2px;
-    height: 110px;
-    width: 110px;
+    height: 80px; 
+    width: 80px; 
     animation: up-down 7.5s infinite ease-in-out;
     z-index: 100000;
 }
 
-.chatbot-container:hover{
-    height: 120px;
-    width: 120px;
+.chatbot-container:hover {
+    height: 100px; 
+    width: 100px; 
     border-color: #388E3C; 
     outline: none; 
     box-shadow: 0 0 100px rgba(56, 142, 60, 0.5); 
 }
 
 #chatbot {
-        margin: auto;
-        position: absolute;
-        bottom: 0;
-        left: 0;
-        top: 0;
-        right: 0;
-        width: 90px;
-        height: 45px;
-        border: 4px solid black;
-        border-radius: 4rem;
-    }
-    
-#chatbot-corner {
-        margin: auto;
-        position: absolute;
-        bottom: 0;
-        right: 0;
-        top: 50px;
-        left: -56px;
-        width: 0;
-        height: 0;
-        border-left: 12px solid transparent;
-        border-right: 12px solid transparent;
-        border-top: 8px solid black;
-        transform: rotate(140deg);
-    }
-    
-#antenna {
-        margin: auto;
-        position: absolute;
-        left: 0;
-        bottom: -60px;
-        right: 0;
-        height: 10px;
-        width: 10px;
-        background-color: black;
-        animation: antenna-appear 7.5s infinite ease-in-out;
+    margin: auto;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    top: 0;
+    right: 0;
+    width: 70px; 
+    height: 35px; 
+    border: 4px solid black;
+    border-radius: 4rem;
 }
-      
-#beam {
-        position: absolute;
-        top: -12.5px;
-        left: -5px;
-        height: 10px;
-        width: 10px;
-        border-radius: 50%;
-        background-color: black;
-        animation: beam-appear 7.5s infinite ease-in-out;
-      }
-      
-#beam-pulsar {
-        position: absolute;
-        top: -12.5px;
-        left: -5px;
-        height: 10px;
-        width: 10px;
-        border-radius: 50%;
-        background-color: black;
-        animation: beam-pulsar-appear 7.5s infinite ease-in-out;
-      }
 
-    
+#chatbot-corner {
+    margin: auto;
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    top: 35px; 
+    left: -44px; 
+    width: 0;
+    height: 0;
+    border-left: 10px solid transparent; 
+    border-right: 10px solid transparent; 
+    border-top: 6px solid black; 
+    transform: rotate(140deg);
+}
+
+#antenna {
+    margin: auto;
+    position: absolute;
+    left: 0;
+    bottom: -70px; 
+    right: 0;
+    height: 6px; 
+    width: 8px; 
+    background-color: black;
+    animation: antenna-appear 7.5s infinite ease-in-out;
+}
+
+#beam {
+    position: absolute;
+    top: -7px;
+    left: -6px; 
+    height: 3px; 
+    width: 3px; 
+    border-radius: 50%;
+    background-color: black;
+    animation: beam-appear 7.5s infinite ease-in-out;
+}
+
+#beam-pulsar {
+    position: absolute;
+    top: -10px; 
+    left: -4px; 
+    height: 3px; 
+    width: 3px; 
+    border-radius: 50%;
+    background-color: black;
+    animation: beam-pulsar-appear 7.5s infinite ease-in-out;
+}
+
 .dot {
-      height: 7px;
-      width: 7px;
-      margin: auto;
-      position: absolute;
-      bottom: 0;
-      left: 0;
-      top: 0;
-      right: 0;
-      left: -65px;
-      background-color: black;
-      border-radius: 50%;
-      animation: pulse-outer 7.5s infinite ease-in-out;
-    }
-  
+    height: 5px; 
+    width: 5px; 
+    margin: auto;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    top: 0;
+    right: 0;
+    left: -50px; 
+    background-color: black;
+    border-radius: 50%;
+    animation: pulse-outer 7.5s infinite ease-in-out;
+}
+
 .dot:nth-child(2) {
-      left: 0;
-      animation: pulse-inner 7.5s infinite ease-in-out;
-      animation-delay: 0.2s;
-    }
-  
+    left: 0;
+    animation: pulse-inner 7.5s infinite ease-in-out;
+    animation-delay: 0.2s;
+}
+
 .dot:nth-child(3) {
-      left: 65px;
-      animation: pulse-outer 7.5s infinite ease-in-out;
-      animation-delay: 0.4s;
-    }
+    left: 50px; 
+    animation: pulse-outer 7.5s infinite ease-in-out;
+    animation-delay: 0.4s;
+}
+
     
 @keyframes pulse-inner {
       0% { transform: scale(1); }
-      7.5% { transform: scale(1.5); }
+      7.5% { transform: scale(1.25); }
       15% { transform: scale(1); }
-      22.5% { transform: scale(1.5); }
+      22.5% { transform: scale(1.25); }
       30% { transform: scale(1); }
-      37.5% { transform: scale(1.5); }
+      37.5% { transform: scale(1.25); }
       45% {
         top: 0;
         transform: scale(1); 
@@ -652,11 +652,11 @@ nav .menu {
     
 @keyframes pulse-outer {
       0% { transform: scale(1); }
-      7.5% { transform: scale(1.5); }
+      7.5% { transform: scale(1.25); }
       15% { transform: scale(1); }
-      22.5% { transform: scale(1.5); }
+      22.5% { transform: scale(1.25); }
       30% { transform: scale(1); }
-      37.5% { transform: scale(1.5); }
+      37.5% { transform: scale(1.25); }
       45% { transform: scale(1); height: 17.5px; }
       55% { transform: scale(1); height: 5px; }
       60% { height: 17.5px; }
@@ -667,11 +667,11 @@ nav .menu {
     }
     
     @keyframes antenna-appear {
-      0% { visibility: hidden; top: -100px; height: 0 }
-      50% { visibility: hidden; top: -100px; height: 0 }
-      55% { visibility: visible; top: -125px; height: 20px; }
-      95% { visibility: visible; top: -125px; height: 20px; }
-      100% { top: -100px; height: 0; }
+      0% { visibility: hidden; top: -90px; height: 0 }
+      50% { visibility: hidden; top: -90px; height: 0 }
+      55% { visibility: visible; top: -115px; height: 15px; }
+      95% { visibility: visible; top: -115px; height: 15px; }
+      100% { top: -90px; height: 0; }
     }
     
     @keyframes beam-appear {
@@ -4275,17 +4275,7 @@ button.contribute-btn:hover {
     background-color: #ddf5e1;
     top: 30px;
     box-shadow: inset 100px 100px 100000px rgba(56, 142, 60, 0.5);
-}
-
-@keyframes slideBackground {
-    0% {
-        background: url(images/herbarium_specimen_introduction_background.jpg) no-repeat center bottom;
-        background-size: cover;
-    }
-    100% {
-        background: url(images/herbarium_specimen_introduction_background.jpg) no-repeat center top;
-        background-size: cover;
-    }
+    transition: opacity 2s ease-in; 
 }
 
 .tutorial-intrduction-background-layout1{
@@ -4357,7 +4347,34 @@ button.contribute-btn:hover {
 }
 
 #change-background-tutorial:checked + label +.tutorial-intrduction-background-layout {
-    animation: slideBackground 2.5s forwards;
+    animation: slideBackground 3s forwards;
+}
+@keyframes slideBackground {
+    0% {
+        background: url(images/herbarium_specimen_introduction_background.jpg) no-repeat center bottom;
+        background-size: cover;
+    }
+    100% {
+        background: url(images/herbarium_specimen_introduction_background.jpg) no-repeat center top;
+        background-size: cover;
+    }
+}
+
+#read-more{
+    display: none;
+}
+
+#read-more:not(:checked) +h3 +p +br +p{
+    display: none;
+}
+
+#read-more:checked +h3 +p label .read_more{
+    display: none;
+}
+
+.read_more{
+    color:darkgreen;
+    cursor: pointer;
 }
 
 #change-background-tutorial:not(:checked) + label +.tutorial-intrduction-background-layout .end-section,#change-background-tutorial:not(:checked) + label +.tutorial-intrduction-background-layout +.tutorial-intrduction-background-layout1{
@@ -4393,10 +4410,12 @@ button.contribute-btn:hover {
     cursor: pointer;
 }
 
+
 #tools:checked + input + input + ul li#tools-section,#tutorial:checked + input  + ul li#tutorial-section,#care:checked + ul li#care-section{
     text-decoration: underline;
-    color:black;
+    transition: color 0.3s ease, text-decoration 0.3s ease;
 }
+
 
 .toolssection,.caresection,.tutorialsection {
     display: flex;
@@ -4415,13 +4434,15 @@ button.contribute-btn:hover {
     margin-bottom: 10px;
 }
 .toolssection p,.caresection p,.tutorialsection p {
-    font-size: 3vh;
+    font-size: 2.8vh;
     justify-content: space-between;
 }
 
 .tutorial-introduction-text-content {
     flex: 1; 
     padding-right: 20px; 
+    text-align: justify;
+    font-size: 18px;
 }
 
 .tutorial-introduction-image-content {
