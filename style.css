@@ -1582,7 +1582,7 @@ nav .menu {
 .identify-article{
     position: relative;
     top: 100px;
-    background-color: lightgreen;
+    background-color: #ddf5e1;
     padding: 10px;
     display: flex;
     flex-direction: column;
@@ -2265,8 +2265,12 @@ nav .menu {
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    transition: border-color 0.4s ease, box-shadow 0.4s ease, transform 0.4s ease;
 }
 
+.enquiry-form:hover{
+    transform: scale(1.03); 
+}
 
 .enquiry-legend{
     padding: 20px 0px 10px 0px;
@@ -3519,13 +3523,19 @@ button.contribute-btn:hover {
 @media (max-width: 600px) {
     .care_definition {
         width: 300px;
+        position: relative;
+        top:-100px;
     }
     .care1 {
         width: 300px;
-        height: 400px;
+        height: 250px;
+    }
+    .text-content1{
+        position: relative;
+        top:-50px;
     }
     .preservation_tips{
-        width:200px;
+        width:300px;
     }
     .step3 img {
         width: 300px;
