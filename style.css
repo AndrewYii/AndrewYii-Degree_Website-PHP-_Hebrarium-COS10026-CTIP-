@@ -3569,7 +3569,7 @@ button.contribute-btn:hover {
     }
 }
 @media (max-width: 1020px) {
-    .text-content2{
+    .text-content1{
         position: relative;
         top:-20px;
     }
