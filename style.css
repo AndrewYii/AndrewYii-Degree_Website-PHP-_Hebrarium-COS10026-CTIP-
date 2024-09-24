@@ -2228,8 +2228,8 @@ nav .menu {
     background-color: #FF5722;
     color: white;
     position: relative;
-    left: 257px;
-    top: 10px;
+    left: 475px;
+    top: -60px;
     font-size: 15px;
     padding: 10px 15px;
     border: none;
@@ -2239,6 +2239,8 @@ nav .menu {
 }
 
 .enquiry-head{
+    position: relative;
+    top: 30px;
     font-size: 40px;
     padding: 0px 0px 20px 0px;
 }
@@ -2268,6 +2270,7 @@ nav .menu {
     transition: border-color 0.4s ease, box-shadow 0.4s ease, transform 0.4s ease;
 }
 
+
 .enquiry-form:hover{
     transform: scale(1.03); 
 }
@@ -2280,6 +2283,28 @@ nav .menu {
     color: #4CAF50; 
     text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.2);
 }
+
+.enquiry-ui{
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.enquiry-fname{
+    width: 240px;
+}
+
+.enquiry-lname{
+    width: 240px;
+}
+
+.enquiry-email{
+    width: 240px;
+}
+
+.enquiry-pnum{
+    width: 240px;
+}
+
 
 .enquiry-table, .address-table{
     width: 100%;
@@ -2306,7 +2331,16 @@ nav .menu {
     transition: border-color 0.4s ease, box-shadow 0.4s ease; 
 }
 
-.enquiry-data:focus, .enquiry-comment:focus{
+.enquiry-select{
+    width: 100%;
+    border: 1px solid #4CAF50; 
+    border-radius: 8px; 
+    box-sizing: border-box;
+    transition: border-color 0.4s ease, box-shadow 0.4s ease; 
+}
+
+
+.enquiry-data:focus, .enquiry-comment:focus, .enquiry-select:focus{
     border-color: #388E3C; 
     outline: none; 
     box-shadow: 0 0 5px rgba(56, 142, 60, 0.5); 
@@ -2368,6 +2402,16 @@ nav .menu {
     transition: border-color 0.4s ease, box-shadow 0.4s ease; 
 }
 
+@media (max-width: 601px) {
+    .enquiry-form{
+        width: 350px;
+    }
+
+    .enquiry-legend{
+        text-align: center;
+    }
+
+}
 
 /* Contribute Form */
 
