@@ -3165,15 +3165,9 @@ button.contribute-btn:hover {
     }
 }
 @media (max-width: 600px) {
-    .care_definition {
-        width: 300px;
-    }
-    .care1 {
+    .tuto1 {
         width: 300px;
         height: 400px;
-    }
-    .preservation_tips{
-        width:200px;
     }
     .step3 img {
         width: 300px;
@@ -3223,6 +3217,8 @@ button.contribute-btn:hover {
         height: 500px;
     }
 }
+
+/* Tools CSS */
 
 .tools_bg {
     background-color: #DDF5E1;
