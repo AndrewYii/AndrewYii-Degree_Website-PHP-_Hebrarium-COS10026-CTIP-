@@ -3073,14 +3073,7 @@ button.contribute-btn:hover {
     width: 633px;
     height: 423px;
     margin-left: 0px;
-    margin-bottom: 23px;
-}
-
-.care_bottom {
-    display: flex;
-    justify-content: flex-start;
-    gap: 20px;
-    padding: 20px;
+    margin-bottom: 0px;
 }
 
 @media (max-width: 1399px) {
@@ -3116,20 +3109,16 @@ button.contribute-btn:hover {
     }
 }
 @media (max-width: 1020px) {
-    .care_container {
+    .tuto_container {
         flex-direction: column;
         gap: 20px;
     }
-    .care1 {
+    .tuto1 {
         display: flex;
         width: 700px;
         margin:0 auto;
     }
-    .preservation_tips{
-        margin: 0 auto;
-        width:600px;
-    }
-}
+
 @media (max-width: 974px) {
     .bordered-content {
         flex-direction: column;
@@ -3166,27 +3155,15 @@ button.contribute-btn:hover {
 }
 
 @media (max-width: 850px) {
-    .care_definition {
-        width: 500px;
-    }
-    .care1 {
+    .tuto1 {
         width: 500px;
         height: 300px;
     }
-    .preservation_tips{
-        width:400px;
-    }
 }
 @media (max-width: 600px) {
-    .care_definition {
-        width: 300px;
-    }
-    .care1 {
+    .tuto1 {
         width: 300px;
         height: 400px;
-    }
-    .preservation_tips{
-        width:200px;
     }
     .step3 img {
         width: 300px;
@@ -3245,6 +3222,8 @@ button.contribute-btn:hover {
         height: 500px;
     }
 }
+
+/* Tools */
 
 /*care page*/
 
@@ -3596,6 +3575,312 @@ button.contribute-btn:hover {
 
     .care_definition {
         font-size: 16px;
+    }
+    .caption-in-small{
+        font-size: 14px;
+    }
+    .text-content {
+        width: 300px;
+        height: 500px;
+    }
+}
+
+/* Tools Page */
+
+.tools_bg {
+    background-color: #DDF5E1;
+}
+
+.tools_heading {
+    padding-top: 130px;
+    padding-bottom: 30px;
+    text-align: center;
+    font: bold 36px "Outfit", sans-serif;
+}
+
+.tools_container {
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    gap: 20px;
+}
+
+.tools1 {
+    display: block;
+    width: 700px;
+    height: 475px;
+    margin: 0 auto;
+}
+
+.tools1 img {
+    padding-top: 20px;
+    width: 100%;
+    height: auto;
+}
+
+.tools_h2 {
+    padding-top: 25px;
+    text-align: center;
+    font-size: 28px;
+}
+
+.tools_explaination {
+    text-align: justify;
+    margin: 0 auto;
+    padding: 20px 100px 60px 100px;
+    font-size: 24px;
+}
+
+.step-container {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    padding: 20px;
+    margin-bottom: 60px;
+    opacity: 0; 
+    animation: fadeInUp 2s forwards; 
+    animation-timeline: view();
+}
+
+@keyframes fadeInUp {
+    0% {
+        opacity: 0.01;
+        transform: translateY(-80px);
+    }
+    25% {
+        opacity: 0.1;
+        transform: translateY(-60px);
+    }
+    40% {
+        opacity: 0.8;
+        transform: translateY(-50px);
+    }
+    50% {
+        opacity: 1;
+        transform: translateY(-40px);
+    }
+    75% {
+        opacity: 1;
+        transform: translateY(-20px);
+    }
+    100% {
+        opacity: 1; 
+        transform: translateY(0); 
+    }
+}
+.caption-in-small{
+    display: none;
+}
+
+.figure-hidden{
+    display: none;
+    padding-left: 0px;
+    margin-right: 20px;
+}
+.figure-hidden img{
+    width: 500px;
+    height: 423px;
+    margin-right: -19px;
+}
+
+.bordered-content {
+    display: flex;
+    flex-direction: row; 
+    align-items: center;
+}
+
+.step1 {
+    display: block;
+    padding-left: 0px;
+    margin-right: 20px;
+}
+
+.step1 img {
+    width: 633px;
+    height: 423px;
+    margin-right: -19px;
+    margin-bottom: 23px;
+}
+
+.caption1 {
+    text-align: center;
+    font-size: 18px;
+    margin-bottom: -27px;
+}
+
+.text-content {
+    width: 633px;
+    height: 423px;
+    background-color: white;   
+    padding: 99px;
+    gap: 0px; 
+    margin-left: 0px; 
+}
+
+.assignandrecord {
+    margin-bottom: 15px;
+    font-size: 26px;
+}
+
+.description1 {
+    margin-top: 40px;
+    margin-bottom: 0;
+    font-size: 24px;
+}
+
+.description5 {
+    margin-top: -20px;
+    margin-bottom: 100px;
+    font-size: 24px;
+}
+
+.step2 img {
+    width: 633px;
+    height: 423px;
+    margin-left: 0px;
+    margin-bottom: 23px;
+}
+
+.step3 img {
+    width: 633px;
+    height: 423px;
+    margin-left: 0px;
+    margin-bottom: 0px;
+}
+
+@media (max-width: 1399px) {
+    .step2 img {
+        width: 550px;
+    }
+    
+    .step3 img {
+        width: 550px;
+    }
+    .step1 img {
+        width: 550px;
+    }
+    .text-content {
+        padding: 50px;
+        width: 550px;
+    }
+}
+@media (max-width: 1189px) {
+    .step2 img {
+        width: 450px;
+    }
+    
+    .step3 img {
+        width: 450px;
+    }
+    .step1 img {
+        width: 450px;
+    }
+    .text-content {
+        padding: 50px;
+        width: 450px;
+    }
+}
+@media (max-width: 1020px) {
+    .tools_container {
+        flex-direction: column;
+        gap: 20px;
+    }
+    .tools1 {
+        display: flex;
+        width: 700px;
+        margin:0 auto;
+    }
+
+@media (max-width: 974px) {
+    .bordered-content {
+        flex-direction: column;
+    }
+    .step2 img {
+        display: none;
+    }
+
+    .caption-in-small{
+        font-size: 18px;
+        display: block;
+        text-align: center;
+        position: relative;
+        top:-35px;
+    }
+
+    .step2 .caption1 {
+        display: none;
+    }
+    
+    .step3 img {
+        width: 500px;
+    }
+    .step1 img {
+        width: 500px;
+    }
+    .text-content {
+        padding: 55px;
+        width: 500px;
+    }
+    .figure-hidden{
+        display: block;
+    }
+}
+
+@media (max-width: 850px) {
+    .tools1 {
+        width: 500px;
+        height: 300px;
+    }
+}
+@media (max-width: 600px) {
+    .tools1 {
+        width: 300px;
+        height: 400px;
+    }
+    .step3 img {
+        width: 300px;
+        height: 200px;
+    }
+    .step1 img {
+        width: 300px;
+        height: 200px;
+    }
+    .step1{
+        margin:20px 20px 0px 0px;
+        position:relative;
+        top:10px;
+    }
+    .step1 .caption1{
+        display: none;
+    }
+    .text-content {
+        width: 300px;
+        height: 700px;
+    }
+    .figure-hidden img{
+        width: 300px;
+        height: 200px;
+    }
+}
+@media (max-width: 550px) {
+    .tools_heading {
+        font-size: 32px;
+    }
+    .tools_h2 {
+        font-size: 24px;
+    }
+    .tools_explaination {
+        font-size: 20px;
+        padding: 20px 0px 20px 0px;
+        width: 325px;
+    }
+    .description1{
+        font-size: 20px;
+        text-align: center;
+    }
+    .assignandrecord {
+        font-size: 22px;
+        text-align: center;
     }
     .caption-in-small{
         font-size: 14px;
