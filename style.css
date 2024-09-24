@@ -3080,13 +3080,6 @@ button.contribute-btn:hover {
     margin-bottom: 23px;
 }
 
-.care_bottom {
-    display: flex;
-    justify-content: flex-start;
-    gap: 20px;
-    padding: 20px;
-}
-
 @media (max-width: 1399px) {
     .step2 img {
         width: 550px;
@@ -3128,10 +3121,6 @@ button.contribute-btn:hover {
         display: flex;
         width: 700px;
         margin:0 auto;
-    }
-    .preservation_tips{
-        margin: 0 auto;
-        width:600px;
     }
 }
 @media (max-width: 974px) {
