@@ -3117,7 +3117,7 @@ button.contribute-btn:hover {
         flex-direction: column;
         gap: 20px;
     }
-    .care1 {
+    .tuto1 {
         display: flex;
         width: 700px;
         margin:0 auto;
@@ -3159,15 +3159,9 @@ button.contribute-btn:hover {
 }
 
 @media (max-width: 850px) {
-    .care_definition {
-        width: 500px;
-    }
-    .care1 {
+    .tuto1 {
         width: 500px;
         height: 300px;
-    }
-    .preservation_tips{
-        width:400px;
     }
 }
 @media (max-width: 600px) {
