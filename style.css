@@ -3437,6 +3437,11 @@ button.contribute-btn:hover {
     box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1); 
 }
 
+.text-content{
+    position: relative;
+    top:-12px;
+}
+
 @media (max-width: 1399px) {
     
     .preservation_tips {
@@ -3480,6 +3485,10 @@ button.contribute-btn:hover {
     }
 }
 @media (max-width: 1020px) {
+    .text-content1{
+        position: relative;
+        top:-20px;
+    }
     .care_container {
         flex-direction: column;
         gap: 20px;
