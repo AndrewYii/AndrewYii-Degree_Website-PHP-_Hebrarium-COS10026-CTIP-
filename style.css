@@ -2021,7 +2021,7 @@ nav .menu {
 .transform-box3{
     width: 250px;
     height: 250px;
-    background-color: orange;
+    background-color: red;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -2084,7 +2084,7 @@ nav .menu {
     background-image: url('images/Faiz.jpg');
     background-size: cover;
     background-position: center;
-    border: 5px groove orange;
+    border: 5px groove red;
 }
 
 #change_box:checked + .transform-box .box-text,#change_box:checked + .transform-box1 .box-text,#change_box:checked + .transform-box2 .box-text,#change_box:checked + .transform-box3 .box-text {
@@ -2168,7 +2168,7 @@ nav .menu {
 
 /*Faiz-Profile*/
 .odd-row3{
-    background-color: orange;
+    background-color: red;
     color: #fff;
 
 }
@@ -2918,273 +2918,48 @@ button.contribute-btn:hover {
 }
 
 /*Tutorial Page CSS*/
-.select-area{
-    position:absolute;
-    top:100px;
-    font-size: 450px;
-    padding:2vw 5vw 8vw 1.21vw;
-    opacity: 0;
-    z-index:10;
-    cursor:pointer;
-}
 
-.tutorial-intrduction-background-layout {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    overflow: hidden;
-    min-height: 100vh;
-    width: 100%;
-    padding: 40px 0;
-    position: relative;
-    background-color: #ddf5e1;
-    top: 30px;
-    box-shadow: inset 100px 100px 100000px rgba(56, 142, 60, 0.5);
-}
-
-@keyframes slideBackground {
-    0% {
-        background: url(images/herbarium_specimen_introduction_background.jpg) no-repeat center bottom;
-        background-size: cover;
-    }
-    100% {
-        background: url(images/herbarium_specimen_introduction_background.jpg) no-repeat center top;
-        background-size: cover;
-    }
-}
-
-.tutorial-intrduction-background-layout1{
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    overflow: hidden;
-    min-height: 20vh;
-    width: 100%;
-    padding: 40px 0;
-    position: relative;
-    background-color: #ddf5e1;
-    top: 30px;
-}
-.start-section,.end-section{
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    overflow: hidden;
-    background-color: #fff;
-    opacity: 0.85;
-    border-radius:30px ;
-}
-
-
-.start-section p, .start-section h3{
-    background: linear-gradient(90deg, #4caf50, #81c784, #a5d6a7); 
-    background-clip: text;
-    background-size: 200% 200%;
-    color: transparent;
-    animation: gradientAnimation 2s ease infinite; 
-    font-size: 36px; 
-    margin: 8px;
-    text-align: center;
-    opacity: 1;
-}
-
-@keyframes gradientAnimation {
-    0% {
-        background-position: 0% 50%;
-    }
-    50% {
-        background-position: 100% 50%;
-    }
-    100% {
-        background-position: 0% 50%;
-    }
-}
-
-
-.tutorial-intrduction-background-layout h3{
-    font-size: 4.53vh;
-    margin:5px;
-    text-align: center;
-}
-
-.tutorial-intrduction-background-layout p{
-    font-size: 3.02vh;
-    margin:5px;
-    font-weight: 300;
-    text-align: center;
-}
-
-#change-background-tutorial{
-    display: none;
-}
-
-#change-background-tutorial:checked + label +.tutorial-intrduction-background-layout {
-    animation: slideBackground 2.5s forwards;
-}
-
-#change-background-tutorial:not(:checked) + label +.tutorial-intrduction-background-layout .end-section,#change-background-tutorial:not(:checked) + label +.tutorial-intrduction-background-layout +.tutorial-intrduction-background-layout1{
-    display: none;
-}
-
-#change-background-tutorial:checked + label +.tutorial-intrduction-background-layout .start-section{
-    display:none;
-}
-
-#tools, #tutorial, #care{
-    display: none;
-}
-
-.tutorial-intrduction-background-layout1 ul {
-    border: 1px solid darkgreen;
-    padding: 1.04vw; 
-    border-radius: 15px;
-    background-color: #228B22;
-    list-style: none; 
-    display: flex; 
-    flex-wrap: wrap; 
-}
-
-.tutorial-intrduction-background-layout1 ul li {
-    padding: 0.05vw; 
-    font-size: 2.8vh; 
-    color: #fff;
-    margin: 0 1vw; 
-}
-
-.tutorial-intrduction-background-layout1 ul li label{
-    cursor: pointer;
-}
-
-#tools:checked + input + input + ul li#tools-section,#tutorial:checked + input  + ul li#tutorial-section,#care:checked + ul li#care-section{
-    text-decoration: underline;
-    color:black;
-}
-
-.toolssection,.caresection,.tutorialsection {
-    display: flex;
-    flex-direction: row;
-    align-items: stretch;
-    align-items: center; 
-    justify-content: space-between; 
-    padding: 20px;
-    max-width: 1200px;
-    margin: auto; 
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-}
-.toolssection h3,.caresection h3,.tutorialsection h3 {
-    font-size: 4vh;
-    text-align: center;
-    margin-bottom: 10px;
-}
-.toolssection p,.caresection p,.tutorialsection p {
-    font-size: 3vh;
-    justify-content: space-between;
-}
-
-.tutorial-introduction-text-content {
-    flex: 1; 
-    padding-right: 20px; 
-}
-
-.tutorial-introduction-image-content {
-    flex: 0 0 40%;
-    margin-right: 20px;
-}
-
-.tutorial-introduction-image-content img {
-    max-width: 100%;
-    max-height: 100%; 
-    object-fit: cover;
-}
-
-#tools:not(:checked) + input + input + ul + br + .toolssection,#tutorial:not(:checked) + input  + ul + br + .toolssection +.tutorialsection,#care:not(:checked) + ul + br + .toolssection +.tutorialsection +.caresection {
-    display: none;
-}
-
-#tools:checked + input + input + ul + br + .toolssection,#tutorial:checked  + input + ul + br + .toolssection +.tutorialsection,#care:checked + ul + br + .toolssection +.tutorialsection+.caresection{
-    display: flex;
-}
-
-@media (max-width: 768px) {
-    .toolssection,.caresection,.tutorialsection {
-        flex-direction: column; 
-        align-items: flex-start; 
-    }
-    .tutorial-intrduction-background-layout1 ul {
-        padding: 3vw; 
-    }
-
-    .tutorial-introduction-image-content {
-        margin-top: 20px; 
-        flex: none; 
-        width: 100%; 
-    }
-    .tutorial-intrduction-background-layout1 ul li {
-        font-size: 2vh; 
-    }
-}
-
-
-
-/*care page*/
-
-.care_background {
+.tutorial_bg {
     background-color: #DDF5E1;
 }
 
-.care_heading {
+.tuto_heading {
     padding-top: 130px;
     padding-bottom: 30px;
     text-align: center;
-    font-size: 36px;
+    font: bold 36px "Outfit", sans-serif;
 }
 
-.care_container {
+.tuto_container {
     display: flex;
     flex-direction: row;
     align-items: flex-start;
     gap: 20px;
 }
 
-
-.care1 {
+.tuto1 {
     display: block;
     width: 700px;
-    height: 500px;
-    margin-left: 20%;
+    height: 475px;
+    margin: 0 auto;
 }
 
-.care1 img {
+.tuto1 img {
+    padding-top: 20px;
     width: 100%;
     height: auto;
 }
 
-.preservation_tips {
-    margin-right: 5%;
-    background-color: #f1f1f1; 
-    padding: 30px; 
-    border-radius: 20px; 
-    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1); 
-    width: 250px;
-}
-
-
-.care_h2 {
+.tuto_h2 {
     padding-top: 25px;
     text-align: center;
     font-size: 28px;
 }
 
-.care_explaination {
+.tuto_explaination {
     text-align: justify;
     margin: 0 auto;
-    padding-top: 20px;
-    padding-left: 100px;
-    padding-right: 100px;
-    padding-bottom: 60px;
+    padding: 20px 100px 60px 100px;
     font-size: 24px;
 }
 
@@ -3256,6 +3031,7 @@ button.contribute-btn:hover {
     width: 633px;
     height: 423px;
     margin-right: -19px;
+    margin-bottom: 23px;
 }
 
 .caption1 {
@@ -3284,16 +3060,24 @@ button.contribute-btn:hover {
     font-size: 24px;
 }
 
+.description5 {
+    margin-top: -20px;
+    margin-bottom: 100px;
+    font-size: 24px;
+}
+
 .step2 img {
     width: 633px;
     height: 423px;
     margin-left: 0px;
+    margin-bottom: 23px;
 }
 
 .step3 img {
     width: 633px;
     height: 423px;
     margin-left: 0px;
+    margin-bottom: 23px;
 }
 
 .care_bottom {
@@ -3301,17 +3085,6 @@ button.contribute-btn:hover {
     justify-content: flex-start;
     gap: 20px;
     padding: 20px;
-}
-
-.care_definition {
-    font-size: 20px;
-    margin: 0 auto;
-    width: 800px;
-    padding: 30px;
-    background-color: #f1f1f1; 
-    padding: 30px; 
-    border-radius: 20px; 
-    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1); 
 }
 
 @media (max-width: 1399px) {
@@ -3453,8 +3226,368 @@ button.contribute-btn:hover {
     }
     .care_explaination {
         font-size: 20px;
-        width: 400px;
-        margin-left:-40px ;
+        padding: 20px 0px 20px 0px;
+        width: 325px;
+    }
+    .description1{
+        font-size: 20px;
+        text-align: center;
+    }
+    .assignandrecord {
+        font-size: 22px;
+        text-align: center;
+    }
+
+    .care_definition {
+        font-size: 16px;
+    }
+    .caption-in-small{
+        font-size: 14px;
+    }
+    .text-content {
+        width: 300px;
+        height: 500px;
+    }
+}
+
+/*care page*/
+
+.care_background {
+    background-color: #DDF5E1;
+}
+
+.care_heading {
+    padding-top: 130px;
+    padding-bottom: 30px;
+    text-align: center;
+    font: bold 36px "Outfit", sans-serif;
+}
+
+.care_container {
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    gap: 20px;
+}
+
+
+.care1 {
+    display: block;
+    width: 700px;
+    height: 500px;
+    margin-left: 20%;
+}
+
+.care1 img {
+    width: 100%;
+    height: auto;
+    border-radius: 80px;
+}
+
+.preservation_tips {
+    margin-right: 5%;
+    background-color: #f1f1f1; 
+    padding: 30px;
+    border:1px solid black; 
+    border-radius: 20px; 
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1); 
+    width: 30%;
+    position: relative;
+    top:100px;
+}
+
+
+.care_h2 {
+    padding-top: 25px;
+    text-align: center;
+    font-size: 28px;
+}
+
+.care_explaination {
+    text-align: justify;
+    margin: 0 auto;
+    padding: 20px 100px 60px 100px;
+    font-size: 24px;
+}
+
+.step-container {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    padding: 20px;
+    margin-bottom: 60px;
+    opacity: 0; 
+    animation: fadeInUp 2s forwards; 
+    animation-timeline: view();
+}
+
+@keyframes fadeInUp {
+    0% {
+        opacity: 0.01;
+        transform: translateY(-80px);
+    }
+    25% {
+        opacity: 0.1;
+        transform: translateY(-60px);
+    }
+    40% {
+        opacity: 0.8;
+        transform: translateY(-50px);
+    }
+    50% {
+        opacity: 1;
+        transform: translateY(-40px);
+    }
+    75% {
+        opacity: 1;
+        transform: translateY(-20px);
+    }
+    100% {
+        opacity: 1; 
+        transform: translateY(0); 
+    }
+}
+.caption-in-small{
+    display: none;
+}
+
+.figure-hidden{
+    display: none;
+    padding-left: 0px;
+    margin-right: 20px;
+}
+.figure-hidden img{
+    width: 500px;
+    height: 423px;
+    margin-right: -19px;
+}
+
+.bordered-content {
+    display: flex;
+    flex-direction: row; 
+    align-items: center;
+}
+
+.step1 {
+    display: block;
+    padding-left: 0px;
+    margin-right: 20px;
+}
+
+.step1 img {
+    width: 633px;
+    height: 423px;
+    margin-right: -19px;
+}
+
+.caption1 {
+    text-align: center;
+    font-size: 18px;
+    margin-bottom: -27px;
+}
+
+.text-content {
+    width: 633px;
+    height: 423px;
+    background-color: white;   
+    padding: 99px;
+    gap: 0px; 
+    margin-left: 0px; 
+}
+
+.assignandrecord {
+    margin-bottom: 15px;
+    font-size: 26px;
+}
+
+.description1 {
+    margin-top: 40px;
+    margin-bottom: 0;
+    font-size: 24px;
+}
+
+.step2 img {
+    width: 633px;
+    height: 423px;
+    margin-left: 0px;
+}
+
+.step3 img {
+    width: 633px;
+    height: 423px;
+    margin-left: 0px;
+}
+
+.care_bottom {
+    display: flex;
+    justify-content: flex-start;
+    gap: 20px;
+    padding: 20px;
+}
+
+.care_definition {
+    font-size: 20px;
+    margin: 0 auto;
+    width: 800px;
+    padding: 30px;
+    border:1px solid black;
+    background-color: #f1f1f1; 
+    padding: 30px; 
+    border-radius: 20px; 
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1); 
+}
+
+@media (max-width: 1399px) {
+    
+    .preservation_tips {
+        position: relative;
+        top:50px;
+    }
+    
+    .step2 img {
+        width: 550px;
+    }
+    
+    .step3 img {
+        width: 550px;
+    }
+    .step1 img {
+        width: 550px;
+    }
+    .text-content {
+        padding: 50px;
+        width: 550px;
+    }
+}
+@media (max-width: 1189px) {
+    .step2 img {
+        width: 450px;
+    }
+    
+    .step3 img {
+        width: 450px;
+    }
+    .step1 img {
+        width: 450px;
+    }
+    .text-content {
+        padding: 50px;
+        width: 450px;
+    }
+    .preservation_tips {
+        position: relative;
+        top:0px;
+    }
+}
+@media (max-width: 1020px) {
+    .care_container {
+        flex-direction: column;
+        gap: 20px;
+    }
+    .care1 {
+        display: flex;
+        width: 700px;
+        margin:0 auto;
+    }
+    .preservation_tips{
+        margin: 0 auto;
+        width:600px;
+    }
+}
+@media (max-width: 974px) {
+    .bordered-content {
+        flex-direction: column;
+    }
+    .step2 img {
+        display: none;
+    }
+
+    .caption-in-small{
+        font-size: 18px;
+        display: block;
+        text-align: center;
+        position: relative;
+        top:-35px;
+    }
+
+    .step2 .caption1 {
+        display: none;
+    }
+    
+    .step3 img {
+        width: 500px;
+    }
+    .step1 img {
+        width: 500px;
+    }
+    .text-content {
+        padding: 55px;
+        width: 500px;
+    }
+    .figure-hidden{
+        display: block;
+    }
+}
+
+@media (max-width: 850px) {
+    .care_definition {
+        width: 500px;
+    }
+    .care1 {
+        width: 500px;
+        height: 300px;
+    }
+    .preservation_tips{
+        width:400px;
+    }
+}
+@media (max-width: 600px) {
+    .care_definition {
+        width: 300px;
+    }
+    .care1 {
+        width: 300px;
+        height: 250px;
+    }
+    .preservation_tips{
+        width:200px;
+    }
+    .step3 img {
+        width: 300px;
+        height: 200px;
+    }
+    .step1 img {
+        width: 300px;
+        height: 200px;
+    }
+    .step1{
+        margin:20px 20px 0px 0px;
+        position:relative;
+        top:10px;
+    }
+    .step1 .caption1{
+        display: none;
+    }
+    .text-content {
+        width: 300px;
+        height: 700px;
+    }
+    .figure-hidden img{
+        width: 300px;
+        height: 200px;
+    }
+}
+@media (max-width: 550px) {
+    .care_heading {
+        font-size: 32px;
+    }
+    .care_h2 {
+        font-size: 24px;
+    }
+    .care_explaination {
+        font-size: 20px;
+        padding: 20px 0px 20px 0px;
+        width: 325px;
     }
     .description1{
         font-size: 20px;
@@ -3479,43 +3612,69 @@ button.contribute-btn:hover {
 
 /* Classify page */
 
+.classify-article{
+    overflow: hidden;
+}
+
 .classify_heading {
     padding-top: 130px;
     padding-bottom: 30px;
     text-align: center;
-    font-size: 36px;
+    font: bold 36px "Outfit", sans-serif;
 }
 
 .classify1 img{
     height: auto;
     width: 550px;
-    margin-left: 70px;
+    margin-left: 100px;
     border-radius: 260px;
     margin-top: 50px;
 }
 
+.plantfamtree {
+    margin-left: 300px;
+}
+
 .classification1 {
-    display: flex;           
+    display: flex; 
+    flex-direction: row;       
     align-items: center;      
-    gap: 20px;               
+    gap: 30px;               
     margin-top: 0px;
+}
+
+.taxonomic_hierarchy {
+    position: relative;
+    top:-30px;
+    left:-150px;
+    background-color: #f1f1f1; 
+    padding: 30px; 
+    border-radius: 20px;
+    border:1px solid black;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1); 
+    width: 30%;
+}
+
+.defi1-heading{
+    font-size: 28px;
+    margin-bottom: 10px;
 }
 
 .defi1 {
     font-size: 24px;
-    margin-bottom: 50px;
-    margin-top: 60px;
+    margin-bottom: 30px;
     margin-right: 140px;
 }
 
 .defi1-container {
-    display: block;
+    width:400px;
 }
 
 .family_title {
+    margin-top: 10px;
     text-align: center;
     font-size: 28px;
-    margin-top: 50px;
+    padding:20px;
     background-color: white;
 }
 
@@ -3526,12 +3685,19 @@ button.contribute-btn:hover {
 }
 
 .caption_dipte1 {
-    margin-left: 250px;
+    margin-left:250px;
+    margin-top: 20px;
+}
+
+.dipte-text{
+    margin-left: 50px;
+    justify-content: center;
+    max-width: 450px;
 }
 
 .dipte_defi {
-    max-width: 600px;
     font-size: 24px;
+    text-align: center;
 }
 
 .dipte-container {
@@ -3554,12 +3720,11 @@ button.contribute-btn:hover {
     margin-right: 20px;
 }
 
+
 .classify2 img {
-    width: auto;
+    width: 650px;
     height: 500px;
-    margin-right: 10px;
-    margin-left: 20px;
-    margin-top: 0px;
+    margin-top: 20px;
     border-radius: 70px;
 }
 
@@ -3580,69 +3745,109 @@ button.contribute-btn:hover {
 }
 
 .vatica_content img{
-    width: 700px;
-    height: 500px;
-    margin-left: 40px;
+    width: 500px;
+    height: 400px;
+    margin-left: 150px;
     margin-top: -40px;
     border-radius: 70px;
 }
 
 .vatica_title {
     font-size: 26px;
-    margin-left: 330px;
+    margin-left: 380px;
     margin-top: 40px;
 }
 
-.vatica_explain {
-    margin-left: 60px;
-    width: 650px;
-    font-size: 24px;
-    margin-top: 15px;
-}
-
-.hopea_content {
-    position: relative; 
-    display: inline-block;
-    width: auto;
-    margin-left: 20px;
-    margin-top: 50px;
-}
-
-.hopea_content img{
-    width: 700px;
-    height: 500px;
-    margin-right: 40px;
-    margin-top: -40px;
-    border-radius: 70px;
-}
-
-.hopea_title {
+.vatica_title1{
     font-size: 26px;
     margin-left: 330px;
     margin-top: 40px;
 }
 
-.hopea_explain {
-    margin-left: 60px;
-    width: 650px;
-    font-size: 24px;
-    margin-top: 15px;
+.picofvatica {
+    margin-left: 350px;
 }
 
-.vatica_details {
+
+.vatica_explain {
+    margin-left: 180px;
+    text-align: center;
+    width: 500px;
     font-size: 24px;
-    width: 650px;
-    margin-left: 60px;
     margin-top: 20px;
 }
 
-.taxonomic_hierarchy {
-    margin-right: 5%;
-    background-color: #f1f1f1; 
-    padding: 30px; 
-    border-radius: 20px; 
-    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1); 
-    width: 250px;
+.hopea_content {
+    text-align: center;
+    width: 500px;
+    margin-top: 50px;
+}
+
+.hopea_content1 {
+    margin-left: 300px;
+    text-align: center;
+    width: 500px;
+    margin-top: 50px;
+}
+.hopea_content1 img{
+    margin-left: -270px;
+    width: 500px;
+    height: 400px;
+    margin-top: -40px;
+    border-radius: 70px;
+}
+
+.hopea_content img{
+    margin-left: -270px;
+    width: 500px;
+    height: 400px;
+    margin-top: -40px;
+    border-radius: 70px;
+}
+
+.vatica_part{
+    margin-left: -30px;
+}
+
+.hopea_title {
+    font-size: 26px;
+    margin-top: 40px;
+    font-size: 26px;
+    margin-left: 80px;
+}
+.hopea_title1 {
+    font-size: 26px;
+    margin-top: 40px;
+    font-size: 26px;
+    margin-left: 325px;
+}
+
+.picofhopea {
+    margin-right: 250px;
+}
+
+.picofyeechongii {
+    margin-left: 300px;
+}
+
+.picofparviflora {
+    margin-right: 250px;
+}
+
+.hopea_explain {
+    position: relative;
+    left:-140px;
+    text-align: center;
+    width: 500px;
+    font-size: 24px;
+    margin-top: 20px;
+}
+
+.vatica_details,.vatica_details1 {
+    font-size: 24px;
+    width: 500px;
+    margin-left: 190px;
+    margin-top: 20px;
 }
 
 .classify_definition {
@@ -3652,9 +3857,412 @@ button.contribute-btn:hover {
     padding: 30px;
     background-color: #f1f1f1; 
     padding: 30px; 
+    border:1px solid black;
     border-radius: 20px; 
     box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1); 
     margin-top: 50px;
+}
+
+.defi_taxo_container{
+    display:none;
+}
+
+@media (max-width: 1509px) {
+    .hopea_content1 {
+        margin-left: 200px;
+    }
+    .hopea_title1{
+        margin-left: 200px;
+    }
+    .vatica_details1{
+        margin-left: 100px;
+    }
+}
+@media (max-width: 1389px) {
+    .classify1 img{
+        width: 450px;
+    }
+    .defi1-container {
+        width:300px;
+    }
+    .taxonomic_hierarchy {
+        width: 200px;
+    }
+    .dipte-text{
+        max-width: 350px;
+    }
+    .classify2 img {
+        width: 550px;
+        height: 400px;
+    }
+    .caption_dipte1{
+        margin-left: 200px;
+    }
+    .vatica_content img{
+        width: 400px;
+        height: 300px;
+    }
+    .vatica_title{
+        margin-left: 325px;
+    }
+    .vatica_explain {
+        width: 400px;
+    }
+    .hopea_content {
+        width: 400px;
+    }
+    .hopea_content {
+        text-align: center;
+        width: 400px;
+        margin-top: 50px;
+    }
+    
+    .hopea_content1 {
+        margin-left: 300px;
+        width: 400px;
+    }
+    .hopea_content1 img{
+        margin-left: -270px;
+        width: 400px;
+        height: 300px;
+    }
+    .hopea_content img{
+        margin-left: -270px;
+        width: 400px;
+        height: 300px;
+    }
+    .hopea_explain {
+        position: relative;
+        left:-140px;
+        text-align: center;
+        width: 400px;
+        font-size: 24px;
+        margin-top: 20px;
+    }
+    .vatica_details,.vatica_details1 {
+        width: 400px;
+    }
+    .vatica_details1 {
+        margin-left: 200px;
+    }
+    .vatica_title1{
+        margin-left: 275px;
+    }
+    .hopea_title{
+        margin-left: 30px;
+    }
+    .hopea_title1{
+        margin-left: 275px;
+    }
+}
+@media (max-width: 1281px) {
+    .classification1{
+        flex-direction: column;
+        justify-content: center;
+        align-items: center; 
+    }
+    .defi_container {
+        display: none;
+    }
+    .taxonomic_hierarchy{
+        display: none;
+    }
+    .defi_taxo_container{
+        margin-top: 20px;
+        display: flex;
+        flex-direction: row;
+    }
+    .defi1-container1{
+        width: 600px;
+        position: relative;
+        left:150px;
+    }
+    .taxonomic_hierarchy1{
+        background-color: #f1f1f1; 
+        padding: 30px; 
+        border-radius: 20px;
+        border:1px solid black;
+        box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1); 
+        width: 250px;
+        height:250px;
+    }
+    .dipte-content{
+        flex-direction: column;
+    }
+    .caption_dipte1{
+        margin-bottom: 20px;
+        margin-left: 175px;
+    }
+    .classify2 img {
+        width: 550px;
+        height: 450px;
+    }
+    .dipte_defi{
+        width: 550px;
+        margin-left: -120px;
+    }
+    .genus_container{
+        flex-direction: column;
+    }
+    .hopea_part{
+        margin: 0 auto;
+        position: relative;
+        left:160px;
+    }
+    .vatica_part{
+        margin: 0 auto;
+        position: relative;
+        left:-70px;
+    }
+    .hopea_part1{
+        margin: 0 auto;
+        position: relative;
+        left:-30px;
+    }
+    .classify_definition{
+        width: 400px;
+    }
+}
+@media (max-width: 863px) {
+    .classification1{
+        position: relative;
+        left:150px;
+        width: 300px;
+    }
+}
+@media (max-width: 763px) {
+    .section-classify{
+        width: 96.09vh;
+    }
+    .defi1-container1{
+        position: relative;
+        left:-50px;
+    }
+    .defi_taxo_container{
+        flex-direction: column;
+        width: 300px;
+    }
+    .classify2 img {
+        position: relative;
+        width: 350px;
+        height: 200px;
+        border-radius: 20px;
+    }
+    .dipte_defi{
+        width: 350px;
+    }
+    .caption_dipte1{
+        margin-left: 80px;
+    }
+    .taxonomic_hierarchy1{
+        width: 300px;
+        height: 210px;
+    }
+    .classify_heading{
+        font-size: 32px;
+    }.defi1-heading{
+        font-size: 24px;
+    }
+    .defi1 {
+        font-size: 20px;
+    }
+    .family_title {
+        font-size: 24px;
+    }
+    .dipte {
+        font-size: 22px;
+    }
+    .dipte_defi {
+        font-size: 20px;
+    }
+    .vatica_title {
+        font-size: 22px;
+    }
+    .vatica_title1{
+        font-size: 22px;
+    }
+    .vatica_explain {
+        font-size: 20px;
+    }
+    .hopea_title {
+        font-size: 22px;
+    }
+    .hopea_title1 {
+        font-size: 22px;
+    }
+    .hopea_explain {
+        font-size: 20px;
+    }
+    .vatica_details,.vatica_details1 {
+        font-size: 20px;
+    }
+    .classify_definition {
+        font-size: 16px;
+    }
+    .classify1 img{
+        width: 350px;
+    }
+    .defi1-heading{
+        width: 400px;
+    }
+}
+@media (max-width: 707px){
+    .vatica_part{
+        position: relative;
+        top:0;
+        right: 0;
+        margin-left: 15px;
+    }
+    .hopea_part1{
+        position: relative;
+        top:0;
+        right: 0;
+    }
+}
+@media (max-width: 579px){
+    .plantfamtree{
+        position: relative;
+        left:-80px;
+    }
+    .classification1{
+        position: relative;
+        left:100px;
+    }
+    .dipte-text{
+        position: relative;
+        left:50px;
+    }
+    .hopea_part{
+        position: relative;
+        left:140px;
+        top:-70px;
+    }
+    .picofvatica{
+        position: relative;
+        left:-50px;
+    }
+    .picofyeechongii{
+        position: relative;
+        left: -50px;
+    }
+    .vatica_part{
+        position: relative;
+        left:-120px;
+        top:-70px;
+    }
+    .hopea_part1{
+        position: relative;
+        left: -110px;
+    }
+}
+@media (max-width: 497px){
+    .defi1-container1{
+        width: 475px;
+    }
+    .plantfamtree{
+        position: relative;
+        left:-210px;
+    }
+    .defi_taxo_container{
+        width: 300px;
+        position: relative;
+        left: -30px;
+    }
+    .taxonomic_hierarchy1{
+        width: 250px;
+        position: relative;
+        left: -20px;
+    }
+    .classify1 img{
+        width: 300px;
+        height: 250px;
+        position: relative;
+        left:-120px;
+    }
+    .dipte-text{
+        width: 300px;
+        position: relative;
+        left: 70px;
+    }
+    .classify2 img{
+        width: 300px;
+        height: 250px;
+        position: relative;
+        left:10px;
+    }
+    .family_title {
+        padding:10px;
+    }
+    .picofvatica{
+        position: relative;
+        left:-70px;
+    }
+    .classify_definition{
+        width: 350px;
+        position: relative;
+        top:-40px;
+    }
+
+    .vatica_part img{
+        width: 300px;
+        height: 250px;
+    }
+    .vatica_part{
+        position: relative;
+        left:-155px;
+        top:-50px;
+    }
+    .vatica_title{
+        position: relative;
+        left:-45px;
+    }
+    .vatica_explain{
+        width: 300px;
+    }
+    .hopea_part {
+        position: relative;
+        left: 115px;
+    }
+    .hopea_explain{
+        position: relative;
+        left: -80px;
+    }
+    .hopea_part img{
+        width: 300px;
+        height: 250px;
+    }
+    .hopea_part1{
+        position: relative;
+        left: -180px;
+    }
+    .hopea_explain{
+        width: 300px;
+    }
+    .vatica_title1{
+        position: relative;
+        left:-50px;
+    }
+    .vatica_part1{
+        position: relative;
+        left:-160px;
+    }
+    .vatica_part1 img{
+        width: 300px;
+        height: 250px;
+    }
+    .vatica_details{
+        width: 300px;
+    }
+    .vatica_details1{
+        width: 300px;
+        position: relative;
+        left:30px;
+    }
+    .hopea_content1 img{
+        width: 300px;
+        height: 250px;
+    }
+
 }
 
 /*Tutorial-Intoduction*/
