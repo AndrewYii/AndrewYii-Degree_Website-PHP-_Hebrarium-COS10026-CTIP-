@@ -3270,7 +3270,7 @@ button.contribute-btn:hover {
         width: 300px;
         height: 250px;
     }
-    .text-content1{
+    .text-content2{
         position: relative;
         top:-30px;
     }
@@ -3569,7 +3569,7 @@ button.contribute-btn:hover {
     }
 }
 @media (max-width: 1020px) {
-    .text-content1{
+    .text-content2{
         position: relative;
         top:-20px;
     }
