@@ -3113,7 +3113,7 @@ button.contribute-btn:hover {
     }
 }
 @media (max-width: 1020px) {
-    .care_container {
+    .tuto-container {
         flex-direction: column;
         gap: 20px;
     }
