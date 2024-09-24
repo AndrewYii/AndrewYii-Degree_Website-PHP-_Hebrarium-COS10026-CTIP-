@@ -2963,7 +2963,7 @@ button.contribute-btn:hover {
     font-size: 24px;
 }
 
-.step-container {
+.tutostep-container {
     display: flex;
     justify-content: center;
     gap: 20px;
@@ -3015,7 +3015,7 @@ button.contribute-btn:hover {
     margin-right: -19px;
 }
 
-.bordered-content {
+.tutobordered-content {
     display: flex;
     flex-direction: row; 
     align-items: center;
@@ -3040,7 +3040,7 @@ button.contribute-btn:hover {
     margin-bottom: -27px;
 }
 
-.text-content {
+.tutotext-content {
     width: 633px;
     height: 423px;
     background-color: white;   
@@ -3080,13 +3080,6 @@ button.contribute-btn:hover {
     margin-bottom: 23px;
 }
 
-.care_bottom {
-    display: flex;
-    justify-content: flex-start;
-    gap: 20px;
-    padding: 20px;
-}
-
 @media (max-width: 1399px) {
     .step2 img {
         width: 550px;
@@ -3098,7 +3091,7 @@ button.contribute-btn:hover {
     .step1 img {
         width: 550px;
     }
-    .text-content {
+    .tutotext-content {
         padding: 50px;
         width: 550px;
     }
@@ -3114,7 +3107,7 @@ button.contribute-btn:hover {
     .step1 img {
         width: 450px;
     }
-    .text-content {
+    .tutotext-content {
         padding: 50px;
         width: 450px;
     }
@@ -3124,18 +3117,14 @@ button.contribute-btn:hover {
         flex-direction: column;
         gap: 20px;
     }
-    .care1 {
+    .tuto1 {
         display: flex;
         width: 700px;
         margin:0 auto;
     }
-    .preservation_tips{
-        margin: 0 auto;
-        width:600px;
-    }
 }
 @media (max-width: 974px) {
-    .bordered-content {
+    .tutobordered-content {
         flex-direction: column;
     }
     .step2 img {
@@ -3160,7 +3149,7 @@ button.contribute-btn:hover {
     .step1 img {
         width: 500px;
     }
-    .text-content {
+    .tutotext-content {
         padding: 55px;
         width: 500px;
     }
@@ -3170,27 +3159,15 @@ button.contribute-btn:hover {
 }
 
 @media (max-width: 850px) {
-    .care_definition {
-        width: 500px;
-    }
-    .care1 {
+    .tuto1 {
         width: 500px;
         height: 300px;
     }
-    .preservation_tips{
-        width:400px;
-    }
 }
 @media (max-width: 600px) {
-    .care_definition {
-        width: 300px;
-    }
-    .care1 {
+    .tuto1 {
         width: 300px;
         height: 400px;
-    }
-    .preservation_tips{
-        width:200px;
     }
     .step3 img {
         width: 300px;
@@ -3208,7 +3185,7 @@ button.contribute-btn:hover {
     .step1 .caption1{
         display: none;
     }
-    .text-content {
+    .tutotext-content {
         width: 300px;
         height: 700px;
     }
@@ -3218,13 +3195,13 @@ button.contribute-btn:hover {
     }
 }
 @media (max-width: 550px) {
-    .care_heading {
+    .tuto_heading {
         font-size: 32px;
     }
-    .care_h2 {
+    .tuto_h2 {
         font-size: 24px;
     }
-    .care_explaination {
+    .tuto_explaination {
         font-size: 20px;
         padding: 20px 0px 20px 0px;
         width: 325px;
@@ -3237,14 +3214,10 @@ button.contribute-btn:hover {
         font-size: 22px;
         text-align: center;
     }
-
-    .care_definition {
-        font-size: 16px;
-    }
     .caption-in-small{
         font-size: 14px;
     }
-    .text-content {
+    .tutotext-content {
         width: 300px;
         height: 500px;
     }
