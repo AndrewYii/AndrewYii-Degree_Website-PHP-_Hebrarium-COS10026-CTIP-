@@ -2975,6 +2975,8 @@ button.contribute-btn:hover {
 }
 
 .tuto_container {
+    margin-top: 40px;
+    margin-bottom: -80px;
     display: flex;
     flex-direction: row;
     align-items: flex-start;
