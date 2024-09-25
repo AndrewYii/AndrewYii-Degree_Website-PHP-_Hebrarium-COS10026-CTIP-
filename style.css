@@ -1598,6 +1598,8 @@ nav .menu {
 }
 
 .identify h1{
+    display: flex;
+    flex-wrap: wrap;
     font-size: 45px;
     margin: 2%;
 }
@@ -1619,6 +1621,11 @@ nav .menu {
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    transition: transform 0.4s ease;
+}
+
+.identify-img:hover{
+    transform: scale(1.05);
 }
 
 .identify-upload{
@@ -1670,6 +1677,25 @@ nav .menu {
 .identify-table legend{
     font-size: 30px;
     font-weight: bold;
+}
+
+#upload{
+    display: None;
+}
+
+@media (max-width:601px){
+
+    .identify h1{
+        font-size: 30px;
+    }
+
+    .identify-upload{
+        width: 300px;
+    }
+
+    .identify-detail{
+        width: 300px;
+    }
 }
 
 /*Login & Register */
