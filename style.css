@@ -3337,6 +3337,382 @@ button.contribute-btn:hover {
     }
 }
 
+/* Tools page */
+
+.tuto_background {
+    background-color: #DDF5E1;
+}
+
+.tuto_heading {
+    padding-top: 130px;
+    padding-bottom: 30px;
+    text-align: center;
+    font: bold 36px "Outfit", sans-serif;
+}
+
+.tuto_container {
+    margin-top: 40px;
+    margin-bottom: -80px;
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    gap: 20px;
+}
+
+.tuto1 {
+    display: block;
+    width: 700px;
+    height: 500px;
+    margin-left: 20%;
+}
+
+.tuto1 img {
+    width: 100%;
+    height: auto;
+    border-radius: 80px;
+}
+
+.tuto_tips {
+    margin-right: 5%;
+    background-color: #f1f1f1; 
+    padding: 30px;
+    border:1px solid black; 
+    border-radius: 20px; 
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1); 
+    width: 30%;
+    position: relative;
+    top:100px;
+}
+
+
+.tuto_h2 {
+    padding-top: 25px;
+    text-align: center;
+    font-size: 28px;
+}
+
+.tuto_explaination {
+    text-align: justify;
+    margin: 0 auto;
+    padding: 20px 100px 60px 100px;
+    font-size: 24px;
+}
+
+.tuto-container {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    padding: 20px;
+    margin-bottom: 60px;
+    opacity: 0; 
+    animation: fadeInUp 2s forwards; 
+    animation-timeline: view();
+}
+
+@keyframes fadeInUp {
+    0% {
+        opacity: 0.01;
+        transform: translateY(-80px);
+    }
+    25% {
+        opacity: 0.1;
+        transform: translateY(-60px);
+    }
+    40% {
+        opacity: 0.8;
+        transform: translateY(-50px);
+    }
+    50% {
+        opacity: 1;
+        transform: translateY(-40px);
+    }
+    75% {
+        opacity: 1;
+        transform: translateY(-20px);
+    }
+    100% {
+        opacity: 1; 
+        transform: translateY(0); 
+    }
+}
+.caption-in-small{
+    display: none;
+}
+
+.figure-hidden{
+    display: none;
+    padding-left: 0px;
+    margin-right: 20px;
+}
+.figure-hidden img{
+    width: 500px;
+    height: 423px;
+    margin-right: -19px;
+}
+
+.tutobordered-content {
+    display: flex;
+    flex-direction: row; 
+    align-items: center;
+}
+
+.step1 {
+    display: block;
+    padding-left: 0px;
+    margin-right: 20px;
+}
+
+.step1 img {
+    width: 633px;
+    height: 423px;
+    margin-right: -19px;
+}
+
+.caption1 {
+    text-align: center;
+    font-size: 18px;
+    margin-bottom: -27px;
+}
+
+.tutotext-content {
+    width: 633px;
+    height: 423px;
+    background-color: white;   
+    padding: 99px;
+    gap: 0px; 
+    margin-left: 0px; 
+}
+
+.assignandrecord {
+    margin-bottom: 15px;
+    font-size: 26px;
+}
+
+.tutodescription {
+    margin-top: 40px;
+    margin-bottom: 0;
+    font-size: 24px;
+}
+
+.step2 img {
+    width: 633px;
+    height: 423px;
+    margin-left: 0px;
+}
+
+.step3 img {
+    width: 633px;
+    height: 423px;
+    margin-left: 0px;
+}
+
+.care_bottom {
+    display: flex;
+    justify-content: flex-start;
+    gap: 20px;
+    padding: 20px;
+}
+
+.tuto_definition {
+    font-size: 20px;
+    margin: 0 auto;
+    width: 800px;
+    padding: 30px;
+    border:1px solid black;
+    background-color: #f1f1f1; 
+    padding: 30px; 
+    border-radius: 20px; 
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1); 
+}
+
+.text-content{
+    position: relative;
+    top:-12px;
+}
+
+@media (max-width: 1399px) {
+    
+    .tuto_tips {
+        position: relative;
+        top:50px;
+    }
+    
+    .step2 img {
+        width: 550px;
+    }
+    
+    .step3 img {
+        width: 550px;
+    }
+    .step1 img {
+        width: 550px;
+    }
+    .tutotext-content {
+        padding: 50px;
+        width: 550px;
+    }
+}
+@media (max-width: 1189px) {
+    .step2 img {
+        width: 450px;
+    }
+    
+    .step3 img {
+        width: 450px;
+    }
+    .step1 img {
+        width: 450px;
+    }
+    .tutotext-content {
+        padding: 50px;
+        width: 450px;
+    }
+    .tuto_tips {
+        position: relative;
+        top:0px;
+    }
+}
+@media (max-width: 1020px) {
+    .text-content2{
+        position: relative;
+        top:-20px;
+    }
+    .tuto_container {
+        flex-direction: column;
+        gap: 20px;
+    }
+    .tuto1 {
+        display: flex;
+        width: 700px;
+        margin:0 auto;
+    }
+    .tuto_tips{
+        margin: 0 auto;
+        width:600px;
+    }
+}
+@media (max-width: 974px) {
+    .tutobordered-content {
+        flex-direction: column;
+    }
+    .step2 img {
+        display: none;
+    }
+
+    .caption-in-small{
+        font-size: 18px;
+        display: block;
+        text-align: center;
+        position: relative;
+        top:-35px;
+    }
+
+    .step2 .caption1 {
+        display: none;
+    }
+    
+    .step3 img {
+        width: 500px;
+    }
+    .step1 img {
+        width: 500px;
+    }
+    .tutotext-content {
+        padding: 55px;
+        width: 500px;
+    }
+    .figure-hidden{
+        display: block;
+    }
+}
+
+@media (max-width: 850px) {
+    .tuto_definition {
+        width: 500px;
+    }
+    .tuto1 {
+        width: 500px;
+        height: 300px;
+    }
+    .tuto_tips{
+        width:400px;
+    }
+}
+@media (max-width: 600px) {
+    .tuto_definition {
+        width: 300px;
+        position: relative;
+        top:-50px;
+    }
+    .tuto1 {
+        width: 300px;
+        height: 250px;
+    }
+    .text-content2{
+        position: relative;
+        top:-30px;
+    }
+    .tuto_tips{
+        width:300px;
+    }
+    .step3 img {
+        width: 300px;
+        height: 200px;
+    }
+    .step1 img {
+        width: 300px;
+        height: 200px;
+    }
+    .step1{
+        margin:20px 20px 0px 0px;
+        position:relative;
+        top:10px;
+    }
+    .step1 .caption1{
+        display: none;
+    }
+    .tutotext-content {
+        width: 300px;
+        height: 700px;
+    }
+    .figure-hidden img{
+        width: 300px;
+        height: 200px;
+    }
+}
+@media (max-width: 550px) {
+    .tuto_heading {
+        font-size: 32px;
+    }
+    .tuto_h2 {
+        font-size: 24px;
+    }
+    .tuto_explanation {
+        font-size: 20px;
+        padding: 20px 0px 20px 0px;
+        width: 325px;
+    }
+    .tutodescription{
+        font-size: 20px;
+        text-align: center;
+    }
+    .assignandrecord {
+        font-size: 22px;
+        text-align: center;
+    }
+
+    .tuto_definition {
+        font-size: 16px;
+    }
+    .caption-in-small{
+        font-size: 14px;
+    }
+    .tutotext-content {
+        width: 300px;
+        height: 500px;
+    }
+}
+
 /*care page*/
 
 .care_background {
