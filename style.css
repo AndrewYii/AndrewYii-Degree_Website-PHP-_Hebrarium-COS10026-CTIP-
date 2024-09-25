@@ -3339,18 +3339,18 @@ button.contribute-btn:hover {
 
 /* Tools page */
 
-.tuto_background {
+.tools_background {
     background-color: #DDF5E1;
 }
 
-.tuto_heading {
+.tools_heading {
     padding-top: 130px;
     padding-bottom: 30px;
     text-align: center;
     font: bold 36px "Outfit", sans-serif;
 }
 
-.tuto_container {
+.tools_container {
     margin-top: 40px;
     margin-bottom: -80px;
     display: flex;
