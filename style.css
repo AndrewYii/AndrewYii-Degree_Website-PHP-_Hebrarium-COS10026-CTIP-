@@ -3535,7 +3535,13 @@ button.contribute-btn:hover {
     font-size: 24px;
 }
 
-.toolsdescription1 {
+.toolsdescription_plantpress {
+    margin-top: -40px;
+    margin-bottom: 0;
+    font-size: 24px;
+}
+
+.toolsdescription_parchpapers {
     margin-top: -40px;
     margin-bottom: 0;
     font-size: 24px;
