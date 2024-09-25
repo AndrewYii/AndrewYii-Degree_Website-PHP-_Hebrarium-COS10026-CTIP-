@@ -3575,7 +3575,7 @@ button.contribute-btn:hover {
     }
 }
 @media (max-width: 1020px) {
-    .text-content2{
+    .text-content3{
         position: relative;
         top:-20px;
     }
@@ -3650,7 +3650,7 @@ button.contribute-btn:hover {
         width: 300px;
         height: 250px;
     }
-    .text-content2{
+    .text-content3{
         position: relative;
         top:-30px;
     }
