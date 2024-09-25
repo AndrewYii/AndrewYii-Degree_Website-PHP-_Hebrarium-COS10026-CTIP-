@@ -492,117 +492,116 @@ nav .menu {
     position: fixed;
     bottom: 3px;
     right: 2px;
-    height: 110px;
-    width: 110px;
+    height: 80px; 
+    width: 80px; 
     animation: up-down 7.5s infinite ease-in-out;
     z-index: 100000;
 }
 
-.chatbot-container:hover{
-    height: 120px;
-    width: 120px;
+.chatbot-container:hover {
+    height: 100px; 
+    width: 100px; 
     border-color: #388E3C; 
     outline: none; 
     box-shadow: 0 0 100px rgba(56, 142, 60, 0.5); 
 }
 
 #chatbot {
-        margin: auto;
-        position: absolute;
-        bottom: 0;
-        left: 0;
-        top: 0;
-        right: 0;
-        width: 90px;
-        height: 45px;
-        border: 4px solid black;
-        border-radius: 4rem;
-    }
-    
-#chatbot-corner {
-        margin: auto;
-        position: absolute;
-        bottom: 0;
-        right: 0;
-        top: 50px;
-        left: -56px;
-        width: 0;
-        height: 0;
-        border-left: 12px solid transparent;
-        border-right: 12px solid transparent;
-        border-top: 8px solid black;
-        transform: rotate(140deg);
-    }
-    
-#antenna {
-        margin: auto;
-        position: absolute;
-        left: 0;
-        bottom: -60px;
-        right: 0;
-        height: 10px;
-        width: 10px;
-        background-color: black;
-        animation: antenna-appear 7.5s infinite ease-in-out;
+    margin: auto;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    top: 0;
+    right: 0;
+    width: 70px; 
+    height: 35px; 
+    border: 4px solid black;
+    border-radius: 4rem;
 }
-      
-#beam {
-        position: absolute;
-        top: -12.5px;
-        left: -5px;
-        height: 10px;
-        width: 10px;
-        border-radius: 50%;
-        background-color: black;
-        animation: beam-appear 7.5s infinite ease-in-out;
-      }
-      
-#beam-pulsar {
-        position: absolute;
-        top: -12.5px;
-        left: -5px;
-        height: 10px;
-        width: 10px;
-        border-radius: 50%;
-        background-color: black;
-        animation: beam-pulsar-appear 7.5s infinite ease-in-out;
-      }
 
-    
+#chatbot-corner {
+    margin: auto;
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    top: 35px; 
+    left: -44px; 
+    width: 0;
+    height: 0;
+    border-left: 10px solid transparent; 
+    border-right: 10px solid transparent; 
+    border-top: 6px solid black; 
+    transform: rotate(140deg);
+}
+
+#antenna {
+    margin: auto;
+    position: absolute;
+    left: 0;
+    bottom: -70px; 
+    right: 0;
+    height: 6px; 
+    width: 8px; 
+    background-color: black;
+    animation: antenna-appear 7.5s infinite ease-in-out;
+}
+
+#beam {
+    position: absolute;
+    top: -7px;
+    left: -6px; 
+    height: 3px; 
+    width: 3px; 
+    border-radius: 50%;
+    background-color: black;
+    animation: beam-appear 7.5s infinite ease-in-out;
+}
+
+#beam-pulsar {
+    position: absolute;
+    top: -10px; 
+    left: -4px; 
+    height: 3px; 
+    width: 3px; 
+    border-radius: 50%;
+    background-color: black;
+    animation: beam-pulsar-appear 7.5s infinite ease-in-out;
+}
+
 .dot {
-      height: 7px;
-      width: 7px;
-      margin: auto;
-      position: absolute;
-      bottom: 0;
-      left: 0;
-      top: 0;
-      right: 0;
-      left: -65px;
-      background-color: black;
-      border-radius: 50%;
-      animation: pulse-outer 7.5s infinite ease-in-out;
-    }
-  
+    height: 5px; 
+    width: 7px; 
+    margin: auto;
+    position: absolute;
+    bottom: 0;
+    top: 0;
+    right: 0;
+    left: -50px; 
+    background-color: black;
+    border-radius: 50%;
+    animation: pulse-outer 7.5s infinite ease-in-out;
+}
+
 .dot:nth-child(2) {
-      left: 0;
-      animation: pulse-inner 7.5s infinite ease-in-out;
-      animation-delay: 0.2s;
-    }
-  
+    left: 0;
+    animation: pulse-inner 7.5s infinite ease-in-out;
+    animation-delay: 0.2s;
+}
+
 .dot:nth-child(3) {
-      left: 65px;
-      animation: pulse-outer 7.5s infinite ease-in-out;
-      animation-delay: 0.4s;
-    }
+    left: 50px; 
+    animation: pulse-outer 7.5s infinite ease-in-out;
+    animation-delay: 0.4s;
+}
+
     
 @keyframes pulse-inner {
       0% { transform: scale(1); }
-      7.5% { transform: scale(1.5); }
+      7.5% { transform: scale(1.25); }
       15% { transform: scale(1); }
-      22.5% { transform: scale(1.5); }
+      22.5% { transform: scale(1.25); }
       30% { transform: scale(1); }
-      37.5% { transform: scale(1.5); }
+      37.5% { transform: scale(1.25); }
       45% {
         top: 0;
         transform: scale(1); 
@@ -652,11 +651,11 @@ nav .menu {
     
 @keyframes pulse-outer {
       0% { transform: scale(1); }
-      7.5% { transform: scale(1.5); }
+      7.5% { transform: scale(1.25); }
       15% { transform: scale(1); }
-      22.5% { transform: scale(1.5); }
+      22.5% { transform: scale(1.25); }
       30% { transform: scale(1); }
-      37.5% { transform: scale(1.5); }
+      37.5% { transform: scale(1.25); }
       45% { transform: scale(1); height: 17.5px; }
       55% { transform: scale(1); height: 5px; }
       60% { height: 17.5px; }
@@ -667,11 +666,11 @@ nav .menu {
     }
     
     @keyframes antenna-appear {
-      0% { visibility: hidden; top: -100px; height: 0 }
-      50% { visibility: hidden; top: -100px; height: 0 }
-      55% { visibility: visible; top: -125px; height: 20px; }
-      95% { visibility: visible; top: -125px; height: 20px; }
-      100% { top: -100px; height: 0; }
+      0% { visibility: hidden; top: -90px; height: 0 }
+      50% { visibility: hidden; top: -90px; height: 0 }
+      55% { visibility: visible; top: -115px; height: 15px; }
+      95% { visibility: visible; top: -115px; height: 15px; }
+      100% { top: -90px; height: 0; }
     }
     
     @keyframes beam-appear {
@@ -2228,8 +2227,8 @@ nav .menu {
     background-color: #FF5722;
     color: white;
     position: relative;
-    left: 257px;
-    top: 10px;
+    left: 475px;
+    top: -60px;
     font-size: 15px;
     padding: 10px 15px;
     border: none;
@@ -2239,6 +2238,8 @@ nav .menu {
 }
 
 .enquiry-head{
+    position: relative;
+    top: 30px;
     font-size: 40px;
     padding: 0px 0px 20px 0px;
 }
@@ -2268,6 +2269,7 @@ nav .menu {
     transition: border-color 0.4s ease, box-shadow 0.4s ease, transform 0.4s ease;
 }
 
+
 .enquiry-form:hover{
     transform: scale(1.03); 
 }
@@ -2280,6 +2282,28 @@ nav .menu {
     color: #4CAF50; 
     text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.2);
 }
+
+.enquiry-ui{
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.enquiry-fname{
+    width: 240px;
+}
+
+.enquiry-lname{
+    width: 240px;
+}
+
+.enquiry-email{
+    width: 240px;
+}
+
+.enquiry-pnum{
+    width: 240px;
+}
+
 
 .enquiry-table, .address-table{
     width: 100%;
@@ -2306,7 +2330,16 @@ nav .menu {
     transition: border-color 0.4s ease, box-shadow 0.4s ease; 
 }
 
-.enquiry-data:focus, .enquiry-comment:focus{
+.enquiry-select{
+    width: 100%;
+    border: 1px solid #4CAF50; 
+    border-radius: 8px; 
+    box-sizing: border-box;
+    transition: border-color 0.4s ease, box-shadow 0.4s ease; 
+}
+
+
+.enquiry-data:focus, .enquiry-comment:focus, .enquiry-select:focus{
     border-color: #388E3C; 
     outline: none; 
     box-shadow: 0 0 5px rgba(56, 142, 60, 0.5); 
@@ -2368,8 +2401,19 @@ nav .menu {
     transition: border-color 0.4s ease, box-shadow 0.4s ease; 
 }
 
+@media (max-width: 601px) {
+    .enquiry-form{
+        width: 350px;
+    }
+
+    .enquiry-legend{
+        text-align: center;
+    }
+
+}
 
 /* Contribute Form */
+
 .contribute-form-background-layout {
     position: relative;
     min-height: 150vh;
@@ -2919,7 +2963,7 @@ button.contribute-btn:hover {
 
 /*Tutorial Page CSS*/
 
-.tutorial_bg {
+.tuto_background {
     background-color: #DDF5E1;
 }
 
@@ -2930,7 +2974,9 @@ button.contribute-btn:hover {
     font: bold 36px "Outfit", sans-serif;
 }
 
-.tuto-container {
+.tuto_container {
+    margin-top: 40px;
+    margin-bottom: -80px;
     display: flex;
     flex-direction: row;
     align-items: flex-start;
@@ -2940,18 +2986,31 @@ button.contribute-btn:hover {
 .tuto1 {
     display: block;
     width: 700px;
-    height: 475px;
-    margin: 0 auto;
+    height: 500px;
+    margin-left: 20%;
 }
 
 .tuto1 img {
-    margin-top: 30px;
     width: 100%;
     height: auto;
+    border-radius: 80px;
 }
 
+.tuto_tips {
+    margin-right: 5%;
+    background-color: #f1f1f1; 
+    padding: 30px;
+    border:1px solid black; 
+    border-radius: 20px; 
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1); 
+    width: 30%;
+    position: relative;
+    top:100px;
+}
+
+
 .tuto_h2 {
-    margin-top: 10px;
+    padding-top: 25px;
     text-align: center;
     font-size: 28px;
 }
@@ -2963,7 +3022,7 @@ button.contribute-btn:hover {
     font-size: 24px;
 }
 
-.tutostep-container {
+.tuto-container {
     display: flex;
     justify-content: center;
     gap: 20px;
@@ -3031,7 +3090,6 @@ button.contribute-btn:hover {
     width: 633px;
     height: 423px;
     margin-right: -19px;
-    margin-bottom: 23px;
 }
 
 .caption1 {
@@ -3054,15 +3112,9 @@ button.contribute-btn:hover {
     font-size: 26px;
 }
 
-.description1 {
+.tutodescription {
     margin-top: 40px;
     margin-bottom: 0;
-    font-size: 24px;
-}
-
-.description5 {
-    margin-top: -20px;
-    margin-bottom: 100px;
     font-size: 24px;
 }
 
@@ -3070,14 +3122,12 @@ button.contribute-btn:hover {
     width: 633px;
     height: 423px;
     margin-left: 0px;
-    margin-bottom: 23px;
 }
 
 .step3 img {
     width: 633px;
     height: 423px;
     margin-left: 0px;
-    margin-bottom: 23px;
 }
 
 .care_bottom {
@@ -3087,7 +3137,30 @@ button.contribute-btn:hover {
     padding: 20px;
 }
 
+.tuto_definition {
+    font-size: 20px;
+    margin: 0 auto;
+    width: 800px;
+    padding: 30px;
+    border:1px solid black;
+    background-color: #f1f1f1; 
+    padding: 30px; 
+    border-radius: 20px; 
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1); 
+}
+
+.text-content{
+    position: relative;
+    top:-12px;
+}
+
 @media (max-width: 1399px) {
+    
+    .tuto_tips {
+        position: relative;
+        top:50px;
+    }
+    
     .step2 img {
         width: 550px;
     }
@@ -3118,18 +3191,26 @@ button.contribute-btn:hover {
         padding: 50px;
         width: 450px;
     }
+    .tuto_tips {
+        position: relative;
+        top:0px;
+    }
 }
 @media (max-width: 1020px) {
+    .text-content2{
+        position: relative;
+        top:-20px;
+    }
     .tuto_container {
         flex-direction: column;
         gap: 20px;
     }
-    .care1 {
+    .tuto1 {
         display: flex;
         width: 700px;
         margin:0 auto;
     }
-    .preservation_tips{
+    .tuto_tips{
         margin: 0 auto;
         width:600px;
     }
@@ -3170,27 +3251,33 @@ button.contribute-btn:hover {
 }
 
 @media (max-width: 850px) {
-    .care_definition {
+    .tuto_definition {
         width: 500px;
     }
-    .care1 {
+    .tuto1 {
         width: 500px;
         height: 300px;
     }
-    .preservation_tips{
+    .tuto_tips{
         width:400px;
     }
 }
 @media (max-width: 600px) {
-    .care_definition {
+    .tuto_definition {
         width: 300px;
+        position: relative;
+        top:-50px;
     }
-    .care1 {
+    .tuto1 {
         width: 300px;
-        height: 400px;
+        height: 250px;
     }
-    .preservation_tips{
-        width:200px;
+    .text-content2{
+        position: relative;
+        top:-30px;
+    }
+    .tuto_tips{
+        width:300px;
     }
     .step3 img {
         width: 300px;
@@ -3224,13 +3311,22 @@ button.contribute-btn:hover {
     .tuto_h2 {
         font-size: 24px;
     }
-    .description1{
+    .tuto_explanation {
+        font-size: 20px;
+        padding: 20px 0px 20px 0px;
+        width: 325px;
+    }
+    .tutodescription{
         font-size: 20px;
         text-align: center;
     }
     .assignandrecord {
         font-size: 22px;
         text-align: center;
+    }
+
+    .tuto_definition {
+        font-size: 16px;
     }
     .caption-in-small{
         font-size: 14px;
@@ -3241,7 +3337,9 @@ button.contribute-btn:hover {
     }
 }
 
-.tools_bg {
+/* Tools page */
+
+.tools_background {
     background-color: #DDF5E1;
 }
 
@@ -3252,28 +3350,45 @@ button.contribute-btn:hover {
     font: bold 36px "Outfit", sans-serif;
 }
 
-.tools-container {
+.tools_container {
+    margin-top: 40px;
+    margin-bottom: -80px;
     display: flex;
     flex-direction: row;
     align-items: flex-start;
     gap: 20px;
 }
 
-.tools {
+.tools1 {
     display: block;
     width: 700px;
-    height: 475px;
-    margin: 0 auto;
+    height: 500px;
+    margin-left: 20%;
 }
 
-.tools img {
-    margin-top: 30px;
-    width: 100%;
+.tools1 img {
+    margin-top: -40px;
+    margin-left: 50px;
+    width: 90%;
     height: auto;
+    border-radius: 80px;
 }
+
+.tools_tips {
+    margin-right: 5%;
+    background-color: #f1f1f1; 
+    padding: 30px;
+    border:1px solid black; 
+    border-radius: 20px; 
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1); 
+    width: 30%;
+    position: relative;
+    top:100px;
+}
+
 
 .tools_h2 {
-    margin-top: 10px;
+    padding-top: 25px;
     text-align: center;
     font-size: 28px;
 }
@@ -3285,7 +3400,7 @@ button.contribute-btn:hover {
     font-size: 24px;
 }
 
-.toolsstep-container {
+.tools-container {
     display: flex;
     justify-content: center;
     gap: 20px;
@@ -3353,7 +3468,6 @@ button.contribute-btn:hover {
     width: 633px;
     height: 423px;
     margin-right: -19px;
-    margin-bottom: 23px;
 }
 
 .caption1 {
@@ -3376,15 +3490,9 @@ button.contribute-btn:hover {
     font-size: 26px;
 }
 
-.description1 {
+.toolsdescription {
     margin-top: 40px;
     margin-bottom: 0;
-    font-size: 24px;
-}
-
-.description5 {
-    margin-top: -20px;
-    margin-bottom: 100px;
     font-size: 24px;
 }
 
@@ -3392,14 +3500,31 @@ button.contribute-btn:hover {
     width: 633px;
     height: 423px;
     margin-left: 0px;
-    margin-bottom: 23px;
 }
 
 .step3 img {
     width: 633px;
     height: 423px;
     margin-left: 0px;
-    margin-bottom: 0px;
+}
+
+.care_bottom {
+    display: flex;
+    justify-content: flex-start;
+    gap: 20px;
+    padding: 20px;
+}
+
+.tools_definition {
+    font-size: 20px;
+    margin: 0 auto;
+    width: 800px;
+    padding: 30px;
+    border:1px solid black;
+    background-color: #f1f1f1; 
+    padding: 30px; 
+    border-radius: 20px; 
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1); 
 }
 
 .text-content{
@@ -3408,6 +3533,12 @@ button.contribute-btn:hover {
 }
 
 @media (max-width: 1399px) {
+    
+    .tools_tips {
+        position: relative;
+        top:50px;
+    }
+    
     .step2 img {
         width: 550px;
     }
@@ -3438,9 +3569,17 @@ button.contribute-btn:hover {
         padding: 50px;
         width: 450px;
     }
+    .tools_tips {
+        position: relative;
+        top:0px;
+    }
 }
 @media (max-width: 1020px) {
-    .care_container {
+    .text-content3{
+        position: relative;
+        top:-20px;
+    }
+    .tools_container {
         flex-direction: column;
         gap: 20px;
     }
@@ -3449,7 +3588,11 @@ button.contribute-btn:hover {
         width: 700px;
         margin:0 auto;
     }
-
+    .tools_tips{
+        margin: 0 auto;
+        width:600px;
+    }
+}
 @media (max-width: 974px) {
     .toolsbordered-content {
         flex-direction: column;
@@ -3486,26 +3629,32 @@ button.contribute-btn:hover {
 }
 
 @media (max-width: 850px) {
-    .tools1 {
+    .tools_definition {
+        width: 500px;
+    }
+    .tools {
         width: 500px;
         height: 300px;
     }
+    .tools_tips{
+        width:400px;
+    }
 }
 @media (max-width: 600px) {
-    .tools1 {
+    .tools_definition {
         width: 300px;
-        position: relative;
-        top:-100px;
-    }
-    .care1 {
-        width: 300px;
-        height: 250px;
-    }
-    .text-content1{
         position: relative;
         top:-50px;
     }
-    .preservation_tips{
+    .tools1 {
+        width: 300px;
+        height: 250px;
+    }
+    .text-content3{
+        position: relative;
+        top:-30px;
+    }
+    .tools_tips{
         width:300px;
     }
     .step3 img {
@@ -3540,13 +3689,22 @@ button.contribute-btn:hover {
     .tools_h2 {
         font-size: 24px;
     }
-    .description1{
+    .tools_explaination {
+        font-size: 20px;
+        padding: 20px 0px 20px 0px;
+        width: 325px;
+    }
+    .toolsdescription{
         font-size: 20px;
         text-align: center;
     }
     .assignandrecord {
         font-size: 22px;
         text-align: center;
+    }
+
+    .tools_definition {
+        font-size: 16px;
     }
     .caption-in-small{
         font-size: 14px;
@@ -3557,46 +3715,59 @@ button.contribute-btn:hover {
     }
 }
 
-/* Tools Page */
+/*care page*/
 
-.tools_bg {
+.care_background {
     background-color: #DDF5E1;
 }
 
-.tools_heading {
+.care_heading {
     padding-top: 130px;
     padding-bottom: 30px;
     text-align: center;
     font: bold 36px "Outfit", sans-serif;
 }
 
-.tools_container {
+.care_container {
     display: flex;
     flex-direction: row;
     align-items: flex-start;
     gap: 20px;
 }
 
-.tools1 {
+.care1 {
     display: block;
     width: 700px;
-    height: 475px;
-    margin: 0 auto;
+    height: 500px;
+    margin-left: 20%;
 }
 
-.tools1 img {
-    padding-top: 20px;
+.care1 img {
     width: 100%;
     height: auto;
+    border-radius: 80px;
 }
 
-.tools_h2 {
+.preservation_tips {
+    margin-right: 5%;
+    background-color: #f1f1f1; 
+    padding: 30px;
+    border:1px solid black; 
+    border-radius: 20px; 
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1); 
+    width: 30%;
+    position: relative;
+    top:100px;
+}
+
+
+.care_h2 {
     padding-top: 25px;
     text-align: center;
     font-size: 28px;
 }
 
-.tools_explaination {
+.care_explaination {
     text-align: justify;
     margin: 0 auto;
     padding: 20px 100px 60px 100px;
@@ -3671,7 +3842,6 @@ button.contribute-btn:hover {
     width: 633px;
     height: 423px;
     margin-right: -19px;
-    margin-bottom: 23px;
 }
 
 .caption1 {
@@ -3700,27 +3870,49 @@ button.contribute-btn:hover {
     font-size: 24px;
 }
 
-.description5 {
-    margin-top: -20px;
-    margin-bottom: 100px;
-    font-size: 24px;
-}
-
 .step2 img {
     width: 633px;
     height: 423px;
     margin-left: 0px;
-    margin-bottom: 23px;
 }
 
 .step3 img {
     width: 633px;
     height: 423px;
     margin-left: 0px;
-    margin-bottom: 0px;
+}
+
+.care_bottom {
+    display: flex;
+    justify-content: flex-start;
+    gap: 20px;
+    padding: 20px;
+}
+
+.care_definition {
+    font-size: 20px;
+    margin: 0 auto;
+    width: 800px;
+    padding: 30px;
+    border:1px solid black;
+    background-color: #f1f1f1; 
+    padding: 30px; 
+    border-radius: 20px; 
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1); 
+}
+
+.text-content{
+    position: relative;
+    top:-12px;
 }
 
 @media (max-width: 1399px) {
+    
+    .preservation_tips {
+        position: relative;
+        top:50px;
+    }
+    
     .step2 img {
         width: 550px;
     }
@@ -3751,18 +3943,30 @@ button.contribute-btn:hover {
         padding: 50px;
         width: 450px;
     }
+    .preservation_tips {
+        position: relative;
+        top:0px;
+    }
 }
 @media (max-width: 1020px) {
-    .tools_container {
+    .text-content1{
+        position: relative;
+        top:-20px;
+    }
+    .care_container {
         flex-direction: column;
         gap: 20px;
     }
-    .tools1 {
+    .care1 {
         display: flex;
         width: 700px;
         margin:0 auto;
     }
-
+    .preservation_tips{
+        margin: 0 auto;
+        width:600px;
+    }
+}
 @media (max-width: 974px) {
     .bordered-content {
         flex-direction: column;
@@ -3799,15 +4003,33 @@ button.contribute-btn:hover {
 }
 
 @media (max-width: 850px) {
-    .tools1 {
+    .care_definition {
+        width: 500px;
+    }
+    .care1 {
         width: 500px;
         height: 300px;
     }
+    .preservation_tips{
+        width:400px;
+    }
 }
 @media (max-width: 600px) {
-    .tools1 {
+    .care_definition {
         width: 300px;
-        height: 400px;
+        position: relative;
+        top:-50px;
+    }
+    .care1 {
+        width: 300px;
+        height: 250px;
+    }
+    .text-content1{
+        position: relative;
+        top:-30px;
+    }
+    .preservation_tips{
+        width:300px;
     }
     .step3 img {
         width: 300px;
@@ -3835,13 +4057,13 @@ button.contribute-btn:hover {
     }
 }
 @media (max-width: 550px) {
-    .tools_heading {
+    .care_heading {
         font-size: 32px;
     }
-    .tools_h2 {
+    .care_h2 {
         font-size: 24px;
     }
-    .tools_explaination {
+    .care_explaination {
         font-size: 20px;
         padding: 20px 0px 20px 0px;
         width: 325px;
@@ -3853,6 +4075,10 @@ button.contribute-btn:hover {
     .assignandrecord {
         font-size: 22px;
         text-align: center;
+    }
+
+    .care_definition {
+        font-size: 16px;
     }
     .caption-in-small{
         font-size: 14px;
@@ -4024,7 +4250,7 @@ button.contribute-btn:hover {
 
 .vatica_explain {
     margin-left: 180px;
-    text-align: center;
+    text-align: justify;
     width: 500px;
     font-size: 24px;
     margin-top: 20px;
@@ -4090,7 +4316,7 @@ button.contribute-btn:hover {
 .hopea_explain {
     position: relative;
     left:-140px;
-    text-align: center;
+    text-align: justify;
     width: 500px;
     font-size: 24px;
     margin-top: 20px;
@@ -4187,7 +4413,6 @@ button.contribute-btn:hover {
     .hopea_explain {
         position: relative;
         left:-140px;
-        text-align: center;
         width: 400px;
         font-size: 24px;
         margin-top: 20px;
@@ -4542,17 +4767,7 @@ button.contribute-btn:hover {
     background-color: #ddf5e1;
     top: 30px;
     box-shadow: inset 100px 100px 100000px rgba(56, 142, 60, 0.5);
-}
-
-@keyframes slideBackground {
-    0% {
-        background: url(images/herbarium_specimen_introduction_background.jpg) no-repeat center bottom;
-        background-size: cover;
-    }
-    100% {
-        background: url(images/herbarium_specimen_introduction_background.jpg) no-repeat center top;
-        background-size: cover;
-    }
+    transition: opacity 2s ease-in; 
 }
 
 .tutorial-intrduction-background-layout1{
@@ -4576,6 +4791,7 @@ button.contribute-btn:hover {
     overflow: hidden;
     background-color: #fff;
     opacity: 0.85;
+    padding: 50px;
     border-radius:30px ;
 }
 
@@ -4623,7 +4839,34 @@ button.contribute-btn:hover {
 }
 
 #change-background-tutorial:checked + label +.tutorial-intrduction-background-layout {
-    animation: slideBackground 2.5s forwards;
+    animation: slideBackground 3s forwards;
+}
+@keyframes slideBackground {
+    0% {
+        background: url(images/herbarium_specimen_introduction_background.jpg) no-repeat center bottom;
+        background-size: cover;
+    }
+    100% {
+        background: url(images/herbarium_specimen_introduction_background.jpg) no-repeat center top;
+        background-size: cover;
+    }
+}
+
+#read-more{
+    display: none;
+}
+
+#read-more:not(:checked) +h3 +p +br +p{
+    display: none;
+}
+
+#read-more:checked +h3 +p label .read_more{
+    display: none;
+}
+
+.read_more{
+    color:darkgreen;
+    cursor: pointer;
 }
 
 #change-background-tutorial:not(:checked) + label +.tutorial-intrduction-background-layout .end-section,#change-background-tutorial:not(:checked) + label +.tutorial-intrduction-background-layout +.tutorial-intrduction-background-layout1{
@@ -4659,10 +4902,12 @@ button.contribute-btn:hover {
     cursor: pointer;
 }
 
+
 #tools:checked + input + input + ul li#tools-section,#tutorial:checked + input  + ul li#tutorial-section,#care:checked + ul li#care-section{
     text-decoration: underline;
-    color:black;
+    transition: color 0.3s ease, text-decoration 0.3s ease;
 }
+
 
 .toolssection,.caresection,.tutorialsection {
     display: flex;
@@ -4681,13 +4926,15 @@ button.contribute-btn:hover {
     margin-bottom: 10px;
 }
 .toolssection p,.caresection p,.tutorialsection p {
-    font-size: 3vh;
+    font-size: 2.8vh;
     justify-content: space-between;
 }
 
 .tutorial-introduction-text-content {
     flex: 1; 
     padding-right: 20px; 
+    text-align: justify;
+    font-size: 18px;
 }
 
 .tutorial-introduction-image-content {
