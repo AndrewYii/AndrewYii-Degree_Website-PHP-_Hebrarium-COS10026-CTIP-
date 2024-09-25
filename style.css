@@ -3367,7 +3367,8 @@ button.contribute-btn:hover {
 }
 
 .tools1 img {
-    width: 100%;
+    margin-top: -50px;
+    width: 90%;
     height: auto;
     border-radius: 80px;
 }
