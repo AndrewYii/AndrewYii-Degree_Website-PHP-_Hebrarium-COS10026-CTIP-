@@ -2107,7 +2107,7 @@ nav .menu {
 }
 
 .profile-info .profile-course{
-    color:darkgreen
+    color:darkgreen;
 }
 
 
@@ -2204,7 +2204,7 @@ nav .menu {
 .email-button a:hover{
     color:#fff;
     padding: 16px 50px;
-    background-color: darkgreen;
+    background-color: red;
     border:none;
     outline: none;
 }
