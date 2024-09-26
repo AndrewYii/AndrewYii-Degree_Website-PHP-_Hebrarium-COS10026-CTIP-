@@ -3551,7 +3551,7 @@ button.contribute-btn:hover {
     background-color: white;   
     padding: 99px;
     gap: 0px; 
-    margin-left: 0px; 
+    margin-left: 0px;
 }
 
 .assignandrecord {
@@ -3586,6 +3586,12 @@ button.contribute-btn:hover {
 .toolsdescription_parchpapers {
     margin-top: -60px;
     margin-bottom: 0;
+    font-size: 24px;
+}
+
+.toolsdescription_plasticfoil {
+    margin-top: 100px;
+    margin-bottom: 0px;
     font-size: 24px;
 }
 
