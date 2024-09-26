@@ -3580,6 +3580,12 @@ button.contribute-btn:hover {
     font-size: 24px;
 }
 
+.toolsdescription_plasticfoil {
+    margin-top: 100px;
+    margin-bottom: 0px;
+    font-size: 24px;
+}
+
 .step2 img {
     width: 633px;
     height: 423px;
