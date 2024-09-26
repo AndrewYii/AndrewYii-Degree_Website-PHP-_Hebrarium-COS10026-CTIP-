@@ -1598,6 +1598,8 @@ nav .menu {
 }
 
 .identify h1{
+    display: flex;
+    flex-wrap: wrap;
     font-size: 45px;
     margin: 2%;
 }
@@ -1619,6 +1621,11 @@ nav .menu {
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    transition: transform 0.4s ease;
+}
+
+.identify-img:hover{
+    transform: scale(1.05);
 }
 
 .identify-upload{
@@ -1670,6 +1677,25 @@ nav .menu {
 .identify-table legend{
     font-size: 30px;
     font-weight: bold;
+}
+
+#upload{
+    display: None;
+}
+
+@media (max-width:601px){
+
+    .identify h1{
+        font-size: 30px;
+    }
+
+    .identify-upload{
+        width: 300px;
+    }
+
+    .identify-detail{
+        width: 300px;
+    }
 }
 
 /*Login & Register */
@@ -2309,19 +2335,11 @@ nav .menu {
     flex-wrap: wrap;
 }
 
-.enquiry-fname{
-    width: 240px;
+.enquiry-ui div{
+    padding: 6px;
 }
 
-.enquiry-lname{
-    width: 240px;
-}
-
-.enquiry-email{
-    width: 240px;
-}
-
-.enquiry-pnum{
+.enquiry-fname, .enquiry-lname, .enquiry-email, .enquiry-pnum{
     width: 240px;
 }
 
@@ -2352,7 +2370,7 @@ nav .menu {
 }
 
 .enquiry-select{
-    width: 100%;
+    width: 80%;
     border: 1px solid #4CAF50; 
     border-radius: 8px; 
     box-sizing: border-box;
@@ -2429,6 +2447,21 @@ nav .menu {
 
     .enquiry-legend{
         text-align: center;
+    }
+
+    .enquiry-ui{
+        width: 80%;
+        margin: 0 auto;
+    }
+
+    .enquiry-fname, .enquiry-lname, .enquiry-email, .enquiry-pnum{
+        width: 390px;
+    }
+
+
+    .address-table, .enquiry-table{
+        width: 80%;
+        margin: 0 auto;
     }
 
 }
@@ -3954,7 +3987,7 @@ button.contribute-btn:hover {
 
 .text-content{
     position: relative;
-    top:-12px;
+    top:1px;
 }
 
 @media (max-width: 1399px) {
@@ -4002,7 +4035,7 @@ button.contribute-btn:hover {
 @media (max-width: 1020px) {
     .text-content1{
         position: relative;
-        top:-20px;
+        top:0px;
     }
     .care_container {
         flex-direction: column;

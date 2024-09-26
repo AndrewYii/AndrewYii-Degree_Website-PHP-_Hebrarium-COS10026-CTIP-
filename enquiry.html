@@ -408,36 +408,19 @@
                             <input class="enquiry-data" type="text" name="first_name" placeholder="First Name" size="22" maxlength="25" required="required" id="first_name">
                         </div>
                         <div class="enquiry-lname">
-                            <label for="fname">Last Name</label>
+                            <label for="fname" class="feedback-cont">Last Name</label>
                             <input class="enquiry-data" type="text" name="first_name" placeholder="Last Name" size="22" maxlength="25" required="required" id="first_name">
                         </div>
                         <div class="enquiry-email">
-                            <label for="email">Email</label>
+                            <label for="email" class="feedback-cont">Email</label>
                             <input class="enquiry-data" type="email" id="email" name="email" placeholder="example@gmail.com" required="required">
                         </div>
                         <div class="enquiry-pnum">
-                            <label for="pnum">Phone Number</label>
+                            <label for="pnum" class="feedback-cont">Phone Number</label>
                             <input class="enquiry-data" type="tel" id="tel" name="phone" pattern="[0-9]{10}" placeholder="0123456789" maxlength="10" required="required">
                         </div>
                     </div>
-                    <table class="enquiry-table">
-                        <tr>
-                            <td class="feedback-cont"><label for="first_name">First Name</label></td>
-                            <td class="feedback-cont"><label for="last_name">Last Name</label></td>
-                        </tr>
-                        <tr>
-                            <td><input class="enquiry-data" type="text" name="first_name" placeholder="First Name" size="22" maxlength="25" required="required" id="first_name"></td>
-                            <td><input class="enquiry-data" type="text" name="last_name" placeholder="Last Name" size="22" maxlength="25" required="required" id="last_name"></td>
-                        </tr>
-                        <tr>
-                            <td class="feedback-cont"><label for="email">Email</label></td>
-                            <td class="feedback-cont"><label for="tel">Phone</label> Number</td>
-                        </tr>
-                        <tr>
-                            <td><input class="enquiry-data" type="email" id="email" name="email" placeholder="example@gmail.com" required="required"></td>
-                            <td><input class="enquiry-data" type="tel" id="tel" name="phone" pattern="[0-9]{10}" placeholder="0123456789" maxlength="10" required="required"></td>
-                        </tr>
-                    </table>
+                    
                 </fieldset>
                 <fieldset class="enquiry-fd">
                     <legend class="enquiry-legend">Address</legend>
@@ -456,7 +439,7 @@
                         </tr>
                         <tr>
                             <td class="feedback-cont">State: </td>
-                            <td>
+                            <td class="enquiry-td">
                                 <select name="State" id="state" class="enquiry-select">
                                 <option value="Johor">Johor</option>
                                 <option value="Kedah">Kedah</option>
@@ -479,7 +462,7 @@
                 </fieldset>
                 <fieldset class="enquiry-fd">
                     <legend class="enquiry-legend">Feedback</legend>
-                        <table class="enquriry-table">
+                        <table class="enquiry-table">
                                 <tr>
                                     <td class="feedback-cont">Enquiry</td>
                                 </tr>
