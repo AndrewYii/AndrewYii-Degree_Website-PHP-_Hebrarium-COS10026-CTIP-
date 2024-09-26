@@ -2177,11 +2177,11 @@ nav .menu {
     color: black;
 }
 
-.email-button{
+.email-button-aniq{
     text-align: center;
 }
 
-.email-button a{
+.email-button-aniq a{
     padding:14px;
     border-radius: 50px;
     border:1px solid black;
@@ -2191,10 +2191,10 @@ nav .menu {
     cursor: pointer;
 }
 
-.email-button a:hover{
+.email-button-aniq a:hover{
     color:#fff;
     padding: 16px 50px;
-    background-color: darkgreen;
+    background-color: blue;
     border:none;
     outline: none;
 }
@@ -2210,6 +2210,28 @@ nav .menu {
     background-color: #fff;
     color: black;
 
+}
+
+.email-button-assufi{
+    text-align: center;
+}
+
+.email-button-assufi a{
+    padding:14px;
+    border-radius: 50px;
+    border:1px solid black;
+    font-size: 18px;
+    text-decoration: none;
+    color:black;
+    cursor: pointer;
+}
+
+.email-button-assufi a:hover{
+    color:#fff;
+    padding: 16px 50px;
+    background-color: purple;
+    border:none;
+    outline: none;
 }
 
 /*Faiz-Profile*/
