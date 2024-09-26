@@ -3987,7 +3987,7 @@ button.contribute-btn:hover {
 
 .text-content{
     position: relative;
-    top:-12px;
+    top:1px;
 }
 
 @media (max-width: 1399px) {
@@ -4035,7 +4035,7 @@ button.contribute-btn:hover {
 @media (max-width: 1020px) {
     .text-content1{
         position: relative;
-        top:-20px;
+        top:0px;
     }
     .care_container {
         flex-direction: column;
