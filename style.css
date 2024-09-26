@@ -492,15 +492,15 @@ nav .menu {
     position: fixed;
     bottom: 3px;
     right: 2px;
-    height: 80px; 
-    width: 80px; 
+    height: 70px; 
+    width: 70px; 
     animation: up-down 7.5s infinite ease-in-out;
     z-index: 100000;
 }
 
 .chatbot-container:hover {
-    height: 100px; 
-    width: 100px; 
+    height: 80px; 
+    width: 80px; 
     border-color: #388E3C; 
     outline: none; 
     box-shadow: 0 0 100px rgba(56, 142, 60, 0.5); 
@@ -513,9 +513,9 @@ nav .menu {
     left: 0;
     top: 0;
     right: 0;
-    width: 70px; 
-    height: 35px; 
-    border: 4px solid black;
+    width: 65px; 
+    height: 30px; 
+    border: 3px solid black;
     border-radius: 4rem;
 }
 
@@ -524,13 +524,13 @@ nav .menu {
     position: absolute;
     bottom: 0;
     right: 0;
-    top: 35px; 
-    left: -44px; 
+    top: 31px; 
+    left: -38px; 
     width: 0;
     height: 0;
-    border-left: 10px solid transparent; 
-    border-right: 10px solid transparent; 
-    border-top: 6px solid black; 
+    border-left: 9px solid transparent; 
+    border-right: 9px solid transparent; 
+    border-top: 5px solid black; 
     transform: rotate(140deg);
 }
 
@@ -538,10 +538,10 @@ nav .menu {
     margin: auto;
     position: absolute;
     left: 0;
-    bottom: -70px; 
+    bottom: -75px; 
     right: 0;
-    height: 6px; 
-    width: 8px; 
+    height: 5px; 
+    width: 6px; 
     background-color: black;
     animation: antenna-appear 7.5s infinite ease-in-out;
 }
@@ -570,13 +570,13 @@ nav .menu {
 
 .dot {
     height: 5px; 
-    width: 7px; 
+    width: 5px; 
     margin: auto;
     position: absolute;
     bottom: 0;
     top: 0;
     right: 0;
-    left: -50px; 
+    left: -47.5px; 
     background-color: black;
     border-radius: 50%;
     animation: pulse-outer 7.5s infinite ease-in-out;
@@ -624,7 +624,7 @@ nav .menu {
       65% { transform: rotate(-10deg); }
       65% { transform: rotate(0deg); }
       85% {
-        top: 22.5px;
+        top: 20.5px;
         height: 10px;
         border-top-left-radius: 50%;
         border-top-right-radius: 50%;
@@ -683,11 +683,11 @@ nav .menu {
     @keyframes beam-pulsar-appear {
       0% { visibility: hidden; top: -12.5px; height: 0 }
       50% { visibility: hidden; top: -12.5px; height: 0 }
-      55% { visibility: visible; top: -12.5px; left: -5px; height: 20px; width: 20px; opacity: 1 }
-      65% { top: -25px; left: -15px; height: 40px; width: 40px; opacity: 0; visibility: visible; }
+      55% { visibility: visible; top: -12.5px; left: -5px; height: 15px; width: 15px; opacity: 1 }
+      65% { top: -22px; left: -10px; height: 30px; width: 30px; opacity: 0; visibility: visible; }
       74% { visibility: hidden; opacity: 0; }
-      75% { visibility: visible; top: -12.5px; left: -5px; height: 20px; width: 20px; opacity: 1 }
-      85% { top: -25px; left: -15px; height: 40px; width: 40px; opacity: 0; visibility: visible; }
+      75% { visibility: visible; top: -12.5px; left: -5px; height: 15px; width: 15px; opacity: 1 }
+      85% { top: -20px; left: -10px; height: 30px; width: 30px; opacity: 0; visibility: visible; }
       94% { visibility: hidden; opacity: 0; }
       100% { visibility: hidden; opacity: 0; }
     }
