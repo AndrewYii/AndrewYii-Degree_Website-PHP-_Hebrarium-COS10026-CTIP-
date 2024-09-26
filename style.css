@@ -1513,7 +1513,7 @@ nav .menu {
     flex: 1; 
     max-width: 20%; 
     padding: 2vw;
-    font-size: 18px;
+    font-size: 16px;
     font-style: italic;
     box-sizing: border-box; 
 }
@@ -3083,36 +3083,9 @@ button.contribute-btn:hover {
     padding: 20px;
     margin-bottom: 60px;
     opacity: 0; 
-    animation: fadeInUp 2s forwards; 
-    animation-timeline: view();
+    animation: fadeInUp 2s ease-out forwards; 
 }
 
-@keyframes fadeInUp {
-    0% {
-        opacity: 0.01;
-        transform: translateY(-80px);
-    }
-    25% {
-        opacity: 0.1;
-        transform: translateY(-60px);
-    }
-    40% {
-        opacity: 0.8;
-        transform: translateY(-50px);
-    }
-    50% {
-        opacity: 1;
-        transform: translateY(-40px);
-    }
-    75% {
-        opacity: 1;
-        transform: translateY(-20px);
-    }
-    100% {
-        opacity: 1; 
-        transform: translateY(0); 
-    }
-}
 .caption-in-small{
     display: none;
 }
@@ -3476,36 +3449,32 @@ button.contribute-btn:hover {
     padding: 20px;
     margin-bottom: 60px;
     opacity: 0; 
-    animation: fadeInUp 2s forwards; 
-    animation-timeline: view();
+    animation: fadeInUp 2s ease-out forwards; 
 }
 
 @keyframes fadeInUp {
     0% {
-        opacity: 0.01;
-        transform: translateY(-80px);
+        opacity: 0;
+        transform: translateY(-20px);
     }
     25% {
-        opacity: 0.1;
-        transform: translateY(-60px);
-    }
-    40% {
-        opacity: 0.8;
-        transform: translateY(-50px);
+        opacity: 0.3;
+        transform: translateY(-10px);
     }
     50% {
-        opacity: 1;
-        transform: translateY(-40px);
+        opacity: 0.7;
+        transform: translateY(-5px);
     }
     75% {
         opacity: 1;
-        transform: translateY(-20px);
+        transform: translateY(2px);
     }
     100% {
         opacity: 1; 
         transform: translateY(0); 
     }
 }
+
 .caption-in-small{
     display: none;
 }
@@ -3880,36 +3849,9 @@ button.contribute-btn:hover {
     padding: 20px;
     margin-bottom: 60px;
     opacity: 0; 
-    animation: fadeInUp 2s forwards; 
-    animation-timeline: view();
+    animation: fadeInUp 2s ease-out forwards; 
 }
 
-@keyframes fadeInUp {
-    0% {
-        opacity: 0.01;
-        transform: translateY(-80px);
-    }
-    25% {
-        opacity: 0.1;
-        transform: translateY(-60px);
-    }
-    40% {
-        opacity: 0.8;
-        transform: translateY(-50px);
-    }
-    50% {
-        opacity: 1;
-        transform: translateY(-40px);
-    }
-    75% {
-        opacity: 1;
-        transform: translateY(-20px);
-    }
-    100% {
-        opacity: 1; 
-        transform: translateY(0); 
-    }
-}
 .caption-in-small{
     display: none;
 }
@@ -4239,7 +4181,7 @@ button.contribute-btn:hover {
 }
 
 .defi1 {
-    font-size: 24px;
+    font-size: 22px;
     margin-bottom: 30px;
     margin-right: 140px;
 }
@@ -4275,7 +4217,11 @@ button.contribute-btn:hover {
 
 .dipte_defi {
     font-size: 24px;
-    text-align: center;
+    text-align: justify;
+}
+
+.smaller_word{
+    font-size: 22px;
 }
 
 .dipte-container {
@@ -4641,7 +4587,7 @@ button.contribute-btn:hover {
         font-size: 24px;
     }
     .defi1 {
-        font-size: 20px;
+        font-size: 18px;
     }
     .family_title {
         font-size: 24px;
@@ -4681,6 +4627,9 @@ button.contribute-btn:hover {
     }
     .defi1-heading{
         width: 400px;
+    }
+    .smaller_word{
+        font-size: 18px;
     }
 }
 @media (max-width: 707px){
