@@ -960,7 +960,7 @@ nav .menu {
 .desc1white_region .white_region-green_region p {
     text-align: center;
     font-size: 24px;
-    padding: 0.7vw 0 1.5vw 2vw;
+    padding: 0.7vw 2vw 1.5vw 2vw;
 }
 
 @media (max-width: 1102px) {
@@ -2199,11 +2199,11 @@ nav .menu {
     color: black;
 }
 
-.email-button-aniq{
+.email-button{
     text-align: center;
 }
 
-.email-button-aniq a{
+.email-button a{
     padding:14px;
     border-radius: 50px;
     border:1px solid black;
@@ -2213,10 +2213,10 @@ nav .menu {
     cursor: pointer;
 }
 
-.email-button-aniq a:hover{
+.email-button a:hover{
     color:#fff;
     padding: 16px 50px;
-    background-color: blue;
+    background-color: darkgreen;
     border:none;
     outline: none;
 }
@@ -2232,28 +2232,6 @@ nav .menu {
     background-color: #fff;
     color: black;
 
-}
-
-.email-button-assufi{
-    text-align: center;
-}
-
-.email-button-assufi a{
-    padding:14px;
-    border-radius: 50px;
-    border:1px solid black;
-    font-size: 18px;
-    text-decoration: none;
-    color:black;
-    cursor: pointer;
-}
-
-.email-button-assufi a:hover{
-    color:#fff;
-    padding: 16px 50px;
-    background-color: purple;
-    border:none;
-    outline: none;
 }
 
 /*Faiz-Profile*/
