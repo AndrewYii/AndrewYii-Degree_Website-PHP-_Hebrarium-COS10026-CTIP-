@@ -3139,6 +3139,10 @@ button.contribute-btn:hover {
     display: none;
 }
 
+.pass-block{
+    display: none;
+}
+
 .figure-hidden{
     display: none;
     padding-left: 0px;
@@ -3231,11 +3235,6 @@ button.contribute-btn:hover {
     box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1); 
 }
 
-.text-content{
-    position: relative;
-    top:-12px;
-}
-
 @media (max-width: 1399px) {
     
     .tuto_tips {
@@ -3257,6 +3256,11 @@ button.contribute-btn:hover {
         padding: 50px;
         width: 550px;
     }
+
+    .tutotext-content5 h3, .tutotext-content5 p.tutodescription{
+        position: relative;
+        top:50px;
+    }
 }
 @media (max-width: 1189px) {
     .step2 img {
@@ -3266,9 +3270,11 @@ button.contribute-btn:hover {
     .step3 img {
         width: 450px;
     }
+    
     .step1 img {
         width: 450px;
     }
+
     .tutotext-content {
         padding: 50px;
         width: 450px;
@@ -3279,10 +3285,6 @@ button.contribute-btn:hover {
     }
 }
 @media (max-width: 1020px) {
-    .text-content2{
-        position: relative;
-        top:-20px;
-    }
     .tuto_container {
         flex-direction: column;
         gap: 20px;
@@ -3327,7 +3329,7 @@ button.contribute-btn:hover {
         padding: 55px;
         width: 500px;
     }
-    .figure-hidden{
+    .pass-block{
         display: block;
     }
 }
@@ -3384,6 +3386,13 @@ button.contribute-btn:hover {
     .figure-hidden img{
         width: 300px;
         height: 200px;
+    }
+    .tutotext-content001 {
+        height: 800px;
+    }
+
+    .tutotext-content004 {
+        height: 900px;
     }
 }
 @media (max-width: 550px) {
@@ -3564,7 +3573,7 @@ button.contribute-btn:hover {
     background-color: white;   
     padding: 99px;
     gap: 0px; 
-    margin-left: 0px; 
+    margin-left: 0px;
 }
 
 .assignandrecord {
@@ -3599,6 +3608,12 @@ button.contribute-btn:hover {
 .toolsdescription_parchpapers {
     margin-top: -60px;
     margin-bottom: 0;
+    font-size: 24px;
+}
+
+.toolsdescription_plasticfoil {
+    margin-top: 100px;
+    margin-bottom: 0px;
     font-size: 24px;
 }
 
@@ -4009,7 +4024,7 @@ button.contribute-btn:hover {
 
 .text-content{
     position: relative;
-    top:-12px;
+    top:1px;
 }
 
 @media (max-width: 1399px) {
@@ -4057,7 +4072,7 @@ button.contribute-btn:hover {
 @media (max-width: 1020px) {
     .text-content1{
         position: relative;
-        top:-20px;
+        top:0px;
     }
     .care_container {
         flex-direction: column;
@@ -5016,7 +5031,6 @@ button.contribute-btn:hover {
 
 
 .toolssection,.caresection,.tutorialsection {
-    z-index:100000000;
     display: flex;
     flex-direction: row;
     align-items: stretch;
