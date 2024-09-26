@@ -1598,6 +1598,8 @@ nav .menu {
 }
 
 .identify h1{
+    display: flex;
+    flex-wrap: wrap;
     font-size: 45px;
     margin: 2%;
 }
@@ -1619,6 +1621,11 @@ nav .menu {
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    transition: transform 0.4s ease;
+}
+
+.identify-img:hover{
+    transform: scale(1.05);
 }
 
 .identify-upload{
@@ -1670,6 +1677,25 @@ nav .menu {
 .identify-table legend{
     font-size: 30px;
     font-weight: bold;
+}
+
+#upload{
+    display: None;
+}
+
+@media (max-width:601px){
+
+    .identify h1{
+        font-size: 30px;
+    }
+
+    .identify-upload{
+        width: 300px;
+    }
+
+    .identify-detail{
+        width: 300px;
+    }
 }
 
 /*Login & Register */
@@ -2107,7 +2133,7 @@ nav .menu {
 }
 
 .profile-info .profile-course{
-    color:darkgreen
+    color:darkgreen;
 }
 
 
@@ -2151,6 +2177,27 @@ nav .menu {
     color: black;
 }
 
+.email-button{
+    text-align: center;
+}
+
+.email-button a{
+    padding:14px;
+    border-radius: 50px;
+    border:1px solid black;
+    font-size: 18px;
+    text-decoration: none;
+    color:black;
+    cursor: pointer;
+}
+
+.email-button a:hover{
+    color:#fff;
+    padding: 16px 50px;
+    background-color: darkgreen;
+    border:none;
+    outline: none;
+}
 
 /*Assufi-Profile*/
 .odd-row2{
@@ -2186,11 +2233,11 @@ nav .menu {
     transform: scale(1.05);
 }
 
-.email-button{
+.email-button-faiz{
     text-align: center;
 }
 
-.email-button a{
+.email-button-faiz a{
     padding:14px;
     border-radius: 50px;
     border:1px solid black;
@@ -2201,10 +2248,10 @@ nav .menu {
 }
 
 
-.email-button a:hover{
+.email-button-faiz a:hover{
     color:#fff;
     padding: 16px 50px;
-    background-color: darkgreen;
+    background-color: red;
     border:none;
     outline: none;
 }
@@ -2288,19 +2335,11 @@ nav .menu {
     flex-wrap: wrap;
 }
 
-.enquiry-fname{
-    width: 240px;
+.enquiry-ui div{
+    padding: 6px;
 }
 
-.enquiry-lname{
-    width: 240px;
-}
-
-.enquiry-email{
-    width: 240px;
-}
-
-.enquiry-pnum{
+.enquiry-fname, .enquiry-lname, .enquiry-email, .enquiry-pnum{
     width: 240px;
 }
 
@@ -2331,7 +2370,7 @@ nav .menu {
 }
 
 .enquiry-select{
-    width: 100%;
+    width: 80%;
     border: 1px solid #4CAF50; 
     border-radius: 8px; 
     box-sizing: border-box;
@@ -2408,6 +2447,21 @@ nav .menu {
 
     .enquiry-legend{
         text-align: center;
+    }
+
+    .enquiry-ui{
+        width: 80%;
+        margin: 0 auto;
+    }
+
+    .enquiry-fname, .enquiry-lname, .enquiry-email, .enquiry-pnum{
+        width: 390px;
+    }
+
+
+    .address-table, .enquiry-table{
+        width: 80%;
+        margin: 0 auto;
     }
 
 }
@@ -2963,7 +3017,7 @@ button.contribute-btn:hover {
 
 /*Tutorial Page CSS*/
 
-.tutorial_bg {
+.tuto_background {
     background-color: #DDF5E1;
 }
 
@@ -2974,7 +3028,9 @@ button.contribute-btn:hover {
     font: bold 36px "Outfit", sans-serif;
 }
 
-.tuto-container {
+.tuto_container {
+    margin-top: 40px;
+    margin-bottom: -80px;
     display: flex;
     flex-direction: row;
     align-items: flex-start;
@@ -2984,15 +3040,28 @@ button.contribute-btn:hover {
 .tuto1 {
     display: block;
     width: 700px;
-    height: 475px;
-    margin: 0 auto;
+    height: 500px;
+    margin-left: 20%;
 }
 
 .tuto1 img {
-    margin-top: 30px;
     width: 100%;
     height: auto;
+    border-radius: 80px;
 }
+
+.tuto_tips {
+    margin-right: 5%;
+    background-color: #f1f1f1; 
+    padding: 30px;
+    border:1px solid black; 
+    border-radius: 20px; 
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1); 
+    width: 30%;
+    position: relative;
+    top:100px;
+}
+
 
 .tuto_h2 {
     padding-top: 25px;
@@ -3007,7 +3076,7 @@ button.contribute-btn:hover {
     font-size: 24px;
 }
 
-.tutostep-container {
+.tuto-container {
     display: flex;
     justify-content: center;
     gap: 20px;
@@ -3075,7 +3144,6 @@ button.contribute-btn:hover {
     width: 633px;
     height: 423px;
     margin-right: -19px;
-    margin-bottom: 23px;
 }
 
 .caption1 {
@@ -3098,15 +3166,15 @@ button.contribute-btn:hover {
     font-size: 26px;
 }
 
-.description1 {
-    margin-top: 40px;
-    margin-bottom: 0;
-    font-size: 24px;
+.assignandrecord3 {
+    margin-top: -80px;
+    margin-bottom: -25px;
+    font-size: 26px;
 }
 
-.description5 {
-    margin-top: -20px;
-    margin-bottom: 100px;
+.tutodescription {
+    margin-top: 40px;
+    margin-bottom: 0;
     font-size: 24px;
 }
 
@@ -3114,17 +3182,45 @@ button.contribute-btn:hover {
     width: 633px;
     height: 423px;
     margin-left: 0px;
-    margin-bottom: 23px;
 }
 
 .step3 img {
     width: 633px;
     height: 423px;
     margin-left: 0px;
-    margin-bottom: 23px;
+}
+
+.care_bottom {
+    display: flex;
+    justify-content: flex-start;
+    gap: 20px;
+    padding: 20px;
+}
+
+.tuto_definition {
+    font-size: 20px;
+    margin: 0 auto;
+    width: 800px;
+    padding: 30px;
+    border:1px solid black;
+    background-color: #f1f1f1; 
+    padding: 30px; 
+    border-radius: 20px; 
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1); 
+}
+
+.text-content{
+    position: relative;
+    top:-12px;
 }
 
 @media (max-width: 1399px) {
+    
+    .tuto_tips {
+        position: relative;
+        top:50px;
+    }
+    
     .step2 img {
         width: 550px;
     }
@@ -3155,9 +3251,17 @@ button.contribute-btn:hover {
         padding: 50px;
         width: 450px;
     }
+    .tuto_tips {
+        position: relative;
+        top:0px;
+    }
 }
 @media (max-width: 1020px) {
-    .tuto-container {
+    .text-content2{
+        position: relative;
+        top:-20px;
+    }
+    .tuto_container {
         flex-direction: column;
         gap: 20px;
     }
@@ -3165,6 +3269,10 @@ button.contribute-btn:hover {
         display: flex;
         width: 700px;
         margin:0 auto;
+    }
+    .tuto_tips{
+        margin: 0 auto;
+        width:600px;
     }
 }
 @media (max-width: 974px) {
@@ -3203,15 +3311,33 @@ button.contribute-btn:hover {
 }
 
 @media (max-width: 850px) {
+    .tuto_definition {
+        width: 500px;
+    }
     .tuto1 {
         width: 500px;
         height: 300px;
     }
+    .tuto_tips{
+        width:400px;
+    }
 }
 @media (max-width: 600px) {
+    .tuto_definition {
+        width: 300px;
+        position: relative;
+        top:-50px;
+    }
     .tuto1 {
         width: 300px;
-        height: 400px;
+        height: 250px;
+    }
+    .text-content2{
+        position: relative;
+        top:-30px;
+    }
+    .tuto_tips{
+        width:300px;
     }
     .step3 img {
         width: 300px;
@@ -3245,12 +3371,12 @@ button.contribute-btn:hover {
     .tuto_h2 {
         font-size: 24px;
     }
-    .tuto_explaination {
+    .tuto_explanation {
         font-size: 20px;
         padding: 20px 0px 20px 0px;
         width: 325px;
     }
-    .description1{
+    .tutodescription{
         font-size: 20px;
         text-align: center;
     }
@@ -3258,10 +3384,416 @@ button.contribute-btn:hover {
         font-size: 22px;
         text-align: center;
     }
+
+    .tuto_definition {
+        font-size: 16px;
+    }
     .caption-in-small{
         font-size: 14px;
     }
     .tutotext-content {
+        width: 300px;
+        height: 500px;
+    }
+}
+
+/* Tools page */
+
+.tools_background {
+    background-color: #DDF5E1;
+}
+
+.tools_heading {
+    padding-top: 130px;
+    padding-bottom: 30px;
+    text-align: center;
+    font: bold 36px "Outfit", sans-serif;
+}
+
+.tools_container {
+    margin-top: 40px;
+    margin-bottom: -80px;
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    gap: 20px;
+}
+
+.tools1 {
+    display: block;
+    width: 700px;
+    height: 500px;
+    margin-left: 20%;
+}
+
+.tools1 img {
+    margin-top: -40px;
+    margin-left: 50px;
+    width: 90%;
+    height: auto;
+    border-radius: 80px;
+}
+
+.tools_tips {
+    margin-right: 5%;
+    background-color: #f1f1f1; 
+    padding: 30px;
+    border:1px solid black; 
+    border-radius: 20px; 
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1); 
+    width: 30%;
+    position: relative;
+    top:100px;
+}
+
+
+.tools_h2 {
+    padding-top: 25px;
+    text-align: center;
+    font-size: 28px;
+}
+
+.tools_explaination {
+    text-align: justify;
+    margin: 0 auto;
+    padding: 20px 100px 60px 100px;
+    font-size: 24px;
+}
+
+.tools-container {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    padding: 20px;
+    margin-bottom: 60px;
+    opacity: 0; 
+    animation: fadeInUp 2s forwards; 
+    animation-timeline: view();
+}
+
+@keyframes fadeInUp {
+    0% {
+        opacity: 0.01;
+        transform: translateY(-80px);
+    }
+    25% {
+        opacity: 0.1;
+        transform: translateY(-60px);
+    }
+    40% {
+        opacity: 0.8;
+        transform: translateY(-50px);
+    }
+    50% {
+        opacity: 1;
+        transform: translateY(-40px);
+    }
+    75% {
+        opacity: 1;
+        transform: translateY(-20px);
+    }
+    100% {
+        opacity: 1; 
+        transform: translateY(0); 
+    }
+}
+.caption-in-small{
+    display: none;
+}
+
+.figure-hidden{
+    display: none;
+    padding-left: 0px;
+    margin-right: 20px;
+}
+.figure-hidden img{
+    width: 500px;
+    height: 423px;
+    margin-right: -19px;
+}
+
+.toolsbordered-content {
+    display: flex;
+    flex-direction: row; 
+    align-items: center;
+}
+
+.step1 {
+    display: block;
+    padding-left: 0px;
+    margin-right: 20px;
+}
+
+.step1 img {
+    width: 633px;
+    height: 423px;
+    margin-right: -19px;
+}
+
+.caption1 {
+    text-align: center;
+    font-size: 18px;
+    margin-bottom: -27px;
+}
+
+.toolstext-content {
+    width: 633px;
+    height: 423px;
+    background-color: white;   
+    padding: 99px;
+    gap: 0px; 
+    margin-left: 0px; 
+}
+
+.assignandrecord {
+    margin-bottom: 15px;
+    font-size: 26px;
+}
+
+.assignandrecord1 {
+    margin-top: -40px;
+    margin-bottom: -25px;
+    font-size: 26px;
+}
+
+.assignandrecord2 {
+    margin-top: -40px;
+    margin-bottom: -25px;
+    font-size: 26px;
+}
+
+.toolsdescription {
+    margin-top: 40px;
+    margin-bottom: 0px;
+    font-size: 24px;
+}
+
+.toolsdescription_plantpress {
+    margin-top: -40px;
+    margin-bottom: 0;
+    font-size: 24px;
+}
+
+.toolsdescription_parchpapers {
+    margin-top: -60px;
+    margin-bottom: 0;
+    font-size: 24px;
+}
+
+.step2 img {
+    width: 633px;
+    height: 423px;
+    margin-left: 0px;
+}
+
+.step3 img {
+    width: 633px;
+    height: 423px;
+    margin-left: 0px;
+}
+
+.care_bottom {
+    display: flex;
+    justify-content: flex-start;
+    gap: 20px;
+    padding: 20px;
+}
+
+.tools_definition {
+    font-size: 20px;
+    margin: 0 auto;
+    width: 800px;
+    padding: 30px;
+    border:1px solid black;
+    background-color: #f1f1f1; 
+    padding: 30px; 
+    border-radius: 20px; 
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1); 
+}
+
+.text-content{
+    position: relative;
+    top:-12px;
+}
+
+@media (max-width: 1399px) {
+    
+    .tools_tips {
+        position: relative;
+        top:50px;
+    }
+    
+    .step2 img {
+        width: 550px;
+    }
+    
+    .step3 img {
+        width: 550px;
+    }
+    .step1 img {
+        width: 550px;
+    }
+    .toolstext-content {
+        padding: 50px;
+        width: 550px;
+    }
+}
+@media (max-width: 1189px) {
+    .step2 img {
+        width: 450px;
+    }
+    
+    .step3 img {
+        width: 450px;
+    }
+    .step1 img {
+        width: 450px;
+    }
+    .toolstext-content {
+        padding: 50px;
+        width: 450px;
+    }
+    .tools_tips {
+        position: relative;
+        top:0px;
+    }
+}
+@media (max-width: 1020px) {
+    .text-content3{
+        position: relative;
+        top:-20px;
+    }
+    .tools_container {
+        flex-direction: column;
+        gap: 20px;
+    }
+    .tools1 {
+        display: flex;
+        width: 700px;
+        margin:0 auto;
+    }
+    .tools_tips{
+        margin: 0 auto;
+        width:600px;
+    }
+}
+@media (max-width: 974px) {
+    .toolsbordered-content {
+        flex-direction: column;
+    }
+    .step2 img {
+        display: none;
+    }
+
+    .caption-in-small{
+        font-size: 18px;
+        display: block;
+        text-align: center;
+        position: relative;
+        top:-35px;
+    }
+
+    .step2 .caption1 {
+        display: none;
+    }
+    
+    .step3 img {
+        width: 500px;
+    }
+    .step1 img {
+        width: 500px;
+    }
+    .toolstext-content {
+        padding: 55px;
+        width: 500px;
+    }
+    .figure-hidden{
+        display: block;
+    }
+}
+
+@media (max-width: 850px) {
+    .tools_definition {
+        width: 500px;
+    }
+    .tools {
+        width: 500px;
+        height: 300px;
+    }
+    .tools_tips{
+        width:400px;
+    }
+}
+@media (max-width: 600px) {
+    .tools_definition {
+        width: 300px;
+        position: relative;
+        top:-50px;
+    }
+    .tools1 {
+        width: 300px;
+        height: 250px;
+    }
+    .text-content3{
+        position: relative;
+        top:-30px;
+    }
+    .tools_tips{
+        width:300px;
+    }
+    .step3 img {
+        width: 300px;
+        height: 200px;
+    }
+    .step1 img {
+        width: 300px;
+        height: 200px;
+    }
+    .step1{
+        margin:20px 20px 0px 0px;
+        position:relative;
+        top:10px;
+    }
+    .step1 .caption1{
+        display: none;
+    }
+    .toolstext-content {
+        width: 300px;
+        height: 700px;
+    }
+    .figure-hidden img{
+        width: 300px;
+        height: 200px;
+    }
+}
+@media (max-width: 550px) {
+    .tools_heading {
+        font-size: 32px;
+    }
+    .tools_h2 {
+        font-size: 24px;
+    }
+    .tools_explaination {
+        font-size: 20px;
+        padding: 20px 0px 20px 0px;
+        width: 325px;
+    }
+    .toolsdescription{
+        font-size: 20px;
+        text-align: center;
+    }
+    .assignandrecord {
+        font-size: 22px;
+        text-align: center;
+    }
+
+    .tools_definition {
+        font-size: 16px;
+    }
+    .caption-in-small{
+        font-size: 14px;
+    }
+    .toolstext-content {
         width: 300px;
         height: 500px;
     }
