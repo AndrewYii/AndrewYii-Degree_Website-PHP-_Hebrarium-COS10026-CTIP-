@@ -1262,6 +1262,11 @@ nav .menu {
     position: relative;
 }
 
+.flip-box h3 .short{
+    position: relative;
+    left: 40px;
+}
+
 .flip-box img{
     width: 300px;
     height: 300px;
@@ -1307,6 +1312,7 @@ nav .menu {
   }
 
  @media  (max-width:1570px){
+    
 
     .flip-box-layout{
         margin: 2vw 20vw;
@@ -1344,6 +1350,11 @@ nav .menu {
 
 @media (max-width:1350px){
 
+    .flip-box h3 .short{
+        position: relative;
+        left: 0;
+    }
+
     .flip-box-layout{
         margin: 2vw 15vw;
     }
@@ -1367,6 +1378,8 @@ nav .menu {
 }
 
 @media  (max-width:1046px){
+
+
     .flip-box {
         width: 150px;
         height: 150px;
