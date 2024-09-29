@@ -3178,6 +3178,19 @@ button.contribute-btn:hover {
     font-size: 26px;
 }
 
+.assignandrecord1 {
+    margin-top: -40px;
+    margin-bottom: -25px;
+    font-size: 26px;
+}
+
+.assignandrecord2 {
+    margin-top: -40px;
+    margin-bottom: -25px;
+    font-size: 26px;
+}
+
+
 .assignandrecord3 {
     margin-top: -80px;
     margin-bottom: -25px;
@@ -3293,6 +3306,18 @@ button.contribute-btn:hover {
         display: none;
     }
 
+    .tutotext-content5 h3,.tutotext-content5 p.tutodescription{
+        position: relative;
+        top:0;
+        left:0;
+    }
+
+    .assignandrecord1,.assignandrecord,.assignandrecord2,.assignandrecord3 {
+        margin-top:-10px;
+        padding: 0;
+        font-size: 26px;
+    }
+    
     .caption-in-small{
         font-size: 18px;
         display: block;
@@ -3367,19 +3392,13 @@ button.contribute-btn:hover {
     }
     .tutotext-content {
         width: 300px;
-        height: 700px;
+        height: 600px;
     }
     .figure-hidden img{
         width: 300px;
         height: 200px;
     }
-    .tutotext-content001 {
-        height: 800px;
-    }
 
-    .tutotext-content004 {
-        height: 900px;
-    }
 }
 @media (max-width: 550px) {
     .tuto_heading {
@@ -3395,9 +3414,9 @@ button.contribute-btn:hover {
     }
     .tutodescription{
         font-size: 20px;
-        text-align: center;
+        text-align: justify;
     }
-    .assignandrecord {
+    .assignandrecord,.assignandrecord3,.assignandrecord1{
         font-size: 22px;
         text-align: center;
     }
@@ -3407,10 +3426,6 @@ button.contribute-btn:hover {
     }
     .caption-in-small{
         font-size: 14px;
-    }
-    .tutotext-content {
-        width: 300px;
-        height: 500px;
     }
 }
 
@@ -3558,21 +3573,14 @@ button.contribute-btn:hover {
     margin-left: 0px;
 }
 
-.assignandrecord {
-    margin-bottom: 15px;
-    font-size: 26px;
+.plantpress{
+    position: relative;
+    bottom:50px;
 }
 
-.assignandrecord1 {
-    margin-top: -40px;
-    margin-bottom: -25px;
-    font-size: 26px;
-}
-
-.assignandrecord2 {
-    margin-top: -40px;
-    margin-bottom: -25px;
-    font-size: 26px;
+.parchment{
+    position: relative;
+    bottom:50px;
 }
 
 .toolsdescription {
@@ -4146,7 +4154,7 @@ button.contribute-btn:hover {
     }
     .description1{
         font-size: 20px;
-        text-align: center;
+        text-align: justify;
     }
     .assignandrecord {
         font-size: 22px;
