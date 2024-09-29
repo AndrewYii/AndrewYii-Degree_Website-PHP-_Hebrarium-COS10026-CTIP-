@@ -1694,7 +1694,7 @@ nav .menu {
 
 .register-form-layout{
     position: relative;
-    min-height: 150vh;
+    min-height: 170vh;
     top: 100px;
 	display: flex;
 	justify-content: center;
@@ -4982,6 +4982,7 @@ button.contribute-btn:hover {
     font-size: 2.8vh; 
     color: #fff;
     margin: 0 1vw; 
+    z-index: 11;
 }
 
 .tutorial-intrduction-background-layout1 ul li label{
