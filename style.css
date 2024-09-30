@@ -4198,6 +4198,10 @@ button.contribute-btn:hover {
     .caption_care {
         font-size: 22px;
     }
+    .care_table th, .care_table td{
+        width: 40px;
+        padding: 5px;
+    }
 }
 
 /* Classify page */
