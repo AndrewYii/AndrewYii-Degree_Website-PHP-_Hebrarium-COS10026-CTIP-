@@ -3397,6 +3397,19 @@ button.contribute-btn:hover {
     }
 }
 
+.care_table th, .care_table td{
+    border: 1px solid;
+}
+
+.care_table {
+    width: 800px;
+    margin: 0 auto;
+    margin-bottom: 30px;
+    border-collapse: collapse;
+}
+
+
+
 /* Tools page */
 
 .tools_background {
