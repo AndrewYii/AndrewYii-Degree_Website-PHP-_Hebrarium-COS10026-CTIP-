@@ -5128,6 +5128,8 @@ button.contribute-btn:hover {
 .enhancement-welcoming{
     margin: 0 auto;
     margin-bottom: 50px;
+    display: flex;
+    flex-direction: column;
 }
 
 .enhancement-heading{
@@ -5211,5 +5213,27 @@ button.contribute-btn:hover {
 }
 
 @media (max-width: 1080px) {
-
+    .enhancement-section-description{
+        flex-direction: column;
+    }
+    .enhancement-section-video{
+        margin: 0 auto;
+    }
+}
+@media (max-width: 1020px) {
+    .enhancement-layout{
+        top: 80px;
+    }
+}
+@media (max-width: 768px) {
+    .enhancement-section-video img{
+        width: 400px;
+        height: auto;
+    }
+}
+@media (max-width: 568px) {
+    .enhancement-section-video img{
+        width: 300px;
+        height: auto;
+    }
 }
