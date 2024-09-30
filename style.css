@@ -4852,6 +4852,14 @@ button.contribute-btn:hover {
 
 }
 
+.caption_classify {
+    margin-top:70px;
+    margin-bottom: 20px;
+    text-align: center;
+    font: bold;
+    font-size: 26px; 
+}
+
 /*Tutorial-Intoduction*/
 .select-area{
     position:absolute;
