@@ -5240,9 +5240,6 @@ button.contribute-btn:hover {
     }
 }
 @media (max-width: 650px) {
-    .enhancement-heading-description{
-        font-size: 3.1vw;
-    }
     .enhancement-heading{
         font-size: 30px;
     }
