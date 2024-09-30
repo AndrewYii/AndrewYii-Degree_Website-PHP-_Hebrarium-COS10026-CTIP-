@@ -3207,6 +3207,27 @@ button.contribute-btn:hover {
     box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1); 
 }
 
+.tuto_table th, .tuto_table td{
+    border: 1px solid;
+    text-align: center;
+    width: 50px;
+    background-color: #f1f1f1;
+    padding: 10px;
+}
+
+.tuto_table {
+    width: 800px;
+    margin: 0 auto;
+    margin-bottom: 30px;
+    border-collapse: collapse;
+}
+
+.tuto_care {
+    font-size: 26px;
+    font: bold;
+    margin-bottom: 20px;
+}
+
 @media (max-width: 1399px) {
     
     .tuto_tips {
@@ -3322,6 +3343,9 @@ button.contribute-btn:hover {
     .tuto_definition {
         width: 500px;
     }
+    .tuto_table{
+        width: 500px;
+    }
     .tuto1 {
         width: 500px;
         height: 300px;
@@ -3333,9 +3357,11 @@ button.contribute-btn:hover {
 @media (max-width: 600px) {
     .tuto_definition {
         width: 300px;
-        position: relative;
-        top:-50px;
     }
+    .tuto_table{
+        width: 300px;
+    }
+
     .tuto1 {
         width: 300px;
         height: 250px;
@@ -3374,6 +3400,9 @@ button.contribute-btn:hover {
 
 }
 @media (max-width: 550px) {
+    .tuto_table{
+        width: 250px;
+    }
     .tuto_heading {
         font-size: 32px;
     }
@@ -3400,49 +3429,16 @@ button.contribute-btn:hover {
     .caption-in-small{
         font-size: 14px;
     }
+    .tuto_care {
+        font-size: 22px;
+    }
+    .tuto_table th, .tuto_table td{
+        width: 40px;
+        padding: 5px;
+    }
 }
 
-.care_table th, .care_table td{
-    border: 1px solid;
-    text-align: center;
-    width: 50px;
-    background-color: #f1f1f1;
-    padding: 10px;
-}
 
-.care_table {
-    width: 800px;
-    margin: 0 auto;
-    margin-bottom: 30px;
-    border-collapse: collapse;
-}
-
-.caption_care {
-    font-size: 26px;
-    font: bold;
-    margin-bottom: 20px;
-}
-
-.tuto_table th, .tuto_table td{
-    border: 1px solid;
-    text-align: center;
-    width: 50px;
-    background-color: #f1f1f1;
-    padding: 10px;
-}
-
-.tuto_table {
-    width: 800px;
-    margin: 0 auto;
-    margin-bottom: 30px;
-    border-collapse: collapse;
-}
-
-.tuto_care {
-    font-size: 26px;
-    font: bold;
-    margin-bottom: 20px;
-}
 
 /* Tools page */
 
@@ -3655,6 +3651,27 @@ button.contribute-btn:hover {
     top:-12px;
 }
 
+.tools_table th, .tools_table td{
+    border: 1px solid;
+    text-align: center;
+    width: 50px;
+    background-color: #f1f1f1;
+    padding: 10px;
+}
+
+.tools_table {
+    width: 800px;
+    margin: 0 auto;
+    margin-bottom: 30px;
+    border-collapse: collapse;
+}
+
+.caption_tools {
+    font-size: 26px;
+    font: bold;
+    margin-bottom: 20px;
+}
+
 @media (max-width: 1399px) {
     
     .tools_tips {
@@ -3773,6 +3790,9 @@ button.contribute-btn:hover {
 }
 
 @media (max-width: 850px) {
+    .tools_table{
+        width: 500px;
+    }
     .tools_definition {
         width: 500px;
     }
@@ -3787,8 +3807,6 @@ button.contribute-btn:hover {
 @media (max-width: 600px) {
     .tools_definition {
         width: 300px;
-        position: relative;
-        top:-50px;
     }
     .tools1 {
         width: 300px;
@@ -3825,8 +3843,14 @@ button.contribute-btn:hover {
         width: 300px;
         height: 200px;
     }
+    .tools_table{
+        width: 300px;
+    }
 }
 @media (max-width: 550px) {
+    .tools_table{
+        width: 250px;
+    }
     .tools_heading {
         font-size: 32px;
     }
@@ -3866,28 +3890,15 @@ button.contribute-btn:hover {
     .toolstext-contentparchment{
         height: 900px;
     }
+    .tools_care {
+        font-size: 22px;
+    }
+    .tools_table th, .tools_table td{
+        width: 40px;
+        padding: 5px;
+    }
 }
 
-.tools_table th, .tools_table td{
-    border: 1px solid;
-    text-align: center;
-    width: 50px;
-    background-color: #f1f1f1;
-    padding: 10px;
-}
-
-.tools_table {
-    width: 800px;
-    margin: 0 auto;
-    margin-bottom: 30px;
-    border-collapse: collapse;
-}
-
-.caption_tools {
-    font-size: 26px;
-    font: bold;
-    margin-bottom: 20px;
-}
 
 /*care page*/
 
