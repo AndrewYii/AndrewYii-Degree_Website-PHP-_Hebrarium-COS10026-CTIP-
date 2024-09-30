@@ -3433,11 +3433,12 @@ button.contribute-btn:hover {
     border-collapse: collapse;
 }
 
-.tuto_care {
+.caption_tuto {
     font-size: 26px;
     font: bold;
     margin-bottom: 20px;
 }
+
 
 /* Tools page */
 
