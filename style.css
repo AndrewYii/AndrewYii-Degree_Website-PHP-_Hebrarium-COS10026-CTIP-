@@ -2841,6 +2841,7 @@ button.contribute-btn:hover {
     color:#fff;
     background-color: #FFA500;
     transition: all 0.3s ease;
+    display: inline-block;
 }
 
 .tag1:hover{
@@ -2854,6 +2855,7 @@ button.contribute-btn:hover {
     color: #fff;
     background-color: #1E90FF;
     transition: all 0.3s ease;
+    display: inline-block;
 }
 
 .tag2:hover {
@@ -2867,6 +2869,7 @@ button.contribute-btn:hover {
     color: #fff;
     background-color: #32CD32;
     transition: all 0.3s ease;
+    display: inline-block;
 }
 
 .tag3:hover {
@@ -2880,6 +2883,7 @@ button.contribute-btn:hover {
     color: #fff;
     background-color: #FF6347;
     transition: all 0.3s ease;
+    display: inline-block;
 }
 
 .tag4:hover {
@@ -2893,6 +2897,7 @@ button.contribute-btn:hover {
     color: #fff;
     background-color: #9370DB;
     transition: all 0.3s ease;
+    display: inline-block;
 }
 
 .tag5:hover {
