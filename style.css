@@ -492,15 +492,15 @@ nav .menu {
     position: fixed;
     bottom: 3px;
     right: 2px;
-    height: 80px; 
-    width: 80px; 
+    height: 70px; 
+    width: 70px; 
     animation: up-down 7.5s infinite ease-in-out;
     z-index: 100000;
 }
 
 .chatbot-container:hover {
-    height: 100px; 
-    width: 100px; 
+    height: 80px; 
+    width: 80px; 
     border-color: #388E3C; 
     outline: none; 
     box-shadow: 0 0 100px rgba(56, 142, 60, 0.5); 
@@ -513,9 +513,9 @@ nav .menu {
     left: 0;
     top: 0;
     right: 0;
-    width: 70px; 
-    height: 35px; 
-    border: 4px solid black;
+    width: 65px; 
+    height: 30px; 
+    border: 3px solid black;
     border-radius: 4rem;
 }
 
@@ -524,13 +524,13 @@ nav .menu {
     position: absolute;
     bottom: 0;
     right: 0;
-    top: 35px; 
-    left: -44px; 
+    top: 31px; 
+    left: -38px; 
     width: 0;
     height: 0;
-    border-left: 10px solid transparent; 
-    border-right: 10px solid transparent; 
-    border-top: 6px solid black; 
+    border-left: 9px solid transparent; 
+    border-right: 9px solid transparent; 
+    border-top: 5px solid black; 
     transform: rotate(140deg);
 }
 
@@ -538,10 +538,10 @@ nav .menu {
     margin: auto;
     position: absolute;
     left: 0;
-    bottom: -70px; 
+    bottom: -75px; 
     right: 0;
-    height: 6px; 
-    width: 8px; 
+    height: 5px; 
+    width: 6px; 
     background-color: black;
     animation: antenna-appear 7.5s infinite ease-in-out;
 }
@@ -570,13 +570,13 @@ nav .menu {
 
 .dot {
     height: 5px; 
-    width: 7px; 
+    width: 5px; 
     margin: auto;
     position: absolute;
     bottom: 0;
     top: 0;
     right: 0;
-    left: -50px; 
+    left: -47.5px; 
     background-color: black;
     border-radius: 50%;
     animation: pulse-outer 7.5s infinite ease-in-out;
@@ -624,7 +624,7 @@ nav .menu {
       65% { transform: rotate(-10deg); }
       65% { transform: rotate(0deg); }
       85% {
-        top: 22.5px;
+        top: 20.5px;
         height: 10px;
         border-top-left-radius: 50%;
         border-top-right-radius: 50%;
@@ -683,11 +683,11 @@ nav .menu {
     @keyframes beam-pulsar-appear {
       0% { visibility: hidden; top: -12.5px; height: 0 }
       50% { visibility: hidden; top: -12.5px; height: 0 }
-      55% { visibility: visible; top: -12.5px; left: -5px; height: 20px; width: 20px; opacity: 1 }
-      65% { top: -25px; left: -15px; height: 40px; width: 40px; opacity: 0; visibility: visible; }
+      55% { visibility: visible; top: -12.5px; left: -5px; height: 15px; width: 15px; opacity: 1 }
+      65% { top: -22px; left: -10px; height: 30px; width: 30px; opacity: 0; visibility: visible; }
       74% { visibility: hidden; opacity: 0; }
-      75% { visibility: visible; top: -12.5px; left: -5px; height: 20px; width: 20px; opacity: 1 }
-      85% { top: -25px; left: -15px; height: 40px; width: 40px; opacity: 0; visibility: visible; }
+      75% { visibility: visible; top: -12.5px; left: -5px; height: 15px; width: 15px; opacity: 1 }
+      85% { top: -20px; left: -10px; height: 30px; width: 30px; opacity: 0; visibility: visible; }
       94% { visibility: hidden; opacity: 0; }
       100% { visibility: hidden; opacity: 0; }
     }
@@ -960,7 +960,7 @@ nav .menu {
 .desc1white_region .white_region-green_region p {
     text-align: center;
     font-size: 24px;
-    padding: 0.7vw 0 1.5vw 2vw;
+    padding: 0.7vw 2vw 1.5vw 2vw;
 }
 
 @media (max-width: 1102px) {
@@ -1262,6 +1262,11 @@ nav .menu {
     position: relative;
 }
 
+.flip-box h3 .short{
+    position: relative;
+    left: 40px;
+}
+
 .flip-box img{
     width: 300px;
     height: 300px;
@@ -1307,6 +1312,7 @@ nav .menu {
   }
 
  @media  (max-width:1570px){
+    
 
     .flip-box-layout{
         margin: 2vw 20vw;
@@ -1344,6 +1350,11 @@ nav .menu {
 
 @media (max-width:1350px){
 
+    .flip-box h3 .short{
+        position: relative;
+        left: 0;
+    }
+
     .flip-box-layout{
         margin: 2vw 15vw;
     }
@@ -1367,6 +1378,8 @@ nav .menu {
 }
 
 @media  (max-width:1046px){
+
+
     .flip-box {
         width: 150px;
         height: 150px;
@@ -1466,38 +1479,6 @@ nav .menu {
     }
 }
 
-
-  /*Disclaimer*/
-.disclaimer-layout{
-    border: 1px solid black;
-    background-color: #d9d9d9;
-    margin: 2vw 7vw;
-}
-
-.disclaimer-content{
-    font-size: 32px;
-    padding: 2vw 7vw;
-}
-
-@media (max-width: 1102px) {
-    .disclaimer-content{
-        font-size:24px;
-    }
-
-}
-@media (max-width: 926px) {
-    .disclaimer-content{
-        font-size:20px;
-    }
-}
-@media (max-width: 811px) {
-
-    .disclaimer-content{
-        font-size:16px;
-    }
-}
-
-
 /*Footer*/
 .footer-layout {
     position: relative;
@@ -1513,7 +1494,7 @@ nav .menu {
     flex: 1; 
     max-width: 20%; 
     padding: 2vw;
-    font-size: 18px;
+    font-size: 16px;
     font-style: italic;
     box-sizing: border-box; 
 }
@@ -1713,7 +1694,7 @@ nav .menu {
 
 .register-form-layout{
     position: relative;
-    min-height: 150vh;
+    min-height: 170vh;
     top: 100px;
 	display: flex;
 	justify-content: center;
@@ -2199,11 +2180,11 @@ nav .menu {
     color: black;
 }
 
-.email-button-aniq{
+.email-button{
     text-align: center;
 }
 
-.email-button-aniq a{
+.email-button a{
     padding:14px;
     border-radius: 50px;
     border:1px solid black;
@@ -2213,10 +2194,10 @@ nav .menu {
     cursor: pointer;
 }
 
-.email-button-aniq a:hover{
+.email-button a:hover{
     color:#fff;
     padding: 16px 50px;
-    background-color: blue;
+    background-color: darkgreen;
     border:none;
     outline: none;
 }
@@ -2232,28 +2213,6 @@ nav .menu {
     background-color: #fff;
     color: black;
 
-}
-
-.email-button-assufi{
-    text-align: center;
-}
-
-.email-button-assufi a{
-    padding:14px;
-    border-radius: 50px;
-    border:1px solid black;
-    font-size: 18px;
-    text-decoration: none;
-    color:black;
-    cursor: pointer;
-}
-
-.email-button-assufi a:hover{
-    color:#fff;
-    padding: 16px 50px;
-    background-color: purple;
-    border:none;
-    outline: none;
 }
 
 /*Faiz-Profile*/
@@ -2878,7 +2837,7 @@ button.contribute-btn:hover {
 .tag1{
     border:1px solid #FFA500;
     border-radius: 10px;
-    padding:7px;
+    padding:5px;
     color:#fff;
     background-color: #FFA500;
     transition: all 0.3s ease;
@@ -2891,7 +2850,7 @@ button.contribute-btn:hover {
 .tag2 {
     border: 1px solid #1E90FF;
     border-radius: 10px;
-    padding: 7px;
+    padding: 5px;
     color: #fff;
     background-color: #1E90FF;
     transition: all 0.3s ease;
@@ -2904,7 +2863,7 @@ button.contribute-btn:hover {
 .tag3 {
     border: 1px solid #32CD32;
     border-radius: 10px;
-    padding: 7px;
+    padding: 5px;
     color: #fff;
     background-color: #32CD32;
     transition: all 0.3s ease;
@@ -2917,7 +2876,7 @@ button.contribute-btn:hover {
 .tag4 {
     border: 1px solid #FF6347;
     border-radius: 10px;
-    padding: 7px;
+    padding: 5px;
     color: #fff;
     background-color: #FF6347;
     transition: all 0.3s ease;
@@ -2930,7 +2889,7 @@ button.contribute-btn:hover {
 .tag5 {
     border: 1px solid #9370DB;
     border-radius: 10px;
-    padding: 7px;
+    padding: 5px;
     color: #fff;
     background-color: #9370DB;
     transition: all 0.3s ease;
@@ -3127,36 +3086,9 @@ button.contribute-btn:hover {
     padding: 20px;
     margin-bottom: 60px;
     opacity: 0; 
-    animation: fadeInUp 2s forwards; 
-    animation-timeline: view();
+    animation: fadeInUp 2s ease-out forwards; 
 }
 
-@keyframes fadeInUp {
-    0% {
-        opacity: 0.01;
-        transform: translateY(-80px);
-    }
-    25% {
-        opacity: 0.1;
-        transform: translateY(-60px);
-    }
-    40% {
-        opacity: 0.8;
-        transform: translateY(-50px);
-    }
-    50% {
-        opacity: 1;
-        transform: translateY(-40px);
-    }
-    75% {
-        opacity: 1;
-        transform: translateY(-20px);
-    }
-    100% {
-        opacity: 1; 
-        transform: translateY(0); 
-    }
-}
 .caption-in-small{
     display: none;
 }
@@ -3213,6 +3145,19 @@ button.contribute-btn:hover {
     margin-bottom: 15px;
     font-size: 26px;
 }
+
+.assignandrecord1 {
+    margin-top: -40px;
+    margin-bottom: -25px;
+    font-size: 26px;
+}
+
+.assignandrecord2 {
+    margin-top: -40px;
+    margin-bottom: -25px;
+    font-size: 26px;
+}
+
 
 .assignandrecord3 {
     margin-top: -80px;
@@ -3329,6 +3274,18 @@ button.contribute-btn:hover {
         display: none;
     }
 
+    .tutotext-content5 h3,.tutotext-content5 p.tutodescription{
+        position: relative;
+        top:0;
+        left:0;
+    }
+
+    .assignandrecord1,.assignandrecord,.assignandrecord2,.assignandrecord3 {
+        margin-top:-10px;
+        padding: 0;
+        font-size: 26px;
+    }
+    
     .caption-in-small{
         font-size: 18px;
         display: block;
@@ -3403,19 +3360,13 @@ button.contribute-btn:hover {
     }
     .tutotext-content {
         width: 300px;
-        height: 700px;
+        height: 600px;
     }
     .figure-hidden img{
         width: 300px;
         height: 200px;
     }
-    .tutotext-content001 {
-        height: 800px;
-    }
 
-    .tutotext-content004 {
-        height: 900px;
-    }
 }
 @media (max-width: 550px) {
     .tuto_heading {
@@ -3431,9 +3382,9 @@ button.contribute-btn:hover {
     }
     .tutodescription{
         font-size: 20px;
-        text-align: center;
+        text-align: justify;
     }
-    .assignandrecord {
+    .assignandrecord,.assignandrecord3,.assignandrecord1{
         font-size: 22px;
         text-align: center;
     }
@@ -3443,10 +3394,6 @@ button.contribute-btn:hover {
     }
     .caption-in-small{
         font-size: 14px;
-    }
-    .tutotext-content {
-        width: 300px;
-        height: 500px;
     }
 }
 
@@ -3493,9 +3440,7 @@ button.contribute-btn:hover {
 }
 
 .tools1 img {
-    margin-top: -40px;
-    margin-left: 50px;
-    width: 90%;
+    width: 100%;
     height: auto;
     border-radius: 80px;
 }
@@ -3514,7 +3459,7 @@ button.contribute-btn:hover {
 
 
 .tools_h2 {
-    padding-top: 25px;
+    padding-top: 50px;
     text-align: center;
     font-size: 28px;
 }
@@ -3533,36 +3478,32 @@ button.contribute-btn:hover {
     padding: 20px;
     margin-bottom: 60px;
     opacity: 0; 
-    animation: fadeInUp 2s forwards; 
-    animation-timeline: view();
+    animation: fadeInUp 2s ease-out forwards; 
 }
 
 @keyframes fadeInUp {
     0% {
-        opacity: 0.01;
-        transform: translateY(-80px);
+        opacity: 0;
+        transform: translateY(-20px);
     }
     25% {
-        opacity: 0.1;
-        transform: translateY(-60px);
-    }
-    40% {
-        opacity: 0.8;
-        transform: translateY(-50px);
+        opacity: 0.3;
+        transform: translateY(-10px);
     }
     50% {
-        opacity: 1;
-        transform: translateY(-40px);
+        opacity: 0.7;
+        transform: translateY(-5px);
     }
     75% {
         opacity: 1;
-        transform: translateY(-20px);
+        transform: translateY(2px);
     }
     100% {
         opacity: 1; 
         transform: translateY(0); 
     }
 }
+
 .caption-in-small{
     display: none;
 }
@@ -3611,25 +3552,18 @@ button.contribute-btn:hover {
     margin-left: 0px;
 }
 
-.assignandrecord {
-    margin-bottom: 15px;
-    font-size: 26px;
+.plantpress{
+    position: relative;
+    bottom:50px;
 }
 
-.assignandrecord1 {
-    margin-top: -40px;
-    margin-bottom: -25px;
-    font-size: 26px;
-}
-
-.assignandrecord2 {
-    margin-top: -40px;
-    margin-bottom: -25px;
-    font-size: 26px;
+.parchment{
+    position: relative;
+    bottom:50px;
 }
 
 .toolsdescription {
-    margin-top: 40px;
+    margin-top: 30px;
     margin-bottom: 0px;
     font-size: 24px;
 }
@@ -3647,8 +3581,7 @@ button.contribute-btn:hover {
 }
 
 .toolsdescription_plasticfoil {
-    margin-top: 100px;
-    margin-bottom: 0px;
+    margin-top: 30px;
     font-size: 24px;
 }
 
@@ -3731,6 +3664,7 @@ button.contribute-btn:hover {
     }
 }
 @media (max-width: 1020px) {
+
     .text-content3{
         position: relative;
         top:-20px;
@@ -3752,6 +3686,23 @@ button.contribute-btn:hover {
 @media (max-width: 974px) {
     .toolsbordered-content {
         flex-direction: column;
+    }
+    .plantpress{
+        position: relative;
+        bottom:0;
+    }
+    
+    .parchment{
+        position: relative;
+        bottom:0;
+    }
+
+    .toolsdescription_parchpapers {
+        margin-top: 0;
+    }
+    
+    .toolsdescription_plantpress {
+        margin-top: 0;
     }
     .step2 img {
         display: none;
@@ -3782,13 +3733,16 @@ button.contribute-btn:hover {
     .figure-hidden{
         display: block;
     }
+    .toolstext-contentparchment{
+        height: 500px;
+    }
 }
 
 @media (max-width: 850px) {
     .tools_definition {
         width: 500px;
     }
-    .tools {
+    .tools1 {
         width: 500px;
         height: 300px;
     }
@@ -3852,7 +3806,7 @@ button.contribute-btn:hover {
     }
     .toolsdescription{
         font-size: 20px;
-        text-align: center;
+        text-align: justify;
     }
     .assignandrecord {
         font-size: 22px;
@@ -3868,6 +3822,15 @@ button.contribute-btn:hover {
     .toolstext-content {
         width: 300px;
         height: 500px;
+    }
+    .toolstext-contenttrowel{
+        height: 650px;
+    }
+    .toolstext-contentplantpress{
+        height: 900px;
+    }
+    .toolstext-contentparchment{
+        height: 900px;
     }
 }
 
@@ -3937,36 +3900,9 @@ button.contribute-btn:hover {
     padding: 20px;
     margin-bottom: 60px;
     opacity: 0; 
-    animation: fadeInUp 2s forwards; 
-    animation-timeline: view();
+    animation: fadeInUp 2s ease-out forwards; 
 }
 
-@keyframes fadeInUp {
-    0% {
-        opacity: 0.01;
-        transform: translateY(-80px);
-    }
-    25% {
-        opacity: 0.1;
-        transform: translateY(-60px);
-    }
-    40% {
-        opacity: 0.8;
-        transform: translateY(-50px);
-    }
-    50% {
-        opacity: 1;
-        transform: translateY(-40px);
-    }
-    75% {
-        opacity: 1;
-        transform: translateY(-20px);
-    }
-    100% {
-        opacity: 1; 
-        transform: translateY(0); 
-    }
-}
 .caption-in-small{
     display: none;
 }
@@ -4226,7 +4162,7 @@ button.contribute-btn:hover {
     }
     .description1{
         font-size: 20px;
-        text-align: center;
+        text-align: justify;
     }
     .assignandrecord {
         font-size: 22px;
@@ -4296,7 +4232,7 @@ button.contribute-btn:hover {
 }
 
 .defi1 {
-    font-size: 24px;
+    font-size: 22px;
     margin-bottom: 30px;
     margin-right: 140px;
 }
@@ -4332,7 +4268,11 @@ button.contribute-btn:hover {
 
 .dipte_defi {
     font-size: 24px;
-    text-align: center;
+    text-align: justify;
+}
+
+.smaller_word{
+    font-size: 22px;
 }
 
 .dipte-container {
@@ -4698,7 +4638,7 @@ button.contribute-btn:hover {
         font-size: 24px;
     }
     .defi1 {
-        font-size: 20px;
+        font-size: 18px;
     }
     .family_title {
         font-size: 24px;
@@ -4738,6 +4678,9 @@ button.contribute-btn:hover {
     }
     .defi1-heading{
         width: 400px;
+    }
+    .smaller_word{
+        font-size: 18px;
     }
 }
 @media (max-width: 707px){
@@ -5052,6 +4995,7 @@ button.contribute-btn:hover {
     font-size: 2.8vh; 
     color: #fff;
     margin: 0 1vw; 
+    z-index: 11;
 }
 
 .tutorial-intrduction-background-layout1 ul li label{
@@ -5084,6 +5028,10 @@ button.contribute-btn:hover {
 .toolssection p,.caresection p,.tutorialsection p {
     font-size: 2.8vh;
     justify-content: space-between;
+}
+
+.different-colour-tutointro{
+    color: black;
 }
 
 .tutorial-introduction-text-content {
@@ -5174,5 +5122,153 @@ button.contribute-btn:hover {
     }
     .tutorial-intrduction-background-layout1 ul li {
         font-size: 1.8vh; 
+    }
+}
+
+/*Enhancement Page*/
+.enhancement-layout{
+    position: relative;
+    top: 100px;
+	display: flex;
+	justify-content: space-between;
+	padding: 2vw 7vw;
+    background-color: #ddf5e1;
+    overflow: hidden;
+    flex-direction: column;
+    gap: 30px;
+}
+
+.enhancement-welcoming{
+    margin: 0 auto;
+    margin-bottom: 50px;
+}
+
+.enhancement-heading{
+    font-size: 36px;
+    text-align: center;
+    margin-bottom: 10px;
+}
+
+.enhancement-heading-description{
+    font-size: 2vw;
+    text-align:center;
+    overflow: hidden;
+    border-right: 0.3vh solid darkgreen;
+    white-space: nowrap;
+    animation: typing 4s steps(40,end) forwards,borderDisappear 1s forwards 3.8s;
+}
+@keyframes typing{
+    from{
+        max-width: 0;
+    }
+    to{
+        max-width: 100%;
+    }
+}
+@keyframes borderDisappear {
+    from {
+        border-right-color: darkgreen;
+    }
+    to {
+        border-right-color: transparent;
+    }
+}
+
+.enhancement-section{
+    display: flex;
+    flex-direction: column;
+    margin: 0 auto;
+    gap:50px;
+    margin-bottom: 50px;
+}
+
+.enhancement-section-heading{
+    font-size: 28px;
+    text-align:center;
+}
+
+.enhancement-section-description{
+    display: flex;
+    flex-direction: row;
+    gap:50px;
+    margin: 0 auto;
+}
+
+.enhancement-section-video img{
+    width: 600px;
+    height: auto;
+}
+
+.enhancement-section-description-content p{
+    font-size: 22px;
+    text-align: justify;
+    word-spacing: 5px;
+    margin-bottom:20px ;
+}
+
+.enhancement-section-description-content p a{
+    font-size: 18px;
+    display: inline-block;
+    text-decoration: none;
+    border: 1px solid black;
+    background-color:#ddf5e1;
+    color:black;
+    padding: 8px 16px;
+    margin: 2px;
+}
+
+.enhancement-section-description-content p a:hover {
+    background-color: #4CAF50; 
+    border: none;
+    color: white;
+}
+@media (max-width: 1280px) {
+    .enhancement-heading-description{
+        font-size: 2.5vw;
+    }
+}
+
+@media (max-width: 1080px) {
+    .enhancement-section-description{
+        flex-direction: column;
+    }
+    .enhancement-section-video{
+        margin: 0 auto;
+    }
+}
+@media (max-width: 1020px) {
+    .enhancement-layout{
+        top: 80px;
+    }
+}
+@media (max-width: 890px) {
+    .enhancement-heading-description{
+        font-size: 3vw;
+    }
+}
+@media (max-width: 768px) {
+    .enhancement-section-video img{
+        width: 400px;
+        height: auto;
+    }
+}
+@media (max-width: 650px) {
+    .enhancement-heading{
+        font-size: 30px;
+    }
+    .enhancement-section-heading{
+        font-size: 22px;
+    }
+    .enhancement-section-description-content p{
+        font-size: 16px;
+    }
+    .enhancement-section-description-content p a{
+        font-size: 12px;
+    }
+}
+@media (max-width: 568px) {
+    .enhancement-section-video img{
+        width: 300px;
+        height: auto;
     }
 }
