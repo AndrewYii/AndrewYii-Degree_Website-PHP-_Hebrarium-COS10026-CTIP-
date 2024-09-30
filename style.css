@@ -111,19 +111,19 @@ nav .menu {
 
 /* Dropdown Menu */
 .menu .dropdown {
-    position: relative; /* Ensure positioning for the dropdown */
+    position: relative; 
 }
 
 .menu .dropdown-menu {
     display: none;
-    position: fixed; /* Fixed positioning to align with the viewport */
-    top: 75px; /* Adjust as needed */
-    left: 0; /* Align with the left edge of the viewport */
+    position: fixed; 
+    top: 75px; 
+    left: 0;
     background-color: #f9f9f9;
-    min-width: 100vw; /* Set a reasonable minimum width */
-    max-width: 100vw; /* Prevent overflow beyond the viewport */
+    min-width: 100vw; 
+    max-width: 100vw; 
     box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
-    z-index: 998; /* Ensure it is above other content */
+    z-index: 998; 
     padding: 20px;
     box-sizing: border-box;
     opacity: 0;
@@ -148,13 +148,13 @@ nav .menu {
 
 /* Highlight Dropdown Area */
 .menu .dropdown-menu-highlight {
-    position: fixed; /* Overlay effect */
+    position: fixed; 
     top: 0;
     left: 0;
     width: 100%;
     height: 100%;
-    background: rgba(0, 0, 0, 0.5); /* Dark overlay */
-    z-index: 999; /* Below dropdown */
+    background: rgba(0, 0, 0, 0.5); 
+    z-index: 999; 
     display: none;
 }
 
@@ -251,14 +251,14 @@ nav .menu {
 /* Dropdown Menu for Search */
 .menu .dropdown-menu-search {
     display: none;
-    position: fixed; /* Fixed positioning to align with the viewport */
-    top: 75px; /* Adjust as needed */
-    left: 0; /* Align with the left edge of the viewport */
+    position: fixed; 
+    top: 75px;
+    left: 0; 
     background-color: #f9f9f9;
-    min-width: 100vw; /* Set a reasonable minimum width */
-    max-width: 100vw; /* Prevent overflow beyond the viewport */
+    min-width: 100vw;
+    max-width: 100vw; 
     box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
-    z-index: 998; /* Ensure it is above other content */
+    z-index: 998; 
     padding: 20px;
     box-sizing: border-box;
     opacity: 0;
@@ -524,8 +524,8 @@ nav .menu {
     position: absolute;
     bottom: 0;
     right: 0;
-    top: 31px; 
-    left: -38px; 
+    top: 33px; 
+    left: -37px; 
     width: 0;
     height: 0;
     border-left: 9px solid transparent; 
