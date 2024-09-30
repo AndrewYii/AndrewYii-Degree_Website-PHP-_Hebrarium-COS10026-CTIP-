@@ -3397,29 +3397,6 @@ button.contribute-btn:hover {
     }
 }
 
-.care_table th, .care_table td{
-    border: 1px solid;
-    text-align: center;
-    width: 50px;
-    background-color: #f1f1f1;
-    padding: 10px;
-}
-
-.care_table {
-    width: 800px;
-    margin: 0 auto;
-    margin-bottom: 30px;
-    border-collapse: collapse;
-}
-
-.caption_care {
-    font-size: 26px;
-    font: bold;
-    margin-bottom: 20px;
-}
-
-
-
 /* Tools page */
 
 .tools_background {
@@ -4008,6 +3985,28 @@ button.contribute-btn:hover {
     top:1px;
 }
 
+.care_table th, .care_table td{
+    border: 1px solid;
+    text-align: center;
+    width: 50px;
+    background-color: #f1f1f1;
+    padding: 10px;
+}
+
+.care_table {
+    width: 800px;
+    margin: 0 auto;
+    margin-bottom: 30px;
+    border-collapse: collapse;
+}
+
+.caption_care {
+    font-size: 26px;
+    font: bold;
+    margin-bottom: 20px;
+}
+
+
 @media (max-width: 1399px) {
     
     .preservation_tips {
@@ -4108,6 +4107,9 @@ button.contribute-btn:hover {
     .care_definition {
         width: 500px;
     }
+    .care_table{
+        width: 500px;
+    }
     .care1 {
         width: 500px;
         height: 300px;
@@ -4119,8 +4121,9 @@ button.contribute-btn:hover {
 @media (max-width: 600px) {
     .care_definition {
         width: 300px;
-        position: relative;
-        top:-50px;
+    }
+    .care_table{
+        width: 300px;
     }
     .care1 {
         width: 300px;
@@ -4159,6 +4162,9 @@ button.contribute-btn:hover {
     }
 }
 @media (max-width: 550px) {
+    .care_table{
+        width: 250px;
+    }
     .care_heading {
         font-size: 32px;
     }
@@ -4188,6 +4194,9 @@ button.contribute-btn:hover {
     .text-content {
         width: 300px;
         height: 500px;
+    }
+    .caption_care {
+        font-size: 22px;
     }
 }
 
