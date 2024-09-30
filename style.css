@@ -5128,8 +5128,6 @@ button.contribute-btn:hover {
 .enhancement-welcoming{
     margin: 0 auto;
     margin-bottom: 50px;
-    display: flex;
-    flex-direction: column;
 }
 
 .enhancement-heading{
@@ -5139,7 +5137,7 @@ button.contribute-btn:hover {
 }
 
 .enhancement-heading-description{
-    font-size: 30px;
+    font-size: 2vw;
     text-align:center;
     overflow: hidden;
     border-right: 0.3vh solid darkgreen;
@@ -5211,6 +5209,11 @@ button.contribute-btn:hover {
     border: none;
     color: white;
 }
+@media (max-width: 1280px) {
+    .enhancement-heading-description{
+        font-size: 2.5vw;
+    }
+}
 
 @media (max-width: 1080px) {
     .enhancement-section-description{
@@ -5225,10 +5228,32 @@ button.contribute-btn:hover {
         top: 80px;
     }
 }
+@media (max-width: 890px) {
+    .enhancement-heading-description{
+        font-size: 3vw;
+    }
+}
 @media (max-width: 768px) {
     .enhancement-section-video img{
         width: 400px;
         height: auto;
+    }
+}
+@media (max-width: 650px) {
+    .enhancement-heading-description{
+        font-size: 3.1vw;
+    }
+    .enhancement-heading{
+        font-size: 30px;
+    }
+    .enhancement-section-heading{
+        font-size: 22px;
+    }
+    .enhancement-section-description-content p{
+        font-size: 16px;
+    }
+    .enhancement-section-description-content p a{
+        font-size: 12px;
     }
 }
 @media (max-width: 568px) {
