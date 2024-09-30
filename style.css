@@ -3452,15 +3452,49 @@ button.contribute-btn:hover {
     .caption-in-small{
         font-size: 14px;
     }
-    .tuto_care {
-        font-size: 22px;
-    }
-    .tuto_table th, .tuto_table td{
-        width: 40px;
-        padding: 5px;
-    }
 }
 
+.care_table th, .care_table td{
+    border: 1px solid;
+    text-align: center;
+    width: 50px;
+    background-color: #f1f1f1;
+    padding: 10px;
+}
+
+.care_table {
+    width: 800px;
+    margin: 0 auto;
+    margin-bottom: 30px;
+    border-collapse: collapse;
+}
+
+.caption_care {
+    font-size: 26px;
+    font: bold;
+    margin-bottom: 20px;
+}
+
+.tuto_table th, .tuto_table td{
+    border: 1px solid;
+    text-align: center;
+    width: 50px;
+    background-color: #f1f1f1;
+    padding: 10px;
+}
+
+.tuto_table {
+    width: 800px;
+    margin: 0 auto;
+    margin-bottom: 30px;
+    border-collapse: collapse;
+}
+
+.caption_tuto {
+    font-size: 26px;
+    font: bold;
+    margin-bottom: 20px;
+}
 
 
 /* Tools page */
