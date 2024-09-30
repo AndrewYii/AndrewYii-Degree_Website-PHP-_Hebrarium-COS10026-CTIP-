@@ -3399,6 +3399,10 @@ button.contribute-btn:hover {
 
 .care_table th, .care_table td{
     border: 1px solid;
+    text-align: center;
+    width: 50px;
+    background-color: #f1f1f1;
+    padding: 10px;
 }
 
 .care_table {
@@ -3406,6 +3410,12 @@ button.contribute-btn:hover {
     margin: 0 auto;
     margin-bottom: 30px;
     border-collapse: collapse;
+}
+
+.caption_care {
+    font-size: 26px;
+    font: bold;
+    margin-bottom: 20px;
 }
 
 
