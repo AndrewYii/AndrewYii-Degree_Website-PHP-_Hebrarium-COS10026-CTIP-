@@ -5064,6 +5064,7 @@ button.contribute-btn:hover {
     height: 800px;
     border: 1px solid #f1f1f1;
     perspective: 1000px; 
+    overflow: hidden;
   }
   
   .flip-card-inner-classify {
