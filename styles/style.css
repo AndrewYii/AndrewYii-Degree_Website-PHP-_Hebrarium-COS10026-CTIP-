@@ -2862,7 +2862,7 @@ button.contribute-btn:hover {
 
 .contributor-card-comment-section input[type="submit"]{
     position: relative;
-    right:-120px;
+    right:-170px;
 }
 
 #open-comment:checked ~ textarea,#open-comment:checked ~ input[type="submit"],#open-comment1:checked ~ textarea,#open-comment1:checked ~ input[type="submit"],#open-comment2:checked ~ textarea,#open-comment2:checked ~ input[type="submit"],#open-comment3:checked ~ textarea,#open-comment3:checked ~ input[type="submit"]{
@@ -3083,7 +3083,7 @@ button.contribute-btn:hover {
 
     .contributor-card-comment-section input[type="submit"]{
         position: relative;
-        right:-80px;
+        right:-120px;
     }
 
     .contributor-close-comments{
