@@ -2839,8 +2839,8 @@ button.contribute-btn:hover {
 
 .contributor-card-comment-section textarea{
     position: relative;
-    right:50px;
-    width: 150%;
+    right:30px;
+    width: 120%;
     height: 150px; 
     padding: 10px; 
     font-size: 16px; 
@@ -2862,7 +2862,7 @@ button.contribute-btn:hover {
 
 .contributor-card-comment-section input[type="submit"]{
     position: relative;
-    right:-160px;
+    right:-120px;
 }
 
 #open-comment:checked ~ textarea,#open-comment:checked ~ input[type="submit"],#open-comment1:checked ~ textarea,#open-comment1:checked ~ input[type="submit"],#open-comment2:checked ~ textarea,#open-comment2:checked ~ input[type="submit"],#open-comment3:checked ~ textarea,#open-comment3:checked ~ input[type="submit"]{
@@ -2992,6 +2992,7 @@ button.contribute-btn:hover {
     }
     .column-display-contribute{
         display: block;
+        margin: 10px;
     }
     
 } 
@@ -3082,7 +3083,7 @@ button.contribute-btn:hover {
 
     .contributor-card-comment-section input[type="submit"]{
         position: relative;
-        right:-120px;
+        right:-80px;
     }
 
     .contributor-close-comments{
