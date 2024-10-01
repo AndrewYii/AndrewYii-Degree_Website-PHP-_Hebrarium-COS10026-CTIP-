@@ -492,15 +492,15 @@ nav .menu {
     position: fixed;
     bottom: 3px;
     right: 2px;
-    height: 70px; 
-    width: 70px; 
+    height: 80px; 
+    width: 80px; 
     animation: up-down 7.5s infinite ease-in-out;
     z-index: 100000;
 }
 
 .chatbot-container:hover {
-    height: 80px; 
-    width: 80px; 
+    height: 90px; 
+    width: 90px; 
     border-color: #388E3C; 
     outline: none; 
     box-shadow: 0 0 100px rgba(56, 142, 60, 0.5); 
@@ -1262,6 +1262,12 @@ nav .menu {
     position: relative;
 }
 
+.flip-box h3 .shorter{
+    position: relative;
+    left: 60px;
+}
+
+
 .flip-box h3 .short{
     position: relative;
     left: 40px;
@@ -1351,6 +1357,11 @@ nav .menu {
 @media (max-width:1350px){
 
     .flip-box h3 .short{
+        position: relative;
+        left: 0;
+    }
+
+    .flip-box h3 .shorter{
         position: relative;
         left: 0;
     }
