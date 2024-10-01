@@ -3454,47 +3454,6 @@ button.contribute-btn:hover {
     }
 }
 
-.care_table th, .care_table td{
-    border: 1px solid;
-    text-align: center;
-    width: 50px;
-    background-color: #f1f1f1;
-    padding: 10px;
-}
-
-.care_table {
-    width: 800px;
-    margin: 0 auto;
-    margin-bottom: 30px;
-    border-collapse: collapse;
-}
-
-.caption_care {
-    font-size: 26px;
-    font: bold;
-    margin-bottom: 20px;
-}
-
-.tuto_table th, .tuto_table td{
-    border: 1px solid;
-    text-align: center;
-    width: 50px;
-    background-color: #f1f1f1;
-    padding: 10px;
-}
-
-.tuto_table {
-    width: 800px;
-    margin: 0 auto;
-    margin-bottom: 30px;
-    border-collapse: collapse;
-}
-
-.caption_tuto {
-    font-size: 26px;
-    font: bold;
-    margin-bottom: 20px;
-}
 
 
 /* Tools page */
@@ -4125,7 +4084,6 @@ button.contribute-btn:hover {
     border: 1px solid;
     text-align: center;
     width: 50px;
-    background-color: #f1f1f1;
     padding: 10px;
 }
 
@@ -4588,6 +4546,7 @@ button.contribute-btn:hover {
     font-size: 20px;
     margin: 0 auto;
     width: 800px;
+    height: 600px;
     padding: 30px;
     background-color: #f1f1f1; 
     padding: 30px; 
@@ -5009,6 +4968,88 @@ button.contribute-btn:hover {
     font-size: 26px; 
 }
 
+.classify_table th, .classify_table td{
+    width: 50px;
+    padding: 10px;
+}
+
+.test1 {
+    text-align: center;
+}
+
+.test2 {
+    text-align: justify;
+}
+
+.classify_table th{
+    background-color: #228B22;
+    color: white;
+}
+
+.classify_table tr:nth-child(odd){
+    background-color: rgb(248, 248, 248);
+
+}
+
+.classify_table tr:nth-child(even){
+    background-color: white;
+
+}
+
+.classify_table {
+    width: 800px;
+    margin: 0 auto;
+    margin-bottom: 30px;
+    border-collapse: collapse;
+}
+
+.caption_classify {
+    font-size: 26px;
+    font: bold;
+    margin-bottom: 20px;
+}
+
+.flip-card-classify {
+    margin: 0 auto;
+    background-color: transparent;
+    width: 800px;
+    height: 800px;
+    border: 1px solid #f1f1f1;
+    perspective: 1000px; 
+  }
+  
+  .flip-card-inner-classify {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    text-align: center;
+    transition: transform 0.8s;
+    transform-style: preserve-3d;
+  }
+  
+  /* Do an horizontal flip when you move the mouse over the flip box container */
+  .flip-card-classify:hover .flip-card-inner-classify {
+    transform: rotateY(180deg);
+  }
+  
+  /* Position the front and back side */
+  .flip-card-front-classify, .flip-card-back-classify {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    -webkit-backface-visibility: hidden; /* Safari */
+    backface-visibility: hidden;
+  }
+    
+  
+  .flip-card-back-classify {
+    transform: rotateY(180deg);
+    height: 800px;
+    height: 600px;
+    text-align: left;
+  }
+
+
 /*Tutorial-Intoduction*/
 .select-area{
     position:absolute;
@@ -5291,6 +5332,28 @@ button.contribute-btn:hover {
         font-size: 1.8vh; 
     }
 }
+
+.tuto_table th, .tuto_table td{
+    border: 1px solid;
+    text-align: center;
+    background-color: #f1f1f1;
+    width: 50px;
+    padding: 10px;
+}
+
+.tuto_table {
+    width: 800px;
+    margin: 0 auto;
+    margin-bottom: 30px;
+    border-collapse: collapse;
+}
+
+.caption_tuto {
+    font-size: 26px;
+    font: bold;
+    margin-bottom: 20px;
+}
+
 
 /*Enhancement Page*/
 .enhancement-layout{
