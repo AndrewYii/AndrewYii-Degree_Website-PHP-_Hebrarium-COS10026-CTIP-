@@ -111,19 +111,19 @@ nav .menu {
 
 /* Dropdown Menu */
 .menu .dropdown {
-    position: relative; /* Ensure positioning for the dropdown */
+    position: relative; 
 }
 
 .menu .dropdown-menu {
     display: none;
-    position: fixed; /* Fixed positioning to align with the viewport */
-    top: 75px; /* Adjust as needed */
-    left: 0; /* Align with the left edge of the viewport */
+    position: fixed; 
+    top: 75px; 
+    left: 0;
     background-color: #f9f9f9;
-    min-width: 100vw; /* Set a reasonable minimum width */
-    max-width: 100vw; /* Prevent overflow beyond the viewport */
+    min-width: 100vw; 
+    max-width: 100vw; 
     box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
-    z-index: 998; /* Ensure it is above other content */
+    z-index: 998; 
     padding: 20px;
     box-sizing: border-box;
     opacity: 0;
@@ -148,13 +148,13 @@ nav .menu {
 
 /* Highlight Dropdown Area */
 .menu .dropdown-menu-highlight {
-    position: fixed; /* Overlay effect */
+    position: fixed; 
     top: 0;
     left: 0;
     width: 100%;
     height: 100%;
-    background: rgba(0, 0, 0, 0.5); /* Dark overlay */
-    z-index: 999; /* Below dropdown */
+    background: rgba(0, 0, 0, 0.5); 
+    z-index: 999; 
     display: none;
 }
 
@@ -251,14 +251,14 @@ nav .menu {
 /* Dropdown Menu for Search */
 .menu .dropdown-menu-search {
     display: none;
-    position: fixed; /* Fixed positioning to align with the viewport */
-    top: 75px; /* Adjust as needed */
-    left: 0; /* Align with the left edge of the viewport */
+    position: fixed; 
+    top: 75px;
+    left: 0; 
     background-color: #f9f9f9;
-    min-width: 100vw; /* Set a reasonable minimum width */
-    max-width: 100vw; /* Prevent overflow beyond the viewport */
+    min-width: 100vw;
+    max-width: 100vw; 
     box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
-    z-index: 998; /* Ensure it is above other content */
+    z-index: 998; 
     padding: 20px;
     box-sizing: border-box;
     opacity: 0;
@@ -492,15 +492,15 @@ nav .menu {
     position: fixed;
     bottom: 3px;
     right: 2px;
-    height: 70px; 
-    width: 70px; 
+    height: 80px; 
+    width: 80px; 
     animation: up-down 7.5s infinite ease-in-out;
     z-index: 100000;
 }
 
 .chatbot-container:hover {
-    height: 80px; 
-    width: 80px; 
+    height: 90px; 
+    width: 90px; 
     border-color: #388E3C; 
     outline: none; 
     box-shadow: 0 0 100px rgba(56, 142, 60, 0.5); 
@@ -524,8 +524,8 @@ nav .menu {
     position: absolute;
     bottom: 0;
     right: 0;
-    top: 31px; 
-    left: -38px; 
+    top: 33px; 
+    left: -37px; 
     width: 0;
     height: 0;
     border-left: 9px solid transparent; 
@@ -1262,6 +1262,12 @@ nav .menu {
     position: relative;
 }
 
+.flip-box h3 .shorter{
+    position: relative;
+    left: 60px;
+}
+
+
 .flip-box h3 .short{
     position: relative;
     left: 40px;
@@ -1351,6 +1357,11 @@ nav .menu {
 @media (max-width:1350px){
 
     .flip-box h3 .short{
+        position: relative;
+        left: 0;
+    }
+
+    .flip-box h3 .shorter{
         position: relative;
         left: 0;
     }
@@ -2222,11 +2233,11 @@ nav .menu {
     color: black;
 }
 
-.email-button{
+.email-button-aniq{
     text-align: center;
 }
 
-.email-button a{
+.email-button-aniq a{
     padding:14px;
     border-radius: 50px;
     border:1px solid black;
@@ -2236,10 +2247,10 @@ nav .menu {
     cursor: pointer;
 }
 
-.email-button a:hover{
+.email-button-aniq a:hover{
     color:#fff;
     padding: 16px 50px;
-    background-color: darkgreen;
+    background-color: blue;
     border:none;
     outline: none;
 }
@@ -2255,6 +2266,29 @@ nav .menu {
     background-color: #fff;
     color: black;
 
+}
+
+.email-button-assufi{
+    text-align: center;
+}
+
+.email-button-assufi a{
+    padding:14px;
+    border-radius: 50px;
+    border:1px solid black;
+    font-size: 18px;
+    text-decoration: none;
+    color:black;
+    cursor: pointer;
+}
+
+
+.email-button-assufi a:hover{
+    color:#fff;
+    padding: 16px 50px;
+    background-color: purple;
+    border:none;
+    outline: none;
 }
 
 /*Faiz-Profile*/
@@ -2883,6 +2917,7 @@ button.contribute-btn:hover {
     color:#fff;
     background-color: #FFA500;
     transition: all 0.3s ease;
+    display: inline-block;
 }
 
 .tag1:hover{
@@ -2896,6 +2931,7 @@ button.contribute-btn:hover {
     color: #fff;
     background-color: #1E90FF;
     transition: all 0.3s ease;
+    display: inline-block;
 }
 
 .tag2:hover {
@@ -2909,6 +2945,7 @@ button.contribute-btn:hover {
     color: #fff;
     background-color: #32CD32;
     transition: all 0.3s ease;
+    display: inline-block;
 }
 
 .tag3:hover {
@@ -2922,6 +2959,7 @@ button.contribute-btn:hover {
     color: #fff;
     background-color: #FF6347;
     transition: all 0.3s ease;
+    display: inline-block;
 }
 
 .tag4:hover {
@@ -2935,6 +2973,7 @@ button.contribute-btn:hover {
     color: #fff;
     background-color: #9370DB;
     transition: all 0.3s ease;
+    display: inline-block;
 }
 
 .tag5:hover {
@@ -3244,6 +3283,27 @@ button.contribute-btn:hover {
     box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1); 
 }
 
+.tuto_table th, .tuto_table td{
+    border: 1px solid;
+    text-align: center;
+    width: 50px;
+    background-color: #f1f1f1;
+    padding: 10px;
+}
+
+.tuto_table {
+    width: 800px;
+    margin: 0 auto;
+    margin-bottom: 30px;
+    border-collapse: collapse;
+}
+
+.tuto_care {
+    font-size: 26px;
+    font: bold;
+    margin-bottom: 20px;
+}
+
 @media (max-width: 1399px) {
     
     .tuto_tips {
@@ -3359,6 +3419,9 @@ button.contribute-btn:hover {
     .tuto_definition {
         width: 500px;
     }
+    .tuto_table{
+        width: 500px;
+    }
     .tuto1 {
         width: 500px;
         height: 300px;
@@ -3370,9 +3433,11 @@ button.contribute-btn:hover {
 @media (max-width: 600px) {
     .tuto_definition {
         width: 300px;
-        position: relative;
-        top:-50px;
     }
+    .tuto_table{
+        width: 300px;
+    }
+
     .tuto1 {
         width: 300px;
         height: 250px;
@@ -3411,6 +3476,9 @@ button.contribute-btn:hover {
 
 }
 @media (max-width: 550px) {
+    .tuto_table{
+        width: 250px;
+    }
     .tuto_heading {
         font-size: 32px;
     }
@@ -3438,6 +3506,49 @@ button.contribute-btn:hover {
         font-size: 14px;
     }
 }
+
+.care_table th, .care_table td{
+    border: 1px solid;
+    text-align: center;
+    width: 50px;
+    background-color: #f1f1f1;
+    padding: 10px;
+}
+
+.care_table {
+    width: 800px;
+    margin: 0 auto;
+    margin-bottom: 30px;
+    border-collapse: collapse;
+}
+
+.caption_care {
+    font-size: 26px;
+    font: bold;
+    margin-bottom: 20px;
+}
+
+.tuto_table th, .tuto_table td{
+    border: 1px solid;
+    text-align: center;
+    width: 50px;
+    background-color: #f1f1f1;
+    padding: 10px;
+}
+
+.tuto_table {
+    width: 800px;
+    margin: 0 auto;
+    margin-bottom: 30px;
+    border-collapse: collapse;
+}
+
+.caption_tuto {
+    font-size: 26px;
+    font: bold;
+    margin-bottom: 20px;
+}
+
 
 /* Tools page */
 
@@ -3650,6 +3761,27 @@ button.contribute-btn:hover {
     top:-12px;
 }
 
+.tools_table th, .tools_table td{
+    border: 1px solid;
+    text-align: center;
+    width: 50px;
+    background-color: #f1f1f1;
+    padding: 10px;
+}
+
+.tools_table {
+    width: 800px;
+    margin: 0 auto;
+    margin-bottom: 30px;
+    border-collapse: collapse;
+}
+
+.caption_tools {
+    font-size: 26px;
+    font: bold;
+    margin-bottom: 20px;
+}
+
 @media (max-width: 1399px) {
     
     .tools_tips {
@@ -3768,6 +3900,9 @@ button.contribute-btn:hover {
 }
 
 @media (max-width: 850px) {
+    .tools_table{
+        width: 500px;
+    }
     .tools_definition {
         width: 500px;
     }
@@ -3782,8 +3917,6 @@ button.contribute-btn:hover {
 @media (max-width: 600px) {
     .tools_definition {
         width: 300px;
-        position: relative;
-        top:-50px;
     }
     .tools1 {
         width: 300px;
@@ -3820,8 +3953,14 @@ button.contribute-btn:hover {
         width: 300px;
         height: 200px;
     }
+    .tools_table{
+        width: 300px;
+    }
 }
 @media (max-width: 550px) {
+    .tools_table{
+        width: 250px;
+    }
     .tools_heading {
         font-size: 32px;
     }
@@ -3861,7 +4000,15 @@ button.contribute-btn:hover {
     .toolstext-contentparchment{
         height: 900px;
     }
+    .tools_care {
+        font-size: 22px;
+    }
+    .tools_table th, .tools_table td{
+        width: 40px;
+        padding: 5px;
+    }
 }
+
 
 /*care page*/
 
@@ -4027,6 +4174,28 @@ button.contribute-btn:hover {
     top:1px;
 }
 
+.care_table th, .care_table td{
+    border: 1px solid;
+    text-align: center;
+    width: 50px;
+    background-color: #f1f1f1;
+    padding: 10px;
+}
+
+.care_table {
+    width: 800px;
+    margin: 0 auto;
+    margin-bottom: 30px;
+    border-collapse: collapse;
+}
+
+.caption_care {
+    font-size: 26px;
+    font: bold;
+    margin-bottom: 20px;
+}
+
+
 @media (max-width: 1399px) {
     
     .preservation_tips {
@@ -4127,6 +4296,9 @@ button.contribute-btn:hover {
     .care_definition {
         width: 500px;
     }
+    .care_table{
+        width: 500px;
+    }
     .care1 {
         width: 500px;
         height: 300px;
@@ -4138,8 +4310,9 @@ button.contribute-btn:hover {
 @media (max-width: 600px) {
     .care_definition {
         width: 300px;
-        position: relative;
-        top:-50px;
+    }
+    .care_table{
+        width: 300px;
     }
     .care1 {
         width: 300px;
@@ -4178,6 +4351,9 @@ button.contribute-btn:hover {
     }
 }
 @media (max-width: 550px) {
+    .care_table{
+        width: 250px;
+    }
     .care_heading {
         font-size: 32px;
     }
@@ -4207,6 +4383,13 @@ button.contribute-btn:hover {
     .text-content {
         width: 300px;
         height: 500px;
+    }
+    .caption_care {
+        font-size: 22px;
+    }
+    .care_table th, .care_table td{
+        width: 40px;
+        padding: 5px;
     }
 }
 
@@ -4869,6 +5052,14 @@ button.contribute-btn:hover {
         height: 250px;
     }
 
+}
+
+.caption_classify {
+    margin-top:70px;
+    margin-bottom: 20px;
+    text-align: center;
+    font: bold;
+    font-size: 26px; 
 }
 
 /*Tutorial-Intoduction*/
