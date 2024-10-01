@@ -4601,8 +4601,8 @@ button.contribute-btn:hover {
 .classify_definition {
     font-size: 20px;
     width: 800px;
-    height: 500px;
-    margin-top: 100px;
+    height: 680px;
+    margin-top: 20px;
 }
 
 .defi_taxo_container{
@@ -5045,6 +5045,7 @@ button.contribute-btn:hover {
 
 .classify_table {
     width: 800px;
+    height: 680px;
     margin: 0 auto;
     margin-bottom: 30px;
     border-collapse: collapse;
@@ -5093,12 +5094,12 @@ button.contribute-btn:hover {
     text-align: left;
   }
 
-  dl {
+.classify_definition {
     display: flex;
     flex-flow: row wrap;
   }
 
-  dt {
+.dt_classify {
     flex-basis: 20%;
     background: #228B22;
     text-align: center;
@@ -5106,7 +5107,7 @@ button.contribute-btn:hover {
     margin-top: 10px;
   }
 
-  dd {
+.odd_defi, .even_defi {
     flex-basis: 70%;
     flex-grow: 1;
     margin: 0;
@@ -5120,6 +5121,14 @@ button.contribute-btn:hover {
 
 .odd_defi {
     background-color: rgb(248, 248, 248);
+}
+
+.defi_caption {
+    margin-top:70px;
+    margin-bottom: 20px;
+    text-align: center;
+    font: bold;
+    font-size: 26px; 
 }
 
 /*Tutorial-Intoduction*/
