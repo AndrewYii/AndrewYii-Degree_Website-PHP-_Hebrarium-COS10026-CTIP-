@@ -1321,7 +1321,7 @@ nav .menu {
     
 
     .flip-box-layout{
-        margin: 2vw 20vw;
+        margin: 2vw 17vw;
         position: relative;
         left:5vw;
     }
@@ -1347,7 +1347,7 @@ nav .menu {
 @media  (max-width:1401px){
 
     .flip-box-layout{
-        margin: 2vw 19vw;
+        margin: 2vw 14vw;
         position: relative;
         left:5vw;
     }
@@ -1367,7 +1367,7 @@ nav .menu {
     }
 
     .flip-box-layout{
-        margin: 2vw 15vw;
+        margin: 2vw 13vw;
     }
 
     .flip-box {
@@ -1570,6 +1570,7 @@ nav .menu {
 
 /*IDENTIFY.HTML*/
 
+
 .identify-article{
     position: relative;
     top: 100px;
@@ -1621,7 +1622,8 @@ nav .menu {
     transform: scale(1.05);
 }
 
-.identify-upload + .identify-p{
+.identify-upload{
+    border: solid;
     width: 450px;
     background-color: white;
     margin: 0 auto;
@@ -2837,8 +2839,8 @@ button.contribute-btn:hover {
 
 .contributor-card-comment-section textarea{
     position: relative;
-    right:50px;
-    width: 150%;
+    right:30px;
+    width: 120%;
     height: 150px; 
     padding: 10px; 
     font-size: 16px; 
@@ -2860,7 +2862,7 @@ button.contribute-btn:hover {
 
 .contributor-card-comment-section input[type="submit"]{
     position: relative;
-    right:-160px;
+    right:-170px;
 }
 
 #open-comment:checked ~ textarea,#open-comment:checked ~ input[type="submit"],#open-comment1:checked ~ textarea,#open-comment1:checked ~ input[type="submit"],#open-comment2:checked ~ textarea,#open-comment2:checked ~ input[type="submit"],#open-comment3:checked ~ textarea,#open-comment3:checked ~ input[type="submit"]{
@@ -2990,6 +2992,7 @@ button.contribute-btn:hover {
     }
     .column-display-contribute{
         display: block;
+        margin: 10px;
     }
     
 } 
@@ -3507,47 +3510,39 @@ button.contribute-btn:hover {
     }
 }
 
-.care_table th, .care_table td{
-    border: 1px solid;
-    text-align: center;
-    width: 50px;
-    background-color: #f1f1f1;
-    padding: 10px;
+.care-aside {
+    position: absolute;
+    top: 35%; /* Adjust as needed */
+    right: -508px; /* Start hidden off-screen */
+    width: 550px; /* Use a percentage for width */
+    background-color: #f9f9f9;
+    border-left: 8px solid #4CAF50;
+    padding: 20px;
+    padding-left: 50px;
+    margin: 20px 0;
+    border-radius: 5px;
+    transition: transform 0.3s ease, right 0.3s ease; /* Smooth transition */
+    z-index: 10; /* Ensure it stays above other content */
 }
 
-.care_table {
-    width: 800px;
-    margin: 0 auto;
-    margin-bottom: 30px;
-    border-collapse: collapse;
+.care-aside span{
+    position: relative;
+    display: inline-block;
+    transform: rotate(90deg);
+    left: -83px;
+    top: 80px;
+    font-weight: bold;
 }
 
-.caption_care {
-    font-size: 26px;
-    font: bold;
-    margin-bottom: 20px;
+
+.care-aside:hover .care-span{
+    visibility: hidden;
 }
 
-.tuto_table th, .tuto_table td{
-    border: 1px solid;
-    text-align: center;
-    width: 50px;
-    background-color: #f1f1f1;
-    padding: 10px;
-}
-
-.tuto_table {
-    width: 800px;
-    margin: 0 auto;
-    margin-bottom: 30px;
-    border-collapse: collapse;
-}
-
-.caption_tuto {
-    font-size: 26px;
-    font: bold;
-    margin-bottom: 20px;
-}
+.care-aside:hover {
+        right: -20px; /* Move into view */
+        transform: translateX(0); /* No need for additional translation */
+    }
 
 
 /* Tools page */
@@ -4011,6 +4006,9 @@ button.contribute-btn:hover {
 
 
 /*care page*/
+.care-article{
+    overflow: hidden;
+}
 
 .care_background {
     background-color: #DDF5E1;
@@ -4025,6 +4023,8 @@ button.contribute-btn:hover {
 
 .care_container {
     display: flex;
+    position: relative;
+    overflow: hidden;
     flex-direction: row;
     align-items: flex-start;
     gap: 20px;
@@ -4034,7 +4034,7 @@ button.contribute-btn:hover {
     display: block;
     width: 700px;
     height: 500px;
-    margin-left: 20%;
+    margin-left: 27%;
 }
 
 .care1 img {
@@ -4178,7 +4178,6 @@ button.contribute-btn:hover {
     border: 1px solid;
     text-align: center;
     width: 50px;
-    background-color: #f1f1f1;
     padding: 10px;
 }
 
@@ -4306,8 +4305,16 @@ button.contribute-btn:hover {
     .preservation_tips{
         width:400px;
     }
+    .care-aside {
+        position: absolute;
+        top: 20%; 
+    }
 }
 @media (max-width: 600px) {
+    .care-aside {
+        position: absolute;
+        top: 12%;
+    }
     .care_definition {
         width: 300px;
     }
@@ -4351,6 +4358,23 @@ button.contribute-btn:hover {
     }
 }
 @media (max-width: 550px) {
+    .care-aside h2{
+        font-size: 18px;
+        text-align: center;
+    }
+    .care-aside {
+        position: absolute;
+        top: 1%; 
+        width: 350px;
+        right: -308px;
+        margin: 0px;
+        padding: 0px 0px 0px 50px;
+    }
+    .care-aside:hover {
+        right: 0px; 
+        transform: translateX(0); 
+    }
+
     .care_table{
         width: 250px;
     }
@@ -4393,8 +4417,11 @@ button.contribute-btn:hover {
     }
 }
 
-/* Classify page */
+.test2_care {
+    text-align: center;
+}
 
+/* Classify page */
 .classify-article{
     overflow: hidden;
 }
@@ -4419,6 +4446,8 @@ button.contribute-btn:hover {
 }
 
 .classification1 {
+    overflow: hidden;
+    position: relative;
     display: flex; 
     flex-direction: row;       
     align-items: center;      
@@ -4639,20 +4668,133 @@ button.contribute-btn:hover {
 
 .classify_definition {
     font-size: 20px;
-    margin: 0 auto;
     width: 800px;
-    padding: 30px;
-    background-color: #f1f1f1; 
-    padding: 30px; 
-    border:1px solid black;
-    border-radius: 20px; 
-    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1); 
-    margin-top: 50px;
+    height: 680px;
+    margin-top: 20px;
 }
 
 .defi_taxo_container{
     display:none;
 }
+
+.caption_classify {
+    margin-bottom: 20px;
+    margin-top: 70px;
+    text-align: center;
+    font: bold;
+    font-size: 26px; 
+}
+
+.classify_table th, .classify_table td{
+    width: 50px;
+    padding: 10px;
+}
+
+.test1 {
+    text-align: center;
+}
+
+.test2 {
+    text-align: justify;
+}
+
+.classify_table th{
+    background-color: #228B22;
+    color: white;
+}
+
+.classify_table tr:nth-child(odd){
+    background-color: rgb(248, 248, 248);
+}
+
+.classify_table tr:nth-child(even){
+    background-color: white;
+}
+
+.classify_table {
+    width: 800px;
+    height: 680px;
+    margin: 0 auto;
+    margin-bottom: 30px;
+    border-collapse: collapse;
+}
+
+.flip-card-classify {
+    margin: 0 auto;
+    background-color: transparent;
+    width: 800px;
+    height: 800px;
+    border: 1px solid #f1f1f1;
+    perspective: 1000px; 
+    overflow: hidden;
+  }
+  
+  .flip-card-inner-classify {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    text-align: center;
+    transition: transform 0.5s;
+    transform-style: preserve-3d;
+  }
+  
+  
+  .flip-card-classify:hover .flip-card-inner-classify {
+    transform: rotateY(180deg);
+    backface-visibility: hidden;
+  }
+
+  .flip-card-front-classify, .flip-card-back-classify {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    backface-visibility: hidden; 
+    backface-visibility: hidden;
+  }
+    
+  .flip-card-back-classify {
+    transform: rotateY(180deg);
+    text-align: left;
+    backface-visibility: hidden;
+  }
+
+.classify_definition {
+    display: flex;
+    flex-flow: row wrap;
+  }
+
+.dt_classify {
+    flex-basis: 20%;
+    background: #228B22;
+    text-align: center;
+    color: #fff;
+    margin-top: 10px;
+  }
+
+.odd_defi, .even_defi {
+    flex-basis: 70%;
+    flex-grow: 1;
+    margin: 0;
+    margin-top: 10px;
+    text-align: left;
+  }
+
+.even_defi {
+    background-color: white;
+}
+
+.odd_defi {
+    background-color: rgb(248, 248, 248);
+}
+
+.defi_caption {
+    margin-top:70px;
+    margin-bottom: 20px;
+    text-align: center;
+    font: bold;
+    font-size: 26px; 
+}
+
 
 @media (max-width: 1509px) {
     .hopea_content1 {
@@ -4805,16 +4947,20 @@ button.contribute-btn:hover {
         position: relative;
         left:-30px;
     }
-    .classify_definition{
-        width: 400px;
-    }
 }
 @media (max-width: 863px) {
-    .classification1{
-        position: relative;
-        left:150px;
-        width: 300px;
+    .classify_table {
+        width: 600px;
     }
+    .flip-card-classify {
+        width: 600px;
+        height: 975px;
+      }
+    .classify_definition {
+        width: 600px;
+        height: 850px;
+      }
+    
 }
 @media (max-width: 763px) {
     .section-classify{
@@ -4894,6 +5040,12 @@ button.contribute-btn:hover {
     .smaller_word{
         font-size: 18px;
     }
+    .defi_caption {
+        font-size: 22px; 
+    }
+    .caption_classify {
+        font-size: 22px; 
+    }
 }
 @media (max-width: 707px){
     .vatica_part{
@@ -4907,6 +5059,18 @@ button.contribute-btn:hover {
         top:0;
         right: 0;
     }
+    .classify_table {
+        width: 400px;
+    }
+    .flip-card-classify {
+        width: 400px;
+        height: 1450px;
+      }
+    .classify_definition {
+        width: 400px;
+        height: 1300px;
+      }
+      
 }
 @media (max-width: 579px){
     .plantfamtree{
@@ -4915,7 +5079,7 @@ button.contribute-btn:hover {
     }
     .classification1{
         position: relative;
-        left:100px;
+        left:0px;
     }
     .dipte-text{
         position: relative;
@@ -4945,6 +5109,11 @@ button.contribute-btn:hover {
     }
 }
 @media (max-width: 497px){
+    .classify1,.defi1-container1{
+        position: relative;
+        left:40px;
+    }
+
     .defi1-container1{
         width: 475px;
     }
@@ -4989,7 +5158,7 @@ button.contribute-btn:hover {
     .classify_definition{
         width: 350px;
         position: relative;
-        top:-40px;
+        top:0px;
     }
 
     .vatica_part img{
@@ -5054,13 +5223,6 @@ button.contribute-btn:hover {
 
 }
 
-.caption_classify {
-    margin-top:70px;
-    margin-bottom: 20px;
-    text-align: center;
-    font: bold;
-    font-size: 26px; 
-}
 
 /*Tutorial-Intoduction*/
 .select-area{
@@ -5344,6 +5506,28 @@ button.contribute-btn:hover {
         font-size: 1.8vh; 
     }
 }
+
+.tuto_table th, .tuto_table td{
+    border: 1px solid;
+    text-align: center;
+    background-color: #f1f1f1;
+    width: 50px;
+    padding: 10px;
+}
+
+.tuto_table {
+    width: 800px;
+    margin: 0 auto;
+    margin-bottom: 30px;
+    border-collapse: collapse;
+}
+
+.caption_tuto {
+    font-size: 26px;
+    font: bold;
+    margin-bottom: 20px;
+}
+
 
 /*Enhancement Page*/
 .enhancement-layout{
