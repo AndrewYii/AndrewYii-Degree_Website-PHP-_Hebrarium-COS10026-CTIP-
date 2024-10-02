@@ -1622,8 +1622,11 @@ nav .menu {
     transform: scale(1.05);
 }
 
+.identify-img:hover + .identify-p{
+    transform: scale(1.05);
+}
+
 .identify-upload{
-    border: solid;
     width: 450px;
     background-color: white;
     margin: 0 auto;
@@ -1636,6 +1639,7 @@ nav .menu {
     font-weight: bold;
     position: relative;
     top: -70px;
+    transition: transform 0.4s ease;
 }
 
 .identify-table{
@@ -2355,13 +2359,15 @@ nav .menu {
     background-color: #FF5722;
     color: white;
     position: relative;
-    left: 475px;
+    left: 555px;
     top: -60px;
     font-size: 15px;
-    padding: 10px 15px;
+    padding: 12px 22px;
     border: none;
     appearance: None;
     border-radius: 5px;
+    font-size: 1em;
+    cursor: pointer;
     transition: background-color 0.4s ease, transform 0.3s ease;
 }
 
@@ -2385,10 +2391,11 @@ nav .menu {
 
 .enquiry-form{
     background-color: white;
+    border: 1px solid #4CAF50;
     padding: 0px 50px 50px 50px;
     margin: 20px;
-    border-radius: 10px;
-    width: 600px;
+    border-radius: 15px;
+    width: 700px;
     box-shadow: 0 5px 10px rgba(0, 0, 0, .1);
     display: flex;
     flex-direction: column;
@@ -2421,7 +2428,7 @@ nav .menu {
 }
 
 .enquiry-fname, .enquiry-lname, .enquiry-email, .enquiry-pnum{
-    width: 240px;
+    width: 299px;
 }
 
 
@@ -2440,6 +2447,7 @@ nav .menu {
 .enquiry-address{
     padding: 0px 20px 0px 20px;
 }
+
 
 .enquiry-data{
     width: 100%;
@@ -2476,10 +2484,10 @@ nav .menu {
 
 .enquiry-end input{
     color: white;
-    font-size: 20px;
+    font-size: 1em; 
     border: none;
     appearance: None;
-    padding: 10px;
+    padding: 15px 25px;
     margin: 10px;
     border-radius: 10px;
     background-color: #4CAF50;
@@ -2503,7 +2511,11 @@ nav .menu {
 
 .enquiry-fd select{
     width: 100%;
-    height: 30px;
+    padding: 12px;
+    border: 1px solid #4CAF50;
+    border-radius: 8px;
+    box-sizing: border-box;
+    transition: border-color 0.4s ease, box-shadow 0.4s ease;
 }
 
 .feedback-cont{
@@ -2522,6 +2534,16 @@ nav .menu {
 }
 
 @media (max-width: 601px) {
+
+    .enquiry-reset input{
+        left: 280px;
+    }
+
+    .enquiry-legend{
+        position: relative;
+        left: 50px;
+    }
+
     .enquiry-form{
         width: 350px;
     }
@@ -2654,8 +2676,8 @@ button.contribute-btn:hover {
 
 .contribute-form-layout input[type="reset"] {
     position: absolute;
-    top: 15px;
-    right: 5px;
+    top: 10px;
+    right: 10px;
     background-color: #FF5722; 
     color: white;
     border: none;
