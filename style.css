@@ -1596,6 +1596,7 @@ nav .menu {
     outline: 1px solid black;
     margin: 20px 50px 50px 50px;
     border-radius: 10px;
+    background-color: white;
 }
 
 .identify-img{
@@ -1607,11 +1608,10 @@ nav .menu {
 }
 
 .identify-img:hover {
-    transform: scale(2.05);
+    transform: scale(1.05);
 }
 
 .identify-upload{
-    border: solid;
     width: 450px;
     background-color: white;
     margin: 0 auto;
