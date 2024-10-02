@@ -5079,8 +5079,9 @@ button.contribute-btn:hover {
   
   .flip-card-classify:hover .flip-card-inner-classify {
     transform: rotateY(180deg);
+    -webkit-backface-visibility: hidden;
+    backface-visibility: hidden;
   }
-  
 
   .flip-card-front-classify, .flip-card-back-classify {
     position: absolute;
@@ -5093,6 +5094,8 @@ button.contribute-btn:hover {
   .flip-card-back-classify {
     transform: rotateY(180deg);
     text-align: left;
+    backface-visibility: hidden;
+    -webkit-backface-visibility: hidden;
   }
 
 .classify_definition {
