@@ -5074,6 +5074,8 @@ button.contribute-btn:hover {
     text-align: center;
     transition: transform 0.8s;
     transform-style: preserve-3d;
+    backface-visibility: hidden;
+    -webkit-backface-visibility: hidden;
   }
   
   
