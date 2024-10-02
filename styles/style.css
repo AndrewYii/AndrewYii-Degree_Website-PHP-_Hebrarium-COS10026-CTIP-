@@ -4006,6 +4006,9 @@ button.contribute-btn:hover {
 
 
 /*care page*/
+.care-article{
+    overflow: hidden;
+}
 
 .care_background {
     background-color: #DDF5E1;
@@ -5155,7 +5158,7 @@ button.contribute-btn:hover {
     .classify_definition{
         width: 350px;
         position: relative;
-        top:-40px;
+        top:0px;
     }
 
     .vatica_part img{
