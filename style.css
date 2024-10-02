@@ -1612,6 +1612,7 @@ nav .menu {
 }
 
 .identify-upload{
+    border: none;
     width: 450px;
     background-color: white;
     margin: 0 auto;
