@@ -4419,6 +4419,9 @@ button.contribute-btn:hover {
 }
 
 /* Classify page */
+.classify-article{
+    overflow: hidden;
+}
 
 .classify_heading {
     padding-top: 130px;
@@ -5064,6 +5067,7 @@ button.contribute-btn:hover {
         width: 400px;
         height: 1300px;
       }
+      
 }
 @media (max-width: 579px){
     .plantfamtree{
@@ -5072,7 +5076,7 @@ button.contribute-btn:hover {
     }
     .classification1{
         position: relative;
-        left:100px;
+        left:0px;
     }
     .dipte-text{
         position: relative;
@@ -5102,6 +5106,11 @@ button.contribute-btn:hover {
     }
 }
 @media (max-width: 497px){
+    .classify1,.defi1-container1{
+        position: relative;
+        left:40px;
+    }
+
     .defi1-container1{
         width: 475px;
     }
