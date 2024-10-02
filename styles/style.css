@@ -3529,15 +3529,11 @@ button.contribute-btn:hover {
     position: relative;
     display: inline-block;
     transform: rotate(90deg);
-    left: -78px;
+    left: -83px;
     top: 80px;
     font-weight: bold;
 }
 
-.care-aside:hover {
-    right: 0; /* Move into view */
-    transform: translateX(0); /* No need for additional translation */
-}
 
 .care-aside:hover .care-span{
     visibility: hidden;
@@ -4024,6 +4020,8 @@ button.contribute-btn:hover {
 
 .care_container {
     display: flex;
+    position: relative;
+    overflow: hidden;
     flex-direction: row;
     align-items: flex-start;
     gap: 20px;
@@ -4304,8 +4302,16 @@ button.contribute-btn:hover {
     .preservation_tips{
         width:400px;
     }
+    .care-aside {
+        position: absolute;
+        top: 20%; 
+    }
 }
 @media (max-width: 600px) {
+    .care-aside {
+        position: absolute;
+        top: 12%;
+    }
     .care_definition {
         width: 300px;
     }
@@ -4349,6 +4355,23 @@ button.contribute-btn:hover {
     }
 }
 @media (max-width: 550px) {
+    .care-aside h2{
+        font-size: 18px;
+        text-align: center;
+    }
+    .care-aside {
+        position: absolute;
+        top: 1%; 
+        width: 350px;
+        right: -308px;
+        margin: 0px;
+        padding: 0px 0px 0px 50px;
+    }
+    .care-aside:hover {
+        right: 0px; 
+        transform: translateX(0); 
+    }
+
     .care_table{
         width: 250px;
     }
@@ -4397,10 +4420,6 @@ button.contribute-btn:hover {
 
 /* Classify page */
 
-.classify-article{
-    overflow: hidden;
-}
-
 .classify_heading {
     padding-top: 130px;
     padding-bottom: 30px;
@@ -4421,6 +4440,8 @@ button.contribute-btn:hover {
 }
 
 .classification1 {
+    overflow: hidden;
+    position: relative;
     display: flex; 
     flex-direction: row;       
     align-items: center;      
@@ -4922,11 +4943,6 @@ button.contribute-btn:hover {
     }
 }
 @media (max-width: 863px) {
-    .classification1{
-        position: relative;
-        left:150px;
-        width: 300px;
-    }
     .classify_table {
         width: 600px;
     }
