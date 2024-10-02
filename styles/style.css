@@ -3513,7 +3513,7 @@ button.contribute-btn:hover {
 .care-aside {
     position: absolute;
     top: 35%; /* Adjust as needed */
-    right: -509px; /* Start hidden off-screen */
+    right: -508px; /* Start hidden off-screen */
     width: 550px; /* Use a percentage for width */
     background-color: #f9f9f9;
     border-left: 8px solid #4CAF50;
