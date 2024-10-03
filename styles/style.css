@@ -3319,21 +3319,6 @@ button.contribute-btn:hover {
     box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1); 
 }
 
-.tuto_table th, .tuto_table td{
-    border: 1px solid;
-    text-align: center;
-    width: 50px;
-    background-color: #f1f1f1;
-    padding: 10px;
-}
-
-.tuto_table {
-    width: 800px;
-    margin: 0 auto;
-    margin-bottom: 30px;
-    border-collapse: collapse;
-}
-
 .tuto_care {
     font-size: 26px;
     font: bold;
@@ -3504,13 +3489,11 @@ button.contribute-btn:hover {
     font-size: 26px; 
 }
 
-@media (max-width: 1399px) {
-    
+@media (max-width: 1399px) {  
     .tuto_tips {
         position: relative;
         top:50px;
     }
-    
     .step2 img {
         width: 550px;
     }
@@ -3531,6 +3514,7 @@ button.contribute-btn:hover {
         top:50px;
     }
 }
+
 @media (max-width: 1189px) {
     .step2 img {
         width: 450px;
@@ -3553,6 +3537,7 @@ button.contribute-btn:hover {
         top:0px;
     }
 }
+
 @media (max-width: 1020px) {
     .tuto_container {
         flex-direction: column;
@@ -3568,6 +3553,7 @@ button.contribute-btn:hover {
         width:600px;
     }
 }
+
 @media (max-width: 974px) {
     .tutobordered-content {
         flex-direction: column;
@@ -3575,19 +3561,16 @@ button.contribute-btn:hover {
     .step2 img {
         display: none;
     }
-
     .tutotext-content5 h3,.tutotext-content5 p.tutodescription{
         position: relative;
         top:0;
         left:0;
     }
-
     .assignandrecord1,.assignandrecord,.assignandrecord2,.assignandrecord3 {
         margin-top:-10px;
         padding: 0;
         font-size: 26px;
     }
-    
     .caption-in-small{
         font-size: 18px;
         display: block;
@@ -3595,11 +3578,9 @@ button.contribute-btn:hover {
         position: relative;
         top:-35px;
     }
-
     .step2 .caption1 {
         display: none;
     }
-    
     .step3 img {
         width: 500px;
     }
@@ -3619,9 +3600,6 @@ button.contribute-btn:hover {
     .tuto_definition {
         width: 500px;
     }
-    .tuto_table{
-        width: 500px;
-    }
     .tuto1 {
         width: 500px;
         height: 300px;
@@ -3629,22 +3607,18 @@ button.contribute-btn:hover {
     .tuto_tips{
         width:400px;
     }
-
     .tuto-aside {
         position: absolute;
         top: 20%; 
     }
 }
-@media (max-width: 600px) {
 
+@media (max-width: 600px) {
     .tuto-aside {
         position: absolute;
         top: 12%;
     }
     .tuto_definition {
-        width: 300px;
-    }
-    .tuto_table{
         width: 300px;
     }
     .tuto1 {
@@ -3682,10 +3656,9 @@ button.contribute-btn:hover {
         width: 300px;
         height: 200px;
     }
-
 }
-@media (max-width: 550px) {
 
+@media (max-width: 550px) {
     .tuto-aside h2{
         font-size: 18px;
         text-align: center;
@@ -3701,9 +3674,6 @@ button.contribute-btn:hover {
     .tuto-aside:hover {
         right: 0px; 
         transform: translateX(0); 
-    }
-    .tuto_table{
-        width: 250px;
     }
     .tuto_heading {
         font-size: 32px;
