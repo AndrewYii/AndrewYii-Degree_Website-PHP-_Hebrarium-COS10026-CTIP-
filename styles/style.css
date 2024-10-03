@@ -3494,6 +3494,11 @@ button.contribute-btn:hover {
     .tuto_tips{
         width:400px;
     }
+
+    .care-aside {
+        position: absolute;
+        top: 20%; 
+    }
 }
 @media (max-width: 600px) {
     .tuto_definition {
