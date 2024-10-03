@@ -3502,12 +3502,15 @@ button.contribute-btn:hover {
 
     .tuto-aside {
         position: absolute;
-        top: 16%; 
+        top: 20%; 
     }
 }
 @media (max-width: 600px) {
 
-
+    .tuto-aside {
+        position: absolute;
+        top: 12%;
+    }
     .tuto_definition {
         width: 300px;
     }
@@ -3559,7 +3562,7 @@ button.contribute-btn:hover {
     }
     .tuto-aside {
         position: absolute;
-        top: -9%; 
+        top: 1%; 
         width: 350px;
         right: -308px;
         margin: 0px;
@@ -3655,8 +3658,6 @@ button.contribute-btn:hover {
     flex-direction: row;
     align-items: flex-start;
     gap: 20px;
-    position: relative;
-    overflow: hidden;
 }
 
 .tools1 {
@@ -4096,11 +4097,11 @@ button.contribute-btn:hover {
     }
     .tools-aside{
         position: absolute;
-        top: -5%;
+        top: 1%;
         width: 350px;
         right: -308px;
         margin: 0px;
-        padding: 0px 0px 0px 52px;
+        padding: 0px 0px 0px 0px;
     }
     .tools-aside:hover {
         right: 0px;
@@ -4521,7 +4522,7 @@ button.contribute-btn:hover {
         width: 350px;
         right: -308px;
         margin: 0px;
-        padding: 0px 0px 20px 50px;
+        padding: 0px 0px 0px 50px;
     }
     .care-aside:hover {
         right: 0px; 
@@ -4974,6 +4975,7 @@ button.contribute-btn:hover {
 .dt_head{
     position: relative;
     top:40px;
+    width: 30px;
   }
 
 .odd_defi, .even_defi {
@@ -4982,6 +4984,7 @@ button.contribute-btn:hover {
     margin: 0;
     margin-top: 10px;
     text-align: left;
+    top
   }
 
 .even_defi {
@@ -4990,6 +4993,12 @@ button.contribute-btn:hover {
 
 .odd_defi {
     background-color: rgb(248, 248, 248);
+}
+
+.classify_span {
+    position: relative; 
+    top: 40px; 
+    left: 5px;
 }
 
 .defi_caption {
