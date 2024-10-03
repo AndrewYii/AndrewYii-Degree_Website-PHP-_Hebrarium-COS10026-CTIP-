@@ -3622,6 +3622,15 @@ button.contribute-btn:hover {
     }
 }
 
+@media (max-width: 763px) {
+    .tutodef-caption {
+        font-size: 22px;
+    }
+    .caption_tutorial {
+        font-size: 22px;
+    }
+}
+
 @media (max-width: 600px) {
     .tuto-aside {
         position: absolute;
