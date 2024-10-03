@@ -1610,6 +1610,12 @@ nav .menu {
     border-radius: 10px;
 }
 
+.identify-detail h2{
+    font-weight: 100;
+    font-size: 16px;
+    padding: 10px;
+}
+
 .identify-img{
     display: flex;
     flex-direction: column;
