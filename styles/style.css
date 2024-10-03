@@ -5104,7 +5104,7 @@ button.contribute-btn:hover {
             max-width: 0;
         }
         to{
-            max-width: 42%;
+            max-width: 45%;
         }
     }
     .classification1{
@@ -5180,7 +5180,7 @@ button.contribute-btn:hover {
             max-width: 0;
         }
         to{
-            max-width: 45%;
+            max-width: 48%;
         }
     }
     .classify_table {
@@ -5232,7 +5232,7 @@ button.contribute-btn:hover {
             max-width: 0;
         }
         to{
-            max-width: 60%;
+            max-width: 62%;
         }
     }
     .defi1-heading{
@@ -5292,7 +5292,7 @@ button.contribute-btn:hover {
 }
 @media (max-width: 707px){
     .classify_heading{
-        font-size: 3vw;
+        font-size: 3.2vw;
     }
     @keyframes typing01{
         from{
@@ -5382,7 +5382,7 @@ button.contribute-btn:hover {
             max-width: 0;
         }
         to{
-            max-width: 70%;
+            max-width: 73%;
         }
     }
     .classify1,.defi1-container1{
