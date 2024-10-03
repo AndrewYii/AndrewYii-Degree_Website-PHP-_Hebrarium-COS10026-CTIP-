@@ -4597,8 +4597,17 @@ button.contribute-btn:hover {
     overflow: hidden;
     border-right: 0.3vh solid darkgreen;
     white-space: nowrap;
-    animation: typing 4s steps(40,end) forwards,borderDisappear 1s forwards 3.8s;
+    animation: typing01 4s steps(40,end) forwards,borderDisappear 1s forwards 3.8s;
 }
+@keyframes typing01{
+    from{
+        max-width: 0;
+    }
+    to{
+        max-width: 35%;
+    }
+}
+
 
 .classify1 img{
     height: auto;
@@ -5000,6 +5009,17 @@ button.contribute-btn:hover {
     }
 }
 @media (max-width: 1389px) {
+    .classify_heading{
+        font-size: 2.2vw;
+    }
+    @keyframes typing01{
+        from{
+            max-width: 0;
+        }
+        to{
+            max-width: 40%;
+        }
+    }
     .classify1 img{
         width: 450px;
     }
@@ -5076,6 +5096,17 @@ button.contribute-btn:hover {
     }
 }
 @media (max-width: 1281px) {
+    .classify_heading{
+        font-size: 2.2vw;
+    }
+    @keyframes typing01{
+        from{
+            max-width: 0;
+        }
+        to{
+            max-width: 42%;
+        }
+    }
     .classification1{
         flex-direction: column;
         justify-content: center;
@@ -5141,6 +5172,17 @@ button.contribute-btn:hover {
     }
 }
 @media (max-width: 863px) {
+    .classify_heading{
+        font-size: 2.5vw;
+    }
+    @keyframes typing01{
+        from{
+            max-width: 0;
+        }
+        to{
+            max-width: 45%;
+        }
+    }
     .classify_table {
         width: 600px;
     }
@@ -5183,8 +5225,17 @@ button.contribute-btn:hover {
         height: 210px;
     }
     .classify_heading{
-        font-size: 32px;
-    }.defi1-heading{
+        font-size: 3vw;
+    }
+    @keyframes typing01{
+        from{
+            max-width: 0;
+        }
+        to{
+            max-width: 60%;
+        }
+    }
+    .defi1-heading{
         font-size: 24px;
     }
     .defi1 {
@@ -5240,6 +5291,17 @@ button.contribute-btn:hover {
     }
 }
 @media (max-width: 707px){
+    .classify_heading{
+        font-size: 3vw;
+    }
+    @keyframes typing01{
+        from{
+            max-width: 0;
+        }
+        to{
+            max-width: 55%;
+        }
+    }
     .vatica_part{
         position: relative;
         top:0;
@@ -5265,6 +5327,17 @@ button.contribute-btn:hover {
       
 }
 @media (max-width: 579px){
+    .classify_heading{
+        font-size: 3.5vw;
+    }
+    @keyframes typing01{
+        from{
+            max-width: 0;
+        }
+        to{
+            max-width: 62%;
+        }
+    }
     .plantfamtree{
         position: relative;
         left:-80px;
@@ -5301,6 +5374,17 @@ button.contribute-btn:hover {
     }
 }
 @media (max-width: 497px){
+    .classify_heading{
+        font-size: 4vw;
+    }
+    @keyframes typing01{
+        from{
+            max-width: 0;
+        }
+        to{
+            max-width: 70%;
+        }
+    }
     .classify1,.defi1-container1{
         position: relative;
         left:40px;
