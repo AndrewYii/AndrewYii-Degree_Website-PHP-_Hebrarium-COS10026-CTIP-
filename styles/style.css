@@ -3631,6 +3631,20 @@ button.contribute-btn:hover {
     }
 }
 
+@media (max-width: 707px) {
+    .tuto_table {
+        width: 400px;
+    }
+    .flipcard_tuto {
+        width: 400px;
+        height: 1450px;
+    }
+    .tutorial_definiton {
+        width: 400px;
+        height: 1300px;
+    }
+}
+
 @media (max-width: 600px) {
     .tuto-aside {
         position: absolute;
