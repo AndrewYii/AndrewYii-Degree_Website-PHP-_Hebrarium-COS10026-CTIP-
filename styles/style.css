@@ -3154,9 +3154,10 @@ button.contribute-btn:hover {
 
 .tuto1 {
     display: block;
-    width: 700px;
-    height: 500px;
-    margin-left: 20%;
+    width: 750px;
+    height: 550px;
+    margin-left: auto;
+    margin-right: auto;
 }
 
 .tuto1 img {
