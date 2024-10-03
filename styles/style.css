@@ -5870,11 +5870,17 @@ button.contribute-btn:hover {
     color: black;
 }
 
+
+
 .tutorial-introduction-text-content {
     flex: 1; 
     padding-right: 20px; 
     text-align: justify;
     font-size: 18px;
+}
+
+.tutorial-introduction-text-content h3 a{
+    color: darkgreen;
 }
 
 .tutorial-introduction-image-content {
