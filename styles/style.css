@@ -3374,6 +3374,108 @@ button.contribute-btn:hover {
         transform: translateX(0); /* No need for additional translation */
 }
 
+.tuto_table th{
+    background-color: #228B22;
+    color: white;
+}
+
+.tuto_table tr:nth-child(odd){
+    background-color: rgb(248, 248, 248);
+}
+
+.tuto_table tr:nth-child(even){
+    background-color: white;
+}
+
+.tuto_table {
+    width: 800px;
+    height: 680px;
+    margin: 0 auto;
+    margin-bottom: 30px;
+    border-collapse: collapse;
+}
+
+.flipcard-tuto {
+    margin: 0 auto;
+    background-color: transparent;
+    width: 800px;
+    height: 800px;
+    border: 1px solid #f1f1f1;
+    perspective: 1000px; 
+    overflow: hidden;
+  }
+  
+  .flipcard-inner-tuto {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    text-align: center;
+    transition: transform 0.5s;
+    transform-style: preserve-3d;
+  }
+  
+  
+  .flipcard-tuto:hover .flipcard-inner-tuto {
+    transform: rotateY(180deg);
+    backface-visibility: hidden;
+  }
+
+  .flipcard-front-tuto, .flipcard-back-tuto {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    backface-visibility: hidden; 
+    backface-visibility: hidden;
+  }
+    
+  .flipcard-back-tuto {
+    transform: rotateY(180deg);
+    text-align: left;
+    backface-visibility: hidden;
+  }
+
+.tutorial_definiton {
+    display: flex;
+    flex-flow: row wrap;
+  }
+
+.dt_tuto {
+    flex-basis: 20%;
+    background: #228B22;
+    text-align: center;
+    color: #fff;
+    margin-top: 10px;
+  }
+
+.dt_tutohead{
+    position: relative;
+    top:40px;
+  }
+
+.odd_definition, .even_definition {
+    flex-basis: 70%;
+    flex-grow: 1;
+    margin: 0;
+    margin-top: 10px;
+    text-align: left;
+  }
+
+.even_definition {
+    background-color: white;
+}
+
+.odd_definition {
+    background-color: rgb(248, 248, 248);
+}
+
+.tutodef-caption {
+    margin-top:70px;
+    margin-bottom: 20px;
+    text-align: center;
+    font: bold;
+    font-size: 26px; 
+}
+
 @media (max-width: 1399px) {
     
     .tuto_tips {
@@ -4919,7 +5021,7 @@ button.contribute-btn:hover {
     border-collapse: collapse;
 }
 
-.flipcard-tuto {
+.flip-card-classify {
     margin: 0 auto;
     background-color: transparent;
     width: 800px;
@@ -4929,7 +5031,7 @@ button.contribute-btn:hover {
     overflow: hidden;
   }
   
-  .flipcard-inner-tuto {
+  .flip-card-inner-classify {
     position: relative;
     width: 100%;
     height: 100%;
@@ -4939,12 +5041,12 @@ button.contribute-btn:hover {
   }
   
   
-  .flipcard-tuto:hover .flipcard-inner-tuto {
+  .flip-card-classify:hover .flip-card-inner-classify {
     transform: rotateY(180deg);
     backface-visibility: hidden;
   }
 
-  .flipcard-front-tuto, .flipcard-back-tutoy {
+  .flip-card-front-classify, .flip-card-back-classify {
     position: absolute;
     width: 100%;
     height: 100%;
@@ -4952,18 +5054,18 @@ button.contribute-btn:hover {
     backface-visibility: hidden;
   }
     
-  .flipcard-back-tuto {
+  .flip-card-back-classify {
     transform: rotateY(180deg);
     text-align: left;
     backface-visibility: hidden;
   }
 
-.tutorial_definiton {
+.classify_definition {
     display: flex;
     flex-flow: row wrap;
   }
 
-.dt_tuto {
+.dt_classify {
     flex-basis: 20%;
     background: #228B22;
     text-align: center;
@@ -4971,12 +5073,12 @@ button.contribute-btn:hover {
     margin-top: 10px;
   }
 
-.dt_tutohead{
+.dt_head{
     position: relative;
     top:40px;
   }
 
-.odd_definition, .even_definition {
+.odd_defi, .even_defi {
     flex-basis: 70%;
     flex-grow: 1;
     margin: 0;
@@ -4984,15 +5086,15 @@ button.contribute-btn:hover {
     text-align: left;
   }
 
-.even_definition {
+.even_defi {
     background-color: white;
 }
 
-.odd_definition {
+.odd_defi {
     background-color: rgb(248, 248, 248);
 }
 
-.tutodef-caption {
+.defi_caption {
     margin-top:70px;
     margin-bottom: 20px;
     text-align: center;
