@@ -4972,6 +4972,11 @@ button.contribute-btn:hover {
     margin-top: 10px;
   }
 
+.dt_head{
+    position: relative;
+    top:40px;
+  }
+
 .odd_defi, .even_defi {
     flex-basis: 70%;
     flex-grow: 1;
