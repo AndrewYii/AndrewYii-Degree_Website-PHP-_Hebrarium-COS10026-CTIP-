@@ -4574,11 +4574,26 @@ button.contribute-btn:hover {
     overflow: hidden;
 }
 
-.classify_heading {
+.classify_welcome {
+    margin: 0 auto;
+    margin-bottom: 50px;
+}
+
+.classify_heading1 {
     padding-top: 130px;
-    padding-bottom: 30px;
+    padding-bottom: 20px;
     text-align: center;
     font: bold 36px "Outfit", sans-serif;
+}
+
+.classify_heading {
+    margin: 0 auto;
+    font-size: 2vw;
+    text-align:center;
+    overflow: hidden;
+    border-right: 0.3vh solid darkgreen;
+    white-space: nowrap;
+    animation: typing 4s steps(40,end) forwards,borderDisappear 1s forwards 3.8s;
 }
 
 .classify1 img{
