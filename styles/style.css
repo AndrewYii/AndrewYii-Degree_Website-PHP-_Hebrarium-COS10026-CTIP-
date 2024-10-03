@@ -5535,27 +5535,6 @@ button.contribute-btn:hover {
     }
 }
 
-.tuto_table th, .tuto_table td{
-    border: 1px solid;
-    text-align: center;
-    background-color: #f1f1f1;
-    width: 50px;
-    padding: 10px;
-}
-
-.tuto_table {
-    width: 800px;
-    margin: 0 auto;
-    margin-bottom: 30px;
-    border-collapse: collapse;
-}
-
-.caption_tuto {
-    font-size: 26px;
-    font: bold;
-    margin-bottom: 20px;
-}
-
 
 /*Enhancement Page*/
 .enhancement-layout{
