@@ -2060,7 +2060,7 @@ nav .menu {
 .transform-box1{
     width: 250px;
     height: 250px;
-    background-color: blue;
+    background-color: #808080;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -2076,7 +2076,7 @@ nav .menu {
 .transform-box2{
     width: 250px;
     height: 250px;
-    background-color: purple;
+    background-color: red;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -2092,7 +2092,7 @@ nav .menu {
 .transform-box3{
     width: 250px;
     height: 250px;
-    background-color: red;
+    background-color: #8B8000;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -2137,7 +2137,7 @@ nav .menu {
     background-image: url('images/aniq.jpeg');
     background-size: cover;
     background-position: center;
-    border: 5px groove blue;
+    border: 5px groove #808080;
 }
 
 #change_box:checked + .transform-box2 {
@@ -2146,7 +2146,7 @@ nav .menu {
     background-image: url('images/Assufi.jpg');
     background-size: cover;
     background-position: center;
-    border: 5px groove purple;
+    border: 5px groove red;
 }
 
 #change_box:checked + .transform-box3 {
@@ -2155,7 +2155,7 @@ nav .menu {
     background-image: url('images/Faiz.jpg');
     background-size: cover;
     background-position: center;
-    border: 5px groove red;
+    border: 5px groove #8B8000;
 }
 
 #change_box:checked + .transform-box .box-text,#change_box:checked + .transform-box1 .box-text,#change_box:checked + .transform-box2 .box-text,#change_box:checked + .transform-box3 .box-text {
@@ -2236,7 +2236,7 @@ nav .menu {
 
 /*Aniq-Profile*/
 .odd-row1{
-    background-color: blue;
+    background-color: #808080;
     color: #fff;
 }
 
@@ -2262,14 +2262,14 @@ nav .menu {
 .email-button-aniq a:hover{
     color:#fff;
     padding: 16px 50px;
-    background-color: blue;
+    background-color: #808080;
     border:none;
     outline: none;
 }
 
 /*Assufi-Profile*/
 .odd-row2{
-    background-color: purple;
+    background-color: red;
     color: #fff;
 
 }
@@ -2298,14 +2298,14 @@ nav .menu {
 .email-button-assufi a:hover{
     color:#fff;
     padding: 16px 50px;
-    background-color: purple;
+    background-color: red;
     border:none;
     outline: none;
 }
 
 /*Faiz-Profile*/
 .odd-row3{
-    background-color: red;
+    background-color: #8B8000;
     color: #fff;
 
 }
@@ -2342,7 +2342,7 @@ nav .menu {
 .email-button-faiz a:hover{
     color:#fff;
     padding: 16px 50px;
-    background-color: red;
+    background-color: #8B8000;
     border:none;
     outline: none;
 }
@@ -4645,9 +4645,10 @@ button.contribute-btn:hover {
 .vatica_content {
     position: relative; 
     display: inline-block;
-    width: auto;
+    width: auto;        
     margin-left: 20px;
     margin-top: 50px;
+    animation: moveLeft 3s ease-in-out forwards;
 }
 
 .vatica_content img{
@@ -4687,6 +4688,30 @@ button.contribute-btn:hover {
     text-align: center;
     width: 500px;
     margin-top: 50px;
+    animation: moveRight 3s ease-in-out forwards;
+}
+
+@keyframes moveLeft {
+    0% {
+        transform: translateX(-200px); /* Start from -200px off to the left */
+        opacity: 0;
+    }
+    100% {
+        transform: translateX(0); /* Move to the default position */
+        opacity: 1;
+    }
+}
+
+/* Animation for moving Hopea image to the center */
+@keyframes moveRight {
+    0% {
+        transform: translateX(200px); /* Start from 200px off to the right */
+        opacity: 0;
+    }
+    100% {
+        transform: translateX(0); /* Move to the default position */
+        opacity: 1;
+    }
 }
 
 .hopea_content1 {
