@@ -3622,6 +3622,14 @@ button.contribute-btn:hover {
     }
 }
 
+.caption_tutorial {
+    margin-bottom: 20px;
+    margin-top: 70px;
+    text-align: center;
+    font: bold;
+    font-size: 26px; 
+}
+
 @media (max-width: 763px) {
     .tutodef-caption {
         font-size: 22px;
