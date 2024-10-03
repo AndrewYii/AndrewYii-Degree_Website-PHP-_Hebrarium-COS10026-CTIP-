@@ -3374,6 +3374,34 @@ button.contribute-btn:hover {
         transform: translateX(0); /* No need for additional translation */
 }
 
+.tutorial_definiton {
+    font-size: 20px;
+    width: 800px;
+    height: 680px;
+    margin-top: 20px;
+}
+
+..tutodef-caption {
+    margin-bottom: 20px;
+    margin-top: 70px;
+    text-align: center;
+    font: bold;
+    font-size: 26px; 
+}
+
+.tuto_table th, .tuto_table td{
+    width: 50px;
+    padding: 10px;
+}
+
+.test1 {
+    text-align: center;
+}
+
+.test2 {
+    text-align: justify;
+}
+
 .tuto_table th{
     background-color: #228B22;
     color: white;
