@@ -6007,7 +6007,7 @@ button.contribute-btn:hover {
         flex-direction: column;
     }
     .enhancement-section-video{
-        margin: 0 auto;
+        margin-left: 50px;
     }
 }
 @media (max-width: 1020px) {
