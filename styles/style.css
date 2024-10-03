@@ -3735,6 +3735,14 @@ button.contribute-btn:hover {
     }
 }
 
+@media (max-width: 497px) {
+    .tutorial_definiton {
+        width: 350px;
+        position: relative;
+        top: 0px;
+    }
+}
+
 .care-aside {
     position: absolute;
     top: 35%; /* Adjust as needed */
