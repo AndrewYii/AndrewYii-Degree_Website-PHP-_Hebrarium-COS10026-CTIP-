@@ -4521,7 +4521,7 @@ button.contribute-btn:hover {
         width: 350px;
         right: -308px;
         margin: 0px;
-        padding: 0px 0px 0px 50px;
+        padding: 0px 0px 20px 50px;
     }
     .care-aside:hover {
         right: 0px; 
