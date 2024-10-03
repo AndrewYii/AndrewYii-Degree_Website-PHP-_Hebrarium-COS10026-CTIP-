@@ -4735,7 +4735,6 @@ button.contribute-btn:hover {
     width: auto;        
     margin-left: 20px;
     margin-top: 50px;
-    animation: moveLeft 3s ease-in-out forwards;
 }
 
 .vatica_content img{
@@ -4775,7 +4774,6 @@ button.contribute-btn:hover {
     text-align: center;
     width: 500px;
     margin-top: 50px;
-    animation: moveRight 3s ease-in-out forwards;
 }
 
 @keyframes moveLeft {
