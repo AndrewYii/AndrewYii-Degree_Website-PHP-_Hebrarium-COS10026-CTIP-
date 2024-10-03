@@ -3159,6 +3159,7 @@ button.contribute-btn:hover {
     margin-left: auto;
     margin-right: auto;
     margin-top: -40px;
+    margin-bottom: -30px;
 }
 
 .tuto1 img {
@@ -3337,7 +3338,7 @@ button.contribute-btn:hover {
     margin-bottom: 20px;
 }
 
-.tools-aside {
+.tuto-aside {
     position: absolute;
     top: 35%; /* Adjust as needed */
     right: -508px; /* Start hidden off-screen */
@@ -3352,7 +3353,7 @@ button.contribute-btn:hover {
     z-index: 10; /* Ensure it stays above other content */
 }
 
-.tools-aside span{
+.tuto-aside span{
     position: relative;
     display: inline-block;
     transform: rotate(90deg);
@@ -3362,11 +3363,11 @@ button.contribute-btn:hover {
 }
 
 
-.tools-aside:hover .tools-span{
+.tuto-aside:hover .tuto-span{
     visibility: hidden;
 }
 
-.tools-aside:hover {
+.tuto-aside:hover {
         right: -20px; /* Move into view */
         transform: translateX(0); /* No need for additional translation */
 }
@@ -3661,7 +3662,10 @@ button.contribute-btn:hover {
     display: block;
     width: 700px;
     height: 500px;
-    margin-left: 20%;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: -50px;
+    margin-bottom: -30px;
 }
 
 .tools1 img {
