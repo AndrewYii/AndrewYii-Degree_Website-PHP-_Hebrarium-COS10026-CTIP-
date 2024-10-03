@@ -1610,6 +1610,12 @@ nav .menu {
     border-radius: 10px;
 }
 
+.identify-detail h2{
+    font-weight: 100;
+    font-size: 16px;
+    padding: 10px;
+}
+
 .identify-img{
     display: flex;
     flex-direction: column;
@@ -2533,7 +2539,7 @@ nav .menu {
     transition: border-color 0.4s ease, box-shadow 0.4s ease; 
 }
 
-@media (max-width: 601px) {
+@media (max-width: 751px) {
 
     .enquiry-reset input{
         left: 280px;
@@ -5527,27 +5533,6 @@ button.contribute-btn:hover {
     .tutorial-intrduction-background-layout1 ul li {
         font-size: 1.8vh; 
     }
-}
-
-.tuto_table th, .tuto_table td{
-    border: 1px solid;
-    text-align: center;
-    background-color: #f1f1f1;
-    width: 50px;
-    padding: 10px;
-}
-
-.tuto_table {
-    width: 800px;
-    margin: 0 auto;
-    margin-bottom: 30px;
-    border-collapse: collapse;
-}
-
-.caption_tuto {
-    font-size: 26px;
-    font: bold;
-    margin-bottom: 20px;
 }
 
 
