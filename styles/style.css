@@ -3150,6 +3150,8 @@ button.contribute-btn:hover {
     flex-direction: row;
     align-items: flex-start;
     gap: 20px;
+    position: relative;
+    overflow: hidden;
 }
 
 .tuto1 {
@@ -3500,15 +3502,12 @@ button.contribute-btn:hover {
 
     .tuto-aside {
         position: absolute;
-        top: 20%; 
+        top: 16%; 
     }
 }
 @media (max-width: 600px) {
 
-    .tuto-aside {
-        position: absolute;
-        top: 12%;
-    }
+
     .tuto_definition {
         width: 300px;
     }
@@ -3560,7 +3559,7 @@ button.contribute-btn:hover {
     }
     .tuto-aside {
         position: absolute;
-        top: 1%; 
+        top: -9%; 
         width: 350px;
         right: -308px;
         margin: 0px;
@@ -3656,6 +3655,8 @@ button.contribute-btn:hover {
     flex-direction: row;
     align-items: flex-start;
     gap: 20px;
+    position: relative;
+    overflow: hidden;
 }
 
 .tools1 {
@@ -4095,11 +4096,11 @@ button.contribute-btn:hover {
     }
     .tools-aside{
         position: absolute;
-        top: 1%;
+        top: -5%;
         width: 350px;
         right: -308px;
         margin: 0px;
-        padding: 0px 0px 0px 0px;
+        padding: 0px 0px 0px 52px;
     }
     .tools-aside:hover {
         right: 0px;
