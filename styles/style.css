@@ -2539,7 +2539,7 @@ nav .menu {
     transition: border-color 0.4s ease, box-shadow 0.4s ease; 
 }
 
-@media (max-width: 601px) {
+@media (max-width: 751px) {
 
     .enquiry-reset input{
         left: 280px;
