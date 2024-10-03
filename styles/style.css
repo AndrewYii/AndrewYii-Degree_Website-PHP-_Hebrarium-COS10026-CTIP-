@@ -3489,6 +3489,19 @@ button.contribute-btn:hover {
     font-size: 26px; 
 }
 
+.tuto-article{
+    overflow: hidden;
+}
+
+.caption_tutorial {
+    margin-bottom: 20px;
+    margin-top: 70px;
+    text-align: center;
+    font: bold;
+    font-size: 26px; 
+}
+
+
 @media (max-width: 1399px) {  
     .tuto_tips {
         position: relative;
@@ -3618,16 +3631,11 @@ button.contribute-btn:hover {
     }
     .tuto-aside {
         position: absolute;
-        top: 20%; 
+        top: 15%;
+        padding: 20px 0px 0px 50px;
+        right:-510px;
+        overflow: hidden;
     }
-}
-
-.caption_tutorial {
-    margin-bottom: 20px;
-    margin-top: 70px;
-    text-align: center;
-    font: bold;
-    font-size: 26px; 
 }
 
 @media (max-width: 763px) {
@@ -3656,7 +3664,26 @@ button.contribute-btn:hover {
 @media (max-width: 600px) {
     .tuto-aside {
         position: absolute;
-        top: 12%;
+        top: 1%; 
+        width: 350px;
+        right: -308px;
+        margin: 0px;
+        padding: 0px 0px 0px 70px;
+    }
+    .tuto-aside h2{
+        font-size: 18px;
+        text-align: center;
+    }
+    .tuto-aside li{
+        font-size: 13.5px;
+    }
+    .tuto-aside span{
+        left: -100px;
+        top:110px;
+    }
+    .tuto-aside:hover {
+        right: 0px; 
+        transform: translateX(0); 
     }
     .tuto_definition {
         width: 300px;
@@ -3699,22 +3726,6 @@ button.contribute-btn:hover {
 }
 
 @media (max-width: 550px) {
-    .tuto-aside h2{
-        font-size: 18px;
-        text-align: center;
-    }
-    .tuto-aside {
-        position: absolute;
-        top: 1%; 
-        width: 350px;
-        right: -308px;
-        margin: 0px;
-        padding: 0px 0px 0px 50px;
-    }
-    .tuto-aside:hover {
-        right: 0px; 
-        transform: translateX(0); 
-    }
     .tuto_heading {
         font-size: 32px;
     }
@@ -3806,6 +3817,8 @@ button.contribute-btn:hover {
     flex-direction: row;
     align-items: flex-start;
     gap: 20px;
+    overflow: hidden;
+    position: relative;
 }
 
 .tools1 {
@@ -4034,6 +4047,7 @@ button.contribute-btn:hover {
     border-radius: 5px;
     transition: transform 0.3s ease, right 0.3s ease; /* Smooth transition */
     z-index: 10; /* Ensure it stays above other content */
+    overflow: hidden;
 }
 
 .tools-aside span{
@@ -4195,6 +4209,7 @@ button.contribute-btn:hover {
     .tools-aside {
         position: absolute;
         top:12%;
+        padding: 3px 0px 0px 50px;
     }
     .tools_definition {
         width: 300px;
@@ -4249,7 +4264,10 @@ button.contribute-btn:hover {
         width: 350px;
         right: -308px;
         margin: 0px;
-        padding: 0px 0px 0px 0px;
+        padding: 0px 0px 20px 51px;
+    }
+    .tools-aside li{
+        font-size: 13.5px;
     }
     .tools-aside:hover {
         right: 0px;
