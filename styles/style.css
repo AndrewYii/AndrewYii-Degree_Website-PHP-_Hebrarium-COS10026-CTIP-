@@ -1,3 +1,7 @@
+html {
+    scroll-behavior: smooth; 
+}
+
 * {
     margin: 0;
     padding: 0;
@@ -731,7 +735,7 @@ nav .menu {
 	padding: 0.7vw 0 1.5vw 2vw;
 }
 
-.image-text img{
+.image-text .index-img{
     max-width: 720px;
 	box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 	border-radius: 50px;
@@ -769,7 +773,7 @@ nav .menu {
     }
 }
 @media (max-width: 1488px) {
-    .image-text img{
+    .image-text .index-img{
         max-width: 500px;
     }
 }
@@ -783,7 +787,7 @@ nav .menu {
         font-size:32px;
     }
     
-    .image-text img{
+    .image-text .index-img{
         max-width: 400px;
     }
     .desc1 p{
@@ -804,7 +808,7 @@ nav .menu {
         font-size:26px;
     }
     
-    .image-text img{
+    .image-text .index-img{
         max-width: 350px;
     }
     .desc1 p{
@@ -819,7 +823,7 @@ nav .menu {
         font-size:26px;
     }
     
-    .image-text img{
+    .image-text .index-img{
         max-width: 350px;
     }
     .desc1 p{
@@ -6191,4 +6195,44 @@ button.contribute-btn:hover {
         width: 300px;
         height: auto;
     }
+}
+
+.going-up-container{
+    border-radius: 20px;
+    border: 1px solid black;
+    background-color: white;
+    margin: auto;
+    position: fixed;
+    bottom: 100px;
+    right: 10px;
+    height: 70px; 
+    width: 70px; 
+    animation: up-down 7.5s infinite ease-in-out;
+    z-index: 100000;
+    opacity: 0; 
+    transition: opacity 0.5s, transform 0.3s, background-color 0.3s;
+}
+
+.going-up{
+	max-width:40px;
+	position:relative;
+	top: 14px;
+	right: -13px;
+    transition: transform 0.3s;
+}
+
+.white_region:hover ~ .going-up-container, footer:hover ~ .going-up-container,.going-up-container:hover,#point-ack:hover~.going-up-container,.profile-table-layout:hover~.going-up-container,.step-container:hover~.going-up-container,.flip-card-classify:hover~.going-up-container,.point-classify:hover~.going-up-container,.contribute-form-background-layout:hover~.going-up-container,.detect-con:hover~.going-up-container,.detect-en:hover~.going-up-container{
+    opacity: 1;
+}
+
+.going-up-container:hover {
+    background-color: #228B22;
+}
+
+.going-up:hover {
+    transform: scale(1.1); 
+}
+
+.going-up:active {
+    transform: scale(0.9); 
 }
