@@ -3176,7 +3176,7 @@ button.contribute-btn:hover {
     align-items: flex-start;
     gap: 20px;
     position: relative;
-    overflow: hidden;
+    overflow: visible;
 }
 
 .tuto1 {
