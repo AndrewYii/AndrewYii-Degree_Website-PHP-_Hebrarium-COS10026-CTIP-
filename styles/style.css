@@ -6213,7 +6213,7 @@ button.contribute-btn:hover {
     animation: up-down 7.5s infinite ease-in-out;
     z-index: 100000;
     opacity: 0; 
-    transition: opacity 0.5s, transform 0.3s, background-color 0.3s;
+    transition: opacity 1s, transform 0.3s, background-color 0.3s;
 }
 
 .going-up{
@@ -6224,7 +6224,7 @@ button.contribute-btn:hover {
     transition: transform 0.3s;
 }
 
-.white_region:hover ~ .going-up-container, footer:hover ~ .going-up-container,.going-up-container:hover,#point-ack:hover~.going-up-container,.profile-table-layout:hover~.going-up-container,.step-container:hover~.going-up-container,.flip-card-classify:hover~.going-up-container,.point-classify:hover~.going-up-container,.contribute-form-background-layout:hover~.going-up-container,.detect-con:hover~.going-up-container,.detect-en:hover~.going-up-container{
+.white_region:hover ~ .going-up-container, footer:hover ~ .going-up-container,.going-up-container:hover,#point-ack:hover~.going-up-container,.profile-table-layout:hover~.going-up-container,.step-container:hover~.going-up-container,.flip-card-classify:hover~.going-up-container,.point-classify:hover~.going-up-container,.contribute-form-background-layout:hover~.going-up-container,.detect-con:hover~.going-up-container,.detect-en:hover~.going-up-container,.enquiry-form:hover~.going-up-container,.identify-table:hover~.going-up-container,.register-form-layout:hover~.going-up-container,.tools-container:hover~.going-up-container,.tutorial-intrduction-background-layout1:hover~.going-up-container,.flipcard-tuto:hover~.going-up-container,.tuto-container:hover~.going-up-container{
     opacity: 1;
 }
 
