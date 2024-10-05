@@ -261,7 +261,7 @@ nav .menu {
     transition: opacity 0.3s ease, visibility 0.3s ease;
 }
 
-/* Show dropdown on hover */
+/* Show dropdown on search hover */
 .menu .dropdown_search:hover .dropdown-menu-search {
     display: block;
     opacity: 1;
