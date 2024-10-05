@@ -10,15 +10,7 @@ html {
     font-family: 'Outfit', Arial, Helvetica, sans-serif;
 }
 
-.pushing_logo{
-    display: none;
-}
-.pushing_logo2{
-    display: none;
-}
-
-
-.space_button{
+.pushing_logo,.space_button,.pushing_logo2{
     display: none;
 }
 
