@@ -4384,6 +4384,20 @@ button.contribute-btn:hover {
     }
 }
 
+@media (max-width: 863px) {
+    .tools_table {
+        width: 660px;
+    }
+    .flipcard-tools {
+        width: 600px;
+        height: 975px;
+    }
+    .tools_definition {
+        width: 600px;
+        height: 850px;
+    }
+}
+
 @media (max-width: 850px) {
     .tools-aside {
         position: absolute;
@@ -4403,6 +4417,21 @@ button.contribute-btn:hover {
         width:400px;
     }
 }
+
+@media (max-width: 707px) {
+    .tools_table {
+        width: 400px;
+    }
+    .flipcard-tools {
+        width: 400px;
+        height: 1450px;
+    }
+    .tools_definiton {
+        width: 400px;
+        height: 1300px;
+    }
+}
+
 @media (max-width: 600px) {
     .tools-aside {
         position: absolute;
@@ -4522,6 +4551,13 @@ button.contribute-btn:hover {
     }
 }
 
+@media (max-width: 497px) {
+    .tools_definition {
+        width: 350px;
+        position: relative;
+        top: 0px;
+    }
+}
 
 /*care page*/
 .care-article{
