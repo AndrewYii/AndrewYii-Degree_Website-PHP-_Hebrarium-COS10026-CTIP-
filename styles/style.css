@@ -4072,12 +4072,6 @@ button.contribute-btn:hover {
     border-collapse: collapse;
 }
 
-.caption_tools {
-    font-size: 26px;
-    font: bold;
-    margin-bottom: 20px;
-}
-
 .tools-aside {
     position: absolute;
     top: 35%; /* Adjust as needed */
