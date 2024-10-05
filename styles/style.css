@@ -102,7 +102,6 @@ nav .menu {
 .menu .menubar li.dropdown:hover > a::before,
 .menu .dropdown:hover > a::before {
     width: 39%;
-    left: 11%;
 }
 
 /* Dropdown Menu */
@@ -298,7 +297,7 @@ nav .menu {
     max-height: 20px;
 }
 
-/* Description */
+/* Search-Description-Fucntion */
 .menu .dropdown-menu-search .dropdown-description-search {
     margin-top: 8px;
     font-size: 14px;
@@ -1772,7 +1771,7 @@ nav .menu {
 }
 
 
-@media (max-width:1920px){
+@media (max-width:601px){
 
     .identify-aside:hover {
         right: -20px; /* Move into view */
