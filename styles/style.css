@@ -1771,7 +1771,7 @@ nav .menu {
 }
 
 
-@media (max-width:1920px){
+@media (max-width:601px){
 
     .identify-aside:hover {
         right: -20px; /* Move into view */
