@@ -3514,7 +3514,7 @@ button.contribute-btn:hover {
     font-size: 26px; 
 }
 
-.tuto-article{
+.tutorial_article{
     overflow: hidden;
 }
 
@@ -4111,6 +4111,148 @@ button.contribute-btn:hover {
 .tools-aside:hover {
         right: -20px; /* Move into view */
         transform: translateX(0); /* No need for additional translation */
+}
+
+.tools_definiton {
+    font-size: 20px;
+    width: 800px;
+    height: 680px;
+    margin-top: 20px;
+}
+
+.toolsdef-caption {
+    margin-bottom: 20px;
+    margin-top: 70px;
+    text-align: center;
+    font: bold;
+    font-size: 26px; 
+}
+
+.tools_table th, .tools_table td{
+    width: 50px;
+    padding: 10px;
+}
+
+.test1 {
+    text-align: center;
+}
+
+.test2 {
+    text-align: justify;
+}
+
+.tools_table th{
+    background-color: #228B22;
+    color: white;
+}
+
+.tools_table tr:nth-child(odd){
+    background-color: rgb(248, 248, 248);
+}
+
+.tools_table tr:nth-child(even){
+    background-color: white;
+}
+
+.tools_table {
+    width: 800px;
+    height: 680px;
+    margin: 0 auto;
+    margin-bottom: 30px;
+    border-collapse: collapse;
+}
+
+.flipcard-tools {
+    margin: 0 auto;
+    background-color: transparent;
+    width: 800px;
+    height: 800px;
+    border: 1px solid #f1f1f1;
+    perspective: 1000px; 
+    overflow: hidden;
+  }
+  
+  .flipcard-inner-tools {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    text-align: center;
+    transition: transform 0.5s;
+    transform-style: preserve-3d;
+  }
+  
+  
+  .flipcard-tools:hover .flipcard-inner-tools {
+    transform: rotateY(180deg);
+    backface-visibility: hidden;
+  }
+
+  .flipcard-front-tools, .flipcard-back-tools {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    backface-visibility: hidden; 
+    backface-visibility: hidden;
+  }
+    
+  .flipcard-back-tools {
+    transform: rotateY(180deg);
+    text-align: left;
+    backface-visibility: hidden;
+  }
+
+.tools_definiton {
+    display: flex;
+    flex-flow: row wrap;
+  }
+
+.dt_tools {
+    flex-basis: 20%;
+    background: #228B22;
+    text-align: center;
+    color: #fff;
+    margin-top: 10px;
+  }
+
+.dt_toolshead{
+    position: relative;
+    top:40px;
+  }
+
+.oddtools_definition, .eventools_definition {
+    flex-basis: 70%;
+    flex-grow: 1;
+    margin: 0;
+    margin-top: 10px;
+    text-align: left;
+  }
+
+.eventools_definition {
+    background-color: white;
+}
+
+.oddtools_definition {
+    background-color: rgb(248, 248, 248);
+}
+
+.toolsdef-caption {
+    margin-top:70px;
+    margin-bottom: 20px;
+    text-align: center;
+    font: bold;
+    font-size: 26px; 
+}
+
+.tools_article{
+    overflow: hidden;
+}
+
+.caption_tools {
+    margin-bottom: 20px;
+    margin-top: 70px;
+    text-align: center;
+    font: bold;
+    font-size: 26px; 
 }
 
 @media (max-width: 1630px) {
