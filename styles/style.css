@@ -1074,6 +1074,15 @@ nav .menu {
     color: white;
 }
 
+@media (max-width: 1920px) {
+    .grid_tutorial {
+        margin-left: 4vw;
+    }
+    .button-grid{
+        margin: 0.7vw 9vw 1.5vw 15vw;
+    }
+}
+
 
 
 @media (max-width: 1575px) {
@@ -1312,6 +1321,34 @@ nav .menu {
     color: white;
     transform: rotateY(180deg);
   }
+
+  @media  (max-width:1920px){
+    
+
+    .flip-box-layout{
+        margin: 2vw 25vw;
+        position: relative;
+        left:2vw;
+    }
+
+    .flip-box {
+        margin: 2vw 1vw;
+        width: 250px;
+        height: 250px;
+ 
+      }
+
+    .flip-box img{
+        width: 250px;
+        height: 250px;
+      }
+    
+    .flip-box-back img{
+        width: 150px;
+        height: 150px;
+    }
+
+}
 
  @media  (max-width:1570px){
     
