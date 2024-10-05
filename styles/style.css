@@ -1074,6 +1074,15 @@ nav .menu {
     color: white;
 }
 
+@media (max-width: 1920px) {
+    .grid_tutorial {
+        margin-left: 4vw;
+    }
+    .button-grid{
+        margin: 0.7vw 9vw 1.5vw 15vw;
+    }
+}
+
 
 
 @media (max-width: 1575px) {
@@ -1312,6 +1321,34 @@ nav .menu {
     color: white;
     transform: rotateY(180deg);
   }
+
+  @media  (max-width:1920px){
+    
+
+    .flip-box-layout{
+        margin: 2vw 25vw;
+        position: relative;
+        left:2vw;
+    }
+
+    .flip-box {
+        margin: 2vw 1vw;
+        width: 250px;
+        height: 250px;
+ 
+      }
+
+    .flip-box img{
+        width: 250px;
+        height: 250px;
+      }
+    
+    .flip-box-back img{
+        width: 150px;
+        height: 150px;
+    }
+
+}
 
  @media  (max-width:1570px){
     
@@ -3515,11 +3552,11 @@ button.contribute-btn:hover {
     font-size: 26px; 
 }
 
-@media (max-width: 1630px) {
+@media (max-width: 1920px) {
     .tuto-aside {
         position: absolute;
         top: 35%; /* Adjust as needed */
-        right: -508px; /* Start hidden off-screen */
+        right: -510px; /* Start hidden off-screen */
         width: 550px; /* Use a percentage for width */
         background-color: #f9f9f9;
         border-left: 8px solid #4CAF50;
@@ -3575,6 +3612,12 @@ button.contribute-btn:hover {
     .tuto_tips {
         position: relative;
         top:0px;
+    }
+}
+
+@media (max-width: 1920px) {
+    .tuto1 {
+        margin: 0 auto;
     }
 }
 
@@ -4230,7 +4273,7 @@ button.contribute-btn:hover {
     font-size: 26px; 
 }
 
-@media (max-width: 1630px) {
+@media (max-width: 1920px) {
     .tools-aside {
         position: absolute;
         top: 35%; /* Adjust as needed */
@@ -4244,6 +4287,9 @@ button.contribute-btn:hover {
         border-radius: 5px;
         transition: transform 0.3s ease, right 0.3s ease; /* Smooth transition */
         z-index: 10; /* Ensure it stays above other content */
+    }
+    .tools1 {
+        margin: 0 auto;
     }
     
 }
