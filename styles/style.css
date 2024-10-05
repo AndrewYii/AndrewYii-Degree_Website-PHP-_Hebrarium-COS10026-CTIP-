@@ -1726,7 +1726,7 @@ nav .menu {
     display: None;
 }
 
-@media (max-width: 1630px) {
+@media (max-width: 1920px) {
     .identify-aside  {
         position: absolute;
         top: 15%; /* Adjust as needed */
@@ -1744,9 +1744,7 @@ nav .menu {
 }
 
 
-@media (max-width:601px){
-
-
+@media (max-width:1920px){
 
     .identify-aside:hover {
         right: -20px; /* Move into view */
@@ -4748,7 +4746,7 @@ button.contribute-btn:hover {
     margin-bottom: 20px;
 }
 
-@media (max-width: 1630px) {
+@media (max-width: 1920px) {
     .care-aside {
         position: absolute;
         top: 35%; /* Adjust as needed */
@@ -4808,7 +4806,7 @@ button.contribute-btn:hover {
         top:0px;
     }
 }
-@media (max-width: 1020px) {
+@media (max-width: 1920px) {
     .text-content1{
         position: relative;
         top:0px;
@@ -5423,6 +5421,15 @@ button.contribute-btn:hover {
     text-align: center;
     font: bold;
     font-size: 26px; 
+}
+
+@media (max-width: 1920px) {
+    .vatica_part{
+        margin-left: 100px;
+    }
+    .hopea_part{
+        margin-right: 100px;
+    }
 }
 
 
