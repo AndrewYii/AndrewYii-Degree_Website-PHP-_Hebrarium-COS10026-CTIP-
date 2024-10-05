@@ -4055,14 +4055,6 @@ button.contribute-btn:hover {
     top:-12px;
 }
 
-.tools_table th, .tools_table td{
-    border: 1px solid;
-    text-align: center;
-    width: 50px;
-    background-color: #f1f1f1;
-    padding: 10px;
-}
-
 .tools_table {
     width: 800px;
     margin: 0 auto;
