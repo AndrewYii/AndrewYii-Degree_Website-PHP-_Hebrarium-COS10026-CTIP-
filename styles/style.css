@@ -102,7 +102,6 @@ nav .menu {
 .menu .menubar li.dropdown:hover > a::before,
 .menu .dropdown:hover > a::before {
     width: 39%;
-    left: 11%;
 }
 
 /* Dropdown Menu */
