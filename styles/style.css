@@ -2694,11 +2694,6 @@ button.contribute-btn {
     margin: 30px auto; 
 }
 
-button.contribute-btn:hover {
-    background-color: #388E3C; 
-    transform: scale(1.05); 
-}
-
 .contribute-form-layout input[type="reset"] {
     position: absolute;
     top: 10px;
@@ -2711,6 +2706,11 @@ button.contribute-btn:hover {
     cursor: pointer;
     transition: background-color 0.4s ease, transform 0.3s ease; 
     font-size: 1em; 
+}
+
+button.contribute-btn:hover {
+    background-color: #388E3C; 
+    transform: scale(1.05); 
 }
 
 .contribute-form-layout input[type="reset"]:hover {
