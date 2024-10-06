@@ -18,7 +18,7 @@
 
     <body class="care_background">
 
-        <header>
+        <header id="top_classify">
             <nav>
                 <div class="menu">
                     <input type="checkbox" id="menu_toggle" class="menu-toggle">
@@ -396,10 +396,12 @@
                     </div>
                 </div>
             </a>
+
             <div class="classify_welcome">
                 <h1 class="classify_heading1">Classification</h1>
                 <h2 class="classify_heading">Plant Lineage: Family, Genus, Species</h2>
             </div>
+
             <section>
                 <div class="classification1">
                     <figure class="classify1">
@@ -460,7 +462,7 @@
                 </div>
             </section>
 
-            <section>
+            <section class="point-classify">
                 <h2 class="family_title">Families</h2>
                 <h3 class="dipte">Dipterocarpaceae</h3>
                 <div class="dipte-container">
@@ -480,7 +482,7 @@
                 </div>
             </section>
 
-            <section>
+            <section class="point-classify">
                 <h2 class="family_title">Genus</h2>
 
                 <div class="genus_container">
@@ -525,7 +527,7 @@
 
             </section>
 
-            <section>
+            <section class="point-classify">
                 
                 <h2 class="family_title">Species</h2>
 
@@ -573,87 +575,93 @@
 
 
             <div class="flip-card-classify">
-            <div class="flip-card-inner-classify">
-            <div class="flip-card-front-classify">
-            <table class="classify_table">
-                <caption class="caption_classify">Plant's Myths and Folklore</caption>
-                    <tr>
-                      <th>Plant Name</th>
-                      <th>Myth and Folklore</th>
-                      <th>Region</th>
-                    </tr>
-                    <tr>
-                      <td class="test1">Mistletoe</td>
-                      <td class="test2">Believed to be protective, mistletoe was placed above doors or carved into rings to ward off 
-                        witches and poisons. In British paganism, it was hung with red ribbon and burned during Imbolc to 
-                        protect the home and ward off disease.</td>
-                      <td class="test1">Western Europe</td>
-                    </tr>
-                    <tr>
-                      <td class="test1">Sage</td>
-                      <td class="test2">Romans considered sage a holy herb for memory and teeth cleaning. In the Middle Ages, it was believed
-                         to grant immortality if eaten daily in May and was used to cure warts. Sage was also used to cover 
-                         rotting meat due to its antibacterial properties.</td>
-                      <td class="test1">Europe</td>
-                    </tr>
-                    <tr>
-                    <td class="test1">Yew Tree</td>
-                    <td class="test2">Yew trees, often found in English churchyards, were believed to purify plague victims if placed on 
-                        their graves. The oldest yew in the UK, around 2,000–3,000 years old, is located in a Perthshire 
-                        churchyard.</td>
-                    <td class="test1">UK</td>
-                </tr>
-                <tr>
-                    <td class="test1">Elder Tree</td>
-                    <td class="test2">The English elder's name comes from the Anglo-Saxon 'aeld' meaning fire. In folklore, it hosted the 
-                        Elder Mother spirit and was believed to protect homes. Dried elder leaves were hung to ward off evil, and having 
-                        the tree nearby was seen as a sign of good luck.</td>
-                    <td class="test1">Northern Europe</td>
+                <div class="flip-card-inner-classify">
+                    <div class="flip-card-front-classify">
+                        <table class="classify_table">
+                            <caption class="caption_classify">Plant's Myths and Folklore</caption>
+                                <tr>
+                                <th>Plant Name</th>
+                                <th>Myth and Folklore</th>
+                                <th>Region</th>
+                                </tr>
+                                <tr>
+                                <td class="test1">Mistletoe</td>
+                                <td class="test2">Believed to be protective, mistletoe was placed above doors or carved into rings to ward off 
+                                    witches and poisons. In British paganism, it was hung with red ribbon and burned during Imbolc to 
+                                    protect the home and ward off disease.</td>
+                                <td class="test1">Western Europe</td>
+                                </tr>
+                                <tr>
+                                <td class="test1">Sage</td>
+                                <td class="test2">Romans considered sage a holy herb for memory and teeth cleaning. In the Middle Ages, it was believed
+                                    to grant immortality if eaten daily in May and was used to cure warts. Sage was also used to cover 
+                                    rotting meat due to its antibacterial properties.</td>
+                                <td class="test1">Europe</td>
+                                </tr>
+                                <tr>
+                                <td class="test1">Yew Tree</td>
+                                <td class="test2">Yew trees, often found in English churchyards, were believed to purify plague victims if placed on 
+                                    their graves. The oldest yew in the UK, around 2,000–3,000 years old, is located in a Perthshire 
+                                    churchyard.</td>
+                                <td class="test1">UK</td>
+                            </tr>
+                            <tr>
+                                <td class="test1">Elder Tree</td>
+                                <td class="test2">The English elder's name comes from the Anglo-Saxon 'aeld' meaning fire. In folklore, it hosted the 
+                                    Elder Mother spirit and was believed to protect homes. Dried elder leaves were hung to ward off evil, and having 
+                                    the tree nearby was seen as a sign of good luck.</td>
+                                <td class="test1">Northern Europe</td>
 
-                </tr>
-            </table>
+                            </tr>
+                        </table>
+                    </div>
+                    <div class="flip-card-back-classify">
+                        <h3 class="defi_caption">Definition List</h3>
+                        <dl class="classify_definition">
+                            <dt class="dt_classify">
+                                <span class="dt_head">Emergent Tree</span>
+                            </dt>
+                            <dd class="even_defi">
+                                <span class="classify_span">A tree that grows taller than the surrounding canopy, emerging above the rest of 
+                                the forest.</span>
+                            </dd>
+                            <dt class="dt_classify">
+                                <span class="dt_head">Canopy Tree</span>
+                            </dt>
+                            <dd class="odd_defi">
+                                <span class="classify_span">A tree that forms part of the upper layer of a forest, capturing most of 
+                                the sunlight.</span>
+                            </dd>
+                            <dt class="dt_classify">
+                                <span class="dt_head">Subcanopy Tree</span>
+                            </dt>
+                            <dd class="even_defi">
+                                <span class="classify_span">A tree that grow beneath the canopy but above the understory, playing an 
+                                important ecological role.</span>
+                            </dd>
+                            <dt class="dt_classify">
+                                <span class="dt_head">Hardwood</span>
+                            </dt>
+                            <dd class="odd_defi">
+                                <span class="classify_span">Dense wood from broadleaf trees, valued for its strength and durability, 
+                                commonly used in furniture and construction.</span>
+                            </dd>
+                            <dt class="dt_classify">
+                                <span class="dt_head">Biodiversity</span>
+                            </dt>
+                            <dd class="odd_defi">
+                                <span class="classify_span">Varieties of plants and animals, which is mostly considered important and desirable.</span>
+                            </dd>
+                        </dl>
+                    </div>
+                </div>
             </div>
-            <div class="flip-card-back-classify">
-                <h3 class="defi_caption">Definition List</h3>
-            <dl class="classify_definition">
-                <dt class="dt_classify">
-                    <span class="dt_head">Emergent Tree</span>
-                </dt>
-                <dd class="even_defi">
-                    <span class="classify_span">A tree that grows taller than the surrounding canopy, emerging above the rest of 
-                    the forest.</span>
-                </dd>
-                <dt class="dt_classify">
-                    <span class="dt_head">Canopy Tree</span>
-                </dt>
-                <dd class="odd_defi">
-                    <span class="classify_span">A tree that forms part of the upper layer of a forest, capturing most of 
-                       the sunlight.</span>
-                </dd>
-                <dt class="dt_classify">
-                    <span class="dt_head">Subcanopy Tree</span>
-                </dt>
-                <dd class="even_defi">
-                    <span class="classify_span">A tree that grow beneath the canopy but above the understory, playing an 
-                       important ecological role.</span>
-                </dd>
-                <dt class="dt_classify">
-                    <span class="dt_head">Hardwood</span>
-                </dt>
-                <dd class="odd_defi">
-                    <span class="classify_span">Dense wood from broadleaf trees, valued for its strength and durability, 
-                    commonly used in furniture and construction.</span>
-                </dd>
-                <dt class="dt_classify">
-                    <span class="dt_head">Biodiversity</span>
-                </dt>
-                <dd class="odd_defi">
-                    <span class="classify_span">Varieties of plants and animals, which is mostly considered important and desirable.</span>
-                </dd>
-            </dl>
-        </div>
-        </div>
-        </div>
+
+            <figure class='going-up-container'>
+                <a href='#top_assufi'>
+                    <img src='images/going_up.png' alt='going-up' class='going-up'>
+                </a>
+            </figure>
 
         </article>
 
@@ -850,10 +858,17 @@
                         <strong>
                             Last updated:
                         </strong>
+                        10/10/2024
                     </div>
                 </div>
             </div>
         </footer>
+
+        <figure class='going-up-container'>
+            <a href='#top_classify'>
+                <img src='images/going_up.png' alt='going-up' class='going-up'>
+            </a>
+        </figure>
 
     </body>
 </html>

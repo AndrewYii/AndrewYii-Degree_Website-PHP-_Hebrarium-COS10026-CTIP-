@@ -1,3 +1,8 @@
+/* General Set Up  For the Content */
+html {
+    scroll-behavior: smooth; 
+}
+
 * {
     margin: 0;
     padding: 0;
@@ -5,15 +10,7 @@
     font-family: 'Outfit', Arial, Helvetica, sans-serif;
 }
 
-.pushing_logo{
-    display: none;
-}
-.pushing_logo2{
-    display: none;
-}
-
-
-.space_button{
+.pushing_logo,.space_button,.pushing_logo2{
     display: none;
 }
 
@@ -28,7 +25,6 @@
 }
 
 /* General Set Up The Menu Bar */
-
 nav {
     background-color: #ffffff;
     position: fixed;
@@ -106,7 +102,6 @@ nav .menu {
 .menu .menubar li.dropdown:hover > a::before,
 .menu .dropdown:hover > a::before {
     width: 39%;
-    left: 11%;
 }
 
 /* Dropdown Menu */
@@ -266,7 +261,7 @@ nav .menu {
     transition: opacity 0.3s ease, visibility 0.3s ease;
 }
 
-/* Show dropdown on hover */
+/* Show dropdown on search hover */
 .menu .dropdown_search:hover .dropdown-menu-search {
     display: block;
     opacity: 1;
@@ -302,7 +297,7 @@ nav .menu {
     max-height: 20px;
 }
 
-/* Description */
+/* Search-Description-Fucntion */
 .menu .dropdown-menu-search .dropdown-description-search {
     margin-top: 8px;
     font-size: 14px;
@@ -731,7 +726,7 @@ nav .menu {
 	padding: 0.7vw 0 1.5vw 2vw;
 }
 
-.image-text img{
+.image-text .index-img{
     max-width: 720px;
 	box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 	border-radius: 50px;
@@ -769,7 +764,7 @@ nav .menu {
     }
 }
 @media (max-width: 1488px) {
-    .image-text img{
+    .image-text .index-img{
         max-width: 500px;
     }
 }
@@ -783,7 +778,7 @@ nav .menu {
         font-size:32px;
     }
     
-    .image-text img{
+    .image-text .index-img{
         max-width: 400px;
     }
     .desc1 p{
@@ -804,7 +799,7 @@ nav .menu {
         font-size:26px;
     }
     
-    .image-text img{
+    .image-text .index-img{
         max-width: 350px;
     }
     .desc1 p{
@@ -819,7 +814,7 @@ nav .menu {
         font-size:26px;
     }
     
-    .image-text img{
+    .image-text .index-img{
         max-width: 350px;
     }
     .desc1 p{
@@ -1038,18 +1033,6 @@ nav .menu {
     width: 100%;
 }
 
-.desc_grid_tutorial a{
-    color: lightgreen;
-}
-.desc_grid_tutorial p{
-    width: inherit;
-}
-.hiddenword{
-    display: none;
-    text-align: left;
-    font-weight: 600;
-}
-
 .desc_grid_tutorial{
     box-sizing: border-box;
     width: inherit;
@@ -1092,6 +1075,16 @@ nav .menu {
     background-color: #4CAF50; 
     border: none;
     color: white;
+}
+
+.desc_grid_tutorial a{
+    color: lightgreen;
+}
+
+.hiddenword{
+    display: none;
+    text-align: left;
+    font-weight: 600;
 }
 
 @media (max-width: 1575px) {
@@ -1167,10 +1160,7 @@ nav .menu {
 	cursor: pointer;
 	transition: 0.5s ease-in-out;
 }
-.extend-box:hover{
-	width: 80%;
-	transition: 0.5s ease-in-out;
-}
+
 .extend-box img{
 	width: 100%;
 	height: 100%;
@@ -1200,6 +1190,11 @@ nav .menu {
 
 .extend-box-info a{
 	color: white;
+}
+
+.extend-box:hover{
+	width: 80%;
+	transition: 0.5s ease-in-out;
 }
 
 .extend-box-info a:hover{
@@ -1282,23 +1277,7 @@ nav .menu {
     font-size: 3vw;
 }
 
-.flip-box h3{
-    display: block;
-    width: 100%;
-    text-align: center;
-    border: solid;
-}
 
-.flip-box h3 .shorter{
-    border: solid;
-    width: 50%;
-}
-
-
-.flip-box h3 .short{
-    position: relative;
-    left: 40px;
-}
 
 .flip-box img{
     margin: 0 auto;
@@ -1320,7 +1299,23 @@ nav .menu {
     transition: transform 0.8s;
     transform-style: preserve-3d;
   }
-  
+
+
+.flip-box h3{
+    position: relative;
+}
+
+.flip-box h3 .shorter{
+    position: relative;
+    left: 60px;
+}
+
+
+.flip-box h3 .short{
+    position: relative;
+    left: 40px;
+}
+
 .flip-box:hover .flip-box-inner {
     transform: rotateY(180deg);
   }
@@ -1346,6 +1341,7 @@ nav .menu {
     color: white;
     transform: rotateY(180deg);
   }
+
 
  @media  (max-width:1570px){
     
@@ -1715,8 +1711,8 @@ nav .menu {
 .identify-aside {
     position: absolute;
     top: 15%; /* Adjust as needed */
-    right: -500px; /* Start hidden off-screen */
-    width: 550px; /* Use a percentage for width */
+    right: -459px; /* Start hidden off-screen */
+    width: 30%; /* Use a percentage for width */
     background-color: #f9f9f9;
     border-left: 8px solid #4CAF50;
     padding: 20px;
@@ -1749,10 +1745,25 @@ nav .menu {
     display: None;
 }
 
+@media (max-width: 1920px) {
+    .identify-aside  {
+        position: absolute;
+        top: 15%; /* Adjust as needed */
+        right: -500px; /* Start hidden off-screen */
+        width: 550px; /* Use a percentage for width */
+        background-color: #f9f9f9;
+        border-left: 8px solid #4CAF50;
+        padding: 20px;
+        padding-left: 50px;
+        margin: 20px 0;
+        border-radius: 5px;
+        transition: transform 0.3s ease, right 0.3s ease; /* Smooth transition */
+        z-index: 10; /* Ensure it stays above other content */
+    } 
+}
+
 
 @media (max-width:601px){
-
-
 
     .identify-aside:hover {
         right: -20px; /* Move into view */
@@ -1822,11 +1833,6 @@ nav .menu {
     font-size: 1em; 
 }
 
-.login-form .word:hover{
-    background-color: #E64A19; 
-    transform: scale(1.05); 
-}
-
 .login-form h1{
     font-size:36px;
     text-align: center;
@@ -1850,10 +1856,6 @@ nav .menu {
     text-decoration: none;
 }
 
-.remember-forgot a:hover{
-    text-decoration: underline;
-    color:darkgreen;
-}
 
 .login-form .register-link{
     font-size: 14.5px;
@@ -1863,6 +1865,16 @@ nav .menu {
     color: #4CAF50;
     text-decoration: none;
     font-weight: 600;
+}
+
+.login-form .word:hover{
+    background-color: #E64A19; 
+    transform: scale(1.05); 
+}
+
+.remember-forgot a:hover{
+    text-decoration: underline;
+    color:darkgreen;
 }
 
 .register-link p a:hover{
@@ -2707,11 +2719,6 @@ button.contribute-btn {
     margin: 30px auto; 
 }
 
-button.contribute-btn:hover {
-    background-color: #388E3C; 
-    transform: scale(1.05); 
-}
-
 .contribute-form-layout input[type="reset"] {
     position: absolute;
     top: 10px;
@@ -2726,6 +2733,11 @@ button.contribute-btn:hover {
     font-size: 1em; 
 }
 
+button.contribute-btn:hover {
+    background-color: #388E3C; 
+    transform: scale(1.05); 
+}
+
 .contribute-form-layout input[type="reset"]:hover {
     background-color: #E64A19; 
     transform: scale(1.05); 
@@ -2737,7 +2749,7 @@ button.contribute-btn:hover {
     }
 
     .contribute-form-picture {
-        max-width: 100px; 
+        max-width: 70px; 
     }
 
     .contribute-form-layout input[type="reset"] {
@@ -3188,12 +3200,9 @@ button.contribute-btn:hover {
 
 .tuto1 {
     display: block;
-    width: 650px;
-    height: 450px;
-    margin-left: auto;
-    margin-right: auto;
-    margin-top: -40px;
-    margin-bottom: 10px;
+    width: 700px;
+    height: 500px;
+    margin-left: 27%;
 }
 
 .tuto1 img {
@@ -3360,8 +3369,8 @@ button.contribute-btn:hover {
 .tuto-aside {
     position: absolute;
     top: 35%; /* Adjust as needed */
-    right: -508px; /* Start hidden off-screen */
-    width: 550px; /* Use a percentage for width */
+    right: -459px; /* Start hidden off-screen */
+    width: 30%; /* Use a percentage for width */
     background-color: #f9f9f9;
     border-left: 8px solid #4CAF50;
     padding: 20px;
@@ -3370,7 +3379,9 @@ button.contribute-btn:hover {
     border-radius: 5px;
     transition: transform 0.3s ease, right 0.3s ease; /* Smooth transition */
     z-index: 10; /* Ensure it stays above other content */
+    overflow: hidden;
 }
+
 
 .tuto-aside span{
     position: relative;
@@ -3521,7 +3532,7 @@ button.contribute-btn:hover {
     font-size: 26px; 
 }
 
-.tuto-article{
+.tutorial_article{
     overflow: hidden;
 }
 
@@ -3531,6 +3542,24 @@ button.contribute-btn:hover {
     text-align: center;
     font: bold;
     font-size: 26px; 
+}
+
+@media (max-width: 1920px) {
+    .tuto-aside {
+        position: absolute;
+        top: 35%; /* Adjust as needed */
+        right: -510px; /* Start hidden off-screen */
+        width: 550px; /* Use a percentage for width */
+        background-color: #f9f9f9;
+        border-left: 8px solid #4CAF50;
+        padding: 20px;
+        padding-left: 50px;
+        margin: 20px 0;
+        border-radius: 5px;
+        transition: transform 0.3s ease, right 0.3s ease; /* Smooth transition */
+        z-index: 10; /* Ensure it stays above other content */
+    }
+    
 }
 
 
@@ -3575,6 +3604,12 @@ button.contribute-btn:hover {
     .tuto_tips {
         position: relative;
         top:0px;
+    }
+}
+
+@media (max-width: 1920px) {
+    .tuto1 {
+        margin: 0 auto;
     }
 }
 
@@ -3640,7 +3675,7 @@ button.contribute-btn:hover {
     .tuto_table {
         width: 660px;
     }
-    .flipcard_tuto { 
+    .flipcard-tuto { 
         width: 600px;
         height: 975px;
     }
@@ -3683,7 +3718,7 @@ button.contribute-btn:hover {
     .tuto_table {
         width: 400px;
     }
-    .flipcard_tuto {
+    .flipcard-tuto {
         width: 400px;
         height: 1450px;
     }
@@ -3758,6 +3793,9 @@ button.contribute-btn:hover {
 }
 
 @media (max-width: 550px) {
+    .tuto_table {
+        width: 250px;
+    }
     .tuto_heading {
         font-size: 32px;
     }
@@ -3797,8 +3835,8 @@ button.contribute-btn:hover {
 .care-aside {
     position: absolute;
     top: 35%; /* Adjust as needed */
-    right: -508px; /* Start hidden off-screen */
-    width: 550px; /* Use a percentage for width */
+    right: -459px; /* Start hidden off-screen */
+    width: 30%; /* Use a percentage for width */
     background-color: #f9f9f9;
     border-left: 8px solid #4CAF50;
     padding: 20px;
@@ -3807,6 +3845,7 @@ button.contribute-btn:hover {
     border-radius: 5px;
     transition: transform 0.3s ease, right 0.3s ease; /* Smooth transition */
     z-index: 10; /* Ensure it stays above other content */
+    overflow: hidden;
 }
 
 .care-aside span{
@@ -3857,10 +3896,7 @@ button.contribute-btn:hover {
     display: block;
     width: 700px;
     height: 500px;
-    margin-left: auto;
-    margin-right: auto;
-    margin-top: -50px;
-    margin-bottom: -30px;
+    margin-left: 27%;
 }
 
 .tools1 img {
@@ -4045,14 +4081,6 @@ button.contribute-btn:hover {
     top:-12px;
 }
 
-.tools_table th, .tools_table td{
-    border: 1px solid;
-    text-align: center;
-    width: 50px;
-    background-color: #f1f1f1;
-    padding: 10px;
-}
-
 .tools_table {
     width: 800px;
     margin: 0 auto;
@@ -4060,17 +4088,11 @@ button.contribute-btn:hover {
     border-collapse: collapse;
 }
 
-.caption_tools {
-    font-size: 26px;
-    font: bold;
-    margin-bottom: 20px;
-}
-
 .tools-aside {
     position: absolute;
     top: 35%; /* Adjust as needed */
-    right: -508px; /* Start hidden off-screen */
-    width: 550px; /* Use a percentage for width */
+    right: -459px; /* Start hidden off-screen */
+    width: 30%; /* Use a percentage for width */
     background-color: #f9f9f9;
     border-left: 8px solid #4CAF50;
     padding: 20px;
@@ -4099,6 +4121,169 @@ button.contribute-btn:hover {
 .tools-aside:hover {
         right: -20px; /* Move into view */
         transform: translateX(0); /* No need for additional translation */
+}
+
+.tools_definiton {
+    font-size: 20px;
+    width: 800px;
+    height: 680px;
+    margin-top: 20px;
+}
+
+.toolsdef-caption {
+    margin-bottom: 20px;
+    margin-top: 70px;
+    text-align: center;
+    font: bold;
+    font-size: 26px; 
+}
+
+.tools_table th, .tools_table td{
+    width: 50px;
+    padding: 10px;
+}
+
+.test1 {
+    text-align: center;
+}
+
+.test2 {
+    text-align: justify;
+}
+
+.tools_table th{
+    background-color: #228B22;
+    color: white;
+}
+
+.tools_table tr:nth-child(odd){
+    background-color: rgb(248, 248, 248);
+}
+
+.tools_table tr:nth-child(even){
+    background-color: white;
+}
+
+.tools_table {
+    width: 800px;
+    height: 680px;
+    margin: 0 auto;
+    margin-bottom: 30px;
+    border-collapse: collapse;
+}
+
+.flipcard-tools {
+    margin: 0 auto;
+    background-color: transparent;
+    width: 800px;
+    height: 800px;
+    border: 1px solid #f1f1f1;
+    perspective: 1000px; 
+    overflow: hidden;
+  }
+  
+  .flipcard-inner-tools {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    text-align: center;
+    transition: transform 0.5s;
+    transform-style: preserve-3d;
+  }
+  
+  
+  .flipcard-tools:hover .flipcard-inner-tools {
+    transform: rotateY(180deg);
+    backface-visibility: hidden;
+  }
+
+  .flipcard-front-tools, .flipcard-back-tools {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    backface-visibility: hidden; 
+    backface-visibility: hidden;
+  }
+    
+  .flipcard-back-tools {
+    transform: rotateY(180deg);
+    text-align: left;
+    backface-visibility: hidden;
+  }
+
+.tools_definiton {
+    display: flex;
+    flex-flow: row wrap;
+  }
+
+.dt_tools {
+    flex-basis: 20%;
+    background: #228B22;
+    text-align: center;
+    color: #fff;
+    margin-top: 10px;
+  }
+
+.dt_toolshead{
+    position: relative;
+    top:40px;
+  }
+
+.oddtools_definition, .eventools_definition {
+    flex-basis: 70%;
+    flex-grow: 1;
+    margin: 0;
+    margin-top: 10px;
+    text-align: left;
+  }
+
+.eventools_definition {
+    background-color: white;
+}
+
+.oddtools_definition {
+    background-color: rgb(248, 248, 248);
+}
+
+.toolsdef-caption {
+    margin-top:70px;
+    margin-bottom: 20px;
+    text-align: center;
+    font: bold;
+    font-size: 26px; 
+}
+
+.tools_article{
+    overflow: hidden;
+}
+
+.caption_tools {
+    margin-bottom: 20px;
+    margin-top: 70px;
+    text-align: center;
+    font: bold;
+    font-size: 26px; 
+}
+
+@media (max-width: 1920px) {
+    .tools-aside {
+        position: absolute;
+        top: 35%; /* Adjust as needed */
+        right: -508px; /* Start hidden off-screen */
+        width: 550px; /* Use a percentage for width */
+        background-color: #f9f9f9;
+        border-left: 8px solid #4CAF50;
+        padding: 20px;
+        padding-left: 50px;
+        margin: 20px 0;
+        border-radius: 5px;
+        transition: transform 0.3s ease, right 0.3s ease; /* Smooth transition */
+        z-index: 10; /* Ensure it stays above other content */
+    }
+    .tools1 {
+        margin: 0 auto;
+    }
+    
 }
 
 @media (max-width: 1399px) {
@@ -4218,6 +4403,20 @@ button.contribute-btn:hover {
     }
 }
 
+@media (max-width: 863px) {
+    .tools_table {
+        width: 660px;
+    }
+    .flipcard-tools {
+        width: 600px;
+        height: 975px;
+    }
+    .tools_definition {
+        width: 600px;
+        height: 850px;
+    }
+}
+
 @media (max-width: 850px) {
     .tools-aside {
         position: absolute;
@@ -4237,6 +4436,21 @@ button.contribute-btn:hover {
         width:400px;
     }
 }
+
+@media (max-width: 707px) {
+    .tools_table {
+        width: 400px;
+    }
+    .flipcard-tools {
+        width: 400px;
+        height: 1450px;
+    }
+    .tools_definiton {
+        width: 400px;
+        height: 1300px;
+    }
+}
+
 @media (max-width: 600px) {
     .tools-aside {
         position: absolute;
@@ -4356,6 +4570,13 @@ button.contribute-btn:hover {
     }
 }
 
+@media (max-width: 497px) {
+    .tools_definition {
+        width: 350px;
+        position: relative;
+        top: 0px;
+    }
+}
 
 /*care page*/
 .care-article{
@@ -4546,6 +4767,23 @@ button.contribute-btn:hover {
     margin-bottom: 20px;
 }
 
+@media (max-width: 1920px) {
+    .care-aside {
+        position: absolute;
+        top: 35%; /* Adjust as needed */
+        right: -508px; /* Start hidden off-screen */
+        width: 550px; /* Use a percentage for width */
+        background-color: #f9f9f9;
+        border-left: 8px solid #4CAF50;
+        padding: 20px;
+        padding-left: 50px;
+        margin: 20px 0;
+        border-radius: 5px;
+        transition: transform 0.3s ease, right 0.3s ease; /* Smooth transition */
+        z-index: 10; /* Ensure it stays above other content */
+    }
+    
+}
 
 @media (max-width: 1399px) {
     
@@ -4589,7 +4827,7 @@ button.contribute-btn:hover {
         top:0px;
     }
 }
-@media (max-width: 1020px) {
+@media (max-width: 1920px) {
     .text-content1{
         position: relative;
         top:0px;
@@ -6146,4 +6384,45 @@ button.contribute-btn:hover {
         width: 300px;
         height: auto;
     }
+}
+
+/*Going-Up Icon*/
+.going-up-container{
+    border-radius: 20px;
+    border: 1px solid black;
+    background-color: white;
+    margin: auto;
+    position: fixed;
+    bottom: 100px;
+    right: 10px;
+    height: 70px; 
+    width: 70px; 
+    animation: up-down 7.5s infinite ease-in-out;
+    z-index: 100000;
+    opacity: 0; 
+    transition: opacity 1s, transform 0.3s, background-color 0.3s;
+}
+
+.going-up{
+	max-width:40px;
+	position:relative;
+	top: 14px;
+	right: -13px;
+    transition: transform 0.3s;
+}
+
+.white_region:hover ~ .going-up-container, footer:hover ~ .going-up-container,.going-up-container:hover,#point-ack:hover~.going-up-container,.profile-table-layout:hover~.going-up-container,.step-container:hover~.going-up-container,.flip-card-classify:hover~.going-up-container,.point-classify:hover~.going-up-container,.contribute-form-background-layout:hover~.going-up-container,.detect-con:hover~.going-up-container,.detect-en:hover~.going-up-container,.enquiry-form:hover~.going-up-container,.identify-table:hover~.going-up-container,.register-form-layout:hover~.going-up-container,.tools-container:hover~.going-up-container,.tutorial-intrduction-background-layout1:hover~.going-up-container,.flipcard-tuto:hover~.going-up-container,.tuto-container:hover~.going-up-container{
+    opacity: 1;
+}
+
+.going-up-container:hover {
+    background-color: #228B22;
+}
+
+.going-up:hover {
+    transform: scale(1.1); 
+}
+
+.going-up:active {
+    transform: scale(0.9); 
 }
