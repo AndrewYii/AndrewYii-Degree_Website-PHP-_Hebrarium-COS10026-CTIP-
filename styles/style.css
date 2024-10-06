@@ -944,6 +944,9 @@ nav .menu {
     background-color: #ddf5e1;
 }
 
+.white_region-green_region{
+    text-align: center;
+}
 
 .desc1white_region {
     position: relative; 
@@ -959,13 +962,18 @@ nav .menu {
 
 .desc1white_region .white_region-green_region p {
     text-align: center;
-    font-size: 24px;
-    padding: 0.7vw 2vw 1.5vw 2vw;
+    font-size: 1.6vw;
+    padding: 0;
 }
+
+.white_region-green_region p{
+    width: 90%;
+}
+
 
 @media (max-width: 1102px) {
     .desc1white_region .white_region-green_region p{
-        font-size:20px;
+       font-size:18px;
     }
     .desc1white_region h3 {
         font-size: 32px;
@@ -1011,7 +1019,6 @@ nav .menu {
 }
 
 .grid_tutorial img{
-    display: block;
     max-width: 413px;
     margin: 0.7vw 1.5vw 1.5vw 5vw;
     border-radius: 35px;
@@ -1020,16 +1027,23 @@ nav .menu {
 }
 
 .grid_tutorial .grid_tutorial_layer{
-	width: 80%;
 	position: relative;
 	transition: 0.5s ease-in-out;
-    margin: 0.7vw 1.5vw 1.5vw 5vw;
+}
+
+.grid_tutorial_layer{
+    display: flex;
+    justify-content: center;
+    place-items: center;
+    width: 100%;
 }
 
 .desc_grid_tutorial a{
     color: lightgreen;
 }
-
+.desc_grid_tutorial p{
+    width: inherit;
+}
 .hiddenword{
     display: none;
     text-align: left;
@@ -1037,13 +1051,16 @@ nav .menu {
 }
 
 .desc_grid_tutorial{
-	position:absolute;
+    box-sizing: border-box;
+    width: inherit;
+    height: 100%;
+    position: absolute;    
 	text-align: center;
 	color:white;
-	bottom: 0;
-	padding: 20px 10px;
+	padding: 0px 10px;
 	opacity: 0;
 	transition: 0.3s ease-in-out;
+    border-radius: 35px;
 	background: linear-gradient(to top, rgba(0, 0, 0, 0.9), transparent);
 }
 
@@ -1059,7 +1076,6 @@ nav .menu {
 
 .button-grid{
     font-size: 18px;
-    margin: 0.7vw 10vw 1.5vw 15vw;
     display: inline-block;
 }
 
@@ -1078,47 +1094,41 @@ nav .menu {
     color: white;
 }
 
-
-
 @media (max-width: 1575px) {
     .grid_tutorial{
-        margin-left:4vw ;
+        text-align: center;
+        padding: 2% 5%;
     }
     .grid_tutorial img{
+        margin: 0 auto;
         max-width: 283px;
+        object-fit: cover;
     }
     .button-grid{
-        margin: 0.7vw 8vw 1.5vw 15vw;
+        margin: 10%;
+        padding: 2%;
     }
 }
 @media (max-width: 1279px) {
     .grid_tutorial img{
         max-width: 253px;
     }
-    .grid_tutorial{
-        margin-left:3vw ;
-    }
     .button-grid{
-        margin: 0.7vw 8.5vw 1.5vw 15vw;
+        margin: 10%;
+        padding: 2%;
     }
 }
 @media (max-width: 1240px) {
     .grid_tutorial img{
         max-width: 200px;
     }
-    .grid_tutorial{
-        margin-left:5vw ;
-    }
     .button-grid{
-        margin: 0.5vw 7.5vw 1.5vw 15vw;
-    }
-    .desc_grid_tutorial{
-        bottom: -20px;
+        margin: 10%;
+        padding: 2%;
     }
 }
-@media (max-width: 950px) {
+@media (max-width: 516px) {
     .grid_tutorial{
-        margin: 5vw 0;
         display: flex;
         flex-direction: column; 
         align-items: center; 
@@ -1128,6 +1138,15 @@ nav .menu {
     }
     .hiddenword{
         display: block;
+        padding-top: 5%;
+    }
+
+    .desc_grid_tutorial{
+        width: 50%;
+    }
+
+    .desc_grid_tutorial p{
+        width: 100%;
     }
 }
 
@@ -1249,7 +1268,6 @@ nav .menu {
 }
 
 .flip-box {
-    margin: 2vw 2vw;
     display: inline-block;
     background-color: transparent;
     width: 300px;
@@ -1258,13 +1276,22 @@ nav .menu {
     perspective: 1000px;
   }
 
+
+.flip-box .shorter{
+    font-weight: bold;
+    font-size: 3vw;
+}
+
 .flip-box h3{
-    position: relative;
+    display: block;
+    width: 100%;
+    text-align: center;
+    border: solid;
 }
 
 .flip-box h3 .shorter{
-    position: relative;
-    left: 60px;
+    border: solid;
+    width: 50%;
 }
 
 
@@ -1274,6 +1301,7 @@ nav .menu {
 }
 
 .flip-box img{
+    margin: 0 auto;
     width: 300px;
     height: 300px;
   }
@@ -1282,8 +1310,6 @@ nav .menu {
     border-radius: 15px;
     width: 200px;
     height: 200px;
-    position: relative;
-    top: 15px;
 }
 
 .flip-box-inner {
@@ -1312,6 +1338,10 @@ nav .menu {
   }
   
 .flip-box-back {
+    display: flex;
+    padding: 10%;
+    flex-direction: column;
+    text-align: center;
     background-color: darkgreen;
     color: white;
     transform: rotateY(180deg);
@@ -1323,7 +1353,6 @@ nav .menu {
     .flip-box-layout{
         margin: 2vw 17vw;
         position: relative;
-        left:5vw;
     }
 
     .flip-box {
@@ -1349,7 +1378,6 @@ nav .menu {
     .flip-box-layout{
         margin: 2vw 14vw;
         position: relative;
-        left:5vw;
     }
 
 }
