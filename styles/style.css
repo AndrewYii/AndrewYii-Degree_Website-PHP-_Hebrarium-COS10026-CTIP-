@@ -1021,16 +1021,6 @@ nav .menu {
     margin: 0.7vw 1.5vw 1.5vw 5vw;
 }
 
-.desc_grid_tutorial a{
-    color: lightgreen;
-}
-
-.hiddenword{
-    display: none;
-    text-align: left;
-    font-weight: 600;
-}
-
 .desc_grid_tutorial{
 	position:absolute;
 	text-align: center;
@@ -1073,6 +1063,15 @@ nav .menu {
     color: white;
 }
 
+.desc_grid_tutorial a{
+    color: lightgreen;
+}
+
+.hiddenword{
+    display: none;
+    text-align: left;
+    font-weight: 600;
+}
 
 @media (max-width: 1575px) {
     .grid_tutorial{
