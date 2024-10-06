@@ -1253,20 +1253,7 @@ nav .menu {
     perspective: 1000px;
   }
 
-.flip-box h3{
-    position: relative;
-}
 
-.flip-box h3 .shorter{
-    position: relative;
-    left: 60px;
-}
-
-
-.flip-box h3 .short{
-    position: relative;
-    left: 40px;
-}
 
 .flip-box img{
     width: 300px;
@@ -1289,7 +1276,22 @@ nav .menu {
     transition: transform 0.8s;
     transform-style: preserve-3d;
   }
-  
+
+  .flip-box h3{
+    position: relative;
+}
+
+.flip-box h3 .shorter{
+    position: relative;
+    left: 60px;
+}
+
+
+.flip-box h3 .short{
+    position: relative;
+    left: 40px;
+}
+
 .flip-box:hover .flip-box-inner {
     transform: rotateY(180deg);
   }
