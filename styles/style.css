@@ -261,7 +261,7 @@ nav .menu {
     transition: opacity 0.3s ease, visibility 0.3s ease;
 }
 
-/* Show dropdown on hover */
+/* Show dropdown on search hover */
 .menu .dropdown_search:hover .dropdown-menu-search {
     display: block;
     opacity: 1;
@@ -1021,16 +1021,6 @@ nav .menu {
     margin: 0.7vw 1.5vw 1.5vw 5vw;
 }
 
-.desc_grid_tutorial a{
-    color: lightgreen;
-}
-
-.hiddenword{
-    display: none;
-    text-align: left;
-    font-weight: 600;
-}
-
 .desc_grid_tutorial{
 	position:absolute;
 	text-align: center;
@@ -1073,16 +1063,15 @@ nav .menu {
     color: white;
 }
 
-@media (max-width: 1920px) {
-    .grid_tutorial {
-        margin-left: 4vw;
-    }
-    .button-grid{
-        margin: 0.7vw 9vw 1.5vw 15vw;
-    }
+.desc_grid_tutorial a{
+    color: lightgreen;
 }
 
-
+.hiddenword{
+    display: none;
+    text-align: left;
+    font-weight: 600;
+}
 
 @media (max-width: 1575px) {
     .grid_tutorial{
@@ -1152,10 +1141,7 @@ nav .menu {
 	cursor: pointer;
 	transition: 0.5s ease-in-out;
 }
-.extend-box:hover{
-	width: 80%;
-	transition: 0.5s ease-in-out;
-}
+
 .extend-box img{
 	width: 100%;
 	height: 100%;
@@ -1185,6 +1171,11 @@ nav .menu {
 
 .extend-box-info a{
 	color: white;
+}
+
+.extend-box:hover{
+	width: 80%;
+	transition: 0.5s ease-in-out;
 }
 
 .extend-box-info a:hover{
@@ -1262,20 +1253,7 @@ nav .menu {
     perspective: 1000px;
   }
 
-.flip-box h3{
-    position: relative;
-}
 
-.flip-box h3 .shorter{
-    position: relative;
-    left: 60px;
-}
-
-
-.flip-box h3 .short{
-    position: relative;
-    left: 40px;
-}
 
 .flip-box img{
     width: 300px;
@@ -1298,7 +1276,23 @@ nav .menu {
     transition: transform 0.8s;
     transform-style: preserve-3d;
   }
-  
+
+
+.flip-box h3{
+    position: relative;
+}
+
+.flip-box h3 .shorter{
+    position: relative;
+    left: 60px;
+}
+
+
+.flip-box h3 .short{
+    position: relative;
+    left: 40px;
+}
+
 .flip-box:hover .flip-box-inner {
     transform: rotateY(180deg);
   }
@@ -1321,33 +1315,6 @@ nav .menu {
     transform: rotateY(180deg);
   }
 
-  @media  (max-width:1920px){
-    
-
-    .flip-box-layout{
-        margin: 2vw 25vw;
-        position: relative;
-        left:2vw;
-    }
-
-    .flip-box {
-        margin: 2vw 1vw;
-        width: 250px;
-        height: 250px;
- 
-      }
-
-    .flip-box img{
-        width: 250px;
-        height: 250px;
-      }
-    
-    .flip-box-back img{
-        width: 150px;
-        height: 150px;
-    }
-
-}
 
  @media  (max-width:1570px){
     
@@ -1841,11 +1808,6 @@ nav .menu {
     font-size: 1em; 
 }
 
-.login-form .word:hover{
-    background-color: #E64A19; 
-    transform: scale(1.05); 
-}
-
 .login-form h1{
     font-size:36px;
     text-align: center;
@@ -1869,10 +1831,6 @@ nav .menu {
     text-decoration: none;
 }
 
-.remember-forgot a:hover{
-    text-decoration: underline;
-    color:darkgreen;
-}
 
 .login-form .register-link{
     font-size: 14.5px;
@@ -1882,6 +1840,16 @@ nav .menu {
     color: #4CAF50;
     text-decoration: none;
     font-weight: 600;
+}
+
+.login-form .word:hover{
+    background-color: #E64A19; 
+    transform: scale(1.05); 
+}
+
+.remember-forgot a:hover{
+    text-decoration: underline;
+    color:darkgreen;
 }
 
 .register-link p a:hover{
@@ -5451,15 +5419,6 @@ button.contribute-btn:hover {
     font-size: 26px; 
 }
 
-@media (max-width: 1920px) {
-    .vatica_part{
-        margin-left: 100px;
-    }
-    .hopea_part{
-        margin-right: 100px;
-    }
-}
-
 
 @media (max-width: 1509px) {
     .hopea_content1 {
@@ -6402,6 +6361,7 @@ button.contribute-btn:hover {
     }
 }
 
+/*Going-Up Icon*/
 .going-up-container{
     border-radius: 20px;
     border: 1px solid black;
