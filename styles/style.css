@@ -1141,10 +1141,7 @@ nav .menu {
 	cursor: pointer;
 	transition: 0.5s ease-in-out;
 }
-.extend-box:hover{
-	width: 80%;
-	transition: 0.5s ease-in-out;
-}
+
 .extend-box img{
 	width: 100%;
 	height: 100%;
@@ -1174,6 +1171,11 @@ nav .menu {
 
 .extend-box-info a{
 	color: white;
+}
+
+.extend-box:hover{
+	width: 80%;
+	transition: 0.5s ease-in-out;
 }
 
 .extend-box-info a:hover{
