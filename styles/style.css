@@ -2694,11 +2694,6 @@ button.contribute-btn {
     margin: 30px auto; 
 }
 
-button.contribute-btn:hover {
-    background-color: #388E3C; 
-    transform: scale(1.05); 
-}
-
 .contribute-form-layout input[type="reset"] {
     position: absolute;
     top: 10px;
@@ -2713,6 +2708,11 @@ button.contribute-btn:hover {
     font-size: 1em; 
 }
 
+button.contribute-btn:hover {
+    background-color: #388E3C; 
+    transform: scale(1.05); 
+}
+
 .contribute-form-layout input[type="reset"]:hover {
     background-color: #E64A19; 
     transform: scale(1.05); 
@@ -2724,7 +2724,7 @@ button.contribute-btn:hover {
     }
 
     .contribute-form-picture {
-        max-width: 100px; 
+        max-width: 70px; 
     }
 
     .contribute-form-layout input[type="reset"] {
