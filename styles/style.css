@@ -1808,11 +1808,6 @@ nav .menu {
     font-size: 1em; 
 }
 
-.login-form .word:hover{
-    background-color: #E64A19; 
-    transform: scale(1.05); 
-}
-
 .login-form h1{
     font-size:36px;
     text-align: center;
@@ -1836,10 +1831,6 @@ nav .menu {
     text-decoration: none;
 }
 
-.remember-forgot a:hover{
-    text-decoration: underline;
-    color:darkgreen;
-}
 
 .login-form .register-link{
     font-size: 14.5px;
@@ -1849,6 +1840,16 @@ nav .menu {
     color: #4CAF50;
     text-decoration: none;
     font-weight: 600;
+}
+
+.login-form .word:hover{
+    background-color: #E64A19; 
+    transform: scale(1.05); 
+}
+
+.remember-forgot a:hover{
+    text-decoration: underline;
+    color:darkgreen;
 }
 
 .register-link p a:hover{
