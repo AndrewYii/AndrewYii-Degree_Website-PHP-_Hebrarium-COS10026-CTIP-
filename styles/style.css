@@ -5419,15 +5419,6 @@ button.contribute-btn:hover {
     font-size: 26px; 
 }
 
-@media (max-width: 1920px) {
-    .vatica_part{
-        margin-left: 100px;
-    }
-    .hopea_part{
-        margin-right: 100px;
-    }
-}
-
 
 @media (max-width: 1509px) {
     .hopea_content1 {
