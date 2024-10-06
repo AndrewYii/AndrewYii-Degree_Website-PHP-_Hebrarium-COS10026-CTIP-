@@ -1794,6 +1794,14 @@ nav .menu {
     }
 }
 
+@media (max-width:501px){
+
+    .identify-aside{
+       width: 500px;
+       right: -450px;
+    }
+}
+
 /*Login & Register */
 .login-form-layout{
     position: relative;
