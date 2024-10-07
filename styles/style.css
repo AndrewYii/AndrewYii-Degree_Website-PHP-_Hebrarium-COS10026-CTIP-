@@ -958,35 +958,6 @@ nav .menu {
     padding: 0.7vw 2vw 1.5vw 2vw;
 }
 
-.grid-center{
-    padding: 0;
-    margin: 0;
-}
-
-@media (max-width: 1540px) {
-    .desc1white_region .white_region-green_region p {
-        padding: 0.7vw 1vw 1.5vw 1vw;
-    }
-
-    .grid-center{
-        text-align: center;
-        position: relative;
-        left: -4vw;
-    }
-
-    .desc_grid_tutorial{
-        width: 283px;
-        position:absolute;
-        text-align: center;
-        color:white;
-        bottom: 0;
-        padding: 20px 10px;
-        opacity: 0;
-        transition: 0.3s ease-in-out;
-        background: linear-gradient(to top, rgba(0, 0, 0, 0.9), transparent);
-    }
-}
-
 @media (max-width: 1102px) {
     .desc1white_region .white_region-green_region p{
         font-size:20px;
@@ -1343,13 +1314,6 @@ nav .menu {
     color: white;
     transform: rotateY(180deg);
   }
-
- @media (max-width:1540px) {
-
-    .desc1white_region h3{
-        font-size: 29px;
-    }
- } 
 
 
  @media  (max-width:1570px){
