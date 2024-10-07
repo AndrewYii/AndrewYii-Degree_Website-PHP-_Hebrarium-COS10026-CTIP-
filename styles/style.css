@@ -491,7 +491,7 @@ nav .menu {
     height: 80px; 
     width: 80px; 
     animation: up-down 7.5s infinite ease-in-out;
-    z-index: 100000;
+    z-index: 101;
 }
 
 .chatbot-container:hover {
