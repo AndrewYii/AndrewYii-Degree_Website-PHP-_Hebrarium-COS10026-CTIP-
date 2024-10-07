@@ -963,7 +963,7 @@ nav .menu {
     margin: 0;
 }
 
-@media (max-width: 1531px) {
+@media (max-width: 1540px) {
     .desc1white_region .white_region-green_region p {
         padding: 0.7vw 1vw 1.5vw 1vw;
     }
@@ -1344,7 +1344,7 @@ nav .menu {
     transform: rotateY(180deg);
   }
 
- @media (max-width:1531px) {
+ @media (max-width:1540px) {
 
     .desc1white_region h3{
         font-size: 29px;
