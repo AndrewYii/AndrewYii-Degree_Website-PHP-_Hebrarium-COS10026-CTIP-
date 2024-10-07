@@ -4164,39 +4164,39 @@ button.contribute-btn:hover {
     overflow: hidden;
   }
   
-  .flipcard-inner-tools {
+.flipcard-inner-tools {
     position: relative;
     width: 100%;
     height: 100%;
     text-align: center;
     transition: transform 0.5s;
     transform-style: preserve-3d;
-  }
+}
   
   
-  .flipcard-tools:hover .flipcard-inner-tools {
+.flipcard-tools:hover .flipcard-inner-tools {
     transform: rotateY(180deg);
     backface-visibility: hidden;
-  }
+}
 
-  .flipcard-front-tools, .flipcard-back-tools {
+.flipcard-front-tools, .flipcard-back-tools {
     position: absolute;
     width: 100%;
     height: 100%;
     backface-visibility: hidden; 
     backface-visibility: hidden;
-  }
+}
     
-  .flipcard-back-tools {
+.flipcard-back-tools {
     transform: rotateY(180deg);
     text-align: left;
     backface-visibility: hidden;
-  }
+}
 
 .tools_definiton {
     display: flex;
     flex-flow: row wrap;
-  }
+}
 
 .dt_tools {
     flex-basis: 20%;
@@ -4204,12 +4204,12 @@ button.contribute-btn:hover {
     text-align: center;
     color: #fff;
     margin-top: 10px;
-  }
+}
 
 .dt_toolshead{
     position: relative;
     top:40px;
-  }
+}
 
 .oddtools_definition, .eventools_definition {
     flex-basis: 70%;
@@ -4217,7 +4217,7 @@ button.contribute-btn:hover {
     margin: 0;
     margin-top: 10px;
     text-align: left;
-  }
+}
 
 .eventools_definition {
     background-color: white;
