@@ -1748,6 +1748,11 @@ nav .menu {
     display: None;
 }
 
+.identify-hidden{
+    display: none;
+}
+
+
 @media (max-width: 1920px) {
     .identify-aside  {
         position: absolute;
@@ -1774,6 +1779,28 @@ nav .menu {
 @media (max-width: 700px) {
     .identify-outer img{
         width: 180px;
+    }
+}
+
+@media (max-width: 500px) {
+    .identify-hidden{
+        display: block;
+        text-align: center;
+    }
+    
+    .identify-table table th {
+        width: 20%;
+        min-width: 100px;
+        text-align: center;
+        padding: 18px;
+      }
+
+    .identify-row{
+        display: none;
+    }
+
+    .identify-table legend{
+        font-size: 20px;
     }
 }
 
