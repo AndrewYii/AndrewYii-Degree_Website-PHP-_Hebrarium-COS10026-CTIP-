@@ -326,7 +326,7 @@ nav .menu {
 }
 
 .side-menubar-description a:hover{
-    color: darkgoldenrod;
+    color: #228B22;
 }
 
 .menu-toggle {
@@ -402,6 +402,7 @@ nav .menu {
         padding: 20px;
         box-sizing: border-box;
         transition: transform 0.3s ease;
+        overflow-y: scroll;
     }
 
     .menu-toggle:checked ~ .mobile-menu {
@@ -490,7 +491,7 @@ nav .menu {
     height: 80px; 
     width: 80px; 
     animation: up-down 7.5s infinite ease-in-out;
-    z-index: 100000;
+    z-index: 101;
 }
 
 .chatbot-container:hover {
@@ -958,35 +959,6 @@ nav .menu {
     padding: 0.7vw 2vw 1.5vw 2vw;
 }
 
-.grid-center{
-    padding: 0;
-    margin: 0;
-}
-
-@media (max-width: 1540px) {
-    .desc1white_region .white_region-green_region p {
-        padding: 0.7vw 1vw 1.5vw 1vw;
-    }
-
-    .grid-center{
-        text-align: center;
-        position: relative;
-        left: -4vw;
-    }
-
-    .desc_grid_tutorial{
-        width: 283px;
-        position:absolute;
-        text-align: center;
-        color:white;
-        bottom: 0;
-        padding: 20px 10px;
-        opacity: 0;
-        transition: 0.3s ease-in-out;
-        background: linear-gradient(to top, rgba(0, 0, 0, 0.9), transparent);
-    }
-}
-
 @media (max-width: 1102px) {
     .desc1white_region .white_region-green_region p{
         font-size:20px;
@@ -1016,6 +988,7 @@ nav .menu {
 
 }
 @media (max-width: 811px) {
+    
     .desc1white_region .white_region-green_region p{
         font-size:16px;
     }
@@ -1343,13 +1316,6 @@ nav .menu {
     color: white;
     transform: rotateY(180deg);
   }
-
- @media (max-width:1540px) {
-
-    .desc1white_region h3{
-        font-size: 29px;
-    }
- } 
 
 
  @media  (max-width:1570px){
@@ -4200,39 +4166,39 @@ button.contribute-btn:hover {
     overflow: hidden;
   }
   
-  .flipcard-inner-tools {
+.flipcard-inner-tools {
     position: relative;
     width: 100%;
     height: 100%;
     text-align: center;
     transition: transform 0.5s;
     transform-style: preserve-3d;
-  }
+}
   
   
-  .flipcard-tools:hover .flipcard-inner-tools {
+.flipcard-tools:hover .flipcard-inner-tools {
     transform: rotateY(180deg);
     backface-visibility: hidden;
-  }
+}
 
-  .flipcard-front-tools, .flipcard-back-tools {
+.flipcard-front-tools, .flipcard-back-tools {
     position: absolute;
     width: 100%;
     height: 100%;
     backface-visibility: hidden; 
     backface-visibility: hidden;
-  }
+}
     
-  .flipcard-back-tools {
+.flipcard-back-tools {
     transform: rotateY(180deg);
     text-align: left;
     backface-visibility: hidden;
-  }
+}
 
 .tools_definiton {
     display: flex;
     flex-flow: row wrap;
-  }
+}
 
 .dt_tools {
     flex-basis: 20%;
@@ -4240,12 +4206,12 @@ button.contribute-btn:hover {
     text-align: center;
     color: #fff;
     margin-top: 10px;
-  }
+}
 
 .dt_toolshead{
     position: relative;
     top:40px;
-  }
+}
 
 .oddtools_definition, .eventools_definition {
     flex-basis: 70%;
@@ -4253,7 +4219,7 @@ button.contribute-btn:hover {
     margin: 0;
     margin-top: 10px;
     text-align: left;
-  }
+}
 
 .eventools_definition {
     background-color: white;
@@ -6416,7 +6382,7 @@ button.contribute-btn:hover {
     height: 70px; 
     width: 70px; 
     animation: up-down 7.5s infinite ease-in-out;
-    z-index: 100000;
+    z-index: 100;
     opacity: 0; 
     transition: opacity 1s, transform 0.3s, background-color 0.3s;
 }
