@@ -1614,7 +1614,7 @@ nav .menu {
 .identify-detail h2{
     font-weight: 100;
     font-size: 16px;
-    padding: 10px;
+    padding: 25px;
 }
 
 .identify-img{
@@ -1655,6 +1655,18 @@ nav .menu {
     margin: 10px;
 }
 
+.identify-outer{
+    display: flex;
+    flex-wrap: wrap;
+    text-align: center;
+    object-fit: cover;
+}
+
+.identify-outer img{
+    padding: 2px;
+    overflow: hidden;
+}
+
 .identify-table legend{
     margin: 0 auto;
 }
@@ -1681,12 +1693,6 @@ nav .menu {
     padding: 18px;
 }
 
-.identify-table img{
-    width: 75%;
-    padding: 0px;
-    margin: 0 auto;
-    border: solid;
-}
 
 .identify-table legend{
     font-size: 30px;
@@ -1757,6 +1763,18 @@ nav .menu {
         transition: transform 0.3s ease, right 0.3s ease; /* Smooth transition */
         z-index: 10; /* Ensure it stays above other content */
     } 
+}
+
+@media (max-width: 1132px) {
+    .identify-outer img{
+        width: 300px;
+    }
+}
+
+@media (max-width: 700px) {
+    .identify-outer img{
+        width: 180px;
+    }
 }
 
 
