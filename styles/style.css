@@ -326,7 +326,7 @@ nav .menu {
 }
 
 .side-menubar-description a:hover{
-    color: darkgoldenrod;
+    color: #228B22;
 }
 
 .menu-toggle {
@@ -402,6 +402,7 @@ nav .menu {
         padding: 20px;
         box-sizing: border-box;
         transition: transform 0.3s ease;
+        overflow-y: scroll;
     }
 
     .menu-toggle:checked ~ .mobile-menu {
@@ -490,7 +491,7 @@ nav .menu {
     height: 80px; 
     width: 80px; 
     animation: up-down 7.5s infinite ease-in-out;
-    z-index: 100000;
+    z-index: 101;
 }
 
 .chatbot-container:hover {
@@ -987,6 +988,7 @@ nav .menu {
 
 }
 @media (max-width: 811px) {
+    
     .desc1white_region .white_region-green_region p{
         font-size:16px;
     }
@@ -1676,11 +1678,31 @@ nav .menu {
 
 .identify-table table td{
     width: 100%;
+    padding: 18px;
+}
+
+.identify-table img{
+    width: 75%;
+    padding: 0px;
+    margin: 0 auto;
+    border: solid;
 }
 
 .identify-table legend{
     font-size: 30px;
     font-weight: bold;
+}
+
+.identify-sample{
+    text-align: center;
+}
+
+.identify-table tr{
+    transition: all 0.3s ease;
+}
+
+.identify-table tr:hover{
+    transform: scale(1.05);
 }
 
 .identify-aside {
@@ -1755,6 +1777,13 @@ nav .menu {
 
     .identify-detail{
         width: 300px;
+    }
+}
+@media (max-width:501px){
+
+    .identify-aside{
+       width: 500px;
+       right: -450px;
     }
 }
 
@@ -4158,39 +4187,39 @@ button.contribute-btn:hover {
     overflow: hidden;
   }
   
-  .flipcard-inner-tools {
+.flipcard-inner-tools {
     position: relative;
     width: 100%;
     height: 100%;
     text-align: center;
     transition: transform 0.5s;
     transform-style: preserve-3d;
-  }
+}
   
   
-  .flipcard-tools:hover .flipcard-inner-tools {
+.flipcard-tools:hover .flipcard-inner-tools {
     transform: rotateY(180deg);
     backface-visibility: hidden;
-  }
+}
 
-  .flipcard-front-tools, .flipcard-back-tools {
+.flipcard-front-tools, .flipcard-back-tools {
     position: absolute;
     width: 100%;
     height: 100%;
     backface-visibility: hidden; 
     backface-visibility: hidden;
-  }
+}
     
-  .flipcard-back-tools {
+.flipcard-back-tools {
     transform: rotateY(180deg);
     text-align: left;
     backface-visibility: hidden;
-  }
+}
 
 .tools_definiton {
     display: flex;
     flex-flow: row wrap;
-  }
+}
 
 .dt_tools {
     flex-basis: 20%;
@@ -4198,7 +4227,7 @@ button.contribute-btn:hover {
     text-align: center;
     color: #fff;
     margin-top: 10px;
-  }
+}
 
 .dt_toolshead{
     position: relative;
@@ -4997,7 +5026,6 @@ button.contribute-btn:hover {
 
 .classify_welcome {
     margin: 0 auto;
-    margin-bottom: 50px;
 }
 
 .classify_heading1 {
@@ -5141,8 +5169,8 @@ button.contribute-btn:hover {
     display: flex;
     justify-content: space-between;
     align-items: flex-start;
-    margin-top: 20px;
     gap: 20px;
+    margin-bottom: 50px;
 }
 
 .vatica_content {
@@ -6369,7 +6397,7 @@ button.contribute-btn:hover {
 .going-up-container{
     border-radius: 20px;
     border: 1px solid black;
-    background-color: white;
+    background-color: lightgreen;
     margin: auto;
     position: fixed;
     bottom: 100px;
@@ -6377,7 +6405,7 @@ button.contribute-btn:hover {
     height: 70px; 
     width: 70px; 
     animation: up-down 7.5s infinite ease-in-out;
-    z-index: 100000;
+    z-index: 100;
     opacity: 0; 
     transition: opacity 1s, transform 0.3s, background-color 0.3s;
 }
@@ -6398,10 +6426,11 @@ button.contribute-btn:hover {
     background-color: #228B22;
 }
 
-.going-up:hover {
+.going-up-container:hover .going-up {
     transform: scale(1.1); 
 }
 
-.going-up:active {
-    transform: scale(0.9); 
+.going-up-container:active .going-up {
+    transform: scale(0.9) translateY(-15px);
+    transition: transform 0.8s ease; 
 }
