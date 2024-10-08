@@ -6374,7 +6374,7 @@ button.contribute-btn:hover {
 .going-up-container{
     border-radius: 20px;
     border: 1px solid black;
-    background-color: white;
+    background-color: lightgreen;
     margin: auto;
     position: fixed;
     bottom: 100px;
@@ -6403,10 +6403,11 @@ button.contribute-btn:hover {
     background-color: #228B22;
 }
 
-.going-up:hover {
+.going-up-container:hover .going-up {
     transform: scale(1.1); 
 }
 
-.going-up:active {
-    transform: scale(0.9); 
+.going-up-container:active .going-up {
+    transform: scale(0.9) translateY(-15px);
+    transition: transform 0.8s ease; 
 }
