@@ -1678,11 +1678,31 @@ nav .menu {
 
 .identify-table table td{
     width: 100%;
+    padding: 18px;
+}
+
+.identify-table img{
+    width: 75%;
+    padding: 0px;
+    margin: 0 auto;
+    border: solid;
 }
 
 .identify-table legend{
     font-size: 30px;
     font-weight: bold;
+}
+
+.identify-sample{
+    text-align: center;
+}
+
+.identify-table tr{
+    transition: all 0.3s ease;
+}
+
+.identify-table tr:hover{
+    transform: scale(1.05);
 }
 
 .identify-aside {
