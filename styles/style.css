@@ -1678,11 +1678,31 @@ nav .menu {
 
 .identify-table table td{
     width: 100%;
+    padding: 18px;
+}
+
+.identify-table img{
+    width: 75%;
+    padding: 0px;
+    margin: 0 auto;
+    border: solid;
 }
 
 .identify-table legend{
     font-size: 30px;
     font-weight: bold;
+}
+
+.identify-sample{
+    text-align: center;
+}
+
+.identify-table tr{
+    transition: all 0.3s ease;
+}
+
+.identify-table tr:hover{
+    transform: scale(1.05);
 }
 
 .identify-aside {
@@ -3487,10 +3507,10 @@ button.contribute-btn:hover {
     margin-top: 10px;
   }
 
-.dt_tutohead{
+  .dt_tutohead{
     position: relative;
-    top:40px;
-  }
+    top: 80px;
+}
 
 .odd_definition, .even_definition {
     flex-basis: 70%;
@@ -3498,6 +3518,7 @@ button.contribute-btn:hover {
     margin: 0;
     margin-top: 10px;
     text-align: left;
+    padding: 10% 30px;
   }
 
 .even_definition {
@@ -4210,16 +4231,19 @@ button.contribute-btn:hover {
 
 .dt_toolshead{
     position: relative;
-    top:40px;
-}
+    top: 80px;
+  }
 
 .oddtools_definition, .eventools_definition {
     flex-basis: 70%;
     flex-grow: 1;
-    margin: 0;
+    margin: 0;  
     margin-top: 10px;
     text-align: left;
-}
+    padding: 10% 30px;
+  }
+
+
 
 .eventools_definition {
     background-color: white;
@@ -5002,7 +5026,6 @@ button.contribute-btn:hover {
 
 .classify_welcome {
     margin: 0 auto;
-    margin-bottom: 50px;
 }
 
 .classify_heading1 {
@@ -5146,8 +5169,8 @@ button.contribute-btn:hover {
     display: flex;
     justify-content: space-between;
     align-items: flex-start;
-    margin-top: 20px;
     gap: 20px;
+    margin-bottom: 50px;
 }
 
 .vatica_content {
