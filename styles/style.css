@@ -1613,8 +1613,8 @@ nav .menu {
 
 .identify-detail h2{
     font-weight: 100;
-    font-size: 16px;
-    padding: 10px;
+    font-size: 18px;
+    padding: 25px;
 }
 
 .identify-img{
@@ -1655,6 +1655,18 @@ nav .menu {
     margin: 10px;
 }
 
+.identify-outer{
+    display: flex;
+    flex-wrap: wrap;
+    text-align: center;
+    object-fit: cover;
+}
+
+.identify-outer img{
+    padding: 5px;
+    overflow: hidden;
+}
+
 .identify-table legend{
     margin: 0 auto;
 }
@@ -1678,11 +1690,25 @@ nav .menu {
 
 .identify-table table td{
     width: 100%;
+    padding: 18px;
 }
+
 
 .identify-table legend{
     font-size: 30px;
     font-weight: bold;
+}
+
+.identify-sample{
+    text-align: center;
+}
+
+.identify-table tr{
+    transition: all 0.3s ease;
+}
+
+.identify-table tr:hover{
+    transform: scale(1.05);
 }
 
 .identify-aside {
@@ -1722,6 +1748,11 @@ nav .menu {
     display: None;
 }
 
+.identify-hidden{
+    display: none;
+}
+
+
 @media (max-width: 1920px) {
     .identify-aside  {
         position: absolute;
@@ -1737,6 +1768,40 @@ nav .menu {
         transition: transform 0.3s ease, right 0.3s ease; /* Smooth transition */
         z-index: 10; /* Ensure it stays above other content */
     } 
+}
+
+@media (max-width: 1132px) {
+    .identify-outer img{
+        width: 300px;
+    }
+}
+
+@media (max-width: 700px) {
+    .identify-outer img{
+        width: 180px;
+    }
+}
+
+@media (max-width: 500px) {
+    .identify-hidden{
+        display: block;
+        text-align: center;
+    }
+    
+    .identify-table table th {
+        width: 20%;
+        min-width: 100px;
+        text-align: center;
+        padding: 18px;
+      }
+
+    .identify-row{
+        display: none;
+    }
+
+    .identify-table legend{
+        font-size: 20px;
+    }
 }
 
 
@@ -3487,10 +3552,10 @@ button.contribute-btn:hover {
     margin-top: 10px;
   }
 
-.dt_tutohead{
+  .dt_tutohead{
     position: relative;
-    top:40px;
-  }
+    top: 80px;
+}
 
 .odd_definition, .even_definition {
     flex-basis: 70%;
@@ -3498,6 +3563,7 @@ button.contribute-btn:hover {
     margin: 0;
     margin-top: 10px;
     text-align: left;
+    padding: 10% 30px;
   }
 
 .even_definition {
@@ -4210,16 +4276,19 @@ button.contribute-btn:hover {
 
 .dt_toolshead{
     position: relative;
-    top:40px;
-}
+    top: 80px;
+  }
 
 .oddtools_definition, .eventools_definition {
     flex-basis: 70%;
     flex-grow: 1;
-    margin: 0;
+    margin: 0;  
     margin-top: 10px;
     text-align: left;
-}
+    padding: 10% 30px;
+  }
+
+
 
 .eventools_definition {
     background-color: white;
