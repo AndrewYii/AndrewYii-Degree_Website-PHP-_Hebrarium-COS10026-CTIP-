@@ -5113,10 +5113,8 @@ button.contribute-btn:hover {
 }
 
 .classification1 {
-    overflow: hidden;
     position: relative;
-    display: flex; 
-    flex-direction: row;       
+    display: flex;       
     align-items: center;      
     gap: 30px;               
 }
