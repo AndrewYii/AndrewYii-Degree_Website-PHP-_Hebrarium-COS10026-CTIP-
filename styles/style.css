@@ -1345,17 +1345,28 @@ nav .menu {
     }
 
 }
-@media  (max-width:1401px){
+@media  (max-width:1440px){
 
     .flip-box-layout{
         margin: 2vw 14vw;
         position: relative;
-        left:5vw;
+        left:7vw;
+    }
+
+    .flip-box h3 .short{
+        position: relative;
+        left: 30px;
+    }
+
+    .flip-box h3 .shorter{
+        position: relative;
+        left: 37px;
     }
 
 }
 
 @media (max-width:1350px){
+
 
     .flip-box h3 .short{
         position: relative;
