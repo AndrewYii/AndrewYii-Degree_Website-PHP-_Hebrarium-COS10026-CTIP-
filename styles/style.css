@@ -5764,6 +5764,18 @@ button.contribute-btn:hover {
     .caption_classify {
         font-size: 22px; 
     }
+    .genus_container{
+        position: relative;
+        left:-10px;
+    }
+    .hopea_part {
+        position: relative;
+        left:155px;
+    }
+    .hopea_part1{
+        position: relative;
+        left:0;
+    }
 }
 @media (max-width: 707px){
     .classify_heading{
@@ -5783,11 +5795,7 @@ button.contribute-btn:hover {
         right: 0;
         margin-left: 15px;
     }
-    .hopea_part1{
-        position: relative;
-        top:0;
-        right: 0;
-    }
+
     .classify_table {
         width: 400px;
     }
@@ -5802,6 +5810,9 @@ button.contribute-btn:hover {
       
 }
 @media (max-width: 579px){
+    .vatica_part{
+        margin-top: 40px;
+    }
     .classify_heading{
         font-size: 3.5vw;
     }
@@ -5868,6 +5879,10 @@ button.contribute-btn:hover {
     .defi1-container1{
         width: 475px;
     }
+    .genus_container{
+        position: relative;
+        left:60px;
+    }
     .plantfamtree{
         position: relative;
         left:-210px;
@@ -5930,7 +5945,7 @@ button.contribute-btn:hover {
     }
     .hopea_part {
         position: relative;
-        left: 115px;
+        left:75px;
     }
     .hopea_explain{
         position: relative;
@@ -5972,6 +5987,20 @@ button.contribute-btn:hover {
         height: 250px;
     }
 
+}
+@media (max-width: 416px){
+    .genus_container{
+        position: relative;
+        left:0;
+    }
+    .hopea_part {
+        position: relative;
+        left:105px;
+    }
+    .hopea_part1{
+        position: relative;
+        left: -180px;
+    }
 }
 
 
