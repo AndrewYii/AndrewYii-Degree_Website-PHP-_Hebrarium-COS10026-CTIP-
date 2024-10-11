@@ -3346,6 +3346,7 @@ button.contribute-btn:hover {
     padding: 99px;
     gap: 0px; 
     margin-left: 0px; 
+    text-align: justify;
 }
 
 .assignandrecord {
@@ -4014,10 +4015,6 @@ button.contribute-btn:hover {
     }
 }
 
-.caption-in-small{
-    display: none;
-}
-
 .figure-hidden{
     display: none;
     padding-left: 0px;
@@ -4055,6 +4052,7 @@ button.contribute-btn:hover {
 
 .toolstext-content {
     width: 633px;
+    text-align: justify;
     height: 423px;
     background-color: white;   
     padding: 99px;
@@ -4705,10 +4703,6 @@ button.contribute-btn:hover {
     animation: fadeInUp 2s ease-out forwards; 
 }
 
-.caption-in-small{
-    display: none;
-}
-
 .figure-hidden{
     display: none;
     padding-left: 0px;
@@ -4751,6 +4745,7 @@ button.contribute-btn:hover {
     padding: 99px;
     gap: 0px; 
     margin-left: 0px; 
+    text-align: justify;
 }
 
 .assignandrecord {
@@ -5263,29 +5258,6 @@ button.contribute-btn:hover {
     text-align: center;
     width: 500px;
     margin-top: 50px;
-}
-
-@keyframes moveLeft {
-    0% {
-        transform: translateX(-200px); /* Start from -200px off to the left */
-        opacity: 0;
-    }
-    100% {
-        transform: translateX(0); /* Move to the default position */
-        opacity: 1;
-    }
-}
-
-/* Animation for moving Hopea image to the center */
-@keyframes moveRight {
-    0% {
-        transform: translateX(200px); /* Start from 200px off to the right */
-        opacity: 0;
-    }
-    100% {
-        transform: translateX(0); /* Move to the default position */
-        opacity: 1;
-    }
 }
 
 .hopea_content1 {
