@@ -1593,8 +1593,6 @@ nav .menu {
 }
 
 .identify h1{
-    display: flex;
-    flex-wrap: wrap;
     font-size: 45px;
     margin: 2%;
 }
@@ -1604,7 +1602,6 @@ nav .menu {
 }
 
 .identify-detail{
-    margin: 0 auto;
     max-width: 700px;
     outline: 1px solid black;
     margin: 20px 50px 50px 50px;
@@ -1667,10 +1664,6 @@ nav .menu {
     overflow: hidden;
 }
 
-.identify-table legend{
-    margin: 0 auto;
-}
-
 .identify-table fieldset{
     margin: 20px;
 }
@@ -1695,6 +1688,7 @@ nav .menu {
 
 
 .identify-table legend{
+    margin: 0 auto;
     font-size: 30px;
     font-weight: bold;
 }
