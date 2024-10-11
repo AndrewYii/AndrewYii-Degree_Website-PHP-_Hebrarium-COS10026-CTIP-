@@ -3656,7 +3656,6 @@ button.contribute-btn:hover {
         width: 450px;
     }
     .tuto_tips {
-        position: relative;
         top:0px;
     }
 }
@@ -3691,7 +3690,6 @@ button.contribute-btn:hover {
         display: none;
     }
     .tutotext-content5 h3,.tutotext-content5 p.tutodescription{
-        position: relative;
         top:0;
         left:0;
     }
@@ -3872,9 +3870,6 @@ button.contribute-btn:hover {
 
     .tuto_definition {
         font-size: 16px;
-    }
-    .caption-in-small{
-        font-size: 14px;
     }
 }
 
@@ -4343,7 +4338,6 @@ button.contribute-btn:hover {
 @media (max-width: 1399px) {
     
     .tools_tips {
-        position: relative;
         top:50px;
     }
     
@@ -4378,7 +4372,6 @@ button.contribute-btn:hover {
         width: 450px;
     }
     .tools_tips {
-        position: relative;
         top:0px;
     }
 }
@@ -4406,13 +4399,12 @@ button.contribute-btn:hover {
     .toolsbordered-content {
         flex-direction: column;
     }
+
     .plantpress{
-        position: relative;
         bottom:0;
     }
     
     .parchment{
-        position: relative;
         bottom:0;
     }
 
@@ -4425,14 +4417,6 @@ button.contribute-btn:hover {
     }
     .step2 img {
         display: none;
-    }
-
-    .caption-in-small{
-        font-size: 18px;
-        display: block;
-        text-align: center;
-        position: relative;
-        top:-35px;
     }
 
     .step2 .caption1 {
@@ -4598,9 +4582,6 @@ button.contribute-btn:hover {
 
     .tools_definition {
         font-size: 16px;
-    }
-    .caption-in-small{
-        font-size: 14px;
     }
     .toolstext-content {
         width: 300px;
@@ -4899,15 +4880,7 @@ button.contribute-btn:hover {
     .step2 img {
         display: none;
     }
-
-    .caption-in-small{
-        font-size: 18px;
-        display: block;
-        text-align: center;
-        position: relative;
-        top:-35px;
-    }
-
+    
     .step2 .caption1 {
         display: none;
     }
@@ -4975,11 +4948,6 @@ button.contribute-btn:hover {
     .step1 img {
         width: 300px;
         height: 200px;
-    }
-    .step1{
-        margin:20px 20px 0px 0px;
-        position:relative;
-        top:10px;
     }
     .step1 .caption1{
         display: none;
