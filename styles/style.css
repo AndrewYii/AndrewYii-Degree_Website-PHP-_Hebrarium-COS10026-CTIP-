@@ -5065,12 +5065,12 @@ button.contribute-btn:hover {
 }
 
 /* Classify page */
-.classify-article{
-    overflow: hidden;
+.classify_background {
+    background-color: #DDF5E1;
 }
 
-.classify_welcome {
-    margin: 0 auto;
+.classify-article{
+    overflow: hidden;
 }
 
 .classify_heading1 {
@@ -5118,7 +5118,6 @@ button.contribute-btn:hover {
     flex-direction: row;       
     align-items: center;      
     gap: 30px;               
-    margin-top: 0px;
 }
 
 .taxonomic_hierarchy {
