@@ -1354,12 +1354,10 @@ nav .menu {
     }
 
     .flip-box h3 .short{
-        position: relative;
         left: 30px;
     }
 
     .flip-box h3 .shorter{
-        position: relative;
         left: 37px;
     }
 
@@ -1369,12 +1367,11 @@ nav .menu {
 
 
     .flip-box h3 .short{
-        position: relative;
         left: 0;
     }
 
     .flip-box h3 .shorter{
-        position: relative;
+
         left: 0;
     }
 
@@ -3188,7 +3185,6 @@ button.contribute-btn:hover {
     .contributor-image {
         height: 80px; 
         width: 80px; 
-        position: relative;
         right:40px;
         bottom:15px;
     }
@@ -3209,17 +3205,14 @@ button.contribute-btn:hover {
     .contributor-card-comment-section textarea {
         width: 110%; 
         height: 150px;
-        position: relative;
         left:-10px;
     }
 
     .contributor-card-comment-section input[type="submit"]{
-        position: relative;
         right:-120px;
     }
 
     .contributor-close-comments{
-        position: relative;
         left:170px;
     }
 
@@ -3627,7 +3620,6 @@ button.contribute-btn:hover {
 
 @media (max-width: 1399px) {  
     .tuto_tips {
-        position: relative;
         top:50px;
     }
     .step2 img {
