@@ -1354,12 +1354,10 @@ nav .menu {
     }
 
     .flip-box h3 .short{
-        position: relative;
         left: 30px;
     }
 
     .flip-box h3 .shorter{
-        position: relative;
         left: 37px;
     }
 
@@ -1369,12 +1367,11 @@ nav .menu {
 
 
     .flip-box h3 .short{
-        position: relative;
         left: 0;
     }
 
     .flip-box h3 .shorter{
-        position: relative;
+
         left: 0;
     }
 
@@ -3188,7 +3185,6 @@ button.contribute-btn:hover {
     .contributor-image {
         height: 80px; 
         width: 80px; 
-        position: relative;
         right:40px;
         bottom:15px;
     }
@@ -3209,17 +3205,14 @@ button.contribute-btn:hover {
     .contributor-card-comment-section textarea {
         width: 110%; 
         height: 150px;
-        position: relative;
         left:-10px;
     }
 
     .contributor-card-comment-section input[type="submit"]{
-        position: relative;
         right:-120px;
     }
 
     .contributor-close-comments{
-        position: relative;
         left:170px;
     }
 
@@ -3627,7 +3620,6 @@ button.contribute-btn:hover {
 
 @media (max-width: 1399px) {  
     .tuto_tips {
-        position: relative;
         top:50px;
     }
     .step2 img {
@@ -3664,7 +3656,6 @@ button.contribute-btn:hover {
         width: 450px;
     }
     .tuto_tips {
-        position: relative;
         top:0px;
     }
 }
@@ -3699,7 +3690,6 @@ button.contribute-btn:hover {
         display: none;
     }
     .tutotext-content5 h3,.tutotext-content5 p.tutodescription{
-        position: relative;
         top:0;
         left:0;
     }
@@ -3880,9 +3870,6 @@ button.contribute-btn:hover {
 
     .tuto_definition {
         font-size: 16px;
-    }
-    .caption-in-small{
-        font-size: 14px;
     }
 }
 
@@ -4351,7 +4338,6 @@ button.contribute-btn:hover {
 @media (max-width: 1399px) {
     
     .tools_tips {
-        position: relative;
         top:50px;
     }
     
@@ -4386,7 +4372,6 @@ button.contribute-btn:hover {
         width: 450px;
     }
     .tools_tips {
-        position: relative;
         top:0px;
     }
 }
@@ -4414,13 +4399,12 @@ button.contribute-btn:hover {
     .toolsbordered-content {
         flex-direction: column;
     }
+
     .plantpress{
-        position: relative;
         bottom:0;
     }
     
     .parchment{
-        position: relative;
         bottom:0;
     }
 
@@ -4433,14 +4417,6 @@ button.contribute-btn:hover {
     }
     .step2 img {
         display: none;
-    }
-
-    .caption-in-small{
-        font-size: 18px;
-        display: block;
-        text-align: center;
-        position: relative;
-        top:-35px;
     }
 
     .step2 .caption1 {
@@ -4606,9 +4582,6 @@ button.contribute-btn:hover {
 
     .tools_definition {
         font-size: 16px;
-    }
-    .caption-in-small{
-        font-size: 14px;
     }
     .toolstext-content {
         width: 300px;
@@ -4907,15 +4880,7 @@ button.contribute-btn:hover {
     .step2 img {
         display: none;
     }
-
-    .caption-in-small{
-        font-size: 18px;
-        display: block;
-        text-align: center;
-        position: relative;
-        top:-35px;
-    }
-
+    
     .step2 .caption1 {
         display: none;
     }
@@ -4983,11 +4948,6 @@ button.contribute-btn:hover {
     .step1 img {
         width: 300px;
         height: 200px;
-    }
-    .step1{
-        margin:20px 20px 0px 0px;
-        position:relative;
-        top:10px;
     }
     .step1 .caption1{
         display: none;
@@ -5762,6 +5722,18 @@ button.contribute-btn:hover {
     .caption_classify {
         font-size: 22px; 
     }
+    .genus_container{
+        position: relative;
+        left:-10px;
+    }
+    .hopea_part {
+        position: relative;
+        left:155px;
+    }
+    .hopea_part1{
+        position: relative;
+        left:0;
+    }
 }
 @media (max-width: 707px){
     .classify_heading{
@@ -5781,11 +5753,7 @@ button.contribute-btn:hover {
         right: 0;
         margin-left: 15px;
     }
-    .hopea_part1{
-        position: relative;
-        top:0;
-        right: 0;
-    }
+
     .classify_table {
         width: 400px;
     }
@@ -5800,6 +5768,9 @@ button.contribute-btn:hover {
       
 }
 @media (max-width: 579px){
+    .vatica_part{
+        margin-top: 40px;
+    }
     .classify_heading{
         font-size: 3.5vw;
     }
@@ -5866,6 +5837,10 @@ button.contribute-btn:hover {
     .defi1-container1{
         width: 475px;
     }
+    .genus_container{
+        position: relative;
+        left:60px;
+    }
     .plantfamtree{
         position: relative;
         left:-210px;
@@ -5928,7 +5903,7 @@ button.contribute-btn:hover {
     }
     .hopea_part {
         position: relative;
-        left: 115px;
+        left:75px;
     }
     .hopea_explain{
         position: relative;
@@ -5970,6 +5945,20 @@ button.contribute-btn:hover {
         height: 250px;
     }
 
+}
+@media (max-width: 416px){
+    .genus_container{
+        position: relative;
+        left:0;
+    }
+    .hopea_part {
+        position: relative;
+        left:105px;
+    }
+    .hopea_part1{
+        position: relative;
+        left: -180px;
+    }
 }
 
 
