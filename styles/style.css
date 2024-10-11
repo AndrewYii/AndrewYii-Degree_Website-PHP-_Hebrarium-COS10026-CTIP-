@@ -5413,12 +5413,10 @@ button.contribute-btn:hover {
     width: 100%;
     height: 100%;
     backface-visibility: hidden; 
-    backface-visibility: hidden;
   }
     
   .flip-card-back-classify {
     transform: rotateY(180deg);
-    text-align: left;
     backface-visibility: hidden;
   }
 
