@@ -1098,20 +1098,6 @@ nav .menu {
     }
 }
 @media (max-width: 1240px) {
-    .grid_tutorial img{
-        max-width: 200px;
-    }
-    .grid_tutorial{
-        margin-left:5vw ;
-    }
-    .button-grid{
-        margin: 0.5vw 7.5vw 1.5vw 15vw;
-    }
-    .desc_grid_tutorial{
-        bottom: -20px;
-    }
-}
-@media (max-width: 950px) {
     .grid_tutorial{
         margin: 5vw 0;
         display: flex;
