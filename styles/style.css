@@ -1098,20 +1098,6 @@ nav .menu {
     }
 }
 @media (max-width: 1240px) {
-    .grid_tutorial img{
-        max-width: 200px;
-    }
-    .grid_tutorial{
-        margin-left:5vw ;
-    }
-    .button-grid{
-        margin: 0.5vw 7.5vw 1.5vw 15vw;
-    }
-    .desc_grid_tutorial{
-        bottom: -20px;
-    }
-}
-@media (max-width: 950px) {
     .grid_tutorial{
         margin: 5vw 0;
         display: flex;
@@ -1601,8 +1587,6 @@ nav .menu {
 }
 
 .identify h1{
-    display: flex;
-    flex-wrap: wrap;
     font-size: 45px;
     margin: 2%;
 }
@@ -1612,7 +1596,6 @@ nav .menu {
 }
 
 .identify-detail{
-    margin: 0 auto;
     max-width: 700px;
     outline: 1px solid black;
     margin: 20px 50px 50px 50px;
@@ -1675,10 +1658,6 @@ nav .menu {
     overflow: hidden;
 }
 
-.identify-table legend{
-    margin: 0 auto;
-}
-
 .identify-table fieldset{
     margin: 20px;
 }
@@ -1703,6 +1682,7 @@ nav .menu {
 
 
 .identify-table legend{
+    margin: 0 auto;
     font-size: 30px;
     font-weight: bold;
 }
@@ -4571,11 +4551,11 @@ button.contribute-btn:hover {
         padding: 20px 0px 20px 0px;
         width: 325px;
     }
-    .toolsdescription{
+    .toolsdescription,.toolsdescription_plantpress,.toolsdescription_parchpapers,.toolsdescription_plasticfoil{
         font-size: 20px;
         text-align: justify;
     }
-    .assignandrecord {
+    .assignandrecord,.assignandrecord2 {
         font-size: 22px;
         text-align: center;
     }
@@ -5839,7 +5819,7 @@ button.contribute-btn:hover {
     }
     .genus_container{
         position: relative;
-        left:60px;
+        left:40px;
     }
     .plantfamtree{
         position: relative;
@@ -5903,7 +5883,7 @@ button.contribute-btn:hover {
     }
     .hopea_part {
         position: relative;
-        left:75px;
+        left:85px;
     }
     .hopea_explain{
         position: relative;
