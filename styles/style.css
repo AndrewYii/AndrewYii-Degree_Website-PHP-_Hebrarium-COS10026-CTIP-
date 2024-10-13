@@ -2727,7 +2727,7 @@ nav .menu {
     font-size: 1.1em; 
 }
 
-.contribute-input input[type="text"],.contribute-input select,.contribute-input input[type="file"],.contribute-input input[type="password"],.contribute-input input[type="email"] {
+.contribute-input input[type="text"],.contribute-input select,.contribute-input input[type="file"],.contribute-input input[type="password"],.contribute-input input[type="email"],.contribute-input textarea {
     width: 100%;
     padding: 12px;
     border: 1px solid #4CAF50; 
@@ -2736,7 +2736,7 @@ nav .menu {
     transition: border-color 0.4s ease, box-shadow 0.4s ease; 
 }
 
-.contribute-input input[type="text"]:focus,.contribute-input select:focus,.contribute-input input[type="password"]:focus,.contribute-input input[type="email"]:focus,.contribute-input input[type="file"]:focus {
+.contribute-input input[type="text"]:focus,.contribute-input select:focus,.contribute-input input[type="password"]:focus,.contribute-input input[type="email"]:focus,.contribute-input input[type="file"]:focus,.contribute-input input[type="email"],.contribute-input textarea:focus {
     border-color: #388E3C; 
     outline: none; 
     box-shadow: 0 0 5px rgba(56, 142, 60, 0.5); 
