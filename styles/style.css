@@ -1098,20 +1098,6 @@ nav .menu {
     }
 }
 @media (max-width: 1240px) {
-    .grid_tutorial img{
-        max-width: 200px;
-    }
-    .grid_tutorial{
-        margin-left:5vw ;
-    }
-    .button-grid{
-        margin: 0.5vw 7.5vw 1.5vw 15vw;
-    }
-    .desc_grid_tutorial{
-        bottom: -20px;
-    }
-}
-@media (max-width: 950px) {
     .grid_tutorial{
         margin: 5vw 0;
         display: flex;
@@ -1345,25 +1331,33 @@ nav .menu {
     }
 
 }
-@media  (max-width:1401px){
+@media  (max-width:1440px){
 
     .flip-box-layout{
         margin: 2vw 14vw;
         position: relative;
-        left:5vw;
+        left:7vw;
+    }
+
+    .flip-box h3 .short{
+        left: 30px;
+    }
+
+    .flip-box h3 .shorter{
+        left: 37px;
     }
 
 }
 
 @media (max-width:1350px){
 
+
     .flip-box h3 .short{
-        position: relative;
         left: 0;
     }
 
     .flip-box h3 .shorter{
-        position: relative;
+
         left: 0;
     }
 
@@ -1593,8 +1587,6 @@ nav .menu {
 }
 
 .identify h1{
-    display: flex;
-    flex-wrap: wrap;
     font-size: 45px;
     margin: 2%;
 }
@@ -1604,7 +1596,6 @@ nav .menu {
 }
 
 .identify-detail{
-    margin: 0 auto;
     max-width: 700px;
     outline: 1px solid black;
     margin: 20px 50px 50px 50px;
@@ -1613,7 +1604,7 @@ nav .menu {
 
 .identify-detail h2{
     font-weight: 100;
-    font-size: 16px;
+    font-size: 18px;
     padding: 25px;
 }
 
@@ -1663,12 +1654,8 @@ nav .menu {
 }
 
 .identify-outer img{
-    padding: 2px;
+    padding: 5px;
     overflow: hidden;
-}
-
-.identify-table legend{
-    margin: 0 auto;
 }
 
 .identify-table fieldset{
@@ -1695,6 +1682,7 @@ nav .menu {
 
 
 .identify-table legend{
+    margin: 0 auto;
     font-size: 30px;
     font-weight: bold;
 }
@@ -1748,6 +1736,11 @@ nav .menu {
     display: None;
 }
 
+.identify-hidden{
+    display: none;
+}
+
+
 @media (max-width: 1920px) {
     .identify-aside  {
         position: absolute;
@@ -1774,6 +1767,28 @@ nav .menu {
 @media (max-width: 700px) {
     .identify-outer img{
         width: 180px;
+    }
+}
+
+@media (max-width: 500px) {
+    .identify-hidden{
+        display: block;
+        text-align: center;
+    }
+    
+    .identify-table table th {
+        width: 20%;
+        min-width: 100px;
+        text-align: center;
+        padding: 18px;
+      }
+
+    .identify-row{
+        display: none;
+    }
+
+    .identify-table legend{
+        font-size: 20px;
     }
 }
 
@@ -2712,7 +2727,7 @@ nav .menu {
     font-size: 1.1em; 
 }
 
-.contribute-input input[type="text"],.contribute-input select,.contribute-input input[type="file"],.contribute-input input[type="password"],.contribute-input input[type="email"] {
+.contribute-input input[type="text"],.contribute-input select,.contribute-input input[type="file"],.contribute-input input[type="password"],.contribute-input input[type="email"],.contribute-input textarea {
     width: 100%;
     padding: 12px;
     border: 1px solid #4CAF50; 
@@ -2721,7 +2736,7 @@ nav .menu {
     transition: border-color 0.4s ease, box-shadow 0.4s ease; 
 }
 
-.contribute-input input[type="text"]:focus,.contribute-input select:focus,.contribute-input input[type="password"]:focus,.contribute-input input[type="email"]:focus,.contribute-input input[type="file"]:focus {
+.contribute-input input[type="text"]:focus,.contribute-input select:focus,.contribute-input input[type="password"]:focus,.contribute-input input[type="email"]:focus,.contribute-input input[type="file"]:focus,.contribute-input input[type="email"],.contribute-input textarea:focus {
     border-color: #388E3C; 
     outline: none; 
     box-shadow: 0 0 5px rgba(56, 142, 60, 0.5); 
@@ -3150,7 +3165,6 @@ button.contribute-btn:hover {
     .contributor-image {
         height: 80px; 
         width: 80px; 
-        position: relative;
         right:40px;
         bottom:15px;
     }
@@ -3171,17 +3185,14 @@ button.contribute-btn:hover {
     .contributor-card-comment-section textarea {
         width: 110%; 
         height: 150px;
-        position: relative;
         left:-10px;
     }
 
     .contributor-card-comment-section input[type="submit"]{
-        position: relative;
         right:-120px;
     }
 
     .contributor-close-comments{
-        position: relative;
         left:170px;
     }
 
@@ -3319,6 +3330,7 @@ button.contribute-btn:hover {
     padding: 99px;
     gap: 0px; 
     margin-left: 0px; 
+    text-align: justify;
 }
 
 .assignandrecord {
@@ -3588,7 +3600,6 @@ button.contribute-btn:hover {
 
 @media (max-width: 1399px) {  
     .tuto_tips {
-        position: relative;
         top:50px;
     }
     .step2 img {
@@ -3625,7 +3636,6 @@ button.contribute-btn:hover {
         width: 450px;
     }
     .tuto_tips {
-        position: relative;
         top:0px;
     }
 }
@@ -3660,7 +3670,6 @@ button.contribute-btn:hover {
         display: none;
     }
     .tutotext-content5 h3,.tutotext-content5 p.tutodescription{
-        position: relative;
         top:0;
         left:0;
     }
@@ -3842,9 +3851,6 @@ button.contribute-btn:hover {
     .tuto_definition {
         font-size: 16px;
     }
-    .caption-in-small{
-        font-size: 14px;
-    }
 }
 
 @media (max-width: 497px) {
@@ -3987,10 +3993,6 @@ button.contribute-btn:hover {
     }
 }
 
-.caption-in-small{
-    display: none;
-}
-
 .figure-hidden{
     display: none;
     padding-left: 0px;
@@ -4028,6 +4030,7 @@ button.contribute-btn:hover {
 
 .toolstext-content {
     width: 633px;
+    text-align: justify;
     height: 423px;
     background-color: white;   
     padding: 99px;
@@ -4315,7 +4318,6 @@ button.contribute-btn:hover {
 @media (max-width: 1399px) {
     
     .tools_tips {
-        position: relative;
         top:50px;
     }
     
@@ -4350,7 +4352,6 @@ button.contribute-btn:hover {
         width: 450px;
     }
     .tools_tips {
-        position: relative;
         top:0px;
     }
 }
@@ -4378,13 +4379,12 @@ button.contribute-btn:hover {
     .toolsbordered-content {
         flex-direction: column;
     }
+
     .plantpress{
-        position: relative;
         bottom:0;
     }
     
     .parchment{
-        position: relative;
         bottom:0;
     }
 
@@ -4397,14 +4397,6 @@ button.contribute-btn:hover {
     }
     .step2 img {
         display: none;
-    }
-
-    .caption-in-small{
-        font-size: 18px;
-        display: block;
-        text-align: center;
-        position: relative;
-        top:-35px;
     }
 
     .step2 .caption1 {
@@ -4559,20 +4551,17 @@ button.contribute-btn:hover {
         padding: 20px 0px 20px 0px;
         width: 325px;
     }
-    .toolsdescription{
+    .toolsdescription,.toolsdescription_plantpress,.toolsdescription_parchpapers,.toolsdescription_plasticfoil{
         font-size: 20px;
         text-align: justify;
     }
-    .assignandrecord {
+    .assignandrecord,.assignandrecord2 {
         font-size: 22px;
         text-align: center;
     }
 
     .tools_definition {
         font-size: 16px;
-    }
-    .caption-in-small{
-        font-size: 14px;
     }
     .toolstext-content {
         width: 300px;
@@ -4678,10 +4667,6 @@ button.contribute-btn:hover {
     animation: fadeInUp 2s ease-out forwards; 
 }
 
-.caption-in-small{
-    display: none;
-}
-
 .figure-hidden{
     display: none;
     padding-left: 0px;
@@ -4724,11 +4709,7 @@ button.contribute-btn:hover {
     padding: 99px;
     gap: 0px; 
     margin-left: 0px; 
-}
-
-.assignandrecord {
-    margin-bottom: 15px;
-    font-size: 26px;
+    text-align: justify;
 }
 
 .description1 {
@@ -4879,15 +4860,7 @@ button.contribute-btn:hover {
     .step2 img {
         display: none;
     }
-
-    .caption-in-small{
-        font-size: 18px;
-        display: block;
-        text-align: center;
-        position: relative;
-        top:-35px;
-    }
-
+    
     .step2 .caption1 {
         display: none;
     }
@@ -4955,11 +4928,6 @@ button.contribute-btn:hover {
     .step1 img {
         width: 300px;
         height: 200px;
-    }
-    .step1{
-        margin:20px 20px 0px 0px;
-        position:relative;
-        top:10px;
     }
     .step1 .caption1{
         display: none;
@@ -5038,12 +5006,12 @@ button.contribute-btn:hover {
 }
 
 /* Classify page */
-.classify-article{
-    overflow: hidden;
+.classify_background {
+    background-color: #DDF5E1;
 }
 
-.classify_welcome {
-    margin: 0 auto;
+.classify-article{
+    overflow: hidden;
 }
 
 .classify_heading1 {
@@ -5085,13 +5053,10 @@ button.contribute-btn:hover {
 }
 
 .classification1 {
-    overflow: hidden;
     position: relative;
-    display: flex; 
-    flex-direction: row;       
+    display: flex;       
     align-items: center;      
     gap: 30px;               
-    margin-top: 0px;
 }
 
 .taxonomic_hierarchy {
@@ -5236,29 +5201,6 @@ button.contribute-btn:hover {
     text-align: center;
     width: 500px;
     margin-top: 50px;
-}
-
-@keyframes moveLeft {
-    0% {
-        transform: translateX(-200px); /* Start from -200px off to the left */
-        opacity: 0;
-    }
-    100% {
-        transform: translateX(0); /* Move to the default position */
-        opacity: 1;
-    }
-}
-
-/* Animation for moving Hopea image to the center */
-@keyframes moveRight {
-    0% {
-        transform: translateX(200px); /* Start from 200px off to the right */
-        opacity: 0;
-    }
-    100% {
-        transform: translateX(0); /* Move to the default position */
-        opacity: 1;
-    }
 }
 
 .hopea_content1 {
@@ -5411,12 +5353,10 @@ button.contribute-btn:hover {
     width: 100%;
     height: 100%;
     backface-visibility: hidden; 
-    backface-visibility: hidden;
   }
     
   .flip-card-back-classify {
     transform: rotateY(180deg);
-    text-align: left;
     backface-visibility: hidden;
   }
 
@@ -5762,6 +5702,18 @@ button.contribute-btn:hover {
     .caption_classify {
         font-size: 22px; 
     }
+    .genus_container{
+        position: relative;
+        left:-10px;
+    }
+    .hopea_part {
+        position: relative;
+        left:155px;
+    }
+    .hopea_part1{
+        position: relative;
+        left:0;
+    }
 }
 @media (max-width: 707px){
     .classify_heading{
@@ -5781,11 +5733,7 @@ button.contribute-btn:hover {
         right: 0;
         margin-left: 15px;
     }
-    .hopea_part1{
-        position: relative;
-        top:0;
-        right: 0;
-    }
+
     .classify_table {
         width: 400px;
     }
@@ -5800,6 +5748,9 @@ button.contribute-btn:hover {
       
 }
 @media (max-width: 579px){
+    .vatica_part{
+        margin-top: 40px;
+    }
     .classify_heading{
         font-size: 3.5vw;
     }
@@ -5866,6 +5817,10 @@ button.contribute-btn:hover {
     .defi1-container1{
         width: 475px;
     }
+    .genus_container{
+        position: relative;
+        left:40px;
+    }
     .plantfamtree{
         position: relative;
         left:-210px;
@@ -5928,7 +5883,7 @@ button.contribute-btn:hover {
     }
     .hopea_part {
         position: relative;
-        left: 115px;
+        left:85px;
     }
     .hopea_explain{
         position: relative;
@@ -5970,6 +5925,20 @@ button.contribute-btn:hover {
         height: 250px;
     }
 
+}
+@media (max-width: 416px){
+    .genus_container{
+        position: relative;
+        left:0;
+    }
+    .hopea_part {
+        position: relative;
+        left:105px;
+    }
+    .hopea_part1{
+        position: relative;
+        left: -180px;
+    }
 }
 
 
