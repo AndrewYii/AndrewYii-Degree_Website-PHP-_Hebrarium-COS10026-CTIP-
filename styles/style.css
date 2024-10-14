@@ -3280,25 +3280,6 @@ button.contribute-btn:hover {
     animation: fadeInUp 2s ease-out forwards; 
 }
 
-.caption-in-small{
-    display: none;
-}
-
-.pass-block{
-    display: none;
-}
-
-.figure-hidden{
-    display: none;
-    padding-left: 0px;
-    margin-right: 20px;
-}
-.figure-hidden img{
-    width: 500px;
-    height: 423px;
-    margin-right: -19px;
-}
-
 .tutobordered-content {
     display: flex;
     flex-direction: row; 
@@ -3323,6 +3304,33 @@ button.contribute-btn:hover {
     margin-bottom: -27px;
 }
 
+.caption-in-small{
+    display: none;
+}
+
+.assignandrecord1 {
+    margin-top: -40px;
+    margin-bottom: -25px;
+    font-size: 26px;
+}
+
+.tutodescription {
+    margin-top: 40px;
+    margin-bottom: 0;
+    font-size: 24px;
+}
+
+.figure-hidden{
+    display: none;
+    padding-left: 0px;
+    margin-right: 20px;
+}
+.figure-hidden img{
+    width: 500px;
+    height: 423px;
+    margin-right: -19px;
+}
+
 .tutotext-content {
     width: 633px;
     height: 423px;
@@ -3333,14 +3341,12 @@ button.contribute-btn:hover {
     text-align: justify;
 }
 
-.assignandrecord {
-    margin-bottom: 15px;
-    font-size: 26px;
+.pass-block{
+    display: none;
 }
 
-.assignandrecord1 {
-    margin-top: -40px;
-    margin-bottom: -25px;
+.assignandrecord {
+    margin-bottom: 15px;
     font-size: 26px;
 }
 
