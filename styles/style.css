@@ -3491,6 +3491,14 @@ button.contribute-btn:hover {
     border-collapse: collapse;
 }
 
+.caption_tutorial {
+    margin-bottom: 20px;
+    margin-top: 70px;
+    text-align: center;
+    font: bold;
+    font-size: 26px; 
+}
+
 .flipcard-tuto {
     margin: 0 auto;
     background-color: transparent;
@@ -3575,14 +3583,6 @@ button.contribute-btn:hover {
 
 .tutorial_article{
     overflow: hidden;
-}
-
-.caption_tutorial {
-    margin-bottom: 20px;
-    margin-top: 70px;
-    text-align: center;
-    font: bold;
-    font-size: 26px; 
 }
 
 @media (max-width: 1920px) {
