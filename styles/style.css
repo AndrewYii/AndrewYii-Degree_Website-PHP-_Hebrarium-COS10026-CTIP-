@@ -3270,6 +3270,24 @@ button.contribute-btn:hover {
     font-size: 24px;
 }
 
+.step1 {
+    display: block;
+    padding-left: 0px;
+    margin-right: 20px;
+}
+
+.step1 img {
+    width: 633px;
+    height: 423px;
+    margin-right: -19px;
+}
+
+.assignandrecord1 {
+    margin-top: -40px;
+    margin-bottom: -25px;
+    font-size: 26px;
+}
+
 .tuto-container {
     display: flex;
     justify-content: center;
@@ -3286,40 +3304,6 @@ button.contribute-btn:hover {
     align-items: center;
 }
 
-.step1 {
-    display: block;
-    padding-left: 0px;
-    margin-right: 20px;
-}
-
-.step1 img {
-    width: 633px;
-    height: 423px;
-    margin-right: -19px;
-}
-
-.caption1 {
-    text-align: center;
-    font-size: 18px;
-    margin-bottom: -27px;
-}
-
-.caption-in-small{
-    display: none;
-}
-
-.assignandrecord1 {
-    margin-top: -40px;
-    margin-bottom: -25px;
-    font-size: 26px;
-}
-
-.tutodescription {
-    margin-top: 40px;
-    margin-bottom: 0;
-    font-size: 24px;
-}
-
 .figure-hidden{
     display: none;
     padding-left: 0px;
@@ -3329,6 +3313,12 @@ button.contribute-btn:hover {
     width: 500px;
     height: 423px;
     margin-right: -19px;
+}
+
+.caption1 {
+    text-align: center;
+    font-size: 18px;
+    margin-bottom: -27px;
 }
 
 .tutotext-content {
@@ -3341,13 +3331,29 @@ button.contribute-btn:hover {
     text-align: justify;
 }
 
-.pass-block{
+.caption-in-small{
     display: none;
 }
 
 .assignandrecord {
     margin-bottom: 15px;
     font-size: 26px;
+}
+
+.tutodescription {
+    margin-top: 40px;
+    margin-bottom: 0;
+    font-size: 24px;
+}
+
+.step2 img {
+    width: 633px;
+    height: 423px;
+    margin-left: 0px;
+}
+
+.pass-block{
+    display: none;
 }
 
 .assignandrecord2 {
@@ -3367,12 +3373,6 @@ button.contribute-btn:hover {
     margin-top: 40px;
     margin-bottom: 0;
     font-size: 24px;
-}
-
-.step2 img {
-    width: 633px;
-    height: 423px;
-    margin-left: 0px;
 }
 
 .step3 img {
