@@ -2791,6 +2791,8 @@ button.contribute-btn:hover {
 
     .contribute-form-layout input[type="reset"] {
         padding: 10px 12px;
+        position: relative;
+        float: right;
     }
 }
 
