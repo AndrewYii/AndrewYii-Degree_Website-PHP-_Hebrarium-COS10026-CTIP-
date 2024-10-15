@@ -929,7 +929,6 @@ nav .menu {
 }
 
 /* White Region */
-
 .white_region {
     position: relative;
     top: 100px;
@@ -4016,18 +4015,6 @@ button.contribute-btn:hover {
     align-items: center;
 }
 
-.step1 {
-    display: block;
-    padding-left: 0px;
-    margin-right: 20px;
-}
-
-.step1 img {
-    width: 633px;
-    height: 423px;
-    margin-right: -19px;
-}
-
 .caption1 {
     text-align: center;
     font-size: 18px;
@@ -4076,19 +4063,6 @@ button.contribute-btn:hover {
     margin-top: 30px;
     font-size: 24px;
 }
-
-.step2 img {
-    width: 633px;
-    height: 423px;
-    margin-left: 0px;
-}
-
-.step3 img {
-    width: 633px;
-    height: 423px;
-    margin-left: 0px;
-}
-
 .care_bottom {
     display: flex;
     justify-content: flex-start;
@@ -4322,20 +4296,8 @@ button.contribute-btn:hover {
 }
 
 @media (max-width: 1399px) {
-    
     .tools_tips {
         top:50px;
-    }
-    
-    .step2 img {
-        width: 550px;
-    }
-    
-    .step3 img {
-        width: 550px;
-    }
-    .step1 img {
-        width: 550px;
     }
     .toolstext-content {
         padding: 50px;
@@ -4343,16 +4305,6 @@ button.contribute-btn:hover {
     }
 }
 @media (max-width: 1189px) {
-    .step2 img {
-        width: 450px;
-    }
-    
-    .step3 img {
-        width: 450px;
-    }
-    .step1 img {
-        width: 450px;
-    }
     .toolstext-content {
         padding: 50px;
         width: 450px;
@@ -4400,20 +4352,6 @@ button.contribute-btn:hover {
     
     .toolsdescription_plantpress {
         margin-top: 0;
-    }
-    .step2 img {
-        display: none;
-    }
-
-    .step2 .caption1 {
-        display: none;
-    }
-    
-    .step3 img {
-        width: 500px;
-    }
-    .step1 img {
-        width: 500px;
     }
     .toolstext-content {
         padding: 55px;
@@ -4494,22 +4432,6 @@ button.contribute-btn:hover {
     }
     .tools_tips{
         width:300px;
-    }
-    .step3 img {
-        width: 300px;
-        height: 200px;
-    }
-    .step1 img {
-        width: 300px;
-        height: 200px;
-    }
-    .step1{
-        margin:20px 20px 0px 0px;
-        position:relative;
-        top:10px;
-    }
-    .step1 .caption1{
-        display: none;
     }
     .toolstext-content {
         width: 300px;
@@ -4690,18 +4612,6 @@ button.contribute-btn:hover {
     align-items: center;
 }
 
-.step1 {
-    display: block;
-    padding-left: 0px;
-    margin-right: 20px;
-}
-
-.step1 img {
-    width: 633px;
-    height: 423px;
-    margin-right: -19px;
-}
-
 .caption1 {
     text-align: center;
     font-size: 18px;
@@ -4723,19 +4633,6 @@ button.contribute-btn:hover {
     margin-bottom: 0;
     font-size: 24px;
 }
-
-.step2 img {
-    width: 633px;
-    height: 423px;
-    margin-left: 0px;
-}
-
-.step3 img {
-    width: 633px;
-    height: 423px;
-    margin-left: 0px;
-}
-
 .care_bottom {
     display: flex;
     justify-content: flex-start;
@@ -4803,34 +4700,13 @@ button.contribute-btn:hover {
     .preservation_tips {
         position: relative;
         top:50px;
-    }
-    
-    .step2 img {
-        width: 550px;
-    }
-    
-    .step3 img {
-        width: 550px;
-    }
-    .step1 img {
-        width: 550px;
-    }
+    }    
     .text-content {
         padding: 50px;
         width: 550px;
     }
 }
 @media (max-width: 1189px) {
-    .step2 img {
-        width: 450px;
-    }
-    
-    .step3 img {
-        width: 450px;
-    }
-    .step1 img {
-        width: 450px;
-    }
     .text-content {
         padding: 50px;
         width: 450px;
@@ -4862,20 +4738,6 @@ button.contribute-btn:hover {
 @media (max-width: 974px) {
     .bordered-content {
         flex-direction: column;
-    }
-    .step2 img {
-        display: none;
-    }
-    
-    .step2 .caption1 {
-        display: none;
-    }
-    
-    .step3 img {
-        width: 500px;
-    }
-    .step1 img {
-        width: 500px;
     }
     .text-content {
         padding: 55px;
@@ -4926,17 +4788,6 @@ button.contribute-btn:hover {
     }
     .preservation_tips{
         width:300px;
-    }
-    .step3 img {
-        width: 300px;
-        height: 200px;
-    }
-    .step1 img {
-        width: 300px;
-        height: 200px;
-    }
-    .step1 .caption1{
-        display: none;
     }
     .text-content {
         width: 300px;
