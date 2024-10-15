@@ -929,6 +929,7 @@ nav .menu {
 }
 
 /* White Region */
+
 .white_region {
     position: relative;
     top: 100px;
@@ -3270,6 +3271,24 @@ button.contribute-btn:hover {
     font-size: 24px;
 }
 
+.step1 {
+    display: block;
+    padding-left: 0px;
+    margin-right: 20px;
+}
+
+.step1 img {
+    width: 633px;
+    height: 423px;
+    margin-right: -19px;
+}
+
+.assignandrecord1 {
+    margin-top: -40px;
+    margin-bottom: -25px;
+    font-size: 26px;
+}
+
 .tuto-container {
     display: flex;
     justify-content: center;
@@ -3280,12 +3299,10 @@ button.contribute-btn:hover {
     animation: fadeInUp 2s ease-out forwards; 
 }
 
-.caption-in-small{
-    display: none;
-}
-
-.pass-block{
-    display: none;
+.tutobordered-content {
+    display: flex;
+    flex-direction: row; 
+    align-items: center;
 }
 
 .figure-hidden{
@@ -3295,24 +3312,6 @@ button.contribute-btn:hover {
 }
 .figure-hidden img{
     width: 500px;
-    height: 423px;
-    margin-right: -19px;
-}
-
-.tutobordered-content {
-    display: flex;
-    flex-direction: row; 
-    align-items: center;
-}
-
-.step1 {
-    display: block;
-    padding-left: 0px;
-    margin-right: 20px;
-}
-
-.step1 img {
-    width: 633px;
     height: 423px;
     margin-right: -19px;
 }
@@ -3333,15 +3332,29 @@ button.contribute-btn:hover {
     text-align: justify;
 }
 
+.caption-in-small{
+    display: none;
+}
+
 .assignandrecord {
     margin-bottom: 15px;
     font-size: 26px;
 }
 
-.assignandrecord1 {
-    margin-top: -40px;
-    margin-bottom: -25px;
-    font-size: 26px;
+.tutodescription {
+    margin-top: 40px;
+    margin-bottom: 0;
+    font-size: 24px;
+}
+
+.step2 img {
+    width: 633px;
+    height: 423px;
+    margin-left: 0px;
+}
+
+.pass-block{
+    display: none;
 }
 
 .assignandrecord2 {
@@ -3361,12 +3374,6 @@ button.contribute-btn:hover {
     margin-top: 40px;
     margin-bottom: 0;
     font-size: 24px;
-}
-
-.step2 img {
-    width: 633px;
-    height: 423px;
-    margin-left: 0px;
 }
 
 .step3 img {
@@ -3485,6 +3492,14 @@ button.contribute-btn:hover {
     border-collapse: collapse;
 }
 
+.caption_tutorial {
+    margin-bottom: 20px;
+    margin-top: 70px;
+    text-align: center;
+    font: bold;
+    font-size: 26px; 
+}
+
 .flipcard-tuto {
     margin: 0 auto;
     background-color: transparent;
@@ -3515,13 +3530,20 @@ button.contribute-btn:hover {
     width: 100%;
     height: 100%;
     backface-visibility: hidden; 
-    backface-visibility: hidden;
   }
     
   .flipcard-back-tuto {
     transform: rotateY(180deg);
     text-align: left;
     backface-visibility: hidden;
+  }
+
+  .tutodef-caption {
+    margin-top:70px;
+    margin-bottom: 20px;
+    text-align: center;
+    font: bold;
+    font-size: 26px; 
   }
 
 .tutorial_definiton {
@@ -3559,24 +3581,8 @@ button.contribute-btn:hover {
     background-color: rgb(248, 248, 248);
 }
 
-.tutodef-caption {
-    margin-top:70px;
-    margin-bottom: 20px;
-    text-align: center;
-    font: bold;
-    font-size: 26px; 
-}
-
 .tutorial_article{
     overflow: hidden;
-}
-
-.caption_tutorial {
-    margin-bottom: 20px;
-    margin-top: 70px;
-    text-align: center;
-    font: bold;
-    font-size: 26px; 
 }
 
 @media (max-width: 1920px) {
