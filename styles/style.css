@@ -73,7 +73,6 @@ nav .menu {
 
 .menu li {
     list-style: none;
-    position: relative;
 }
 
 /* Menubar Animation */
@@ -196,8 +195,6 @@ nav .menu {
 
 .menu .dropdown-menu .dropdown-description ul {
     list-style: none;
-    margin: 0;
-    padding: 0;
 }
 
 .menu .dropdown-menu .dropdown-description ul li {
@@ -932,7 +929,6 @@ nav .menu {
 .white_region {
     position: relative;
     top: 100px;
-    justify-content: space-between;
     background-color: #ffffff;
 }
 
