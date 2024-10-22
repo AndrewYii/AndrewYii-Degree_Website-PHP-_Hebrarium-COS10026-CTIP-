@@ -19,383 +19,12 @@
     <body>
 
         <header id="top_index">
-            <nav>
-                <div class="menu">
-                    <input type="checkbox" id="menu_toggle" class="menu-toggle">
-                    <label for="menu_toggle" id="hamburger_icon">
-                        <img src="images/hamburger_icon.png" alt="hamburger_icon">
-                    </label>
-                    <div class="logo">
-                        <span class="pushing_logo">
-                            &nbsp;
-                            &nbsp;
-                            &nbsp;
-                            &nbsp;
-                            &nbsp;
-                            &nbsp;
-                            &nbsp;
-                            &nbsp;
-                            &nbsp;
-                            &nbsp;
-                            &nbsp;
-                            &nbsp;
-                            &nbsp;
-                            &nbsp;
-                            &nbsp;
-                            &nbsp;
-                            &nbsp;
-                            &nbsp;
-                            &nbsp;
-                            &nbsp;
-                            &nbsp;
-                            &nbsp;
-                            &nbsp;
-                            &nbsp;
-                            &nbsp;
-                            &nbsp;
-                        </span>
-                        <span class="pushing_logo2">
-                            &nbsp;
-                            &nbsp;
-                            &nbsp;
-                            &nbsp;
-                            &nbsp;
-                            &nbsp;
-                            &nbsp;
-                            &nbsp;
-                            &nbsp;
-                            &nbsp;
-                            &nbsp;
-                            &nbsp;
-                        </span>
-                        <a href="index.html">
-                            <img src="images/logo.png" alt="Plant's Notebook">
-                            <span>Plant's Notebook</span>
-                        </a>
-                    </div>
-                    <ul class="menubar">
-                        <li class="dropdown">
-                            <a href="classify.html">Classification</a>
-                            <ul class="dropdown-menu">
-                                <li>
-                                    <div class="dropdown-content">
-                                        <div class="dropdown-text">
-                                            <h3><a href="classify.html">Plant Classification</a></h3>
-                                            <p>Dive into plant taxonomy, where plants are categorized by their unique traits and evolutionary links. From mosses to flowering plants, see how scientists classify and name our diverse flora.</p>
-                                        </div>
-                                        <div class="dropdown-description">
-                                            <ul>
-                                                <li>You will Know About:</li>
-                                                <li><a>Plant Genus</a></li>
-                                                <li><a>Plant Family</a></li>
-                                                <li><a>Plant Species</a></li>
-                                            </ul>
-                                        </div>
-                                        <div class="dropdown-image">
-                                            <img src="images/plant_taxonomy.jpg" alt="Plant Taxonomy">
-                                        </div>
-                                    </div>
-                                </li>
-                            </ul>
-                        </li>
-
-                        <li class="dropdown">
-                            <a href="tutorial-introduction.html">Tutorial</a>
-                            <ul class="dropdown-menu">
-                                <li>
-                                    <div class="dropdown-content">
-                                        <div class="dropdown-text">
-                                            <h3><a href="tutorial-introduction.html">Herbarium Specimen Tutorial</a></h3>
-                                            <p>Master the craft of turning fresh leaves into preserved treasures. Follow our easy steps to document and safeguard plant diversity like a pro.</p>
-                                        </div>
-                                        <div class="dropdown-description">
-                                            <ul>
-                                                <li>You will Learn About:</li>
-                                                <li><a href="tools.html">Essential Tools for Making Herbarium Specimen</a></li>
-                                                <li><a href="tutorial.html">Ways to Make Herbarium Specimen</a></li>
-                                                <li><a href="care.html">Techniques to Preserve the Herbarium Specimen</a></li>
-                                            </ul>
-                                        </div>
-                                        <div class="dropdown-image">
-                                            <img src="images/tutorial_menubar.jpeg" alt="Herbarium Specimen">
-                                        </div>
-                                    </div>
-                                </li>
-                            </ul>
-                        </li>
-                        <li class="dropdown">
-                            <a href="identify.html">Identify</a>
-                            <ul class="dropdown-menu">
-                                <li>
-                                    <div class="dropdown-content">
-                                        <div class="dropdown-text">
-                                            <h3><a href="identify.html">Plant Identification Hub</a></h3>
-                                            <p>Snap a photo and let our tool reveal the plant's identity. Discover the names and details of the flora around you with just a click!</p>
-                                        </div>
-                                        <div class="dropdown-description">
-                                            <ul>
-                                                <li>Things You will Explore:</li>
-                                                <li><a>Plant Common Name</a></li>
-                                                <li><a>Plant Scientific Name</a></li>
-                                                <li><a>Herbarium Specimen</a></li>
-                                            </ul>
-                                        </div>
-                                        <div class="dropdown-image">
-                                            <img src="images/identify_menubar.jpg" alt="Plant Identifier">
-                                        </div>
-                                    </div>
-                                </li>
-                            </ul>
-                        </li>
-                        <li class="dropdown">
-                            <a href="contribution.html">Contribution</a>
-                            <ul class="dropdown-menu">
-                                <li>
-                                    <div class="dropdown-content">
-                                        <div class="dropdown-text">
-                                            <h3><a href="contribution.html">Contribute Your Idea</a></h3>
-                                            <p>Help us grow our plant database! Upload photos of fresh leaves and herbarium specimens, fill out the form, and your data will be used on our Plant Identification Hub. Your contributions make a difference!</p>
-                                        </div>
-                                        <div class="dropdown-description">
-                                            <ul>
-                                                <li>Voice Your Finds!</li>
-                                                <li><a>Plant Name</a></li>
-                                                <li><a>Plant Family,Genus, Species</a></li>
-                                                <li><a>Fresh Leaf(Photos)</a></li>
-                                                <li><a>Herbarium Specimen(Photos)</a></li>
-                                            </ul>
-                                        </div>
-                                        <div class="dropdown-image">
-                                            <img src="images/contribution_menubar.jpeg" alt="Findings on Plants">
-                                        </div>
-                                    </div>
-                                </li>
-                            </ul>
-                        </li>
-                        <li class="dropdown">
-                            <a href="enquiry.html">Enquiry</a>
-                            <ul class="dropdown-menu">
-                                <li>
-                                    <div class="dropdown-content">
-                                        <div class="dropdown-text">
-                                            <h3><a href="enquiry.html">Share Your Problems </a></h3>
-                                            <p>Ready to ask the question? Use our easy-to-fill form to make your enquiries. Just provide the necessary details, and we'll take care of the rest. Your next plant discovery is just a few clicks away!</p>
-                                        </div>
-                                        <div class="dropdown-description">
-                                            <ul>
-                                                <li>Info Needed:</li>
-                                                <li><a>Name</a></li>
-                                                <li><a>Email Address,Contact Number</a></li>
-                                                <li><a>Address</a></li>
-                                                <li><a>Question</a></li>
-                                            </ul>
-                                        </div>
-                                        <div class="dropdown-image">
-                                            <img src="images/invite_menubar.jpeg" alt="Invitation">
-                                        </div>
-                                    </div>
-                                </li>
-                            </ul>
-                        </li>
-                    </ul>
-                    <ul class="menubar_icon">
-                        <li class="dropdown_search">
-                            <img src="images/search_icon.png" alt="Search_Icon">
-                            <ul class="dropdown-menu-search">
-                                <li>
-                                    <div class="dropdown-content-search">
-                                        <div class="dropdown-text-search">
-                                            <form>
-                                                <input type="text" placeholder="Search.." name="search">
-                                                <button type="submit">
-                                                    <img src="images/search_icon.png" alt="Search_Icon">
-                                                </button>
-                                            </form>
-                                        </div>
-                                        <div class="dropdown-description-search">
-                                            <ul>
-                                                <li><a>Herbarium Specimen Tutorial</a></li>
-                                                <li><a>Plant Genus</a></li>
-                                                <li><a>Plant Family</a></li>
-                                                <li><a>Plant Species</a></li>
-                                            </ul>
-                                        </div>
-                                    </div>
-                                </li>
-                            </ul>
-                        </li>
-                        <li>
-                            <a href="login.html">
-                                <img src="images/user_icon.jpg" alt="User_Icon">
-                            </a>
-                        </li>
-                    </ul>
-                    
-                    <div class="mobile-menu">
-                        <div class="logo">
-                            <a href="index.html">
-                                <img src="images/logo.png" alt="Plant's Notebook">
-                                <span>Plant's Notebook</span>
-                            </a>
-                        </div>
-                        <label for="menu_toggle" class="menu-close">
-                            <img src="images/close_icon.png" alt="Close Menu">
-                        </label>
-                        
-                        <div class="side-menubar">
-                            <div class="side-menubar-maintitle">
-                                <a href="classify.html">Classification</a>
-                            </div>
-                            <label for="next_side" class="next">
-                                <img src="images/next_icon.png" alt="Next Icon">
-                            </label>
-                            <input type="checkbox" id="next_side" class="menu-next">
-                            <div class="side-menubar-text">
-                                Dive into plant taxonomy, where plants are categorized by their unique traits and evolutionary links. From mosses to flowering plants, see how scientists classify and name our diverse flora.
-
-                                <div>
-                                    &nbsp;
-                                </div>
-                                
-                                <div class="side-menubar-description">
-                                    <ul>
-                                        <li>You will Know About:</li>
-                                        <li><a>Plant Genus</a></li>
-                                        <li><a>Plant Family</a></li>
-                                        <li><a>Plant Species</a></li>
-                                    </ul>
-                                </div>
-                                <br>
-                            </div>
-                        </div>
-
-
-                        <div class="side-menubar">
-                            <div class="side-menubar-maintitle">
-                                <a href="tutorial-introduction.html">Tutorial</a>
-                            </div>
-                            <label for="next_side1" class="next">
-                                <img src="images/next_icon.png" alt="Next Icon">
-                            </label>
-                            <input type="checkbox" id="next_side1" class="menu-next">
-                            <div class="side-menubar-text">
-                                Master the craft of turning fresh leaves into preserved treasures. Follow our easy steps to document and safeguard plant diversity like a pro.
-
-                                <div>
-                                    &nbsp;
-                                </div>
-                                
-                                <div class="side-menubar-description">
-                                    <ul>
-                                        <li>You will Learn About:</li>
-                                        <li><a href="tools.html">Essential Tools for Making Herbarium Specimen</a></li>
-                                        <li><a href="tutorial.html">Ways to Make Herbarium Specimen</a></li>
-                                        <li><a href="care.html">Techniques to Preserve the Herbarium Specimen</a></li>
-                                    </ul>
-                                </div>
-                                <br>
-                            </div>
-                        </div>
-                        <div class="side-menubar">
-                            <div class="side-menubar-maintitle">
-                                <a href="identify.html">Identify</a>
-                            </div>
-                            <label for="next_side2" class="next">
-                                <img src="images/next_icon.png" alt="Next Icon">
-                            </label>
-                            <input type="checkbox" id="next_side2" class="menu-next">
-                            <div class="side-menubar-text">
-                                Snap a photo and let our tool reveal the plant's identity. Discover the names and details of the flora around you with just a click!
-
-                                <div>
-                                    &nbsp;
-                                </div>
-                                
-                                <div class="side-menubar-description">
-                                    <ul>
-                                        <li>Things You will Explore:</li>
-                                        <li><a>Plant Common Name</a></li>
-                                        <li><a>Plant Scientific Name</a></li>
-                                        <li><a>Herbarium Specimen</a></li>
-                                    </ul>
-                                </div>
-                                <br>
-                            </div>
-                        </div>
-                        <div class="side-menubar">
-                            <div class="side-menubar-maintitle">
-                                <a href="contribution.html">Contribution</a>
-                            </div>
-                            <label for="next_side3" class="next">
-                                <img src="images/next_icon.png" alt="Next Icon">
-                            </label>
-                            <input type="checkbox" id="next_side3" class="menu-next">
-                            <div class="side-menubar-text">
-                                Help us grow our plant database! Upload photos of fresh leaves and herbarium specimens, fill out the form, and your data will be used on our Plant Identification Hub. Your contributions make a difference!
-
-                                <div>
-                                    &nbsp;
-                                </div>
-                                
-                                <div class="side-menubar-description">
-                                    <ul>
-                                        <li>Voice Your Finds!</li>
-                                        <li><a>Plant Name</a></li>
-                                        <li><a>Plant Family,Genus, Species</a></li>
-                                        <li><a>Fresh Leaf(Photos)</a></li>
-                                        <li><a>Herbarium Specimen(Photos)</a></li>
-                                    </ul>
-                                </div>
-                                <br>
-                            </div>
-                        </div>
-                        <div class="side-menubar">
-                            <div class="side-menubar-maintitle">
-                                <a href="enquiry.html">Enquiry</a>
-                            </div>
-                            <label for="next_side4" class="next">
-                                <img src="images/next_icon.png" alt="Next Icon">
-                            </label>
-                            <input type="checkbox" id="next_side4" class="menu-next">
-                            <div class="side-menubar-text">
-                                Ready to ask the question? Use our easy-to-fill form to make your enquiries. Just provide the necessary details, and we'll take care of the rest. Your next plant discovery is just a few clicks away!
-
-                                <div>
-                                    &nbsp;
-                                </div>
-                                
-                                <div class="side-menubar-description">
-                                    <ul>
-                                        <li>Info Needed:</li>
-                                        <li><a>Name</a></li>
-                                        <li><a>Email Address</a></li>
-                                        <li><a>Contact Number</a></li>
-                                        <li><a>Address</a></li>
-                                        <li><a>Question</a></li>
-                                    </ul>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </nav>
+            <?php include 'include/header.php';?>
         </header>
 
         <article>
-            <a href="profile-introduction.html" title="Get To Know Us">
-                <div class="chatbot-container">
-                    <div id="chatbot">
-                        <div class="dot"></div>
-                        <div class="dot"></div>
-                        <div class="dot"></div>
-                    </div>
-                    <div id="chatbot-corner"></div>
-                    <div id="antenna">
-                        <div id="beam"></div>
-                        <div id="beam-pulsar"></div>
-                    </div>
-                </div>
-            </a>
+
+            <?php include 'include/chatbot.php';?>
 
             <div class="image-text">
                 <figure class="non-displayfirst">
@@ -408,7 +37,7 @@
                     <div class="button-index">
                         <p>
                             <span class="space_button">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
-                            <a href="classify.html" title="Go To The Plant Classification">Explore Now
+                            <a href="classify.php" title="Go To The Plant Classification">Explore Now
                             </a>
                         </p>
                     </div>
@@ -450,7 +79,7 @@
                     <div class="button-index">
                         <p>
                             <span class="space_button">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
-                            <a href="identify.html" title="Go to The Plant Identification Hub">
+                            <a href="identify.php" title="Go to The Plant Identification Hub">
                                 Capture Now
                             </a>
                         </p>
@@ -474,7 +103,7 @@
                             <div class="grid_tutorial_layer">
                                 <div class="desc_grid_tutorial">
                                     <p>This tutorial will provide you with the knowledge and tips needed to create high-quality herbarium specimens.</p>
-                                    <p><a href="tutorial.html"><span class="hiddenword">Let Us Explore More !</span></a></p>
+                                    <p><a href="tutorial.php"><span class="hiddenword">Let Us Explore More !</span></a></p>
                                 </div>
                             </div>
                         </div>
@@ -483,7 +112,7 @@
                             <div class="grid_tutorial_layer">
                                 <div class="desc_grid_tutorial">
                                     <p>From trowels and clippers to presses and preservation materials, we'll cover everything you need to know to get started.</p>
-                                    <p><a href="tools.html"><span class="hiddenword">Let Us Explore More !</span></a></p>
+                                    <p><a href="tools.php"><span class="hiddenword">Let Us Explore More !</span></a></p>
                                 </div>
                             </div>
                         </div>
@@ -492,23 +121,23 @@
                             <div class="grid_tutorial_layer">
                                 <div class="desc_grid_tutorial">
                                     <p>Preserve fresh leaves, ensuring they retain their shape, color, and details for long-term study and display.</p>
-                                    <p><a href="care.html"><span class="hiddenword">Let Us Explore More !</span></a></p>
+                                    <p><a href="care.php"><span class="hiddenword">Let Us Explore More !</span></a></p>
                                 </div>
                             </div>
                         </div>
                         <br>
                         <div class="button-grid">
-                            <a href="tutorial.html" title="Go To The Tutorial Page">
+                            <a href="tutorial.php" title="Go To The Tutorial Page">
                                 Tutorial
                             </a>
                         </div>
                         <div class="button-grid">
-                            <a href="tools.html" title="Go To The Tools Page">
+                            <a href="tools.php" title="Go To The Tools Page">
                                 Tools
                             </a>
                         </div>
                         <div class="button-grid">
-                            <a href="care.html" title="Go To The Care Page">
+                            <a href="care.php" title="Go To The Care Page">
                                 Care
                             </a>
                         </div>
@@ -539,7 +168,7 @@
                                         <h3><span class="hiddenword_extend">Plant's</span></h3>
                                         <h3><span class="hiddenword_extend">Name</span></h3>
                                         <h3><span class="hiddingthesmallword">Plant's Name</span></h3>
-                                        <a href="contribution.html" title="Go To The Contribute Page">Share Your Ideas!</a>
+                                        <a href="contribution.php" title="Go To The Contribute Page">Share Your Ideas!</a>
                                     </div>
                                 </div>
                             </div>
@@ -550,7 +179,7 @@
                                         <h3><span class="hiddenword_extend">Plant's</span></h3>
                                         <h3><span class="hiddenword_extend">Family</span></h3>
                                         <h3 ><span class="hiddingthesmallword">Plant's Family</span></h3>
-                                        <a href="contribution.html" title="Go To The Contribute Page">Share Your Ideas!</a>
+                                        <a href="contribution.php" title="Go To The Contribute Page">Share Your Ideas!</a>
                                     </div>
                                 </div>
                             </div>
@@ -562,7 +191,7 @@
                                         <h3><span class="hiddenword_extend">Genus</span></h3>
                                         <h3 ><span class="hiddingthesmallword">Plant's Genus</span></h3>
 
-                                        <a href="contribution.html" title="Go To The Contribute Page">Share Your Ideas!</a>
+                                        <a href="contribution.php" title="Go To The Contribute Page">Share Your Ideas!</a>
                                     </div>
                                 </div>
                             </div>
@@ -573,7 +202,7 @@
                                         <h3><span class="hiddenword_extend">Plant's</span></h3>
                                         <h3><span class="hiddenword_extend">Species</span></h3>
                                         <h3 ><span class="hiddingthesmallword">Plant's Species</span></h3>
-                                        <a href="contribution.html" title="Go To The Contribute Page">Share Your Ideas!</a>
+                                        <a href="contribution.php" title="Go To The Contribute Page">Share Your Ideas!</a>
                                     </div>
                                 </div>
                             </div>
@@ -585,7 +214,7 @@
                                         <h3><span class="hiddenword_extend">Leaf</span></h3>
                                         <h3 ><span class="hiddenword_extend">(Photos)</span></h3>
                                         <h3 ><span class="hiddingthesmallword">Fresh Leaf (Photos)</span></h3>
-                                        <a href="contribution.html" title="Go To The Contribute Page">Share Your Ideas!</a>
+                                        <a href="contribution.php" title="Go To The Contribute Page">Share Your Ideas!</a>
                                     </div>
                                 </div>
                             </div>
@@ -597,7 +226,7 @@
                                         <h3><span class="hiddenword_extend">Specimen</span></h3>
                                         <h3 ><span class="hiddenword_extend">(Photos)</span></h3>
                                         <h3 ><span class="hiddingthesmallword">Herbarium Specimen (Photos)</span></h3>
-                                        <a href="contribution.html" title="Go To The Contribute Page">Share Your Ideas!</a>
+                                        <a href="contribution.php" title="Go To The Contribute Page">Share Your Ideas!</a>
                                     </div>
                                 </div>
                             </div>
@@ -622,7 +251,7 @@
                     <div class="white_region-green_region">
                         <p>Are you passionate about botany, or simply curious about the world of plant specimens? This is your golden opportunity to delve into the intricate art of herbarium specimen preparation. But hurry—this offer won't last long! You may flip cards below to see the infos needed and share your problems.</p>
                         <div class="flip-box-layout">
-                            <a href="enquiry.html" title="Go To The Enquiry Form">
+                            <a href="enquiry.php" title="Go To The Enquiry Form">
                                 <div class="flip-box">
                                     <div class="flip-box-inner">
                                         <div class="flip-box-front">
@@ -635,7 +264,7 @@
                                     </div>
                                 </div>
                             </a>
-                            <a href="enquiry.html" title="Go To The Enquiry Form">
+                            <a href="enquiry.php" title="Go To The Enquiry Form">
                                 <div class="flip-box">
                                     <div class="flip-box-inner">
                                         <div class="flip-box-front">
@@ -648,7 +277,7 @@
                                     </div>
                                 </div>
                             </a>
-                            <a href="enquiry.html" title="Go To The Enquiry Form">
+                            <a href="enquiry.php" title="Go To The Enquiry Form">
                                 <div class="flip-box">
                                     <div class="flip-box-inner">
                                         <div class="flip-box-front">
@@ -661,7 +290,7 @@
                                     </div>
                                 </div>
                             </a>
-                            <a href="enquiry.html" title="Go To The Enquiry Form">
+                            <a href="enquiry.php" title="Go To The Enquiry Form">
                                 <div class="flip-box">
                                     <div class="flip-box-inner">
                                         <div class="flip-box-front">
@@ -674,7 +303,7 @@
                                     </div>
                                 </div>
                             </a>
-                            <a href="enquiry.html" title="Go To The Enquiry Form">
+                            <a href="enquiry.php" title="Go To The Enquiry Form">
                                 <div class="flip-box">
                                     <div class="flip-box-inner">
                                         <div class="flip-box-front">
@@ -687,7 +316,7 @@
                                     </div>
                                 </div>
                             </a>
-                            <a href="enquiry.html" title="Go To The Enquiry Form">
+                            <a href="enquiry.php" title="Go To The Enquiry Form">
                                 <div class="flip-box">
                                     <div class="flip-box-inner">
                                         <div class="flip-box-front">
@@ -723,7 +352,7 @@
                 <div class="footer-column">
                     <div>
                         <strong>
-                            <a href="classify.html">
+                            <a href="classify.php">
                                 Classification
                             </a>
                         </strong>
@@ -757,23 +386,23 @@
                 <div class="footer-column">
                     <div>
                         <strong>
-                            <a href="tutorial-introduction.html">
+                            <a href="tutorial-introduction.php">
                                 Tutorial
                             </a>
                         </strong>
                     </div>
                     <div>
-                        <a href="tools.html" title="Go To The Tools Page">
+                        <a href="tools.php" title="Go To The Tools Page">
                             Tools for Prepare
                         </a>
                     </div>
                     <div>
-                        <a href="tutorial.html" title="Go To The Tutorial Page">
+                        <a href="tutorial.php" title="Go To The Tutorial Page">
                             Ways for Make
                         </a>
                     </div>
                     <div>
-                        <a href="care.html" title="Go To The Care Page">
+                        <a href="care.php" title="Go To The Care Page">
                             Techniques for Preserve
                         </a>
                     </div>
@@ -781,7 +410,7 @@
                 <div class="footer-column">
                     <div>
                         <strong>
-                            <a href="identify.html">
+                            <a href="identify.php">
                                 Identify
                             </a>
                         </strong>
@@ -805,7 +434,7 @@
                 <div class="footer-column">
                     <div>
                         <strong>
-                            <a href="contribution.html">
+                            <a href="contribution.php">
                                 Contribution
                             </a>
                         </strong>
@@ -839,7 +468,7 @@
                 <div class="footer-column">
                     <div>
                         <strong>
-                            <a href="enquiry.html">
+                            <a href="enquiry.php">
                                 Enquiry
                             </a>
                         </strong>
@@ -874,14 +503,14 @@
                 <div class="footer-column">
                     <div>
                         <strong>
-                            <a href="acknowledgment.html">
+                            <a href="acknowledgment.php">
                                 Acknowledgement
                             </a>
                         </strong>
                     </div>
                     <div>
                         <strong>
-                            <a href="enhancement1.html">
+                            <a href="enhancement1.php">
                                 Enhancement
                             </a>
                         </strong>
