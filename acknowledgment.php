@@ -521,7 +521,7 @@
                             </div>
                         </div>
                         <figure class='going-up-container'>
-                            <a href='#top_index'>
+                            <a href='#top_ack'>
                                 <img src='images/going_up.png' alt='going-up' class='going-up'  title="going to the top">
                             </a>
                         </figure>
