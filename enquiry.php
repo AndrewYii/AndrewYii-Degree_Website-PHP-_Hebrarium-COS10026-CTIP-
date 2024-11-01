@@ -1,3 +1,7 @@
+<?php
+error_reporting(E_ALL);
+ini_set('display_errors', 1);
+?>
 <!DOCTYPE html>
 
 <html lang="en">
@@ -19,8 +23,46 @@
     <body>
 
         <header id="top_enq">
-            <?php include 'include/header.php';?>
+        <?php 
+    include 'include/header.php';
+    
+    // Add database connections with error checking
+    if (!include('database/enquiryconnection.php')) {
+        die("Failed to include database connection file");
+    }
+    if (!include('database/enquirydatabase.php')) {
+        die("Failed to include database setup file");
+    }
+    
+    // Verify database connection
+    if (!isset($conn) || !$conn) {
+        die("Database connection not established");
+    }
+    ?>
         </header>
+<?php
+if ($_SERVER["REQUEST_METHOD"] == "POST") {
+    $first_name = mysqli_real_escape_string($conn, $_POST['first_name']);
+    $last_name = mysqli_real_escape_string($conn, $_POST['last_name']);
+    $email = mysqli_real_escape_string($conn, $_POST['email']);
+    $phone = mysqli_real_escape_string($conn, $_POST['phone']);
+    $street = mysqli_real_escape_string($conn, $_POST['Street']);
+    $city = mysqli_real_escape_string($conn, $_POST['City']);
+    $postcode = mysqli_real_escape_string($conn, $_POST['Postcode']);
+    $state = mysqli_real_escape_string($conn, $_POST['State']);
+    $topic = mysqli_real_escape_string($conn, $_POST['page']);
+    $comment = mysqli_real_escape_string($conn, $_POST['comment']);
+
+    $sql = "INSERT INTO inquiries (name, email, phone, subject, message, street, city, postcode, state) 
+            VALUES ('$first_name $last_name', '$email', '$phone', '$topic', '$comment', '$street', '$city', '$postcode', '$state')";
+
+    if (mysqli_query($conn, $sql)) {
+        echo "<script>alert('Your inquiry has been submitted successfully!');</script>";
+    } else {
+        echo "<script>alert('Error: " . mysqli_error($conn) . "');</script>";
+    }
+}
+?>
 
         <article class="identify-enquiry">
 
@@ -30,7 +72,7 @@
 
             <h1 class="enquiry-head">Enquiry</h1>
             
-            <form name="Feedback" method="post" action="mailto:aniqnazhan1234@gmail.com" enctype="text/plain">
+            <form name="Feedback" method="post" action="<?php echo $_SERVER['PHP_SELF']; ?>" enctype="multipart/form-data">
                 <div class="enquiry-reset"><input class="feedback-butn" type="reset" value="Reset"></div>
                     <fieldset class="enquiry-fd">
                         <legend class="enquiry-legend">User's Information</legend>
@@ -101,9 +143,9 @@
                                     <tr>
                                         <td>
                                             <select name="page" id="page" size="1" class="enquiry-select">
-                                                <option value="">Making Herbarium Specimens</option>
-                                                <option value="">Preserving Herbarium Specimens</option> 
-                                                <option value="">Essential Herbarium Tools</option>
+                                                <option value="Making Herbarium Specimens">Making Herbarium Specimens</option>
+                                                <option value="Preserving Herbarium Specimens">Preserving Herbarium Specimens</option> 
+                                                <option value="Essential Herbarium Tools">Essential Herbarium Tools</option>
                                             </select> 
                                         </td>
                                     </tr>
