@@ -1,3 +1,6 @@
+<?php include 'database/connection.php';?>
+<?php include 'database/database.php';?>
+
 <!DOCTYPE html>
 
 <html lang="en">

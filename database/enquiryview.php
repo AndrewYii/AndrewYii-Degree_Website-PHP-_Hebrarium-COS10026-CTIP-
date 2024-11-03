@@ -14,8 +14,8 @@
 <body>
     <?php 
     // Fix include paths - files are in the same directory
-    include ('enquiryconnection.php');
-    include ('enquirydatabase.php');
+    include ('connection.php');
+    include ('database.php');
 
     // Add connection verification
     if (!isset($conn) || !$conn) {

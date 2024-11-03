@@ -1,7 +1,6 @@
-<?php
-error_reporting(E_ALL);
-ini_set('display_errors', 1);
-?>
+<?php include 'database/connection.php';?>
+<?php include 'database/database.php';?>
+
 <!DOCTYPE html>
 
 <html lang="en">
@@ -23,46 +22,8 @@ ini_set('display_errors', 1);
     <body>
 
         <header id="top_enq">
-        <?php 
-    include 'include/header.php';
-    
-    // Add database connections with error checking
-    if (!include('database/enquiryconnection.php')) {
-        die("Failed to include database connection file");
-    }
-    if (!include('database/enquirydatabase.php')) {
-        die("Failed to include database setup file");
-    }
-    
-    // Verify database connection
-    if (!isset($conn) || !$conn) {
-        die("Database connection not established");
-    }
-    ?>
+            <?php include 'include/header.php';?>
         </header>
-<?php
-if ($_SERVER["REQUEST_METHOD"] == "POST") {
-    $first_name = mysqli_real_escape_string($conn, $_POST['first_name']);
-    $last_name = mysqli_real_escape_string($conn, $_POST['last_name']);
-    $email = mysqli_real_escape_string($conn, $_POST['email']);
-    $phone = mysqli_real_escape_string($conn, $_POST['phone']);
-    $street = mysqli_real_escape_string($conn, $_POST['Street']);
-    $city = mysqli_real_escape_string($conn, $_POST['City']);
-    $postcode = mysqli_real_escape_string($conn, $_POST['Postcode']);
-    $state = mysqli_real_escape_string($conn, $_POST['State']);
-    $topic = mysqli_real_escape_string($conn, $_POST['page']);
-    $comment = mysqli_real_escape_string($conn, $_POST['comment']);
-
-    $sql = "INSERT INTO inquiries (name, email, phone, subject, message, street, city, postcode, state) 
-            VALUES ('$first_name $last_name', '$email', '$phone', '$topic', '$comment', '$street', '$city', '$postcode', '$state')";
-
-    if (mysqli_query($conn, $sql)) {
-        echo "<script>alert('Your inquiry has been submitted successfully!');</script>";
-    } else {
-        echo "<script>alert('Error: " . mysqli_error($conn) . "');</script>";
-    }
-}
-?>
 
         <article class="identify-enquiry">
 
@@ -72,7 +33,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
             <h1 class="enquiry-head">Enquiry</h1>
             
-            <form name="Feedback" method="post" action="<?php echo $_SERVER['PHP_SELF']; ?>" enctype="multipart/form-data">
+            <form name="Feedback" method="post" action="enquiry_process.php">
                 <div class="enquiry-reset"><input class="feedback-butn" type="reset" value="Reset"></div>
                     <fieldset class="enquiry-fd">
                         <legend class="enquiry-legend">User's Information</legend>
@@ -101,11 +62,11 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                         <table class="address-table">
                             <tr>
                                 <td class="feedback-cont">Street: </td>
-                                <td><input class="enquiry-data" type="text" name="Street" placeholder="Street" maxlength="100" required="required" id="street"></td>
+                                <td><input class="enquiry-data" type="text" name="Street" placeholder="2A,Lorong Bindurong" maxlength="40" required="required" id="street"></td>
                             </tr>
                             <tr>
                                 <td class="feedback-cont">City: </td>
-                                <td><input class="enquiry-data" type="text" name="City" placeholder="City" maxlength="100" required="required" id="city"></td>
+                                <td><input class="enquiry-data" type="text" name="City" placeholder="Bintulu" maxlength="20" required="required" id="city"></td>
                             </tr>
                             <tr>
                                 <td class="feedback-cont">Postcode: </td>
@@ -114,7 +75,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                             <tr>
                                 <td class="feedback-cont">State: </td>
                                 <td class="enquiry-td">
-                                    <select name="State" id="state" class="enquiry-select">
+                                    <select name="State" id="state" class="enquiry-select" required="required">
+                                    <option value="">--Select--</option>
                                     <option value="Johor">Johor</option>
                                     <option value="Kedah">Kedah</option>
                                     <option value="Kelantan">Kelantan</option>
@@ -142,10 +104,11 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                                     </tr>
                                     <tr>
                                         <td>
-                                            <select name="page" id="page" size="1" class="enquiry-select">
-                                                <option value="Making Herbarium Specimens">Making Herbarium Specimens</option>
-                                                <option value="Preserving Herbarium Specimens">Preserving Herbarium Specimens</option> 
-                                                <option value="Essential Herbarium Tools">Essential Herbarium Tools</option>
+                                            <select name="page" id="page" size="1" class="enquiry-select" required="required">
+                                                <option value="">--Select--</option>
+                                                <option value="Tutorial">Making Herbarium Specimens</option>
+                                                <option value="Care">Preserving Herbarium Specimens</option> 
+                                                <option value="Tools">Essential Herbarium Tools</option>
                                             </select> 
                                         </td>
                                     </tr>
@@ -155,7 +118,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                                         </td>
                                     </tr>
                                     <tr>
-                                        <td><textarea name="comment" rows="4" cols="70" placeholder="comment" required="required" id="comment" class="enquiry-comment"></textarea></td>
+                                        <td><textarea name="comment" rows="4" cols="70" placeholder="Comment.Does not exceed 500 words" required="required" id="comment" class="enquiry-comment"></textarea></td>
                                     </tr>
                                 </table>
                     </fieldset>
