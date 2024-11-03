@@ -86,7 +86,7 @@
 
                 //Street Address
                 if(empty(trim($street))){
-                    $error .= "Street is required.<br>";
+                    $error .= "Street information is required.<br>";
                 }
                 else if(!preg_match('/^.{1,40}$/', $street)){
                     $error .= "Street too long.<br>";
@@ -102,7 +102,7 @@
 
                 //Postcode
                 if(empty(trim($postcode))){
-                    $error .= "Postcode is required<br>";
+                    $error .= "Postcode information is required<br>";
                 }
                 else if (!preg_match('/^\d{5}$/', $postcode)){
                     $error .= "Postcode must be exactly 5 digits.<br>";
@@ -110,7 +110,7 @@
 
                 //State
                 if(empty(trim($state))){
-                    $error .= "State is required.<br>";
+                    $error .= "State information is required.<br>";
                 }
 
                 //Topic
@@ -132,10 +132,10 @@
                     $sql = "INSERT INTO Enquiry (name, email, phone, subject, message, street, city, postcode, state) 
                             VALUES ('$first_name $last_name', '$email', '$phone', '$topic', '$comment', '$street', '$city', '$postcode', '$state')";
                     if (mysqli_query($conn, $sql)){
-                        $message = "Your enquiry has been successfully submitted, and we will get back to you shortly.";
+                        $message = "Your enquiry has been submitted successfully, and we'll be in touch shortly";
                     }
                     else{
-                        $error_connection = "Your submission has failed. Unfortunately, we were unable to store your data due to a database error. Please try again later or contact support for assistance.";
+                        $error_connection = "We're sorry, but we couldn't store your data due to a technical issue with our database. Please try again later. If the issue persists, feel free to reach out to our <a href='mailto:104386568@students.swinburne.edu.my'>support team</a> for assistance.";;
                     }         
                 }
 
@@ -148,19 +148,30 @@
             <?php
                 include 'include/chatbot.php';
             ?>
-            <div>
-                <?php
-                    if ($error !== ''){
-                        echo '<p>Field errors: ' . $error . '</p>';
-                    }
-                    else if ($error_connection !== ''){
-                        echo '<p>Errors: ' . $error_connection . '</p>';
-                    }
-                    else if ($message !== ''){
-                        echo '<p>Success: ' . $message . '</p>';
-                    }
-                ?>
+
+            <div class="image-text">
+                <div class="confirm_card">
+                    <?php
+                        echo '<p class="small_word_confirm">Plant\'s Notebook / CONFIRM</p>';
+                        if ($error !== ''){
+                            echo '<h1 class="title_confirm">SORRY !</h1>';
+                            echo '<p class="confirm_words"><span class="fail_words">Input Invalid</span>: <br>' . $error . '</p>';
+                            echo '<p class="confirm_words invalid_handle">Please check your input and try again. If the problem persists, contact our <a href="mailto:104386568@students.swinburne.edu.my">customer service team </a>for assistance.</p>';
+                        }
+                        else if ($error_connection !== ''){
+                            echo '<h1 class="title_confirm">SORRY !</h1>';
+                            echo '<p class="confirm_words"><span class="fail_words">Errors</span>: ' . $error_connection . 'Please try submitting your request again in a few moments. If the problem persists, feel free to reach out to our <a href="mailto:104386568@students.swinburne.edu.my">support team</a> for further assistance. We apologize for any inconvenience and appreciate your patience.</p>';
+                        }
+                        else if ($message !== ''){
+                            echo '<h1 class="title_confirm">THANK YOU !</h1>';
+                            echo '<p class="confirm_words"><span class="success_words">Success</span>: ' . $message . 'We\'re excited to assist you and have started working on your request. You will receive a confirmation email shortly at our <a href="mailto:104386568@students.swinburne.edu.my">staff\'s email</a>. In the meantime, feel free to browse our latest updates, services, and resources to stay informed and inspired.</p>';
+                            echo '<a class="button_view_confirm" href="#"> View Your Enquiry Details</a>';
+                        }
+                        echo '<p class="small_word_confirm">If you have any further questions or need immediate assistance, please don\'t hesitate to reach out to our <a href="mailto:104386568@students.swinburne.edu.my">customer service team </a>.</p>';
+                    ?>
+                </div>
             </div>
+
         </article>
 
         <footer>

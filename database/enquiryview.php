@@ -16,14 +16,9 @@
     // Fix include paths - files are in the same directory
     include ('connection.php');
     include ('database.php');
-
-    // Add connection verification
-    if (!isset($conn) || !$conn) {
-        die("Database connection not established");
-    }
     ?>
 
-    <h1>Plant's Notebook Enquiries</h1>
+    <h1>Plant's Notebook Enquiry Form</h1>
     
     <table border="1">
         <tr>
@@ -41,7 +36,8 @@
         </tr>
 
         <?php
-            $sql = "SELECT * FROM inquiries";
+            $conn = mysqli_connect($servername,$username,$password,$dbname);
+            $sql = "SELECT * FROM Enquiry";
             $result = mysqli_query($conn, $sql);
 
             if (mysqli_num_rows($result) > 0) {

@@ -6275,3 +6275,77 @@ button.contribute-btn:hover {
     transform: scale(0.9) translateY(-15px);
     transition: transform 0.8s ease; 
 }
+
+/*Confirm Card*/
+.confirm_card {
+    margin: 0 auto;
+    border: 2px solid darkgreen ; 
+    padding: 20px; 
+    background-color: #f9f9f9; 
+    border-radius: 5px; 
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); 
+    max-width: 500px;
+}
+.confirm_words {
+    font-size: 20px; 
+    text-align: justify; 
+    padding: 0 20px;
+    color: #333;
+}
+
+.fail_words,.success_words{
+    font-weight: 300;
+    font-size: 24px;
+}
+
+.fail_words{
+    color: red;
+}
+
+.success_words{
+    color: green;
+}
+
+.title_confirm{
+    font-size: 36px;
+    font-weight: 3000;
+    text-align: center;
+    padding-bottom: 5px;
+}
+
+.small_word_confirm{
+    padding-top: 10px;
+    padding-bottom: 25px;
+    text-align: center;
+}
+
+.button_view_confirm {
+    background-color: #28a745; 
+    color: #fff; 
+    text-align: center;
+    padding: 12px 24px;
+    font-size: 16px;
+    font-weight: bold;
+    text-transform: uppercase;
+    text-decoration: none;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    border-radius: 20px;
+    margin: 10px auto;
+    display: block;
+    width: fit-content;
+}
+
+.button_view_confirm:hover {
+    background-color: #218838; 
+    transform: scale(1.05);
+}
+
+.button_view_confirm:focus {
+    outline: none;
+    box-shadow: 0 0 0 2px #e0f3e0, 0 0 0 4px #28a745; 
+}
+
+.invalid_handle{
+    padding-top: 20px;
+}
