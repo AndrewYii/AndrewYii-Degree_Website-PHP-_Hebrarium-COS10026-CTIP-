@@ -156,11 +156,11 @@
                         if ($error !== ''){
                             echo '<h1 class="title_confirm">SORRY !</h1>';
                             echo '<p class="confirm_words"><span class="fail_words">Input Invalid</span>: <br>' . $error . '</p>';
-                            echo '<p class="confirm_words invalid_handle">Please check your input and try again. If the problem persists, contact our <a href="mailto:104386568@students.swinburne.edu.my">customer service team </a>for assistance.</p>';
+                            echo '<p class="confirm_words invalid_handle">Please check your input and <a href="enquiry.php">try again</a>. If the problem persists, contact our <a href="mailto:104386568@students.swinburne.edu.my">customer service team </a>for assistance.</p>';
                         }
                         else if ($error_connection !== ''){
                             echo '<h1 class="title_confirm">SORRY !</h1>';
-                            echo '<p class="confirm_words"><span class="fail_words">Errors</span>: ' . $error_connection . 'Please try submitting your request again in a few moments. If the problem persists, feel free to reach out to our <a href="mailto:104386568@students.swinburne.edu.my">support team</a> for further assistance. We apologize for any inconvenience and appreciate your patience.</p>';
+                            echo '<p class="confirm_words"><span class="fail_words">Errors</span>: ' . $error_connection . 'Please <a href="enquiry.php">try submitting your request again </a>in a few moments. If the problem persists, feel free to reach out to our <a href="mailto:104386568@students.swinburne.edu.my">support team</a> for further assistance. We apologize for any inconvenience and appreciate your patience.</p>';
                         }
                         else if ($message !== ''){
                             echo '<h1 class="title_confirm">THANK YOU !</h1>';
