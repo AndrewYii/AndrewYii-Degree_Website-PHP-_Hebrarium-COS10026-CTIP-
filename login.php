@@ -1,6 +1,3 @@
-<?php include 'database/connection.php';?>
-<?php include 'database/database.php';?>
-
 <!DOCTYPE html>
 
 <html lang="en">
@@ -32,7 +29,7 @@
             <div class="login-form-layout">
                 <div class="login-form">
 
-                    <form action="php">
+                    <form action="<?php echo ($_SERVER["PHP_SELF"]); ?>" method="POST">
 
                         <h1>
                             Login
@@ -40,12 +37,12 @@
 
                         <div class="contribute-input">
                             <span class="contribute-form-info">Username</span>
-                            <input type="text"  name="Username" maxlength="25" pattern="[A-Za-z\s]+" required="required">
+                            <input type="text"  name="Username">
                         </div>
 
                         <div class="contribute-input">
                             <span class="contribute-form-info">Password</span>
-                            <input type="password"  name="Password" maxlength="25" pattern="[A-Za-z\s]+" required="required">
+                            <input type="password"  name="Password">
                         </div>
 
                         <div class="remember-forgot">
@@ -65,8 +62,84 @@
 
                 </div>
             </div>
-        </article>
 
+            <?php
+                include 'database/connection.php';
+                include 'database/database.php';
+
+                session_start(); 
+
+                $error = '';
+                $error_connection = '';
+                $message = '';
+
+                if ($_SERVER["REQUEST_METHOD"] == "POST") {
+
+                    // Connect to the database
+                    $conn = mysqli_connect($servername, $username, $password, $dbname);
+                
+                    $username = mysqli_real_escape_string($conn, $_POST['Username']);
+                    $password = mysqli_real_escape_string($conn, $_POST['Password']);
+                    
+                    //Retrieve Data 
+                    $sql_retrievedata = "SELECT Register_ID, Username, Password FROM Register WHERE Username = ?";
+                    $stmt = $conn->prepare($sql_retrievedata);
+                    $stmt->bind_param("s", $username);
+                    $stmt->execute();
+                    $result = $stmt->get_result();
+
+                    //Username
+                    if (empty(trim($username))) {
+                        $error .= "Username is required.<br>";
+                    }
+
+                    if ($result->num_rows > 0) {
+                        $row = $result->fetch_assoc();
+                        $retrived_registerid = $row['Register_ID']; 
+                        $checked_name = $row['Username']; 
+                        $hashed_password = $row['Password']; 
+
+                        // Password
+                        if (empty(trim($password))) {
+                            $error .= "Password is required.<br>";
+                        }
+                        else if(!(password_verify($password, $hashed_password))){
+                            $error .= "Password is wrong.<br>";
+                        }
+                    }
+                    else{
+                        $error .= "No account found with that username.<br>";
+                    }
+
+                
+                    if ($error == '') {
+                        
+                        $sql = "INSERT INTO Login ( Register_ID,Username , Password) 
+                                VALUES ('$retrived_registerid','$username', '$password')";
+                
+                        if (mysqli_query($conn, $sql)) {
+                            $_SESSION['username'] = $username;
+                            $message =" Welcome back, $username!";
+                        } else {
+                            $error_connection = "We couldn't find your data due to a technical issue. Please try again later. If the issue persists, feel free to reach out to our <a href='mailto:104386568@students.swinburne.edu.my'>support team</a> for assistance.";
+                        }
+                    }
+
+                    $stmt->close();
+
+                    // Close Connection
+                    mysqli_close($conn);
+                }
+
+                if ($error !== '') {
+                    echo "<div class='snackbar show error'>" . $error . "</div>";
+                } else if ($error_connection !== '') {
+                    echo "<div class='snackbar show error'>" . $error_connection . "</div>";
+                } else if ($message !== '') {
+                    echo "<div class='snackbar show success'>" . $message . "</div>";
+                }
+            ?>
+        </article>
 
         <footer>
             <?php include 'include/footer.php';?>
