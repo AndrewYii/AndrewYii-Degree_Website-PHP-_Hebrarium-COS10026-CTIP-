@@ -1,3 +1,9 @@
+<?php
+    include 'database/connection.php';
+    include 'database/database.php';
+    session_start(); 
+?>
+
 <!DOCTYPE html>
 
 <html lang="en">
@@ -93,10 +99,6 @@
             </div>
 
             <?php
-                include 'database/connection.php';
-                include 'database/database.php';
-
-                session_start(); 
 
                 $error = '';
                 $error_connection = '';

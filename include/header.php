@@ -208,7 +208,11 @@
                         <a href='login.php'>
                             <img src='images/user_icon.jpg' alt='User_Icon'>
                         </a>
-                    </li>
+                    </li>";
+                    if (isset($_SESSION['username'])) {
+                        echo "<li><h2 id='user_name'>" . ($_SESSION['username']) . "</h2></li>"; 
+                    }
+                echo"
                 </ul>
                 
                 <div class='mobile-menu'>
