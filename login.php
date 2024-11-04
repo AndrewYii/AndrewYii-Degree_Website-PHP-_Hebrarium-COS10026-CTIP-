@@ -103,7 +103,7 @@
                         if (empty(trim($password))) {
                             $error .= "Password is required.<br>";
                         }
-                        else if(!(password_verify($password, $hashed_password))){
+                        else if(!password_verify($password,$hashed_password)){
                             $error .= "Password is wrong.<br>";
                         }
                     }
@@ -119,7 +119,7 @@
                 
                         if (mysqli_query($conn, $sql)) {
                             $_SESSION['username'] = $username;
-                            $message =" Welcome back, $username!";
+                            $message =" Welcome back, $username !";
                         } else {
                             $error_connection = "We couldn't find your data due to a technical issue. Please try again later. If the issue persists, feel free to reach out to our <a href='mailto:104386568@students.swinburne.edu.my'>support team</a> for assistance.";
                         }
