@@ -21,6 +21,19 @@
         die("Error creating register table: " . mysqli_error($conn));
     }
 
+    // Insert admin
+    $default_username = 'admin'; 
+    $default_email = '104386568@students.swinburne.edu.my'; 
+    $default_password = password_hash('admin', PASSWORD_DEFAULT); 
+
+    $insert_default_user = "INSERT INTO Register (Name, Username, Email, Password)
+                            SELECT 'Admin', '$default_username', '$default_email', '$default_password'
+                            WHERE NOT EXISTS (SELECT * FROM Register)";
+
+    if (!mysqli_query($conn, $insert_default_user)) {
+        die("Error inserting default user: " . mysqli_error($conn));
+    }
+
     // SQL to create Login table
     $sql_login = "CREATE TABLE IF NOT EXISTS Login (
         Login_ID INT(6) UNSIGNED AUTO_INCREMENT PRIMARY KEY,

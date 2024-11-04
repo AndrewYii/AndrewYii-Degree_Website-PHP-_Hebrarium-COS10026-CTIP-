@@ -73,7 +73,9 @@
                 $error = '';
                 $error_connection = '';
                 $message = '';
+                $spam = '';
 
+                
                 if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
                     // Connect to the database
@@ -92,6 +94,9 @@
                     //Username
                     if (empty(trim($username))) {
                         $error .= "Username is required.<br>";
+                    }
+                    else if (isset($_SESSION['username']) && $_SESSION['username'] === $username) {                    //Check whether login same account or not to avoid spam
+                        $spam = "You are already logged in as " . $_SESSION['username'] . ".";
                     }
 
                     if ($result->num_rows > 0) {
@@ -113,14 +118,19 @@
                     }
 
                 
-                    if ($error == '') {
+                    if ($error == ''&&$spam == '' ) {
                         
                         $sql = "INSERT INTO Login ( Register_ID,Username , Password) 
                                 VALUES ('$retrived_registerid','$username', '$password')";
                 
                         if (mysqli_query($conn, $sql)) {
                             $_SESSION['username'] = $username;
-                            $message =" Welcome back, $username !";
+                            if($username=="admin"){
+                                $message =" Welcome back, admin! You will be redirected to admin control panel within 3 seconds";
+                            }
+                            else{
+                                $message =" Welcome back, $username ! You will be redirected to main page within 3 seconds";
+                            }
                         } else {
                             $error_connection = "We couldn't find your data due to a technical issue. Please try again later. If the issue persists, feel free to reach out to our <a href='mailto:104386568@students.swinburne.edu.my'>support team</a> for assistance.";
                         }
@@ -132,12 +142,21 @@
                     mysqli_close($conn);
                 }
 
-                if ($error !== '') {
+                if ($spam !== '') {
+                    echo "<div class='snackbar show error'>" . $spam . "<br>Don't Spam Anymore!</div>";
+                }else if ($error !== '') {
                     echo "<div class='snackbar show error'>" . $error . "Please Try Again </div>";
                 } else if ($error_connection !== '') {
                     echo "<div class='snackbar show error'>" . $error_connection . "</div>";
                 } else if ($message !== '') {
                     echo "<div class='snackbar show success'>" . $message . "</div>";
+                    ?>
+                    <?php if ($username == "admin") { ?>
+                        <meta http-equiv="refresh" content="3; url=admin/admin_control_panel.php">
+                    <?php } else { ?>
+                        <meta http-equiv="refresh" content="3; url=index.php">
+                    <?php } ?>
+                <?php
                 }
             ?>
         </article>

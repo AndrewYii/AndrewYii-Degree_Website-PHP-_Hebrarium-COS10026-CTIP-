@@ -210,7 +210,26 @@
                         </a>
                     </li>";
                     if (isset($_SESSION['username'])) {
-                        echo "<li><h2 id='user_name'>" . ($_SESSION['username']) . "</h2></li>"; 
+                        if($_SESSION['username'] === 'admin'){
+                            echo "<li>
+                                    <h2 class='user_name'><a href='admin/admin_control_panel.php' title='Go To Control Panel'>" . ($_SESSION['username']) . "</a></h2>
+                                </li>";
+                        }
+                        else{
+                            echo "<li>
+                                    <h2 class='user_name'><a href='user_edit_profile.php' title='Go To Edit Your Information'>" . ($_SESSION['username']) . "</a></h2>
+                                </li>";
+                        }
+                        echo"
+                            <label for='logoutCheckbox' class='logout-button'>Logout</label>
+                            <input type='checkbox' id='logoutCheckbox'>
+                            <div class='logout-modal'>
+                                <div class='logout-content'>
+                                    <p>Are you sure you want to log out?</p>
+                                    <a href='logout.php' class='confirm-logout'>Yes</a>
+                                    <label for='logoutCheckbox' class='cancel-logout'>No</label>
+                                </div>
+                            </div>"; 
                     }
                 echo"
                 </ul>
