@@ -176,9 +176,11 @@
                     }
                 
                     if ($error == '') {
+                        
+                        $hashed_password = password_hash($confirm_password, PASSWORD_DEFAULT);
 
                         $sql = "INSERT INTO Register (Name, Username, Email, Password) 
-                                VALUES ('$first_name $last_name', '$username', '$email', '$confirm_password')";
+                                VALUES ('$first_name $last_name', '$username', '$email', '$hashed_password ')";
                 
                         if (mysqli_query($conn, $sql)) {
                             $message =" Congratulations, $username! Your registration has been successfully submitted. We're excited to have you on board. You can now enjoy all the features we offer, including contributing to our website, asking any enquiries, and accessing our plant identification hub. Be sure to check your email for a confirmation message and to verify your account. If you have any questions or need assistance, don't hesitate to reach out to our <a href='mailto:104386568@students.swinburne.edu.my'>support team</a> Welcome to our community!";

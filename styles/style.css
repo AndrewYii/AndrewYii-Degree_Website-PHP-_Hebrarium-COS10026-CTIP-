@@ -1915,16 +1915,10 @@ nav .menu {
     text-decoration: underline;
 }
 
-.login-form:hover {
-    box-shadow: 0 12px 24px rgba(0, 0, 0, 0.2); 
-    transform: scale(1.02); 
-}
-
 @media (max-width: 1020px) {
     .login-form-layout{
         top: 80px;
     }
-
 }
 
 /*Introduction Profile*/
@@ -2487,11 +2481,6 @@ nav .menu {
     transition: border-color 0.4s ease, box-shadow 0.4s ease, transform 0.4s ease;
 }
 
-
-.enquiry-form:hover{
-    transform: scale(1.03); 
-}
-
 .enquiry-legend{
     padding: 20px 0px 10px 0px;
     text-align: left;
@@ -2677,11 +2666,6 @@ nav .menu {
     position: relative; 
 }
 
-.contribute-form-layout:hover {
-    box-shadow: 0 12px 24px rgba(0, 0, 0, 0.2); 
-    transform: scale(1.02); 
-}
-
 .contribute-form-layout h1{
     text-align: center;
     font-size: 30px;
@@ -2725,6 +2709,7 @@ nav .menu {
 
 .contribute-input input[type="text"],.contribute-input select,.contribute-input input[type="file"],.contribute-input input[type="password"],.contribute-input input[type="email"],.contribute-input textarea {
     width: 100%;
+    z-index:10;
     padding: 12px;
     border: 1px solid #4CAF50; 
     border-radius: 8px; 
@@ -6349,8 +6334,9 @@ button.contribute-btn:hover {
 
 /*Show message for the register*/
 .snackbar {
-    visibility: hidden; 
+    display: none;
     min-width: 300px; 
+    max-width: 500px; 
     background: linear-gradient(135deg, #323232, #474747); 
     color: #fff; 
     text-align: center; 
@@ -6361,14 +6347,14 @@ button.contribute-btn:hover {
     left: 50%; 
     bottom: 30px; 
     font-size: 18px; 
-    transition: visibility 0s 5s, opacity 0.5s linear; 
+    transition: display 0s 5s, opacity 0.5s linear; 
     opacity: 0; 
     transform: translateX(-50%); 
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2); 
 }
 
 .snackbar.show {
-    visibility: visible; 
+    display: block;
     opacity: 1; 
     animation: snackbarslideIn 0.5s forwards, snackbarfadeOut 0.5s forwards 5s; 
 }
