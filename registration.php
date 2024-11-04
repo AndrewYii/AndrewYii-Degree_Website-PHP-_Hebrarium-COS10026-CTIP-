@@ -61,7 +61,7 @@
                                 <legend> Account Info</legend>
                                 <div class="contribute-input">
                                     <span class="contribute-form-info">Username</span>
-                                    <input type="text"  placeholder="Leoooooooo" name="Username" >
+                                    <input type="text" placeholder="Leoooooooo" name="Username" >
                                 </div>
 
                                 <div class="contribute-input">
