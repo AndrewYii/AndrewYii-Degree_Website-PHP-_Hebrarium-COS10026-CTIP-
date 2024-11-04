@@ -223,7 +223,7 @@
                         echo"
                             <label for='logoutCheckbox' class='logout-button'>Logout</label>
                             <input type='checkbox' id='logoutCheckbox'>
-                            <div class='logout-modal'>
+                            <div class='logout-background'>
                                 <div class='logout-content'>
                                     <p>Are you sure you want to log out?</p>
                                     <a href='logout.php' class='confirm-logout'>Yes</a>

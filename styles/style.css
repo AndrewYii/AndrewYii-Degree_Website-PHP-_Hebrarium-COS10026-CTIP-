@@ -6336,7 +6336,7 @@ button.contribute-btn:hover {
 .snackbar {
     display: none;
     min-width: 300px; 
-    max-width: 500px; 
+    max-width: 450px; 
     background: linear-gradient(135deg, #323232, #474747); 
     color: #fff; 
     text-align: center; 
@@ -6421,7 +6421,7 @@ button.contribute-btn:hover {
     to { opacity: 1; }
 }
 
-.logout-modal {
+.logout-background {
     position: fixed;
     top: 0;
     left: 0;
@@ -6472,7 +6472,7 @@ button.contribute-btn:hover {
     background-color: #c82333;
 }
 
-#logoutCheckbox:checked ~ .logout-modal {
+#logoutCheckbox:checked ~ .logout-background {
     display: flex;
     animation: fadeIn 0.3s ease;
 
@@ -6484,4 +6484,18 @@ button.contribute-btn:hover {
         right: 20px;
         padding: 5px 10px;
     }
+}
+
+.cannot-access {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 10000;
+    animation: fadeIn 0.3s ease;
 }
