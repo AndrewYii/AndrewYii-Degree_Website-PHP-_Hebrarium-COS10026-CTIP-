@@ -52,7 +52,7 @@
                                 
                                 <div class="contribute-input">
                                     <span class="contribute-form-info">Last Name</span>
-                                    <input type="text" placeholder="Ling"  name="LastName">
+                                    <input type="text" placeholder="Ling" name="LastName">
                                 </div>
                             </fieldset>
 
