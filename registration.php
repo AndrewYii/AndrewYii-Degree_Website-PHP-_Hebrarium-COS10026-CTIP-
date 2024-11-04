@@ -194,7 +194,7 @@
                 }
 
                 if ($error !== '') {
-                    echo "<div class='snackbar show error'>" . $error . "</div>";
+                    echo "<div class='snackbar show error'>" . $error . "Please Try Again </div>";
                 } else if ($error_connection !== '') {
                     echo "<div class='snackbar show error'>" . $error_connection . "</div>";
                 } else if ($message !== '') {
