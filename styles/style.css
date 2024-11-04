@@ -6346,3 +6346,52 @@ button.contribute-btn:hover {
 .invalid_handle{
     padding-top: 20px;
 }
+
+/*Show message for the register*/
+.snackbar {
+    visibility: hidden; 
+    min-width: 300px; 
+    background: linear-gradient(135deg, #323232, #474747); 
+    color: #fff; 
+    text-align: center; 
+    border-radius: 8px;
+    padding: 16px; 
+    position: fixed; 
+    z-index: 1; 
+    left: 50%; 
+    bottom: 30px; 
+    font-size: 18px; 
+    transition: visibility 0s 5s, opacity 0.5s linear; 
+    opacity: 0; 
+    transform: translateX(-50%); 
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2); 
+}
+
+.snackbar.show {
+    visibility: visible; 
+    opacity: 1; 
+    animation: snackbarslideIn 0.5s forwards, snackbarfadeOut 0.5s forwards 5s; 
+}
+
+@keyframes snackbarslideIn {
+    from { bottom: -100px; opacity: 0; transform: translateX(-50%); }
+    to { bottom: 30%; opacity: 1; } 
+}
+
+@keyframes snackbarfadeOut {
+    from { opacity: 1; }
+    to { opacity: 0; }
+}
+
+.success {
+    background: linear-gradient(135deg, #4CAF50, #66BB6A); 
+}
+
+.error {
+    background: linear-gradient(135deg, #F44336, #EF5350); 
+}
+
+.snackbar:hover {
+    transform: translateX(-50%) scale(1.05); 
+    transition: transform 0.3s ease; /
+}

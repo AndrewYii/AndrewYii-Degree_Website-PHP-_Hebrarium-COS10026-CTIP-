@@ -51,10 +51,10 @@
                     $error .= "First name is required.<br>";
                 }
                 else if(!preg_match('/^[a-zA-Z]+$/', $first_name)){
-                    $error .= "Only characters are allowed.<br>";
+                    $error .= "Only alphabetic characters are allowed.<br>";
                 }
                 else if(strlen($first_name) > 25){
-                    $error .="First name too long.<br>";
+                    $error .="First name too long. It cannot exceed 25 words.<br>";
                 }
 
                 //Last Name
@@ -62,10 +62,10 @@
                     $error .= "Last name is required.<br>";
                 }
                 else if(!preg_match('/^[a-zA-Z]+$/', $last_name)){
-                    $error .= "Only characters are allowed.<br>";
+                    $error .= "Only alphabetic characters are allowed.<br>";
                 }
                 else if(strlen($last_name) > 25){
-                    $error .="Last name too long.<br>";
+                    $error .="Last name too long. It cannot exceed 25 words.<br>";
                 }
                 
                 //Email
@@ -89,7 +89,7 @@
                     $error .= "Street information is required.<br>";
                 }
                 else if(!preg_match('/^.{1,40}$/', $street)){
-                    $error .= "Street too long.<br>";
+                    $error .= "Street too long. It cannot exceed 40 words.<br>";
                 }
 
                 //City Name
@@ -97,7 +97,7 @@
                     $error .= "City name is required.<br>";
                 }
                 else if(!preg_match('/^.{1,20}$/', $city)){
-                    $error .= "City name too long.<br>";
+                    $error .= "City name too long. It cannot exceed 20 words.<br>";
                 }
 
                 //Postcode
@@ -123,7 +123,7 @@
                     $error .= "Comment is required.<br>";
                 }
                 else if(!preg_match('/^.{1,500}$/', $comment)){
-                    $error .= "Comment too long.<br>";
+                    $error .= "Comment too long. It cannot exceed 500 words.<br>";
                 }
 
                 // No error
@@ -135,7 +135,7 @@
                         $message = "Your enquiry has been submitted successfully, and we'll be in touch shortly";
                     }
                     else{
-                        $error_connection = "We're sorry, but we couldn't store your data due to a technical issue with our database. Please try again later. If the issue persists, feel free to reach out to our <a href='mailto:104386568@students.swinburne.edu.my'>support team</a> for assistance.";;
+                        $error_connection = "We're sorry, but we couldn't store your data due to a technical issue with our database. Please try again later. If the issue persists, feel free to reach out to our <a href='mailto:104386568@students.swinburne.edu.my'>support team</a> for assistance.";
                     }         
                 }
 
