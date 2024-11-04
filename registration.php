@@ -139,6 +139,12 @@
                     } else if (str_word_count($username) > 25) {
                         $error .= "Username cannot exceed 25 words.<br>";
                     }
+                    // Check if username already exists
+                    $query = "SELECT * FROM Register WHERE Username='$username'";
+                    $result = mysqli_query($conn, $query);
+                    if (mysqli_num_rows($result) > 0) {
+                        $error .= "Username already exists. Please choose a different username.<br>";
+                    }
                 
                     // Email 
                     if (empty(trim($email))) {
@@ -146,7 +152,12 @@
                     } else if (!preg_match('/^[\w\.-]+@[a-zA-Z\d\.-]+\.[a-zA-Z]{2,}$/', $email)) {
                         $error .= "Please enter a valid email address.<br>";
                     }
-                
+                    $query = "SELECT * FROM Register WHERE Email='$email'";
+                    $result = mysqli_query($conn, $query);
+                    if (mysqli_num_rows($result) > 0) {
+                        $error .= "Email already exists. Please choose a different email.<br>";
+                    }
+
                     // Password
                     if (empty(trim($password))) {
                         $error .= "Password is required.<br>";
