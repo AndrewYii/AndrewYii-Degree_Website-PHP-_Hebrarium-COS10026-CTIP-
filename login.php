@@ -120,8 +120,8 @@
                 
                     if ($error == ''&&$spam == '' ) {
                         
-                        $sql = "INSERT INTO Login ( Register_ID,Username , Password) 
-                                VALUES ('$retrived_registerid','$username', '$password')";
+                        $sql = "INSERT INTO Login ( Register_ID, Username) 
+                                VALUES ('$retrived_registerid','$username')";
                 
                         if (mysqli_query($conn, $sql)) {
                             $_SESSION['username'] = $username;

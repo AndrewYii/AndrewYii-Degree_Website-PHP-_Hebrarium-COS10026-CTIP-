@@ -39,7 +39,6 @@
         Login_ID INT(6) UNSIGNED AUTO_INCREMENT PRIMARY KEY,
         Register_ID INT(6) UNSIGNED NOT NULL,
         Username VARCHAR(60) NOT NULL,
-        Password VARCHAR(255) NOT NULL,
         Login_At TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
         FOREIGN KEY (Register_ID) REFERENCES Register(Register_ID) ON DELETE CASCADE
     )";
