@@ -41,7 +41,7 @@
         <header class="admin-header">
             <h2>
                 <label for="nav-toggle">
-                    <span class="las la-bars"></span>
+                    <img src="../images/hamburger_icon.png" alt="Toggle Menu" class="hamburger-icon">
                 </label>
                 Register
             </h2>
