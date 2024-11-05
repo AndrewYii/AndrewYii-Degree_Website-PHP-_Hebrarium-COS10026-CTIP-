@@ -37,6 +37,7 @@
 ?>
 
 <!DOCTYPE html>
+
 <html lang="en">
 
     <head>
@@ -58,6 +59,8 @@
         </header>
 
         <article>
+            <?php include 'include/chatbot.php';?>
+
             <div class="login-form-layout">
                 <form class="login-form" action="<?php echo ($_SERVER["PHP_SELF"]); ?>" method="POST">
                     <figure class="forgot-password-logo">

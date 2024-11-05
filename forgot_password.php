@@ -27,6 +27,7 @@
         if ($user) {
             $auth_code = rand(100000, 999999); // Generates a 6-digit code
             $_SESSION['auth_code'] = $auth_code;
+            $_SESSION['forgot_username'] = $username;
 
             
             $mail = new PHPMailer(true);
@@ -82,7 +83,7 @@
         <meta name="description" content="Forgot your password for Plant's Notebook? Enter your username and first name to receive an authentication code via email to reset your password and regain access to your account." />
         <meta name="keywords" content="Plant's Notebook password reset, forgot password, authentication code, reset account, botany education, herbarium specimen tutorial" />
         <meta name="author" content="Andrew Yii Teck Foon" />
-        <title>Plant's Notebook | Reset Your Password</title>
+        <title>Plant's Notebook | Forgot Password</title>
         <link rel="stylesheet" href="styles/style.css">
         <link rel="icon" type="image/x-icon" href="images/logo.png">
         <link href='https://fonts.googleapis.com/css?family=Outfit' rel='stylesheet'>
