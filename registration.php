@@ -52,7 +52,7 @@
                                 <legend> Personal Info</legend>
                                 <div class="contribute-input">
                                     <span class="contribute-form-info">First Name</span>
-                                    <input type="text" placeholder="AndrewYuRui"  name="FirstName">
+                                    <input type="text" placeholder="Andrew Yu Rui"  name="FirstName">
                                 </div>
 
                                 
