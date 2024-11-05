@@ -1915,16 +1915,10 @@ nav .menu {
     text-decoration: underline;
 }
 
-.login-form:hover {
-    box-shadow: 0 12px 24px rgba(0, 0, 0, 0.2); 
-    transform: scale(1.02); 
-}
-
 @media (max-width: 1020px) {
     .login-form-layout{
         top: 80px;
     }
-
 }
 
 /*Introduction Profile*/
@@ -2487,11 +2481,6 @@ nav .menu {
     transition: border-color 0.4s ease, box-shadow 0.4s ease, transform 0.4s ease;
 }
 
-
-.enquiry-form:hover{
-    transform: scale(1.03); 
-}
-
 .enquiry-legend{
     padding: 20px 0px 10px 0px;
     text-align: left;
@@ -2677,11 +2666,6 @@ nav .menu {
     position: relative; 
 }
 
-.contribute-form-layout:hover {
-    box-shadow: 0 12px 24px rgba(0, 0, 0, 0.2); 
-    transform: scale(1.02); 
-}
-
 .contribute-form-layout h1{
     text-align: center;
     font-size: 30px;
@@ -2725,6 +2709,7 @@ nav .menu {
 
 .contribute-input input[type="text"],.contribute-input select,.contribute-input input[type="file"],.contribute-input input[type="password"],.contribute-input input[type="email"],.contribute-input textarea {
     width: 100%;
+    z-index:10;
     padding: 12px;
     border: 1px solid #4CAF50; 
     border-radius: 8px; 
@@ -2732,7 +2717,7 @@ nav .menu {
     transition: border-color 0.4s ease, box-shadow 0.4s ease; 
 }
 
-.contribute-input input[type="text"]:focus,.contribute-input select:focus,.contribute-input input[type="password"]:focus,.contribute-input input[type="email"]:focus,.contribute-input input[type="file"]:focus,.contribute-input input[type="email"],.contribute-input textarea:focus {
+.contribute-input input[type="text"]:focus,.contribute-input select:focus,.contribute-input input[type="password"]:focus,.contribute-input input[type="email"]:focus,.contribute-input input[type="file"]:focus,.contribute-input textarea:focus {
     border-color: #388E3C; 
     outline: none; 
     box-shadow: 0 0 5px rgba(56, 142, 60, 0.5); 
@@ -6274,4 +6259,242 @@ button.contribute-btn:hover {
 .going-up-container:active .going-up {
     transform: scale(0.9) translateY(-15px);
     transition: transform 0.8s ease; 
+}
+
+/*Confirm Card*/
+.confirm_card {
+    margin: 0 auto;
+    border: 2px solid darkgreen ; 
+    padding: 20px; 
+    background-color: #f9f9f9; 
+    border-radius: 5px; 
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); 
+    max-width: 500px;
+}
+.confirm_words {
+    font-size: 20px; 
+    text-align: justify; 
+    padding: 0 20px;
+    color: #333;
+}
+
+.fail_words,.success_words{
+    font-weight: 300;
+    font-size: 24px;
+}
+
+.fail_words{
+    color: red;
+}
+
+.success_words{
+    color: green;
+}
+
+.title_confirm{
+    font-size: 36px;
+    font-weight: 3000;
+    text-align: center;
+    padding-bottom: 5px;
+}
+
+.small_word_confirm{
+    padding-top: 10px;
+    padding-bottom: 25px;
+    text-align: center;
+}
+
+.button_view_confirm {
+    background-color: #28a745; 
+    color: #fff; 
+    text-align: center;
+    padding: 12px 24px;
+    font-size: 16px;
+    font-weight: bold;
+    text-transform: uppercase;
+    text-decoration: none;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease,box-shadow 0.3s ease;;
+    border-radius: 20px;
+    margin: 10px auto;
+    display: block;
+    width: fit-content;
+}
+
+.button_view_confirm:hover {
+    background-color: #218838; 
+    transform: scale(1.05);
+    outline: none; 
+    box-shadow: 0 0 0 2px #e0f3e0, 0 0 0 4px #28a745; 
+}
+
+.invalid_handle{
+    padding-top: 20px;
+}
+
+/*Show message for the register*/
+.snackbar {
+    display: none;
+    min-width: 300px; 
+    max-width: 450px; 
+    background: linear-gradient(135deg, #323232, #474747); 
+    color: #fff; 
+    text-align: center; 
+    border-radius: 8px;
+    padding: 16px; 
+    position: fixed; 
+    z-index: 1; 
+    left: 50%; 
+    bottom: 30px; 
+    font-size: 18px; 
+    transition: display 0s 5s, opacity 0.5s linear; 
+    opacity: 0; 
+    transform: translateX(-50%); 
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2); 
+}
+
+.snackbar.show {
+    display: block;
+    opacity: 1; 
+    animation: snackbarslideIn 0.5s forwards, snackbarfadeOut 0.5s forwards 5s; 
+}
+
+@keyframes snackbarslideIn {
+    from { bottom: -100px; opacity: 0; transform: translateX(-50%); }
+    to { bottom: 30%; opacity: 1; } 
+}
+
+@keyframes snackbarfadeOut {
+    from { opacity: 1; }
+    to { opacity: 0; }
+}
+
+.success {
+    background: linear-gradient(135deg, #4CAF50, #66BB6A); 
+}
+
+.error {
+    background: linear-gradient(135deg, #F44336, #EF5350); 
+}
+
+.snackbar:hover {
+    transform: translateX(-50%) scale(1.05); 
+    transition: transform 0.3s ease; /
+}
+
+/*Username Display*/
+.user_name a{
+    text-decoration: none;
+    color: black;
+}
+
+@media (max-width: 620px) {
+    .user_name{
+        display: none;
+    }
+}
+
+/*LogOut*/
+#logoutCheckbox {
+    display: none;
+}
+
+.logout-button {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: #228B22;
+    color: #fff;
+    border-radius: 4px;
+    text-decoration: none;
+    cursor: pointer;
+    transition: transform 0.2s ease, background-color 0.3s ease;
+}
+
+.logout-button:hover {
+    transform: scale(1.05);
+    background-color: #1e7a1e;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+.logout-background {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    display: none;
+    justify-content: center;
+    align-items: center;
+    z-index: 10000;
+    animation: fadeIn 0.3s ease;
+}
+
+.logout-content {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    text-align: center;
+}
+
+.confirm-logout, .cancel-logout {
+    display: inline-block;
+    margin: 10px;
+    padding: 10px 20px;
+    border-radius: 4px;
+    text-decoration: none;
+    transition: transform 0.2s ease, background-color 0.3s ease;
+}
+
+.confirm-logout {
+    background-color: #28a745;
+    color: #fff;
+}
+
+.confirm-logout:hover {
+    transform: scale(1.05);
+    background-color: #218838;
+}
+
+.cancel-logout {
+    background-color: #dc3545;
+    color: #fff;
+    cursor: pointer;
+}
+
+.cancel-logout:hover {
+    transform: scale(1.05);
+    background-color: #c82333;
+}
+
+#logoutCheckbox:checked ~ .logout-background {
+    display: flex;
+    animation: fadeIn 0.3s ease;
+
+}
+
+@media (max-width: 620px) {
+    .logout-button {
+        position: relative;
+        right: 20px;
+        padding: 5px 10px;
+    }
+}
+
+.cannot-access {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 10000;
+    animation: fadeIn 0.3s ease;
 }

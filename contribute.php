@@ -1,3 +1,10 @@
+<?php
+    include 'database/connection.php';
+    include 'database/database.php';
+    session_start(); 
+?>
+
+
 <!DOCTYPE html>
 
 <html lang="en">
@@ -28,7 +35,7 @@
 
             <div class="contribute-form-background-layout">
                 <div class="contribute-form-layout">
-                    <form action="php">
+                    <form action="contribute_process.php">
 
                         <input type="reset" class="contribute-word">
 

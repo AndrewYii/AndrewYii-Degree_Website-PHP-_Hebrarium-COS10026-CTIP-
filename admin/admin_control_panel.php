@@ -6,24 +6,17 @@
     <meta name="description" content="View Plant's Notebook Enquiries"/>
     <meta name="keywords" content="Plant's Notebook, Enquiries, Admin View"/>
     <title>Plant's Notebook | View Enquiries</title>
-    <!-- Fix paths to go up one directory -->
     <link rel="stylesheet" href="../styles/style.css">
     <link rel="icon" type="image/x-icon" href="../images/logo.png">
 </head>
 
 <body>
     <?php 
-    // Fix include paths - files are in the same directory
-    include ('enquiryconnection.php');
-    include ('enquirydatabase.php');
-
-    // Add connection verification
-    if (!isset($conn) || !$conn) {
-        die("Database connection not established");
-    }
+    include ('../database/connection.php');
+    include ('../database/database.php');
     ?>
 
-    <h1>Plant's Notebook Enquiries</h1>
+    <h1>Plant's Notebook Enquiry Form</h1>
     
     <table border="1">
         <tr>
@@ -41,7 +34,8 @@
         </tr>
 
         <?php
-            $sql = "SELECT * FROM inquiries";
+            $conn = mysqli_connect($servername,$username,$password,$dbname);
+            $sql = "SELECT * FROM Enquiry";
             $result = mysqli_query($conn, $sql);
 
             if (mysqli_num_rows($result) > 0) {
