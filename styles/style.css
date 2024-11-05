@@ -6677,9 +6677,9 @@ button.contribute-btn:hover {
 }
 
 .admin-table {
-    width: 100%;    /* Makes table take full width of its container */
+    width: 100%;    
     border-collapse: collapse;
-    margin: 20px 0;
+    margin: 10px 0;
 }
 
 .admin-table thead tr {
@@ -6710,7 +6710,7 @@ button.contribute-btn:hover {
 .recent-grid {
     margin-top: 3.5rem;
     display: grid;
-    grid-template-columns: 70% 30%;
+    grid-template-columns: 100%;  /* Changed from 70% 30% to give more space to main content */
     grid-gap: 2rem;
 }
 
@@ -6738,8 +6738,9 @@ button.contribute-btn:hover {
 
 .card-body {
     padding: 1rem;
-    max-height: 400px;  /* Adjust this value as needed */
-    overflow-y: auto;   /* Adds scrollbar when content overflows */
+    max-height: 400px;
+    overflow-y: auto;
+    overflow-x: auto;  /* Added to handle wide tables */
 }
 
 
