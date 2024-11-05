@@ -74,6 +74,7 @@
         }
         else{
             $error .= "No account found with that username.<br>";
+            setcookie("remembered_username", "", time() - 3600,  "/"); 
         }
 
     
