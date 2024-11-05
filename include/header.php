@@ -205,9 +205,6 @@
                         </ul>
                     </li>";
                     if (isset($_SESSION['username'])) {
-                        echo "<li>
-                                <h2 class='user_name'>" . ($_SESSION['username']) . "</h2>
-                            </li>";
                         if($_SESSION['username'] === 'admin'){
                             echo "<li>
                                     <a href='admin/admin_control_panel.php'>
