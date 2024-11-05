@@ -23,7 +23,7 @@
         } else {
             // Incorrect OTP
             // Check if attempts have exceeded the limit
-            if ($_SESSION['otp_attempts'] > 5) {
+            if ($_SESSION['otp_attempts'] >= 5) {
                 // Redirect to login page if attempts exceed limit
                 $_SESSION['otp_attempts'] = 0;
                 echo "<div class='snackbar show error'>You have exceeded the maximum number of attempts. Redirecting to login within 1 second.</div>";
