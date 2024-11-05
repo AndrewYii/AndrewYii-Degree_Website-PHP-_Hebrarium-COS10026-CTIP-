@@ -15,6 +15,11 @@
     include ('../database/connection.php');
     include ('../database/database.php');
     ?>
+    
+
+    <header id="top_index">
+            <?php include '../include/header.php';?>
+        </header>
 
     <h1>Plant's Notebook Enquiry Form</h1>
     
