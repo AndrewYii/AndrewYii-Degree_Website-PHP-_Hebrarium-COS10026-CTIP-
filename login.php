@@ -48,20 +48,22 @@
             $spam = "You are already logged in as " . $_SESSION['username'] . ".";
         }
 
+        // Set "Remember Me" cookie if the option is checked
+         
         if ($result->num_rows > 0) {
             $row = $result->fetch_assoc();
             $retrived_registerid = $row['Register_ID']; 
             $checked_name = $row['Username']; 
             $hashed_password = $row['Password'];
 
-            // Set "Remember Me" cookie if the option is checked
             if ($remember == 1) {
                 setcookie("remembered_username", $username, time() + (30 * 24 * 60 * 60),  "/"); // 30 days expiration
             } else {
-                 // If not remembered, clear the cookie
+                    // If not remembered, clear the cookie
                 setcookie("remembered_username", "", time() - 3600,  "/"); 
             }
-            
+               
+
             // Password
             if (empty(trim($password))) {
                 $error .= "Password is required.<br>";
@@ -107,8 +109,9 @@
         echo "<div class='snackbar show error'>" . $spam . "<br>Don't Spam Anymore!</div>";
     }else if ($error !== '') {
         echo "<div class='snackbar show error'>" . $error . "Please Try Again </div>";
+        echo "<meta http-equiv='refresh' content='1.5; url=login.php'>";
     } else if ($error_connection !== '') {
-        echo "<div class='snackbar show error'>" . $error_connection . "</div>";
+        echo "<div class='snackbar show error'>" . $error_connection .  "</div>";
     } else if ($message !== '') {
         echo "<div class='snackbar show success'>" . $message . "</div>";
         ?>
