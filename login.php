@@ -180,7 +180,7 @@
                             <?php if (isset($_COOKIE['remembered_username'])) { echo 'checked'; } ?>>
                             Remember me 
                         </label>
-                            <a href="#">Forgot password?</a>
+                            <a href="forgot_password.php">Forgot password?</a>
                         </div>
 
                         <button type="submit" class="contribute-btn">
