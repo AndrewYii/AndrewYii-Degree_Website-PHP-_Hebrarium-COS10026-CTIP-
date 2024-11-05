@@ -35,13 +35,13 @@
                 $mail->isSMTP();
                 $mail->Host = 'smtp.gmail.com';
                 $mail->SMTPAuth = true;
-                $mail->Username = 'plantsnotebookctip@gmail.com'; 
-                $mail->Password = 'ABc328022';     
+                $mail->Username = 'sslibrary0505@gmail.com'; 
+                $mail->Password = 'ggme ixyc rnun kexy';     
                 $mail->SMTPSecure = PHPMailer::ENCRYPTION_STARTTLS;
                 $mail->Port = 587;
 
                 // Recipients
-                $mail->setFrom('plantsnotebookctip@gmail.com', 'Plant\'s Notebook Staff (Andrew)');
+                $mail->setFrom('sslibrary0505@gmail.com', 'Plant\'s Notebook Staff (Andrew)');
                 $mail->addAddress($user['Email']); // Recipient's email
 
                 // Content
