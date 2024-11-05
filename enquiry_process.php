@@ -56,8 +56,8 @@
                 if(empty(trim($first_name))){
                     $error .= "First name is required.<br>";
                 }
-                else if(!preg_match('/^[a-zA-Z]+$/', $first_name)){
-                    $error .= "Only alphabetic characters are allowed.<br>";
+                else if(!preg_match('/^[a-zA-Z\s]+$/', $first_name)){
+                    $error .= "Only alphabetic characters and spaces are allowed.<br>";
                 }
                 else if(strlen($first_name) > 25){
                     $error .="First name too long. It cannot exceed 25 words.<br>";
@@ -67,8 +67,8 @@
                 if(empty(trim($last_name))){
                     $error .= "Last name is required.<br>";
                 }
-                else if(!preg_match('/^[a-zA-Z]+$/', $last_name)){
-                    $error .= "Only alphabetic characters are allowed.<br>";
+                else if(!preg_match('/^[a-zA-Z\s]+$/', $last_name)){
+                    $error .= "Only alphabetic characters and spaces are allowed.<br>";
                 }
                 else if(strlen($last_name) > 25){
                     $error .="Last name too long. It cannot exceed 25 words.<br>";
