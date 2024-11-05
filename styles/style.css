@@ -6569,15 +6569,6 @@ button.contribute-btn:hover {
     height: auto;
 }
 
-* {
-    padding: 0;
-    margin: 0;
-    box-sizing: border-box;
-    list-style: none;
-    text-decoration: none;
-    font-family: 'Poppins', sans-serif;
-}
-
 .sidebar {
     width: 345px;
     position: fixed;
