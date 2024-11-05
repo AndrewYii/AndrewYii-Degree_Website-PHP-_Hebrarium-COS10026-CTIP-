@@ -6523,9 +6523,20 @@ button.contribute-btn:hover {
 }
 
 /*Admin Page*/
-.logo_admin img{
+.sidebar .logo_admin span{
+    color: #fff;
     position: relative;
-    width: 100px;
+    top: -35px;
+    left: 10px;
+    font-size: 25px;
+    font-weight: bold;
+    font-family: 'Outfit', Arial, Helvetica, sans-serif;
+}
+
+.logo_admin img{
+    margin-left: 10px;
+    position: relative;
+    width: 65px;
     height: auto;
 }
 
@@ -6663,40 +6674,6 @@ button.contribute-btn:hover {
     padding: 2rem 1.5rem;
     background: #f1f5f9;
     min-height: calc(100vh - 90px);
-}
-
-.cards {
-    display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    grid-gap: 2rem;
-    margin-top: 1rem;
-}
-
-.card-single {
-    display: flex;
-    justify-content: space-between;
-    background: #fff;
-    padding: 2rem;
-    border-radius: 2px;
-}
-
-.card-single div:last-child span {
-    font-size: 3rem;
-    color: #228b22;
-}
-
-.card-single div:first-child span {
-    color: grey;
-}
-
-.card-single:last-child {
-    background: #228B22;
-}
-
-.card-single:last-child h1,
-.card-single:last-child div:first-child span,
-.card-single:last-child div:last-child span {
-    color: #fff;
 }
 
 .admin-table {

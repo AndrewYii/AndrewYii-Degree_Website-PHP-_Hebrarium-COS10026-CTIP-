@@ -18,6 +18,11 @@
 
     <input type="checkbox" id="nav-toggle">
     <div class="sidebar">
+    <p class="logo_admin">
+        <a href="../index.php"><img src="../images/logo.png" alt="Plant\'s Notebook">
+        <span class="admin_logo_text">Plant's Notebook</span></a>
+    </p>
+
         <div class="sidebar-brand">
             <h2><span class="lab la-accusoft">Admin Control Panel</span></h2>
         </div>
@@ -47,7 +52,7 @@
             </div>
 
             <div class="user-wrapper">
-                <img src="../images/Faiz.jpg" width="40px" height="40px" alt="">
+                <img src="../images/Ai_Ling.jpg" width="40px" height="40px" alt="">
                 <div>
                     <h4>Jason Nguyen</h4>
                     <small>Admin</small>
