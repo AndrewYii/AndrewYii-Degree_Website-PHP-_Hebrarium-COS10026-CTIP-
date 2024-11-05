@@ -36,7 +36,7 @@
                 $mail->Host = 'smtp.gmail.com';
                 $mail->SMTPAuth = true;
                 $mail->Username = 'sslibrary0505@gmail.com'; 
-                $mail->Password = 'ggme ixyc rnun kexy';     
+                $mail->Password = 'sdxa arsy rznc iypi';     
                 $mail->SMTPSecure = PHPMailer::ENCRYPTION_STARTTLS;
                 $mail->Port = 587;
 
@@ -71,6 +71,7 @@
 
 ?>
 
+<!DOCTYPE html>
 
 <html lang="en">
 
@@ -90,7 +91,7 @@
     
     <body>
 
-        <header id="top_log">
+        <header id="top_for">
             <?php include 'include/header.php';?>
         </header>
 
@@ -132,7 +133,7 @@
         </footer>
 
         <figure class='going-up-container'>
-            <a href='#top_log'>
+            <a href='#top_for'>
                 <img src='images/going_up.png' alt='going-up' class='going-up'  title="going to the top">
             </a>
         </figure>
