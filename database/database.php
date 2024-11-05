@@ -40,6 +40,7 @@
         Register_ID INT(6) UNSIGNED NOT NULL,
         Username VARCHAR(60) NOT NULL,
         Login_At TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+        Logout_At TIMESTAMP NULL DEFAULT NULL,
         FOREIGN KEY (Register_ID) REFERENCES Register(Register_ID) ON DELETE CASCADE
     )";
 
