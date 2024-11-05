@@ -203,23 +203,28 @@
                                 </div>
                             </li>
                         </ul>
-                    </li>
-                    <li>
-                        <a href='login.php'>
-                            <img src='images/user_icon.jpg' alt='User_Icon'>
-                        </a>
                     </li>";
                     if (isset($_SESSION['username'])) {
+                        echo "<li>
+                                <h2 class='user_name'>" . ($_SESSION['username']) . "</h2>
+                            </li>";
                         if($_SESSION['username'] === 'admin'){
                             echo "<li>
-                                    <h2 class='user_name'><a href='admin/admin_control_panel.php' title='Go To Control Panel'>" . ($_SESSION['username']) . "</a></h2>
+                                    <a href='admin/admin_control_panel.php'>
+                                        <img src='images/user_icon.jpg' alt='User_Icon' title='Go To Admin Control Panel Page'>
+                                    </a>
                                 </li>";
                         }
-                        else{
-                            echo "<li>
-                                    <h2 class='user_name'><a href='user_edit_profile.php' title='Go To Edit Your Information'>" . ($_SESSION['username']) . "</a></h2>
-                                </li>";
+                        else{                           
+                             echo "<li>
+                                        <a href='user_view_enquiry.php'>
+                                            <img src='images/user_icon.jpg' alt='User_Icon' title='Go To User Profile Page'>
+                                        </a>
+                                    </li>";
                         }
+                        echo "<li>
+                                <h2 class='user_name'>" . ($_SESSION['username']) . "</h2>
+                            </li>";
                         echo"
                             <label for='logoutCheckbox' class='logout-button'>Logout</label>
                             <input type='checkbox' id='logoutCheckbox'>
@@ -230,6 +235,13 @@
                                     <label for='logoutCheckbox' class='cancel-logout'>No</label>
                                 </div>
                             </div>"; 
+                    }
+                    else{
+                        echo "<li>
+                                <a href='login.php'>
+                                    <img src='images/user_icon.jpg' alt='User_Icon' title='Go to Login Page'>
+                                </a>
+                            </li>";
                     }
                 echo"
                 </ul>

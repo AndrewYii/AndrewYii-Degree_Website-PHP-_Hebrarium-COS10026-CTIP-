@@ -6388,7 +6388,7 @@ button.contribute-btn:hover {
     color: black;
 }
 
-@media (max-width: 620px) {
+@media (max-width: 900px) {
     .user_name{
         display: none;
     }
@@ -6477,7 +6477,7 @@ button.contribute-btn:hover {
 
 }
 
-@media (max-width: 620px) {
+@media (max-width: 900px) {
     .logout-button {
         position: relative;
         right: 20px;

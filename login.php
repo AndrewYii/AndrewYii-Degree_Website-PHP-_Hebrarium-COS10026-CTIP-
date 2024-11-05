@@ -95,7 +95,7 @@
                     if (empty(trim($username))) {
                         $error .= "Username is required.<br>";
                     }
-                    else if (isset($_SESSION['username']) && $_SESSION['username'] === $username) {                    //Check whether login same account or not to avoid spam
+                    else if (isset($_SESSION['username']) && $_SESSION['username'] === $username) {//Check whether login same account or not to avoid spam
                         $spam = "You are already logged in as " . $_SESSION['username'] . ".";
                     }
 
@@ -120,11 +120,15 @@
                 
                     if ($error == ''&&$spam == '' ) {
                         
-                        $sql = "INSERT INTO Login ( Register_ID,Username , Password) 
-                                VALUES ('$retrived_registerid','$username', '$password')";
+                        $sql = "INSERT INTO Login ( Register_ID, Username) 
+                                VALUES ('$retrived_registerid','$username')";
                 
                         if (mysqli_query($conn, $sql)) {
+                            $login_id = mysqli_insert_id($conn);
+
+                            $_SESSION['login_id'] = $login_id; 
                             $_SESSION['username'] = $username;
+
                             if($username=="admin"){
                                 $message =" Welcome back, admin! You will be redirected to admin control panel within 3 seconds";
                             }

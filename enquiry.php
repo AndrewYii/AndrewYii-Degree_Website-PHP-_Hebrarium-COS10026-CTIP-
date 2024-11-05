@@ -2,16 +2,6 @@
     include 'database/connection.php';
     include 'database/database.php';
     session_start();
-    
-    if (!isset($_SESSION['username'])) {
-        echo "<div class='cannot-access'>
-                <div class='snackbar show error'>
-                    Sorry, you need to log in to your account before enjoying our enquiry features.<br>
-                    You will be redirected to the login page within 5 seconds.
-                </div>
-              </div>
-              <meta http-equiv='refresh' content='5 ;url=login.php'>";
-    }
 ?>
 
 
