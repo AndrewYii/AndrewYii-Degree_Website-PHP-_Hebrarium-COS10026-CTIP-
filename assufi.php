@@ -1,3 +1,10 @@
+<?php
+    include 'database/connection.php';
+    include 'database/database.php';
+    session_start(); 
+?>
+
+
 <!DOCTYPE html>
 
 <html lang="en">

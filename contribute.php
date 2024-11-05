@@ -1,3 +1,21 @@
+<?php
+    include 'database/connection.php';
+    include 'database/database.php';
+    session_start(); 
+
+    if (!isset($_SESSION['username'])) {
+        echo "<div class='cannot-access'>
+                <div class='snackbar show error'>
+                    Sorry, you need to log in to your account before enjoying our contribute features.<br>
+                    You will be redirected to the login page within 3 seconds.
+                </div>
+              </div>
+              <meta http-equiv='refresh' content='3 ;url=login.php'>";
+    }
+
+?>
+
+
 <!DOCTYPE html>
 
 <html lang="en">
@@ -28,7 +46,7 @@
 
             <div class="contribute-form-background-layout">
                 <div class="contribute-form-layout">
-                    <form action="php">
+                    <form action="contribute_process.php">
 
                         <input type="reset" class="contribute-word">
 
