@@ -126,7 +126,6 @@
             <th>Name</th>
             <th>Username</th>
             <th>Email</th>
-            <th>Password</th>
             <th>Date Submitted</th>
         </tr>
 
@@ -143,7 +142,6 @@
                     <td><?php echo $row["Name"]; ?></td>
                     <td><?php echo $row["Username"]; ?></td>
                     <td><?php echo $row["Email"]; ?></td>
-                    <td><?php echo $row["Password"]; ?></td>
                     <td><?php echo $row["Register_Created_At"]; ?></td>
                 </tr>
         <?php
