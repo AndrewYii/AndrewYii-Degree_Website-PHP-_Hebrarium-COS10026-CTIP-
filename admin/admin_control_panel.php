@@ -111,5 +111,81 @@
             mysqli_close($conn);
         ?>
     </table>
+
+
+    <h1>Plant's Notebook Register Form</h1>
+    
+    <table border="1">
+        <tr>
+            <th>ID</th>
+            <th>Name</th>
+            <th>Username</th>
+            <th>Email</th>
+            <th>Password</th>
+            <th>Date Submitted</th>
+        </tr>
+
+        <?php
+            $conn = mysqli_connect($servername,$username,$password,$dbname);
+            $sql = "SELECT * FROM Register";
+            $result = mysqli_query($conn, $sql);
+
+            if (mysqli_num_rows($result) > 0) {
+                while($row = mysqli_fetch_assoc($result)) {
+        ?>
+                <tr>
+                    <td><?php echo $row["Register_ID"]; ?></td>
+                    <td><?php echo $row["Name"]; ?></td>
+                    <td><?php echo $row["Username"]; ?></td>
+                    <td><?php echo $row["Email"]; ?></td>
+                    <td><?php echo $row["Password"]; ?></td>
+                    <td><?php echo $row["Register_Created_At"]; ?></td>
+                </tr>
+        <?php
+                }
+            } else {
+                echo "<tr><td colspan='11'>No enquiries found</td></tr>";
+            }
+            mysqli_close($conn);
+        ?>
+    </table>
+
+
+    <h1>Plant's Notebook Login Form</h1>
+    
+    <table border="1">
+        <tr>
+            <th>ID</th>
+            <th>Register ID</th>
+            <th>Username</th>
+            <th>Login At</th>
+            <th>Logout At</th>
+        </tr>
+
+        <?php
+            $conn = mysqli_connect($servername,$username,$password,$dbname);
+            $sql = "SELECT * FROM Login";
+            $result = mysqli_query($conn, $sql);
+
+            if (mysqli_num_rows($result) > 0) {
+                while($row = mysqli_fetch_assoc($result)) {
+        ?>
+                <tr>
+                    <td><?php echo $row["Login_ID"]; ?></td>
+                    <td><?php echo $row["Register_ID"]; ?></td>
+                    <td><?php echo $row["Username"]; ?></td>
+                    <td><?php echo $row["Login_At"]; ?></td>
+                    <td><?php echo isset($row["Logout_At"]) && $row["Logout_At"] !== null
+                    ? $row["Logout_At"]
+                    : "Still Logged In"; ?></td>
+                </tr>
+        <?php
+                }
+            } else {
+                echo "<tr><td colspan='11'>No enquiries found</td></tr>";
+            }
+            mysqli_close($conn);
+        ?>
+    </table>
 </body>
 </html>
