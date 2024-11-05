@@ -57,7 +57,7 @@
 
                         <div class="contribute-input">
                             <span class="contribute-form-info">Password</span>
-                            <input type="password"  name="Password">
+                            <input type="password" name="Password">
                         </div>
 
                         <div class="remember-forgot">
@@ -94,7 +94,7 @@
 
 
                     
-                    // Detect whether users want to remember password or not
+                    // Detect whether users want to remember username or not
                     if (isset($_POST['remember'])) {
                         $remember = 1; 
                     } else {
@@ -123,10 +123,10 @@
                         $hashed_password = $row['Password'];
 
                         // Set "Remember Me" cookie if the option is checked
-                        if ($remember) {
+                        if ($remember == 1) {
                             setcookie("remembered_username", $username, time() + (30 * 24 * 60 * 60), "/"); // 30 days expiration
                         } else {
-                                // If not remembered, clear the cookie
+                             // If not remembered, clear the cookie
                             setcookie("remembered_username", "", time() - 3600, "/"); 
                         }
                         
