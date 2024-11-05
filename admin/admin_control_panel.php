@@ -18,6 +18,11 @@
 
     <input type="checkbox" id="nav-toggle">
     <div class="sidebar">
+    <p class="logo_admin">
+        <a href="../index.php"><img src="../images/logo.png" alt="Plant\'s Notebook">
+        <span class="admin_logo_text">Plant's Notebook</span></a>
+    </p>
+
         <div class="sidebar-brand">
             <h2><span class="lab la-accusoft">Admin Control Panel</span></h2>
         </div>
@@ -47,7 +52,7 @@
             </div>
 
             <div class="user-wrapper">
-                <img src="../images/Faiz.jpg" width="40px" height="40px" alt="">
+                <img src="../images/Ai_Ling.jpg" width="40px" height="40px" alt="">
                 <div>
                     <h4>Jason Nguyen</h4>
                     <small>Admin</small>
@@ -66,64 +71,51 @@
                         </div>
                     
                         <div class="card-body">
-                        <table class="admin-table" width="100%">
+                        <table class="admin-table">
                             <thead>
                                 <tr>
-                                    <td>Project Title</td>
-                                    <td>Department</td>
-                                    <td>Status</td>
+                                    <td>ID</td>
+                                    <td>Name</td>
+                                    <th>Email</th>
+                                    <th>Phone</th>
+                                    <th>Subject</th>
+                                    <th>Message</th>
+                                    <th>Street</th>
+                                    <th>City</th>
+                                    <th>Postcode</th>
+                                    <th>State</th>
+                                    <th>Date Submitted</th>
                                 </tr>
                             </thead>
-                            <tbody>
-                                <tr>
-                                    <td>UI/UX Design</td>
-                                    <td>UI team</td>
-                                    <td>
-                                        <span class="status"></span>
-                                        review
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td>Web Development</td>
-                                    <td>Frontend</td>
-                                    <td>
-                                        <span class="status"></span>
-                                        in progress
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td>Ushop App</td>
-                                    <td>Mobile team</td>
-                                    <td>
-                                        <span class="status"></span>
-                                        pending
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td>UI/UX Design</td>
-                                    <td>UI team</td>
-                                    <td>
-                                        <span class="status"></span>
-                                        review
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td>Web Development</td>
-                                    <td>Frontend</td>
-                                    <td>
-                                        <span class="status"></span>
-                                        in progress
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td>Ushop App</td>
-                                    <td>Mobile team</td>
-                                    <td>
-                                        <span class="status"></span>
-                                        pending
-                                    </td>
-                                </tr>
-                            </tbody>
+                            <?php
+            $conn = mysqli_connect($servername,$username,$password,$dbname);
+            $sql = "SELECT * FROM Enquiry";
+            $result = mysqli_query($conn, $sql);
+
+            if (mysqli_num_rows($result) > 0) {
+                while($row = mysqli_fetch_assoc($result)) {
+        ?>
+                <tr>
+                    <td><?php echo $row["Enquiry_ID"]; ?></td>
+                    <td><?php echo $row["Name"]; ?></td>
+                    <td><?php echo $row["Email"]; ?></td>
+                    <td><?php echo $row["Phone"]; ?></td>
+                    <td><?php echo $row["Subject"]; ?></td>
+                    <td><?php echo $row["Message"]; ?></td>
+                    <td><?php echo $row["Street"]; ?></td>
+                    <td><?php echo $row["City"]; ?></td>
+                    <td><?php echo $row["Postcode"]; ?></td>
+                    <td><?php echo $row["State"]; ?></td>
+                    <td><?php echo $row["Enquiry_Created_At"]; ?></td>
+                </tr>
+        <?php
+                }
+            } else {
+                echo "<tr><td colspan='11'>No enquiries found</td></tr>";
+            }
+            mysqli_close($conn);
+        ?>
+
                         </table>
                         </div>
 
