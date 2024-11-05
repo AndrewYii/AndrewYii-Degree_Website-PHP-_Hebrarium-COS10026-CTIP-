@@ -1,7 +1,16 @@
 <?php
     include 'database/connection.php';
     include 'database/database.php';
-    session_start(); 
+    session_start();
+
+    $username_value = ''; 
+
+    if (isset($_COOKIE['remembered_username'])) {
+        $username_value = ($_COOKIE['remembered_username']); // Set cookie value if "Remember Me" was checked
+    } else {
+        $username_value = ''; // Leave blank if cookie is not set
+    }
+
 ?>
 
 <!DOCTYPE html>
@@ -43,7 +52,7 @@
 
                         <div class="contribute-input">
                             <span class="contribute-form-info">Username</span>
-                            <input type="text"  name="Username">
+                            <input type="text" name="Username" value="<?php echo $username_value; ?>">
                         </div>
 
                         <div class="contribute-input">
@@ -52,7 +61,7 @@
                         </div>
 
                         <div class="remember-forgot">
-                            <label for="remember"><input id="remember" type="checkbox">Remember me </label>
+                            <label for="remember"><input id="remember" type="checkbox" name="remember" value="1">Remember me </label>
                             <a href="#">Forgot password?</a>
                         </div>
 
@@ -74,7 +83,6 @@
                 $error_connection = '';
                 $message = '';
                 $spam = '';
-
                 
                 if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
@@ -83,6 +91,15 @@
                 
                     $username = mysqli_real_escape_string($conn, $_POST['Username']);
                     $password = mysqli_real_escape_string($conn, $_POST['Password']);
+
+
+                    
+                    // Detect whether users want to remember password or not
+                    if (isset($_POST['remember'])) {
+                        $remember = 1; 
+                    } else {
+                        $remember = 0; 
+                    }
                     
                     //Retrieve Data 
                     $sql_retrievedata = "SELECT Register_ID, Username, Password FROM Register WHERE Username = ?";
@@ -103,7 +120,16 @@
                         $row = $result->fetch_assoc();
                         $retrived_registerid = $row['Register_ID']; 
                         $checked_name = $row['Username']; 
-                        $hashed_password = $row['Password']; 
+                        $hashed_password = $row['Password'];
+
+                        // Set "Remember Me" cookie if the option is checked
+                        if ($remember) {
+                            setcookie("remembered_username", $username, time() + (30 * 24 * 60 * 60), "/"); // 30 days expiration
+                        } else {
+                                // If not remembered, clear the cookie
+                            setcookie("remembered_username", "", time() - 3600, "/"); 
+                        }
+                        
 
                         // Password
                         if (empty(trim($password))) {
