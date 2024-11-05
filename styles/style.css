@@ -6408,7 +6408,6 @@ button.contribute-btn:hover {
     text-decoration: none;
     cursor: pointer;
     transition: transform 0.2s ease, background-color 0.3s ease;
-    z-index: 1000;
 }
 
 .logout-button:hover {
