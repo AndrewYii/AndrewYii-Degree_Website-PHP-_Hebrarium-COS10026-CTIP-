@@ -6498,3 +6498,26 @@ button.contribute-btn:hover {
     z-index: 10000;
     animation: fadeIn 0.3s ease;
 }
+
+/*Reset & Forgot Password*/
+#arrow-back{
+    font-size: 30px;
+}
+
+.forgot-password{
+    text-align: center;
+}
+
+.forgot-password-info{
+    color:#666;
+    margin-bottom: 15px;
+}
+
+.forgot-password-logo{
+    margin: 10px auto;
+    text-align: center;
+}
+
+.forgot-password-logo img{
+    width: 150px;
+}
