@@ -5218,7 +5218,7 @@ button.contribute-btn:hover {
     width: 30px;
   }
 
-.odd_defi, .even_defi {
+.odd_defi, .even_definition {
     flex-basis: 70%;
     flex-grow: 1;
     margin: 0;
@@ -6521,3 +6521,248 @@ button.contribute-btn:hover {
 .forgot-password-logo img{
     width: 150px;
 }
+
+/*Admin Page*/
+.logo_admin img{
+    position: relative;
+    width: 100px;
+    height: auto;
+}
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    list-style: none;
+    text-decoration: none;
+    font-family: 'Poppins', sans-serif;
+}
+
+.sidebar {
+    width: 345px;
+    position: fixed;
+    left: 0;
+    top: 0;
+    height: 100%;
+    background-color: #228B22;    
+    z-index: 100;
+}
+
+.sidebar-brand {
+    height: 90px;
+    padding: 1rem 0rem 1rem 2rem;
+    color: #fff;
+}
+
+.sidebar-brand span {
+    display: inline-block;
+    padding-right: 1rem;
+}
+
+.sidebar-menu {
+    margin-top: 1rem;
+}
+
+.sidebar-menu li {
+    width: 100%;
+    margin-bottom: 1.7rem;
+    padding-left: 1rem;
+}
+
+.sidebar-menu a {
+    padding-left: 1rem;
+    display: block;
+    color: #fff;
+    font-size: 1.1rem;
+}
+
+.sidebar-menu a.active {
+    background: #fff;
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+    color: #228B22;
+    border-radius: 30px 0 0 30px;
+}
+
+
+.sidebar-menu a span:first-child {
+    font-size: 1.5rem;
+    padding-right: 1rem;
+}
+
+#nav-toggle:checked + .sidebar {
+    width: 70px;
+}
+
+.main-content {
+    margin-left: 345px;}
+
+.admin-header {
+    display: flex;
+    justify-content: space-between;
+    padding: 1rem 1.5rem;
+    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2);
+    position: fixed;
+    left: 345px;
+    width: calc(100% - 345px);
+    top: 0;
+    z-index: 100;
+}
+
+#nav-toggle {
+    display: none;
+}
+
+.admin-header h2 {
+    color: #222;
+}
+
+.admin-header label span {
+    font-size: 1.7rem;
+    padding-left: 1rem;
+}
+
+.search-wrapper {
+    border: 1px solid #ccc;
+    border-radius: 30px;
+    height: 50px;
+    align-self: center;
+    overflow-x: hidden;
+}
+
+.search-wrapper span {
+    display: inline-block;
+    padding: 0rem 1rem;
+    font-size: 1.5rem;
+}
+
+.search-wrapper input {
+    height: 100%;
+    padding: .5rem;
+    border: none;
+    outline: none;
+}
+
+.user-wrapper {
+    display: flex;
+    align-items: center;
+}
+
+.user-wrapper img {
+    border-radius: 50%;
+    margin-right: 1rem;
+}
+
+.user-wrapper small {
+    display: inline-block;
+    color: grey; 
+}
+
+.main-content {
+    margin-top: 85px;
+    padding: 2rem 1.5rem;
+    background: #f1f5f9;
+    min-height: calc(100vh - 90px);
+}
+
+.cards {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-gap: 2rem;
+    margin-top: 1rem;
+}
+
+.card-single {
+    display: flex;
+    justify-content: space-between;
+    background: #fff;
+    padding: 2rem;
+    border-radius: 2px;
+}
+
+.card-single div:last-child span {
+    font-size: 3rem;
+    color: #228b22;
+}
+
+.card-single div:first-child span {
+    color: grey;
+}
+
+.card-single:last-child {
+    background: #228B22;
+}
+
+.card-single:last-child h1,
+.card-single:last-child div:first-child span,
+.card-single:last-child div:last-child span {
+    color: #fff;
+}
+
+.admin-table {
+    width: 100%;    /* Makes table take full width of its container */
+    border-collapse: collapse;
+    margin: 20px 0;
+}
+
+.admin-table thead tr {
+    background: #fff;
+    border-top: 1px solid #f0f0f0;
+    border-bottom: 1px solid #f0f0f0;
+}
+
+.admin-table thead td {
+    font-weight: 700;
+    padding: 15px;  /* Increased padding for better spacing */
+}
+
+.admin-table tbody tr {
+    border-bottom: 1px solid #f0f0f0;
+}
+
+.admin-table tbody td {
+    padding: 15px;  /* Increased padding for better spacing */
+}
+
+/* If you want even more width, you can make the container wider */
+.projects {
+    width: 100%;    /* Makes the container take full width */
+    margin-right: 20px;  /* Adds some spacing from the right side */
+}
+
+.recent-grid {
+    margin-top: 3.5rem;
+    display: grid;
+    grid-template-columns: 70% 30%;
+    grid-gap: 2rem;
+}
+
+.card {
+    background: #fff;
+    border-radius: 5px;
+}
+
+.card-header {
+    padding: 1rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid #f0f0f0;
+}
+
+.card-header button {
+    background: #228B22;
+    border-radius: 10px;
+    color: #fff;
+    font-size: .8rem;
+    padding: .5rem 1rem;
+    border: 1px solid #228B22;
+}
+
+.card-body {
+    padding: 1rem;
+    max-height: 400px;  /* Adjust this value as needed */
+    overflow-y: auto;   /* Adds scrollbar when content overflows */
+}
+
+
