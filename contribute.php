@@ -7,10 +7,10 @@
         echo "<div class='cannot-access'>
                 <div class='snackbar show error'>
                     Sorry, you need to log in to your account before enjoying our contribute features.<br>
-                    You will be redirected to the login page within 3 seconds.
+                    You will be redirected to the login page within 2 seconds.
                 </div>
               </div>
-              <meta http-equiv='refresh' content='3 ;url=login.php'>";
+              <meta http-equiv='refresh' content='2 ;url=login.php'>";
     }
 
 ?>
@@ -46,7 +46,7 @@
 
             <div class="contribute-form-background-layout">
                 <div class="contribute-form-layout">
-                    <form action="contribute_process.php">
+                    <form action="contribute_process.php" method="post" enctype="multipart/form-data">
 
                         <input type="reset" class="contribute-word">
 
@@ -63,7 +63,7 @@
                             <div class="contribute-input">
                                 <span class="contribute-form-info">Select The Photo You Prefer</span>
                                 <br>
-                                <input type="radio" id="picture1" name="Picture_Option" value="picture1" checked="checked" required="required">
+                                <input type="radio" id="picture1" name="Picture_Option" value="picture1" checked="checked">
                                 <label for="picture1">
                                     <img src="images/boy_icon.png" alt="Boy Profile Picture" class="contribute-form-picture">
                                 </label>
@@ -85,7 +85,7 @@
                             <div class="contribute-input">
                                 <span class="contribute-form-info">Select Some Description About You</span>
                                 <br>
-                                <input type="checkbox" id="tag1" name="Tag[]" value="None" checked="checked" required="required">
+                                <input type="checkbox" id="tag1" name="Tag[]" value="None" checked="checked">
                                 <label for="tag1">
                                     None
                                 </label>
@@ -124,7 +124,7 @@
                                 <label for="plant-name">
                                     <span class="contribute-form-info">Plant's Name</span>
                                 </label>
-                                <input type="text" maxlength="25" pattern="[A-Za-z\s]+" id="plant-name" name="Plant's Name">
+                                <input type="text" id="plant-name" name="PlantName">
                             </div>
 
                             <div class="contribute-input">
@@ -145,7 +145,7 @@
                                     <span class="contribute-form-info">Plant's Genus</span>
                                 </label>
 
-                                <select name="plant-genus" id="plant-genus" required="required">
+                                <select name="plant-genus" id="plant-genus">
                                   <option value="">Select The Plant Genus</option>
                                   <option value="Vatica">Vatica</option>
                                   <option value="Dipterocarpus">Dipterocarpus</option>
@@ -165,7 +165,7 @@
                                     <span class="contribute-form-info">Plant's Species</span>
                                 </label>
 
-                                <select name="plant-species" id="plant-species" required="required">
+                                <select name="plant-species" id="plant-species">
                                   <option value="">Select The Plant Species</option>
                                   <option value="Najibiana">Najibiana</option>
                                   <option value="Rynchocarpa">Rynchocarpa</option>
@@ -202,13 +202,13 @@
                                     <label for="plant-leaf-photo">
                                         <span class="contribute-form-info">Plant's Leaf Photos</span>
                                     </label>
-                                    <input type="file" required="required" id="plant-leaf-photo">
+                                    <input type="file" id="plant-leaf-photo" name="plant-leaf-photo">
                                 </div>
                                 <div class="upload-photo-right">
                                     <label for="herbarium-photo">
                                         <span class="contribute-form-info">Herbarium Photos</span>
                                     </label>
-                                    <input type="file" required="required" id="herbarium-photo">
+                                    <input type="file"  id="herbarium-photo" name="plant-herbarium-photo">
                                 </div>
                             </div>
 
@@ -217,7 +217,7 @@
                                 <label for="plant-description">
                                     <span class="contribute-form-info">Description</span>
                                 </label>
-                                <textarea placeholder="Write Down Your Find!" rows="5" id="plant-description"></textarea>
+                                <textarea placeholder="Write Down Your Find! (around 200 to 2000 characters)" rows="5" id="plant-description" name="plant-contribute-comment"></textarea>
                             </div>
 
                         </fieldset>

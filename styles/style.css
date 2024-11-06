@@ -2910,16 +2910,16 @@ button.contribute-btn:hover {
     font-size: 20px;
 }
 
-#open-comment:not(:checked) ~ textarea, #open-comment:not(:checked) ~ input[type="submit"], #open-comment:not(:checked)~ label .contributor-close-comments,#open-comment1:not(:checked) ~ textarea, #open-comment1:not(:checked) ~ input[type="submit"], #open-comment1:not(:checked)~ label .contributor-close-comments,#open-comment2:not(:checked) ~ textarea, #open-comment2:not(:checked) ~ input[type="submit"], #open-comment2:not(:checked)~ label .contributor-close-comments,#open-comment3:not(:checked) ~ textarea, #open-comment3:not(:checked) ~ input[type="submit"], #open-comment3:not(:checked)~ label .contributor-close-comments  {
+#open-comment0:not(:checked) ~ textarea, #open-comment0:not(:checked) ~ input[type="submit"], #open-comment0:not(:checked)~ label .contributor-close-comments,#open-comment1:not(:checked) ~ textarea, #open-comment1:not(:checked) ~ input[type="submit"], #open-comment1:not(:checked)~ label .contributor-close-comments,#open-comment2:not(:checked) ~ textarea, #open-comment2:not(:checked) ~ input[type="submit"], #open-comment2:not(:checked)~ label .contributor-close-comments,#open-comment3:not(:checked) ~ textarea, #open-comment3:not(:checked) ~ input[type="submit"], #open-comment3:not(:checked)~ label .contributor-close-comments,#open-comment4:not(:checked) ~ textarea, #open-comment4:not(:checked) ~ input[type="submit"], #open-comment4:not(:checked)~ label .contributor-close-comments,#open-comment5:not(:checked) ~ textarea, #open-comment5:not(:checked) ~ input[type="submit"], #open-comment5:not(:checked)~ label .contributor-close-comments,#open-comment6:not(:checked) ~ textarea, #open-comment6:not(:checked) ~ input[type="submit"], #open-comment6:not(:checked)~ label .contributor-close-comments,#open-comment7:not(:checked) ~ textarea, #open-comment7:not(:checked) ~ input[type="submit"], #open-comment7:not(:checked)~ label .contributor-close-comments,#open-comment8:not(:checked) ~ textarea, #open-comment8:not(:checked) ~ input[type="submit"], #open-comment8:not(:checked)~ label .contributor-close-comments,#open-comment9:not(:checked) ~ textarea, #open-comment9:not(:checked) ~ input[type="submit"], #open-comment9:not(:checked)~ label .contributor-close-comments  {
     display: none;
 }
 
 
-#open-comment:checked~ label .contributor-button-comments,#open-comment1:checked~ label .contributor-button-comments,#open-comment2:checked~ label .contributor-button-comments,#open-comment3:checked~ label .contributor-button-comments{
+#open-comment0:checked~ label .contributor-button-comments,#open-comment1:checked~ label .contributor-button-comments,#open-comment2:checked~ label .contributor-button-comments,#open-comment3:checked~ label .contributor-button-comments,#open-comment4:checked~ label .contributor-button-comments,#open-comment5:checked~ label .contributor-button-comments,#open-comment6:checked~ label .contributor-button-comments,#open-comment7:checked~ label .contributor-button-comments,#open-comment8:checked~ label .contributor-button-comments,#open-comment9:checked~ label .contributor-button-comments{
     display: none;
 }
 
-#open-comment,#open-comment1,#open-comment2,#open-comment3{
+#open-comment0,#open-comment1,#open-comment2,#open-comment3,#open-comment4,#open-comment5,#open-comment6,#open-comment7,#open-comment8,#open-comment9{
     display: none;
 }
 
@@ -2957,7 +2957,7 @@ button.contribute-btn:hover {
     right:-170px;
 }
 
-#open-comment:checked ~ textarea,#open-comment:checked ~ input[type="submit"],#open-comment1:checked ~ textarea,#open-comment1:checked ~ input[type="submit"],#open-comment2:checked ~ textarea,#open-comment2:checked ~ input[type="submit"],#open-comment3:checked ~ textarea,#open-comment3:checked ~ input[type="submit"]{
+#open-comment0:checked ~ textarea,#open-comment0:checked ~ input[type="submit"],#open-comment1:checked ~ textarea,#open-comment1:checked ~ input[type="submit"],#open-comment2:checked ~ textarea,#open-comment2:checked ~ input[type="submit"],#open-comment3:checked ~ textarea,#open-comment3:checked ~ input[type="submit"],#open-comment4:checked ~ textarea,#open-comment4:checked ~ input[type="submit"],#open-comment5:checked ~ textarea,#open-comment5:checked ~ input[type="submit"],#open-comment6:checked ~ textarea,#open-comment6:checked ~ input[type="submit"],#open-comment7:checked ~ textarea,#open-comment7:checked ~ input[type="submit"],#open-comment8:checked ~ textarea,#open-comment8:checked ~ input[type="submit"],#open-comment9:checked ~ textarea,#open-comment9:checked ~ input[type="submit"]{
     display: block; 
     margin-top: 10px; 
 }
@@ -5218,7 +5218,7 @@ button.contribute-btn:hover {
     width: 30px;
   }
 
-.odd_defi, .even_defi {
+.odd_defi, .even_definition {
     flex-basis: 70%;
     flex-grow: 1;
     margin: 0;
@@ -6356,7 +6356,7 @@ button.contribute-btn:hover {
 .snackbar.show {
     display: block;
     opacity: 1; 
-    animation: snackbarslideIn 0.5s forwards, snackbarfadeOut 0.5s forwards 5s; 
+    animation: snackbarslideIn 0.5s forwards, snackbarfadeOut 0.5s forwards 2s; 
 }
 
 @keyframes snackbarslideIn {
@@ -6498,3 +6498,425 @@ button.contribute-btn:hover {
     z-index: 10000;
     animation: fadeIn 0.3s ease;
 }
+
+/*Reset & Forgot Password*/
+#arrow-back{
+    font-size: 30px;
+}
+
+.forgot-password{
+    text-align: center;
+}
+
+.forgot-password-info{
+    color:#666;
+    margin-bottom: 15px;
+}
+
+.forgot-password-logo{
+    margin: 10px auto;
+    text-align: center;
+}
+
+.forgot-password-logo img{
+    width: 150px;
+}
+
+/* OTP */
+.otp-inputs {
+    display: flex;
+    justify-content: center; 
+    margin: 20px 0;
+}
+
+.otp-inputs input {
+    width: 50px; 
+    height: 50px; 
+    font-size: 24px; 
+    text-align: center; 
+    margin: 0 5px; 
+    border: 2px solid #ccc; 
+    border-radius: 5px; 
+    outline: none; 
+    transition: border-color 0.3s, background-color 0.3s; 
+    background-color: #f9f9f9; 
+}
+
+.otp-inputs input:focus {
+    border-color: #28a745; 
+    background-color: #e9f9e9; 
+}
+
+.otp-inputs input:hover {
+    border-color: #28a745; 
+}
+
+/*Admin Page*/
+.sidebar .logo_admin span{
+    color: #fff;
+    position: relative;
+    top: -35px;
+    left: 10px;
+    font-size: 25px;
+    font-weight: bold;
+    font-family: 'Outfit', Arial, Helvetica, sans-serif;
+}
+
+.logo_admin img{
+    margin-left: 10px;
+    position: relative;
+    width: 65px;
+    height: auto;
+}
+
+.sidebar {
+    width: 345px;
+    position: fixed;
+    left: 0;
+    top: 0;
+    height: 100%;
+    background-color: #228B22;    
+    z-index: 100;
+    transition: width 300ms;
+}
+
+.sidebar-brand {
+    height: 90px;
+    padding: 1rem 0rem 1rem 2rem;
+    color: #fff;
+}
+
+.sidebar-brand span {
+    display: inline-block;
+    padding-right: 1rem;
+}
+
+.sidebar-menu {
+    margin-top: 1rem;
+}
+
+.sidebar-menu li {
+    width: 100%;
+    margin-bottom: 1.7rem;
+    padding-left: 1rem;
+}
+
+.sidebar-menu a {
+    padding-left: 1rem;
+    display: block;
+    color: #fff;
+    font-size: 1.1rem;
+    text-decoration: none;
+}
+
+.sidebar-menu a.active {
+    background: #fff;
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+    color: #228B22;
+    border-radius: 30px 0 0 30px;
+    text-decoration: none;
+}
+
+.sidebar-menu a span:first-child {
+    font-size: 1.5rem;
+    padding-right: 1rem;
+}
+
+.hamburger-icon{
+    width: 30px;
+    height: auto;
+    position: relative;
+    bottom: -7px;
+    right: 15px;
+}
+
+.admin-search-icon{
+    width: 20px;
+    height: auto;
+    position: relative;
+    bottom: -5px;
+    left: 10px;
+}
+
+.register-sidebar-icon{
+    width: 30px;
+    height: auto;
+    position: relative;
+    bottom: -5px;
+    right: 5px;
+}
+
+.login-sidebar-icon{
+    width: 40px;
+    height: auto;
+    position: relative;
+    bottom: -12px;
+    right: 10px;
+}
+
+.contribute-sidebar-icon{
+    width: 30px;
+    height: auto;
+    position: relative;
+    bottom: -5px;
+    right: 5px;
+}
+
+.enquiry-sidebar-icon{
+    width: 30px;
+    height: auto;
+    position: relative;
+    bottom: -5px;
+    right: 5px;
+}
+
+#nav-toggle:checked + .sidebar {
+    width: 70px;
+}
+
+#nav-toggle:checked + .sidebar .sidebar-brand,
+#nav-toggle:checked + .sidebar li {
+    padding-left: 1rem;
+    text-align: center;
+}
+
+#nav-toggle:checked + .sidebar li a{
+    padding-left: 0rem;
+}
+
+#nav-toggle:checked + .sidebar .sidebar-brand h2 span:last-child,
+#nav-toggle:checked + .sidebar li a span:last-child{
+    display: none;
+}
+
+#nav-toggle:checked ~ .main-content {
+    margin-left: 70px;
+}
+
+#nav-toggle:checked ~ .main-content header {
+    width: calc(100% - 70px);
+    left: 70px;
+}
+
+.main-content {
+    transition: margin-left 300ms;
+    margin-left: 345px;
+}
+
+.admin-header {
+    background: #fff;
+    display: flex;
+    justify-content: space-between;
+    padding: 1rem 1.5rem;
+    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2);
+    position: fixed;
+    left: 345px;
+    width: calc(100% - 345px);
+    top: 0;
+    z-index: 100;
+    transition: left 300ms;
+}
+
+#nav-toggle {
+    display: none;
+}
+
+.admin-header h2 {
+    color: #222;
+}
+
+.admin-header label span {
+    font-size: 1.7rem;
+    padding-left: 1rem;
+}
+
+.search-wrapper {
+    border: 1px solid #ccc;
+    border-radius: 30px;
+    height: 50px;
+    align-self: center;
+    overflow-x: hidden;
+}
+
+.search-wrapper span {
+    display: inline-block;
+    padding: 0rem 1rem;
+    font-size: 1.5rem;
+}
+
+.search-wrapper input {
+    height: 100%;
+    padding: .5rem;
+    border: none;
+    outline: none;
+}
+
+.user-wrapper {
+    display: flex;
+    align-items: center;
+}
+
+.user-wrapper img {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    margin-right: 1rem;
+}
+
+.user-wrapper small {
+    display: inline-block;
+    color: grey; 
+}
+
+.main-content {
+    margin-top: 85px;
+    padding: 2rem 1.5rem;
+    background: #f1f5f9;
+    min-height: calc(100vh - 90px);
+}
+
+.admin-table {
+    width: 100%;    
+    border-collapse: collapse;
+    margin: 10px 0;
+}
+
+.admin-table thead tr {
+    background: #fff;
+    border-top: 1px solid #f0f0f0;
+    border-bottom: 1px solid #f0f0f0;
+}
+
+.admin-table thead td {
+    font-weight: 700;
+    padding: 15px;  /* Increased padding for better spacing */
+}
+
+.admin-table tbody tr {
+    border-bottom: 1px solid #f0f0f0;
+}
+
+.admin-table tbody td {
+    padding: 15px;  /* Increased padding for better spacing */
+}
+
+/* If you want even more width, you can make the container wider */
+.projects {
+    width: 100%;    /* Makes the container take full width */
+    margin-right: 20px;  /* Adds some spacing from the right side */
+}
+
+.recent-grid {
+    margin-top: 3.5rem;
+    display: grid;
+    grid-template-columns: 100%;  /* Changed from 70% 30% to give more space to main content */
+    grid-gap: 2rem;
+}
+
+.card {
+    background: #fff;
+    border-radius: 5px;
+}
+
+.card-header {
+    padding: 1rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid #f0f0f0;
+}
+
+.card-header button {
+    background: #228B22;
+    border-radius: 10px;
+    color: #fff;
+    font-size: .8rem;
+    padding: .5rem 1rem;
+    border: 1px solid #228B22;
+}
+
+.card-body {
+    padding: 1rem;
+    max-height: 400px;
+    overflow-y: auto;
+    overflow-x: auto;  /* Added to handle wide tables */
+}
+
+@media only screen and (max-width: 1200px) {
+    .sidebar {
+        width: 70px;
+    }
+    
+    .sidebar .sidebar-brand,
+    .sidebar li {
+        padding-left: 1rem;
+        text-align: center;
+    }
+    
+    .sidebar li a{
+        padding-left: 0rem;
+    }
+    
+    .sidebar .sidebar-brand h2 span:last-child,
+    .sidebar li a span:last-child{
+        display: none;
+    }
+    
+    .main-content {
+        margin-left: 70px;
+    }
+    
+    .main-content header {
+        width: calc(100% - 70px);
+        left: 70px;
+    }
+
+    .sidebar:hover {
+        width: 345px;
+        z-index: 200;
+    }
+    
+    .sidebar:hover .sidebar-brand,
+    .sidebar:hover li {
+        padding-left: 2rem;
+        text-align: left;
+    }
+    
+    .sidebar:hover li a{
+        padding-left: 1rem;
+    }
+    
+    .sidebar:hover .sidebar-brand h2 span:last-child,
+    .sidebar:hover li a span:last-child{
+        display: inline;
+    }
+}
+
+@media only screen and (max-width: 768px) {
+    .search-wrapper{
+        display: none;
+    }
+
+    .sidebar{
+        left: -100% !important;
+    }
+
+    .admin-header h2 label{
+        display: inline-block;
+        text-align: center;
+        background: #228B22;
+        padding-right: 0rem;
+        margin-right: 1rem;
+        height: 40px;
+        width: 40px;
+        border-radius: 50%;
+        justify-content: center;
+    }
+
+    .hamburger-icon{
+        left: 0px;
+    }
+}
+
+

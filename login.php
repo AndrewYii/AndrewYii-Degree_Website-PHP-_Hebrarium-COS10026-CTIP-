@@ -74,6 +74,7 @@
         }
         else{
             $error .= "No account found with that username.<br>";
+            setcookie("remembered_username", "", time() - 3600,  "/"); 
         }
 
     
@@ -89,10 +90,10 @@
                 $_SESSION['username'] = $username;
 
                 if($username=="admin"){
-                    $message =" Welcome back, admin! You will be redirected to admin control panel within 3 seconds";
+                    $message =" Welcome back, admin! You will be redirected to admin control panel within 2 seconds";
                 }
                 else{
-                    $message =" Welcome back, $username ! You will be redirected to main page within 3 seconds";
+                    $message =" Welcome back, $username ! You will be redirected to main page within 2 seconds";
                 }
             } else {
                 $error_connection = "We couldn't find your data due to a technical issue. Please try again later. If the issue persists, feel free to reach out to our <a href='mailto:104386568@students.swinburne.edu.my'>support team</a> for assistance.";
@@ -116,9 +117,9 @@
         echo "<div class='snackbar show success'>" . $message . "</div>";
         ?>
         <?php if ($username == "admin") { ?>
-            <meta http-equiv="refresh" content="3; url=admin/admin_control_panel.php">
+            <meta http-equiv="refresh" content="2; url=admin/admin_control_panel.php">
         <?php } else { ?>
-            <meta http-equiv="refresh" content="3; url=index.php">
+            <meta http-equiv="refresh" content="2; url=index.php">
         <?php } ?>
     <?php
     }
@@ -179,7 +180,7 @@
                             <?php if (isset($_COOKIE['remembered_username'])) { echo 'checked'; } ?>>
                             Remember me 
                         </label>
-                            <a href="#">Forgot password?</a>
+                            <a href="forgot_password.php">Forgot password?</a>
                         </div>
 
                         <button type="submit" class="contribute-btn">

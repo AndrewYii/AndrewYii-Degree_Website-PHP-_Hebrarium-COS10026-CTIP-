@@ -45,11 +45,11 @@
                             <div class="enquiry-ui">
                                 <div class="enquiry-fname">
                                     <label for="fname" class="feedback-cont">First Name</label>
-                                    <input class="enquiry-data" type="text" name="first_name" placeholder="First Name" size="22" id="fname">
+                                    <input class="enquiry-data" type="text" name="first_name" placeholder="Lucky Liew Jie" size="22" id="fname">
                                 </div>
                                 <div class="enquiry-lname">
                                     <label for="lname" class="feedback-cont">Last Name</label>
-                                    <input class="enquiry-data" type="text" name="last_name" placeholder="Last Name" size="22"  id="lname">
+                                    <input class="enquiry-data" type="text" name="last_name" placeholder="Ang" size="22"  id="lname">
                                 </div>
                                 <div class="enquiry-email">
                                     <label for="email" class="feedback-cont">Email</label>
