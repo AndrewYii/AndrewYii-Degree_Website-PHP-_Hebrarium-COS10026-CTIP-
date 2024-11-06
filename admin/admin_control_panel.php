@@ -29,10 +29,10 @@
 
         <div class="sidebar-menu">
             <ul>
-                <li><a href="" class="active"><span class="las la-igloo"></span><span>Register</span></a></li>
-                <li><a href=""><span class="las la-users"></span><span>Login</span></a></li>
-                <li><a href=""><span class="las la-clipboard-list"></span><span>Contribute</span></a></li>
-                <li><a href=""><span class="las la-shopping-bag"></span><span>Enquiries</span></a></li>
+                <li><a href="" class="active"><img src="../images/register_icon.png" alt="Register" class="register-sidebar-icon"><span>Register</span></a></li>
+                <li><a href=""><img src="../images/login_icon.png" alt="Login" class="login-sidebar-icon"><span>Login</span></a></li>
+                <li><a href=""><img src="../images/contribute_icon.png" alt="contribute" class="contribute-sidebar-icon"><span>Contribute</span></a></li>
+                <li><a href=""><img src="../images/enquiry_icon.png" alt="enquiry" class="enquiry-sidebar-icon"><span>Enquiries</span></a></li>
             </ul>
         </div>
     </div>
@@ -41,13 +41,13 @@
         <header class="admin-header">
             <h2>
                 <label for="nav-toggle">
-                    <img src="../images/hamburger_icon.png" alt="Toggle Menu" class="hamburger-icon">
+                    <img src="../images/hamburger_icon2.png" alt="Toggle Menu" class="hamburger-icon">
                 </label>
                 Register
             </h2>
 
             <div class="search-wrapper">
-                <span class="las la-search"></span>
+                <img src="../images/search_icon.png" alt="Search" class="admin-search-icon"></img>
                 <input type="search" placeholder="Search here" />
             </div>
 
