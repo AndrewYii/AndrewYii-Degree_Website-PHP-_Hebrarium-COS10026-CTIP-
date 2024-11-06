@@ -29,7 +29,6 @@
             $_SESSION['auth_code'] = $auth_code;
             $_SESSION['forgot_username'] = $username;
 
-            
             $mail = new PHPMailer(true);
             try {
                 // Server settings
@@ -47,9 +46,15 @@
 
                 // Content
                 $mail->isHTML(true);
-                $mail->Subject = 'Your Authentication Code';
-                $mail->Body = "Your authentication code is: $auth_code";
-
+                $mail->Subject = 'Authentication Code for Password Reset of Your Plant\'s Notebook account';
+                $mail->Body = "
+                    Dear $username,<br><br>
+                    We have received a request to reset the password associated with your account. Please use the following authentication code to complete the process:<br><br>
+                    <strong>$auth_code</strong><br><br>
+                    If you did not request a password reset, please disregard this email or contact our support team.<br><br>
+                    Best regards,<br>
+                    Plant's Notebook Support Team
+                ";
                 // Send the email
                 if ($mail->send()) {
                     echo "<div class='snackbar show success'>The authentication code has been sent. You will be redirected to continue resetting your password within 1 second.</div>";
