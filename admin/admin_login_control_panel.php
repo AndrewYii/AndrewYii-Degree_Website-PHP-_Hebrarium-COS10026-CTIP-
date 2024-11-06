@@ -52,9 +52,9 @@
             </div>
 
             <div class="user-wrapper">
-                <img src="../images/Ai_Ling.jpg" width="40px" height="40px" alt="">
+                <img src="../images/admin-icon.jpg" alt="admin profile picture">
                 <div>
-                    <h4>Jason Nguyen</h4>
+                    <h4>Admin</h4>
                     <small>Admin</small>
                 </div>
             </div>
