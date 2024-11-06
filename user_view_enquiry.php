@@ -7,7 +7,7 @@
     <meta name="keywords" content="Plant's Notebook, Enquiries, Admin View"/>
     <title>Plant's Notebook | View Enquiries</title>
     <link rel="stylesheet" href="styles/style.css">
-    <link rel="icon" type="image/x-icon" href="images/logo.png">
+    <link rel="icon" type="image/x-icon" href="../images/logo.png">
 </head>
 
 <body>
@@ -24,12 +24,15 @@
     </p>
 
         <div class="sidebar-brand">
-            <h2><span class="lab la-accusoft">User Profile</span></h2>
+            <h2><span class="lab la-accusoft">Admin Control Panel</span></h2>
         </div>
 
         <div class="sidebar-menu">
             <ul>
-                <li><a href="user_edit_profile.php" class="active"><img src="images/.png" alt="UserEdit" class="register-sidebar-icon"><span>Edit user profile</span></a></li>
+                <li><a href="admin_control_panel.php" class="active"><img src="images/register_icon.png" alt="Register" class="register-sidebar-icon"><span>Register</span></a></li>
+                <li><a href="admin_login_control_panel.php"><img src="images/login_icon.png" alt="Login" class="login-sidebar-icon"><span>Login</span></a></li>
+                <li><a href="admin_contribute_control_panel.php"><img src="images/contribute_icon.png" alt="contribute" class="contribute-sidebar-icon"><span>Contribute</span></a></li>
+                <li><a href="admin_enquiry_control_panel.php"><img src="images/enquiry_icon.png" alt="enquiry" class="enquiry-sidebar-icon"><span>Enquiries</span></a></li>
             </ul>
         </div>
     </div>
@@ -58,28 +61,27 @@
         </header>
 
         <main>
-            <div class="password-change-section">
-                        <h3>Change Password</h3>
-                    <form action="user_edit_profile.php" method="POST">
-                <div class="form-group">
-                    <label for="current_password">Current Password</label>
-                    <input type="password" id="current_password" name="current_password" required>
-                </div>
-            
-                <div class="form-group">
-                    <label for="new_password">New Password</label>
-                    <input type="password" id="new_password" name="new_password" required>
-                </div>
-            
-                <div class="form-group">
-                    <label for="confirm_password">Confirm New Password</label>
-                    <input type="password" id="confirm_password" name="confirm_password" required>
-                </div>
-            
-                <button type="submit" class="btn btn-primary">Update Password</button>
-                    </form>
-            </div>
+            <div class="recent-grid">
+                <div class="projects">
+                    <div class="card">
+                        <div class="card-header">
+                            <h3>Recent Projects</h3>
 
+                            <button>See All <span class="las la-arrow-right"></span></button>
+                        </div>
+                    
+                        <div class="card-body">
+                        <table class="admin-table">
+                            <thead>
+                                <tr>
+                                <th>ID</th>
+                                    <th>Name</th>
+                                    <th>Username</th>
+                                    <th>Email</th>
+                                    <th>Date Submitted</th>
+                                </tr>
+
+                            </thead>
                             <?php
             $conn = mysqli_connect($servername,$username,$password,$dbname);
             $sql = "SELECT * FROM Register";
