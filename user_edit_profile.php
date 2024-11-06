@@ -2,11 +2,12 @@
 // Start the session and include your database connection
 session_start();
 include('database/connection.php');
+include ('database/database.php');
 
 // Check if the form is submitted
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
-    // Get the user ID (assuming it is stored in the session after login)
-    $retrived_registerid = $row['Register_ID'];
+    // Get the user ID from session instead of undefined $row
+    $user_id = $_SESSION['user_id']; // Make sure this matches your session variable name
 
     // Get form data
     $current_password = $_POST['current_password'];
@@ -18,8 +19,15 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $stmt = $conn->prepare($sql);
     $stmt->bind_param("i", $user_id);
     $stmt->execute();
-    $stmt->bind_result($db_password);
-    $stmt->fetch();
+    $result = $stmt->get_result();
+    $user = $result->fetch_assoc();
+    
+    if (!$user) {
+        echo "User not found.";
+        exit;
+    }
+    
+    $db_password = $user['password'];
     $stmt->close();
 
     // Step 2: Verify the current password matches the hash in the database
@@ -47,6 +55,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     }
 
     $stmt->close();
-    $conn->close();
 }
+// Close the connection only at the end of the script
+$conn->close();
 ?>
