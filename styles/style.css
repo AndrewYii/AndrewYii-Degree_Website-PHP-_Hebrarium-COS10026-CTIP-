@@ -6356,7 +6356,7 @@ button.contribute-btn:hover {
 .snackbar.show {
     display: block;
     opacity: 1; 
-    animation: snackbarslideIn 0.5s forwards, snackbarfadeOut 0.5s forwards 3s; 
+    animation: snackbarslideIn 0.5s forwards, snackbarfadeOut 0.5s forwards 2s; 
 }
 
 @keyframes snackbarslideIn {
