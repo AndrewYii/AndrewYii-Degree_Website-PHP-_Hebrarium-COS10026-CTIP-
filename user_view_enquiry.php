@@ -71,16 +71,19 @@
                     
                         <div class="card-body">
                         <table class="admin-table">
-                            <thead>
-                                <tr>
-                                <th>ID</th>
-                                    <th>Name</th>
-                                    <th>Username</th>
-                                    <th>Email</th>
-                                    <th>Date Submitted</th>
-                                </tr>
+        <form action="change_password.php" method="POST">
+            <label for="current_password">Current Password:</label>
+            <input type="password" id="current_password" name="current_password" required>
 
-                            </thead>
+            <label for="new_password">New Password:</label>
+            <input type="password" id="new_password" name="new_password" required>
+
+            <label for="confirm_password">Confirm New Password:</label>
+            <input type="password" id="confirm_password" name="confirm_password" required>
+
+            <button type="submit">Change Password</button>
+        </form>
+
                             <?php
             $conn = mysqli_connect($servername,$username,$password,$dbname);
             $sql = "SELECT * FROM Register";
