@@ -217,7 +217,7 @@
                                 <label for="plant-description">
                                     <span class="contribute-form-info">Description</span>
                                 </label>
-                                <textarea placeholder="Write Down Your Find! (around 50 to 300 words)" rows="5" id="plant-description" name="plant-contribute-comment"></textarea>
+                                <textarea placeholder="Write Down Your Find! (around 200 to 2000 words)" rows="5" id="plant-description" name="plant-contribute-comment"></textarea>
                             </div>
 
                         </fieldset>
