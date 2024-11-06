@@ -71,7 +71,7 @@
                     
                         <div class="card-body">
                         <table class="admin-table">
-        <form action="change_password.php" method="POST">
+        <form action="user_edit_profile.php" method="POST">
             <label for="current_password">Current Password:</label>
             <input type="password" id="current_password" name="current_password" required>
 
