@@ -24,15 +24,14 @@
     </p>
 
         <div class="sidebar-brand">
-            <h2><span class="lab la-accusoft">Admin Control Panel</span></h2>
+            <h2><span class="lab la-accusoft">Uses Profile</span></h2>
         </div>
 
         <div class="sidebar-menu">
             <ul>
-                <li><a href="admin_control_panel.php" class="active"><img src="images/register_icon.png" alt="Register" class="register-sidebar-icon"><span>Register</span></a></li>
-                <li><a href="admin_login_control_panel.php"><img src="images/login_icon.png" alt="Login" class="login-sidebar-icon"><span>Login</span></a></li>
-                <li><a href="admin_contribute_control_panel.php"><img src="images/contribute_icon.png" alt="contribute" class="contribute-sidebar-icon"><span>Contribute</span></a></li>
-                <li><a href="admin_enquiry_control_panel.php"><img src="images/enquiry_icon.png" alt="enquiry" class="enquiry-sidebar-icon"><span>Enquiries</span></a></li>
+                <li><a href="admin_control_panel.php" class="active"><img src="images/register_icon.png" alt="Register" class="register-sidebar-icon"><span>Password</span></a></li>
+                <li><a href="admin_contribute_control_panel.php"><img src="images/contribute_icon.png" alt="contribute" class="contribute-sidebar-icon"><span>Contribute history</span></a></li>
+                <li><a href="enquiry_process.php"><img src="images/enquiry_icon.png" alt="enquiry" class="enquiry-sidebar-icon"><span>Enquiry history</span></a></li>
             </ul>
         </div>
     </div>
