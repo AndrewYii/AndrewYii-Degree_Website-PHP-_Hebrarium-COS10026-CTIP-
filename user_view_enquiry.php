@@ -29,6 +29,7 @@
 
         <div class="sidebar-menu">
             <ul>
+            <li><a href="enquiry_process.php"><img src="images/enquiry_icon.png" alt="enquiry" class="enquiry-sidebar-icon"><span>Username</span></a></li>
                 <li><a href="admin_control_panel.php" class="active"><img src="images/register_icon.png" alt="Register" class="register-sidebar-icon"><span>Password</span></a></li>
                 <li><a href="admin_contribute_control_panel.php"><img src="images/contribute_icon.png" alt="contribute" class="contribute-sidebar-icon"><span>Contribute history</span></a></li>
                 <li><a href="enquiry_process.php"><img src="images/enquiry_icon.png" alt="enquiry" class="enquiry-sidebar-icon"><span>Enquiry history</span></a></li>
@@ -71,16 +72,19 @@
                     
                         <div class="card-body">
                         <table class="admin-table">
-                            <thead>
-                                <tr>
-                                <th>ID</th>
-                                    <th>Name</th>
-                                    <th>Username</th>
-                                    <th>Email</th>
-                                    <th>Date Submitted</th>
-                                </tr>
+        <form action="user_edit_profile.php" method="POST">
+            <label for="current_password">Current Password:</label>
+            <input type="password" id="current_password" name="current_password" required>
 
-                            </thead>
+            <label for="new_password">New Password:</label>
+            <input type="password" id="new_password" name="new_password" required>
+
+            <label for="confirm_password">Confirm New Password:</label>
+            <input type="password" id="confirm_password" name="confirm_password" required>
+
+            <button type="submit">Change Password</button>
+        </form>
+
                             <?php
             $conn = mysqli_connect($servername,$username,$password,$dbname);
             $sql = "SELECT * FROM Register";
