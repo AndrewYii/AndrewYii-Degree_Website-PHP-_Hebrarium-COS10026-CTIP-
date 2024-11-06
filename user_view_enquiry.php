@@ -29,7 +29,7 @@
 
         <div class="sidebar-menu">
             <ul>
-                <li><a href="admin_control_panel.php" class="active"><img src="images/register_icon.png" alt="Register" class="register-sidebar-icon"><span>Register</span></a></li>
+                <li><a href="user_edit_profile.php" class="active"><img src="images/.png" alt="UserEdit" class="register-sidebar-icon"><span>Edit user profile</span></a></li>
             </ul>
         </div>
     </div>
