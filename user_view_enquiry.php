@@ -59,26 +59,26 @@
 
         <main>
             <div class="password-change-section">
-        <h3>Change Password</h3>
-        <form action="change_password.php" method="POST">
-            <div class="form-group">
-                <label for="current_password">Current Password</label>
-                <input type="password" id="current_password" name="current_password" required>
-            </div>
+                        <h3>Change Password</h3>
+                    <form action="user_edit_profile.php" method="POST">
+                <div class="form-group">
+                    <label for="current_password">Current Password</label>
+                    <input type="password" id="current_password" name="current_password" required>
+                </div>
             
-            <div class="form-group">
-                <label for="new_password">New Password</label>
-                <input type="password" id="new_password" name="new_password" required>
-            </div>
+                <div class="form-group">
+                    <label for="new_password">New Password</label>
+                    <input type="password" id="new_password" name="new_password" required>
+                </div>
             
-            <div class="form-group">
-                <label for="confirm_password">Confirm New Password</label>
-                <input type="password" id="confirm_password" name="confirm_password" required>
-            </div>
+                <div class="form-group">
+                    <label for="confirm_password">Confirm New Password</label>
+                    <input type="password" id="confirm_password" name="confirm_password" required>
+                </div>
             
-            <button type="submit" class="btn btn-primary">Update Password</button>
-        </form>
-    </div>
+                <button type="submit" class="btn btn-primary">Update Password</button>
+                    </form>
+            </div>
 
                             <?php
             $conn = mysqli_connect($servername,$username,$password,$dbname);
