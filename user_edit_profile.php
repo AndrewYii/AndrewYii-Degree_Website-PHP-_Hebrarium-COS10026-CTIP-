@@ -6,8 +6,13 @@ include ('database/database.php');
 
 // Check if the form is submitted
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
-    // Get the user ID from session instead of undefined $row
-    $user_id = $_SESSION['user_id']; // Make sure this matches your session variable name
+    // Check if user is logged in
+    if (!isset($_SESSION['Login_ID'])) {
+        echo "Please log in first.";
+        exit;
+    }
+    
+    $user_id = $_SESSION['Login_ID'];
 
     // Get form data
     $current_password = $_POST['current_password'];
@@ -55,7 +60,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     }
 
     $stmt->close();
-}
-// Close the connection only at the end of the script
+} // end of POST check
 $conn->close();
 ?>
