@@ -130,7 +130,7 @@
                 // No error
                 if ($error == '' && $spam == '')
                 {
-                    $sql = "INSERT INTO Contribute (Username, Picture_Option, Tag, Plant_Name, Plant_Family, Plant_Genus, Plant_Species, Plant_Leaf_Photo, Plant_Herbarium_Photo, Description_Contribute) 
+                    $sql = "INSERT INTO Contribute (User_Name, Picture_Option, Tag, Plant_Name, Plant_Family, Plant_Genus, Plant_Species, Plant_Leaf_Photo, Plant_Herbarium_Photo, Description_Contribute) 
                     VALUES ('$username', '$picture_option', '$tag_option', '$plantname', '$plantfamily', '$plantgenus', '$plantspecies', '$plantleaf_path', '$plantherbarium_path', '$contributedescription')";            
                     if (mysqli_query($conn, $sql)){
                         $message = "Your contribution has been submitted successfully, and it is displayed in the contribution page. Go there to take a look!";
