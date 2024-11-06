@@ -6,7 +6,11 @@ include('database/connection.php'); // Include database connection file
 $current_password = $_POST['current_password'];
 $new_password = $_POST['new_password'];
 $confirm_password = $_POST['confirm_password'];
-$retrived_registerid = $_SESSION['Register_ID']; // Assuming ID is stored in the session
+$sql_retrievedata = "SELECT Register_ID, Username, Password FROM Register WHERE Username = ?";
+        $stmt = $conn->prepare($sql_retrievedata);
+        $stmt->bind_param("s", $username);
+        $stmt->execute();
+        $result = $stmt->get_result();
 
 // Check if the new passwords match
 if ($new_password !== $confirm_password) {
