@@ -29,8 +29,8 @@
 
         <div class="sidebar-menu">
             <ul>
-                <li><a href="admin_control_panel.php" class="active"><img src="../images/register_icon.png" alt="Register" class="register-sidebar-icon"><span>Register</span></a></li>
-                <li><a href="admin_login_control_panel.php"><img src="../images/login_icon.png" alt="Login" class="login-sidebar-icon"><span>Login</span></a></li>
+                <li><a href="admin_control_panel.php"><img src="../images/register_icon.png" alt="Register" class="register-sidebar-icon"><span>Register</span></a></li>
+                <li><a href="admin_login_control_panel.php" class="active"><img src="../images/login_icon.png" alt="Login" class="login-sidebar-icon"><span>Login</span></a></li>
                 <li><a href="admin_contribute_control_panel.php"><img src="../images/contribute_icon.png" alt="contribute" class="contribute-sidebar-icon"><span>Contribute</span></a></li>
                 <li><a href="admin_enquiry_control_panel.php"><img src="../images/enquiry_icon.png" alt="enquiry" class="enquiry-sidebar-icon"><span>Enquiries</span></a></li>
             </ul>
@@ -74,29 +74,29 @@
                         <table class="admin-table">
                             <thead>
                                 <tr>
-                                <th>ID</th>
-                                    <th>Name</th>
+                                    <th>ID</th>
+                                    <th>Register ID</th>
                                     <th>Username</th>
-                                    <th>Email</th>
-                                    <th>Date Submitted</th>
+                                    <th>Login At</th>
+                                    <th>Logout At</th>
                                 </tr>
-
                             </thead>
                             <?php
             $conn = mysqli_connect($servername,$username,$password,$dbname);
-            $sql = "SELECT * FROM Register";
+            $sql = "SELECT * FROM login";
             $result = mysqli_query($conn, $sql);
 
             if (mysqli_num_rows($result) > 0) {
                 while($row = mysqli_fetch_assoc($result)) {
         ?>
                 <tr>
+                <td><?php echo $row["Login_ID"]; ?></td>
                     <td><?php echo $row["Register_ID"]; ?></td>
-                    <td><?php echo $row["Name"]; ?></td>
                     <td><?php echo $row["Username"]; ?></td>
-                    <td><?php echo $row["Email"]; ?></td>
-                    <td><?php echo $row["Register_Created_At"]; ?></td>
-
+                    <td><?php echo $row["Login_At"]; ?></td>
+                    <td><?php echo isset($row["Logout_At"]) && $row["Logout_At"] !== null
+                    ? $row["Logout_At"]
+                    : "Still Logged In"; ?></td>
                 </tr>
         <?php
                 }
