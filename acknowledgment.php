@@ -524,6 +524,14 @@
                                     Picture of Hopea Parviflora
                                 </a>
                             </div>
+                            <div class="acknowledgment-heading">
+                                <h1>Forgot Password</h1>
+                            </div>
+                            <div class="acknowledgment-text">
+                                <a href="https://cdn-icons-png.flaticon.com/512/6146/6146586.png">
+                                    Forgot Password Lock Picture
+                                </a>
+                            </div>
                         </div>
                         <figure class='going-up-container'>
                             <a href='#top_ack'>
