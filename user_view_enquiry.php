@@ -29,6 +29,7 @@
 
         <div class="sidebar-menu">
             <ul>
+            <li><a href="enquiry_process.php"><img src="images/enquiry_icon.png" alt="enquiry" class="enquiry-sidebar-icon"><span>Username</span></a></li>
                 <li><a href="admin_control_panel.php" class="active"><img src="images/register_icon.png" alt="Register" class="register-sidebar-icon"><span>Password</span></a></li>
                 <li><a href="admin_contribute_control_panel.php"><img src="images/contribute_icon.png" alt="contribute" class="contribute-sidebar-icon"><span>Contribute history</span></a></li>
                 <li><a href="enquiry_process.php"><img src="images/enquiry_icon.png" alt="enquiry" class="enquiry-sidebar-icon"><span>Enquiry history</span></a></li>

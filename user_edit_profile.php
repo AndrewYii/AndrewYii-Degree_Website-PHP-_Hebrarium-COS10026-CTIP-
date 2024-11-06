@@ -6,13 +6,8 @@ include ('database/database.php');
 
 // Check if the form is submitted
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
-    // Check if user is logged in
-    if (!isset($_SESSION['Login_ID'])) {
-        echo "Please log in first.";
-        exit;
-    }
-    
-    $user_id = $_SESSION['Login_ID'];
+    // Get the user ID (assuming it is stored in the session after login)
+    $retrived_registerid = $row['Register_ID'];
 
     // Get form data
     $current_password = $_POST['current_password'];
@@ -24,15 +19,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $stmt = $conn->prepare($sql);
     $stmt->bind_param("i", $user_id);
     $stmt->execute();
-    $result = $stmt->get_result();
-    $user = $result->fetch_assoc();
-    
-    if (!$user) {
-        echo "User not found.";
-        exit;
-    }
-    
-    $db_password = $user['password'];
+    $stmt->bind_result($db_password);
+    $stmt->fetch();
     $stmt->close();
 
     // Step 2: Verify the current password matches the hash in the database
@@ -60,6 +48,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     }
 
     $stmt->close();
-} // end of POST check
-$conn->close();
+    $conn->close();
+}
 ?>
