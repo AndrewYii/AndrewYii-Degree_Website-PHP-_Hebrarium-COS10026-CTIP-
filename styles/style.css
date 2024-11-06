@@ -2910,16 +2910,16 @@ button.contribute-btn:hover {
     font-size: 20px;
 }
 
-#open-comment:not(:checked) ~ textarea, #open-comment:not(:checked) ~ input[type="submit"], #open-comment:not(:checked)~ label .contributor-close-comments,#open-comment1:not(:checked) ~ textarea, #open-comment1:not(:checked) ~ input[type="submit"], #open-comment1:not(:checked)~ label .contributor-close-comments,#open-comment2:not(:checked) ~ textarea, #open-comment2:not(:checked) ~ input[type="submit"], #open-comment2:not(:checked)~ label .contributor-close-comments,#open-comment3:not(:checked) ~ textarea, #open-comment3:not(:checked) ~ input[type="submit"], #open-comment3:not(:checked)~ label .contributor-close-comments  {
+#open-comment0:not(:checked) ~ textarea, #open-comment0:not(:checked) ~ input[type="submit"], #open-comment0:not(:checked)~ label .contributor-close-comments,#open-comment1:not(:checked) ~ textarea, #open-comment1:not(:checked) ~ input[type="submit"], #open-comment1:not(:checked)~ label .contributor-close-comments,#open-comment2:not(:checked) ~ textarea, #open-comment2:not(:checked) ~ input[type="submit"], #open-comment2:not(:checked)~ label .contributor-close-comments,#open-comment3:not(:checked) ~ textarea, #open-comment3:not(:checked) ~ input[type="submit"], #open-comment3:not(:checked)~ label .contributor-close-comments,#open-comment4:not(:checked) ~ textarea, #open-comment4:not(:checked) ~ input[type="submit"], #open-comment4:not(:checked)~ label .contributor-close-comments,#open-comment5:not(:checked) ~ textarea, #open-comment5:not(:checked) ~ input[type="submit"], #open-comment5:not(:checked)~ label .contributor-close-comments,#open-comment6:not(:checked) ~ textarea, #open-comment6:not(:checked) ~ input[type="submit"], #open-comment6:not(:checked)~ label .contributor-close-comments,#open-comment7:not(:checked) ~ textarea, #open-comment7:not(:checked) ~ input[type="submit"], #open-comment7:not(:checked)~ label .contributor-close-comments,#open-comment8:not(:checked) ~ textarea, #open-comment8:not(:checked) ~ input[type="submit"], #open-comment8:not(:checked)~ label .contributor-close-comments,#open-comment9:not(:checked) ~ textarea, #open-comment9:not(:checked) ~ input[type="submit"], #open-comment9:not(:checked)~ label .contributor-close-comments  {
     display: none;
 }
 
 
-#open-comment:checked~ label .contributor-button-comments,#open-comment1:checked~ label .contributor-button-comments,#open-comment2:checked~ label .contributor-button-comments,#open-comment3:checked~ label .contributor-button-comments{
+#open-comment0:checked~ label .contributor-button-comments,#open-comment1:checked~ label .contributor-button-comments,#open-comment2:checked~ label .contributor-button-comments,#open-comment3:checked~ label .contributor-button-comments,#open-comment4:checked~ label .contributor-button-comments,#open-comment5:checked~ label .contributor-button-comments,#open-comment6:checked~ label .contributor-button-comments,#open-comment7:checked~ label .contributor-button-comments,#open-comment8:checked~ label .contributor-button-comments,#open-comment9:checked~ label .contributor-button-comments{
     display: none;
 }
 
-#open-comment,#open-comment1,#open-comment2,#open-comment3{
+#open-comment0,#open-comment1,#open-comment2,#open-comment3,#open-comment4,#open-comment5,#open-comment6,#open-comment7,#open-comment8,#open-comment9{
     display: none;
 }
 
@@ -2957,7 +2957,7 @@ button.contribute-btn:hover {
     right:-170px;
 }
 
-#open-comment:checked ~ textarea,#open-comment:checked ~ input[type="submit"],#open-comment1:checked ~ textarea,#open-comment1:checked ~ input[type="submit"],#open-comment2:checked ~ textarea,#open-comment2:checked ~ input[type="submit"],#open-comment3:checked ~ textarea,#open-comment3:checked ~ input[type="submit"]{
+#open-comment0:checked ~ textarea,#open-comment0:checked ~ input[type="submit"],#open-comment1:checked ~ textarea,#open-comment1:checked ~ input[type="submit"],#open-comment2:checked ~ textarea,#open-comment2:checked ~ input[type="submit"],#open-comment3:checked ~ textarea,#open-comment3:checked ~ input[type="submit"],#open-comment4:checked ~ textarea,#open-comment4:checked ~ input[type="submit"],#open-comment5:checked ~ textarea,#open-comment5:checked ~ input[type="submit"],#open-comment6:checked ~ textarea,#open-comment6:checked ~ input[type="submit"],#open-comment7:checked ~ textarea,#open-comment7:checked ~ input[type="submit"],#open-comment8:checked ~ textarea,#open-comment8:checked ~ input[type="submit"],#open-comment9:checked ~ textarea,#open-comment9:checked ~ input[type="submit"]{
     display: block; 
     margin-top: 10px; 
 }
