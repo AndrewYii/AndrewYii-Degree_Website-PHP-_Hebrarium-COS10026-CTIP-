@@ -109,8 +109,8 @@
                 if(empty(trim($contributedescription))){
                     $error .= "Please leave comment about your finds.<br>";
                 }
-                else if(!preg_match('/^.{200,2000}$/', $contributedescription)){
-                    $error .= "Please leave a comment between 200 and 2000.<br>";
+                else if(!preg_match('/^.{100,2000}$/', $contributedescription)){
+                    $error .= "Please leave a comment between 100 and 2000 characters.<br>";
                 }
 
                 $check_duplicate_sql = "SELECT * FROM Contribute 
