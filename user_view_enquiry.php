@@ -58,27 +58,28 @@
         </header>
 
         <main>
-            <div class="recent-grid">
-                <div class="projects">
-                    <div class="card">
-                        <div class="card-header">
-                            <h3>Recent Projects</h3>
+            <div class="password-change-section">
+        <h3>Change Password</h3>
+        <form action="change_password.php" method="POST">
+            <div class="form-group">
+                <label for="current_password">Current Password</label>
+                <input type="password" id="current_password" name="current_password" required>
+            </div>
+            
+            <div class="form-group">
+                <label for="new_password">New Password</label>
+                <input type="password" id="new_password" name="new_password" required>
+            </div>
+            
+            <div class="form-group">
+                <label for="confirm_password">Confirm New Password</label>
+                <input type="password" id="confirm_password" name="confirm_password" required>
+            </div>
+            
+            <button type="submit" class="btn btn-primary">Update Password</button>
+        </form>
+    </div>
 
-                            <button>See All <span class="las la-arrow-right"></span></button>
-                        </div>
-                    
-                        <div class="card-body">
-                        <table class="admin-table">
-                            <thead>
-                                <tr>
-                                <th>ID</th>
-                                    <th>Name</th>
-                                    <th>Username</th>
-                                    <th>Email</th>
-                                    <th>Date Submitted</th>
-                                </tr>
-
-                            </thead>
                             <?php
             $conn = mysqli_connect($servername,$username,$password,$dbname);
             $sql = "SELECT * FROM Register";
