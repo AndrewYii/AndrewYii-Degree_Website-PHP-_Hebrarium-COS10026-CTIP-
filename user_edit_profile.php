@@ -6,7 +6,7 @@ include('database/connection.php');
 // Check if the form is submitted
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
     // Get the user ID (assuming it is stored in the session after login)
-    $user_id = $_SESSION['user_id'];
+    $retrived_registerid = $row['Register_ID'];
 
     // Get form data
     $current_password = $_POST['current_password'];
