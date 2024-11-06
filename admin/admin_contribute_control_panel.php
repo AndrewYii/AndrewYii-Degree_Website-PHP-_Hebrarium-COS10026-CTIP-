@@ -30,8 +30,8 @@
         <div class="sidebar-menu">
             <ul>
                 <li><a href="admin_control_panel.php"><img src="../images/register_icon.png" alt="Register" class="register-sidebar-icon"><span>Register</span></a></li>
-                <li><a href="admin_login_control_panel.php" class="active"><img src="../images/login_icon.png" alt="Login" class="login-sidebar-icon"><span>Login</span></a></li>
-                <li><a href="admin_contribute_control_panel.php"><img src="../images/contribute_icon.png" alt="contribute" class="contribute-sidebar-icon"><span>Contribute</span></a></li>
+                <li><a href="admin_login_control_panel.php"><img src="../images/login_icon.png" alt="Login" class="login-sidebar-icon"><span>Login</span></a></li>
+                <li><a href="admin_contribute_control_panel.php" class="active"><img src="../images/contribute_icon.png" alt="contribute" class="contribute-sidebar-icon"><span>Contribute</span></a></li>
                 <li><a href="admin_enquiry_control_panel.php"><img src="../images/enquiry_icon.png" alt="enquiry" class="enquiry-sidebar-icon"><span>Enquiries</span></a></li>
             </ul>
         </div>
@@ -75,28 +75,38 @@
                             <thead>
                                 <tr>
                                     <th>ID</th>
-                                    <th>Register ID</th>
-                                    <th>Username</th>
-                                    <th>Login At</th>
-                                    <th>Logout At</th>
+                                    <th>Picture Option</th>
+                                    <th>Tag</th>
+                                    <th>Plant's Name</th>
+                                    <th>Plant's Family</th>
+                                    <th>Plant's Genus</th>
+                                    <th>Plant's Species</th>
+                                    <th>Plant's Leaf Photo</th>
+                                    <th>Plant's Herbarium Photo</th>
+                                    <th>Comment</th>
+                                    <th>Date Submitted</th>
                                 </tr>
                             </thead>
                             <?php
             $conn = mysqli_connect($servername,$username,$password,$dbname);
-            $sql = "SELECT * FROM login";
+            $sql = "SELECT * FROM Contribute";
             $result = mysqli_query($conn, $sql);
 
             if (mysqli_num_rows($result) > 0) {
                 while($row = mysqli_fetch_assoc($result)) {
         ?>
                 <tr>
-                <td><?php echo $row["Login_ID"]; ?></td>
-                    <td><?php echo $row["Register_ID"]; ?></td>
-                    <td><?php echo $row["Username"]; ?></td>
-                    <td><?php echo $row["Login_At"]; ?></td>
-                    <td><?php echo isset($row["Logout_At"]) && $row["Logout_At"] !== null
-                    ? $row["Logout_At"]
-                    : "Still Logged In"; ?></td>
+                    <td><?php echo $row["Contribute_ID"]; ?></td>
+                    <td><?php echo $row["Picture_Option"]; ?></td>
+                    <td><?php echo $row["Tag"]; ?></td>
+                    <td><?php echo $row["Plant_Name"]; ?></td>
+                    <td><?php echo $row["Plant_Family"]; ?></td>
+                    <td><?php echo $row["Plant_Genus"]; ?></td>
+                    <td><?php echo $row["Plant_Species"]; ?></td>
+                    <td><?php echo $row["Plant_Leaf_Photo"]; ?></td>
+                    <td><?php echo $row["Plant_Herbarium_Photo"]; ?></td>
+                    <td><?php echo $row["Comment_Contribute"]; ?></td>
+                    <td><?php echo $row["Contribute_Created_At"]; ?></td>
                 </tr>
         <?php
                 }

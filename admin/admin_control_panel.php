@@ -31,8 +31,8 @@
             <ul>
                 <li><a href="admin_control_panel.php" class="active"><img src="../images/register_icon.png" alt="Register" class="register-sidebar-icon"><span>Register</span></a></li>
                 <li><a href="admin_login_control_panel.php"><img src="../images/login_icon.png" alt="Login" class="login-sidebar-icon"><span>Login</span></a></li>
-                <li><a href=""><img src="../images/contribute_icon.png" alt="contribute" class="contribute-sidebar-icon"><span>Contribute</span></a></li>
-                <li><a href=""><img src="../images/enquiry_icon.png" alt="enquiry" class="enquiry-sidebar-icon"><span>Enquiries</span></a></li>
+                <li><a href="admin_contribute_control_panel.php"><img src="../images/contribute_icon.png" alt="contribute" class="contribute-sidebar-icon"><span>Contribute</span></a></li>
+                <li><a href="admin_enquiry_control_panel.php"><img src="../images/enquiry_icon.png" alt="enquiry" class="enquiry-sidebar-icon"><span>Enquiries</span></a></li>
             </ul>
         </div>
     </div>
@@ -74,39 +74,29 @@
                         <table class="admin-table">
                             <thead>
                                 <tr>
-                                    <td>ID</td>
-                                    <td>Name</td>
+                                <th>ID</th>
+                                    <th>Name</th>
+                                    <th>Username</th>
                                     <th>Email</th>
-                                    <th>Phone</th>
-                                    <th>Subject</th>
-                                    <th>Message</th>
-                                    <th>Street</th>
-                                    <th>City</th>
-                                    <th>Postcode</th>
-                                    <th>State</th>
                                     <th>Date Submitted</th>
                                 </tr>
+
                             </thead>
                             <?php
             $conn = mysqli_connect($servername,$username,$password,$dbname);
-            $sql = "SELECT * FROM Enquiry";
+            $sql = "SELECT * FROM Register";
             $result = mysqli_query($conn, $sql);
 
             if (mysqli_num_rows($result) > 0) {
                 while($row = mysqli_fetch_assoc($result)) {
         ?>
                 <tr>
-                    <td><?php echo $row["Enquiry_ID"]; ?></td>
+                    <td><?php echo $row["Register_ID"]; ?></td>
                     <td><?php echo $row["Name"]; ?></td>
+                    <td><?php echo $row["Username"]; ?></td>
                     <td><?php echo $row["Email"]; ?></td>
-                    <td><?php echo $row["Phone"]; ?></td>
-                    <td><?php echo $row["Subject"]; ?></td>
-                    <td><?php echo $row["Message"]; ?></td>
-                    <td><?php echo $row["Street"]; ?></td>
-                    <td><?php echo $row["City"]; ?></td>
-                    <td><?php echo $row["Postcode"]; ?></td>
-                    <td><?php echo $row["State"]; ?></td>
-                    <td><?php echo $row["Enquiry_Created_At"]; ?></td>
+                    <td><?php echo $row["Register_Created_At"]; ?></td>
+
                 </tr>
         <?php
                 }
