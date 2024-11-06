@@ -386,7 +386,7 @@
                         <img src='images/going_up.png' alt='going-up' class='going-up'  title="going to the top">
                     </a>
                 </figure>
-            </div>z
+            </div>
             
 
             
