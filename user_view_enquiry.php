@@ -77,7 +77,8 @@
                                     <th>ID</th>
                                     <th>Name</th>
                                     <th>Current Username</th>
-                                    <th>Change Username</th>
+                                    <th>New Username</th>
+                                    <th>Action</th>
                                 </tr>
 
                             </thead>
@@ -92,8 +93,7 @@
                 <tr>
                     <td><?php echo $row["Register_ID"]; ?></td>
                     <td><?php echo $row["Name"]; ?></td>
-                    <td><?php echo $row["Username"]; ?></td>
-                    <td><?php echo $row["Email"]; ?></td>
+                    <td><?php echo $row["Username"]; ?></td>    
                 </tr>
         <?php
                 }
