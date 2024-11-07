@@ -24,7 +24,7 @@
     </p>
 
         <div class="sidebar-brand">
-            <h2><span class="lab la-accusoft">Registration</span></h2>
+            <h2><span class="lab la-accusoft">Username</span></h2>
         </div>
 
         <div class="sidebar-menu">
