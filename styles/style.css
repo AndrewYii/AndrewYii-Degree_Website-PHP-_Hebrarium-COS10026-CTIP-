@@ -6829,6 +6829,11 @@ button.contribute-btn:hover {
     text-align: center;
 }
 
+.admin-table .description-column td{
+    width: 1000px;
+    word-wrap: break-word;
+}
+
 /* If you want even more width, you can make the container wider */
 .projects {
     width: 100%;    /* Makes the container take full width */
@@ -6866,7 +6871,7 @@ button.contribute-btn:hover {
 
 .card-body {
     padding: 1rem;
-    max-height: 400px;
+    height: 1000px;
     overflow-y: auto;
     overflow-x: auto;  /* Added to handle wide tables */
 }

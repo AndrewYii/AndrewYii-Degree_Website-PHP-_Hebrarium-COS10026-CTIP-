@@ -85,7 +85,7 @@
                                     <th>Plant's Species</th>
                                     <th>Plant's Leaf Photo</th>
                                     <th>Plant's Herbarium Photo</th>
-                                    <th>Comment</th>
+                                    <th class="description-column">Comment</th>
                                     <th>Date Submitted</th>
                                 </tr>
                             </thead>
@@ -107,7 +107,7 @@
                     <td><?php echo $row["Plant_Species"]; ?></td>
                     <td><?php echo $row["Plant_Leaf_Photo"]; ?></td>
                     <td><?php echo $row["Plant_Herbarium_Photo"]; ?></td>
-                    <td><?php echo $row["Comment_Contribute"]; ?></td>
+                    <td class="description-column"><?php echo $row["Description_Contribute"]; ?></td>
                     <td><?php echo $row["Contribute_Created_At"]; ?></td>
                     <?php echo '<td><button class="admin-delete-button"><a href="delete_contribute.php?id=' . $row['Contribute_ID'] . '">Delete</a></button></td>'; ?>
                 </tr>
