@@ -40,10 +40,7 @@
     <div class="main-content">
         <header class="admin-header">
             <h2>
-                <label for="nav-toggle">
-                    <img src="../images/hamburger_icon2.png" alt="Toggle Menu" class="hamburger-icon">
-                </label>
-                Register
+                Contribute
             </h2>
 
             <div class="search-wrapper">

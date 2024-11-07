@@ -109,8 +109,8 @@
                 if(empty(trim($contributedescription))){
                     $error .= "Please leave comment about your finds.<br>";
                 }
-                else if(!preg_match('/^.{50,300}$/', $contributedescription)){
-                    $error .= "Please leave a comment between 50 and 300.<br>";
+                else if(!preg_match('/^.{100,2000}$/', $contributedescription)){
+                    $error .= "Please leave a comment between 100 and 2000 characters.<br>";
                 }
 
                 $check_duplicate_sql = "SELECT * FROM Contribute 
@@ -162,6 +162,9 @@
                             echo '<h1 class="title_confirm">SORRY !</h1>';
                             echo '<p class="confirm_words"><span class="fail_words">Input Invalid</span>: <br>' . $error . '</p>';
                             echo '<p class="confirm_words invalid_handle">Please check your input and <a href="contribute.php">try again</a>. If the problem persists, contact our <a href="mailto:104386568@students.swinburne.edu.my">customer service team </a>for assistance.</p>';
+                            echo '<p class="small_word_confirm">If you have any further questions or need immediate assistance, please don\'t hesitate to reach out to our <a href="mailto:104386568@students.swinburne.edu.my">customer service team </a>.You will redirect back to the Contribute Page within 2 seconds.</p>';
+                            echo '<meta http-equiv="refresh" content="2 ;url=contribute.php">';
+
                         }
                         else if ($error_connection !== ''){
                             echo '<h1 class="title_confirm">SORRY !</h1>';
@@ -171,10 +174,10 @@
                             echo '<h1 class="title_confirm">THANK YOU !</h1>';
                             echo '<p class="confirm_words"><span class="success_words">Success</span>: ' . $message . '</p>';
                             echo '<a class="button_view_confirm" href="contribute.php"> View Your Contribute Details</a>';
+                            echo '<p class="small_word_confirm">If you have any further questions or need immediate assistance, please don\'t hesitate to reach out to our <a href="mailto:104386568@students.swinburne.edu.my">customer service team </a>.You will redirect back to the Contribution Page within 2 seconds.</p>';
+                            echo '<meta http-equiv="refresh" content="2 ;url=contribution.php">';
                         }
-                        echo '<p class="small_word_confirm">If you have any further questions or need immediate assistance, please don\'t hesitate to reach out to our <a href="mailto:104386568@students.swinburne.edu.my">customer service team </a>.You will redirect back to the Contribute Page within 2 seconds.</p>';
                     ?>
-                    <meta http-equiv="refresh" content="2 ;url=contribute.php">
                 </div>
             </div>
 
