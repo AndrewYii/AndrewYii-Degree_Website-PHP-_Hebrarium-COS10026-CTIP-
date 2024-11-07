@@ -1585,6 +1585,7 @@ nav .menu {
 .identify h1{
     font-size: 45px;
     margin: 2%;
+    text-align: center;
 }
 
 .identify-article p{
@@ -1626,6 +1627,7 @@ nav .menu {
     margin: 0 auto;
     border-radius: 20px;
     padding: 10px 50px 50px 50px;
+    cursor: pointer;
 }
 
 .identify-p{
@@ -1633,67 +1635,10 @@ nav .menu {
     font-weight: bold;
     position: relative;
     top: -70px;
+    text-align: center;
     transition: transform 0.4s ease;
 }
 
-.identify-table{
-    width: 70%;
-    background-color: white;
-    margin: 10px;
-}
-
-.identify-outer{
-    display: flex;
-    flex-wrap: wrap;
-    text-align: center;
-    object-fit: cover;
-}
-
-.identify-outer img{
-    padding: 5px;
-    overflow: hidden;
-}
-
-.identify-table fieldset{
-    margin: 20px;
-}
-
-.identify-table table{
-    width: 100%;
-    margin: 0 auto;
-    padding: 5px;
-}
-
-.identify-table table th{
-    width: 20%;
-    min-width: 100px;
-    text-align: end;
-    padding: 18px;
-}
-
-.identify-table table td{
-    width: 100%;
-    padding: 18px;
-}
-
-
-.identify-table legend{
-    margin: 0 auto;
-    font-size: 30px;
-    font-weight: bold;
-}
-
-.identify-sample{
-    text-align: center;
-}
-
-.identify-table tr{
-    transition: all 0.3s ease;
-}
-
-.identify-table tr:hover{
-    transform: scale(1.05);
-}
 
 .identify-aside {
     position: absolute;
@@ -1732,8 +1677,164 @@ nav .menu {
     display: None;
 }
 
-.identify-hidden{
+.upload-btn {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 20px;
+}
+
+.upload-btn button {
+    background-color: #4CAF50; 
+    color: white;
+    border: none;
+    border-radius: 25px;
+    padding: 12px 24px;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.2s, padding 0.2s;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.upload-btn button:hover {
+    background-color: #45a049;
+    padding: 12px 32px; 
+    transform: scale(1.05);
+}
+
+.upload-btn button:active {
+    transform: scale(1);
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+.identify-result-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.5);
+    z-index: 999;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.identify-result-container {
+    width: 90%;
+    max-width: 500px;
+    background: white;
+    border-radius: 15px;
+    box-shadow: 0 5px 20px rgba(0,0,0,0.2);
+    z-index: 1000;
+    animation: identifyFadeIn 0.3s ease-out;
+}
+
+.identify-result-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 20px;
+    background: #2E8B57;
+    border-radius: 15px 15px 0 0;
+}
+
+.identify-result-header h3 {
+    color: white;
+    margin: 0;
+    font-size: 1.2em;
+    font-weight: 600;
+}
+
+.identify-result-close {
+    cursor: pointer;
+    background: none;
+    border: none;
+    padding: 5px;
+}
+
+.identify-result-close img {
+    width: 24px;
+    height: 24px;
+    transition: transform 0.2s;
+}
+
+.identify-result-close:hover img {
+    transform: scale(1.1);
+}
+
+.identify-result-content {
+    padding: 20px;
+    max-height: 70vh;
+    overflow-y: auto;
+    background: #F0FFF0;
+}
+
+.identify-result-item {
+    background: white;
+    padding: 15px;
+    margin-bottom: 15px;
+    border-radius: 10px;
+    border-left: 4px solid #2E8B57;
+    transition: transform 0.2s ease;
+}
+
+.identify-result-item:hover {
+    transform: translateX(5px);
+}
+
+.identify-result-score {
+    font-size: 1.1em;
+    color: #2E8B57;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+.identify-result-detail {
+    padding: 8px 0;
+    border-bottom: 1px solid #E8F5E9;
+}
+
+.identify-result-detail:last-child {
+    border-bottom: none;
+}
+
+.identify-result-detail strong {
+    color: #2E8B57;
+    min-width: 120px;
+    display: inline-block;
+}
+
+#close-identify-find {
     display: none;
+}
+
+#close-identify-find:checked + .identify-result-overlay {
+    animation: identifyFadeOut 0.3s ease-out forwards;
+    display: none;
+}
+
+@keyframes identifyFadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes identifyFadeOut {
+    from {
+        opacity: 1;
+        transform: translateY(0);
+    }
+    to {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
 }
 
 
@@ -1753,41 +1854,6 @@ nav .menu {
         z-index: 10; /* Ensure it stays above other content */
     } 
 }
-
-@media (max-width: 1132px) {
-    .identify-outer img{
-        width: 300px;
-    }
-}
-
-@media (max-width: 700px) {
-    .identify-outer img{
-        width: 180px;
-    }
-}
-
-@media (max-width: 500px) {
-    .identify-hidden{
-        display: block;
-        text-align: center;
-    }
-    
-    .identify-table table th {
-        width: 20%;
-        min-width: 100px;
-        text-align: center;
-        padding: 18px;
-      }
-
-    .identify-row{
-        display: none;
-    }
-
-    .identify-table legend{
-        font-size: 20px;
-    }
-}
-
 
 @media (max-width:601px){
 
@@ -6244,7 +6310,7 @@ button.contribute-btn:hover {
     transition: transform 0.3s;
 }
 
-.white_region:hover ~ .going-up-container, footer:hover ~ .going-up-container,.going-up-container:hover,#point-ack:hover~.going-up-container,.profile-table-layout:hover~.going-up-container,.step-container:hover~.going-up-container,.flip-card-classify:hover~.going-up-container,.point-classify:hover~.going-up-container,.contribute-form-background-layout:hover~.going-up-container,.detect-con:hover~.going-up-container,.detect-en:hover~.going-up-container,.enquiry-form:hover~.going-up-container,.identify-table:hover~.going-up-container,.register-form-layout:hover~.going-up-container,.tools-container:hover~.going-up-container,.tutorial-intrduction-background-layout1:hover~.going-up-container,.flipcard-tuto:hover~.going-up-container,.tuto-container:hover~.going-up-container{
+.white_region:hover ~ .going-up-container, footer:hover ~ .going-up-container,.going-up-container:hover,#point-ack:hover~.going-up-container,.profile-table-layout:hover~.going-up-container,.step-container:hover~.going-up-container,.flip-card-classify:hover~.going-up-container,.point-classify:hover~.going-up-container,.contribute-form-background-layout:hover~.going-up-container,.detect-con:hover~.going-up-container,.detect-en:hover~.going-up-container,.enquiry-form:hover~.going-up-container,.register-form-layout:hover~.going-up-container,.tools-container:hover~.going-up-container,.tutorial-intrduction-background-layout1:hover~.going-up-container,.flipcard-tuto:hover~.going-up-container,.tuto-container:hover~.going-up-container{
     opacity: 1;
 }
 
