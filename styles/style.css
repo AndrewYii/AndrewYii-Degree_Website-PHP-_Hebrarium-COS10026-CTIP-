@@ -6847,6 +6847,16 @@ button.contribute-btn:hover {
     grid-gap: 2rem;
 }
 
+.alert {
+    color: #fff;
+    background-color: #f44336; /* Red background */
+    padding: 10px;
+    margin: 10px 0;
+    border-radius: 5px;
+    text-align: center;
+}
+
+
 .card {
     background: #fff;
     border-radius: 5px;

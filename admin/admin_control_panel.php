@@ -82,6 +82,7 @@
                                     <th>Username</th>
                                     <th>Email</th>
                                     <th>Date Submitted</th>
+                                    <th>Delete</th>
                                 </tr>
 
                             </thead>
@@ -99,7 +100,12 @@
                     <td><?php echo $row["Username"]; ?></td>
                     <td><?php echo $row["Email"]; ?></td>
                     <td><?php echo $row["Register_Created_At"]; ?></td>
-                    <?php echo '<td><button class="admin-delete-button"><a href="delete.php?id=' . $row['Register_ID'] . '">Delete</a></button></td>'; ?>
+                    <td>
+                        <form action="delete.php" method="post">
+                            <input type="hidden" class="form-control" name="delete_id" value="<?php echo $row['Register_ID']; ?>">
+                            <button type="submit" name="delete_btn" class="admin-delete-button">Delete</button>
+                        </form>
+                    </td>
                 </tr>
         <?php
                 }
