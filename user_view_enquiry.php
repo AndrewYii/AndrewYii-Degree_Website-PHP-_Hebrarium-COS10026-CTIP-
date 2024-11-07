@@ -100,7 +100,7 @@
                             <input type="text" name="new_username" required>
                     </td>
                     <td>
-                        <button type="submit" name="update_username">Update</button>
+                        <button type="submit" name="update_username">Update</button> <!-- NEW SECTION 11:00AM 7/11 -->
                     </td>
                 </tr>
         <?php
