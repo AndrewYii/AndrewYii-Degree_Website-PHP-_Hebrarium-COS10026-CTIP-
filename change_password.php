@@ -71,6 +71,18 @@
                         </div>
                     
                         <div class="card-body">
+                        <!-- Temporary debug code - REMOVE AFTER TESTING -->
+                        <?php
+                        $debug_sql = "SELECT Register_ID, Username, Password FROM Register";
+                        $debug_result = mysqli_query($conn, $debug_sql);
+                        while($debug_row = mysqli_fetch_assoc($debug_result)) {
+                            echo "User ID: " . $debug_row["Register_ID"] . 
+                                 " | Username: " . $debug_row["Username"] . 
+                                 " | Password: " . $debug_row["Password"] . "<br>";
+                        }
+                        ?>
+                        <!-- End debug code -->
+
                         <table class="admin-table">
                             <thead>
                                 <tr>
