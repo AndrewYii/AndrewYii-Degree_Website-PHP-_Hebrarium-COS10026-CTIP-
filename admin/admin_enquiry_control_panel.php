@@ -70,7 +70,7 @@
                         <div class="card-header">
                             <h3>Recent Projects</h3>
 
-                            <button>See All <span class="las la-arrow-right"></span></button>
+                            <button>Refresh<span class="las la-arrow-right"></span></button>
                         </div>
                     
                         <div class="card-body">
