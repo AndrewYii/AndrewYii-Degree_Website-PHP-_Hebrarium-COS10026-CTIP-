@@ -29,10 +29,10 @@
 
         <div class="sidebar-menu">
             <ul>
-                <li><a href="admin_control_panel.php" class="active"><img src="images/register_icon.png" alt="Register" class="register-sidebar-icon"><span>Username</span></a></li>
-                <li><a href="admin_login_control_panel.php"><img src="images/login_icon.png" alt="Login" class="login-sidebar-icon"><span>Password</span></a></li>
-                <li><a href="admin_contribute_control_panel.php"><img src="images/contribute_icon.png" alt="contribute" class="contribute-sidebar-icon"><span>Contribute history</span></a></li>
-                <li><a href="admin_enquiry_control_panel.php"><img src="images/enquiry_icon.png" alt="enquiry" class="enquiry-sidebar-icon"><span>Enquiry history</span></a></li>
+                <li><a href="change_user.php" class="active"><img src="images/register_icon.png" alt="Register" class="register-sidebar-icon"><span>Username</span></a></li>
+                <li><a href="change_password.php"><img src="images/login_icon.png" alt="Login" class="login-sidebar-icon"><span>Password</span></a></li>
+                <li><a href=""><img src="images/contribute_icon.png" alt="contribute" class="contribute-sidebar-icon"><span>Contribute history</span></a></li>
+                <li><a href=""><img src="images/enquiry_icon.png" alt="enquiry" class="enquiry-sidebar-icon"><span>Enquiry history</span></a></li>
             </ul>
         </div>
     </div>
@@ -65,7 +65,7 @@
                 <div class="projects">
                     <div class="card">
                         <div class="card-header">
-                            <h3>Recent Projects</h3>
+                            <h3>Profile</h3>
 
                             <button>See All <span class="las la-arrow-right"></span></button>
                         </div>
@@ -74,11 +74,11 @@
                         <table class="admin-table">
                             <thead>
                                 <tr>
-                                <th>ID</th>
+                                    <th>ID</th>
                                     <th>Name</th>
-                                    <th>Username</th>
-                                    <th>Email</th>
-                                    <th>Date Submitted</th>
+                                    <th>Current Username</th>
+                                    <th>New Username</th>
+                                    <th>Action</th>
                                 </tr>
 
                             </thead>
@@ -94,9 +94,14 @@
                     <td><?php echo $row["Register_ID"]; ?></td>
                     <td><?php echo $row["Name"]; ?></td>
                     <td><?php echo $row["Username"]; ?></td>
-                    <td><?php echo $row["Email"]; ?></td>
-                    <td><?php echo $row["Register_Created_At"]; ?></td>
-
+                    <td>
+                        <form method="POST" action="user_edit_profile.php">
+                            <input type="hidden" name="register_id" value="<?php echo $row["Register_ID"]; ?>"> <!-- REGISTER_ID TBC -->
+                            <input type="text" name="new_username">
+                    </td>
+                    <td>
+                        <button type="submit" name="update_username">Update</button> <!-- NEW SECTION 11:00AM 7/11 -->
+                    </td>
                 </tr>
         <?php
                 }
