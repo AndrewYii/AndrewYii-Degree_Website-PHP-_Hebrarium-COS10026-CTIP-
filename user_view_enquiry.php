@@ -82,7 +82,7 @@
 
                             </thead>
                             <?php
-            $conn = mysqli_connect($servername,$username,$password);
+            $conn = mysqli_connect($servername,$username,$password,$dbname);
             $sql = "SELECT * FROM Register";
             $result = mysqli_query($conn, $sql);
 
