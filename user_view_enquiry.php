@@ -24,18 +24,18 @@
     </p>
 
         <div class="sidebar-brand">
-            <h2><span class="lab la-accusoft">Uses Profile</span></h2>
+            <h2><span class="lab la-accusoft">Registration</span></h2>
         </div>
 
         <div class="sidebar-menu">
             <ul>
-                <li><a href="enquiry_process.php" class="active"><img src="images/enquiry_icon.png" alt="enquiry" class="enquiry-sidebar-icon"><span>Username</span></a></li>
-                <li><a href="admin_control_panel.php"><img src="images/register_icon.png" alt="Register" class="register-sidebar-icon"><span>Password</span></a></li>
+                <li><a href="admin_control_panel.php" class="active"><img src="images/register_icon.png" alt="Register" class="register-sidebar-icon"><span>Username</span></a></li>
+                <li><a href="admin_login_control_panel.php"><img src="images/login_icon.png" alt="Login" class="login-sidebar-icon"><span>Password</span></a></li>
                 <li><a href="admin_contribute_control_panel.php"><img src="images/contribute_icon.png" alt="contribute" class="contribute-sidebar-icon"><span>Contribute history</span></a></li>
-                <li><a href="enquiry_process.php"><img src="images/enquiry_icon.png" alt="enquiry" class="enquiry-sidebar-icon"><span>Enquiry history</span></a></li>
+                <li><a href="admin_enquiry_control_panel.php"><img src="images/enquiry_icon.png" alt="enquiry" class="enquiry-sidebar-icon"><span>Enquiry history</span></a></li>
             </ul>
         </div>
-        </div>
+    </div>
 
     <div class="main-content">
         <header class="admin-header">
@@ -43,7 +43,7 @@
                 <label for="nav-toggle">
                     <img src="images/hamburger_icon2.png" alt="Toggle Menu" class="hamburger-icon">
                 </label>
-                Password
+                Register
             </h2>
 
             <div class="search-wrapper">
@@ -72,19 +72,16 @@
                     
                         <div class="card-body">
                         <table class="admin-table">
-        <form action="user_edit_profile.php" method="POST">
-            <label for="current_password">Current Password:</label>
-            <input type="password" id="current_password" name="current_password" required>
+                            <thead>
+                                <tr>
+                                <th>ID</th>
+                                    <th>Name</th>
+                                    <th>Username</th>
+                                    <th>Email</th>
+                                    <th>Date Submitted</th>
+                                </tr>
 
-            <label for="new_password">New Password:</label>
-            <input type="password" id="new_password" name="new_password" required>
-
-            <label for="confirm_password">Confirm New Password:</label>
-            <input type="password" id="confirm_password" name="confirm_password" required>
-
-            <button type="submit">Change Password</button>
-        </form>
-
+                            </thead>
                             <?php
             $conn = mysqli_connect($servername,$username,$password,$dbname);
             $sql = "SELECT * FROM Register";
