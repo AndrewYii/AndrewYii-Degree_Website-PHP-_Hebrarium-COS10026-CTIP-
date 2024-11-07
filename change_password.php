@@ -7,7 +7,7 @@
     <meta name="keywords" content="Plant's Notebook, Enquiries, Admin View"/>
     <title>Plant's Notebook | View Enquiries</title>
     <link rel="stylesheet" href="styles/style.css">
-    <link rel="icon" type="image/x-icon" href="../images/logo.png">
+    <link rel="icon" type="image/x-icon" href="images/logo.png">
 </head>
 
 <body>
@@ -76,41 +76,51 @@
                                 <tr>
                                     <th>ID</th>
                                     <th>Name</th>
-                                    <th>Current Username</th>
-                                    <th>New Username</th>
+                                    <th>Username</th>
+                                    <th>Password Details</th>
                                     <th>Action</th>
                                 </tr>
-
                             </thead>
                             <?php
-            $conn = mysqli_connect($servername,$username,$password,$dbname);
-            $sql = "SELECT * FROM Register";
-            $result = mysqli_query($conn, $sql);
+                            $conn = mysqli_connect($servername,$username,$password,$dbname);
+                            $sql = "SELECT * FROM Register";
+                            $result = mysqli_query($conn, $sql);
 
-            if (mysqli_num_rows($result) > 0) {
-                while($row = mysqli_fetch_assoc($result)) {
-        ?>
-                <tr>
-                    <td><?php echo $row["Register_ID"]; ?></td>
-                    <td><?php echo $row["Name"]; ?></td>
-                    <td><?php echo $row["Username"]; ?></td>
-                    <td>
-                        <form method="POST" action="user_edit_profile.php">
-                            <input type="hidden" name="register_id" value="<?php echo $row["Register_ID"]; ?>"> <!-- REGISTER_ID TBC -->
-                            <input type="text" name="new_username">
-                    </td>
-                    <td>
-                        <button type="submit" name="update_username">Update</button> <!-- NEW SECTION 11:00AM 7/11 -->
-                    </td>
-                </tr>
-        <?php
-                }
-            } else {
-                echo "<tr><td colspan='11'>No enquiries found</td></tr>";
-            }
-            mysqli_close($conn);
-        ?>
-
+                            if (mysqli_num_rows($result) > 0) {
+                                while($row = mysqli_fetch_assoc($result)) {
+                            ?>
+                                <tr>
+                                    <td><?php echo $row["Register_ID"]; ?></td>
+                                    <td><?php echo $row["Name"]; ?></td>
+                                    <td><?php echo $row["Username"]; ?></td>
+                                    <td>
+                                        <form method="POST" action="process_password.php" class="password-form">
+                                            <input type="hidden" name="register_id" value="<?php echo $row["Register_ID"]; ?>">
+                                            <div class="form-group">
+                                                <label>Current Password:</label>
+                                                <input type="password" name="current_password" required>
+                                            </div>
+                                            <div class="form-group">
+                                                <label>New Password:</label>
+                                                <input type="password" name="new_password" required>
+                                            </div>
+                                            <div class="form-group">
+                                                <label>Confirm New Password:</label>
+                                                <input type="password" name="confirm_password" required>
+                                            </div>
+                                    </td>
+                                    <td>
+                                            <button type="submit" name="update_password">Update Password</button>
+                                        </form>
+                                    </td>
+                                </tr>
+                            <?php
+                                }
+                            } else {
+                                echo "<tr><td colspan='5'>No records found</td></tr>";
+                            }
+                            mysqli_close($conn);
+                            ?>
                         </table>
                         </div>
 
