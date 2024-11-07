@@ -5,49 +5,45 @@ include('database/connection.php');
 include ('database/database.php');
 
 // Check if the form is submitted
-if ($_SERVER["REQUEST_METHOD"] == "POST") {
-    // Get the user ID (assuming it is stored in the session after login)
-    $retrived_registerid = $row['Register_ID'];
-
-    // Get form data
-    $current_password = $_POST['current_password'];
-    $new_password = $_POST['new_password'];
-    $confirm_password = $_POST['confirm_password'];
-
-    // Step 1: Fetch the current password hash from the database
-    $sql = "SELECT password FROM users WHERE id = ?";
-    $stmt = $conn->prepare($sql);
-    $stmt->bind_param("i", $user_id);
-    $stmt->execute();
-    $stmt->bind_result($db_password);
-    $stmt->fetch();
-    $stmt->close();
-
-    // Step 2: Verify the current password matches the hash in the database
-    if (!password_verify($current_password, $db_password)) {
-        echo "Current password is incorrect.";
+if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST['update_username'])) {
+    $register_id = $_POST['register_id'];
+    $new_username = trim($_POST['new_username']);
+    
+    // Validate username
+    if (strlen($new_username) < 3) {
+        echo "<script>alert('Username must be at least 3 characters long.');
+        window.location.href='user_view_enquiry.php';</script>";
         exit;
     }
-
-    // Step 3: Check if the new password and confirm password match
-    if ($new_password !== $confirm_password) {
-        echo "New passwords do not match.";
+    
+    // Check if username already exists
+    $check_sql = "SELECT Register_ID FROM Register WHERE Username = ? AND Register_ID != ?";
+    $check_stmt = $conn->prepare($check_sql);
+    $check_stmt->bind_param("si", $new_username, $register_id);
+    $check_stmt->execute();
+    $check_result = $check_stmt->get_result();
+    
+    if ($check_result->num_rows > 0) {
+        echo "<script>alert('Username already exists. Please choose another.');
+        window.location.href='user_view_enquiry.php';</script>";
         exit;
     }
-
-    // Step 4: Hash the new password and update it in the database
-    $new_password_hash = password_hash($new_password, PASSWORD_DEFAULT);
-    $sql = "UPDATE users SET password = ? WHERE id = ?";
-    $stmt = $conn->prepare($sql);
-    $stmt->bind_param("si", $new_password_hash, $user_id);
-
-    if ($stmt->execute()) {
-        echo "Password updated successfully.";
+    
+    // Update username
+    $update_sql = "UPDATE Register SET Username = ? WHERE Register_ID = ?";
+    $update_stmt = $conn->prepare($update_sql);
+    $update_stmt->bind_param("si", $new_username, $register_id);
+    
+    if ($update_stmt->execute()) {
+        echo "<script>alert('Username updated successfully!');
+        window.location.href='user_view_enquiry.php';</script>";
     } else {
-        echo "Error updating password.";
+        echo "<script>alert('Error updating username.');
+        window.location.href='user_view_enquiry.php';</script>";
     }
-
-    $stmt->close();
+    
+    $check_stmt->close();
+    $update_stmt->close();
     $conn->close();
 }
 ?>
