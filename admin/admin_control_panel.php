@@ -101,9 +101,9 @@
                     <td><?php echo $row["Email"]; ?></td>
                     <td><?php echo $row["Register_Created_At"]; ?></td>
                     <td>
-                        <form action="delete.php" method="post">
-                            <input type="hidden" class="form-control" name="delete_id" value="<?php echo $row['Register_ID']; ?>">
-                            <button type="submit" name="delete_btn" class="admin-delete-button">Delete</button>
+                        <form action="delete.php" method="get">
+                            <input type="hidden" name="id" value="<?php echo $row['Register_ID']; ?>">
+                            <button type="submit" class="admin-delete-button">Delete</button>
                         </form>
                     </td>
                 </tr>

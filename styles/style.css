@@ -6914,12 +6914,13 @@ button.contribute-btn:hover {
 }
 
 .alert {
-    color: #fff;
-    background-color: #f44336; /* Red background */
-    padding: 10px;
-    margin: 10px 0;
-    border-radius: 5px;
-    text-align: center;
+    padding: 15px;
+    margin-bottom: 20px;
+    border: 1px solid transparent;
+    border-radius: 4px;
+    background-color: #f2f2f2;
+    border-color: #ddd;
+    color: #333;
 }
 
 
@@ -7026,4 +7027,69 @@ button.contribute-btn:hover {
     .hamburger-icon{
         left: 0px;
     }
+}
+
+/* Modal Overlay and Confirmation Dialog Styles */
+.modal-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.confirmation-box {
+    background: white;
+    padding: 30px;
+    border-radius: 10px;
+    text-align: center;
+    max-width: 400px;
+    width: 90%;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.confirmation-box h2 {
+    margin-bottom: 20px;
+    color: #333;
+    font-size: 1.5em;
+}
+
+.button-group {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    margin-top: 20px;
+}
+
+.confirm-button, 
+.cancel-button {
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1em;
+    text-decoration: none;
+    transition: background-color 0.3s;
+}
+
+.confirm-button {
+    background-color: #dc3545;
+    color: white;
+}
+
+.cancel-button {
+    background-color: #6c757d;
+    color: white;
+}
+
+.confirm-button:hover {
+    background-color: #c82333;
+}
+
+.cancel-button:hover {
+    background-color: #5a6268;
 }

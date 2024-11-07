@@ -16,6 +16,17 @@
     include ('../database/database.php');
     ?>
 
+<?php
+session_start();
+
+// Check if there's a message in the session
+if (isset($_SESSION['message'])) {
+    // Display the message (this could be an alert or just displayed as plain text)
+    echo "<p>" . $_SESSION['message'] . "</p>";
+    unset($_SESSION['message']); // Clear the message from session after displaying it
+}
+?>
+
     <input type="checkbox" id="nav-toggle">
     <div class="sidebar">
     <p class="logo_admin">

@@ -1,4 +1,6 @@
 <?php
+session_start(); // Start the session at the beginning of the script
+
 include '../database/connection.php';
 include '../database/database.php';
 
@@ -7,29 +9,33 @@ $conn = mysqli_connect($servername, $username, $password, $dbname);
 
 // Check if ID is provided
 if (!isset($_GET['id'])) {
-    echo "<script>
-            alert('Invalid request');
-            window.location.href='admin_contribute_control_panel.php';
-          </script>";
+    // Set error message in session
+    $_SESSION['message'] = 'Invalid request';
+    // Redirect to admin control panel
+    header('Location: admin_contribute_control_panel.php');
     exit();
 }
 
 $id = $_GET['id'];
 
 // Use prepared statement to prevent SQL injection
-$sql = "DELETE FROM Contribute WHERE Contribute_ID = ?";
+$sql = "DELETE FROM contribute WHERE Contribute_ID = ?";
 $stmt = mysqli_prepare($conn, $sql);
 mysqli_stmt_bind_param($stmt, "i", $id);
 
 if (mysqli_stmt_execute($stmt)) {
-    echo "<script>
-            alert('Record deleted successfully');
-            window.location.href='admin_contribute_control_panel.php';
-          </script>";
+    // Set success message in session
+    $_SESSION['message'] = 'Record deleted successfully';
 } else {
-    echo "Error deleting record: " . mysqli_error($conn);
+    // Set error message in session if deletion fails
+    $_SESSION['message'] = 'Error deleting record: ' . mysqli_error($conn);
 }
 
+// Redirect back to the control panel
+header('Location: admin_contribute_control_panel.php');
+exit();
+
+// Close the statement and connection
 mysqli_stmt_close($stmt);
 mysqli_close($conn);
-?> 
+?>
