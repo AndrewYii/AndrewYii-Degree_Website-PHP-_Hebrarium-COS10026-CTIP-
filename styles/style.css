@@ -6789,6 +6789,20 @@ button.contribute-btn:hover {
     min-height: calc(100vh - 90px);
 }
 
+.admin-delete-button a{
+    text-decoration: none;
+    border-radius: 10px;
+    background-color: orangered;
+    color: #fff;
+    padding: 5px 10px;
+}
+
+.admin-delete-button{
+    padding: 0;
+    border: none;
+    background: none;
+}
+
 .admin-table {
     width: 100%;    
     border-collapse: collapse;
@@ -6812,6 +6826,7 @@ button.contribute-btn:hover {
 
 .admin-table tbody td {
     padding: 15px;  /* Increased padding for better spacing */
+    text-align: center;
 }
 
 /* If you want even more width, you can make the container wider */

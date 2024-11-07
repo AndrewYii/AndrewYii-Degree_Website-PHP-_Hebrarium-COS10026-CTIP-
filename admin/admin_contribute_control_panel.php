@@ -109,6 +109,7 @@
                     <td><?php echo $row["Plant_Herbarium_Photo"]; ?></td>
                     <td><?php echo $row["Comment_Contribute"]; ?></td>
                     <td><?php echo $row["Contribute_Created_At"]; ?></td>
+                    <?php echo '<td><button class="admin-delete-button"><a href="delete_contribute.php?id=' . $row['Contribute_ID'] . '">Delete</a></button></td>'; ?>
                 </tr>
         <?php
                 }
