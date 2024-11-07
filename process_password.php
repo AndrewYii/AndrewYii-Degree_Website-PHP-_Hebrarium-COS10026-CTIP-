@@ -1,4 +1,4 @@
-<?php
+<?php // STILL DRAFT, WILL BE CHANGES
 session_start();
 include('database/connection.php');
 include ('database/database.php');
