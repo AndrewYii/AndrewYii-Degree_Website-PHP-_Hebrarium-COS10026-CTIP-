@@ -14,6 +14,14 @@
     <?php 
     include ('database/connection.php');
     include ('database/database.php');
+
+    // Create a new connection
+    $conn = mysqli_connect($servername,$username,$password,$dbname);
+
+    // Check connection
+    if (!$conn) {
+        die("Connection failed: " . mysqli_connect_error());
+    }
     ?>
 
     <input type="checkbox" id="nav-toggle">
@@ -94,7 +102,6 @@
                                 </tr>
                             </thead>
                             <?php
-                            $conn = mysqli_connect($servername,$username,$password,$dbname);
                             $sql = "SELECT * FROM Register";
                             $result = mysqli_query($conn, $sql);
 
@@ -131,7 +138,6 @@
                             } else {
                                 echo "<tr><td colspan='5'>No records found</td></tr>";
                             }
-                            mysqli_close($conn);
                             ?>
                         </table>
                         </div>
@@ -141,5 +147,10 @@
             </div>
         </main>
     </div>
+
+    <?php
+    // Close connection at the very end of the file
+    mysqli_close($conn);
+    ?>
 </body>
 </html>
