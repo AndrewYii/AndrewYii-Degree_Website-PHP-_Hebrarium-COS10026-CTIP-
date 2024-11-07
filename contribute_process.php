@@ -98,9 +98,9 @@
                     $plantleaf_path = $upload_dir . $leaffilename;
 
                     // Validate File Type
-                    $allowed_types = ['image/jpeg', 'image/png', 'image/gif']; // add more if necessary
+                    $allowed_types = ['image/jpeg', 'image/png', 'image/gif', 'image/jpg'];
                     if (!in_array($_FILES['plant-leaf-photo']['type'], $allowed_types)) {
-                        $error .= "Only image files (JPG, PNG, GIF) are allowed for the leaf photo.<br>";
+                        $error .= "Only image files (JPG,JPEG, PNG, GIF) are allowed for the leaf photo.<br>";
                     } else {
                         if (!move_uploaded_file($_FILES['plant-leaf-photo']['tmp_name'], $plantleaf_path)) {
                             $error .= "Failed to upload the leaf photo.<br>";
@@ -119,7 +119,7 @@
 
                     // Validate File Type
                     if (!in_array($_FILES['plant-herbarium-photo']['type'], $allowed_types)) {
-                        $error .= "Only image files (JPG, PNG, GIF) are allowed for the herbarium photo.<br>";
+                        $error .= "Only image files (JPG,JPEG, PNG, GIF) are allowed for the herbarium photo.<br>";
                     } else {
                         if (!move_uploaded_file($_FILES['plant-herbarium-photo']['tmp_name'], $plantherbarium_path)) {
                             $error .= "Failed to upload the herbarium photo.<br>";
