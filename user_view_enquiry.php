@@ -24,12 +24,12 @@
     </p>
 
         <div class="sidebar-brand">
-            <h2><span class="lab la-accusoft">Registration</span></h2>
+            <h2><span class="lab la-accusoft">Username</span></h2>
         </div>
 
         <div class="sidebar-menu">
             <ul>
-                <li><a href="change_user.php" class="active"><img src="images/register_icon.png" alt="Register" class="register-sidebar-icon"><span>Username</span></a></li>
+                <li><a href="user_view_enquiry.php" class="active"><img src="images/register_icon.png" alt="Register" class="register-sidebar-icon"><span>Username</span></a></li>
                 <li><a href="change_password.php"><img src="images/login_icon.png" alt="Login" class="login-sidebar-icon"><span>Password</span></a></li>
                 <li><a href=""><img src="images/contribute_icon.png" alt="contribute" class="contribute-sidebar-icon"><span>Contribute history</span></a></li>
                 <li><a href=""><img src="images/enquiry_icon.png" alt="enquiry" class="enquiry-sidebar-icon"><span>Enquiry history</span></a></li>
@@ -43,7 +43,7 @@
                 <label for="nav-toggle">
                     <img src="images/hamburger_icon2.png" alt="Toggle Menu" class="hamburger-icon">
                 </label>
-                Register
+                Username
             </h2>
 
             <div class="search-wrapper">
