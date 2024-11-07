@@ -97,6 +97,10 @@
                     <td>
                         <form method="POST" action="user_edit_profile.php">
                             <input type="hidden" name="register_id" value="<?php echo $row["Register_ID"]; ?>"> <!-- REGISTER_ID TBC -->
+                            <input type="text" name="new_username" required>
+                    </td>
+                    <td>
+                        <button type="submit" name="update_username">Update</button>
                     </td>
                 </tr>
         <?php
