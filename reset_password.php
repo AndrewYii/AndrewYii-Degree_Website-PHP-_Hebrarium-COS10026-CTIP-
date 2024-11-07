@@ -26,8 +26,8 @@
         else if (!preg_match('/^[a-zA-Z]+$/', $new_password)) {
             $error .= "Only alphabetic characters are allowed in the password.<br>";
         }
-        else if (strlen($new_password) > 25) {
-            $error .= "Password too long. It cannot exceed 25 characters.<br>";
+        else if (strlen($password) > 25 || strlen($password) < 5 ) {
+            $error .= "Password must between 5 to 25 alphabetic characters.<br>";
         }
     
         // Validate Confirm Password
