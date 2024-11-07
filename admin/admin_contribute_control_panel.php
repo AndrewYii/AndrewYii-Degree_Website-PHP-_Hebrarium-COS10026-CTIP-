@@ -44,10 +44,15 @@
             </h2>
 
             <div class="search-wrapper">
-                <img src="../images/search_icon.png" alt="Search" class="admin-search-icon"></img>
-                <input type="search" placeholder="Search here" />
+                <form action="../index.php" method="post" class="admin-search-form">
+                    <input type="search" name="search" placeholder="Search here">
+                    <button class="admin-search-button" id="admin-button-activate" type="submit">
+                        <label for="admin-button-activate">
+                            <img src="../images/search_icon.png" alt="Search" class="admin-search-icon">
+                        </label>
+                    </button>
+                </form>
             </div>
-
             <div class="user-wrapper">
                 <img src="../images/admin-icon.jpg" alt="admin profile picture">
                 <div>

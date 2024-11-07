@@ -6623,12 +6623,8 @@ button.contribute-btn:hover {
     padding-right: 1rem;
 }
 
-.hamburger-icon{
-    width: 30px;
-    height: auto;
-    position: relative;
-    bottom: -7px;
-    right: 15px;
+.logo_admin a{
+    text-decoration: none;
 }
 
 .admin-search-icon{
@@ -6737,6 +6733,7 @@ button.contribute-btn:hover {
     height: 50px;
     align-self: center;
     overflow-x: hidden;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 }
 
 .search-wrapper span {
@@ -6747,7 +6744,7 @@ button.contribute-btn:hover {
 
 .search-wrapper input {
     height: 100%;
-    padding: .5rem;
+    padding: 1rem;
     border: none;
     outline: none;
 }
@@ -6767,6 +6764,22 @@ button.contribute-btn:hover {
 .user-wrapper small {
     display: inline-block;
     color: grey; 
+}
+
+.admin-search-enter{
+    font-size: 1.5rem;
+    bottom: -5px;
+}
+
+.admin-search-button{
+    border: none;
+    background: none;
+    padding-bottom: 10px;
+}
+
+.admin-search-form{
+    display: flex;
+    width: 250px;
 }
 
 .main-content {
