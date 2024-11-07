@@ -6623,12 +6623,8 @@ button.contribute-btn:hover {
     padding-right: 1rem;
 }
 
-.hamburger-icon{
-    width: 30px;
-    height: auto;
-    position: relative;
-    bottom: -7px;
-    right: 15px;
+.logo_admin a{
+    text-decoration: none;
 }
 
 .admin-search-icon{
@@ -6737,6 +6733,7 @@ button.contribute-btn:hover {
     height: 50px;
     align-self: center;
     overflow-x: hidden;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 }
 
 .search-wrapper span {
@@ -6747,7 +6744,7 @@ button.contribute-btn:hover {
 
 .search-wrapper input {
     height: 100%;
-    padding: .5rem;
+    padding: 1rem;
     border: none;
     outline: none;
 }
@@ -6769,11 +6766,41 @@ button.contribute-btn:hover {
     color: grey; 
 }
 
+.admin-search-enter{
+    font-size: 1.5rem;
+    bottom: -5px;
+}
+
+.admin-search-button{
+    border: none;
+    background: none;
+    padding-bottom: 10px;
+}
+
+.admin-search-form{
+    display: flex;
+    width: 250px;
+}
+
 .main-content {
     margin-top: 85px;
     padding: 2rem 1.5rem;
     background: #f1f5f9;
     min-height: calc(100vh - 90px);
+}
+
+.admin-delete-button a{
+    text-decoration: none;
+    border-radius: 10px;
+    background-color: orangered;
+    color: #fff;
+    padding: 5px 10px;
+}
+
+.admin-delete-button{
+    padding: 0;
+    border: none;
+    background: none;
 }
 
 .admin-table {
@@ -6799,6 +6826,7 @@ button.contribute-btn:hover {
 
 .admin-table tbody td {
     padding: 15px;  /* Increased padding for better spacing */
+    text-align: center;
 }
 
 /* If you want even more width, you can make the container wider */

@@ -44,8 +44,14 @@
             </h2>
 
             <div class="search-wrapper">
-                <img src="../images/search_icon.png" alt="Search" class="admin-search-icon"></img>
-                <input type="search" placeholder="Search here" />
+                <form action="../index.php" method="post" class="admin-search-form">
+                    <input type="search" name="search" placeholder="Search here">
+                    <button class="admin-search-button" id="admin-button-activate" type="submit">
+                        <label for="admin-button-activate">
+                            <img src="../images/search_icon.png" alt="Search" class="admin-search-icon">
+                        </label>
+                    </button>
+                </form>
             </div>
 
             <div class="user-wrapper">
@@ -93,7 +99,7 @@
                     <td><?php echo $row["Username"]; ?></td>
                     <td><?php echo $row["Email"]; ?></td>
                     <td><?php echo $row["Register_Created_At"]; ?></td>
-
+                    <?php echo '<td><button class="admin-delete-button"><a href="delete.php?id=' . $row['Register_ID'] . '">Delete</a></button></td>'; ?>
                 </tr>
         <?php
                 }
