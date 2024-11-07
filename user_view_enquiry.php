@@ -65,7 +65,7 @@
                 <div class="projects">
                     <div class="card">
                         <div class="card-header">
-                            <h3>Recent Projects</h3>
+                            <h3>Profile</h3>
 
                             <button>See All <span class="las la-arrow-right"></span></button>
                         </div>
@@ -74,16 +74,15 @@
                         <table class="admin-table">
                             <thead>
                                 <tr>
-                                <th>ID</th>
+                                    <th>ID</th>
                                     <th>Name</th>
-                                    <th>Username</th>
-                                    <th>Email</th>
-                                    <th>Date Submitted</th>
+                                    <th>Current Username</th>
+                                    <th>Change Username</th>
                                 </tr>
 
                             </thead>
                             <?php
-            $conn = mysqli_connect($servername,$username,$password,$dbname);
+            $conn = mysqli_connect($servername,$username,$password);
             $sql = "SELECT * FROM Register";
             $result = mysqli_query($conn, $sql);
 
@@ -95,8 +94,6 @@
                     <td><?php echo $row["Name"]; ?></td>
                     <td><?php echo $row["Username"]; ?></td>
                     <td><?php echo $row["Email"]; ?></td>
-                    <td><?php echo $row["Register_Created_At"]; ?></td>
-
                 </tr>
         <?php
                 }
