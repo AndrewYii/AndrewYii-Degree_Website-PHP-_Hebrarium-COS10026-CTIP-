@@ -4,7 +4,14 @@ session_start();
 include('database/connection.php');
 include ('database/database.php');
 
-// Check if the form is submitted
+// Create a new connection
+$conn = mysqli_connect($servername,$username,$password,$dbname);
+
+// Check connection
+if (!$conn) {
+    die("Connection failed: " . mysqli_connect_error());
+}
+
 if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST['update_username'])) {
     $register_id = $_POST['register_id'];
     $new_username = trim($_POST['new_username']);
