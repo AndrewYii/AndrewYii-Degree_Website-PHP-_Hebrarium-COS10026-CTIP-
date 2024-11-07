@@ -532,6 +532,24 @@
                                     Forgot Password Lock Picture
                                 </a>
                             </div>
+                            <div class="acknowledgment-text">
+                                <a href="https://images.app.goo.gl/KQCSyGyiDYxg3ai47">
+                                    OTP Approve Picture
+                                </a>
+                            </div>
+                            <div class="acknowledgment-text">
+                                <a href="https://images.app.goo.gl/WW9qG2gynYk4E8sd6">
+                                    Reset Password Success Picture
+                                </a>
+                            </div>
+                            <div class="acknowledgment-heading">
+                                <h1>API</h1>
+                            </div>
+                            <div class="acknowledgment-text">
+                                <a href="https://my.plantnet.org/">
+                                    Plant's Net API for plant identification
+                                </a>
+                            </div>
                         </div>
                         <figure class='going-up-container'>
                             <a href='#top_ack'>
