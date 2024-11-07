@@ -93,7 +93,11 @@
                 <tr>
                     <td><?php echo $row["Register_ID"]; ?></td>
                     <td><?php echo $row["Name"]; ?></td>
-                    <td><?php echo $row["Username"]; ?></td>    
+                    <td><?php echo $row["Username"]; ?></td>
+                    <td>
+                        <form method="POST" action="user_edit_profile.php">
+                            <input type="hidden" name="register_id" value="<?php echo $row["Register_ID"]; ?>"> <!-- REGISTER_ID TBC -->
+                    </td>
                 </tr>
         <?php
                 }
