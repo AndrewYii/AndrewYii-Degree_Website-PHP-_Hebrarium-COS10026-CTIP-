@@ -20,8 +20,8 @@
     <?php
     // Check if there's a message in the session
     if (isset($_SESSION['message'])) {
-        // Display the message
-        echo "<p>" . $_SESSION['message'] . "</p>";
+        $messageClass = strpos($_SESSION['message'], 'Error') !== false ? 'error-message' : 'success-message';
+        echo "<div class='admin-message {$messageClass}'>" . $_SESSION['message'] . "</div>";
         unset($_SESSION['message']); // Clear the message from session after displaying it
     }
     ?>
@@ -128,11 +128,14 @@
                             <input type="hidden" name="view_id" value="<?php echo $row['Register_ID']; ?>">
                             <button type="submit" class="admin-view-button menu-button">View</button>
                         </form>
+                        <form action="<?php echo $_SERVER['PHP_SELF']; ?>" method="get" style="display: inline;">
+                            <input type="hidden" name="edit_id" value="<?php echo $row['Register_ID']; ?>">
                             <button type="submit" class="admin-edit-button menu-button">Edit</button>
-                            <form action="<?php echo $_SERVER['PHP_SELF']; ?>" method="get">
-                                <input type="hidden" name="id" value="<?php echo $row['Register_ID']; ?>">
-                                <button type="submit" class="admin-delete-button menu-button">Delete</button>
-                            </form>
+                        </form>
+                        <form action="<?php echo $_SERVER['PHP_SELF']; ?>" method="get">
+                            <input type="hidden" name="id" value="<?php echo $row['Register_ID']; ?>">
+                            <button type="submit" class="admin-delete-button menu-button">Delete</button>
+                        </form>
                         </div>
                     </td>
                 </tr>
@@ -240,6 +243,87 @@ if (isset($_GET['view_id'])) {
         <?php
     }
     mysqli_close($conn);
+}
+?>
+
+<?php
+if (isset($_GET['edit_id'])) {
+    $conn = mysqli_connect($servername, $username, $password, $dbname);
+    $id = mysqli_real_escape_string($conn, $_GET['edit_id']);
+    $sql = "SELECT * FROM Register WHERE Register_ID = '$id'";
+    $result = mysqli_query($conn, $sql);
+    $row = mysqli_fetch_assoc($result);
+    
+    if ($row) {
+        ?>
+        <div class="view-modal-overlay">
+            <div class="view-modal-content">
+                <div class="view-modal-header">
+                    <h2>Edit Register Details</h2>
+                </div>
+                <form action="<?php echo $_SERVER['PHP_SELF']; ?>" method="post" class="edit-form">
+                    <input type="hidden" name="edit_register_id" value="<?php echo htmlspecialchars($row['Register_ID']); ?>">
+                    
+                    <div class="detail-row">
+                        <strong>ID:</strong> <?php echo htmlspecialchars($row['Register_ID']); ?>
+                    </div>
+                    
+                    <div class="detail-row">
+                        <strong>Name:</strong>
+                        <input type="text" name="edit_name" value="<?php echo htmlspecialchars($row['Name']); ?>" required>
+                    </div>
+                    
+                    <div class="detail-row">
+                        <strong>Username:</strong>
+                        <input type="text" name="edit_username" value="<?php echo htmlspecialchars($row['Username']); ?>" required>
+                    </div>
+                    
+                    <div class="detail-row">
+                        <strong>Email:</strong>
+                        <input type="email" name="edit_email" value="<?php echo htmlspecialchars($row['Email']); ?>" required>
+                    </div>
+                                        
+                    <div class="detail-row">
+                        <strong>Date:</strong> <?php echo htmlspecialchars($row['Register_Created_At']); ?>
+                    </div>
+                    
+                    <div class="button-group">
+                        <button type="submit" name="update_register" class="save-button">Save Changes</button>
+                        <a href="<?php echo $_SERVER['PHP_SELF']; ?>" class="cancel-button">Cancel</a>
+                    </div>
+                </form>
+            </div>
+        </div>
+        <?php
+    }
+    mysqli_close($conn);
+}
+
+// Handle the form submission
+if (isset($_POST['update_register'])) {
+    $conn = mysqli_connect($servername, $username, $password, $dbname);
+    
+    $id = mysqli_real_escape_string($conn, $_POST['edit_register_id']);
+    $name = mysqli_real_escape_string($conn, $_POST['edit_name']);
+    $username = mysqli_real_escape_string($conn, $_POST['edit_username']);
+    $email = mysqli_real_escape_string($conn, $_POST['edit_email']);
+    
+    // Create the SQL statement
+    $sql = "UPDATE Register SET Name=?, Username=?, Email=? WHERE Register_ID=?";
+    $stmt = mysqli_prepare($conn, $sql);
+    mysqli_stmt_bind_param($stmt, "sssi", $name, $username, $email, $id);
+        
+    if (mysqli_stmt_execute($stmt)) {
+        $_SESSION['message'] = 'Record updated successfully';
+    } else {
+        $_SESSION['message'] = 'Error updating record: ' . mysqli_error($conn);
+    }
+    
+    mysqli_stmt_close($stmt);
+    mysqli_close($conn);
+    
+    echo "<meta http-equiv='refresh' content='0;url=view_register.php'>";
+    exit();
 }
 ?>
 </body>

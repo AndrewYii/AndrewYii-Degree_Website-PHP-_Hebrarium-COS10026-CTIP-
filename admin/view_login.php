@@ -17,14 +17,14 @@
     include ('../database/database.php');
     ?>
 
-    <?php
-    // Check if there's a message in the session
-    if (isset($_SESSION['message'])) {
-        // Display the message
-        echo "<p>" . $_SESSION['message'] . "</p>";
-        unset($_SESSION['message']); // Clear the message from session after displaying it
-    }
-    ?>
+<?php
+// Check if there's a message in the session
+if (isset($_SESSION['message'])) {
+    $messageClass = strpos($_SESSION['message'], 'Error') !== false ? 'error-message' : 'success-message';
+    echo "<div class='admin-message {$messageClass}'>" . $_SESSION['message'] . "</div>";
+    unset($_SESSION['message']); // Clear the message from session after displaying it
+}
+?>
 
     <input type="checkbox" id="nav-toggle">
     <div class="sidebar">
@@ -129,11 +129,14 @@
                                                 <input type="hidden" name="view_id" value="<?php echo $row['Login_ID']; ?>">
                                                 <button type="submit" class="admin-view-button menu-button">View</button>
                                             </form>                         
+                                            <form action="<?php echo $_SERVER['PHP_SELF']; ?>" method="get" style="display: inline;">
+                                                <input type="hidden" name="edit_id" value="<?php echo $row['Login_ID']; ?>">
                                                 <button type="submit" class="admin-edit-button menu-button">Edit</button>
-                                                    <form action="<?php echo $_SERVER['PHP_SELF']; ?>" method="get">
-                                                        <input type="hidden" name="id" value="<?php echo $row['Login_ID']; ?>">
-                                                        <button type="submit" class="admin-delete-button menu-button">Delete</button>
-                                                    </form> 
+                                            </form>
+                                            <form action="<?php echo $_SERVER['PHP_SELF']; ?>" method="get">
+                                                <input type="hidden" name="id" value="<?php echo $row['Login_ID']; ?>">
+                                                <button type="submit" class="admin-delete-button menu-button">Delete</button>
+                                            </form> 
                                             </div>
                                         </td>
                                     </tr>
@@ -240,6 +243,86 @@ if (isset($_GET['view_id'])) {
         <?php
     }
     mysqli_close($conn);
+}
+?>
+
+<?php
+if (isset($_GET['edit_id'])) {
+    $conn = mysqli_connect($servername, $username, $password, $dbname);
+    $id = mysqli_real_escape_string($conn, $_GET['edit_id']);
+    $sql = "SELECT * FROM login WHERE Login_ID = '$id'";
+    $result = mysqli_query($conn, $sql);
+    $row = mysqli_fetch_assoc($result);
+    
+    if ($row) {
+        ?>
+        <div class="view-modal-overlay">
+            <div class="view-modal-content">
+                <div class="view-modal-header">
+                    <h2>Edit Login Details</h2>
+                </div>
+                <form action="<?php echo $_SERVER['PHP_SELF']; ?>" method="post" class="edit-form">
+                    <input type="hidden" name="edit_login_id" value="<?php echo htmlspecialchars($row['Login_ID']); ?>">
+                    
+                    <div class="detail-row">
+                        <strong>ID:</strong> <?php echo htmlspecialchars($row['Login_ID']); ?>
+                    </div>
+                    
+                    <div class="detail-row">
+                        <strong>Register ID:</strong>
+                        <input type="text" name="edit_register_id" value="<?php echo htmlspecialchars($row['Register_ID']); ?>" required>
+                    </div>
+                    
+                    <div class="detail-row">
+                        <strong>Username:</strong>
+                        <input type="text" name="edit_username" value="<?php echo htmlspecialchars($row['Username']); ?>" required>
+                    </div>
+                    
+                    <div class="detail-row">
+                        <strong>Login At:</strong>
+                        <input type="text" name="edit_login_at" value="<?php echo htmlspecialchars($row['Login_At']); ?>" required>
+                    </div>
+                    
+                    <div class="detail-row">
+                        <strong>Logout At:</strong> <?php echo htmlspecialchars($row['Logout_At']); ?>
+                    </div>
+                    
+                    <div class="button-group">
+                        <button type="submit" name="update_login" class="save-button">Save Changes</button>
+                        <a href="<?php echo $_SERVER['PHP_SELF']; ?>" class="cancel-button">Cancel</a>
+                    </div>
+                </form>
+            </div>
+        </div>
+        <?php
+    }
+    mysqli_close($conn);
+}
+
+// Handle the form submission for updates
+if (isset($_POST['update_login'])) {
+    $conn = mysqli_connect($servername, $username, $password, $dbname);
+    
+    $id = mysqli_real_escape_string($conn, $_POST['edit_login_id']);
+    $register_id = mysqli_real_escape_string($conn, $_POST['edit_register_id']);
+    $username = mysqli_real_escape_string($conn, $_POST['edit_username']);
+    $login_at = mysqli_real_escape_string($conn, $_POST['edit_login_at']);
+    
+    $sql = "UPDATE login SET Register_ID=?, Username=?, Login_At=? WHERE Login_ID=?";
+    $stmt = mysqli_prepare($conn, $sql);
+    mysqli_stmt_bind_param($stmt, "sssi", $register_id, $username, $login_at, $id);
+    
+    if (mysqli_stmt_execute($stmt)) {
+        $_SESSION['message'] = 'Record updated successfully';
+    } else {
+        $_SESSION['message'] = 'Error updating record: ' . mysqli_error($conn);
+    }
+    
+    mysqli_stmt_close($stmt);
+    mysqli_close($conn);
+    
+    echo "<meta http-equiv='refresh' content='0;url=view_login.php'>";
+    exit();
 }
 ?>
 </body>

@@ -17,12 +17,14 @@
     include ('../database/database.php');
     ?>
 
-    <?php
-    if (isset($_SESSION['message'])) {
-        echo "<p>" . $_SESSION['message'] . "</p>";
-        unset($_SESSION['message']);
-    }
-    ?>
+<?php
+// Check if there's a message in the session
+if (isset($_SESSION['message'])) {
+    $messageClass = strpos($_SESSION['message'], 'Error') !== false ? 'error-message' : 'success-message';
+    echo "<div class='admin-message {$messageClass}'>" . $_SESSION['message'] . "</div>";
+    unset($_SESSION['message']); // Clear the message from session after displaying it
+}
+?>
 
     <input type="checkbox" id="nav-toggle">
     <div class="sidebar">
@@ -137,7 +139,10 @@
                                                     <input type="hidden" name="view_id" value="<?php echo $row['Contribute_ID']; ?>">
                                                     <button type="submit" class="admin-view-button menu-button">View</button>
                                                 </form>
-                                                <button type="submit" class="admin-edit-button menu-button">Edit</button>
+                                                <form action="<?php echo $_SERVER['PHP_SELF']; ?>" method="get" style="display: inline;">
+                                                    <input type="hidden" name="edit_id" value="<?php echo $row['Contribute_ID']; ?>">
+                                                    <button type="submit" class="admin-edit-button menu-button">Edit</button>
+                                                </form>
                                                 <form action="<?php echo $_SERVER['PHP_SELF']; ?>" method="get">
                                                     <input type="hidden" name="id" value="<?php echo $row['Contribute_ID']; ?>">
                                                     <button type="submit" class="admin-delete-button menu-button">Delete</button>
@@ -259,6 +264,110 @@ if (isset($_GET['view_id'])) {
         <?php
     }
     mysqli_close($conn);
+}
+?>
+
+<?php
+if (isset($_GET['edit_id'])) {
+    $conn = mysqli_connect($servername, $username, $password, $dbname);
+    $id = mysqli_real_escape_string($conn, $_GET['edit_id']);
+    $sql = "SELECT * FROM contribute WHERE Contribute_ID = '$id'";
+    $result = mysqli_query($conn, $sql);
+    $row = mysqli_fetch_assoc($result);
+    
+    if ($row) {
+        ?>
+        <div class="view-modal-overlay">
+            <div class="view-modal-content">
+                <div class="view-modal-header">
+                    <h2>Edit Contribution Details</h2>
+                </div>
+                <form action="<?php echo $_SERVER['PHP_SELF']; ?>" method="post" class="edit-form">
+                    <input type="hidden" name="edit_contribute_id" value="<?php echo htmlspecialchars($row['Contribute_ID']); ?>">
+                    
+                    <div class="detail-row">
+                        <strong>ID:</strong> <?php echo htmlspecialchars($row['Contribute_ID']); ?>
+                    </div>
+                    
+                    <div class="detail-row">
+                        <strong>Picture Option:</strong>
+                        <input type="text" name="edit_picture_option" value="<?php echo htmlspecialchars($row['Picture_Option']); ?>" required>
+                    </div>
+                    
+                    <div class="detail-row">
+                        <strong>Tag:</strong>
+                        <input type="text" name="edit_tag" value="<?php echo htmlspecialchars($row['Tag']); ?>" required>
+                    </div>
+                    
+                    <div class="detail-row">
+                        <strong>Plant Name:</strong>
+                        <input type="text" name="edit_plant_name" value="<?php echo htmlspecialchars($row['Plant_Name']); ?>" required>
+                    </div>
+                    
+                    <div class="detail-row">
+                        <strong>Plant Family:</strong>
+                        <input type="text" name="edit_plant_family" value="<?php echo htmlspecialchars($row['Plant_Family']); ?>" required>
+                    </div>
+                    
+                    <div class="detail-row">
+                        <strong>Plant Genus:</strong>
+                        <input type="text" name="edit_plant_genus" value="<?php echo htmlspecialchars($row['Plant_Genus']); ?>" required>
+                    </div>
+                    
+                    <div class="detail-row">
+                        <strong>Plant Species:</strong>
+                        <input type="text" name="edit_plant_species" value="<?php echo htmlspecialchars($row['Plant_Species']); ?>" required>
+                    </div>
+                    
+                    <div class="detail-row">
+                        <strong>Comment:</strong>
+                        <textarea name="edit_description" required><?php echo htmlspecialchars($row['Description_Contribute']); ?></textarea>
+                    </div>
+                    
+                    <div class="detail-row">
+                        <strong>Date:</strong> <?php echo htmlspecialchars($row['Contribute_Created_At']); ?>
+                    </div>
+                    
+                    <div class="button-group">
+                        <button type="submit" name="update_contribute" class="save-button">Save Changes</button>
+                        <a href="<?php echo $_SERVER['PHP_SELF']; ?>" class="cancel-button">Cancel</a>
+                    </div>
+                </form>
+            </div>
+        </div>
+        <?php
+    }
+    mysqli_close($conn);
+}
+
+// Handle the form submission
+if (isset($_POST['update_contribute'])) {
+    $conn = mysqli_connect($servername, $username, $password, $dbname);
+    
+    $id = mysqli_real_escape_string($conn, $_POST['edit_contribute_id']);
+    $picture_option = mysqli_real_escape_string($conn, $_POST['edit_picture_option']);
+    $tag = mysqli_real_escape_string($conn, $_POST['edit_tag']);
+    $plant_name = mysqli_real_escape_string($conn, $_POST['edit_plant_name']);
+    $plant_family = mysqli_real_escape_string($conn, $_POST['edit_plant_family']);
+    $plant_genus = mysqli_real_escape_string($conn, $_POST['edit_plant_genus']);
+    $plant_species = mysqli_real_escape_string($conn, $_POST['edit_plant_species']);
+    $description = mysqli_real_escape_string($conn, $_POST['edit_description']);
+    
+    $sql = "UPDATE contribute SET Picture_Option=?, Tag=?, Plant_Name=?, Plant_Family=?, Plant_Genus=?, Plant_Species=?, Description_Contribute=? WHERE Contribute_ID=?";
+    $stmt = mysqli_prepare($conn, $sql);
+    mysqli_stmt_bind_param($stmt, "sssssssi", $picture_option, $tag, $plant_name, $plant_family, $plant_genus, $plant_species, $description, $id);
+    
+    if (mysqli_stmt_execute($stmt)) {
+        $_SESSION['message'] = 'Record updated successfully';
+    } else {
+        $_SESSION['message'] = 'Error updating record: ' . mysqli_error($conn);
+    }
+    
+    mysqli_stmt_close($stmt);
+    mysqli_close($conn);
+    
+    echo "<meta http-equiv='refresh' content='0;url=view_contribute.php'>";
+    exit();
 }
 ?>
 </body>
