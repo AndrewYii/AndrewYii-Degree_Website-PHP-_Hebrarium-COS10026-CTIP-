@@ -82,7 +82,7 @@
                                     <th>Username</th>
                                     <th>Email</th>
                                     <th>Date Submitted</th>
-                                    <th>Delete</th>
+                                    <th class="admin-delete-option">Delete</th>
                                 </tr>
 
                             </thead>

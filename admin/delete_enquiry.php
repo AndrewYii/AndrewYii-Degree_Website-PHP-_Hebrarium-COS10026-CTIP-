@@ -4,38 +4,64 @@ session_start(); // Start the session at the beginning of the script
 include '../database/connection.php';
 include '../database/database.php';
 
-// Create new connection
-$conn = mysqli_connect($servername, $username, $password, $dbname);
-
-// Check if ID is provided
-if (!isset($_GET['id'])) {
-    // Set error message in session
-    $_SESSION['message'] = 'Invalid request';
-    // Redirect to admin control panel
+// If the form is submitted (after confirmation)
+if (isset($_POST['confirm_delete'])) {
+    // Create new connection
+    $conn = mysqli_connect($servername, $username, $password, $dbname);
+    
+    $id = $_POST['id'];
+    
+    // Use prepared statement to prevent SQL injection
+    $sql = "DELETE FROM Enquiry WHERE Enquiry_ID = ?";
+    $stmt = mysqli_prepare($conn, $sql);
+    mysqli_stmt_bind_param($stmt, "i", $id);
+    
+    if (mysqli_stmt_execute($stmt)) {
+        $_SESSION['message'] = 'Record deleted successfully';
+    } else {
+        $_SESSION['message'] = 'Error deleting record: ' . mysqli_error($conn);
+    }
+    
+    mysqli_stmt_close($stmt);
+    mysqli_close($conn);
+    
     header('Location: admin_enquiry_control_panel.php');
     exit();
 }
 
-$id = $_GET['id'];
-
-// Use prepared statement to prevent SQL injection
-$sql = "DELETE FROM enquiry WHERE Enquiry_ID = ?";
-$stmt = mysqli_prepare($conn, $sql);
-mysqli_stmt_bind_param($stmt, "i", $id);
-
-if (mysqli_stmt_execute($stmt)) {
-    // Set success message in session
-    $_SESSION['message'] = 'Record deleted successfully';
-} else {
-    // Set error message in session if deletion fails
-    $_SESSION['message'] = 'Error deleting record: ' . mysqli_error($conn);
-}
-
-// Redirect back to the control panel
-header('Location: admin_enquiry_control_panel.php');
-exit();
-
-// Close the statement and connection
-mysqli_stmt_close($stmt);
-mysqli_close($conn);
+// If just showing the confirmation dialog
+if (isset($_GET['id'])) {
+    $id = $_GET['id'];
 ?>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Confirm Deletion</title>
+    <link rel="stylesheet" href="../styles/style.css">
+</head>
+<body>
+    <div class="modal-overlay">
+        <div class="confirmation-box">
+            <h2>Are you sure you want to delete this record?</h2>
+            <div class="button-group">
+                <form action="delete_enquiry.php" method="post" style="display: inline;">
+                    <input type="hidden" name="id" value="<?php echo htmlspecialchars($id); ?>">
+                    <input type="hidden" name="confirm_delete" value="1">
+                    <button type="submit" class="confirm-button">Yes, Delete</button>
+                </form>
+                <a href="admin_enquiry_control_panel.php" class="cancel-button">Cancel</a>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
+<?php
+} else {
+    $_SESSION['message'] = 'Invalid request';
+    header('Location: admin_enquiry_control_panel.php');
+    exit();
+}
+?>
+

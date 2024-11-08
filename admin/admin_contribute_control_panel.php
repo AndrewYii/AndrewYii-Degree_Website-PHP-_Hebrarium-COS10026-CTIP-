@@ -87,6 +87,7 @@
                                     <th>Plant's Herbarium Photo</th>
                                     <th class="description-column">Comment</th>
                                     <th>Date Submitted</th>
+                                    <th class="admin-delete-option">Delete</th>
                                 </tr>
                             </thead>
                             <?php
@@ -109,7 +110,12 @@
                     <td><?php echo $row["Plant_Herbarium_Photo"]; ?></td>
                     <td class="description-column"><?php echo $row["Description_Contribute"]; ?></td>
                     <td><?php echo $row["Contribute_Created_At"]; ?></td>
-                    <?php echo '<td><button class="admin-delete-button"><a href="delete_contribute.php?id=' . $row['Contribute_ID'] . '">Delete</a></button></td>'; ?>
+                    <td>
+                        <form action="delete_contribute.php" method="get">
+                            <input type="hidden" name="id" value="<?php echo $row['Contribute_ID']; ?>">
+                            <button type="submit" class="admin-delete-button">Delete</button>
+                        </form>
+                    </td>
                 </tr>
         <?php
                 }

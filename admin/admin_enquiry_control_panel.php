@@ -88,6 +88,7 @@
                                     <th>Postcode</th>
                                     <th>State</th>
                                     <th>Date Submitted</th>
+                                    <th class="admin-delete-option">Delete</th>
                                 </tr>
                             </thead>
                             <?php
@@ -110,7 +111,12 @@
                     <td><?php echo $row["Postcode"]; ?></td>
                     <td><?php echo $row["State"]; ?></td>
                     <td><?php echo $row["Enquiry_Created_At"]; ?></td>
-                    <?php echo '<td><button class="admin-delete-button"><a href="delete_enquiry.php?id=' . $row['Enquiry_ID'] . '">Delete</a></button></td>'; ?>
+                    <td>
+                        <form action="delete_enquiry.php" method="get">
+                            <input type="hidden" name="id" value="<?php echo $row['Enquiry_ID']; ?>">
+                            <button type="submit" class="admin-delete-button">Delete</button>
+                        </form>
+                    </td>
                 </tr>
         <?php
                 }
