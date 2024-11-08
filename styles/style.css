@@ -6388,6 +6388,11 @@ button.contribute-btn:hover {
     color: #333;
 }
 
+.confirm_words a{
+    color: #1e5631;
+}
+
+
 .fail_words,.success_words{
     font-weight: 300;
     font-size: 24px;
@@ -6411,7 +6416,11 @@ button.contribute-btn:hover {
 .small_word_confirm{
     padding-top: 10px;
     padding-bottom: 25px;
-    text-align: center;
+    text-align: justify;
+}
+
+.small_word_confirm a{
+    color: #1e5631;
 }
 
 .button_view_confirm {
