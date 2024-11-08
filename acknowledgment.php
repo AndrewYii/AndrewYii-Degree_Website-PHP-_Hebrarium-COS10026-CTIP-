@@ -297,6 +297,11 @@
                                 <h1>Contribution(output) & Contribute(input) Set Up</h1>
                             </div>
                             <div class="acknowledgment-text">
+                                <a href="https://cdni.iconscout.com/illustration/premium/thumb/nothing-found-illustration-download-in-svg-png-gif-file-formats--empty-not-fount-search-limerror-pack-design-development-illustrations-2815869.png?f=webp">
+                                    No Found Picture
+                                </a>
+                            </div>
+                            <div class="acknowledgment-text">
                                 <a href="https://cdn-icons-png.freepik.com/512/146/146007.png">
                                     Boy Icon Selection in Contribute Form and Display on the contributor page
                                 </a>
