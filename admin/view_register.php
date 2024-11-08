@@ -12,8 +12,18 @@
 
 <body>
     <?php 
+    session_start(); 
     include ('../database/connection.php');
     include ('../database/database.php');
+    ?>
+
+    <?php
+    // Check if there's a message in the session
+    if (isset($_SESSION['message'])) {
+        // Display the message
+        echo "<p>" . $_SESSION['message'] . "</p>";
+        unset($_SESSION['message']); // Clear the message from session after displaying it
+    }
     ?>
 
     <input type="checkbox" id="nav-toggle">
@@ -29,22 +39,31 @@
 
         <div class="sidebar-menu">
             <ul>
-                <li><a href="admin_control_panel.php" class="active"><img src="../images/register_icon.png" alt="Register" class="register-sidebar-icon"><span>Register</span></a></li>
-                <li><a href="admin_login_control_panel.php"><img src="../images/login_icon.png" alt="Login" class="login-sidebar-icon"><span>Login</span></a></li>
-                <li><a href="admin_contribute_control_panel.php"><img src="../images/contribute_icon.png" alt="contribute" class="contribute-sidebar-icon"><span>Contribute</span></a></li>
-                <li><a href="admin_enquiry_control_panel.php"><img src="../images/enquiry_icon.png" alt="enquiry" class="enquiry-sidebar-icon"><span>Enquiries</span></a></li>
+                <li><a href="view_register.php" class="active"><img src="../images/register_icon.png" alt="Register" class="register-sidebar-icon"><span>Register</span></a></li>
+                <li><a href="view_login.php"><img src="../images/login_icon.png" alt="Login" class="login-sidebar-icon"><span>Login</span></a></li>
+                <li><a href="view_contribute.php"><img src="../images/contribute_icon.png" alt="contribute" class="contribute-sidebar-icon"><span>Contribute</span></a></li>
+                <li><a href="view_enquiry.php"><img src="../images/enquiry_icon.png" alt="enquiry" class="enquiry-sidebar-icon"><span>Enquiries</span></a></li>
+                <label for='logoutCheckbox' class='admin-logout-button'>Logout</label>
+                            <input type='checkbox' id='logoutCheckbox'>
+                            <div class='logout-background'>
+                                <div class='logout-content'>
+                                    <p>Are you sure you want to log out?</p>
+                                    <a href='logout.php' class='confirm-logout'>Yes</a>
+                                    <label for='logoutCheckbox' class='cancel-logout'>No</label>
+                                </div>
+                            </div>
             </ul>
         </div>
     </div>
 
     <div class="main-content">
         <header class="admin-header">
-            <h2>
-                Register
+            <h2 class="admin-header-text">
+                Register 
             </h2>
 
             <div class="search-wrapper">
-                <form action="../index.php" method="post" class="admin-search-form">
+                <form action="<?php echo $_SERVER['PHP_SELF']; ?>" method="post" class="admin-search-form">
                     <input type="search" name="search" placeholder="Search here">
                     <button class="admin-search-button" id="admin-button-activate" type="submit">
                         <label for="admin-button-activate">
@@ -68,7 +87,7 @@
                 <div class="projects">
                     <div class="card">
                         <div class="card-header">
-                            <h3>Recent Projects</h3>
+                            <h3>Register Records</h3>
 
                             <button>Refresh</button>
                         </div>
@@ -101,7 +120,7 @@
                     <td><?php echo $row["Email"]; ?></td>
                     <td><?php echo $row["Register_Created_At"]; ?></td>
                     <td>
-                        <form action="delete.php" method="get">
+                        <form action="<?php echo $_SERVER['PHP_SELF']; ?>" method="get">
                             <input type="hidden" name="id" value="<?php echo $row['Register_ID']; ?>">
                             <button type="submit" class="admin-delete-button">Delete</button>
                         </form>
@@ -123,5 +142,56 @@
             </div>
         </main>
     </div>
+
+    <?php
+        // If the form is submitted (after confirmation)
+        if (isset($_POST['confirm_delete'])) {
+            // Create new connection
+            $conn = mysqli_connect($servername, $username, $password, $dbname);
+            
+            $id = $_POST['id'];
+            
+            // Use prepared statement to prevent SQL injection
+            $sql = "DELETE FROM register WHERE Register_ID = ?";
+            $stmt = mysqli_prepare($conn, $sql);
+            mysqli_stmt_bind_param($stmt, "i", $id);
+            
+            if (mysqli_stmt_execute($stmt)) {
+                $_SESSION['message'] = 'Record deleted successfully';
+                echo"<meta http-equiv='refresh' content='0 ;url=view_register.php'>";  
+                
+            } else {
+                $_SESSION['message'] = 'Error deleting record: ' . mysqli_error($conn);
+            }
+            
+            mysqli_stmt_close($stmt);
+            mysqli_close($conn);
+            
+            // Redirect to same page instead of different page
+        }
+
+        // If showing the confirmation dialog, show only the confirmation modal
+        if (isset($_GET['id'])) {
+            $id = $_GET['id'];
+            // Output the confirmation dialog
+            ?>
+            <div class="modal-overlay">
+                <div class="confirmation-box">
+                    <h2>Are you sure you want to delete this record?</h2>
+                    <div class="button-group">
+                        <form action="<?php echo $_SERVER['PHP_SELF']; ?>" method="post" style="display: inline;">
+                            <input type="hidden" name="id" value="<?php echo htmlspecialchars($id); ?>">
+                            <input type="hidden" name="confirm_delete" value="1">
+                            <button type="submit" class="confirm-button">Yes, Delete</button>
+                        </form>
+                        <a href="<?php echo $_SERVER['PHP_SELF']; ?>" class="cancel-button">Cancel</a>
+                    </div>
+                </div>
+            </div>
+
+            <?php
+            exit(); 
+        }
+    ?>
 </body>
 </html>

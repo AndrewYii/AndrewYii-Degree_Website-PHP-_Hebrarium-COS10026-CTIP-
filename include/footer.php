@@ -28,7 +28,17 @@
                     <div>
                         <a>
                             <strong>
-                                Video:
+                                Video Assignment 1:
+                            </strong>
+                        </a>
+                        <a href='https://youtu.be/9CXor9GkVZo' title='Our Group Presentation Link'>
+                            https://youtu.be/9CXor9GkVZo
+                        </a>
+                    </div>
+                    <div>
+                        <a>
+                            <strong>
+                                Video Assignment 2:
                             </strong>
                         </a>
                         <a href='https://youtu.be/9CXor9GkVZo' title='Our Group Presentation Link'>
@@ -164,7 +174,14 @@
                     <div>
                         <strong>
                             <a href='enhancement1.php'>
-                                Enhancement
+                                Enhancement 1
+                            </a>
+                        </strong>
+                    </div>
+                    <div>
+                        <strong>
+                            <a href='enhancement2.php'>
+                                Enhancement 2
                             </a>
                         </strong>
                     </div>
@@ -361,7 +378,14 @@
                     <div>
                         <strong>
                             <a href='enhancement1.php'>
-                                Enhancement
+                                Enhancement 1
+                            </a>
+                        </strong>
+                    </div>
+                    <div>
+                        <strong>
+                            <a href='enhancement2.php'>
+                                Enhancement 2
                             </a>
                         </strong>
                     </div>

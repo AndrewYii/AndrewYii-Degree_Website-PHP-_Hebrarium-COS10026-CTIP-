@@ -117,7 +117,7 @@
         echo "<div class='snackbar show success'>" . $message . "</div>";
         ?>
         <?php if ($username == "admin") { ?>
-            <meta http-equiv="refresh" content="2; url=admin/admin_control_panel.php">
+            <meta http-equiv="refresh" content="2; url=admin/view_register.php">
         <?php } else { ?>
             <meta http-equiv="refresh" content="2; url=index.php">
         <?php } ?>

@@ -6388,6 +6388,11 @@ button.contribute-btn:hover {
     color: #333;
 }
 
+.confirm_words a{
+    color: #1e5631;
+}
+
+
 .fail_words,.success_words{
     font-weight: 300;
     font-size: 24px;
@@ -6411,7 +6416,11 @@ button.contribute-btn:hover {
 .small_word_confirm{
     padding-top: 10px;
     padding-bottom: 25px;
-    text-align: center;
+    text-align: justify;
+}
+
+.small_word_confirm a{
+    color: #1e5631;
 }
 
 .button_view_confirm {
@@ -6679,6 +6688,31 @@ button.contribute-btn:hover {
     height: auto;
 }
 
+.logo_admin {
+    position: relative; /* Add this */
+    height: 90px;      /* Add this if needed */
+}
+
+.admin-logout-button {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: #2fa52f;
+    color: #fff;
+    position: absolute;
+    bottom: 20px;
+    left: 20px;
+    border-radius: 4px;
+    text-decoration: none;
+    cursor: pointer;
+    transition: transform 0.2s ease, background-color 0.3s ease;
+}
+
+.admin-logout-button:hover {
+    transform: scale(1.05);
+    background-color: #39a855;
+}
+
+
 .sidebar {
     width: 345px;
     position: fixed;
@@ -6824,6 +6858,10 @@ button.contribute-btn:hover {
     transition: left 300ms;
 }
 
+.admin-header-text{
+    padding-top: 10px;
+}
+
 #nav-toggle {
     display: none;
 }
@@ -6917,35 +6955,70 @@ button.contribute-btn:hover {
     background-color: #c82333;
 }
 
+/* Add or update these styles for the admin contribute table */
 .admin-table {
-    width: 100%;    
-    border-collapse: collapse;
-    margin: 10px 0;
+    width: 100%;
+    border-collapse: separate;  /* Changed from collapse to separate */
+    border-spacing: 0 15px;    /* Adds vertical space between rows */
 }
 
-.admin-table thead tr {
-    background: #fff;
-    border-top: 1px solid #f0f0f0;
-    border-bottom: 1px solid #f0f0f0;
+.admin-table th,
+.admin-table td {
+    padding: 15px;             /* Increased padding */
+    text-align: left;
+    white-space: nowrap;       /* Prevents text wrapping */
 }
 
-.admin-table thead td {
-    font-weight: 700;
-    padding: 15px;  /* Increased padding for better spacing */
-}
-
-.admin-table tbody tr {
-    border-bottom: 1px solid #f0f0f0;
-}
-
-.admin-table tbody td {
-    padding: 15px;  /* Increased padding for better spacing */
-    text-align: center;
-}
-
-.admin-table .description-column td{
-    width: 1000px;
+/* Make the description column wrap text */
+.admin-table .description-column {
+    white-space: normal;       /* Allows text wrapping */
+    max-width: 200px;         /* Adjust this value as needed */
     word-wrap: break-word;
+}
+
+/* Add horizontal scrolling for the table */
+.card-body {
+    overflow-x: auto;
+    padding: 20px;            /* Added padding around the table */
+}
+
+/* Optional: Add some styling for better readability */
+.admin-table tbody tr {
+    background: #fff;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+.admin-table tbody tr:hover {
+    background: #f8f9fa;
+}
+
+.admin-table th {
+    background: #f8f9fa;
+    font-weight: bold;
+    border-bottom: 2px solid #dee2e6;
+}
+
+.description-column {
+    min-width: 500px !important;         /* Increased minimum width */
+    max-width: 800px !important;         /* Increased maximum width */
+    width: 600px !important;             /* Fixed width */
+    white-space: normal !important;      /* Allows text wrapping */
+    word-wrap: break-word;
+    padding: 15px 25px !important;       /* Extra padding */
+}
+
+/* Style for the header specifically */
+.admin-table th.description-column {
+    background-color: #f3f3f3;
+    font-weight: bold;
+    text-align: left;
+    padding: 15px 25px;
+}
+
+/* Style for the cell content */
+.admin-table td.description-column {
+    line-height: 1.5;        /* Better line spacing for readability */
+    text-align: left;
 }
 
 /* If you want even more width, you can make the container wider */
@@ -7018,6 +7091,53 @@ button.contribute-btn:hover {
     
     .sidebar .sidebar-brand h2 span:last-child,
     .sidebar li a span:last-child{
+        display: none;
+    }
+
+    .sidebar {
+        width: 70px;
+    }
+
+     /* Adjust header position */
+     .admin-header {
+        left: 70px;
+        width: calc(100% - 70px);
+        transition: left 0.3s ease, width 0.3s ease;
+    }
+    
+    /* When sidebar is hovered/expanded */
+    .sidebar:hover {
+        width: 345px;
+    }
+    
+    .sidebar:hover ~ .main-content .admin-header {
+        left: 345px;
+        width: calc(100% - 345px);
+    }
+
+    .sidebar .logo_admin img {
+        width: 45px;  
+        height: auto;
+        transition: width 0.3s ease;  
+    }
+        
+    .sidebar:hover .logo_admin img {
+        width: 50px;  
+    }
+        
+    .sidebar .admin_logo_text {
+        display: none;
+    }
+    
+    .sidebar:hover .admin_logo_text {
+        display: inline;
+    }
+
+    .sidebar:hover .admin-logout-button{
+        display: inline;
+    }
+
+    .admin-logout-button{
         display: none;
     }
     
