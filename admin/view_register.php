@@ -89,7 +89,9 @@
                         <div class="card-header">
                             <h3>Register Records</h3>
 
-                            <button>Refresh</button>
+                            <form method="post" action="<?php echo $_SERVER['PHP_SELF']; ?>">
+                                <button type="submit" name="refresh_table">Refresh</button>
+                            </form>
                         </div>
                     
                         <div class="card-body">

@@ -6985,6 +6985,7 @@ button.contribute-btn:hover {
 }
 
 .admin-delete-button:hover {
+    color: #fff;
     background-color: orangered;
 }
 
@@ -7133,7 +7134,14 @@ button.contribute-btn:hover {
     color: #fff;
     font-size: .8rem;
     padding: .5rem 1rem;
-    border: 1px solid #228B22;
+    border: 1px solid #228B22;   
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.card-header form {
+    margin: 0;
+    padding: 0;
 }
 
 .card-body {
