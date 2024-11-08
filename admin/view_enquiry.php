@@ -125,7 +125,10 @@
                                                 <img src="../images/kebab-menu.webp" alt="kebab menu" class="kebab-menu-icon">
                                             </label>
                                             <div class="menu-content">
+                                            <form action="<?php echo $_SERVER['PHP_SELF']; ?>" method="get" style="display: inline;">
+                                                <input type="hidden" name="view_id" value="<?php echo $row['Enquiry_ID']; ?>">
                                                 <button type="submit" class="admin-view-button menu-button">View</button>
+                                            </form>
                                                 <button type="submit" class="admin-edit-button menu-button">Edit</button>
                                                 <form action="<?php echo $_SERVER['PHP_SELF']; ?>" method="get">
                                                     <input type="hidden" name="id" value="<?php echo $row['Enquiry_ID']; ?>">
@@ -191,5 +194,47 @@
             exit(); 
         }
     ?>
+
+<?php
+if (isset($_GET['view_id'])) {
+    $conn = mysqli_connect($servername, $username, $password, $dbname);
+    $id = mysqli_real_escape_string($conn, $_GET['view_id']);
+    $sql = "SELECT * FROM enquiry WHERE Enquiry_ID = '$id'";
+    $result = mysqli_query($conn, $sql);
+    $row = mysqli_fetch_assoc($result);
+    
+    if ($row) {
+        ?>
+        <div class="view-modal-overlay">
+            <div class="view-modal-content">
+                <div class="view-modal-header">
+                    <h2>Enquiry Details</h2>
+                </div>
+                <div class="detail-row">
+                    <strong>ID:</strong> <?php echo htmlspecialchars($row['Enquiry_ID']); ?>
+                </div>
+                <div class="detail-row">
+                    <strong>Name:</strong> <?php echo htmlspecialchars($row['Name']); ?>
+                </div>
+                <div class="detail-row">
+                    <strong>Email:</strong> <?php echo htmlspecialchars($row['Email']); ?>
+                </div>
+                <div class="detail-row">
+                    <strong>Subject:</strong> <?php echo htmlspecialchars($row['Subject']); ?>
+                </div>
+                <div class="detail-row">
+                    <strong>Message:</strong> <?php echo htmlspecialchars($row['Message']); ?>
+                </div>
+                <div class="detail-row">
+                    <strong>Date Submitted:</strong> <?php echo htmlspecialchars($row['Enquiry_Created_At']); ?>
+                </div>
+                <a href="<?php echo $_SERVER['PHP_SELF']; ?>" class="close-view-button">Close</a>
+            </div>
+        </div>
+        <?php
+    }
+    mysqli_close($conn);
+}
+?>
 </body>
 </html>

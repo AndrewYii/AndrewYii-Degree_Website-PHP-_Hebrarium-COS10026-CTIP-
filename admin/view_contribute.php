@@ -133,7 +133,10 @@
                                                     <img src="../images/kebab-menu.webp" alt="kebab menu" class="kebab-menu-icon">
                                                 </label>
                                                 <div class="menu-content">
-                                                <button type="submit" class="admin-view-button menu-button">View</button>
+                                                <form action="<?php echo $_SERVER['PHP_SELF']; ?>" method="get" style="display: inline;">
+                                                    <input type="hidden" name="view_id" value="<?php echo $row['Contribute_ID']; ?>">
+                                                    <button type="submit" class="admin-view-button menu-button">View</button>
+                                                </form>
                                                 <button type="submit" class="admin-edit-button menu-button">Edit</button>
                                                 <form action="<?php echo $_SERVER['PHP_SELF']; ?>" method="get">
                                                     <input type="hidden" name="id" value="<?php echo $row['Contribute_ID']; ?>">
@@ -201,5 +204,62 @@
             exit(); 
         }
     ?>
+
+<?php
+if (isset($_GET['view_id'])) {
+    $conn = mysqli_connect($servername, $username, $password, $dbname);
+    $id = mysqli_real_escape_string($conn, $_GET['view_id']);
+    $sql = "SELECT * FROM contribute WHERE Contribute_ID = '$id'";
+    $result = mysqli_query($conn, $sql);
+    $row = mysqli_fetch_assoc($result);
+    
+    if ($row) {
+        ?>
+        <div class="view-modal-overlay">
+            <div class="view-modal-content">
+                <div class="view-modal-header">
+                    <h2>Register Details</h2>
+                </div>
+                <div class="detail-row">
+                    <strong>ID:</strong> <?php echo htmlspecialchars($row['Contribute_ID']); ?>
+                </div>
+                <div class="detail-row">
+                    <strong>Picture Option:</strong> <?php echo htmlspecialchars($row['Picture_Option']); ?>
+                </div>
+                <div class="detail-row">
+                    <strong>Tag:</strong> <?php echo htmlspecialchars($row['Tag']); ?>
+                </div>
+                <div class="detail-row">
+                    <strong>Plant's Name:</strong> <?php echo htmlspecialchars($row['Plant_Name']); ?>
+                </div>
+                <div class="detail-row">
+                    <strong>Plant's Family:</strong> <?php echo htmlspecialchars($row['Plant_Family']); ?>
+                </div>
+                <div class="detail-row">
+                    <strong>Plant's Genus:</strong> <?php echo htmlspecialchars($row['Plant_Genus']); ?>
+                </div>
+                <div class="detail-row">
+                    <strong>Plant's Species:</strong> <?php echo htmlspecialchars($row['Plant_Species']); ?>
+                </div>
+                <div class="detail-row">
+                    <strong>Plant's Leaf Photo:</strong> <?php echo htmlspecialchars($row['Plant_Leaf_Photo']); ?>
+                </div>
+                <div class="detail-row">
+                    <strong>Plant's Herbarium Photo:</strong> <?php echo htmlspecialchars($row['Plant_Herbarium_Photo']); ?>
+                </div>
+                <div class="detail-row">
+                    <strong>Comment:</strong> <?php echo htmlspecialchars($row['Description_Contribute']); ?>
+                </div>
+                <div class="detail-row">
+                    <strong>Date Submitted:</strong> <?php echo htmlspecialchars($row['Contribute_Created_At']); ?>
+                </div>
+                <a href="<?php echo $_SERVER['PHP_SELF']; ?>" class="close-view-button">Close</a>
+            </div>
+        </div>
+        <?php
+    }
+    mysqli_close($conn);
+}
+?>
 </body>
 </html>

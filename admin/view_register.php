@@ -88,10 +88,7 @@
                     <div class="card">
                         <div class="card-header">
                             <h3>Register Records</h3>
-
-                            <form method="post" action="<?php echo $_SERVER['PHP_SELF']; ?>">
-                                <button type="submit" name="refresh_table">Refresh</button>
-                            </form>
+                            <button type="submit" name="refresh_table">Refresh</button>                
                         </div>
                     
                         <div class="card-body">
@@ -126,9 +123,12 @@
                         <label for="toggle-<?php echo $row['Register_ID']; ?>" class="kebab-menu-icon">
                             <img src="../images/kebab-menu.webp" alt="kebab menu" class="kebab-menu-icon">
                         </label>
-                        <div class="menu-content">                            
+                        <div class="menu-content">      
+                        <form action="<?php echo $_SERVER['PHP_SELF']; ?>" method="get" style="display: inline;">
+                            <input type="hidden" name="view_id" value="<?php echo $row['Register_ID']; ?>">
                             <button type="submit" class="admin-view-button menu-button">View</button>
-                        <button type="submit" class="admin-edit-button menu-button">Edit</button>
+                        </form>
+                            <button type="submit" class="admin-edit-button menu-button">Edit</button>
                             <form action="<?php echo $_SERVER['PHP_SELF']; ?>" method="get">
                                 <input type="hidden" name="id" value="<?php echo $row['Register_ID']; ?>">
                                 <button type="submit" class="admin-delete-button menu-button">Delete</button>
@@ -203,5 +203,44 @@
             exit(); 
         }
     ?>
+
+<?php
+if (isset($_GET['view_id'])) {
+    $conn = mysqli_connect($servername, $username, $password, $dbname);
+    $id = mysqli_real_escape_string($conn, $_GET['view_id']);
+    $sql = "SELECT * FROM Register WHERE Register_ID = '$id'";
+    $result = mysqli_query($conn, $sql);
+    $row = mysqli_fetch_assoc($result);
+    
+    if ($row) {
+        ?>
+        <div class="view-modal-overlay">
+            <div class="view-modal-content">
+                <div class="view-modal-header">
+                    <h2>Register Details</h2>
+                </div>
+                <div class="detail-row">
+                    <strong>ID:</strong> <?php echo htmlspecialchars($row['Register_ID']); ?>
+                </div>
+                <div class="detail-row">
+                    <strong>Name:</strong> <?php echo htmlspecialchars($row['Name']); ?>
+                </div>
+                <div class="detail-row">
+                    <strong>Username:</strong> <?php echo htmlspecialchars($row['Username']); ?>
+                </div>
+                <div class="detail-row">
+                    <strong>Email:</strong> <?php echo htmlspecialchars($row['Email']); ?>
+                </div>
+                <div class="detail-row">
+                    <strong>Date Submitted:</strong> <?php echo htmlspecialchars($row['Register_Created_At']); ?>
+                </div>
+                <a href="<?php echo $_SERVER['PHP_SELF']; ?>" class="close-view-button">Close</a>
+            </div>
+        </div>
+        <?php
+    }
+    mysqli_close($conn);
+}
+?>
 </body>
 </html>

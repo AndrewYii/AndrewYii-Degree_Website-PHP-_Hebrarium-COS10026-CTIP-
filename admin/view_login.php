@@ -125,7 +125,10 @@
                                                 <img src="../images/kebab-menu.webp" alt="kebab menu" class="kebab-menu-icon">
                                             </label>
                                             <div class="menu-content">                            
+                                            <form action="<?php echo $_SERVER['PHP_SELF']; ?>" method="get" style="display: inline;">
+                                                <input type="hidden" name="view_id" value="<?php echo $row['Login_ID']; ?>">
                                                 <button type="submit" class="admin-view-button menu-button">View</button>
+                                            </form>                         
                                                 <button type="submit" class="admin-edit-button menu-button">Edit</button>
                                                     <form action="<?php echo $_SERVER['PHP_SELF']; ?>" method="get">
                                                         <input type="hidden" name="id" value="<?php echo $row['Login_ID']; ?>">
@@ -200,5 +203,44 @@
         }
 
         ?>
+
+<?php
+if (isset($_GET['view_id'])) {
+    $conn = mysqli_connect($servername, $username, $password, $dbname);
+    $id = mysqli_real_escape_string($conn, $_GET['view_id']);
+    $sql = "SELECT * FROM login WHERE Login_ID = '$id'";
+    $result = mysqli_query($conn, $sql);
+    $row = mysqli_fetch_assoc($result);
+    
+    if ($row) {
+        ?>
+        <div class="view-modal-overlay">
+            <div class="view-modal-content">
+                <div class="view-modal-header">
+                    <h2>Login Details</h2>
+                </div>
+                <div class="detail-row">
+                    <strong>ID:</strong> <?php echo htmlspecialchars($row['Login_ID']); ?>
+                </div>
+                <div class="detail-row">
+                    <strong>Register ID:</strong> <?php echo htmlspecialchars($row['Register_ID']); ?>
+                </div>
+                <div class="detail-row">
+                    <strong>Username:</strong> <?php echo htmlspecialchars($row['Username']); ?>
+                </div>
+                <div class="detail-row">
+                    <strong>Login At:</strong> <?php echo htmlspecialchars($row['Login_At']); ?>
+                </div>
+                <div class="detail-row">
+                    <strong>Logout At:</strong> <?php echo htmlspecialchars($row['Logout_At']); ?>
+                </div>
+                <a href="<?php echo $_SERVER['PHP_SELF']; ?>" class="close-view-button">Close</a>
+            </div>
+        </div>
+        <?php
+    }
+    mysqli_close($conn);
+}
+?>
 </body>
 </html>
