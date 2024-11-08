@@ -6688,13 +6688,18 @@ button.contribute-btn:hover {
     height: auto;
 }
 
+.logo_admin {
+    position: relative; /* Add this */
+    height: 90px;      /* Add this if needed */
+}
+
 .admin-logout-button {
     display: inline-block;
     padding: 10px 20px;
     background-color: #2fa52f;
     color: #fff;
-    position: relative;
-    top: 140px;
+    position: absolute;
+    bottom: 20px;
     left: 20px;
     border-radius: 4px;
     text-decoration: none;
@@ -7126,6 +7131,14 @@ button.contribute-btn:hover {
     
     .sidebar:hover .admin_logo_text {
         display: inline;
+    }
+
+    .sidebar:hover .admin-logout-button{
+        display: inline;
+    }
+
+    .admin-logout-button{
+        display: none;
     }
     
     .main-content {
