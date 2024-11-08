@@ -69,7 +69,7 @@
                         <div class="card-header">
                             <h3>Recent Projects</h3>
 
-                            <button>Refresh <span class="las la-arrow-right"></span></button>
+                            <button>Refresh</button>
                         </div>
                     
                         <div class="card-body">
