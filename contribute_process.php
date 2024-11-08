@@ -12,7 +12,7 @@
         <meta charset="utf-8" />
     	<meta name="viewport" content="width=device-width, initial-scale=1.0">
         <meta name="description" content="This is confirm page about the contribute submission" />
-        <meta name="keywords" content="" />
+        <meta name="keywords" content="Process on checking info of contribute submission" />
         <meta name="author" content="Andrew Yii Teck Foon"  />
         <title>Plant's Notebook | Contribute Confirmation</title>
         <link rel="stylesheet" href="styles/style.css">
