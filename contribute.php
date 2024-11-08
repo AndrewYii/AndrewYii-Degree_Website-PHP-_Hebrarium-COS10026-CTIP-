@@ -46,7 +46,7 @@
 
             <div class="contribute-form-background-layout">
                 <div class="contribute-form-layout">
-                    <form action="contribute_process.php" method="post" enctype="multipart/form-data">
+                    <form action="contribute_process.php" method="post" enctype="multipart/form-data" novalidate="novalidate">
 
                         <input type="reset" class="contribute-word">
 
