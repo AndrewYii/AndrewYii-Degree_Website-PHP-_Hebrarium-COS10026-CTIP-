@@ -299,7 +299,7 @@
                 </div>
 
                 <figure class='going-up-container'>
-                    <a href='#top_contribute'>
+                    <a href='#top_contribution'>
                         <img src='images/going_up.png' alt='going-up' class='going-up'  title="going to the top">
                     </a>
                 </figure>

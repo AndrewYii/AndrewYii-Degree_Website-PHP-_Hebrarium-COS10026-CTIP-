@@ -185,8 +185,8 @@
                             <li>
                                 <div class='dropdown-content-search'>
                                     <div class='dropdown-text-search'>
-                                        <form>
-                                            <input type='text' placeholder='Search..' name='search'>
+                                        <form method='GET' action='search.php'>
+                                            <input type='text' placeholder='Search by Plants Name,Family, Genus......' name='search'>
                                             <button type='submit'>
                                                 <img src='images/search_icon.png' alt='Search_Icon'>
                                             </button>

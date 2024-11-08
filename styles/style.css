@@ -3144,6 +3144,50 @@ button.contribute-btn:hover {
     display: none;
 }
 
+/*Search*/
+#no-results {
+    background-color: #e8f5e9; 
+    border: 2px solid #3a7d44;
+    border-radius: 8px;
+    min-width:400px;
+    min-height: 400px;
+    margin:0 auto;
+}
+
+#nofound{
+    margin: 20px 0;
+    text-align: center;
+}
+
+#nofound img{
+    max-width: 200px;
+    min-height: 200px;
+    border: 1px solid darkgreen;
+    border-radius: 100%;
+}
+
+#no-results-heading {
+    text-align: center;
+    color: #2b5e33; 
+    font-weight: bold;
+    padding: 10px;
+    font-size: 2em; 
+}
+
+.no-results-message {
+    text-align: center;
+    color: #3a7d44; 
+    font-weight: bold;
+    padding:5px;
+    font-size: 1.1em;
+    margin:3px;
+}
+
+.no-results-message a{
+    color:  #1e5631; 
+}
+
+
 @media (max-width: 1400px){
     .horizontal-contributecard-layout-line{
         display: block; 
