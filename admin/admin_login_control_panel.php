@@ -122,7 +122,7 @@ if (isset($_SESSION['message'])) {
         <?php
                 }
             } else {
-                echo "<tr><td colspan='11'>No enquiries found</td></tr>";
+                echo "<tr><td colspan='11'>No login records found</td></tr>";
             }
             mysqli_close($conn);
         ?>

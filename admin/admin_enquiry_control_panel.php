@@ -121,7 +121,7 @@
         <?php
                 }
             } else {
-                echo "<tr><td colspan='11'>No enquiries found</td></tr>";
+                echo "<tr><td colspan='11'>No enquiry records found</td></tr>";
             }
             mysqli_close($conn);
         ?>
