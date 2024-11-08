@@ -46,7 +46,7 @@
                             <div class='logout-background'>
                                 <div class='logout-content'>
                                     <p>Are you sure you want to log out?</p>
-                                    <a href='logout.php' class='confirm-logout'>Yes</a>
+                                    <a href='../logout.php' class='confirm-logout'>Yes</a>
                                     <label for='logoutCheckbox' class='cancel-logout'>No</label>
                                 </div>
                             </div>
@@ -118,7 +118,7 @@
                                         <tr>
                                             <td><?php echo $row["Contribute_ID"]; ?></td>
                                             <td><?php echo $row["Picture_Option"]; ?></td>
-                                            <td><?php echo $row["Tag"]; ?></td>
+                                            <td class="description-column"><?php echo $row["Tag"]; ?></td>
                                             <td><?php echo $row["Plant_Name"]; ?></td>
                                             <td><?php echo $row["Plant_Family"]; ?></td>
                                             <td><?php echo $row["Plant_Genus"]; ?></td>
@@ -128,12 +128,20 @@
                                             <td class="description-column"><?php echo $row["Description_Contribute"]; ?></td>
                                             <td><?php echo $row["Contribute_Created_At"]; ?></td>
                                             <td>
-                                            <form action="<?php echo $_SERVER['PHP_SELF']; ?>" method="get">
-                                                <input type="hidden" name="id" value="<?php echo $row['Contribute_ID']; ?>">
-                                                <button type="submit" class="admin-delete-button">Delete</button>
-                                            </form>
-                                        </td>
-                                    </tr>
+                                                <input type="checkbox" id="toggle-<?php echo $row['Contribute_ID']; ?>" class="toggle-checkbox">
+                                                <label for="toggle-<?php echo $row['Contribute_ID']; ?>" class="kebab-menu-icon">
+                                                    <img src="../images/kebab-menu.webp" alt="kebab menu" class="kebab-menu-icon">
+                                                </label>
+                                                <div class="menu-content">
+                                                <button type="submit" class="admin-view-button menu-button">View</button>
+                                                <button type="submit" class="admin-edit-button menu-button">Edit</button>
+                                                <form action="<?php echo $_SERVER['PHP_SELF']; ?>" method="get">
+                                                    <input type="hidden" name="id" value="<?php echo $row['Contribute_ID']; ?>">
+                                                    <button type="submit" class="admin-delete-button menu-button">Delete</button>
+                                                </form>
+                                            </div>
+                                            </td>
+                                        </tr>
                                 <?php
                                     }
                                 } else {

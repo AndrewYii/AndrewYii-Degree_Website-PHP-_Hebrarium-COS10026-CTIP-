@@ -6712,7 +6712,6 @@ button.contribute-btn:hover {
     background-color: #39a855;
 }
 
-
 .sidebar {
     width: 345px;
     position: fixed;
@@ -6937,22 +6936,75 @@ button.contribute-btn:hover {
     min-height: calc(100vh - 90px);
 }
 
-.admin-delete-option{
-    color: orangered;
+.kebab-menu-icon {
+    width: 20px;
+    height: auto;
+    position: relative;
+    left: 10px;
+}
+
+.toggle-checkbox {
+    display: none;
+}
+
+.menu-content {
+    display: none;
+    position: absolute;
+    transform: translateX(50%); /* Center the menu */
+    background-color: white;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+    z-index: 1000;
+    min-width: 50px; /* Minimum width for the menu */
+    overflow: visible;
+}
+
+.menu-button {
+    width: 100%;
+    padding: 8px 16px;
+    white-space: nowrap;
+    border: none;
+    background: none;
+    text-align: left;
+    cursor: pointer;
+    display: block;
+}
+
+.menu-button:hover {
+    background-color: #f1f1f1;
 }
 
 .admin-delete-button {
     padding: 5px 10px;
     border: none;
-    border-radius: 10px;
-    background-color: orangered;
-    color: #fff;
+    background-color: #fff;
+    color: #000;
     cursor: pointer;
     transition: background-color 0.3s ease;
 }
 
 .admin-delete-button:hover {
-    background-color: #c82333;
+    background-color: orangered;
+}
+
+.admin-view-button {
+    color: #000;
+}
+
+.admin-edit-button {
+    color: #000;
+}
+
+.toggle-checkbox:checked + .kebab-menu-icon + .menu-content {
+    display: block;
+    position: absolute;
+    background-color: white;
+    border: 1px solid #ddd;
+}
+
+.admin-delete-option{
+    color: orangered;
 }
 
 /* Add or update these styles for the admin contribute table */
@@ -6967,6 +7019,23 @@ button.contribute-btn:hover {
     padding: 15px;             /* Increased padding */
     text-align: left;
     white-space: nowrap;       /* Prevents text wrapping */
+    overflow: hidden;
+}
+
+/* Add specific widths for columns */
+.admin-table th:first-child,
+.admin-table td:first-child {
+    width: 5%; /* ID column */
+}
+
+.admin-table th:last-child {
+    width: 8%; /* Actions column */
+    position: relative; /* Add this */
+}
+
+.admin-table td:last-child {
+    position: relative;
+    overflow: visible !important; /* Override any inherited overflow properties */
 }
 
 /* Make the description column wrap text */
@@ -7028,7 +7097,7 @@ button.contribute-btn:hover {
 }
 
 .recent-grid {
-    margin-top: 3.5rem;
+    margin-top: 1.5rem;
     display: grid;
     grid-template-columns: 100%;  /* Changed from 70% 30% to give more space to main content */
     grid-gap: 2rem;

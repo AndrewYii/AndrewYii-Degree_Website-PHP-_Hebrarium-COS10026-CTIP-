@@ -48,7 +48,7 @@
                             <div class='logout-background'>
                                 <div class='logout-content'>
                                     <p>Are you sure you want to log out?</p>
-                                    <a href='logout.php' class='confirm-logout'>Yes</a>
+                                    <a href='../logout.php' class='confirm-logout'>Yes</a>
                                     <label for='logoutCheckbox' class='cancel-logout'>No</label>
                                 </div>
                             </div>
@@ -99,7 +99,7 @@
                                         <th>Name</th>
                                         <th>Email</th>
                                         <th>Subject</th>
-                                        <th>Message</th>
+                                        <th class="description-column">Message</th>
                                         <th>Date Submitted</th>
                                         <th class="admin-delete-option">Delete</th>
                                     </tr>
@@ -117,13 +117,21 @@
                                         <td><?php echo $row["Name"]; ?></td>
                                         <td><?php echo $row["Email"]; ?></td>
                                         <td><?php echo $row["Subject"]; ?></td>
-                                        <td><?php echo $row["Message"]; ?></td>
+                                        <td class="description-column"><?php echo $row["Message"]; ?></td>
                                         <td><?php echo $row["Enquiry_Created_At"]; ?></td>
                                         <td>
-                                            <form action="<?php echo $_SERVER['PHP_SELF']; ?>" method="get">
-                                                <input type="hidden" name="id" value="<?php echo $row['Enquiry_ID']; ?>">
-                                                <button type="submit" class="admin-delete-button">Delete</button>
-                                            </form>
+                                            <input type="checkbox" id="toggle-<?php echo $row['Enquiry_ID']; ?>" class="toggle-checkbox">
+                                            <label for="toggle-<?php echo $row['Enquiry_ID']; ?>" class="kebab-menu-icon">
+                                                <img src="../images/kebab-menu.webp" alt="kebab menu" class="kebab-menu-icon">
+                                            </label>
+                                            <div class="menu-content">
+                                                <button type="submit" class="admin-view-button menu-button">View</button>
+                                                <button type="submit" class="admin-edit-button menu-button">Edit</button>
+                                                <form action="<?php echo $_SERVER['PHP_SELF']; ?>" method="get">
+                                                    <input type="hidden" name="id" value="<?php echo $row['Enquiry_ID']; ?>">
+                                                    <button type="submit" class="admin-delete-button menu-button">Delete</button>
+                                                </form>
+                                            </div>
                                         </td>
                                     </tr>
                                 <?php
