@@ -40,10 +40,10 @@ session_start();
                 if (isset($_GET['search']) && !empty(trim($_GET['search']))) {
                     $searchInput = trim($_GET['search']);
                     $searchQuery = mysqli_real_escape_string($conn, $searchInput);
-                    // Query to search contributions based on multiple fields
                     $query = "SELECT * FROM Contribute WHERE Plant_Name LIKE '%$searchQuery%' 
                             OR Plant_Family LIKE '%$searchQuery%' 
-                            OR Plant_Genus LIKE '%$searchQuery%'";
+                            OR Plant_Genus LIKE '%$searchQuery%'
+                            OR Plant_Species LIKE '%$searchQuery%'";
                 } else {
                     $query = "SELECT * FROM Contribute";
                 }
