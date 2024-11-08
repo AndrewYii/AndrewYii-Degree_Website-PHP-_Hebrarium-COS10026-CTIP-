@@ -182,7 +182,7 @@
 
                 <div class="login-form">
 
-                    <form action="<?php echo ($_SERVER["PHP_SELF"]); ?>" method="POST">
+                    <form action="<?php echo ($_SERVER["PHP_SELF"]); ?>" method="POST" novalidate="novalidate">
 
                             <input type="reset" class="word">
 

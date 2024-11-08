@@ -158,7 +158,7 @@
             <div class="login-form-layout">
                 <div class="login-form">
 
-                    <form action="<?php echo ($_SERVER["PHP_SELF"]); ?>" method="POST">
+                    <form action="<?php echo ($_SERVER["PHP_SELF"]); ?>" method="POST" novalidate="novalidate">
 
                         <h1>
                             Login

@@ -37,7 +37,7 @@
 
                 <h1 class="enquiry-head">Enquiry</h1>
                 
-                <form name="Feedback" method="post" action="enquiry_process.php">
+                <form name="Feedback" method="post" action="enquiry_process.php" novalidate="novalidate">
                     <div class="enquiry-reset"><input class="feedback-butn" type="reset" value="Reset"></div>
 
                         <fieldset class="enquiry-fd">
