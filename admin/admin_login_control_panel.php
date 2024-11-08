@@ -93,6 +93,7 @@ if (isset($_SESSION['message'])) {
                                     <th>Username</th>
                                     <th>Login At</th>
                                     <th>Logout At</th>
+                                    <th class="admin-delete-option">Delete</th>
                                 </tr>
                             </thead>
                             <?php
@@ -111,7 +112,12 @@ if (isset($_SESSION['message'])) {
                     <td><?php echo isset($row["Logout_At"]) && $row["Logout_At"] !== null
                     ? $row["Logout_At"]
                     : "Still Logged In"; ?></td>
-                    <?php echo '<td><button class="admin-delete-button"><a href="delete_login.php?id=' . $row['Login_ID'] . '">Delete</a></button></td>'; ?>
+                    <td>
+                        <form action="delete_login.php" method="get">
+                            <input type="hidden" name="id" value="<?php echo $row['Login_ID']; ?>">
+                            <button type="submit" class="admin-delete-button">Delete</button>
+                        </form>
+                    </td>
                 </tr>
         <?php
                 }

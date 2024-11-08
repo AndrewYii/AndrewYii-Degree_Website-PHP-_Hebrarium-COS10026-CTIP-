@@ -6855,18 +6855,22 @@ button.contribute-btn:hover {
     min-height: calc(100vh - 90px);
 }
 
-.admin-delete-button a{
-    text-decoration: none;
+.admin-delete-option{
+    color: orangered;
+}
+
+.admin-delete-button {
+    padding: 5px 10px;
+    border: none;
     border-radius: 10px;
     background-color: orangered;
     color: #fff;
-    padding: 5px 10px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
 }
 
-.admin-delete-button{
-    padding: 0;
-    border: none;
-    background: none;
+.admin-delete-button:hover {
+    background-color: #c82333;
 }
 
 .admin-table {
