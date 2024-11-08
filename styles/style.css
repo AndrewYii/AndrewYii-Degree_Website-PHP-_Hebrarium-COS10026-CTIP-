@@ -6833,6 +6833,10 @@ button.contribute-btn:hover {
     transition: left 300ms;
 }
 
+.admin-header-text{
+    padding-top: 10px;
+}
+
 #nav-toggle {
     display: none;
 }
@@ -7028,6 +7032,45 @@ button.contribute-btn:hover {
     .sidebar .sidebar-brand h2 span:last-child,
     .sidebar li a span:last-child{
         display: none;
+    }
+
+    .sidebar {
+        width: 70px;
+    }
+
+     /* Adjust header position */
+     .admin-header {
+        left: 70px;
+        width: calc(100% - 70px);
+        transition: left 0.3s ease, width 0.3s ease;
+    }
+    
+    /* When sidebar is hovered/expanded */
+    .sidebar:hover {
+        width: 345px;
+    }
+    
+    .sidebar:hover ~ .main-content .admin-header {
+        left: 345px;
+        width: calc(100% - 345px);
+    }
+
+    .sidebar .logo_admin img {
+        width: 45px;  
+        height: auto;
+        transition: width 0.3s ease;  
+    }
+        
+    .sidebar:hover .logo_admin img {
+        width: 50px;  
+    }
+        
+    .sidebar .admin_logo_text {
+        display: none;
+    }
+    
+    .sidebar:hover .admin_logo_text {
+        display: inline;
     }
     
     .main-content {
