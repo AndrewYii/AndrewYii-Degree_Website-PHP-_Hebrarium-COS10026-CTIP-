@@ -67,33 +67,76 @@
                 <p>Name: <?php echo isset($user_data['Name']) ? $user_data['Name'] : 'Not set'; ?></p>
                 <p>Username: <?php echo isset($user_data['Username']) ? $user_data['Username'] : 'Not set'; ?></p>
                 <p>Email: <?php echo isset($user_data['Email']) ? $user_data['Email'] : 'Not set'; ?></p>
-                <table border="1">
-                    <tr>
-                        <th>Contribution</th>
-                        <th>Details</th>
-                    </tr>
-                    <tr>
-                        <td>Plant's Name</td>
-                        <td>Details</td>
-                    </tr>
-                    <tr>
-                        <td>Plant's Family</td>
-                        <td>Details</td>
-                    </tr>
-                    <tr>
-                        <td>Plant's Genus</td>
-                        <td>Details</td>
-                    </tr>
-                    <tr>
-                        <td>Plant's Species</td>
-                        <td>Details</td>
-                    </tr>
-                    <tr>
-                        <td>Description</td>
-                        <td>Details</td>
-                    </tr>
-                </table>
-                <a href="test2.php"><button>Edit Profile</button></a>
+
+                <?php
+                    // Query to get plant contributions for current user
+                    $plant_sql = "SELECT * FROM contribute WHERE username = '$current_user'";
+                    $plant_result = mysqli_query($conn, $plant_sql);
+
+                    if ($plant_result && mysqli_num_rows($plant_result) > 0) {
+                        $contribution_count = 1;
+                            while ($row = mysqli_fetch_assoc($plant_result)) {
+                            echo "<h3>Contribution #" . $contribution_count . "</h3>";
+                            echo "<table border='1'>
+                            <tr>
+                                <th>Contribution</th>   
+                                <th>Details</th>
+                            </tr>
+                            <tr>
+                                <td>Plant's Name</td>
+                                <td>" . htmlspecialchars($row['Plant_Name']) . "</td>
+                            </tr>
+                            <tr>
+                                <td>Plant's Family</td>
+                                <td>" . htmlspecialchars($row['Plant_Family']) . "</td>
+                            </tr>
+                            <tr>
+                                <td>Plant's Genus</td>
+                                <td>" . htmlspecialchars($row['Plant_Genus']) . "</td>
+                            </tr>
+                            <tr>
+                                <td>Plant's Species</td>
+                                <td>" . htmlspecialchars($row['Plant_Species']) . "</td>
+                            </tr>
+                            <tr>
+                                <td>Description</td>
+                                <td>" . htmlspecialchars($row['Description_Contribute']) . "</td>
+                            </tr>
+                    </table><br>";
+                            $contribution_count++;
+                        }
+                    } else {
+                        echo "<p>No plant contributions found</p>";
+                    }
+                ?>
+                <br>
+                <?php
+                    $enquiry_sql = "SELECT * FROM enquiry WHERE username = '$current_user'";
+                    $enquiry_result = mysqli_query($conn, $enquiry_sql);
+
+                    if ($enquiry_result && mysqli_num_rows($enquiry_result) > 0) {
+                        $enquiry_count = 1;
+                        while ($row = mysqli_fetch_assoc($enquiry_result)) {
+                            echo "<h3>Enquiry #" . $enquiry_count . "</h3>";
+                            echo "<table border='1'>
+                            <tr>
+                                <th>Enquiry</th>
+                                <th>Details</th>
+                            </tr>
+                            <tr>
+                                <td>Enquiry</td>
+                                <td>" . htmlspecialchars($row['Enquiry']) . "</td>
+                            </tr>
+                            <tr>
+                                <td>Date</td>
+                                <td>" . htmlspecialchars($row['Date']) . "</td>
+                            </tr>
+                            </table><br>";
+                            $enquiry_count++;
+                        }
+                    }
+                    echo "<a href='test2.php'><button>Edit Profile</button></a>";
+                ?>
             </div>
             <?php   
             mysqli_close($conn);
