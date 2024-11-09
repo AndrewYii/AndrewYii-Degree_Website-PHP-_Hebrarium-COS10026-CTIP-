@@ -48,6 +48,27 @@
         die("Error creating login table: " . mysqli_error($conn));
     }
 
+    // SQL to create Pre_Contribution table
+    $sql_pre_contribute = "CREATE TABLE IF NOT EXISTS Pre_Contribute (
+        Pre_Contribute_ID INT(6) UNSIGNED AUTO_INCREMENT PRIMARY KEY,
+        Username VARCHAR(60) NOT NULL,
+        Picture_Option VARCHAR(50) NOT NULL,
+        Tag VARCHAR(500) NOT NULL,
+        Plant_Name VARCHAR(50) NOT NULL,
+        Plant_Family VARCHAR(50) NOT NULL,
+        Plant_Genus VARCHAR(50) NOT NULL,
+        Plant_Species VARCHAR(50) NOT NULL,
+        Plant_Leaf_Photo VARCHAR(255) NOT NULL,
+        Plant_Herbarium_Photo VARCHAR(255) NOT NULL,
+        Description_Contribute TEXT NOT NULL,
+        Contribute_Created_At TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+    )";
+
+    if (!mysqli_query($conn, $sql_pre_contribute)) {
+        die("Error creating contribute table: " . mysqli_error($conn));
+    }
+
+    // SQL to create Contribution table
     $sql_contribute = "CREATE TABLE IF NOT EXISTS Contribute (
         Contribute_ID INT(6) UNSIGNED AUTO_INCREMENT PRIMARY KEY,
         Username VARCHAR(60) NOT NULL,

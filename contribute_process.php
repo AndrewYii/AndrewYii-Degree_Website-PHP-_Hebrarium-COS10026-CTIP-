@@ -152,7 +152,7 @@
 
                 // No error
                 if ($error == '' && $spam == '') {
-                    $stmt = $conn->prepare("INSERT INTO Contribute 
+                    $stmt = $conn->prepare("INSERT INTO Pre_Contribute 
                         (Username, Picture_Option, Tag, Plant_Name, Plant_Family, Plant_Genus, Plant_Species, Plant_Leaf_Photo, Plant_Herbarium_Photo, Description_Contribute) 
                         VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)");
                 
@@ -163,7 +163,7 @@
                 
                     // Execute the statement
                     if ($stmt->execute()) {
-                        $message = "Your contribution has been submitted successfully, and it is displayed in the contribution page. Go there to take a look!";
+                        $message = "Thank you for your contribution! It has been successfully submitted and will appear on the contributions page shortly after approval. We invite you to check back soon!";
                     } else {
                         $error_connection = "We're sorry, but we couldn't store your data due to a technical issue with our database. Please try again later. If the issue persists, feel free to reach out to our <a href='mailto:104386568@students.swinburne.edu.my'>support team</a> for assistance.";
                     }
