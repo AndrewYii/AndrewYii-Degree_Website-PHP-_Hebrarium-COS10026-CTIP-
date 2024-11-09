@@ -257,22 +257,20 @@ if (isset($_POST['update_comment'])) {
     $contribute_id = mysqli_real_escape_string($conn, $_POST['edit_contribute_id']);
     $commenter_username = mysqli_real_escape_string($conn, $_POST['edit_username']);
     $comment_text = mysqli_real_escape_string($conn, $_POST['edit_comment']);
-    $comment_created_at = mysqli_real_escape_string($conn, $_POST['edit_uploaded_at']);
     
-    $sql = "UPDATE contribute_comments SET Contribute_ID=?, Commenter_Username=?, Comment_Text=?, Comment_Created_At=? WHERE Comment_ID=?";
+    $sql = "UPDATE contribute_comments SET Contribute_ID=?, Commenter_Username=?, Comment_Text=? WHERE Comment_ID=?";
     $stmt = mysqli_prepare($conn, $sql);
-    mysqli_stmt_bind_param($stmt, "isisi", $contribute_id, $commenter_username, $comment_text, $comment_created_at, $comment_id);
+    mysqli_stmt_bind_param($stmt, "issi", $contribute_id, $commenter_username, $comment_text, $comment_id);
     
     if (mysqli_stmt_execute($stmt)) {
         $_SESSION['message'] = 'Comment updated successfully';
+        echo "<meta http-equiv='refresh' content='0;url=view_comments.php'>";
     } else {
         $_SESSION['message'] = 'Error updating comment: ' . mysqli_error($conn);
     }
     
     mysqli_stmt_close($stmt);
     mysqli_close($conn);
-    
-    header("Location: view_comments.php");
     exit();
 }
 
