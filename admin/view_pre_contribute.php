@@ -24,6 +24,16 @@
     }
     ?>
 
+    <!-- Moved logout HTML here -->
+    <input type='checkbox' id='logoutCheckbox'>
+    <div class='logout-background'>
+        <div class='logout-content'>
+            <p>Are you sure you want to log out?</p>
+            <a href='../logout.php' class='confirm-logout'>Yes</a>
+            <label for='logoutCheckbox' class='cancel-logout'>No</label>
+        </div>
+    </div>
+
     <input type="checkbox" id="nav-toggle">
     <div class="sidebar">
         <p class="logo_admin">
@@ -44,14 +54,6 @@
                 <li><a href="view_pre_contribute.php" class="active"><img src="../images/pre_contribute_icon.png" alt="pre-contribute" class="pre-contribute-sidebar-icon"><span>Pre-Contribute</span></a></li>
                 <li><a href="view_comments.php"><img src="../images/comments_icon.png" alt="comments" class="comments-sidebar-icon"><span>Comments</span></a></li>
                 <label for='logoutCheckbox' class='admin-logout-button'>Logout</label>
-                <input type='checkbox' id='logoutCheckbox'>
-                <div class='logout-background'>
-                    <div class='logout-content'>
-                        <p>Are you sure you want to log out?</p>
-                        <a href='../logout.php' class='confirm-logout'>Yes</a>
-                        <label for='logoutCheckbox' class='cancel-logout'>No</label>
-                    </div>
-                </div>
             </ul>
         </div>
     </div>
@@ -463,7 +465,7 @@ if (isset($_POST['accept_id'])) {
             mysqli_stmt_bind_param($stmt, "i", $id);
             
             if (mysqli_stmt_execute($stmt)) {
-                $_SESSION['message'] = 'Contribution accepted and moved to main contributions';
+                $_SESSION['message'] = 'Contribution accepted';
                 echo "<meta http-equiv='refresh' content='0;url=view_pre_contribute.php'>";
             } else {
                 $_SESSION['message'] = 'Error deleting from pre_contribute: ' . mysqli_error($conn);

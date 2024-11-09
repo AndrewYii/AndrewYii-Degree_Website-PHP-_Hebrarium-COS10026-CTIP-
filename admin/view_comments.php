@@ -25,6 +25,15 @@
     }
     ?>
 
+    <input type='checkbox' id='logoutCheckbox'>
+    <div class='logout-background'>
+        <div class='logout-content'>
+            <p>Are you sure you want to log out?</p>
+            <a href='../logout.php' class='confirm-logout'>Yes</a>
+            <label for='logoutCheckbox' class='cancel-logout'>No</label>
+        </div>
+    </div>
+
     <input type="checkbox" id="nav-toggle">
     <div class="sidebar">
         <p class="logo_admin">
@@ -45,14 +54,6 @@
                 <li><a href="view_pre_contribute.php"><img src="../images/pre_contribute_icon.png" alt="pre-contribute" class="pre-contribute-sidebar-icon"><span>Pre-Contribute</span></a></li>
                 <li><a href="view_comments.php" class="active"><img src="../images/comments_icon.png" alt="comments" class="comments-sidebar-icon"><span>Comments</span></a></li>
                 <label for='logoutCheckbox' class='admin-logout-button'>Logout</label>
-                <input type='checkbox' id='logoutCheckbox'>
-                <div class='logout-background'>
-                    <div class='logout-content'>
-                        <p>Are you sure you want to log out?</p>
-                        <a href='../logout.php' class='confirm-logout'>Yes</a>
-                        <label for='logoutCheckbox' class='cancel-logout'>No</label>
-                    </div>
-                </div>
             </ul>
         </div>
     </div>

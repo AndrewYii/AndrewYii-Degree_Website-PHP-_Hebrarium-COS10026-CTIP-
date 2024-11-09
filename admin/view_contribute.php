@@ -17,21 +17,29 @@
     include ('../database/database.php');
     ?>
 
-<?php
-// Check if there's a message in the session
-if (isset($_SESSION['message'])) {
-    $messageClass = strpos($_SESSION['message'], 'Error') !== false ? 'error-message' : 'success-message';
-    echo "<div class='admin-message {$messageClass}'>" . $_SESSION['message'] . "</div>";
-    unset($_SESSION['message']); // Clear the message from session after displaying it
-}
-?>
+    <?php
+    if (isset($_SESSION['message'])) {
+        $messageClass = strpos($_SESSION['message'], 'Error') !== false ? 'error-message' : 'success-message';
+        echo "<div class='admin-message {$messageClass}'>" . $_SESSION['message'] . "</div>";
+        unset($_SESSION['message']);
+    }
+    ?>
+
+    <input type='checkbox' id='logoutCheckbox'>
+    <div class='logout-background'>
+        <div class='logout-content'>
+            <p>Are you sure you want to log out?</p>
+            <a href='../logout.php' class='confirm-logout'>Yes</a>
+            <label for='logoutCheckbox' class='cancel-logout'>No</label>
+        </div>
+    </div>
 
     <input type="checkbox" id="nav-toggle">
     <div class="sidebar">
-    <p class="logo_admin">
-        <a href="../index.php"><img src="../images/logo.png" alt="Plant\'s Notebook">
-        <span class="admin_logo_text">Plant's Notebook</span></a>
-    </p>
+        <p class="logo_admin">
+            <a href="../index.php"><img src="../images/logo.png" alt="Plant\'s Notebook">
+            <span class="admin_logo_text">Plant's Notebook</span></a>
+        </p>
 
         <div class="sidebar-brand">
             <h2><span class="lab la-accusoft">Admin Control Panel</span></h2>
@@ -43,17 +51,9 @@ if (isset($_SESSION['message'])) {
                 <li><a href="view_login.php"><img src="../images/login_icon.png" alt="Login" class="login-sidebar-icon"><span>Login</span></a></li>
                 <li><a href="view_contribute.php" class="active"><img src="../images/contribute_icon.png" alt="contribute" class="contribute-sidebar-icon"><span>Contribute</span></a></li>
                 <li><a href="view_enquiry.php"><img src="../images/enquiry_icon.png" alt="enquiry" class="enquiry-sidebar-icon"><span>Enquiries</span></a></li>
-                               <li><a href="view_pre_contribute.php"><img src="../images/pre_contribute_icon.png" alt="pre-contribute" class="pre-contribute-sidebar-icon"><span>Pre-Contribute</span></a></li>
+                <li><a href="view_pre_contribute.php"><img src="../images/pre_contribute_icon.png" alt="pre-contribute" class="pre-contribute-sidebar-icon"><span>Pre-Contribute</span></a></li>
                 <li><a href="view_comments.php"><img src="../images/comments_icon.png" alt="comments" class="comments-sidebar-icon"><span>Comments</span></a></li>
                 <label for='logoutCheckbox' class='admin-logout-button'>Logout</label>
-                            <input type='checkbox' id='logoutCheckbox'>
-                            <div class='logout-background'>
-                                <div class='logout-content'>
-                                    <p>Are you sure you want to log out?</p>
-                                    <a href='../logout.php' class='confirm-logout'>Yes</a>
-                                    <label for='logoutCheckbox' class='cancel-logout'>No</label>
-                                </div>
-                            </div>
             </ul>
         </div>
     </div>
@@ -113,7 +113,7 @@ if (isset($_SESSION['message'])) {
                                 </thead>
                                 <?php
                                 $conn = mysqli_connect($servername,$username,$password,$dbname);
-                                $sql = "SELECT * FROM contribute";
+                                $sql = "SELECT * FROM contribute ORDER BY Contribute_Created_At DESC";
                                 $result = mysqli_query($conn, $sql);
 
                                 if (mysqli_num_rows($result) > 0) {

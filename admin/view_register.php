@@ -46,14 +46,6 @@
                 <li><a href="view_pre_contribute.php"><img src="../images/pre_contribute_icon.png" alt="pre-contribute" class="pre-contribute-sidebar-icon"><span>Pre-Contribute</span></a></li>
                 <li><a href="view_comments.php"><img src="../images/comments_icon.png" alt="comments" class="comments-sidebar-icon"><span>Comments</span></a></li>
                 <label for='logoutCheckbox' class='admin-logout-button'>Logout</label>
-                            <input type='checkbox' id='logoutCheckbox'>
-                            <div class='logout-background'>
-                                <div class='logout-content'>
-                                    <p>Are you sure you want to log out?</p>
-                                    <a href='../logout.php' class='confirm-logout'>Yes</a>
-                                    <label for='logoutCheckbox' class='cancel-logout'>No</label>
-                                </div>
-                            </div>
             </ul>
         </div>
     </div>
@@ -108,7 +100,7 @@
                             </thead>
                             <?php
             $conn = mysqli_connect($servername,$username,$password,$dbname);
-            $sql = "SELECT * FROM Register";
+            $sql = "SELECT * FROM Register ORDER BY Register_Created_At DESC";
             $result = mysqli_query($conn, $sql);
 
             if (mysqli_num_rows($result) > 0) {
@@ -161,28 +153,55 @@
     <?php
         // If the form is submitted (after confirmation)
         if (isset($_POST['confirm_delete'])) {
-            // Create new connection
             $conn = mysqli_connect($servername, $username, $password, $dbname);
+            $id = mysqli_real_escape_string($conn, $_POST['id']);
             
-            $id = $_POST['id'];
-            
-            // Use prepared statement to prevent SQL injection
-            $sql = "DELETE FROM register WHERE Register_ID = ?";
-            $stmt = mysqli_prepare($conn, $sql);
+            // First get the username of the profile being deleted
+            $get_username_sql = "SELECT Username FROM register WHERE Register_ID = ?";
+            $stmt = mysqli_prepare($conn, $get_username_sql);
             mysqli_stmt_bind_param($stmt, "i", $id);
+            mysqli_stmt_execute($stmt);
+            $result = mysqli_stmt_get_result($stmt);
+            $user = mysqli_fetch_assoc($result);
             
-            if (mysqli_stmt_execute($stmt)) {
-                $_SESSION['message'] = 'Record deleted successfully';
-                echo"<meta http-equiv='refresh' content='0 ;url=view_register.php'>";  
+            if ($user) {
+                // Start transaction to ensure all or nothing is deleted
+                mysqli_begin_transaction($conn);
                 
+                try {
+                    // Delete their contributions
+                    $delete_contributions = "DELETE FROM contribute WHERE Username = ?";
+                    $stmt = mysqli_prepare($conn, $delete_contributions);
+                    mysqli_stmt_bind_param($stmt, "s", $user['Username']);
+                    mysqli_stmt_execute($stmt);
+                    
+                    // Delete their pre-contributions
+                    $delete_pre_contributions = "DELETE FROM pre_contribute WHERE Username = ?";
+                    $stmt = mysqli_prepare($conn, $delete_pre_contributions);
+                    mysqli_stmt_bind_param($stmt, "s", $user['Username']);
+                    mysqli_stmt_execute($stmt);
+                    
+                    // Delete their profile
+                    $delete_profile = "DELETE FROM register WHERE Register_ID = ?";
+                    $stmt = mysqli_prepare($conn, $delete_profile);
+                    mysqli_stmt_bind_param($stmt, "i", $id);
+                    mysqli_stmt_execute($stmt);
+                    
+                    // If we got here, commit the transaction
+                    mysqli_commit($conn);
+                    $_SESSION['message'] = 'Profile and all associated contributions deleted successfully';
+                } catch (Exception $e) {
+                    // If anything went wrong, rollback the changes
+                    mysqli_rollback($conn);
+                    $_SESSION['message'] = 'Error deleting profile and contributions: ' . $e->getMessage();
+                }
             } else {
-                $_SESSION['message'] = 'Error deleting record: ' . mysqli_error($conn);
+                $_SESSION['message'] = 'Profile not found';
             }
             
-            mysqli_stmt_close($stmt);
             mysqli_close($conn);
-            
-            // Redirect to same page instead of different page
+            echo "<meta http-equiv='refresh' content='0;url=view_register.php'>";
+            exit();
         }
 
         // If showing the confirmation dialog, show only the confirmation modal
@@ -328,5 +347,15 @@ if (isset($_POST['update_register'])) {
     exit();
 }
 ?>
+
+<!-- Move this outside the sidebar, right after <body> tag -->
+<input type='checkbox' id='logoutCheckbox'>
+<div class='logout-background'>
+    <div class='logout-content'>
+        <p>Are you sure you want to log out?</p>
+        <a href='../logout.php' class='confirm-logout'>Yes</a>
+        <label for='logoutCheckbox' class='cancel-logout'>No</label>
+    </div>
+</div>
 </body>
 </html>
