@@ -6885,6 +6885,22 @@ button.contribute-btn:hover {
     right: 5px;
 }
 
+.pre-contribute-sidebar-icon{
+    width: 30px;
+    height: auto;
+    position: relative;
+    bottom: -10px;
+    right: 5px;
+}
+
+.comments-sidebar-icon{
+    width: 30px;
+    height: auto;
+    position: relative;
+    bottom: -8px;
+    right: 7px;
+}
+
 #nav-toggle:checked + .sidebar {
     width: 70px;
 }
