@@ -90,7 +90,9 @@
                     <div class="card">
                         <div class="card-header">
                             <h3>Pre-Contribution Records</h3>
-                            <button>Refresh</button>
+                            <form action="<?php echo $_SERVER['PHP_SELF']; ?>" method="post" style="display: inline;">
+                                <button type="submit" name="refresh_table" onclick="window.location.reload();">Refresh</button>
+                            </form> 
                         </div>
                     
                         <div class="card-body">
