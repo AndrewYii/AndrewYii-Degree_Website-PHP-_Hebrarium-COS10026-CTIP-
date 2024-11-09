@@ -15,16 +15,24 @@
     session_start();
     include ('../database/connection.php');
     include ('../database/database.php');
+
+    // Add this message check and display
+    if (isset($_SESSION['message'])) {
+        $messageClass = strpos($_SESSION['message'], 'Error') !== false ? 'error-message' : 'success-message';
+        echo "<div class='admin-message {$messageClass}'>" . $_SESSION['message'] . "</div>";
+        unset($_SESSION['message']); // Clear the message after displaying
+    }
     ?>
 
-<?php
-// Check if there's a message in the session
-if (isset($_SESSION['message'])) {
-    $messageClass = strpos($_SESSION['message'], 'Error') !== false ? 'error-message' : 'success-message';
-    echo "<div class='admin-message {$messageClass}'>" . $_SESSION['message'] . "</div>";
-    unset($_SESSION['message']); // Clear the message from session after displaying it
-}
-?>
+    <!-- Logout HTML moved here -->
+    <input type='checkbox' id='logoutCheckbox'>
+    <div class='logout-background'>
+        <div class='logout-content'>
+            <p>Are you sure you want to log out?</p>
+            <a href='../logout.php' class='confirm-logout'>Yes</a>
+            <label for='logoutCheckbox' class='cancel-logout'>No</label>
+        </div>
+    </div>
 
     <input type="checkbox" id="nav-toggle">
     <div class="sidebar">
@@ -46,14 +54,6 @@ if (isset($_SESSION['message'])) {
                 <li><a href="view_pre_contribute.php"><img src="../images/pre_contribute_icon.png" alt="pre-contribute" class="pre-contribute-sidebar-icon"><span>Pre-Contribute</span></a></li>
                 <li><a href="view_comments.php"><img src="../images/comments_icon.png" alt="comments" class="comments-sidebar-icon"><span>Comments</span></a></li>
                 <label for='logoutCheckbox' class='admin-logout-button'>Logout</label>
-                            <input type='checkbox' id='logoutCheckbox'>
-                            <div class='logout-background'>
-                                <div class='logout-content'>
-                                    <p>Are you sure you want to log out?</p>
-                                    <a href='../logout.php' class='confirm-logout'>Yes</a>
-                                    <label for='logoutCheckbox' class='cancel-logout'>No</label>
-                                </div>
-                            </div>
             </ul>
         </div>
     </div>
@@ -108,7 +108,7 @@ if (isset($_SESSION['message'])) {
                                 </thead>
                                 <?php
                                 $conn = mysqli_connect($servername,$username,$password,$dbname);
-                                $sql = "SELECT * FROM enquiry";
+                                $sql = "SELECT * FROM enquiry ORDER BY Enquiry_Created_At DESC";
                                 $result = mysqli_query($conn, $sql);
 
                                 if (mysqli_num_rows($result) > 0) {
