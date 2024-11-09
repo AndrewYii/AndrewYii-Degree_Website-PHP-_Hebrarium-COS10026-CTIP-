@@ -6919,6 +6919,21 @@ button.contribute-btn:hover {
     right: 5px;
 }
 
+.card-header form{
+    display: inline;
+}
+
+/* Style for the print button */
+.card .card-header .admin-print-button {
+    margin-left: 780px;
+}
+
+/* Style for the form containing refresh button */
+.card .card-header form {
+    display: inline-block;
+    margin-left: 10px;
+}
+
 .pre-contribute-sidebar-icon{
     width: 30px;
     height: auto;

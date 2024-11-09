@@ -82,9 +82,10 @@
                     <div class="card">
                         <div class="card-header">
                             <h3>Register Records</h3>
-                            <form action="<?php echo $_SERVER['PHP_SELF']; ?>" method="post" style="display: inline;">
-                                <button type="submit" name="refresh_table" onclick="window.location.reload();">Refresh</button>
-                            </form>            
+                            <button class="admin-print-button">Print</button>
+                            <form action="<?php echo $_SERVER['PHP_SELF']; ?>" method="post">
+                                <button type="submit" name="refresh_table">Refresh</button>
+                            </form>           
                         </div>
                     
                         <div class="card-body">
@@ -120,11 +121,11 @@
                             <img src="../images/kebab-menu.webp" alt="kebab menu" class="kebab-menu-icon">
                         </label>
                         <div class="menu-content">      
-                        <form action="<?php echo $_SERVER['PHP_SELF']; ?>" method="get" style="display: inline;">
+                        <form action="<?php echo $_SERVER['PHP_SELF']; ?>" method="get">
                             <input type="hidden" name="view_id" value="<?php echo $row['Register_ID']; ?>">
                             <button type="submit" class="admin-view-button menu-button">View</button>
                         </form>
-                        <form action="<?php echo $_SERVER['PHP_SELF']; ?>" method="get" style="display: inline;">
+                        <form action="<?php echo $_SERVER['PHP_SELF']; ?>" method="get">
                             <input type="hidden" name="edit_id" value="<?php echo $row['Register_ID']; ?>">
                             <button type="submit" class="admin-edit-button menu-button">Edit</button>
                         </form>
@@ -215,7 +216,7 @@
                 <div class="confirmation-box">
                     <h2>Are you sure you want to delete this record?</h2>
                     <div class="button-group">
-                        <form action="<?php echo $_SERVER['PHP_SELF']; ?>" method="post" style="display: inline;">
+                        <form action="<?php echo $_SERVER['PHP_SELF']; ?>" method="post">
                             <input type="hidden" name="id" value="<?php echo htmlspecialchars($id); ?>">
                             <input type="hidden" name="confirm_delete" value="1">
                             <button type="submit" class="confirm-button">Yes, Delete</button>

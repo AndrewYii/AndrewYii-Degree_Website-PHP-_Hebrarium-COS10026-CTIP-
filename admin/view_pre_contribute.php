@@ -90,9 +90,10 @@
                     <div class="card">
                         <div class="card-header">
                             <h3>Pre-Contribution Records</h3>
-                            <form action="<?php echo $_SERVER['PHP_SELF']; ?>" method="post" style="display: inline;">
-                                <button type="submit" name="refresh_table" onclick="window.location.reload();">Refresh</button>
-                            </form> 
+                            <button class="admin-print-button">Print</button>
+                            <form action="<?php echo $_SERVER['PHP_SELF']; ?>" method="post">
+                                <button type="submit" name="refresh_table">Refresh</button>
+                            </form>
                         </div>
                     
                         <div class="card-body">
@@ -113,7 +114,7 @@
                                 </thead>
                                 <?php
                                 $conn = mysqli_connect($servername, $username, $password, $dbname);
-                                $sql = "SELECT * FROM pre_contribute ORDER BY Pre_Contribute_ID DESC";
+                                $sql = "SELECT * FROM pre_contribute ORDER BY Contribute_Created_At DESC";
                                 $result = mysqli_query($conn, $sql);
 
                                 if (mysqli_num_rows($result) > 0) {
@@ -141,19 +142,19 @@
                                                     <input type="checkbox" class="toggle-checkbox">
                                                     <img src="../images/kebab-menu.webp" alt="menu" class="kebab-menu-icon">
                                                     <div class="menu-content">
-                                                        <form action="<?php echo $_SERVER['PHP_SELF']; ?>" method="get" style="display: inline;">
+                                                        <form action="<?php echo $_SERVER['PHP_SELF']; ?>" method="get">
                                                             <input type="hidden" name="view_id" value="<?php echo $row['Pre_Contribute_ID']; ?>">
                                                             <button type="submit" class="admin-view-button menu-button">View</button>
                                                         </form>
-                                                        <form action="<?php echo $_SERVER['PHP_SELF']; ?>" method="get" style="display: inline;">
+                                                        <form action="<?php echo $_SERVER['PHP_SELF']; ?>" method="get">
                                                             <input type="hidden" name="edit_id" value="<?php echo $row['Pre_Contribute_ID']; ?>">
                                                             <button type="submit" class="admin-edit-button menu-button">Edit</button>
                                                         </form>
-                                                        <form action="<?php echo $_SERVER['PHP_SELF']; ?>" method="post" style="display: inline;">
+                                                        <form action="<?php echo $_SERVER['PHP_SELF']; ?>" method="post">
                                                             <input type="hidden" name="accept_id" value="<?php echo $row['Pre_Contribute_ID']; ?>">
                                                             <button type="submit" class="admin-accept-button menu-button">Accept</button>
                                                         </form>
-                                                        <form action="<?php echo $_SERVER['PHP_SELF']; ?>" method="post" style="display: inline;">
+                                                        <form action="<?php echo $_SERVER['PHP_SELF']; ?>" method="post">
                                                             <input type="hidden" name="reject_id" value="<?php echo $row['Pre_Contribute_ID']; ?>">
                                                             <button type="submit" class="admin-reject-button menu-button">Reject</button>
                                                         </form>
