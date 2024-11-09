@@ -3144,6 +3144,81 @@ button.contribute-btn:hover {
     display: none;
 }
 
+/*Comment Submission Output*/
+.comment-submission-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.5);
+    z-index: 999;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.comment-submission-container {
+    max-width: 400px;
+    max-height: 400px;
+    background: white;
+    border-radius: 15px;
+    box-shadow: 0 5px 20px rgba(0,0,0,0.2);
+    z-index: 1000;
+    animation: identifyFadeIn 0.3s ease-out;
+}
+
+.comment-submission-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 20px;
+    background: #2E8B57;
+    border-radius: 15px 15px 0 0;
+}
+
+.comment-submission-header h3 {
+    color: white;
+    margin: 0;
+    font-size: 1.2em;
+    font-weight: 600;
+}
+
+.comment-submission-close {
+    cursor: pointer;
+    background: none;
+    border: none;
+    padding: 5px;
+}
+
+.comment-submission-close img {
+    width: 24px;
+    height: 24px;
+    transition: transform 0.2s;
+}
+
+.comment-submission-close:hover img {
+    transform: scale(1.1);
+}
+
+.comment-submission-content {
+    padding: 20px;
+    max-height: 70vh;
+    background: #F0FFF0;
+    border-radius: 15px;
+}
+
+
+#close-comment-submission {
+    display: none;
+}
+
+#close-comment-submission:checked + .comment-submission-overlay {
+    animation: identifyFadeOut 0.3s ease-out forwards;
+    display: none;
+}
+
+
 /*Search*/
 #no-results {
     background-color: #e8f5e9; 
