@@ -221,12 +221,12 @@
 
                                 <div class="contribute-input">
                                     <span class="contribute-form-info">Password</span>
-                                    <input type="password"  placeholder="abcdefg" name="Password" >
+                                    <input type="password"  placeholder="5 - 25 alphabetical characters" name="Password" >
                                 </div>
 
                                 <div class="contribute-input">
                                     <span class="contribute-form-info">Confirm Password</span>
-                                    <input type="password"  placeholder="abcdefg" name="Password_Confirm" >
+                                    <input type="password"  placeholder="Must be same as the first password you typed" name="Password_Confirm" >
                                 </div>
                             </fieldset>
 
