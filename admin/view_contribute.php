@@ -101,15 +101,16 @@
                                 <thead>
                                     <tr>
                                         <th>ID</th>
-                                        <th>Picture Option</th>
+                                        <th>Username</th>
+                                        <th>Plant Name</th>
                                         <th>Tag</th>
-                                        <th>Plant's Name</th>
-                                        <th>Plant's Family</th>
-                                        <th>Plant's Genus</th>
-                                        <th>Plant's Species</th>
-                                        <th>Plant's Leaf Photo</th>
-                                        <th>Plant's Herbarium Photo</th>
-                                        <th class="description-column">Comment</th>
+                                        <th>Picture Option</th>
+                                        <th>Plant Family</th>
+                                        <th>Plant Genus</th>
+                                        <th>Plant Species</th>
+                                        <th>Description</th>
+                                        <th>Leaf Image</th>
+                                        <th>Herbarium Image</th>
                                         <th>Date Submitted</th>
                                         <th class="admin-delete-option">Action</th>
                                     </tr>
@@ -124,15 +125,16 @@
                                 ?>
                                         <tr>
                                             <td><?php echo $row["Contribute_ID"]; ?></td>
-                                            <td><?php echo $row["Picture_Option"]; ?></td>
-                                            <td class="description-column"><?php echo $row["Tag"]; ?></td>
+                                            <td><?php echo $row["Username"]; ?></td>
                                             <td><?php echo $row["Plant_Name"]; ?></td>
+                                            <td><?php echo $row["Tag"]; ?></td>
+                                            <td><?php echo $row["Picture_Option"]; ?></td>
                                             <td><?php echo $row["Plant_Family"]; ?></td>
                                             <td><?php echo $row["Plant_Genus"]; ?></td>
                                             <td><?php echo $row["Plant_Species"]; ?></td>
+                                            <td class="description-column"><?php echo $row["Description_Contribute"]; ?></td>
                                             <td><?php echo $row["Plant_Leaf_Photo"]; ?></td>
                                             <td><?php echo $row["Plant_Herbarium_Photo"]; ?></td>
-                                            <td class="description-column"><?php echo $row["Description_Contribute"]; ?></td>
                                             <td><?php echo $row["Contribute_Created_At"]; ?></td>
                                             <td>
                                                 <input type="checkbox" id="toggle-<?php echo $row['Contribute_ID']; ?>" class="toggle-checkbox">
@@ -228,37 +230,40 @@ if (isset($_GET['view_id'])) {
         <div class="view-modal-overlay">
             <div class="view-modal-content">
                 <div class="view-modal-header">
-                    <h2>Register Details</h2>
+                    <h2>Contribution Details</h2>
                 </div>
                 <div class="detail-row">
                     <strong>ID:</strong> <?php echo htmlspecialchars($row['Contribute_ID']); ?>
                 </div>
                 <div class="detail-row">
-                    <strong>Picture Option:</strong> <?php echo htmlspecialchars($row['Picture_Option']); ?>
+                    <strong>Username:</strong> <?php echo htmlspecialchars($row['Username']); ?>
+                </div>
+                <div class="detail-row">
+                    <strong>Plant Name:</strong> <?php echo htmlspecialchars($row['Plant_Name']); ?>
                 </div>
                 <div class="detail-row">
                     <strong>Tag:</strong> <?php echo htmlspecialchars($row['Tag']); ?>
                 </div>
                 <div class="detail-row">
-                    <strong>Plant's Name:</strong> <?php echo htmlspecialchars($row['Plant_Name']); ?>
+                    <strong>Picture Option:</strong> <?php echo htmlspecialchars($row['Picture_Option']); ?>
                 </div>
                 <div class="detail-row">
-                    <strong>Plant's Family:</strong> <?php echo htmlspecialchars($row['Plant_Family']); ?>
+                    <strong>Plant Family:</strong> <?php echo htmlspecialchars($row['Plant_Family']); ?>
                 </div>
                 <div class="detail-row">
-                    <strong>Plant's Genus:</strong> <?php echo htmlspecialchars($row['Plant_Genus']); ?>
+                    <strong>Plant Genus:</strong> <?php echo htmlspecialchars($row['Plant_Genus']); ?>
                 </div>
                 <div class="detail-row">
-                    <strong>Plant's Species:</strong> <?php echo htmlspecialchars($row['Plant_Species']); ?>
+                    <strong>Plant Species:</strong> <?php echo htmlspecialchars($row['Plant_Species']); ?>
                 </div>
                 <div class="detail-row">
-                    <strong>Plant's Leaf Photo:</strong> <?php echo htmlspecialchars($row['Plant_Leaf_Photo']); ?>
+                    <strong>Description:</strong> <?php echo htmlspecialchars($row['Description_Contribute']); ?>
                 </div>
                 <div class="detail-row">
-                    <strong>Plant's Herbarium Photo:</strong> <?php echo htmlspecialchars($row['Plant_Herbarium_Photo']); ?>
+                    <strong>Leaf Image:</strong> <?php echo htmlspecialchars($row['Plant_Leaf_Photo']); ?>
                 </div>
                 <div class="detail-row">
-                    <strong>Comment:</strong> <?php echo htmlspecialchars($row['Description_Contribute']); ?>
+                    <strong>Herbarium Image:</strong> <?php echo htmlspecialchars($row['Plant_Herbarium_Photo']); ?>
                 </div>
                 <div class="detail-row">
                     <strong>Date Submitted:</strong> <?php echo htmlspecialchars($row['Contribute_Created_At']); ?>
@@ -295,8 +300,13 @@ if (isset($_GET['edit_id'])) {
                     </div>
                     
                     <div class="detail-row">
-                        <strong>Picture Option:</strong>
-                        <input type="text" name="edit_picture_option" value="<?php echo htmlspecialchars($row['Picture_Option']); ?>" required>
+                        <strong>Username:</strong>
+                        <input type="text" name="edit_username" value="<?php echo htmlspecialchars($row['Username']); ?>" required>
+                    </div>
+                    
+                    <div class="detail-row">
+                        <strong>Plant Name:</strong>
+                        <input type="text" name="edit_plant_name" value="<?php echo htmlspecialchars($row['Plant_Name']); ?>" required>
                     </div>
                     
                     <div class="detail-row">
@@ -305,8 +315,8 @@ if (isset($_GET['edit_id'])) {
                     </div>
                     
                     <div class="detail-row">
-                        <strong>Plant Name:</strong>
-                        <input type="text" name="edit_plant_name" value="<?php echo htmlspecialchars($row['Plant_Name']); ?>" required>
+                        <strong>Picture Option:</strong>
+                        <input type="text" name="edit_picture_option" value="<?php echo htmlspecialchars($row['Picture_Option']); ?>" required>
                     </div>
                     
                     <div class="detail-row">
@@ -325,8 +335,18 @@ if (isset($_GET['edit_id'])) {
                     </div>
                     
                     <div class="detail-row">
-                        <strong>Comment:</strong>
-                        <textarea name="edit_description" required><?php echo htmlspecialchars($row['Description_Contribute']); ?></textarea>
+                        <strong>Description:</strong>
+                        <textarea name="edit_description_contribute" required><?php echo htmlspecialchars($row['Description_Contribute']); ?></textarea>
+                    </div>
+
+                    <div class="detail-row">
+                        <strong>Plant Leaf Photo:</strong>
+                        <input type="text" name="edit_plant_leaf_photo" value="<?php echo htmlspecialchars($row['Plant_Leaf_Photo']); ?>" required>
+                    </div>
+
+                    <div class="detail-row">
+                        <strong>Plant Herbarium Photo:</strong>
+                        <input type="text" name="edit_plant_herbarium_photo" value="<?php echo htmlspecialchars($row['Plant_Herbarium_Photo']); ?>" required>
                     </div>
                     
                     <div class="detail-row">
@@ -345,22 +365,28 @@ if (isset($_GET['edit_id'])) {
     mysqli_close($conn);
 }
 
-// Handle the form submission
+// Update the form submission handler
 if (isset($_POST['update_contribute'])) {
     $conn = mysqli_connect($servername, $username, $password, $dbname);
     
     $id = mysqli_real_escape_string($conn, $_POST['edit_contribute_id']);
-    $picture_option = mysqli_real_escape_string($conn, $_POST['edit_picture_option']);
-    $tag = mysqli_real_escape_string($conn, $_POST['edit_tag']);
+    $username = mysqli_real_escape_string($conn, $_POST['edit_username']);
     $plant_name = mysqli_real_escape_string($conn, $_POST['edit_plant_name']);
+    $tag = mysqli_real_escape_string($conn, $_POST['edit_tag']);
+    $picture_option = mysqli_real_escape_string($conn, $_POST['edit_picture_option']);
     $plant_family = mysqli_real_escape_string($conn, $_POST['edit_plant_family']);
     $plant_genus = mysqli_real_escape_string($conn, $_POST['edit_plant_genus']);
     $plant_species = mysqli_real_escape_string($conn, $_POST['edit_plant_species']);
-    $description = mysqli_real_escape_string($conn, $_POST['edit_description']);
+    $description_contribute = mysqli_real_escape_string($conn, $_POST['edit_description_contribute']);
+    $plant_leaf_photo = mysqli_real_escape_string($conn, $_POST['edit_plant_leaf_photo']);
+    $plant_herbarium_photo = mysqli_real_escape_string($conn, $_POST['edit_plant_herbarium_photo']);
     
-    $sql = "UPDATE contribute SET Picture_Option=?, Tag=?, Plant_Name=?, Plant_Family=?, Plant_Genus=?, Plant_Species=?, Description_Contribute=? WHERE Contribute_ID=?";
+    $sql = "UPDATE contribute SET Username=?, Plant_Name=?, Tag=?, Picture_Option=?, Plant_Family=?, 
+            Plant_Genus=?, Plant_Species=?, Description_Contribute=?, Plant_Leaf_Photo=?, Plant_Herbarium_Photo=? 
+            WHERE Contribute_ID=?";
     $stmt = mysqli_prepare($conn, $sql);
-    mysqli_stmt_bind_param($stmt, "sssssssi", $picture_option, $tag, $plant_name, $plant_family, $plant_genus, $plant_species, $description, $id);
+    mysqli_stmt_bind_param($stmt, "ssssssssssi", $username, $plant_name, $tag, $picture_option, $plant_family, 
+                          $plant_genus, $plant_species, $description_contribute, $plant_leaf_photo, $plant_herbarium_photo, $id);
     
     if (mysqli_stmt_execute($stmt)) {
         $_SESSION['message'] = 'Record updated successfully';
