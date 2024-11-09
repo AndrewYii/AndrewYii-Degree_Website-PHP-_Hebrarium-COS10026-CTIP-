@@ -67,7 +67,7 @@
 
             <div class="search-wrapper">
                 <form action="<?php echo $_SERVER['PHP_SELF']; ?>" method="post" class="admin-search-form">
-                    <input type="search" name="search" placeholder="Search here">
+                    <input type="search" name="search" placeholder="Search by username">
                     <button class="admin-search-button" id="admin-button-activate" type="submit">
                         <label for="admin-button-activate">
                             <img src="../images/search_icon.png" alt="Search" class="admin-search-icon">
@@ -111,7 +111,15 @@
                                 </thead>
                                 <?php
                                 $conn = mysqli_connect($servername,$username,$password,$dbname);
-                                $sql = "SELECT * FROM login ORDER BY Login_At DESC";
+                                
+                                // Check if search is submitted
+                                if(isset($_POST['search']) && !empty($_POST['search'])) {
+                                    $search = mysqli_real_escape_string($conn, $_POST['search']);
+                                    $sql = "SELECT * FROM login WHERE Username LIKE '%$search%' ORDER BY Login_At DESC";
+                                } else {
+                                    $sql = "SELECT * FROM login ORDER BY Login_At DESC";
+                                }
+                                
                                 $result = mysqli_query($conn, $sql);
 
                                 if (mysqli_num_rows($result) > 0) {
