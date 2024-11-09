@@ -6853,6 +6853,36 @@ button.contribute-btn:hover {
     left: 10px;
 }
 
+.menu-content .admin-accept-button.menu-button {
+    background-color: #4CAF50;
+    color: #fff;
+    border: none;
+    padding: 5px 10px;
+    cursor: pointer;
+    width: 100%;
+    text-align: left;
+}
+
+.menu-content .admin-reject-button.menu-button {
+    background-color: #f44336;
+    color: #fff;
+    border: none;
+    padding: 5px 10px;
+    cursor: pointer;
+    width: 100%;
+    text-align: left;
+}
+
+.menu-content .admin-accept-button.menu-button:hover {
+    background-color: #45a049;
+    color: #fff;
+}
+
+.menu-content .admin-reject-button.menu-button:hover {
+    background-color: #da190b;
+    color: #fff;
+}
+
 .register-sidebar-icon{
     width: 30px;
     height: auto;
