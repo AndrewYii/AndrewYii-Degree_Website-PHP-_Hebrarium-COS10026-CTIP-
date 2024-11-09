@@ -45,13 +45,35 @@
                 </div>
                 <?php
                     $conn = mysqli_connect($servername,$username,$password,$dbname);
-                    $query = "SELECT * FROM Contribute";
+                    $query = "SELECT * FROM Contribute ORDER BY Contribute_Created_At DESC LIMIT 10";
                     $result = mysqli_query($conn, $query);
+                    $message = '';
+                    $error = '';
                     $row =0;
                     if($result){
                         while($contribution = mysqli_fetch_assoc($result)){
                             if($row>9){
                                 break;
+                            }
+                            $contribute_id = $contribution['Contribute_ID'];
+                            $reference_comment = "comment_text" . $contribute_id;
+                            if($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST[$reference_comment])) {
+                                $comment_text = mysqli_real_escape_string($conn, $_POST[$reference_comment]);
+                                if(isset($_SESSION['username'])) {
+                                    $commenter = $_SESSION['username']; 
+                                }
+                                else{
+                                    $commenter = 'Guest'; 
+                                }
+                                
+                                $insert_comment = "INSERT INTO Contribute_Comments (Contribute_ID, Commenter_Username, Comment_Text) 
+                                                    VALUES ('$contribute_id', '$commenter', '$comment_text')";
+                                if(mysqli_query($conn, $insert_comment)){
+                                    $message ='Your comment has been stored!';
+                                }
+                                else{
+                                    $error ='Something wrong, your comment has not been stored!';
+                                }
                             }
                             if($row % 2 == 0){
                                 echo "
@@ -144,13 +166,13 @@
                                                             ".$contribution['Description_Contribute']."
                                                         </li>
                                                     </ul>
-                                                    <form class='contributor-card-comment-section'>
+                                                    <form class='contributor-card-comment-section' method='post' action='".$_SERVER['PHP_SELF']."'>
                                                         <input type='checkbox' id='open-comment$row'>
                                                         <label for='open-comment$row'>
                                                             <span class='contributor-button-comments'>Comment</span>
                                                             <img src='images/close_icon.png' class='contributor-close-comments' alt='Close Icon'>
                                                         </label>
-                                                        <textarea placeholder='Write Down Your Opinions!'></textarea>
+                                                        <textarea placeholder='Write Down Your Opinions!' name='$reference_comment'></textarea>
                                                         <input type='submit' value='Submit'>
                                                     </form>
                                                 </div>
@@ -260,13 +282,13 @@
                                                             ".$contribution['Description_Contribute']."
                                                         </li>
                                                     </ul>
-                                                    <form class='contributor-card-comment-section'>
+                                                    <form class='contributor-card-comment-section' method='post' action='".$_SERVER['PHP_SELF']."'>
                                                         <input type='checkbox' id='open-comment$row'>
                                                         <label for='open-comment$row'>
                                                             <span class='contributor-button-comments'>Comment</span>
                                                             <img src='images/close_icon.png' class='contributor-close-comments' alt='Close Icon'>
                                                         </label>
-                                                        <textarea placeholder='Write Down Your Opinions!'></textarea>
+                                                        <textarea placeholder='Write Down Your Opinions!'  name='$reference_comment'></textarea>
                                                         <input type='submit' value='Submit'>
                                                     </form>
                                                 </div>
@@ -297,6 +319,43 @@
                 <div>
                     <p class="button-contribute"><a href="contribute.php">Become Our Contributor</a></p>
                 </div>
+
+                <?php
+                    if($message != ''){
+                        echo'<input type="checkbox" id="close-comment-submission">
+                            <div class="comment-submission-overlay">
+                                 <div class="comment-submission-container">
+                                    <div class="comment-submission-header">
+                                        <h3>Comment Submission</h3>
+                                        <label for="close-comment-submission" class="comment-submission-close">
+                                            <img src="images/close_icon.png" alt="Close icon">
+                                        </label>
+                                    </div>
+                                    <div class="comment-submission-content">
+                                        <p>'. $message .'</p>
+                                    </div>
+                                </div>
+                            </div>
+                            ';
+                    }
+                    else if($error !=''){
+                        echo'<input type="checkbox" id="close-comment-submission">
+                            <div class="comment-submission-overlay">
+                                 <div class="comment-submission-container">
+                                    <div class="comment-submission-header">
+                                        <h3>Comment Submission</h3>
+                                        <label for="close-comment-submission" class="comment-submission-close ">
+                                            <img src="images/close_icon.png" alt="Close icon">
+                                        </label>
+                                    </div>
+                                    <div class="comment-submission-content">
+                                        <p>'. $error .'</p>
+                                    </div>
+                                </div>
+                            </div>
+                            ';
+                    }
+                ?>
 
                 <figure class='going-up-container'>
                     <a href='#top_contribution'>

@@ -15,17 +15,26 @@
     session_start(); 
     include ('../database/connection.php');
     include ('../database/database.php');
-    ?>
 
-    <?php
-    // Check if there's a message in the session
+    // Add this message check and display
     if (isset($_SESSION['message'])) {
-        // Display the message
-        echo "<p>" . $_SESSION['message'] . "</p>";
-        unset($_SESSION['message']); // Clear the message from session after displaying it
+        $messageClass = strpos($_SESSION['message'], 'Error') !== false ? 'error-message' : 'success-message';
+        echo "<div class='admin-message {$messageClass}'>" . $_SESSION['message'] . "</div>";
+        unset($_SESSION['message']); // Clear the message after displaying
     }
     ?>
 
+    <!-- Logout HTML moved here -->
+    <input type='checkbox' id='logoutCheckbox'>
+    <div class='logout-background'>
+        <div class='logout-content'>
+            <p>Are you sure you want to log out?</p>
+            <a href='../logout.php' class='confirm-logout'>Yes</a>
+            <label for='logoutCheckbox' class='cancel-logout'>No</label>
+        </div>
+    </div>
+
+    <!-- Rest of your existing code -->
     <input type="checkbox" id="nav-toggle">
     <div class="sidebar">
         <p class="logo_admin">
@@ -43,15 +52,9 @@
                 <li><a href="view_login.php" class="active"><img src="../images/login_icon.png" alt="Login" class="login-sidebar-icon"><span>Login</span></a></li>
                 <li><a href="view_contribute.php"><img src="../images/contribute_icon.png" alt="contribute" class="contribute-sidebar-icon"><span>Contribute</span></a></li>
                 <li><a href="view_enquiry.php"><img src="../images/enquiry_icon.png" alt="enquiry" class="enquiry-sidebar-icon"><span>Enquiries</span></a></li>
+                <li><a href="view_pre_contribute.php"><img src="../images/pre_contribute_icon.png" alt="pre-contribute" class="pre-contribute-sidebar-icon"><span>Pre-Contribute</span></a></li>
+                <li><a href="view_comments.php"><img src="../images/comments_icon.png" alt="comments" class="comments-sidebar-icon"><span>Comments</span></a></li>
                 <label for='logoutCheckbox' class='admin-logout-button'>Logout</label>
-                            <input type='checkbox' id='logoutCheckbox'>
-                            <div class='logout-background'>
-                                <div class='logout-content'>
-                                    <p>Are you sure you want to log out?</p>
-                                    <a href='logout.php' class='confirm-logout'>Yes</a>
-                                    <label for='logoutCheckbox' class='cancel-logout'>No</label>
-                                </div>
-                            </div>
             </ul>
         </div>
     </div>
@@ -64,7 +67,7 @@
 
             <div class="search-wrapper">
                 <form action="<?php echo $_SERVER['PHP_SELF']; ?>" method="post" class="admin-search-form">
-                    <input type="search" name="search" placeholder="Search here">
+                    <input type="search" name="search" placeholder="Search by username">
                     <button class="admin-search-button" id="admin-button-activate" type="submit">
                         <label for="admin-button-activate">
                             <img src="../images/search_icon.png" alt="Search" class="admin-search-icon">
@@ -88,7 +91,10 @@
                     <div class="card">
                         <div class="card-header">
                             <h3>Login Records</h3>
-                            <button>Refresh</button>
+                            <button class="admin-print-button">Print</button>
+                            <form action="<?php echo $_SERVER['PHP_SELF']; ?>" method="post">
+                                <button type="submit" name="refresh_table">Refresh</button>
+                            </form>
                         </div>
                     
                         <div class="card-body">
@@ -100,12 +106,20 @@
                                         <th>Username</th>
                                         <th>Login At</th>
                                         <th>Logout At</th>
-                                        <th class="admin-delete-option">Delete</th>
+                                        <th class="admin-delete-option">Action</th>
                                     </tr>
                                 </thead>
                                 <?php
                                 $conn = mysqli_connect($servername,$username,$password,$dbname);
-                                $sql = "SELECT * FROM login";
+                                
+                                // Check if search is submitted
+                                if(isset($_POST['search']) && !empty($_POST['search'])) {
+                                    $search = mysqli_real_escape_string($conn, $_POST['search']);
+                                    $sql = "SELECT * FROM login WHERE Username LIKE '%$search%' ORDER BY Login_At DESC";
+                                } else {
+                                    $sql = "SELECT * FROM login ORDER BY Login_At DESC";
+                                }
+                                
                                 $result = mysqli_query($conn, $sql);
 
                                 if (mysqli_num_rows($result) > 0) {
@@ -120,10 +134,24 @@
                                         ? $row["Logout_At"]
                                         : "Still Logged In"; ?></td>
                                         <td>
+                                            <input type="checkbox" id="toggle-<?php echo $row['Login_ID']; ?>" class="toggle-checkbox">
+                                            <label for="toggle-<?php echo $row['Login_ID']; ?>" class="kebab-menu-icon">
+                                                <img src="../images/kebab-menu.webp" alt="kebab menu" class="kebab-menu-icon">
+                                            </label>
+                                            <div class="menu-content">                            
+                                            <form action="<?php echo $_SERVER['PHP_SELF']; ?>" method="get">
+                                                <input type="hidden" name="view_id" value="<?php echo $row['Login_ID']; ?>">
+                                                <button type="submit" class="admin-view-button menu-button">View</button>
+                                            </form>                         
+                                            <form action="<?php echo $_SERVER['PHP_SELF']; ?>" method="get">
+                                                <input type="hidden" name="edit_id" value="<?php echo $row['Login_ID']; ?>">
+                                                <button type="submit" class="admin-edit-button menu-button">Edit</button>
+                                            </form>
                                             <form action="<?php echo $_SERVER['PHP_SELF']; ?>" method="get">
                                                 <input type="hidden" name="id" value="<?php echo $row['Login_ID']; ?>">
-                                                <button type="submit" class="admin-delete-button">Delete</button>
-                                            </form>
+                                                <button type="submit" class="admin-delete-button menu-button">Delete</button>
+                                            </form> 
+                                            </div>
                                         </td>
                                     </tr>
                                 <?php
@@ -177,7 +205,7 @@
                 <div class="confirmation-box">
                     <h2>Are you sure you want to delete this record?</h2>
                     <div class="button-group">
-                        <form action="<?php echo $_SERVER['PHP_SELF']; ?>" method="post" style="display: inline;">
+                        <form action="<?php echo $_SERVER['PHP_SELF']; ?>" method="post">
                             <input type="hidden" name="id" value="<?php echo htmlspecialchars($id); ?>">
                             <input type="hidden" name="confirm_delete" value="1">
                             <button type="submit" class="confirm-button">Yes, Delete</button>
@@ -192,5 +220,124 @@
         }
 
         ?>
+
+<?php
+if (isset($_GET['view_id'])) {
+    $conn = mysqli_connect($servername, $username, $password, $dbname);
+    $id = mysqli_real_escape_string($conn, $_GET['view_id']);
+    $sql = "SELECT * FROM login WHERE Login_ID = '$id'";
+    $result = mysqli_query($conn, $sql);
+    $row = mysqli_fetch_assoc($result);
+    
+    if ($row) {
+        ?>
+        <div class="view-modal-overlay">
+            <div class="view-modal-content">
+                <div class="view-modal-header">
+                    <h2>Login Details</h2>
+                </div>
+                <div class="detail-row">
+                    <strong>ID:</strong> <?php echo htmlspecialchars($row['Login_ID']); ?>
+                </div>
+                <div class="detail-row">
+                    <strong>Register ID:</strong> <?php echo htmlspecialchars($row['Register_ID']); ?>
+                </div>
+                <div class="detail-row">
+                    <strong>Username:</strong> <?php echo htmlspecialchars($row['Username']); ?>
+                </div>
+                <div class="detail-row">
+                    <strong>Login At:</strong> <?php echo htmlspecialchars($row['Login_At']); ?>
+                </div>
+                <div class="detail-row">
+                    <strong>Logout At:</strong> <?php echo htmlspecialchars($row['Logout_At']); ?>
+                </div>
+                <a href="<?php echo $_SERVER['PHP_SELF']; ?>" class="close-view-button">Close</a>
+            </div>
+        </div>
+        <?php
+    }
+    mysqli_close($conn);
+}
+?>
+
+<?php
+if (isset($_GET['edit_id'])) {
+    $conn = mysqli_connect($servername, $username, $password, $dbname);
+    $id = mysqli_real_escape_string($conn, $_GET['edit_id']);
+    $sql = "SELECT * FROM login WHERE Login_ID = '$id'";
+    $result = mysqli_query($conn, $sql);
+    $row = mysqli_fetch_assoc($result);
+    
+    if ($row) {
+        ?>
+        <div class="view-modal-overlay">
+            <div class="view-modal-content">
+                <div class="view-modal-header">
+                    <h2>Edit Login Details</h2>
+                </div>
+                <form action="<?php echo $_SERVER['PHP_SELF']; ?>" method="post" class="edit-form">
+                    <input type="hidden" name="edit_login_id" value="<?php echo htmlspecialchars($row['Login_ID']); ?>">
+                    
+                    <div class="detail-row">
+                        <strong>ID:</strong> <?php echo htmlspecialchars($row['Login_ID']); ?>
+                    </div>
+                    
+                    <div class="detail-row">
+                        <strong>Register ID:</strong>
+                        <input type="text" name="edit_register_id" value="<?php echo htmlspecialchars($row['Register_ID']); ?>" required>
+                    </div>
+                    
+                    <div class="detail-row">
+                        <strong>Username:</strong>
+                        <input type="text" name="edit_username" value="<?php echo htmlspecialchars($row['Username']); ?>" required>
+                    </div>
+                    
+                    <div class="detail-row">
+                        <strong>Login At:</strong>
+                        <input type="text" name="edit_login_at" value="<?php echo htmlspecialchars($row['Login_At']); ?>" required>
+                    </div>
+                    
+                    <div class="detail-row">
+                        <strong>Logout At:</strong> <?php echo htmlspecialchars($row['Logout_At']); ?>
+                    </div>
+                    
+                    <div class="button-group">
+                        <button type="submit" name="update_login" class="save-button">Save Changes</button>
+                        <a href="<?php echo $_SERVER['PHP_SELF']; ?>" class="cancel-button">Cancel</a>
+                    </div>
+                </form>
+            </div>
+        </div>
+        <?php
+    }
+    mysqli_close($conn);
+}
+
+// Handle the form submission for updates
+if (isset($_POST['update_login'])) {
+    $conn = mysqli_connect($servername, $username, $password, $dbname);
+    
+    $id = mysqli_real_escape_string($conn, $_POST['edit_login_id']);
+    $register_id = mysqli_real_escape_string($conn, $_POST['edit_register_id']);
+    $username = mysqli_real_escape_string($conn, $_POST['edit_username']);
+    $login_at = mysqli_real_escape_string($conn, $_POST['edit_login_at']);
+    
+    $sql = "UPDATE login SET Register_ID=?, Username=?, Login_At=? WHERE Login_ID=?";
+    $stmt = mysqli_prepare($conn, $sql);
+    mysqli_stmt_bind_param($stmt, "sssi", $register_id, $username, $login_at, $id);
+    
+    if (mysqli_stmt_execute($stmt)) {
+        $_SESSION['message'] = 'Record updated successfully';
+    } else {
+        $_SESSION['message'] = 'Error updating record: ' . mysqli_error($conn);
+    }
+    
+    mysqli_stmt_close($stmt);
+    mysqli_close($conn);
+    
+    echo "<meta http-equiv='refresh' content='0;url=view_login.php'>";
+    exit();
+}
+?>
 </body>
 </html>

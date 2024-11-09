@@ -3144,6 +3144,81 @@ button.contribute-btn:hover {
     display: none;
 }
 
+/*Comment Submission Output*/
+.comment-submission-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.5);
+    z-index: 999;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.comment-submission-container {
+    max-width: 400px;
+    max-height: 400px;
+    background: white;
+    border-radius: 15px;
+    box-shadow: 0 5px 20px rgba(0,0,0,0.2);
+    z-index: 1000;
+    animation: identifyFadeIn 0.3s ease-out;
+}
+
+.comment-submission-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 20px;
+    background: #2E8B57;
+    border-radius: 15px 15px 0 0;
+}
+
+.comment-submission-header h3 {
+    color: white;
+    margin: 0;
+    font-size: 1.2em;
+    font-weight: 600;
+}
+
+.comment-submission-close {
+    cursor: pointer;
+    background: none;
+    border: none;
+    padding: 5px;
+}
+
+.comment-submission-close img {
+    width: 24px;
+    height: 24px;
+    transition: transform 0.2s;
+}
+
+.comment-submission-close:hover img {
+    transform: scale(1.1);
+}
+
+.comment-submission-content {
+    padding: 20px;
+    max-height: 70vh;
+    background: #F0FFF0;
+    border-radius: 15px;
+}
+
+
+#close-comment-submission {
+    display: none;
+}
+
+#close-comment-submission:checked + .comment-submission-overlay {
+    animation: identifyFadeOut 0.3s ease-out forwards;
+    display: none;
+}
+
+
 /*Search*/
 #no-results {
     background-color: #e8f5e9; 
@@ -6712,7 +6787,6 @@ button.contribute-btn:hover {
     background-color: #39a855;
 }
 
-
 .sidebar {
     width: 345px;
     position: fixed;
@@ -6779,6 +6853,40 @@ button.contribute-btn:hover {
     left: 10px;
 }
 
+.menu-content .admin-view-button.menu-button {
+    z-index: 900;
+}
+
+.menu-content .admin-accept-button.menu-button {
+    background-color: #4CAF50;
+    color: #fff;
+    border: none;
+    padding: 5px 10px;
+    cursor: pointer;
+    width: 100%;
+    text-align: left;
+}
+
+.menu-content .admin-reject-button.menu-button {
+    background-color: #f44336;
+    color: #fff;
+    border: none;
+    padding: 5px 10px;
+    cursor: pointer;
+    width: 100%;
+    text-align: left;
+}
+
+.menu-content .admin-accept-button.menu-button:hover {
+    background-color: #45a049;
+    color: #fff;
+}
+
+.menu-content .admin-reject-button.menu-button:hover {
+    background-color: #da190b;
+    color: #fff;
+}
+
 .register-sidebar-icon{
     width: 30px;
     height: auto;
@@ -6809,6 +6917,37 @@ button.contribute-btn:hover {
     position: relative;
     bottom: -5px;
     right: 5px;
+}
+
+.card-header form{
+    display: inline;
+}
+
+/* Style for the print button */
+.card .card-header .admin-print-button {
+    margin-left: 780px;
+}
+
+/* Style for the form containing refresh button */
+.card .card-header form {
+    display: inline-block;
+    margin-left: 10px;
+}
+
+.pre-contribute-sidebar-icon{
+    width: 30px;
+    height: auto;
+    position: relative;
+    bottom: -10px;
+    right: 5px;
+}
+
+.comments-sidebar-icon{
+    width: 30px;
+    height: auto;
+    position: relative;
+    bottom: -8px;
+    right: 7px;
 }
 
 #nav-toggle:checked + .sidebar {
@@ -6851,11 +6990,10 @@ button.contribute-btn:hover {
     padding: 1rem 1.5rem;
     box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2);
     position: fixed;
+    top: 0;
     left: 345px;
     width: calc(100% - 345px);
-    top: 0;
-    z-index: 100;
-    transition: left 300ms;
+    z-index: 99;  /* Lower than sidebar */
 }
 
 .admin-header-text{
@@ -6937,22 +7075,74 @@ button.contribute-btn:hover {
     min-height: calc(100vh - 90px);
 }
 
-.admin-delete-option{
-    color: orangered;
+.kebab-menu-icon {
+    width: 20px;
+    height: auto;
+    position: relative;
+    left: 10px;
+}
+
+.toggle-checkbox {
+    display: none;
+}
+
+.menu-content {
+    position: absolute;
+    right: 0;
+    background: white;
+    padding: 5px 0;
+    border-radius: 4px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+    display: none;
+    z-index: 101;  /* Higher than sidebar */
+}
+
+.menu-button {
+    width: 100%;
+    padding: 8px 16px;
+    white-space: nowrap;
+    border: none;
+    background: none;
+    text-align: left;
+    cursor: pointer;
+    display: block;
+}
+
+.menu-button:hover {
+    background-color: #f1f1f1;
 }
 
 .admin-delete-button {
     padding: 5px 10px;
     border: none;
-    border-radius: 10px;
-    background-color: orangered;
-    color: #fff;
+    background-color: #fff;
+    color: #000;
     cursor: pointer;
     transition: background-color 0.3s ease;
 }
 
 .admin-delete-button:hover {
-    background-color: #c82333;
+    color: #fff;
+    background-color: orangered;
+}
+
+.admin-view-button {
+    color: #000;
+}
+
+.admin-edit-button {
+    color: #000;
+}
+
+.toggle-checkbox:checked + .kebab-menu-icon + .menu-content {
+    display: block;
+    position: absolute;
+    background-color: white;
+    border: 1px solid #ddd;
+}
+
+.admin-delete-option{
+    color: orangered;
 }
 
 /* Add or update these styles for the admin contribute table */
@@ -6960,6 +7150,7 @@ button.contribute-btn:hover {
     width: 100%;
     border-collapse: separate;  /* Changed from collapse to separate */
     border-spacing: 0 15px;    /* Adds vertical space between rows */
+    position: relative;
 }
 
 .admin-table th,
@@ -6967,6 +7158,23 @@ button.contribute-btn:hover {
     padding: 15px;             /* Increased padding */
     text-align: left;
     white-space: nowrap;       /* Prevents text wrapping */
+    overflow: hidden;
+}
+
+/* Add specific widths for columns */
+.admin-table th:first-child,
+.admin-table td:first-child {
+    width: 5%; /* ID column */
+}
+
+.admin-table th:last-child {
+    width: 8%; /* Actions column */
+    position: relative; /* Add this */
+}
+
+.admin-table td:last-child {
+    position: relative;
+    overflow: visible !important; /* Override any inherited overflow properties */
 }
 
 /* Make the description column wrap text */
@@ -7028,7 +7236,7 @@ button.contribute-btn:hover {
 }
 
 .recent-grid {
-    margin-top: 3.5rem;
+    margin-top: 1.5rem;
     display: grid;
     grid-template-columns: 100%;  /* Changed from 70% 30% to give more space to main content */
     grid-gap: 2rem;
@@ -7048,6 +7256,8 @@ button.contribute-btn:hover {
 .card {
     background: #fff;
     border-radius: 5px;
+    z-index: 100;
+    overflow: visible !important;
 }
 
 .card-header {
@@ -7064,7 +7274,14 @@ button.contribute-btn:hover {
     color: #fff;
     font-size: .8rem;
     padding: .5rem 1rem;
-    border: 1px solid #228B22;
+    border: 1px solid #228B22;   
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.card-header form {
+    margin: 0;
+    padding: 0;
 }
 
 .card-body {
@@ -7072,6 +7289,7 @@ button.contribute-btn:hover {
     height: 1000px;
     overflow-y: auto;
     overflow-x: auto;  /* Added to handle wide tables */
+    position: relative;
 }
 
 @media only screen and (max-width: 1200px) {
@@ -7197,6 +7415,213 @@ button.contribute-btn:hover {
     }
 }
 
+.edit-form input[type="text"],
+.edit-form input[type="email"] {
+    width: calc(100% - 130px);
+    padding: 8px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    margin-left: 10px;
+}
+
+.edit-form .button-group {
+    margin-top: 20px;
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+}
+
+.edit-form textarea {
+    width: calc(100% - 130px);
+    padding: 8px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    margin-left: 10px;
+    min-height: 100px;
+    resize: vertical;
+}
+
+.view-modal-content {
+    max-height: 90vh;
+    overflow-y: auto;
+}
+
+.save-button {
+    background: #228B22;
+    color: white;
+    padding: 8px 20px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.save-button:hover {
+    background: #1e7a1e;
+}
+
+.edit-form .detail-row {
+    display: flex;
+    align-items: center;
+}
+
+.edit-form .detail-row strong {
+    min-width: 120px;
+}
+
+.view-modal-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 2000;
+}
+
+.view-modal-content {
+    background: white;
+    padding-left: 30px;
+    padding-right: 30px;
+    padding-bottom: 30px;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    max-width: 600px;
+    width: 90%;
+    max-height: 500px;
+    overflow-y: auto;
+    position: relative;
+}
+
+.view-modal-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-top: 15px;
+    padding-bottom: 10px;
+    border-bottom: 1px solid #eee;
+    background: white;
+    position: sticky;
+    top: 0;
+}
+
+.detail-row {
+    margin: 15px 0;
+    padding: 10px;
+    background: #f8f9fa;
+    border-radius: 5px;
+    word-wrap: break-word;
+}
+
+.view-modal-content::-webkit-scrollbar {
+    width: 8px;
+}
+
+.view-modal-content::-webkit-scrollbar-track {
+    background: #f1f1f1;
+    border-radius: 4px;
+}
+
+.view-modal-content::-webkit-scrollbar-thumb {
+    background: #888;
+    border-radius: 4px;
+}
+
+.view-modal-content::-webkit-scrollbar-thumb:hover {
+    background: #555;
+}
+
+.main-content::-webkit-scrollbar {
+    width: 8px;
+    height: 8px;
+}
+
+.main-content::-webkit-scrollbar-track {
+    background: #f1f1f1;
+    border-radius: 4px;
+}
+
+.main-content::-webkit-scrollbar-thumb {
+    background: #888;
+    border-radius: 4px;
+}
+
+.main-content::-webkit-scrollbar-thumb:hover {
+    background: #555;
+}
+
+.card-body::-webkit-scrollbar {
+    width: 8px;
+    height: 8px;
+}
+
+.card-body::-webkit-scrollbar-track {
+    background: #f1f1f1;
+    border-radius: 4px;
+}
+
+.card-body::-webkit-scrollbar-thumb {
+    background: #888;
+    border-radius: 4px;
+}
+
+.card-body::-webkit-scrollbar-thumb:hover {
+    background: #555;
+}
+
+.detail-row strong {
+    display: inline-block;
+    width: 120px;
+    color: #666;
+}
+
+.close-view-button {
+    background: #6c757d;
+    color: white;
+    padding: 8px 20px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    text-decoration: none;
+    display: inline-block;
+    margin-top: 20px;
+}
+
+.close-view-button:hover {
+    background: #5a6268;
+}
+
+.admin-message {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    padding: 15px 25px;
+    border-radius: 5px;
+    z-index: 3000;
+    animation: fadeOut 3s ease-in-out forwards;
+    font-weight: 500;
+}
+
+.success-message {
+    background-color: #d4edda;
+    color: #155724;
+    border: 1px solid #c3e6cb;
+}
+
+.error-message {
+    background-color: #f8d7da;
+    color: #721c24;
+    border: 1px solid #f5c6cb;
+}
+
+@keyframes fadeOut {
+    0% { opacity: 1; }
+    70% { opacity: 1; }
+    100% { opacity: 0; }
+}
+
 /* Modal Overlay and Confirmation Dialog Styles */
 .modal-overlay {
     position: fixed;
@@ -7208,6 +7633,7 @@ button.contribute-btn:hover {
     display: flex;
     justify-content: center;
     align-items: center;
+    z-index: 2000;
 }
 
 .confirmation-box {
@@ -7259,5 +7685,109 @@ button.contribute-btn:hover {
 }
 
 .cancel-button:hover {
+    background-color: #5a6268;
+}
+
+/* Update the z-index values */
+
+/* Header z-index (around line 6978) */
+.admin-header {
+    /* ... existing styles ... */
+    z-index: 100;
+}
+
+/* Menu content z-index (around line 7084) */
+.menu-content {
+    /* ... existing styles ... */
+    z-index: 1000;
+}
+
+/* Logout background z-index (around line 6624) */
+.logout-background {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    display: none;
+    justify-content: center;
+    align-items: center;
+    z-index: 9999;  /* Very high to cover everything */
+}
+
+/* Add this new style to ensure the logout content is above the overlay */
+.logout-content {
+    /* ... existing styles ... */
+    position: relative;
+    z-index: 10000;  /* Higher than background */
+}
+
+/* Add this new style to ensure proper stacking */
+#logoutCheckbox:checked ~ .logout-background {
+    display: flex;
+    z-index: 9999;
+}
+
+/* Update the logout styles */
+.logout-background {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    width: 100vw;
+    height: 100vh;
+    background-color: rgba(0, 0, 0, 0.5);
+    display: none;
+    justify-content: center;
+    align-items: center;
+    z-index: 99999;
+}
+
+.logout-content {
+    background: white;
+    padding: 20px;
+    border-radius: 5px;
+    text-align: center;
+    min-width: 300px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    z-index: 100000;
+}
+
+#logoutCheckbox {
+    display: none;
+}
+
+#logoutCheckbox:checked ~ .logout-background {
+    display: flex;
+}
+
+/* Style the buttons */
+.confirm-logout,
+.cancel-logout {
+    display: inline-block;
+    padding: 8px 20px;
+    margin: 10px;
+    border-radius: 4px;
+    cursor: pointer;
+    text-decoration: none;
+}
+
+.confirm-logout {
+    background-color: #dc3545;
+    color: white;
+}
+
+.cancel-logout {
+    background-color: #6c757d;
+    color: white;
+}
+
+.confirm-logout:hover {
+    background-color: #c82333;
+}
+
+.cancel-logout:hover {
     background-color: #5a6268;
 }
