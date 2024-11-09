@@ -107,6 +107,20 @@
         }
     }
 
+    // SQL to create Contribution Comment table
+    $sql_comments = "CREATE TABLE IF NOT EXISTS Contribute_Comments (
+        Comment_ID INT(6) UNSIGNED AUTO_INCREMENT PRIMARY KEY,
+        Contribute_ID INT(6) UNSIGNED,
+        Commenter_Username VARCHAR(60) NOT NULL,
+        Comment_Text TEXT NOT NULL,
+        Comment_Created_At TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+        FOREIGN KEY (Contribute_ID) REFERENCES Contribute(Contribute_ID) ON DELETE CASCADE
+    )";
+    
+    if (!mysqli_query($conn, $sql_comments)) {
+        die("Error creating comments table: " . mysqli_error($conn));
+    }
+
     // SQL to create Enquiry table
     $sql_enquiry = "CREATE TABLE IF NOT EXISTS Enquiry (
         Enquiry_ID INT(6) UNSIGNED AUTO_INCREMENT PRIMARY KEY,
