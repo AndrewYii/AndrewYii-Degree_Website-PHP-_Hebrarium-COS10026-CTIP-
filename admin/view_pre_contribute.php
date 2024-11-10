@@ -127,6 +127,11 @@
     include ('../database/connection.php');
     include ('../database/database.php');
 
+    if ($_SESSION['username'] != 'admin') {
+        header('Location: ../index.php'); 
+        exit();
+    }
+    
     // Check if there's a message in the session
     if (isset($_SESSION['message'])) {
         $messageClass = strpos($_SESSION['message'], 'Error') !== false ? 'error-message' : 'success-message';

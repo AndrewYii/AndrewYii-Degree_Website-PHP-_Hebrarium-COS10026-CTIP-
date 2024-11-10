@@ -124,6 +124,13 @@
     ?>
 
     <?php
+        if ($_SESSION['username'] != 'admin') {
+            header('Location: ../index.php'); 
+            exit();
+        }
+    ?>
+
+    <?php
     if (isset($_SESSION['message'])) {
         $messageClass = strpos($_SESSION['message'], 'Error') !== false ? 'error-message' : 'success-message';
         echo "<div class='admin-message {$messageClass}'>" . $_SESSION['message'] . "</div>";

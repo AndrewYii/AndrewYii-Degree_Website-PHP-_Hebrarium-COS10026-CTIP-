@@ -1,4 +1,5 @@
 <?php
+
     require '../Dompdf/autoload.inc.php';
     use Dompdf\Dompdf;
     use Dompdf\Options;
@@ -114,6 +115,13 @@
     session_start(); 
     include ('../database/connection.php');
     include ('../database/database.php');
+    ?>
+
+    <?php
+        if ($_SESSION['username'] != 'admin') {
+            header('Location: ../index.php'); 
+            exit();
+        }
     ?>
 
     <?php

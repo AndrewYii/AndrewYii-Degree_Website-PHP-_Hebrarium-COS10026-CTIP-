@@ -1,4 +1,5 @@
 <?php
+
     require '../Dompdf/autoload.inc.php';
     use Dompdf\Dompdf;
     use Dompdf\Options;
@@ -106,6 +107,11 @@
     session_start(); 
     include ('../database/connection.php');
     include ('../database/database.php');
+
+    if ($_SESSION['username'] != 'admin') {
+        header('Location: ../index.php'); 
+        exit();
+    }
 
     // Add this message check and display
     if (isset($_SESSION['message'])) {

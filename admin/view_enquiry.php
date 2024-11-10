@@ -1,4 +1,6 @@
 <?php
+
+
     require '../Dompdf/autoload.inc.php';
     use Dompdf\Dompdf;
     use Dompdf\Options;
@@ -114,6 +116,13 @@
         echo "<div class='admin-message {$messageClass}'>" . $_SESSION['message'] . "</div>";
         unset($_SESSION['message']); // Clear the message after displaying
     }
+    ?>
+
+    <?php
+        if ($_SESSION['username'] != 'admin') {
+            header('Location: ../index.php'); 
+            exit();
+        }
     ?>
 
     <!-- Logout HTML moved here -->
