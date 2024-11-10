@@ -5,6 +5,7 @@
 ?>
 
 <form action="" method="post">
+    <input type="file" name="upload_photo" placeholder="Upload Photo">
     <input type="text" name="Name" placeholder="Name">
     <input type="text" name="Username" placeholder="Username">
     <input type="text" name="Email" placeholder="Email">
@@ -34,7 +35,7 @@ if(isset($_POST['submit'])) {
     if(mysqli_query($conn, $sql)) {
         // Update the session with new username
         $_SESSION['username'] = $new_username;
-        echo "Profile updated successfully";
+        echo "<a href='test.php'>Profile updated successfully</a>";
     } else {
         echo "Error: " . $sql . "<br>" . mysqli_error($conn);
     }
