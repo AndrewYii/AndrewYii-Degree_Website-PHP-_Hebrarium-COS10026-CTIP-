@@ -7,7 +7,10 @@
 <form action="<?php echo htmlspecialchars($_SERVER['PHP_SELF']); ?>" method="post" enctype="multipart/form-data" autocomplete="off">
     <div>
         <label for="upload_photo">Profile Photo:</label>
-        <input type="file" id="upload_photo" name="upload_photo" accept="image/*">
+        <div class="photo-upload-group">
+            <input type="file" id="upload_photo" name="upload_photo" accept="image/*">
+            <button type="button" onclick="document.getElementById('upload_photo').value = ''">Clear</button>
+        </div>
     </div>
     
     <div>
