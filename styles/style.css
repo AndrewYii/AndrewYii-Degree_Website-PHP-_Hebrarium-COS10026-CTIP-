@@ -7799,11 +7799,6 @@ button.contribute-btn:hover {
 
 /* View_User_Profile */
 .profile-picture {
-    width: 100px;
+    width: 200px;
     height: auto;
-}
-
-.profile-text {
-    font-size: 1.2em;
-    margin-bottom: 10px;
 }
