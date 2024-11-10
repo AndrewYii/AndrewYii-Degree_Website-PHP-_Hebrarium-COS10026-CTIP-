@@ -110,33 +110,6 @@
                     }
                 ?>
                 <br>
-                <?php
-                    $enquiry_sql = "SELECT * FROM enquiry WHERE username = '$current_user'";
-                    $enquiry_result = mysqli_query($conn, $enquiry_sql);
-
-                    if ($enquiry_result && mysqli_num_rows($enquiry_result) > 0) {
-                        $enquiry_count = 1;
-                        while ($row = mysqli_fetch_assoc($enquiry_result)) {
-                            echo "<h3>Enquiry #" . $enquiry_count . "</h3>";
-                            echo "<table border='1'>
-                            <tr>
-                                <th>Enquiry</th>
-                                <th>Details</th>
-                            </tr>
-                            <tr>
-                                <td>Enquiry</td>
-                                <td>" . htmlspecialchars($row['Enquiry']) . "</td>
-                            </tr>
-                            <tr>
-                                <td>Date</td>
-                                <td>" . htmlspecialchars($row['Date']) . "</td>
-                            </tr>
-                            </table><br>";
-                            $enquiry_count++;
-                        }
-                    }
-                    echo "<a href='test2.php'><button>Edit Profile</button></a>";
-                ?>
             </div>
             <?php   
             mysqli_close($conn);
