@@ -16,7 +16,7 @@
         <meta name="description" content="Unlock the secrets of plant identification with Plant's Notebook. Learn to identify various plant species, understand their characteristics, and explore the tools and techniques used by botanists. Ideal for botanists, hobbyists, and nature enthusiasts." />
         <meta name="keywords" content="Herbarium Specimen Tutorial, Classify Plant, Herbarium Specimen Preserve, Herbarium Specimen Tools, Plant Identifier, Botany, Plant Preservation, Plant Classification, Botanical Tools, Plant Identification, Botanical Education, Nature Enthusiasts, Botanical Hobbyists, Plant Collection, Herbarium Techniques,Plant Common Name, Plant Scientific Name,Herbarium Specimen" />
         <meta name="author" content="Aniq Nazhan bin Mazlan"  />
-        <title>Plant's Notebook | Enquiry</title>
+        <title>Plant's Notebook | Profile Page</title>
         <link rel="stylesheet" href="styles/style.css">
     	<link rel="icon" type="image/x-icon" href="images/logo.png">
         <link href='https://fonts.googleapis.com/css?family=Outfit' rel='stylesheet'>
@@ -56,10 +56,18 @@
                 <?php
                     echo "<h1>Hi, " . $_SESSION['username'] . "</h1>";
                 ?>
-                <?php echo isset($user_data['Profile_Picture']) ? "<img src='" . htmlspecialchars($user_data['Profile_Picture']) . "' alt='Profile Picture' class='profile-picture'>" : "<img src='images/default.png' alt='Default Profile Picture' class='profile-picture'>"; ?>
-                <p>Name: <?php echo isset($user_data['Name']) ? $user_data['Name'] : 'Not set'; ?></p>
-                <p>Username: <?php echo isset($user_data['Username']) ? $user_data['Username'] : 'Not set'; ?></p>
-                <p>Email: <?php echo isset($user_data['Email']) ? $user_data['Email'] : 'Not set'; ?></p>
+                <?php
+                // Check if the 'Profile_Picture' key exists and is not empty
+                $profilePic = isset($user_data['Profile_Picture']) && !empty($user_data['Profile_Picture']) 
+                    ? htmlspecialchars($user_data['Profile_Picture']) 
+                    : 'images/default.png';
+
+                // Output the image tag
+                echo "<img src='" . $profilePic . "' alt='Profile Picture' class='profile-picture'>";
+                ?>
+                <p class="profile-text">Name: <?php echo isset($user_data['Name']) ? $user_data['Name'] : 'Not set'; ?></p>
+                <p class="profile-text">Username: <?php echo isset($user_data['Username']) ? $user_data['Username'] : 'Not set'; ?></p>
+                <p class="profile-text">Email: <?php echo isset($user_data['Email']) ? $user_data['Email'] : 'Not set'; ?></p>
 
                 <?php
                     // Query to get plant contributions for current user

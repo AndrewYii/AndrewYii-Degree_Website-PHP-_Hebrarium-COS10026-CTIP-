@@ -7797,11 +7797,13 @@ button.contribute-btn:hover {
     height: auto;
 }
 
+/* View_User_Profile */
 .profile-picture {
-    width: 150px;  /* or your desired width */
-    height: 150px; /* or your desired height */
-    border-radius: 50%;  /* makes it circular */
-    object-fit: cover;  /* ensures image covers the area without distortion */
-    border: 2px solid #ccc;  /* optional: adds a border */
-    margin: 10px 0;  /* optional: adds some spacing */
+    width: 100px;
+    height: auto;
+}
+
+.profile-text {
+    font-size: 1.2em;
+    margin-bottom: 10px;
 }
