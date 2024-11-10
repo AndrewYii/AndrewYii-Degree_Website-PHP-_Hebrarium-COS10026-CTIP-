@@ -9,7 +9,7 @@
     <input type="text" name="Name" placeholder="Name">
     <input type="text" name="Username" placeholder="Username">
     <input type="text" name="Email" placeholder="Email">
-    <a href="test.php"><input type="submit" name="submit" value="Submit"></a>
+    <input type="submit" name="submit" value="Submit">
 </form>
 
 <?php
@@ -59,7 +59,7 @@ if(isset($_POST['submit'])) {
     if(mysqli_query($conn, $sql)) {
         // Update the session with new username
         $_SESSION['username'] = $new_username;
-        echo "<a href='test.php'>Profile updated successfully</a>";
+        echo "<a href='user_profile.php'>Profile updated successfully</a>";
     } else {
         echo "Error: " . $sql . "<br>" . mysqli_error($conn);
     }
