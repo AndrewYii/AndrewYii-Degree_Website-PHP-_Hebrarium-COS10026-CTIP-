@@ -1,3 +1,97 @@
+<?php
+
+
+    require '../Dompdf/autoload.inc.php';
+    use Dompdf\Dompdf;
+    use Dompdf\Options;
+
+    // Dompdf options
+    $options = new Options();
+    $options->set('isHtml5ParserEnabled', true);
+    $options->set('isPhpEnabled', true);
+    $options->set('isFontSubsettingEnabled', true);
+    $dompdf = new Dompdf($options);
+
+    if (isset($_POST['generate_pdf'])) {
+        include('../database/connection.php');
+        $conn = mysqli_connect($servername, $username, $password, $dbname);
+
+        // SQL query to fetch enquiry records
+        $sql = "SELECT * FROM enquiry ORDER BY Enquiry_Created_At DESC";
+        $result = mysqli_query($conn, $sql);
+
+        $html = '
+        <html>
+        <head>
+            <style>
+                body { font-family: Arial, sans-serif; font-size: 10px; }
+                .header {
+                    text-align: center;
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    margin-bottom: 20px;
+                }
+                .header img {
+                    width: 50px;
+                    height: auto;
+                    margin-right: 10px;
+                }
+                .header h2 {
+                    font-size: 16px;
+                    color: #4CAF50;
+                    margin: 0;
+                }
+                table { width: 100%; border-collapse: collapse; margin-top: 20px; }
+                th, td { padding: 5px; text-align: left; border: 1px solid #ddd; }
+                th { background-color: #4CAF50; color: white; font-size: 10px; }
+                td { font-size: 9px; }
+            </style>
+        </head>
+        <body>
+            <div class="header">
+                <h2>Enquiry Records</h2>
+            </div>
+            <table>
+                <tr>
+                    <th>Enquiry ID</th>
+                    <th>Name</th>
+                    <th>Email</th>
+                    <th>Subject</th>
+                    <th>Message</th>
+                    <th>Date Submitted</th>
+                </tr>';
+
+        // Generate table rows for enquiries
+        if (mysqli_num_rows($result) > 0) {
+            while ($row = mysqli_fetch_assoc($result)) {
+                $html .= "<tr>
+                            <td>{$row['Enquiry_ID']}</td>
+                            <td>{$row['Name']}</td>
+                            <td>{$row['Email']}</td>
+                            <td>{$row['Subject']}</td>
+                            <td>{$row['Message']}</td>
+                            <td>{$row['Enquiry_Created_At']}</td>
+                        </tr>";
+            }
+        } else {
+            $html .= "<tr><td colspan='6'>No enquiry records found</td></tr>";
+        }
+
+        $html .= '</table>
+        </body>
+        </html>';
+
+        mysqli_close($conn);
+
+        $dompdf->loadHtml($html, 'UTF-8');
+        $dompdf->setPaper('A4', 'portrait');
+        $dompdf->render();
+        $dompdf->stream("Enquiries_Report.pdf", ["Attachment" => true]);
+        exit();
+    }
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -22,6 +116,13 @@
         echo "<div class='admin-message {$messageClass}'>" . $_SESSION['message'] . "</div>";
         unset($_SESSION['message']); // Clear the message after displaying
     }
+    ?>
+
+    <?php
+        if ($_SESSION['username'] != 'admin') {
+            header('Location: ../index.php'); 
+            exit();
+        }
     ?>
 
     <!-- Logout HTML moved here -->
@@ -90,7 +191,9 @@
                     <div class="card">
                         <div class="card-header">
                             <h3>Enquiries Records</h3>
-                            <button class="admin-print-button">Print</button>
+                            <form method="post" action="<?php echo $_SERVER['PHP_SELF']; ?>">
+                                <button class="admin-print-button" name="generate_pdf">Print</button>
+                            </form>
                             <form action="<?php echo $_SERVER['PHP_SELF']; ?>" method="post">
                                 <button type="submit" name="refresh_table">Refresh</button>
                             </form>
