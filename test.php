@@ -16,7 +16,7 @@
         <meta name="description" content="Unlock the secrets of plant identification with Plant's Notebook. Learn to identify various plant species, understand their characteristics, and explore the tools and techniques used by botanists. Ideal for botanists, hobbyists, and nature enthusiasts." />
         <meta name="keywords" content="Herbarium Specimen Tutorial, Classify Plant, Herbarium Specimen Preserve, Herbarium Specimen Tools, Plant Identifier, Botany, Plant Preservation, Plant Classification, Botanical Tools, Plant Identification, Botanical Education, Nature Enthusiasts, Botanical Hobbyists, Plant Collection, Herbarium Techniques,Plant Common Name, Plant Scientific Name,Herbarium Specimen" />
         <meta name="author" content="Aniq Nazhan bin Mazlan"  />
-        <title>Plant's Notebook | Enquiry</title>
+        <title>Plant's Notebook | Profile Page</title>
         <link rel="stylesheet" href="styles/style.css">
     	<link rel="icon" type="image/x-icon" href="images/logo.png">
         <link href='https://fonts.googleapis.com/css?family=Outfit' rel='stylesheet'>
@@ -56,44 +56,86 @@
                 <?php
                     echo "<h1>Hi, " . $_SESSION['username'] . "</h1>";
                 ?>
-                <div class="profile-picture-content"> 
-                        <input type="checkbox" id="change_box">
-                        
-                        <label for="change_box" class="transform-box1">
-                            <span class="box-text">Reveal My Picture <br> (Click Here) </span>
-                            <img src="images/aniq.jpeg" alt="Aniq Picture" class="box-img">
-                        </label>
-                    </div>
-                <p>Name: <?php echo isset($user_data['Name']) ? $user_data['Name'] : 'Not set'; ?></p>
-                <p>Username: <?php echo isset($user_data['Username']) ? $user_data['Username'] : 'Not set'; ?></p>
-                <p>Email: <?php echo isset($user_data['Email']) ? $user_data['Email'] : 'Not set'; ?></p>
-                <table border="1">
-                    <tr>
-                        <th>Contribution</th>
-                        <th>Details</th>
-                    </tr>
-                    <tr>
-                        <td>Plant's Name</td>
-                        <td>Details</td>
-                    </tr>
-                    <tr>
-                        <td>Plant's Family</td>
-                        <td>Details</td>
-                    </tr>
-                    <tr>
-                        <td>Plant's Genus</td>
-                        <td>Details</td>
-                    </tr>
-                    <tr>
-                        <td>Plant's Species</td>
-                        <td>Details</td>
-                    </tr>
-                    <tr>
-                        <td>Description</td>
-                        <td>Details</td>
-                    </tr>
-                </table>
-                <a href="test2.php"><button>Edit Profile</button></a>
+                <?php
+                // Check if the 'Profile_Picture' key exists and is not empty
+                $profilePic = isset($user_data['Profile_Picture']) && !empty($user_data['Profile_Picture']) 
+                    ? htmlspecialchars($user_data['Profile_Picture']) 
+                    : 'images/default.png';
+
+                // Output the image tag
+                echo "<img src='" . $profilePic . "' alt='Profile Picture' class='profile-picture'>";
+                ?>
+                <p class="profile-text">Name: <?php echo isset($user_data['Name']) ? $user_data['Name'] : 'Not set'; ?></p>
+                <p class="profile-text">Username: <?php echo isset($user_data['Username']) ? $user_data['Username'] : 'Not set'; ?></p>
+                <p class="profile-text">Email: <?php echo isset($user_data['Email']) ? $user_data['Email'] : 'Not set'; ?></p>
+
+                <?php
+                    // Query to get plant contributions for current user
+                    $plant_sql = "SELECT * FROM contribute WHERE username = '$current_user'";
+                    $plant_result = mysqli_query($conn, $plant_sql);
+
+                    if ($plant_result && mysqli_num_rows($plant_result) > 0) {
+                        $contribution_count = 1;
+                            while ($row = mysqli_fetch_assoc($plant_result)) {
+                                echo "<h3>Contribution #" . $contribution_count . "</h3>";
+                                echo "<form method='POST' onsubmit='return confirm(\"Are you sure you want to delete this contribution?\");'>";
+                                echo "<input type='hidden' name='contribution_id' value='" . $row['Contribute_ID'] . "'>";
+                                echo "<button type='submit' name='delete_contribution' class='delete-btn'>Delete Contribution</button>";
+                                echo "</form>";
+                                echo "<table border='1'>
+                                <tr>
+                                    <th>Contribution</th>   
+                                    <th>Details</th>
+                                </tr>
+                                <tr>
+                                    <td>Plant's Leaf</td>
+                                    <td><img src='" . htmlspecialchars($row['Plant_Leaf_Photo']) . "' alt='Plant Leaf Photo' class='enquiry-img'></td>
+                                </tr>
+                                <tr>
+                                    <td>Herbarium Species</td>
+                                    <td><img src='" . htmlspecialchars($row['Plant_Herbarium_Photo']) . "' alt='Plant Herbarium Photo' class='enquiry-img'></td>
+                                </tr>
+                                <tr>
+                                    <td>Plant's Name</td>
+                                    <td>" . htmlspecialchars($row['Plant_Name']) . "</td>
+                                </tr>
+                                <tr>
+                                    <td>Plant's Family</td>
+                                    <td>" . htmlspecialchars($row['Plant_Family']) . "</td>
+                                </tr>
+                                <tr>
+                                    <td>Plant's Genus</td>
+                                    <td>" . htmlspecialchars($row['Plant_Genus']) . "</td>
+                                </tr>
+                                <tr>
+                                    <td>Plant's Species</td>
+                                    <td>" . htmlspecialchars($row['Plant_Species']) . "</td>
+                                </tr>
+                                <tr>
+                                    <td>Description</td>
+                                    <td>" . htmlspecialchars($row['Description_Contribute']) . "</td>
+                                </tr>
+                            </table>
+                            <br>";
+                                $contribution_count++;
+                            }
+                            } else {
+                            echo "<p>No plant contributions found</p>";
+                            }
+                            if (isset($_POST['delete_contribution'])) {
+                                $contribution_id = $_POST['contribution_id'];
+                                $delete_sql = "DELETE FROM contribute WHERE Contribute_ID = '$contribution_id' AND username = '$current_user'";
+                                if (mysqli_query($conn, $delete_sql)) {
+                                    echo "";
+                                } else {
+                                    echo "";
+                            }
+                        }
+                ?>
+                <br>
+                <?php
+                    echo "<a href='test2.php'><button>Edit Profile</button></a>";
+                ?>
             </div>
             <?php   
             mysqli_close($conn);

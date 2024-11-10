@@ -66,7 +66,7 @@
 
             <div class="search-wrapper">
                 <form action="<?php echo $_SERVER['PHP_SELF']; ?>" method="post" class="admin-search-form">
-                    <input type="search" name="search" placeholder="Search here">
+                    <input type="search" name="search" placeholder="Search by username">
                     <button class="admin-search-button" id="admin-button-activate" type="submit">
                         <label for="admin-button-activate">
                             <img src="../images/search_icon.png" alt="Search" class="admin-search-icon">
@@ -103,18 +103,29 @@
                                         <th>ID</th>
                                         <th>Username</th>
                                         <th>Plant Name</th>
+                                        <th>Tag</th>
+                                        <th>Picture Option</th>
                                         <th>Plant Family</th>
+                                        <th>Plant Genus</th>
+                                        <th>Plant Species</th>
                                         <th>Description</th>
-                                        <th>Category</th>
-                                        <th>Image</th>
-                                        <th>Status</th>
+                                        <th>Leaf Image</th>
+                                        <th>Herbarium Image</th>
                                         <th>Created At</th>
                                         <th class="admin-delete-option">Action</th>
                                     </tr>
                                 </thead>
                                 <?php
                                 $conn = mysqli_connect($servername, $username, $password, $dbname);
-                                $sql = "SELECT * FROM pre_contribute ORDER BY Contribute_Created_At DESC";
+                                
+                                // Check if search was submitted
+                                if(isset($_POST['search']) && !empty($_POST['search'])) {
+                                    $search = mysqli_real_escape_string($conn, $_POST['search']);
+                                    $sql = "SELECT * FROM pre_contribute WHERE Username LIKE '%$search%' ORDER BY Contribute_Created_At DESC";
+                                } else {
+                                    $sql = "SELECT * FROM pre_contribute ORDER BY Contribute_Created_At DESC";
+                                }
+                                
                                 $result = mysqli_query($conn, $sql);
 
                                 if (mysqli_num_rows($result) > 0) {
@@ -124,18 +135,14 @@
                                             <td><?php echo htmlspecialchars($row['Pre_Contribute_ID']); ?></td>
                                             <td><?php echo htmlspecialchars($row['Username']); ?></td>
                                             <td><?php echo htmlspecialchars($row['Plant_Name']); ?></td>
-                                            <td><?php echo htmlspecialchars($row['Plant_Family']); ?></td>
-                                            <td class="description-column"><?php echo htmlspecialchars($row['Description_Contribute']); ?></td>
                                             <td><?php echo htmlspecialchars($row['Tag']); ?></td>
-                                            <td>
-                                                <?php if (!empty($row['Plant_Leaf_Photo'])): ?>
-                                                    <img src="<?php echo htmlspecialchars($row['Plant_Leaf_Photo']); ?>" alt="Plant Leaf" style="width: 50px; height: 50px;">
-                                                <?php endif; ?>
-                                                <?php if (!empty($row['Plant_Herbarium_Photo'])): ?>
-                                                    <img src="<?php echo htmlspecialchars($row['Plant_Herbarium_Photo']); ?>" alt="Plant Herbarium" style="width: 50px; height: 50px;">
-                                                <?php endif; ?>
-                                            </td>
-                                            <td><?php echo isset($row['Status']) ? htmlspecialchars($row['Status']) : 'Pending'; ?></td>
+                                            <td><?php echo htmlspecialchars($row['Picture_Option']); ?></td>
+                                            <td><?php echo htmlspecialchars($row['Plant_Family']); ?></td>
+                                            <td><?php echo htmlspecialchars($row['Plant_Genus']); ?></td>
+                                            <td><?php echo htmlspecialchars($row['Plant_Species']); ?></td>
+                                            <td class="description-column"><?php echo htmlspecialchars($row['Description_Contribute']); ?></td>
+                                            <td><?php echo htmlspecialchars($row['Plant_Leaf_Photo']); ?></td>
+                                            <td><?php echo htmlspecialchars($row['Plant_Herbarium_Photo']); ?></td>
                                             <td><?php echo isset($row['Contribute_Created_At']) ? htmlspecialchars($row['Contribute_Created_At']) : date('Y-m-d H:i:s'); ?></td>
                                             <td>
                                                 <label class="menu-label">
@@ -200,13 +207,13 @@ if (isset($_GET['view_id'])) {
                     <strong>Username:</strong> <?php echo htmlspecialchars($row['Username']); ?>
                 </div>
                 <div class="detail-row">
-                    <strong>Picture Option:</strong> <?php echo htmlspecialchars($row['Picture_Option']); ?>
+                    <strong>Plant Name:</strong> <?php echo htmlspecialchars($row['Plant_Name']); ?>
                 </div>
                 <div class="detail-row">
                     <strong>Tag:</strong> <?php echo htmlspecialchars($row['Tag']); ?>
                 </div>
                 <div class="detail-row">
-                    <strong>Plant Name:</strong> <?php echo htmlspecialchars($row['Plant_Name']); ?>
+                    <strong>Picture Option:</strong> <?php echo htmlspecialchars($row['Picture_Option']); ?>
                 </div>
                 <div class="detail-row">
                     <strong>Plant Family:</strong> <?php echo htmlspecialchars($row['Plant_Family']); ?>
@@ -218,26 +225,16 @@ if (isset($_GET['view_id'])) {
                     <strong>Plant Species:</strong> <?php echo htmlspecialchars($row['Plant_Species']); ?>
                 </div>
                 <div class="detail-row">
-                    <strong>Plant Leaf Photo:</strong> <?php echo htmlspecialchars($row['Plant_Leaf_Photo']); ?>
+                    <strong>Description:</strong> <?php echo htmlspecialchars($row['Description_Contribute']); ?>
                 </div>
                 <div class="detail-row">
-                    <strong>Plant Herbarium Photo:</strong> <?php echo htmlspecialchars($row['Plant_Herbarium_Photo']); ?>
+                    <strong>Leaf Image:</strong> <?php echo htmlspecialchars($row['Plant_Leaf_Photo']); ?>
                 </div>
                 <div class="detail-row">
-                    <strong>Description Contribute:</strong> <?php echo htmlspecialchars($row['Description_Contribute']); ?>
+                    <strong>Herbarium Image:</strong> <?php echo htmlspecialchars($row['Plant_Herbarium_Photo']); ?>
                 </div>
                 <div class="detail-row">
-                    <strong>Created At:</strong> <?php echo htmlspecialchars($row['Pre_Contribute_Created_At']); ?>
-                </div>
-                <div class="detail-row">
-                    <strong>Image:</strong><br>
-                    <img src="<?php echo htmlspecialchars($row['Image']); ?>" alt="Plant Image" style="max-width: 200px; margin-top: 10px;">
-                </div>
-                <div class="detail-row">
-                    <strong>Status:</strong> <?php echo htmlspecialchars($row['Status']); ?>
-                </div>
-                <div class="detail-row">
-                    <strong>Created At:</strong> <?php echo htmlspecialchars($row['Pre_Contribute_Created_At']); ?>
+                    <strong>Created At:</strong> <?php echo htmlspecialchars($row['Contribute_Created_At']); ?>
                 </div>
                 <a href="<?php echo $_SERVER['PHP_SELF']; ?>" class="close-view-button">Close</a>
             </div>
@@ -275,8 +272,8 @@ if (isset($_GET['edit_id'])) {
                     </div>
                     
                     <div class="detail-row">
-                        <strong>Picture Option:</strong>
-                        <input type="text" name="edit_picture_option" value="<?php echo htmlspecialchars($row['Picture_Option']); ?>" required>
+                        <strong>Plant Name:</strong>
+                        <input type="text" name="edit_picture_name" value="<?php echo htmlspecialchars($row['Plant_Name']); ?>" required>
                     </div>
                     
                     <div class="detail-row">
@@ -285,13 +282,13 @@ if (isset($_GET['edit_id'])) {
                     </div>
                     
                     <div class="detail-row">
-                        <strong>Plant Name:</strong>
-                        <input type="text" name="edit_plant_name" value="<?php echo htmlspecialchars($row['Plant_Name']); ?>" required>
+                        <strong>Picture Option:</strong>
+                        <input type="text" name="edit_picture_option" value="<?php echo htmlspecialchars($row['Picture_Option']); ?>" required>
                     </div>
                     
                     <div class="detail-row">
                         <strong>Plant Family:</strong>
-                        <textarea name="edit_plant_family" required><?php echo htmlspecialchars($row['Plant_Family']); ?></textarea>
+                        <input type="text" name="edit_plant_family" value="<?php echo htmlspecialchars($row['Plant_Family']); ?>" required>
                     </div>
                     
                     <div class="detail-row">
@@ -305,18 +302,18 @@ if (isset($_GET['edit_id'])) {
                     </div>
 
                     <div class="detail-row">
-                        <strong>Plant Leaf Photo:</strong>
-                        <input type="text" name="edit_plant_leaf_photo" value="<?php echo htmlspecialchars($row['Plant_Leaf_Photo']); ?>" required>
+                        <strong>Description:</strong>
+                        <input type="text" name="edit_description" value="<?php echo htmlspecialchars($row['Description_Contribute']); ?>" required>
                     </div>
 
                     <div class="detail-row">
-                        <strong>Plant Herbarium Photo:</strong>
-                        <input type="text" name="edit_plant_herbarium_photo" value="<?php echo htmlspecialchars($row['Plant_Herbarium_Photo']); ?>" required>
+                        <strong>Leaf Image:</strong>
+                        <input type="file" name="edit_plant_leaf_photo" value="<?php echo htmlspecialchars($row['Plant_Leaf_Photo']); ?>" required>
                     </div>
 
                     <div class="detail-row">
-                        <strong>Description Contributor:</strong>
-                        <input type="text" name="edit_description_contributor" value="<?php echo htmlspecialchars($row['Description_Contributor']); ?>" required>
+                        <strong>Herbarium Image:</strong>
+                        <input type="file" name="edit_plant_herbarium_photo" value="<?php echo htmlspecialchars($row['Plant_Herbarium_Photo']); ?>" required>
                     </div>
 
                     <div class="detail-row">
@@ -363,9 +360,9 @@ if (isset($_POST['update_pre_contribute'])) {
         if (move_uploaded_file($_FILES["edit_image"]["tmp_name"], $target_file)) {
             $image_path = "uploads/" . $new_filename;
             
-            $sql = "UPDATE pre_contribute SET Pre_Contribute_ID=?, Username=?, Picture_Option=?, Tag=?, Plant_Name=?, Plant_Family=?, Plant_Genus=?, Plant_Species=?, Plant_Leaf_Photo=?, Plant_Herbarium_Photo=?, Description_Contribute=?, Status=?, Pre_Contribute_Created_At=? WHERE Pre_Contribute_ID=?";
+            $sql = "UPDATE pre_contribute SET Pre_Contribute_ID=?, Username=?, Picture_Option=?, Tag=?, Plant_Name=?, Plant_Family=?, Plant_Genus=?, Plant_Species=?, Plant_Leaf_Photo=?, Plant_Herbarium_Photo=?, Description_Contribute=?, Status=?, Contribute_Created_At=? WHERE Pre_Contribute_ID=?";
             $stmt = mysqli_prepare($conn, $sql);
-            mysqli_stmt_bind_param($stmt, "isssssssssssi", $id, $username, $picture_option, $tag, $plant_name, $plant_family, $plant_genus, $plant_species, $plant_leaf_photo, $plant_herbarium_photo, $description_contribute, $status, $pre_contribute_created_at, $id);
+            mysqli_stmt_bind_param($stmt, "isssssssssssi", $id, $username, $picture_option, $tag, $plant_name, $plant_family, $plant_genus, $plant_species, $plant_leaf_photo, $plant_herbarium_photo, $description_contribute, $status, $contribute_created_at, $id);
         } else {
             $_SESSION['message'] = 'Error uploading image';
             header("Location: view_pre_contribute.php");
@@ -373,9 +370,9 @@ if (isset($_POST['update_pre_contribute'])) {
         }
     } else {
         // No new image, update without changing the image
-        $sql = "UPDATE pre_contribute SET Pre_Contribute_ID=?, Username=?, Picture_Option=?, Tag=?, Plant_Name=?, Plant_Family=?, Plant_Genus=?, Plant_Species=?, Plant_Leaf_Photo=?, Plant_Herbarium_Photo=?, Description_Contribute=?, Status=?, Pre_Contribute_Created_At=? WHERE Pre_Contribute_ID=?";
+        $sql = "UPDATE pre_contribute SET Pre_Contribute_ID=?, Username=?, Picture_Option=?, Tag=?, Plant_Name=?, Plant_Family=?, Plant_Genus=?, Plant_Species=?, Plant_Leaf_Photo=?, Plant_Herbarium_Photo=?, Description_Contribute=?, Status=?, Contribute_Created_At=? WHERE Pre_Contribute_ID=?";
         $stmt = mysqli_prepare($conn, $sql);
-        mysqli_stmt_bind_param($stmt, "isssssssssssi", $id, $username, $picture_option, $tag, $plant_name, $plant_family, $plant_genus, $plant_species, $plant_leaf_photo, $plant_herbarium_photo, $description_contribute, $status, $pre_contribute_created_at, $id);
+        mysqli_stmt_bind_param($stmt, "isssssssssssi", $id, $username, $picture_option, $tag, $plant_name, $plant_family, $plant_genus, $plant_species, $plant_leaf_photo, $plant_herbarium_photo, $description_contribute, $status, $contribute_created_at, $id);
     }
     
     if (mysqli_stmt_execute($stmt)) {

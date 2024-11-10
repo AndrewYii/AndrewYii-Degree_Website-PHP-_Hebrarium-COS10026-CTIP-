@@ -7791,3 +7791,14 @@ button.contribute-btn:hover {
 .cancel-logout:hover {
     background-color: #5a6268;
 }
+
+.enquiry-form img {
+    width: 100px;
+    height: auto;
+}
+
+/* View_User_Profile */
+.profile-picture {
+    width: 200px;
+    height: auto;
+}
