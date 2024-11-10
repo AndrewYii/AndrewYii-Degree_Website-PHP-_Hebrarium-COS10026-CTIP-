@@ -6,9 +6,11 @@
 
 <form action="" method="post" enctype="multipart/form-data">
     <input type="file" name="upload_photo" placeholder="Upload Photo">
-    <input type="text" name="Name" placeholder="Name">
+    <input type="text" name="First_Name" placeholder="First Name">
+    <input type="text" name="Last_Name" placeholder="Last Name">
+    <input type="number" name="StudentID" placeholder="Student ID">
     <input type="text" name="Username" placeholder="Username">
-    <input type="text" name="Email" placeholder="Email">
+    <input type="email" name="Email" placeholder="Email">
     <input type="submit" name="submit" value="Submit">
 </form>
 
