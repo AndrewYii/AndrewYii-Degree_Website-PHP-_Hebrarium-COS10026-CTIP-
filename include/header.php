@@ -214,7 +214,7 @@
                         }
                         else{                           
                              echo "<li>
-                                        <a href='test.php'>
+                                        <a href='user_profile.php'>
                                             <img src='images/user_icon.jpg' alt='User_Icon' title='Go To User Profile Page'>
                                         </a>
                                     </li>";

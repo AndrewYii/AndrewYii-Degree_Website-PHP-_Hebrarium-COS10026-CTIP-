@@ -51,8 +51,10 @@
         <article class="identify-enquiry">
 
             <?php include 'include/chatbot.php';?>
-
+            
             <div class="enquiry-form">
+                <h1>User Profile</h1>
+                <br>
                 <?php
                     echo "<h1>Hi, " . $_SESSION['username'] . "</h1>";
                 ?>
@@ -66,9 +68,10 @@
                 echo "<img src='" . $profilePic . "' alt='Profile Picture' class='profile-picture'>";
                 ?>
                 <p class="profile-text">Name: <?php echo isset($user_data['Name']) ? $user_data['Name'] : 'Not set'; ?></p>
-                <p class="profile-text">Username: <?php echo isset($user_data['Username']) ? $user_data['Username'] : 'Not set'; ?></p>
                 <p class="profile-text">Email: <?php echo isset($user_data['Email']) ? $user_data['Email'] : 'Not set'; ?></p>
-
+                <?php
+                    echo "<a href='edit_user_profile.php'><button>Edit Profile</button></a>";
+                ?>
                 <?php
                     // Query to get plant contributions for current user
                     $plant_sql = "SELECT * FROM contribute WHERE username = '$current_user'";
@@ -133,9 +136,6 @@
                         }
                 ?>
                 <br>
-                <?php
-                    echo "<a href='test2.php'><button>Edit Profile</button></a>";
-                ?>
             </div>
             <?php   
             mysqli_close($conn);
