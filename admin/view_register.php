@@ -1,4 +1,7 @@
 <?php
+    session_start();
+    include('../database/connection.php');
+    include('../database/database.php');
 
     require '../Dompdf/autoload.inc.php';
     use Dompdf\Dompdf;
@@ -16,8 +19,13 @@
         include('../database/connection.php');
         $conn = mysqli_connect($servername, $username, $password, $dbname);
 
-        // SQL query for Register table
-        $sql = "SELECT * FROM Register ORDER BY Register_Created_At DESC";
+        if (isset($_SESSION['register_search']) && !empty($_SESSION['register_search'])) {
+            $search = $_SESSION['register_search'];
+            $sql = "SELECT * FROM Register WHERE Username LIKE '%$search%' ORDER BY Register_Created_At DESC";
+        } else {
+            $sql = "SELECT * FROM Register ORDER BY Register_Created_At DESC";
+        }
+
         $result = mysqli_query($conn, $sql);
         
         $html = '
@@ -91,9 +99,15 @@
 
         // Render PDF
         $dompdf->render();
+        
+        header('Content-Type: application/pdf');
+        header('Content-Disposition: attachment; filename="Register_Report.pdf"');
+        header('Cache-Control: private, max-age=0, must-revalidate');
+        header('Pragma: public');
 
-        // Force download the PDF
-        $dompdf->stream("Registered_Users_Report.pdf", ["Attachment" => true]);
+        // Output the generated PDF
+        echo $dompdf->output();
+
         exit();
     }
 ?>
@@ -111,12 +125,6 @@
 </head>
 
 <body>
-    <?php 
-    session_start(); 
-    include ('../database/connection.php');
-    include ('../database/database.php');
-    ?>
-
     <?php
         if ($_SESSION['username'] != 'admin') {
             header('Location: ../index.php'); 
@@ -212,11 +220,14 @@
                             </thead>
                             <?php
             $conn = mysqli_connect($servername,$username,$password,$dbname);
+
+            $_SESSION['register_search'] = '';
             
             // Check if search is submitted
             if(isset($_POST['search']) && !empty($_POST['search'])) {
                 $search = mysqli_real_escape_string($conn, $_POST['search']);
                 $sql = "SELECT * FROM Register WHERE Username LIKE '%$search%' ORDER BY Register_Created_At DESC";
+                $_SESSION['register_search'] =  $search;
             } else {
                 $sql = "SELECT * FROM Register ORDER BY Register_Created_At DESC";
             }

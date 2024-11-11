@@ -2991,14 +2991,14 @@ button.contribute-btn:hover {
 
 .contributor-close-comments {
     position: relative;
-    right:-230px;
+    right:-210px;
     top:10px;
 }
 
 .contributor-card-comment-section textarea{
     position: relative;
     right:30px;
-    width: 120%;
+    width: 128%;
     height: 150px; 
     padding: 10px; 
     font-size: 16px; 
@@ -3020,7 +3020,8 @@ button.contribute-btn:hover {
 
 .contributor-card-comment-section input[type="submit"]{
     position: relative;
-    right:-170px;
+    top:5px;
+    right:-140px;
 }
 
 #open-comment0:checked ~ textarea,#open-comment0:checked ~ input[type="submit"],#open-comment1:checked ~ textarea,#open-comment1:checked ~ input[type="submit"],#open-comment2:checked ~ textarea,#open-comment2:checked ~ input[type="submit"],#open-comment3:checked ~ textarea,#open-comment3:checked ~ input[type="submit"],#open-comment4:checked ~ textarea,#open-comment4:checked ~ input[type="submit"],#open-comment5:checked ~ textarea,#open-comment5:checked ~ input[type="submit"],#open-comment6:checked ~ textarea,#open-comment6:checked ~ input[type="submit"],#open-comment7:checked ~ textarea,#open-comment7:checked ~ input[type="submit"],#open-comment8:checked ~ textarea,#open-comment8:checked ~ input[type="submit"],#open-comment9:checked ~ textarea,#open-comment9:checked ~ input[type="submit"]{
