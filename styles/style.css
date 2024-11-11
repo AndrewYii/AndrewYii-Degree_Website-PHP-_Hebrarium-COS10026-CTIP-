@@ -7740,7 +7740,6 @@ button.contribute-btn:hover {
 
 /* Add this new style to ensure the logout content is above the overlay */
 .logout-content {
-    /* ... existing styles ... */
     position: relative;
     z-index: 10000;  /* Higher than background */
 }
