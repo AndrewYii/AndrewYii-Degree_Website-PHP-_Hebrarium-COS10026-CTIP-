@@ -7826,6 +7826,19 @@ button.contribute-btn:hover {
 }
 
 /* edit_user_profile */
+body {
+    background-color: #ddf5e1;
+}
+
+.profile-update-container {
+    max-width: 800px;
+    margin: 20px auto;
+    padding: 30px;
+    background-color: white;
+    border-radius: 15px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
 .profile-container {
     width: 150px;
     height: 150px;
