@@ -48,7 +48,7 @@
         <input type="email" id="Email" name="Email" placeholder="Email">
     </div>
 
-    <div class="test-container">
+    <div>
         <label for="upload_photo">Profile Photo:</label>
         <div class="photo-upload-group">
             <input type="file" id="upload_photo" name="upload_photo" accept="image/*">
