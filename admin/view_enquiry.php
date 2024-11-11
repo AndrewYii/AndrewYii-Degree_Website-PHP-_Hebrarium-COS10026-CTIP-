@@ -1,5 +1,7 @@
 <?php
-
+    session_start();
+    include('../database/connection.php');
+    include('../database/database.php');
 
     require '../Dompdf/autoload.inc.php';
     use Dompdf\Dompdf;
@@ -17,7 +19,14 @@
         $conn = mysqli_connect($servername, $username, $password, $dbname);
 
         // SQL query to fetch enquiry records
-        $sql = "SELECT * FROM enquiry ORDER BY Enquiry_Created_At DESC";
+
+        if (isset($_SESSION['enquiry_search']) && !empty($_SESSION['enquiry_search'])) {
+            $search = $_SESSION['enquiry_search'];
+            $sql = "SELECT * FROM enquiry WHERE Name LIKE '%$search%' ORDER BY Enquiry_Created_At DESC";
+        } else {
+            $sql = "SELECT * FROM enquiry ORDER BY Enquiry_Created_At DESC";
+        }
+        
         $result = mysqli_query($conn, $sql);
 
         $html = '
@@ -87,7 +96,14 @@
         $dompdf->loadHtml($html, 'UTF-8');
         $dompdf->setPaper('A4', 'portrait');
         $dompdf->render();
-        $dompdf->stream("Enquiries_Report.pdf", ["Attachment" => true]);
+
+        header('Content-Type: application/pdf');
+        header('Content-Disposition: attachment; filename="Enquiry_Report.pdf"');
+        header('Cache-Control: private, max-age=0, must-revalidate');
+        header('Pragma: public');
+
+        // Output the generated PDF
+        echo $dompdf->output();
         exit();
     }
 ?>
@@ -106,11 +122,7 @@
 
 <body>
     <?php 
-    session_start();
-    include ('../database/connection.php');
-    include ('../database/database.php');
 
-    // Add this message check and display
     if (isset($_SESSION['message'])) {
         $messageClass = strpos($_SESSION['message'], 'Error') !== false ? 'error-message' : 'success-message';
         echo "<div class='admin-message {$messageClass}'>" . $_SESSION['message'] . "</div>";
@@ -214,11 +226,14 @@
                                 </thead>
                                 <?php
                                 $conn = mysqli_connect($servername,$username,$password,$dbname);
+
+                                $_SESSION['enquiry_search'] = ''; 
                                 
                                 // Check if search is submitted
                                 if(isset($_POST['search']) && !empty($_POST['search'])) {
                                     $search = mysqli_real_escape_string($conn, $_POST['search']);
                                     $sql = "SELECT * FROM enquiry WHERE Name LIKE '%$search%' ORDER BY Enquiry_Created_At DESC";
+                                    $_SESSION['enquiry_search'] = $search; 
                                 } else {
                                     $sql = "SELECT * FROM enquiry ORDER BY Enquiry_Created_At DESC";
                                 }

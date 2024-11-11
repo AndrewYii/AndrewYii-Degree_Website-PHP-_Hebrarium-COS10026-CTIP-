@@ -1,4 +1,7 @@
 <?php
+    session_start();
+    include('../database/connection.php');
+    include('../database/database.php');
 
     require '../Dompdf/autoload.inc.php';
     use Dompdf\Dompdf;
@@ -15,8 +18,13 @@
         include('../database/connection.php');
         $conn = mysqli_connect($servername, $username, $password, $dbname);
 
-        // SQL query to fetch login records
-        $sql = "SELECT * FROM login ORDER BY Login_At DESC";
+        if (isset($_SESSION['login_search']) && !empty($_SESSION['login_search'])) {
+            $search = $_SESSION['login_search'];
+            $sql = "SELECT * FROM login WHERE Username LIKE '%$search%' ORDER BY Login_At DESC";
+        } else {
+            $sql = "SELECT * FROM login ORDER BY Login_At DESC";
+        }
+
         $result = mysqli_query($conn, $sql);
 
         $html = '
@@ -84,7 +92,15 @@
         $dompdf->loadHtml($html, 'UTF-8');
         $dompdf->setPaper('A4', 'portrait');
         $dompdf->render();
-        $dompdf->stream("Login_Report.pdf", ["Attachment" => true]);
+
+        header('Content-Type: application/pdf');
+        header('Content-Disposition: attachment; filename="Login_Report.pdf"');
+        header('Cache-Control: private, max-age=0, must-revalidate');
+        header('Pragma: public');
+
+        // Output the generated PDF
+        echo $dompdf->output();
+
         exit();
     }
 ?>
@@ -210,11 +226,14 @@
                                 </thead>
                                 <?php
                                 $conn = mysqli_connect($servername,$username,$password,$dbname);
+
+                                $_SESSION['login_search'] = '';
                                 
                                 // Check if search is submitted
                                 if(isset($_POST['search']) && !empty($_POST['search'])) {
                                     $search = mysqli_real_escape_string($conn, $_POST['search']);
                                     $sql = "SELECT * FROM login WHERE Username LIKE '%$search%' ORDER BY Login_At DESC";
+                                    $_SESSION['login_search'] = $search;
                                 } else {
                                     $sql = "SELECT * FROM login ORDER BY Login_At DESC";
                                 }
