@@ -5,6 +5,7 @@
 ?>
 
 <form action="<?php echo htmlspecialchars($_SERVER['PHP_SELF']); ?>" method="post" enctype="multipart/form-data" autocomplete="off">
+<div class=form-container> 
     <div>
         <label for="upload_photo">Profile Photo:</label>
         <div class="photo-upload-group">
@@ -40,6 +41,7 @@
     
     <input type="submit" name="submit" value="Submit">
 </form>
+</div>
 
 <?php
 if(isset($_POST['submit'])) {
