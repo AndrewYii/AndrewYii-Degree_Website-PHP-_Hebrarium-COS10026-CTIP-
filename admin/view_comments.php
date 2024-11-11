@@ -1,4 +1,8 @@
 <?php
+    session_start();
+    include('../database/connection.php');
+    include('../database/database.php');
+
     require '../Dompdf/autoload.inc.php';
     use Dompdf\Dompdf;
     use Dompdf\Options;
@@ -15,8 +19,13 @@
         include('../database/connection.php');
         $conn = mysqli_connect($servername, $username, $password, $dbname);
 
-        // SQL query to fetch comments
-        $sql = "SELECT * FROM contribute_comments ORDER BY Comment_Created_At DESC";
+        if (isset($_SESSION['comments_search']) && !empty($_SESSION['comments_search'])) {
+            $search = $_SESSION['comments_search'];
+            $sql = "SELECT * FROM contribute_comments WHERE Commenter_Username LIKE '%$search%' ORDER BY Comment_Created_At DESC";
+        } else {
+            $sql = "SELECT * FROM contribute_comments ORDER BY Comment_Created_At DESC";
+        }
+        
         $result = mysqli_query($conn, $sql);
 
         $html = '
@@ -86,8 +95,13 @@
         $dompdf->setPaper('A4', 'portrait');
 
         $dompdf->render();
+        header('Content-Type: application/pdf');
+        header('Content-Disposition: attachment; filename="Comments_Report.pdf"');
+        header('Cache-Control: private, max-age=0, must-revalidate');
+        header('Pragma: public');
 
-        $dompdf->stream("Comments_Report.pdf", ["Attachment" => true]);
+        // Output the generated PDF
+        echo $dompdf->output();
         exit();
     }
 ?>
@@ -107,10 +121,11 @@
 </head>
 
 <body>
-    <?php 
-    session_start(); 
-    include ('../database/connection.php');
-    include ('../database/database.php');
+    <?php
+        if ($_SESSION['username'] != 'admin') {
+            header('Location: ../index.php'); 
+            exit();
+        }
     ?>
 
     <?php
@@ -209,10 +224,13 @@
                                 <tbody>
                                     <?php
                                     $conn = mysqli_connect($servername, $username, $password, $dbname);
+
+                                    $_SESSION['comments_search'] = ''; 
                                     
                                     if(isset($_POST['search']) && !empty($_POST['search'])) {
                                         $search = mysqli_real_escape_string($conn, $_POST['search']);
                                         $sql = "SELECT * FROM contribute_comments WHERE Commenter_Username LIKE '%$search%' ORDER BY Comment_Created_At DESC";
+                                        $_SESSION['comments_search'] = $search; 
                                     } else {
                                         $sql = "SELECT * FROM contribute_comments ORDER BY Comment_Created_At DESC";
                                     }

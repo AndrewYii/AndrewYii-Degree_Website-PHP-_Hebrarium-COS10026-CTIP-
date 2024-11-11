@@ -1,4 +1,8 @@
 <?php
+    session_start();
+    include('../database/connection.php');
+    include('../database/database.php');
+
     require '../Dompdf/autoload.inc.php';
     use Dompdf\Dompdf;
     use Dompdf\Options;
@@ -15,8 +19,13 @@
         include('../database/connection.php');
         $conn = mysqli_connect($servername, $username, $password, $dbname);
 
-        // SQL query for Pre_Contribute table
-        $sql = "SELECT * FROM Pre_Contribute ORDER BY Contribute_Created_At DESC";
+        if (isset($_SESSION['precontribute_search']) && !empty($_SESSION['precontribute_search'])) {
+            $search = $_SESSION['precontribute_search'];
+            $sql = "SELECT * FROM Pre_Contribute WHERE Username LIKE '%$search%' ORDER BY Contribute_Created_At DESC";
+        } else {
+            $sql = "SELECT * FROM Pre_Contribute ORDER BY Contribute_Created_At DESC";
+        }
+
         $result = mysqli_query($conn, $sql);
         
         $html = '
@@ -55,14 +64,11 @@
                 <tr>
                     <th>ID</th>
                     <th>Username</th>
-                    <th>Picture Option</th>
-                    <th>Tag</th>
                     <th>Plant Name</th>
+                    <th>Tag</th>
                     <th>Family</th>
                     <th>Genus</th>
                     <th>Species</th>
-                    <th>Leaf Photo</th>
-                    <th>Herbarium Photo</th>
                     <th>Description</th>
                     <th>Date Submitted</th>
                 </tr>';
@@ -73,9 +79,8 @@
                 $html .= "<tr>
                             <td>{$row['Pre_Contribute_ID']}</td>
                             <td>{$row['Username']}</td>
-                            <td>{$row['Picture_Option']}</td>
-                            <td>{$row['Tag']}</td>
                             <td>{$row['Plant_Name']}</td>
+                            <td>{$row['Tag']}</td>
                             <td>{$row['Plant_Family']}</td>
                             <td>{$row['Plant_Genus']}</td>
                             <td>{$row['Plant_Species']}</td>
@@ -103,8 +108,14 @@
         // Render PDF
         $dompdf->render();
 
-        // Force download the PDF
-        $dompdf->stream("Pre_Contributions_Report.pdf", ["Attachment" => true]);
+        header('Content-Type: application/pdf');
+        header('Content-Disposition: attachment; filename="Login_Report.pdf"');
+        header('Cache-Control: private, max-age=0, must-revalidate');
+        header('Pragma: public');
+
+        // Output the generated PDF
+        echo $dompdf->output();
+
         exit();
     }
 ?>
@@ -123,10 +134,11 @@
 
 <body>
     <?php 
-    session_start(); 
-    include ('../database/connection.php');
-    include ('../database/database.php');
-
+    if ($_SESSION['username'] != 'admin') {
+        header('Location: ../index.php'); 
+        exit();
+    }
+    
     // Check if there's a message in the session
     if (isset($_SESSION['message'])) {
         $messageClass = strpos($_SESSION['message'], 'Error') !== false ? 'error-message' : 'success-message';
@@ -230,11 +242,14 @@
                                 </thead>
                                 <?php
                                 $conn = mysqli_connect($servername, $username, $password, $dbname);
+
+                                $_SESSION['precontribute_search'] = '';
                                 
                                 // Check if search was submitted
                                 if(isset($_POST['search']) && !empty($_POST['search'])) {
                                     $search = mysqli_real_escape_string($conn, $_POST['search']);
                                     $sql = "SELECT * FROM pre_contribute WHERE Username LIKE '%$search%' ORDER BY Contribute_Created_At DESC";
+                                    $_SESSION['precontribute_search'] = $search;
                                 } else {
                                     $sql = "SELECT * FROM pre_contribute ORDER BY Contribute_Created_At DESC";
                                 }

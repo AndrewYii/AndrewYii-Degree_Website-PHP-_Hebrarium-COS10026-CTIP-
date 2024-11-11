@@ -1,5 +1,9 @@
 <?php
+    session_start();
+    include('../database/connection.php');
+    include('../database/database.php');
     require '../Dompdf/autoload.inc.php';
+
     use Dompdf\Dompdf;
     use Dompdf\Options;
 
@@ -12,12 +16,20 @@
 
     if (isset($_POST['generate_pdf'])) {
 
-        include('../database/connection.php');
+        // Ensure a valid connection
         $conn = mysqli_connect($servername, $username, $password, $dbname);
 
-        $sql = "SELECT * FROM contribute ORDER BY Contribute_Created_At DESC";
-        $result = mysqli_query($conn, $sql);
+        // Query based on session search
+        if (isset($_SESSION['contribute_search']) && !empty($_SESSION['contribute_search'])) {
+            $search = $_SESSION['contribute_search'];
+            $sql = "SELECT * FROM contribute WHERE Username LIKE '%$search%' ORDER BY Contribute_Created_At DESC";
+        } else {
+            $sql = "SELECT * FROM contribute ORDER BY Contribute_Created_At DESC";
+        }
         
+        $result = mysqli_query($conn, $sql);
+
+        // Prepare HTML content
         $html = '
         <html>
         <head>
@@ -25,24 +37,15 @@
                 body { font-family: Arial, sans-serif; font-size: 10px; }
                 .header {
                     text-align: center;
-                    display: flex;
-                    align-items: center;
-                    justify-content: center;
                     margin-bottom: 20px;
-                }
-                .header img {
-                    width: 50px;
-                    height: auto;
-                    margin-right: 10px;
                 }
                 .header h2 {
                     font-size: 16px;
                     color: #4CAF50;
-                    margin: 0;
                 }
                 table { width: 100%; border-collapse: collapse; margin-top: 20px; }
                 th, td { padding: 5px; text-align: left; border: 1px solid #ddd; }
-                th { background-color: #4CAF50; color: white; font-size: 10px; }
+                th { background-color: #4CAF50; color: white; }
                 td { font-size: 9px; }
             </style>
         </head>
@@ -82,9 +85,7 @@
             $html .= "<tr><td colspan='9'>No contributions records found</td></tr>";
         }
 
-        $html .= '</table>
-        </body>
-        </html>';
+        $html .= '</table></body></html>';
 
         // Close the database connection
         mysqli_close($conn);
@@ -95,14 +96,20 @@
         // Set paper size and orientation
         $dompdf->setPaper('A4', 'portrait');
 
-        // Render PDF
+        // Render the PDF
         $dompdf->render();
 
-        // Force download the PDF
-        $dompdf->stream("Contributions_Report.pdf", ["Attachment" => true]);
+        header('Content-Type: application/pdf');
+        header('Content-Disposition: attachment; filename="Contributions_Report.pdf"');
+        header('Cache-Control: private, max-age=0, must-revalidate');
+        header('Pragma: public');
+
+        // Output the generated PDF
+        echo $dompdf->output();
         exit();
     }
 ?>
+
 
 <!DOCTYPE html>
 <html lang="en">
@@ -117,10 +124,11 @@
 </head>
 
 <body>
-    <?php 
-    session_start();
-    include ('../database/connection.php');
-    include ('../database/database.php');
+    <?php
+        if ($_SESSION['username'] != 'admin') {
+            header('Location: ../index.php'); 
+            exit();
+        }
     ?>
 
     <?php
@@ -225,14 +233,16 @@
                                 </thead>
                                 <?php
                                 $conn = mysqli_connect($servername,$username,$password,$dbname);
+
+                                $_SESSION['contribute_search'] = ''; 
                                 
                                 $sql = "SELECT * FROM contribute";
                                 
                                 if(isset($_POST['search']) && !empty($_POST['search'])) {
                                     $search = mysqli_real_escape_string($conn, $_POST['search']);
                                     $sql .= " WHERE Username LIKE '%$search%'";
+                                    $_SESSION['contribute_search'] = $search; 
                                 }
-                                
                                 $sql .= " ORDER BY Contribute_Created_At DESC";
                                 
                                 $result = mysqli_query($conn, $sql);
