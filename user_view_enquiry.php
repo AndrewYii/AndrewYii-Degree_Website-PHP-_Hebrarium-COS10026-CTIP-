@@ -1,123 +1,85 @@
+<?php
+    include 'database/connection.php';
+    include 'database/database.php';
+    session_start();
+?>
+
+
 <!DOCTYPE html>
+
 <html lang="en">
-<head>
-    <meta charset="utf-8"/>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="View Plant's Notebook Enquiries"/>
-    <meta name="keywords" content="Plant's Notebook, Enquiries, Admin View"/>
-    <title>Plant's Notebook | View Enquiries</title>
-    <link rel="stylesheet" href="styles/style.css">
-    <link rel="icon" type="image/x-icon" href="../images/logo.png">
-</head>
 
-<body>
-    <?php 
-    include ('database/connection.php');
-    include ('database/database.php');
-    ?>
+    <head>
 
-    <input type="checkbox" id="nav-toggle">
-    <div class="sidebar">
-    <p class="logo_admin">
-        <a href="index.php"><img src="images/logo.png" alt="Plant\'s Notebook">
-        <span class="admin_logo_text">Plant's Notebook</span></a>
-    </p>
+        <meta charset="utf-8" />
+    	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta name="description" content="Unlock the secrets of plant identification with Plant's Notebook. Learn to identify various plant species, understand their characteristics, and explore the tools and techniques used by botanists. Ideal for botanists, hobbyists, and nature enthusiasts." />
+        <meta name="keywords" content="Herbarium Specimen Tutorial, Classify Plant, Herbarium Specimen Preserve, Herbarium Specimen Tools, Plant Identifier, Botany, Plant Preservation, Plant Classification, Botanical Tools, Plant Identification, Botanical Education, Nature Enthusiasts, Botanical Hobbyists, Plant Collection, Herbarium Techniques,Plant Common Name, Plant Scientific Name,Herbarium Specimen" />
+        <meta name="author" content="Aniq Nazhan bin Mazlan"  />
+        <title>Plant's Notebook | View Enquiry</title>
+        <link rel="stylesheet" href="styles/style.css">
+    	<link rel="icon" type="image/x-icon" href="images/logo.png">
+        <link href='https://fonts.googleapis.com/css?family=Outfit' rel='stylesheet'>
 
-        <div class="sidebar-brand">
-            <h2><span class="lab la-accusoft">Username</span></h2>
-        </div>
+    </head>
 
-        <div class="sidebar-menu">
-            <ul>
-                <li><a href="user_view_enquiry.php" class="active"><img src="images/register_icon.png" alt="Register" class="register-sidebar-icon"><span>Username</span></a></li>
-                <li><a href="change_password.php"><img src="images/login_icon.png" alt="Login" class="login-sidebar-icon"><span>Password</span></a></li>
-                <li><a href=""><img src="images/contribute_icon.png" alt="contribute" class="contribute-sidebar-icon"><span>Contribute history</span></a></li>
-                <li><a href=""><img src="images/enquiry_icon.png" alt="enquiry" class="enquiry-sidebar-icon"><span>Enquiry history</span></a></li>
-            </ul>
-        </div>
-    </div>
-
-    <div class="main-content">
-        <header class="admin-header">
-            <h2>
-                <label for="nav-toggle">
-                    <img src="images/hamburger_icon2.png" alt="Toggle Menu" class="hamburger-icon">
-                </label>
-                Username
-            </h2>
-
-            <div class="search-wrapper">
-                <img src="images/search_icon.png" alt="Search" class="admin-search-icon"></img>
-                <input type="search" placeholder="Search here" />
-            </div>
-
-            <div class="user-wrapper">
-                <img src="images/admin-icon.jpg" alt="admin profile picture">
-                <div>
-                    <h4>User</h4>
-                    <small>User</small>
-                </div>
-            </div>
-        </header>
-
-        <main>
-            <div class="recent-grid">
-                <div class="projects">
-                    <div class="card">
-                        <div class="card-header">
-                            <h3>Profile</h3>
-
-                            <button>See All <span class="las la-arrow-right"></span></button>
-                        </div>
-                    
-                        <div class="card-body">
-                        <table class="admin-table">
-                            <thead>
-                                <tr>
-                                    <th>ID</th>
-                                    <th>Name</th>
-                                    <th>Current Username</th>
-                                    <th>New Username</th>
-                                    <th>Action</th>
-                                </tr>
-
-                            </thead>
-                            <?php
+    <body>
+    <?php
             $conn = mysqli_connect($servername,$username,$password,$dbname);
-            $sql = "SELECT * FROM Register";
-            $result = mysqli_query($conn, $sql);
+            
+            // Check if user is logged in
+            if (isset($_SESSION['username'])) {
+                $current_user = $_SESSION['username'];
+                $sql = "SELECT * FROM enquiry ORDER BY Enquiry_ID DESC LIMIT 1";
+                $result = mysqli_query($conn, $sql);
 
-            if (mysqli_num_rows($result) > 0) {
-                while($row = mysqli_fetch_assoc($result)) {
-        ?>
-                <tr>
-                    <td><?php echo $row["Register_ID"]; ?></td>
-                    <td><?php echo $row["Name"]; ?></td>
-                    <td><?php echo $row["Username"]; ?></td>
-                    <td>
-                        <form method="POST" action="user_edit_profile.php">
-                            <input type="hidden" name="register_id" value="<?php echo $row["Register_ID"]; ?>"> <!-- REGISTER_ID TBC -->
-                            <input type="text" name="new_username">
-                    </td>
-                    <td>
-                        <button type="submit" name="update_username">Update</button> <!-- NEW SECTION 11:00AM 7/11 -->
-                    </td>
-                </tr>
-        <?php
+                if ($result && mysqli_num_rows($result) > 0) {
+                    $user_data = mysqli_fetch_assoc($result);
                 }
             } else {
-                echo "<tr><td colspan='11'>No enquiries found</td></tr>";
+                // Redirect to login page if not logged in
+                header("Location: login.php");
+                exit();
             }
-            mysqli_close($conn);
         ?>
 
-                        </table>
-                        </div>
+        <header id="top_enq">
+            <?php include 'include/header.php';
+            ?>
+        </header>
 
-                    </div>
-                </div>
+        <article class="identify-enquiry">
+
+            <?php include 'include/chatbot.php';?>
+            
+            <div class="enquiry-form">
+                <h1>View Enquiry</h1>
+                <br>
+                <p>Name: <?php echo $user_data['Name']; ?></p>
+                <p>Email: <?php echo $user_data['Email']; ?></p>
+                <p>Created At: <?php echo $user_data['Enquiry_Created_At']; ?></p>
+                <p>Subject: <?php echo $user_data['Subject']; ?></p>
+                <p>Enquiry: <?php echo $user_data['Message']; ?></p>
             </div>
-        </main>
-    </div>
-</body>
+            <?php   
+            mysqli_close($conn);
+            ?>
+            <figure class='going-up-container'>
+                <a href='#top_enq'>
+                    <img src='images/going_up.png' alt='going-up' class='going-up'  title="going to the top">
+                </a>
+            </figure>
+        </article>
+
+        <footer>
+            <?php include 'include/footer.php';?>
+        </footer>
+
+        <figure class='going-up-container'>
+            <a href='#top_enq'>
+                <img src='images/going_up.png' alt='going-up' class='going-up'  title="going to the top">
+            </a>
+        </figure> 
+
+    </body>
 </html>
