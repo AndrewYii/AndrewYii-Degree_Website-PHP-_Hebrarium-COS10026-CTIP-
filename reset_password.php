@@ -96,12 +96,12 @@
                     
                     <div class="contribute-input">
                         <label for="new_password">New Password</label>
-                        <input type="password" id="new_password" name="new_password">
+                        <input type="password" id="new_password" placeholder="5 - 25 alphabetical characters" name="new_password">
                     </div>
                     
                     <div class="contribute-input">
                         <label for="confirm_password">Confirm New Password</label>
-                        <input type="password" id="confirm_password" name="confirm_password">
+                        <input type="password" id="confirm_password"   placeholder="Must be same as the first password you typed" name="confirm_password">
                     </div>
                     
                     <button type="submit" class="contribute-btn">Reset</button>
