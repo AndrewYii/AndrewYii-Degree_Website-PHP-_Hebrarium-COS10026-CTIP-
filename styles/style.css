@@ -7833,8 +7833,85 @@ button.contribute-btn:hover {
     border-radius:50%;
 }
 
-.profile-picture {
-    border-radius:50%;
+.photo-upload-group {
+    margin-top: 10px;
+    text-align: center;
+}
+
+form {
+    max-width: 500px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+form div {
+    margin-bottom: 15px;
+}
+
+form label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: normal;
+    color: #333;
+}
+
+form input[type="text"],
+form input[type="email"],
+form input[type="number"] {
+    width: 100%;
+    padding: 8px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    font-size: 14px;
+}
+
+form input[type="file"] {
+    margin-top: 5px;
+}
+
+.button-group{
+    display: flex;
+    gap: 10px;
+    justify-content: center;
+    margin-top: 20px;
+}
+
+input[type="submit"],
+button {
+    padding: 8px 20px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 14px;
+}
+
+input[type="submit"] {
+    background-color: #007bff;
+    color: white;
+}
+
+button {
+    background-color: #6c757d;
+    color: white;
+}
+
+h1 {
+    text-align: center;
+    color: #333;
+    margin: 20px 0;
+    font-size: 24px;
+}
+
+/* user_profile */
+.profile-container {
+    width: 20vw;  /* 20% of viewport width */
+    height: 20vw;  /* Keep equal to width for circle */
+    min-width: 150px;  /* Minimum size */
+    min-height: 150px;
+    max-width: 300px;  /* Maximum size */
+    max-height: 300px;
+    margin: 20px auto;
+    position: relative;
 }
 
 .Profile-Picture {
