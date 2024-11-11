@@ -7819,12 +7819,6 @@ button.contribute-btn:hover {
     height: auto;
 }
 
-/* View_User_Profile */
-.profile-picture {
-    width: 200px;
-    height: auto;
-}
-
 /* edit_user_profile */
 .edit_user{
     background-color: #ddf5e1;
@@ -7843,10 +7837,6 @@ button.contribute-btn:hover {
     width: 150px;
     height: 150px;
     margin: 20px auto;
-    border-radius:50%;
-}
-
-.profile-picture {
     border-radius:50%;
 }
 
@@ -7937,4 +7927,11 @@ h1 {
     max-height: 300px;
     margin: 20px auto;
     position: relative;
+}
+
+/* user profile */
+.user-profile {
+    border-radius:50%;
+    width: 200px;
+    height: auto;
 }

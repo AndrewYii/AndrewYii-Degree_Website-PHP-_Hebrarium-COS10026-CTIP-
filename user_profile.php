@@ -63,7 +63,7 @@
                     : 'images/default.png';
 
                 // Output the image tag
-                echo "<img src='" . $profilePic . "' alt='Profile Picture' class='profile-picture'>";
+                echo "<img src='" . $profilePic . "' alt='Profile Picture' class='user-profile'>";
                 ?>
                 <p class="profile-text">Name: <?php echo isset($user_data['Name']) ? $user_data['Name'] : 'Not set'; ?></p>
                 <p class="profile-text">Email: <?php echo isset($user_data['Email']) ? $user_data['Email'] : 'Not set'; ?></p>
