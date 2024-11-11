@@ -4,7 +4,7 @@
     session_start(); 
 ?>
 
-<h1>Update Profile<<h2>
+<h1>Update Profile<h2>
 <?php
     // Add this after your database connection includes
     $current_username = $_SESSION['username'];
