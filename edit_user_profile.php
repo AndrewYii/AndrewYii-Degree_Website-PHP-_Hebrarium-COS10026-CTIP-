@@ -12,7 +12,7 @@
 
 </head>
 
-<body>
+<body class="edit_user">
 <?php
     include 'database/connection.php';
     include 'database/database.php';
