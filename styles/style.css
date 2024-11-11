@@ -7830,7 +7830,8 @@ button.contribute-btn:hover {
     padding: 30px;
     background-color: white;
     border-radius: 15px;
-    box-shadow: 0 2px 10px #4CAF50;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    border: 2px solid #4CAF50;
 }
 
 .profile-container {
