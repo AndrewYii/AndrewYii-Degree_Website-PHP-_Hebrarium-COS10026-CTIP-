@@ -4,10 +4,25 @@
     session_start(); 
 ?>
 
-<h1>Update Profile</h1>
+<h1>Update Profile<<h2>
+<?php
+    // Add this after your database connection includes
+    $current_username = $_SESSION['username'];
+    $conn = mysqli_connect($servername, $username, $password, $dbname);
+    $query = "SELECT Profile_Picture FROM register WHERE Username='$current_username'";
+    $result = mysqli_query($conn, $query);
+    $user_data = mysqli_fetch_assoc($result);
+    mysqli_close($conn);
+?>
+
+<div class="profile-container">
+    <img class="profile-picture" 
+         src="<?php echo !empty($user_data['Profile_Picture']) ? $user_data['Profile_Picture'] : 'default-avatar.png'; ?>" 
+         alt="Profile Picture">
+</div>
 
 <form action="<?php echo htmlspecialchars($_SERVER['PHP_SELF']); ?>" method="post" enctype="multipart/form-data" autocomplete="off">
-    
+
     <div>
         <label for="First_Name">First Name:</label>
         <input type="text" id="First_Name" name="First_Name" placeholder="First Name">
