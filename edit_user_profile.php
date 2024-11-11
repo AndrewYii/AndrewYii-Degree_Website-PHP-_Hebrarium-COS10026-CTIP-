@@ -16,7 +16,7 @@
 ?>
 
 <div class="profile-container">
-    <img class="profile-picture" 
+    <img class="Profile-Picture" 
          src="<?php echo !empty($user_data['Profile_Picture']) ? $user_data['Profile_Picture'] : 'default-avatar.png'; ?>" 
          alt="Profile Picture">
 </div>
