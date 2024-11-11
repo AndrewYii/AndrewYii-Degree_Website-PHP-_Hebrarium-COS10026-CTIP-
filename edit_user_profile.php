@@ -4,14 +4,9 @@
     session_start(); 
 ?>
 
+<h1>Update Profile</h1>
+
 <form action="<?php echo htmlspecialchars($_SERVER['PHP_SELF']); ?>" method="post" enctype="multipart/form-data" autocomplete="off">
-    <div>
-        <label for="upload_photo">Profile Photo:</label>
-        <div class="photo-upload-group">
-            <input type="file" id="upload_photo" name="upload_photo" accept="image/*">
-            <button type="button" onclick="document.getElementById('upload_photo').value = ''">Clear</button>
-        </div>
-    </div>
     
     <div>
         <label for="First_Name">First Name:</label>
@@ -36,6 +31,14 @@
     <div>
         <label for="Email">Email:</label>
         <input type="email" id="Email" name="Email" placeholder="Email">
+    </div>
+
+    <div>
+        <label for="upload_photo">Profile Photo:</label>
+        <div class="photo-upload-group">
+            <input type="file" id="upload_photo" name="upload_photo" accept="image/*">
+            <button type="button" onclick="document.getElementById('upload_photo').value = ''">Clear</button>
+        </div>
     </div>
     
     <input type="submit" name="submit" value="Submit">
