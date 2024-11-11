@@ -7826,7 +7826,10 @@ button.contribute-btn:hover {
 }
 
 /* edit_user_profile */
-.profile-picture {
+.profile-container {
+    width: 150px;
+    height: 150px;
+    margin: 20px auto;
     border-radius:50%;
 }
 
@@ -7919,17 +7922,7 @@ h1 {
     border: 2px solid #ccc;
 }
 
-/* Add responsive breakpoints */
-@media (max-width: 768px) {
-    .profile-container {
-        width: 30vw;
-        height: 30vw;
-    }
-}
-
-@media (max-width: 480px) {
-    .profile-container {
-        width: 40vw;
-        height: 40vw;
-    }
+.photo-upload-group {
+    margin-top: 10px;
+    text-align: center;
 }
