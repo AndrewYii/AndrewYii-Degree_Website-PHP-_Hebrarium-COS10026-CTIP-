@@ -7805,3 +7805,45 @@ button.contribute-btn:hover {
 }
 
 /* edit_user_profile */
+.form-container {
+    max-width: 400px;
+    margin: 0 auto;
+    text-align: center;
+}
+.form-container img {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin-bottom: 20px;
+}
+.form-container form {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+.form-container input[type="text"], 
+.form-container input[type="email"], 
+.form-container input[type="number"], 
+.form-container input[type="file"] {
+    padding: 10px;
+    font-size: 16px;
+    width: 100%;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+}
+.form-container button, .form-container input[type="submit"] {
+    padding: 10px;
+    font-size: 16px;
+    border-radius: 5px;
+    border: none;
+    cursor: pointer;
+}
+.form-container input[type="submit"] {
+    background-color: #007bff;
+    color: white;
+}
+.form-container button {
+    background-color: #6c757d;
+    color: white;
+}
