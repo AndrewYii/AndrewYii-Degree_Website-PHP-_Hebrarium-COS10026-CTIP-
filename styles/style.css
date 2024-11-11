@@ -7809,14 +7809,6 @@ button.contribute-btn:hover {
     border-radius:50%;
 }
 
-.Profile-Picture {
-    width: 100%;
-    height: 100%;
-    border-radius: 50%;
-    object-fit: cover;
-    border: 2px solid #ccc;
-}
-
 .photo-upload-group {
     margin-top: 10px;
     text-align: center;
@@ -7825,8 +7817,15 @@ button.contribute-btn:hover {
 /* user_profile */
 .profile-container {
     width: 100%;
-    height: 100%;
+    height: auto;
     border-radius: 50%;
+    object-fit: cover;
+    border: 2px solid #ccc;
+}
+
+.Profile-Picture {
+    width: 100%;
+    height: auto%;
     object-fit: cover;
     border: 2px solid #ccc;
 }
