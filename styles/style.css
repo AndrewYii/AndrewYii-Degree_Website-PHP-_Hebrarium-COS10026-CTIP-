@@ -5403,7 +5403,7 @@ button.contribute-btn:hover {
     width: 30px;
   }
 
-.odd_defi, .even_definition {
+.odd_defi, .even_defi {
     flex-basis: 70%;
     flex-grow: 1;
     margin: 0;
