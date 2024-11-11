@@ -14,6 +14,7 @@
         Username VARCHAR(60) NOT NULL UNIQUE,
         Email VARCHAR(50) NOT NULL UNIQUE,
         Password VARCHAR(255) NOT NULL,
+        Profile_Picture VARCHAR(255) DEFAULT NULL,
         Register_Created_At TIMESTAMP DEFAULT CURRENT_TIMESTAMP
     )";
 

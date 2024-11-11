@@ -1731,6 +1731,19 @@ nav .menu {
     animation: identifyFadeIn 0.3s ease-out;
 }
 
+.identify-result-image {
+    margin-bottom: 15px; 
+    text-align: center;  
+}
+
+.identify-result-image img {
+    max-width: 100%;    
+    height: auto;         
+    border-radius: 8px;   
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); 
+    transition: transform 0.3s ease-in-out; 
+}
+
 .identify-result-header {
     display: flex;
     justify-content: space-between;
@@ -1854,6 +1867,14 @@ nav .menu {
         z-index: 10; /* Ensure it stays above other content */
     } 
 }
+
+@media (min-width: 768px) {
+    .identify-result-image img {
+        max-width: 75%; 
+        margin: 0 auto;
+    }
+}
+
 
 @media (max-width:601px){
 
@@ -2991,14 +3012,14 @@ button.contribute-btn:hover {
 
 .contributor-close-comments {
     position: relative;
-    right:-230px;
+    right:-210px;
     top:10px;
 }
 
 .contributor-card-comment-section textarea{
     position: relative;
     right:30px;
-    width: 120%;
+    width: 128%;
     height: 150px; 
     padding: 10px; 
     font-size: 16px; 
@@ -3020,7 +3041,8 @@ button.contribute-btn:hover {
 
 .contributor-card-comment-section input[type="submit"]{
     position: relative;
-    right:-170px;
+    top:5px;
+    right:-140px;
 }
 
 #open-comment0:checked ~ textarea,#open-comment0:checked ~ input[type="submit"],#open-comment1:checked ~ textarea,#open-comment1:checked ~ input[type="submit"],#open-comment2:checked ~ textarea,#open-comment2:checked ~ input[type="submit"],#open-comment3:checked ~ textarea,#open-comment3:checked ~ input[type="submit"],#open-comment4:checked ~ textarea,#open-comment4:checked ~ input[type="submit"],#open-comment5:checked ~ textarea,#open-comment5:checked ~ input[type="submit"],#open-comment6:checked ~ textarea,#open-comment6:checked ~ input[type="submit"],#open-comment7:checked ~ textarea,#open-comment7:checked ~ input[type="submit"],#open-comment8:checked ~ textarea,#open-comment8:checked ~ input[type="submit"],#open-comment9:checked ~ textarea,#open-comment9:checked ~ input[type="submit"]{
@@ -7790,4 +7812,53 @@ button.contribute-btn:hover {
 
 .cancel-logout:hover {
     background-color: #5a6268;
+}
+
+.enquiry-form img {
+    width: 200px;
+    height: auto;
+}
+
+/* View_User_Profile */
+.profile-picture {
+    width: 200px;
+    height: auto;
+}
+
+/* edit_user_profile */
+body {
+    background-color: #ddf5e1;
+}
+
+.profile-update-container {
+    max-width: 800px;
+    margin: 20px auto;
+    padding: 30px;
+    background-color: white;
+    border-radius: 15px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+.profile-container {
+    width: 150px;
+    height: 150px;
+    margin: 20px auto;
+    border-radius:50%;
+}
+
+.profile-picture {
+    border-radius:50%;
+}
+
+.Profile-Picture {
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 2px solid #ccc;
+}
+
+.photo-upload-group {
+    margin-top: 10px;
+    text-align: center;
 }
