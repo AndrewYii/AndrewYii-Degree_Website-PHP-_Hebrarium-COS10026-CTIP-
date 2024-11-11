@@ -1,45 +1,81 @@
+<head>
+
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Unlock the secrets of plant identification with Plant's Notebook. Learn to identify various plant species, understand their characteristics, and explore the tools and techniques used by botanists. Ideal for botanists, hobbyists, and nature enthusiasts." />
+<meta name="keywords" content="Herbarium Specimen Tutorial, Classify Plant, Herbarium Specimen Preserve, Herbarium Specimen Tools, Plant Identifier, Botany, Plant Preservation, Plant Classification, Botanical Tools, Plant Identification, Botanical Education, Nature Enthusiasts, Botanical Hobbyists, Plant Collection, Herbarium Techniques,Plant Common Name, Plant Scientific Name,Herbarium Specimen" />
+<meta name="author" content="Aniq Nazhan bin Mazlan"  />
+<title>Plant's Notebook | Profile Page</title>
+<link rel="stylesheet" href="styles/style.css">
+<link rel="icon" type="image/x-icon" href="images/logo.png">
+<link href='https://fonts.googleapis.com/css?family=Outfit' rel='stylesheet'>
+
+</head>
+
+<body class="edit_user">
 <?php
     include 'database/connection.php';
     include 'database/database.php';
     session_start(); 
 ?>
 
-<form action="<?php echo htmlspecialchars($_SERVER['PHP_SELF']); ?>" method="post" enctype="multipart/form-data" autocomplete="off">
-    <div>
-        <label for="upload_photo">Profile Photo:</label>
-        <div class="photo-upload-group">
-            <input type="file" id="upload_photo" name="upload_photo" accept="image/*">
-            <button type="button" onclick="document.getElementById('upload_photo').value = ''">Clear</button>
+<div class="profile-update-container">
+    <h1>Update Profile</h1>
+
+<?php
+    // Add this after your database connection includes
+    $current_username = $_SESSION['username'];
+    $conn = mysqli_connect($servername, $username, $password, $dbname);
+    $query = "SELECT Profile_Picture FROM register WHERE Username='$current_username'";
+    $result = mysqli_query($conn, $query);
+    $user_data = mysqli_fetch_assoc($result);
+    mysqli_close($conn);
+?>
+
+    <div class="profile-container">
+        <img class="Profile-Picture" 
+             src="<?php echo !empty($user_data['Profile_Picture']) ? $user_data['Profile_Picture'] : 'default-avatar.png'; ?>" 
+             alt="Profile Picture">
+    </div>
+
+    <form action="<?php echo htmlspecialchars($_SERVER['PHP_SELF']); ?>" method="post" enctype="multipart/form-data" autocomplete="off">
+
+        <div>
+            <label for="First_Name">First Name:</label>
+            <input type="text" id="First_Name" name="First_Name" placeholder="First Name">
         </div>
-    </div>
-    
-    <div>
-        <label for="First_Name">First Name:</label>
-        <input type="text" id="First_Name" name="First_Name" placeholder="First Name">
-    </div>
-    
-    <div>
-        <label for="Last_Name">Last Name:</label>
-        <input type="text" id="Last_Name" name="Last_Name" placeholder="Last Name">
-    </div>
-    
-    <div>
-        <label for="StudentID">Student ID:</label>
-        <input type="number" id="StudentID" name="StudentID" placeholder="Student ID">
-    </div>
-    
-    <div>
-        <label for="Username">Username:</label>
-        <input type="text" id="Username" name="Username" placeholder="Username">
-    </div>
-    
-    <div>
-        <label for="Email">Email:</label>
-        <input type="email" id="Email" name="Email" placeholder="Email">
-    </div>
-    
-    <input type="submit" name="submit" value="Submit">
-</form>
+        
+        <div>
+            <label for="Last_Name">Last Name:</label>
+            <input type="text" id="Last_Name" name="Last_Name" placeholder="Last Name">
+        </div>
+        
+        <div>
+            <label for="StudentID">Student ID:</label>
+            <input type="number" id="StudentID" name="StudentID" placeholder="Student ID">
+        </div>
+        
+        <div>
+            <label for="Username">Username:</label>
+            <input type="text" id="Username" name="Username" placeholder="Username">
+        </div>
+        
+        <div>
+            <label for="Email">Email:</label>
+            <input type="email" id="Email" name="Email" placeholder="Email">
+        </div>
+
+        <div>
+            <label for="upload_photo">Profile Photo:</label>
+            <div class="photo-upload-group">
+                <input type="file" id="upload_photo" name="upload_photo" accept="image/*">
+                <button type="button" onclick="document.getElementById('upload_photo').value = ''">Clear</button>
+            </div>
+        </div>
+        
+        <input type="submit" name="submit" value="Update">
+    </form>
+</div>
 
 <?php
 if(isset($_POST['submit'])) {
@@ -146,3 +182,4 @@ if(isset($_POST['submit'])) {
     mysqli_close($conn);
 }
 ?>
+</body>

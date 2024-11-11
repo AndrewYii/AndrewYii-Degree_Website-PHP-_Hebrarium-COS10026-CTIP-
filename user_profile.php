@@ -1,27 +1,25 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Unlock the secrets of plant identification with Plant's Notebook. Learn to identify various plant species, understand their characteristics, and explore the tools and techniques used by botanists. Ideal for botanists, hobbyists, and nature enthusiasts." />
+<meta name="keywords" content="Herbarium Specimen Tutorial, Classify Plant, Herbarium Specimen Preserve, Herbarium Specimen Tools, Plant Identifier, Botany, Plant Preservation, Plant Classification, Botanical Tools, Plant Identification, Botanical Education, Nature Enthusiasts, Botanical Hobbyists, Plant Collection, Herbarium Techniques,Plant Common Name, Plant Scientific Name,Herbarium Specimen" />
+<meta name="author" content="Aniq Nazhan bin Mazlan"  />
+<title>Plant's Notebook | Profile Page</title>
+<link rel="stylesheet" href="styles/style.css">
+<link rel="icon" type="image/x-icon" href="images/logo.png">
+<link href='https://fonts.googleapis.com/css?family=Outfit' rel='stylesheet'>
+
+</head>
+
 <?php
     include 'database/connection.php';
     include 'database/database.php';
     session_start();
 ?>
-
-
-<!DOCTYPE html>
-
-<html lang="en">
-
-    <head>
-
-        <meta charset="utf-8" />
-    	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <meta name="description" content="Unlock the secrets of plant identification with Plant's Notebook. Learn to identify various plant species, understand their characteristics, and explore the tools and techniques used by botanists. Ideal for botanists, hobbyists, and nature enthusiasts." />
-        <meta name="keywords" content="Herbarium Specimen Tutorial, Classify Plant, Herbarium Specimen Preserve, Herbarium Specimen Tools, Plant Identifier, Botany, Plant Preservation, Plant Classification, Botanical Tools, Plant Identification, Botanical Education, Nature Enthusiasts, Botanical Hobbyists, Plant Collection, Herbarium Techniques,Plant Common Name, Plant Scientific Name,Herbarium Specimen" />
-        <meta name="author" content="Aniq Nazhan bin Mazlan"  />
-        <title>Plant's Notebook | Profile Page</title>
-        <link rel="stylesheet" href="styles/style.css">
-    	<link rel="icon" type="image/x-icon" href="images/logo.png">
-        <link href='https://fonts.googleapis.com/css?family=Outfit' rel='stylesheet'>
-
-    </head>
 
     <body>
     <?php
@@ -65,7 +63,7 @@
                     : 'images/default.png';
 
                 // Output the image tag
-                echo "<img src='" . $profilePic . "' alt='Profile Picture' class='profile-picture'>";
+                echo "<img src='" . $profilePic . "' alt='Profile Picture' class='user-profile'>";
                 ?>
                 <p class="profile-text">Name: <?php echo isset($user_data['Name']) ? $user_data['Name'] : 'Not set'; ?></p>
                 <p class="profile-text">Email: <?php echo isset($user_data['Email']) ? $user_data['Email'] : 'Not set'; ?></p>
