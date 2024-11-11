@@ -7805,13 +7805,6 @@ button.contribute-btn:hover {
 }
 
 /* edit_user_profile */
-.profile-container {
-    width: 150px;
-    height: 150px;
-    margin: 20px auto;
-    border-radius:50%;
-}
-
 .profile-picture {
     border-radius:50%;
 }
@@ -7827,4 +7820,13 @@ button.contribute-btn:hover {
 .photo-upload-group {
     margin-top: 10px;
     text-align: center;
+}
+
+/* user_profile */
+.profile-container {
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 2px solid #ccc;
 }
