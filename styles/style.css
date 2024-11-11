@@ -7825,7 +7825,7 @@ button.contribute-btn:hover {
 
 .Profile-Picture {
     width: 100%;
-    height: auto%;
+    height: auto    ;
     object-fit: cover;
     border: 2px solid #ccc;
 }
