@@ -7861,7 +7861,7 @@ button {
     font-size: 14px;
 }
 
-input[type="submite"] {
+input[type="submit"] {
     background-color: #007bff;
     color: white;
 }
