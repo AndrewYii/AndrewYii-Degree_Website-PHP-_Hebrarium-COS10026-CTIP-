@@ -8,7 +8,7 @@
     // Add API handling
     function identifyPlant($imagePath) {
         $apiKey = '2b10n8lDPfHYnbJs5oIKcUC4O';
-        $url = 'https://my-api.plantnet.org/v2/identify/all?api-key=' . $apiKey;
+        $url = 'https://my-api.plantnet.org/v2/identify/all?api-key=' . $apiKey . '&include-related-images=true';
 
         $cfile = new CURLFile($imagePath, 'image/jpeg', basename($imagePath));
 
@@ -22,7 +22,7 @@
         curl_setopt($ch, CURLOPT_POST, true);
         curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
         curl_setopt($ch, CURLOPT_POSTFIELDS, $data);
-        
+
         $response = curl_exec($ch);
         
         if (curl_errno($ch)) {
@@ -165,8 +165,21 @@
                     if (isset($identificationResults['results'])) {
                         foreach ($identificationResults['results'] as $result) {
                             echo '
-                            <div class="identify-result-item">
-                                <div class="identify-result-score">
+                                     <div class="identify-result-item">
+                                     ';
+                            if (isset($result['images']) && is_array($result['images'])) {
+                                foreach ($result['images'] as $image) {
+                                    if (isset($image['url']['m'])) {
+                                        $imageUrl = $image['url']['m'];
+                                        echo '
+                                        <div class="identify-result-image">
+                                            <img src="' . htmlspecialchars($imageUrl) . '" alt="Plant Image">
+                                        </div>';
+                                        break; 
+                                    }
+                                }
+                            }
+                                echo' <div class="identify-result-score">
                                     Match Score: ' . number_format($result['score'] * 100, 2) . '%
                                 </div>
                                 <div class="identify-result-detail">

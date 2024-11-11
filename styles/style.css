@@ -1731,6 +1731,19 @@ nav .menu {
     animation: identifyFadeIn 0.3s ease-out;
 }
 
+.identify-result-image {
+    margin-bottom: 15px; 
+    text-align: center;  
+}
+
+.identify-result-image img {
+    max-width: 100%;    
+    height: auto;         
+    border-radius: 8px;   
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); 
+    transition: transform 0.3s ease-in-out; 
+}
+
 .identify-result-header {
     display: flex;
     justify-content: space-between;
@@ -1854,6 +1867,14 @@ nav .menu {
         z-index: 10; /* Ensure it stays above other content */
     } 
 }
+
+@media (min-width: 768px) {
+    .identify-result-image img {
+        max-width: 75%; 
+        margin: 0 auto;
+    }
+}
+
 
 @media (max-width:601px){
 
