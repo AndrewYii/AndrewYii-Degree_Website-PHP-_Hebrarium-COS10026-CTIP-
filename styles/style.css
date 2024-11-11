@@ -7816,16 +7816,35 @@ button.contribute-btn:hover {
 
 /* user_profile */
 .profile-container {
+    width: 20vw;  /* 20% of viewport width */
+    height: 20vw;  /* Keep equal to width for circle */
+    min-width: 150px;  /* Minimum size */
+    min-height: 150px;
+    max-width: 300px;  /* Maximum size */
+    max-height: 300px;
+    margin: 20px auto;
+    position: relative;
+}
+
+.Profile-Picture {
     width: 100%;
-    height: auto;
+    height: 100%;
     border-radius: 50%;
     object-fit: cover;
     border: 2px solid #ccc;
 }
 
-.Profile-Picture {
-    width: 100%;
-    height: auto    ;
-    object-fit: cover;
-    border: 2px solid #ccc;
+/* Add responsive breakpoints */
+@media (max-width: 768px) {
+    .profile-container {
+        width: 30vw;
+        height: 30vw;
+    }
+}
+
+@media (max-width: 480px) {
+    .profile-container {
+        width: 40vw;
+        height: 40vw;
+    }
 }
