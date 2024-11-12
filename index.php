@@ -69,6 +69,7 @@
                         <label for="star4" class="star">&#9733;</label>
                         <input type="radio" id="star5" name="rating" value="5" />
                         <label for="star5" class="star">&#9733;</label>
+                        <button id="submit-feedback">Submit</button>
                     </form>
                 </div>
             </div>
