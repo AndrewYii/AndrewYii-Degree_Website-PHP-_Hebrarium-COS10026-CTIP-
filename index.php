@@ -1,7 +1,49 @@
 <?php
     include 'database/connection.php';
     include 'database/database.php';
-    session_start(); 
+    session_start();
+
+    $error = '';
+    $message = '';
+    $error_connection = '';
+
+    if ($_SERVER["REQUEST_METHOD"] == "POST") {
+        if (isset($_SESSION['username'])) {
+            $conn = mysqli_connect($servername, $username, $password, $dbname);
+    
+            if (!$conn) {
+                $error_connection = "We're experiencing technical difficulties connecting to our database. Please try again later.";
+            } else {
+                $username = $_SESSION['username'];
+                
+                if (isset($_POST['rating'])) {
+                    
+                    $feedback = filter_var($_POST['rating'], FILTER_VALIDATE_INT);
+    
+                    $query = "SELECT * FROM Feedback WHERE Username='$username'";
+                    $result = mysqli_query($conn, $query);
+                    
+                    if (mysqli_num_rows($result) > 0) {
+                        $error = "It looks like you've already provided your feedback. Thank you for sharing your thoughts!";
+                    } else {
+                        $sql = "INSERT INTO Feedback (Username, Feedback_Mark) VALUES ('$username', '$feedback')";
+                        if (mysqli_query($conn, $sql)) {
+                            $message = "Thank you for your feedback! We truly appreciate your support.";
+                        } else {
+                            $error_connection = "We encountered an issue while saving your feedback. Please try again later. If the problem persists, kindly reach out to our <a href='mailto:104386568@students.swinburne.edu.my'>support team</a>.";
+                        }
+                    }
+                } else {
+                    $error = "Please select a rating before submitting.";
+                }
+                
+                mysqli_close($conn);
+            }
+        } else {
+            $error = "Please log in to submit your feedback. We value your input!";
+        }
+    }
+    
 ?>
 
 
@@ -58,7 +100,7 @@
             <div class="rate-text">
                 <div class="rate-text-desc">
                     <p>We Value Your Feedback Rate Us !</p>
-                    <form class="rating-form">
+                    <form class="rating-form" action="<?php echo ($_SERVER["PHP_SELF"]); ?>" method="POST" novalidate="novalidate">
                         <input type="radio" id="star1" name="rating" value="1" />
                         <label for="star1" class="star">&#9733;</label>
                         <input type="radio" id="star2" name="rating" value="2" />
