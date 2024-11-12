@@ -8083,10 +8083,14 @@ button.contribute-btn:hover {
 }
 
 .profile-text{
-    margin: 0px 0;
+    margin-top: 3px;
+    margin-bottom: 5px;
     font-size: 16px;
 }
 
+.profile-text1 {
+    margin-bottom: 10px;
+}
 /* view_feedback.php 12.11 */
 
 .card-body {
