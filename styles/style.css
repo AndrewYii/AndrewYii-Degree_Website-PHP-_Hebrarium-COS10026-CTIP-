@@ -886,7 +886,29 @@ nav .menu {
     color: gray;
 }
 
+#submit-feedback {
+    background-color: #2ECC71; 
+    border: none;
+    color: #fff;
+    padding: 12px 24px;
+    margin-left: 20px;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 16px;
+    font-weight: bold;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
 
+#submit-feedback:hover {
+    background-color: #28A745; 
+    transform: translateY(-3px);
+}
+
+#submit-feedback:active {
+    transform: translateY(1px);
+    background-color: #1E7E34;
+}
 
 @media (max-width: 1102px) {
     .rate-text-desc{
@@ -921,6 +943,11 @@ nav .menu {
 
     .rating-form input + label.star {
         font-size: 28px;
+    }
+
+    #submit-feedback {
+        background-color: #2ECC71; 
+        padding: 9px 18px;
     }
 
 }
