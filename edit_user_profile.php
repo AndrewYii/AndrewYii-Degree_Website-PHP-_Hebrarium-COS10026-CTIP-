@@ -20,7 +20,7 @@
 ?>
 
 <div class="profile-update-container">
-    <h1>Update Profile</h1>
+    <h1 class="edit-user-title">Update Profile</h1>
 
 <?php
     // Add this after your database connection includes
