@@ -8020,7 +8020,7 @@ button.contribute-btn:hover {
     }
 }
 
-.success-message {
+.edit-success-message {
     position: fixed;
     top: 50%;
     left: 50%;
@@ -8033,7 +8033,7 @@ button.contribute-btn:hover {
     z-index: 1000;
 }
 
-.success-message.fade-out {
+.edit-success-message.fade-out {
     animation: fadeOut 5s forwards;
 }
 
