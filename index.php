@@ -24,7 +24,12 @@
                     $result = mysqli_query($conn, $query);
                     
                     if (mysqli_num_rows($result) > 0) {
-                        $error = "It looks like you've already provided your feedback. Thank you for sharing your thoughts!";
+                        $sql = "UPDATE Feedback SET Feedback_Mark = '$feedback' WHERE Username = '$username'";
+                        if (mysqli_query($conn, $sql)) {
+                            $message = "Thank you for updating your feedback! We truly value your continued support and thoughtful insights.";
+                        } else {
+                            $error_connection = "We encountered an issue while saving your feedback. Please try again later. If the problem persists, kindly reach out to our <a href='mailto:104386568@students.swinburne.edu.my'>support team</a>.";
+                        }
                     } else {
                         $sql = "INSERT INTO Feedback (Username, Feedback_Mark) VALUES ('$username', '$feedback')";
                         if (mysqli_query($conn, $sql)) {
@@ -43,6 +48,62 @@
             $error = "Please log in to submit your feedback. We value your input!";
         }
     }
+
+    if ($error !== '') {
+        echo '
+        <input type="checkbox" id="close-identify-find">
+        <div class="identify-result-overlay">
+            <div class="identify-result-container">
+                <div class="identify-result-header">
+                    <h3>Website Feedback</h3>
+                    <label for="close-identify-find" class="identify-result-close">
+                        <img src="images/close_icon.png" alt="Close icon">
+                    </label>
+                </div>
+                <div class="identify-result-content">
+                    <div class="identify-result-detail">
+                        <p>' . htmlspecialchars($error) . '</p>
+                    </div>
+                </div>
+            </div>
+        </div>';
+    } else if ($error_connection !== '') {
+        echo '
+        <input type="checkbox" id="close-identify-find">
+        <div class="identify-result-overlay">
+            <div class="identify-result-container">
+                <div class="identify-result-header">
+                    <h3>Website Feedback</h3>
+                    <label for="close-identify-find" class="identify-result-close">
+                        <img src="images/close_icon.png" alt="Close icon">
+                    </label>
+                </div>
+                <div class="identify-result-content">
+                    <div class="identify-result-detail">
+                        <p>' . htmlspecialchars($error_connection) . '</p>
+                    </div>
+                </div>
+            </div>
+        </div>';
+    } else if ($message !== '') {
+        echo '
+        <input type="checkbox" id="close-identify-find">
+        <div class="identify-result-overlay">
+            <div class="identify-result-container">
+                <div class="identify-result-header">
+                    <h3>Website Feedback</h3>
+                    <label for="close-identify-find" class="identify-result-close">
+                        <img src="images/close_icon.png" alt="Close icon">
+                    </label>
+                </div>
+                <div class="identify-result-content">
+                    <div class="identify-result-detail">
+                        <p>' . htmlspecialchars($message) . '</p>
+                    </div>
+                </div>
+            </div>
+        </div>';
+    } 
     
 ?>
 
