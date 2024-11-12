@@ -6867,6 +6867,14 @@ button.contribute-btn:hover {
     padding-left: 1rem;
 }
 
+.sidebar-menu ul li:first-child {
+    margin-top: -10px; 
+}
+
+.sidebar-menu ul li a[href="view_register.php"] {
+    margin-top: -40px; 
+}
+
 .sidebar-menu a {
     padding-left: 1rem;
     display: block;
@@ -6989,6 +6997,14 @@ button.contribute-btn:hover {
 }
 
 .comments-sidebar-icon{
+    width: 30px;
+    height: auto;
+    position: relative;
+    bottom: -8px;
+    right: 7px;
+}
+
+.feedback-sidebar-icon{
     width: 30px;
     height: auto;
     position: relative;
