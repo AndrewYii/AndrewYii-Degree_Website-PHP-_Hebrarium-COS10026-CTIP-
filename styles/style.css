@@ -6945,12 +6945,10 @@ button.contribute-btn:hover {
     display: inline;
 }
 
-/* Style for the print button */
 .card .card-header .admin-print-button {
     margin-left: 780px;
 }
 
-/* Style for the form containing refresh button */
 .card .card-header form {
     display: inline-block;
     margin-left: 10px;
@@ -7005,6 +7003,11 @@ button.contribute-btn:hover {
     margin-left: 345px;
 }
 
+.main-content-login {
+    transition: margin-left 300ms;
+    margin-left: 345px;
+}
+
 .admin-header {
     background: #fff;
     display: flex;
@@ -7015,7 +7018,7 @@ button.contribute-btn:hover {
     top: 0;
     left: 345px;
     width: calc(100% - 345px);
-    z-index: 99;  /* Lower than sidebar */
+    z-index: 99;  
 }
 
 .admin-header-text{
@@ -7097,6 +7100,13 @@ button.contribute-btn:hover {
     min-height: calc(100vh - 90px);
 }
 
+.main-content-login {
+    margin-top: 50px;
+    padding: 2rem 1.5rem;
+    background: #f1f5f9;
+    min-height: calc(100vh - 90px);
+}
+
 .kebab-menu-icon {
     width: 20px;
     height: auto;
@@ -7116,7 +7126,7 @@ button.contribute-btn:hover {
     border-radius: 4px;
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
     display: none;
-    z-index: 101;  /* Higher than sidebar */
+    z-index: 101; 
 }
 
 .menu-button {
@@ -7167,52 +7177,49 @@ button.contribute-btn:hover {
     color: orangered;
 }
 
-/* Add or update these styles for the admin contribute table */
 .admin-table {
     width: 100%;
-    border-collapse: separate;  /* Changed from collapse to separate */
-    border-spacing: 0 15px;    /* Adds vertical space between rows */
+    border-collapse: separate;  
+    border-spacing: 0 15px;   
     position: relative;
 }
 
 .admin-table th,
 .admin-table td {
-    padding: 15px;             /* Increased padding */
+    padding: 15px;           
     text-align: left;
-    white-space: nowrap;       /* Prevents text wrapping */
+    white-space: nowrap;      
     overflow: hidden;
 }
 
-/* Add specific widths for columns */
 .admin-table th:first-child,
 .admin-table td:first-child {
-    width: 5%; /* ID column */
+    width: 5%; 
 }
 
 .admin-table th:last-child {
-    width: 8%; /* Actions column */
-    position: relative; /* Add this */
+    width: 8%; 
+    position: relative; 
 }
 
 .admin-table td:last-child {
     position: relative;
-    overflow: visible !important; /* Override any inherited overflow properties */
+    overflow: visible !important; 
 }
 
-/* Make the description column wrap text */
 .admin-table .description-column {
-    white-space: normal;       /* Allows text wrapping */
-    max-width: 200px;         /* Adjust this value as needed */
+    white-space: normal;     
+    max-width: 200px;        
     word-wrap: break-word;
 }
 
-/* Add horizontal scrolling for the table */
+
 .card-body {
     overflow-x: auto;
-    padding: 20px;            /* Added padding around the table */
+    padding: 20px;           
 }
 
-/* Optional: Add some styling for better readability */
+
 .admin-table tbody tr {
     background: #fff;
     box-shadow: 0 2px 5px rgba(0,0,0,0.1);
@@ -7229,15 +7236,14 @@ button.contribute-btn:hover {
 }
 
 .description-column {
-    min-width: 500px !important;         /* Increased minimum width */
-    max-width: 800px !important;         /* Increased maximum width */
-    width: 600px !important;             /* Fixed width */
-    white-space: normal !important;      /* Allows text wrapping */
+    min-width: 500px !important;    
+    max-width: 800px !important;      
+    width: 600px !important;           
+    white-space: normal !important;     
     word-wrap: break-word;
-    padding: 15px 25px !important;       /* Extra padding */
+    padding: 15px 25px !important;       
 }
 
-/* Style for the header specifically */
 .admin-table th.description-column {
     background-color: #f3f3f3;
     font-weight: bold;
@@ -7245,22 +7251,20 @@ button.contribute-btn:hover {
     padding: 15px 25px;
 }
 
-/* Style for the cell content */
 .admin-table td.description-column {
-    line-height: 1.5;        /* Better line spacing for readability */
+    line-height: 1.5;        
     text-align: left;
 }
 
-/* If you want even more width, you can make the container wider */
 .projects {
-    width: 100%;    /* Makes the container take full width */
-    margin-right: 20px;  /* Adds some spacing from the right side */
+    width: 100%;  
+    margin-right: 20px;  
 }
 
 .recent-grid {
     margin-top: 1.5rem;
     display: grid;
-    grid-template-columns: 100%;  /* Changed from 70% 30% to give more space to main content */
+    grid-template-columns: 100%;  
     grid-gap: 2rem;
 }
 
@@ -7338,14 +7342,12 @@ button.contribute-btn:hover {
         width: 70px;
     }
 
-     /* Adjust header position */
      .admin-header {
         left: 70px;
         width: calc(100% - 70px);
         transition: left 0.3s ease, width 0.3s ease;
     }
     
-    /* When sidebar is hovered/expanded */
     .sidebar:hover {
         width: 345px;
     }
@@ -7710,11 +7712,7 @@ button.contribute-btn:hover {
     background-color: #5a6268;
 }
 
-/* Update the z-index values */
-
-/* Header z-index (around line 6978) */
 .admin-header {
-    /* ... existing styles ... */
     z-index: 100;
 }
 
