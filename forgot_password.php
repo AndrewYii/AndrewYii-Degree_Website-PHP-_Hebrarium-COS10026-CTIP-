@@ -10,6 +10,11 @@
     include 'database/database.php';
     session_start();
 
+    if (isset($_SESSION['username'])){
+        header('Location: index.php'); 
+        exit();
+    }
+
     // Check if form is submitted
     if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         $conn = mysqli_connect($servername, $username, $password, $dbname);

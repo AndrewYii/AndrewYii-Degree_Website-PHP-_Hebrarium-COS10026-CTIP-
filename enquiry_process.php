@@ -149,9 +149,15 @@
 
                     // No error
                     if ($error == '') {   
+                        if (isset($_SESSION['username'])){
+                            $username = $_SESSION['username'];
+                        }
+                        else{
+                            $username = 'Guest';
+                        }
                         $_SESSION['failed_attempts'] = 0; // Reset attempts on success
-                        $sql = "INSERT INTO Enquiry (Name, Email, Phone, Subject, Message, Street, City, Postcode, State) 
-                                VALUES ('$first_name $last_name', '$email', '$phone', '$topic', '$comment', '$street', '$city', '$postcode', '$state')";
+                        $sql = "INSERT INTO Enquiry (Name, Email, Phone, Subject, Message, Street, City, Postcode, State, Username) 
+                                VALUES ('$first_name $last_name', '$email', '$phone', '$topic', '$comment', '$street', '$city', '$postcode', '$state', '$username')";
                         if (mysqli_query($conn, $sql)){
                             $message = "Your enquiry has been submitted successfully, and we'll be in touch shortly";
                         }
