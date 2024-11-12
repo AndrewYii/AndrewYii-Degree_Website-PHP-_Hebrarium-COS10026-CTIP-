@@ -168,7 +168,10 @@ if(isset($_POST['submit'])) {
     if(mysqli_query($conn, $sql)) {
         // Update the session with new username
         $_SESSION['username'] = $new_username;
-        echo "<a href='user_profile.php'>Profile updated successfully</a>";
+        echo "<div class='success-message'>
+                <p>Profile updated successfully!</p>
+                <a href='user_profile.php' class='view-profile-btn'>View Profile</a>
+              </div>";
     } else {
         echo "Error: " . $sql . "<br>" . mysqli_error($conn);
     }

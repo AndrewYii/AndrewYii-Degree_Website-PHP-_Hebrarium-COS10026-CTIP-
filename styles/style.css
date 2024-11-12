@@ -6181,7 +6181,6 @@ button.contribute-btn:hover {
 }
 
 
-
 .tutorial-introduction-text-content {
     flex: 1; 
     padding-right: 20px; 
@@ -8126,4 +8125,34 @@ button.contribute-btn:hover {
         width: 150px;
         height: 150px;
     }
+}
+
+.success-message {
+    text-align: center;
+    margin: 20px auto;
+    padding: 15px;
+    background-color: #ddf5e1;
+    border-radius: 5px;
+    width: 80%;
+    max-width: 400px;
+}
+
+.success-message p {
+    margin-bottom: 10px;
+    color: #228B22;
+    font-weight: bold;
+}
+
+.view-profile-btn {
+    display: inline-block;
+    padding: 8px 20px;
+    background-color: #4CAF50;
+    color: white;
+    text-decoration: none;
+    border-radius: 4px;
+    transition: background-color 0.3s;
+}
+
+.view-profile-btn:hover {
+    background-color: #45a049;
 }
