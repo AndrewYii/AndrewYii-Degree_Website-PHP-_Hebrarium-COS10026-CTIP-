@@ -3,113 +3,34 @@
     include('../database/connection.php');
     include('../database/database.php');
 
-    require '../Dompdf/autoload.inc.php';
-    use Dompdf\Dompdf;
-    use Dompdf\Options;
+    // Create database connection
+    $conn = mysqli_connect($servername, $username, $password, $dbname);
 
-    // Dompdf options
-    $options = new Options();
-    $options->set('isHtml5ParserEnabled', true);
-    $options->set('isPhpEnabled', true);
-    $options->set('isFontSubsettingEnabled', true);
-    $dompdf = new Dompdf($options);
-
-    if (isset($_POST['generate_pdf'])) {
-
-        include('../database/connection.php');
-        $conn = mysqli_connect($servername, $username, $password, $dbname);
-
-        if (isset($_SESSION['register_search']) && !empty($_SESSION['register_search'])) {
-            $search = $_SESSION['register_search'];
-            $sql = "SELECT * FROM Register WHERE Username LIKE '%$search%' ORDER BY Register_Created_At DESC";
-        } else {
-            $sql = "SELECT * FROM Register ORDER BY Register_Created_At DESC";
-        }
-
-        $result = mysqli_query($conn, $sql);
-        
-        $html = '
-        <html>
-        <head>
-            <style>
-                body { font-family: Arial, sans-serif; font-size: 10px; }
-                .header {
-                    text-align: center;
-                    display: flex;
-                    align-items: center;
-                    justify-content: center;
-                    margin-bottom: 20px;
-                }
-                .header img {
-                    width: 50px;
-                    height: auto;
-                    margin-right: 10px;
-                }
-                .header h2 {
-                    font-size: 16px;
-                    color: #4CAF50;
-                    margin: 0;
-                }
-                table { width: 100%; border-collapse: collapse; margin-top: 20px; }
-                th, td { padding: 5px; text-align: left; border: 1px solid #ddd; }
-                th { background-color: #4CAF50; color: white; font-size: 10px; }
-                td { font-size: 9px; }
-            </style>
-        </head>
-        <body>
-            <div class="header">
-                <h2>Registered Users</h2>
-            </div>
-            <table>
-                <tr>
-                    <th>ID</th>
-                    <th>Name</th>
-                    <th>Username</th>
-                    <th>Email</th>
-                    <th>Date Registered</th>
-                </tr>';
-
-        // Generate table rows
-        if (mysqli_num_rows($result) > 0) {
-            while ($row = mysqli_fetch_assoc($result)) {
-                $html .= "<tr>
-                            <td>{$row['Register_ID']}</td>
-                            <td>{$row['Name']}</td>
-                            <td>{$row['Username']}</td>
-                            <td>{$row['Email']}</td>
-                            <td>{$row['Register_Created_At']}</td>
-                        </tr>";
-            }
-        } else {
-            $html .= "<tr><td colspan='5'>No registration records found</td></tr>";
-        }
-
-        $html .= '</table>
-        </body>
-        </html>';
-
-        // Close the database connection
-        mysqli_close($conn);
-
-        // Load HTML into Dompdf
-        $dompdf->loadHtml($html, 'UTF-8');
-
-        // Set paper size and orientation
-        $dompdf->setPaper('A4', 'portrait');
-
-        // Render PDF
-        $dompdf->render();
-        
-        header('Content-Type: application/pdf');
-        header('Content-Disposition: attachment; filename="Register_Report.pdf"');
-        header('Cache-Control: private, max-age=0, must-revalidate');
-        header('Pragma: public');
-
-        // Output the generated PDF
-        echo $dompdf->output();
-
-        exit();
+    // Check connection
+    if (!$conn) {
+        die("Connection failed: " . mysqli_connect_error());
     }
+
+    // Get feedback statistics
+    $feedbackStats = array_fill(1, 5, 0);
+    $totalFeedback = 0;
+
+    $query = "SELECT Feedback_Mark, COUNT(*) as count FROM Feedback GROUP BY Feedback_Mark ORDER BY Feedback_Mark";
+    $result = mysqli_query($conn, $query);
+
+    while ($row = mysqli_fetch_assoc($result)) {
+        $feedbackStats[$row['Feedback_Mark']] = $row['count'];
+        $totalFeedback += $row['count'];
+    }
+
+    // Calculate percentages
+    $feedbackPercentages = array();
+    for ($i = 1; $i <= 5; $i++) {
+        $feedbackPercentages[$i] = $totalFeedback > 0 ? ($feedbackStats[$i] / $totalFeedback) * 100 : 0;
+    }
+
+    // Keep the connection open for any other database operations you need
+    // Only close it at the very end of the file
 ?>
 
 <!DOCTYPE html>
@@ -192,3 +113,37 @@
                 </div>
             </div>
         </header>
+        
+        <div class="feedback-chart-container">
+            <h3>User Feedback Distribution</h3>
+            <div class="feedback-chart">
+                <?php for ($i = 5; $i >= 1; $i--): ?>
+                    <div class="chart-row">
+                        <div class="star-label"><?php echo $i; ?> ★</div>
+                        <div class="bar-container">
+                            <div class="bar" style="width: <?php echo $feedbackPercentages[$i]; ?>%">
+                                <span class="bar-value">
+                                    <?php echo $feedbackStats[$i]; ?> user<?php echo $feedbackStats[$i] !== 1 ? 's' : ''; ?>
+                                    (<?php echo number_format($feedbackPercentages[$i], 1); ?>%)
+                                </span>
+                            </div>
+                        </div>
+                    </div>
+                <?php endfor; ?>
+            </div>
+            <div class="feedback-summary">
+                <p>Total Feedback Received: <?php echo $totalFeedback; ?></p>
+                <p>Last Updated: <?php echo date('Y-m-d H:i:s'); ?></p>
+            </div>
+        </div>
+
+        <!-- Original feedback table can go here -->
+    </div>
+
+    <!-- ... rest of your HTML ... -->
+
+<?php
+    // Close the connection at the very end of the file
+    mysqli_close($conn);
+?>
+</html>

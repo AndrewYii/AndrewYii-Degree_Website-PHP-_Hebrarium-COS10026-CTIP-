@@ -8087,3 +8087,101 @@ button.contribute-btn:hover {
     font-size: 16px;
 }
 
+/* view_feedback 12.11.24 */
+
+.feedback-chart-container {
+    background-color: #fff;
+    border-radius: 10px;
+    padding: 25px;
+    margin: 20px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+}
+
+.feedback-chart-container h3 {
+    color: #333;
+    font-size: 1.2rem;
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+.feedback-chart {
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.chart-row {
+    display: flex;
+    align-items: center;
+    margin: 15px 0;
+}
+
+.star-label {
+    width: 60px;
+    text-align: right;
+    padding-right: 15px;
+    color: #666;
+    font-weight: bold;
+    font-size: 1.1rem;
+}
+
+.bar-container {
+    flex-grow: 1;
+    background-color: #f0f0f0;
+    border-radius: 4px;
+    overflow: hidden;
+    height: 30px;
+}
+
+.bar {
+    background: linear-gradient(to right, #4CAF50, #45a049);
+    height: 100%;
+    min-width: 1%;
+    display: flex;
+    align-items: center;
+    transition: width 0.5s ease-in-out;
+}
+
+.bar-value {
+    color: white;
+    padding: 0 10px;
+    font-size: 0.9rem;
+    white-space: nowrap;
+}
+
+.feedback-summary {
+    text-align: center;
+    margin-top: 20px;
+    color: #666;
+}
+
+.feedback-summary p {
+    margin: 5px 0;
+    font-size: 0.9rem;
+}
+
+/* Hover effect */
+.bar:hover {
+    opacity: 0.9;
+    cursor: pointer;
+}
+
+/* Responsive design */
+@media screen and (max-width: 600px) {
+    .feedback-chart-container {
+        margin: 10px;
+        padding: 15px;
+    }
+
+    .star-label {
+        width: 45px;
+        font-size: 0.9rem;
+    }
+
+    .bar-container {
+        height: 25px;
+    }
+
+    .bar-value {
+        font-size: 0.8rem;
+    }
+}
