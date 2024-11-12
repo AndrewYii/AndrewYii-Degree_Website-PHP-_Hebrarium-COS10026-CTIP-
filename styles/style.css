@@ -8159,14 +8159,12 @@ button.contribute-btn:hover {
     font-size: 0.9rem;
 }
 
-/* Hover effect */
-.bar:hover {
+.bar:hover {    /* Hover effect */
     opacity: 0.9;
     cursor: pointer;
 }
 
-/* Responsive design */
-@media screen and (max-width: 600px) {
+@media screen and (max-width: 600px) { /* responsive design */
     .feedback-chart-container {
         margin: 10px;
         padding: 15px;
@@ -8184,4 +8182,57 @@ button.contribute-btn:hover {
     .bar-value {
         font-size: 0.8rem;
     }
+}
+
+/* testing dont mind */
+
+.card-body {
+    padding: 20px;
+}
+
+.rating-distribution {
+    width: 100%;
+    max-width: 1000px; /* Increased from 800px */
+    margin: 0 auto;
+    padding: 20px;
+}
+
+.rating-row {
+    display: flex;
+    align-items: center;
+    margin: 15px 0; /* Increased from 10px */
+    gap: 15px; /* Increased from 10px */
+}
+
+.rating-label {
+    width: 70px; /* Increased from 50px */
+    font-weight: bold;
+    color: #333;
+    font-size: 16px; /* Added font size */
+}
+
+.rating-bar {
+    flex-grow: 1;
+    background-color: #f0f0f0;
+    height: 40px; /* Increased from 30px */
+    border-radius: 6px; /* Increased from 4px */
+    overflow: hidden;
+}
+
+.rating-fill {
+    height: 100%;
+    background-color: #4CAF50;
+    display: flex;
+    align-items: center;
+    padding-left: 15px; /* Increased from 10px */
+    color: white;
+    font-size: 16px; /* Increased from 14px */
+}
+
+.rating-summary {
+    text-align: center;
+    margin-top: 30px; /* Increased from 20px */
+    color: #666;
+    font-size: 16px; /* Added font size */
+    line-height: 1.5; /* Added line height */
 }
