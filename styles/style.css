@@ -8006,6 +8006,16 @@ button.contribute-btn:hover {
     z-index: 1000;
 }
 
+.success-message.fade-out {
+    animation: fadeOut 5s forwards;
+}
+
+@keyframes fadeOut {
+    0% { opacity: 1; }
+    70% { opacity: 1; }
+    100% { opacity: 0; }
+}
+
 .view-profile-btn {
     display: inline-block;
     margin-top: 10px;
