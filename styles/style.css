@@ -8023,6 +8023,9 @@ button.contribute-btn:hover {
 .user-profile {
     border-radius:50%;
     width: 200px;
-    height: auto;
+    height: 200px;
+    object-fit: cover;
+    display: block;
+    margin: 0 auto;
 }
 
