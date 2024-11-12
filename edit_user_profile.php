@@ -173,7 +173,6 @@ if(isset($_POST['submit'])) {
         $_SESSION['username'] = $new_username;
         echo "<div class='edit-success-message fade-out'>
                 <p>Profile updated successfully!</p>
-                <a href='user_profile.php' class='view-profile-btn'>View Profile</a>
               </div>";
     } else {
         echo "Error: " . $sql . "<br>" . mysqli_error($conn);

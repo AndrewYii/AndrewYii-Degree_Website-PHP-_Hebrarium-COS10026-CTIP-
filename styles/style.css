@@ -8043,22 +8043,6 @@ button.contribute-btn:hover {
     100% { opacity: 0; }
 }
 
-.view-profile-btn {
-    display: inline-block;
-    margin-top: 10px;
-    padding: 8px 16px;
-    background-color: white;
-    color: #4CAF50;
-    text-decoration: none;
-    border-radius: 3px;
-}
-
-.view-profile-btn:hover {
-    background-color: #f0f0f0;
-}
-
-/* user_profile */
-
 /* user profile */
 .user-profile {
     border: 1px solid #228B22;
