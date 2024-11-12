@@ -6862,6 +6862,14 @@ button.contribute-btn:hover {
     padding-right: 1rem;
 }
 
+.sidebar-menu ul li:first-child {
+    margin-top: -5px; 
+}
+
+.sidebar-menu ul li a[href="view_register.php"] {
+    margin-top: -40px; 
+}
+
 .logo_admin a{
     text-decoration: none;
 }
@@ -6912,7 +6920,7 @@ button.contribute-btn:hover {
     width: 30px;
     height: auto;
     position: relative;
-    bottom: -5px;
+    bottom: -10px;
     right: 5px;
 }
 
@@ -6962,6 +6970,14 @@ button.contribute-btn:hover {
 }
 
 .comments-sidebar-icon{
+    width: 30px;
+    height: auto;
+    position: relative;
+    bottom: -8px;
+    right: 7px;
+}
+
+.feedback-sidebar-icon{
     width: 30px;
     height: auto;
     position: relative;
