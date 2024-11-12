@@ -6998,6 +6998,15 @@ button.contribute-btn:hover {
     left: 70px;
 }
 
+#nav-toggle:checked ~ .main-content-login {
+    margin-left: 70px;
+}
+
+#nav-toggle:checked ~ .main-content-login header {
+    width: calc(100% - 70px);
+    left: 70px;
+}
+
 .main-content {
     transition: margin-left 300ms;
     margin-left: 345px;
@@ -7357,6 +7366,11 @@ button.contribute-btn:hover {
         width: calc(100% - 345px);
     }
 
+    .sidebar:hover ~ .main-content-login .admin-header {
+        left: 345px;
+        width: calc(100% - 345px);
+    }
+
     .sidebar .logo_admin img {
         width: 45px;  
         height: auto;
@@ -7386,8 +7400,17 @@ button.contribute-btn:hover {
     .main-content {
         margin-left: 70px;
     }
+
+    .main-content-login {
+        margin-left: 70px;
+    }
     
     .main-content header {
+        width: calc(100% - 70px);
+        left: 70px;
+    }
+
+    .main-content-login header {
         width: calc(100% - 70px);
         left: 70px;
     }
@@ -7573,6 +7596,25 @@ button.contribute-btn:hover {
 }
 
 .main-content::-webkit-scrollbar-thumb:hover {
+    background: #555;
+}
+
+.main-content-login::-webkit-scrollbar {
+    width: 8px;
+    height: 8px;
+}
+
+.main-content-login::-webkit-scrollbar-track {
+    background: #f1f1f1;
+    border-radius: 4px;
+}
+
+.main-content-login::-webkit-scrollbar-thumb {
+    background: #888;
+    border-radius: 4px;
+}
+
+.main-content-login::-webkit-scrollbar-thumb:hover {
     background: #555;
 }
 
