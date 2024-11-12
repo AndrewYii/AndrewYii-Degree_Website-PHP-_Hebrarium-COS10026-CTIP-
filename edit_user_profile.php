@@ -108,17 +108,67 @@ if(isset($_POST['submit'])) {
         }
     }    
 
+
+
+    $new_username = $current_data['Username']; // Default to current username
+    if (!empty($_POST['Username'])) {
+        $proposed_username = mysqli_real_escape_string($conn, $_POST['Username']);
+        
+        // Check if the new username already exists (excluding current user)
+        $check_username = "SELECT * FROM register WHERE Username = ? AND Username != ?";
+        $stmt = $conn->prepare($check_username);
+        $stmt->bind_param("ss", $proposed_username, $current_username);
+        $stmt->execute();
+        $result = $stmt->get_result();
+        
+        if ($result->num_rows > 0) {
+            echo "<script>alert('Username already taken. Please choose another.');
+            window.location.href='edit_user_profile.php';</script>";
+            exit();
+        } else {
+            // Begin transaction to ensure all updates complete successfully
+            mysqli_begin_transaction($conn);
+            
+            try {
+                // Update username in Register table
+                $update_register = "UPDATE register SET Username = ? WHERE Username = ?";
+                $stmt = $conn->prepare($update_register);
+                $stmt->bind_param("ss", $proposed_username, $current_username);
+                $stmt->execute();
+                
+                // Update username in Enquiry table
+                $update_enquiry = "UPDATE contribute SET Username = ? WHERE Username = ?";
+                $stmt = $conn->prepare($update_enquiry);
+                $stmt->bind_param("ss", $proposed_username, $current_username);
+                $stmt->execute();
+                
+                // If all queries successful, commit transaction
+                mysqli_commit($conn);
+                
+                // Update session with new username
+                $_SESSION['username'] = $proposed_username;
+                $new_username = $proposed_username;
+                
+            } catch (Exception $e) {
+                // If any query fails, rollback all changes
+                mysqli_rollback($conn);
+                echo "<script>alert('Error updating username. Please try again.');
+                window.location.href='edit_user_profile.php';</script>";
+                exit();
+            }
+        }
+        $stmt->close();
+    }
+
+
     $new_name = !empty($_POST['Name']) ? mysqli_real_escape_string($conn, $_POST['Name']) : $current_data['Name'];
     $new_email = !empty($_POST['Email']) ? mysqli_real_escape_string($conn, $_POST['Email']) : $current_data['Email'];
-    $new_username = !empty($_POST['Username']) ? mysqli_real_escape_string($conn, $_POST['Username']) : $current_data['Username'];
-    $current_username = $_SESSION['username'];
     
     // Update query including username
     $sql = "UPDATE register SET 
-            Name='$new_name', 
-            Email='$new_email', 
-            Username='$new_username', 
-            Profile_Picture='$new_profile_photo' 
+            Name='$new_name',
+            Email='$new_email',
+            Profile_Picture='$new_profile_photo'
             WHERE Username='$current_username'";
     
     if(mysqli_query($conn, $sql)) {
