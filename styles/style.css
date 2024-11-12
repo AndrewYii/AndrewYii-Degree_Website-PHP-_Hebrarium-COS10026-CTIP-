@@ -8021,11 +8021,21 @@ button.contribute-btn:hover {
 
 /* user profile */
 .user-profile {
+    border: 1px solid #228B22;
     border-radius:50%;
     width: 200px;
     height: 200px;
     object-fit: cover;
     display: block;
     margin: 0 auto;
+    aspect-ratio: 1/1;
+    overflow: hidden;
+    box-sizing: border-box;
+    background-color: #fff;
+}
+
+.profile-text{
+    margin: 0px 0;
+    font-size: 16px;
 }
 
