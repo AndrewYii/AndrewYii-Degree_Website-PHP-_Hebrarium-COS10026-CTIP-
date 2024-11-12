@@ -28,17 +28,17 @@
             $conn = mysqli_connect($servername,$username,$password,$dbname);
             
             // Check if user is logged in
-            if (isset($_SESSION['username'])) {
-                $current_user = $_SESSION['username'];
-                $sql = "SELECT * FROM enquiry ORDER BY Enquiry_ID DESC LIMIT 1";
-                $result = mysqli_query($conn, $sql);
+            $conn = mysqli_connect($servername,$username,$password,$dbname);
+            
+            // Query the latest enquiry
+            $sql = "SELECT * FROM enquiry ORDER BY Enquiry_ID DESC LIMIT 1";
+            $result = mysqli_query($conn, $sql);
 
-                if ($result && mysqli_num_rows($result) > 0) {
-                    $user_data = mysqli_fetch_assoc($result);
-                }
+            if ($result && mysqli_num_rows($result) > 0) {
+                $user_data = mysqli_fetch_assoc($result);
             } else {
-                // Redirect to login page if not logged in
-                header("Location: login.php");
+                // Redirect if no enquiry found
+                header("Location: user_view_enquiry.php");
                 exit();
             }
         ?>
