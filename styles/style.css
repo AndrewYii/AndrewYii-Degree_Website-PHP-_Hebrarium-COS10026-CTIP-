@@ -7854,17 +7854,6 @@ button.contribute-btn:hover {
     text-align: center;
 }
 
-.profile-update-container form input[type="text"].edit-user-input,
-.profile-update-container form input[type="email"].edit-user-input,
-.profile-update-container form input[type="number"].edit-user-input {
-    width: 100%;
-    padding: 10px;
-    border: 1px solid #ddd;
-    border-radius: 4px;
-    font-size: 14px;
-    margin-bottom: 15px;
-}
-
 /* user_profile */
 .profile-container {
     width: 20vw;  /* 20% of viewport width */
