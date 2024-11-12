@@ -172,7 +172,7 @@
         </div>
     </div>
 
-    <div class="main-content">
+    <div class="main-content-login">
         <header class="admin-header">
             <h2 class="admin-header-text">
                 Login 
@@ -311,13 +311,12 @@
             mysqli_stmt_close($stmt);
             mysqli_close($conn);
             
-            // Redirect to same page instead of different page
         }
 
-        // If showing the confirmation dialog, show only the confirmation modal
+
         if (isset($_GET['id'])) {
             $id = $_GET['id'];
-            // Output the confirmation dialog
+
             ?>
             <div class="modal-overlay">
                 <div class="confirmation-box">
