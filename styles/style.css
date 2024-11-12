@@ -7968,7 +7968,10 @@ button.contribute-btn:hover {
     cursor: pointer;
     transition: background-color 0.3s;
     margin-top: 20px;
-    width: 100%;
+    width: 30%;
+    margin-left: auto;
+    margin-right: auto;
+    display: block;
 }
 
 .update-button:hover {
