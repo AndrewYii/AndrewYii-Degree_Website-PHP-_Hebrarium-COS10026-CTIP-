@@ -1,7 +1,110 @@
 <?php
     include 'database/connection.php';
     include 'database/database.php';
-    session_start(); 
+    session_start();
+
+    $error = '';
+    $message = '';
+    $error_connection = '';
+
+    if ($_SERVER["REQUEST_METHOD"] == "POST") {
+        if (isset($_SESSION['username'])) {
+            $conn = mysqli_connect($servername, $username, $password, $dbname);
+    
+            if (!$conn) {
+                $error_connection = "We're experiencing technical difficulties connecting to our database. Please try again later.";
+            } else {
+                $username = $_SESSION['username'];
+                
+                if (isset($_POST['rating'])) {
+                    
+                    $feedback = filter_var($_POST['rating'], FILTER_VALIDATE_INT);
+    
+                    $query = "SELECT * FROM Feedback WHERE Username='$username'";
+                    $result = mysqli_query($conn, $query);
+                    
+                    if (mysqli_num_rows($result) > 0) {
+                        $sql = "UPDATE Feedback SET Feedback_Mark = '$feedback' WHERE Username = '$username'";
+                        if (mysqli_query($conn, $sql)) {
+                            $message = "Thank you for updating your feedback! We truly value your continued support and thoughtful insights.";
+                        } else {
+                            $error_connection = "We encountered an issue while saving your feedback. Please try again later. If the problem persists, kindly reach out to our <a href='mailto:104386568@students.swinburne.edu.my'>support team</a>.";
+                        }
+                    } else {
+                        $sql = "INSERT INTO Feedback (Username, Feedback_Mark) VALUES ('$username', '$feedback')";
+                        if (mysqli_query($conn, $sql)) {
+                            $message = "Thank you for your feedback! We truly appreciate your support.";
+                        } else {
+                            $error_connection = "We encountered an issue while saving your feedback. Please try again later. If the problem persists, kindly reach out to our <a href='mailto:104386568@students.swinburne.edu.my'>support team</a>.";
+                        }
+                    }
+                } else {
+                    $error = "Please select a rating before submitting.";
+                }
+                
+                mysqli_close($conn);
+            }
+        } else {
+            $error = "Please log in to submit your feedback. We value your input!";
+        }
+    }
+
+    if ($error !== '') {
+        echo '
+        <input type="checkbox" id="close-identify-find">
+        <div class="identify-result-overlay">
+            <div class="identify-result-container">
+                <div class="identify-result-header">
+                    <h3>Website Feedback</h3>
+                    <label for="close-identify-find" class="identify-result-close">
+                        <img src="images/close_icon.png" alt="Close icon">
+                    </label>
+                </div>
+                <div class="identify-result-content">
+                    <div class="identify-result-detail">
+                        <p>' . htmlspecialchars($error) . '</p>
+                    </div>
+                </div>
+            </div>
+        </div>';
+    } else if ($error_connection !== '') {
+        echo '
+        <input type="checkbox" id="close-identify-find">
+        <div class="identify-result-overlay">
+            <div class="identify-result-container">
+                <div class="identify-result-header">
+                    <h3>Website Feedback</h3>
+                    <label for="close-identify-find" class="identify-result-close">
+                        <img src="images/close_icon.png" alt="Close icon">
+                    </label>
+                </div>
+                <div class="identify-result-content">
+                    <div class="identify-result-detail">
+                        <p>' . htmlspecialchars($error_connection) . '</p>
+                    </div>
+                </div>
+            </div>
+        </div>';
+    } else if ($message !== '') {
+        echo '
+        <input type="checkbox" id="close-identify-find">
+        <div class="identify-result-overlay">
+            <div class="identify-result-container">
+                <div class="identify-result-header">
+                    <h3>Website Feedback</h3>
+                    <label for="close-identify-find" class="identify-result-close">
+                        <img src="images/close_icon.png" alt="Close icon">
+                    </label>
+                </div>
+                <div class="identify-result-content">
+                    <div class="identify-result-detail">
+                        <p>' . htmlspecialchars($message) . '</p>
+                    </div>
+                </div>
+            </div>
+        </div>';
+    } 
+    
 ?>
 
 
@@ -58,7 +161,7 @@
             <div class="rate-text">
                 <div class="rate-text-desc">
                     <p>We Value Your Feedback Rate Us !</p>
-                    <form class="rating-form">
+                    <form class="rating-form" action="<?php echo ($_SERVER["PHP_SELF"]); ?>" method="POST" novalidate="novalidate">
                         <input type="radio" id="star1" name="rating" value="1" />
                         <label for="star1" class="star">&#9733;</label>
                         <input type="radio" id="star2" name="rating" value="2" />
@@ -69,6 +172,7 @@
                         <label for="star4" class="star">&#9733;</label>
                         <input type="radio" id="star5" name="rating" value="5" />
                         <label for="star5" class="star">&#9733;</label>
+                        <button id="submit-feedback">Submit</button>
                     </form>
                 </div>
             </div>

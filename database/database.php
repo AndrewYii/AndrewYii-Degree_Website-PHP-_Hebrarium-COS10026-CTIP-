@@ -142,5 +142,17 @@
         die("Error creating enquiry table: " . mysqli_error($conn));
     }
 
+    // SQL to create Feedback table
+    $sql_feedback = "CREATE TABLE IF NOT EXISTS Feedback (
+        Feedback_ID INT(6) UNSIGNED AUTO_INCREMENT PRIMARY KEY,
+        Username VARCHAR(60) NOT NULL,
+        Feedback_Mark INT(2) NOT NULL,
+        Feedback_Created_At TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+    )";
+
+    if (!mysqli_query($conn, $sql_feedback)) {
+        die("Error creating feedback table: " . mysqli_error($conn));
+    }
+
     mysqli_close($conn);
 ?>

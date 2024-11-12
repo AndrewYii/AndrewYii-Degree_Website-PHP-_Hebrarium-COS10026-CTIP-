@@ -167,12 +167,13 @@
                 <li><a href="view_enquiry.php"><img src="../images/enquiry_icon.png" alt="enquiry" class="enquiry-sidebar-icon"><span>Enquiries</span></a></li>
                 <li><a href="view_pre_contribute.php"><img src="../images/pre_contribute_icon.png" alt="pre-contribute" class="pre-contribute-sidebar-icon"><span>Pre-Contribute</span></a></li>
                 <li><a href="view_comments.php"><img src="../images/comments_icon.png" alt="comments" class="comments-sidebar-icon"><span>Comments</span></a></li>
+                <li><a href="view_feedback.php"><img src="../images/feedback_icon.png" alt="feedback" class="feedback-sidebar-icon"><span>Feedback</span></a></li>
                 <label for='logoutCheckbox' class='admin-logout-button'>Logout</label>
             </ul>
         </div>
     </div>
 
-    <div class="main-content">
+    <div class="main-content-login">
         <header class="admin-header">
             <h2 class="admin-header-text">
                 Login 
@@ -311,13 +312,12 @@
             mysqli_stmt_close($stmt);
             mysqli_close($conn);
             
-            // Redirect to same page instead of different page
         }
 
-        // If showing the confirmation dialog, show only the confirmation modal
+
         if (isset($_GET['id'])) {
             $id = $_GET['id'];
-            // Output the confirmation dialog
+
             ?>
             <div class="modal-overlay">
                 <div class="confirmation-box">
