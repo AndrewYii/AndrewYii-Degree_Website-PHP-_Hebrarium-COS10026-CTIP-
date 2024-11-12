@@ -229,28 +229,45 @@
                                 }
 
                                 // Get rating counts from database
-                                $ratings = array(5 => 0, 4 => 0, 3 => 0, 2 => 0, 1 => 0);
+                                $ratings = array(
+                                    5 => array('label' => 'Very Good', 'count' => 0),
+                                    4 => array('label' => 'Good', 'count' => 0),
+                                    3 => array('label' => 'Average', 'count' => 0),
+                                    2 => array('label' => 'Below Average', 'count' => 0),
+                                    1 => array('label' => 'Poor', 'count' => 0)
+                                );
                                 $total = 0;
                                 
-                                $sql = "SELECT Feedback_Mark, COUNT(*) as count FROM Feedback GROUP BY Feedback_Mark ORDER BY Feedback_Mark DESC";
+                                $sql = "SELECT 
+                                    Feedback_Mark, 
+                                    COUNT(*) as count,
+                                    MAX(Feedback_Created_At) as latest_feedback 
+                                FROM Feedback 
+                                GROUP BY Feedback_Mark 
+                                ORDER BY Feedback_Mark DESC";
                                 $result = mysqli_query($conn, $sql);
-                                
+                                $latest_update = null;
+
                                 if ($result) {
                                     while($row = mysqli_fetch_assoc($result)) {
-                                        $ratings[$row['Feedback_Mark']] = $row['count'];
+                                        $ratings[$row['Feedback_Mark']]['count'] = $row['count'];
                                         $total += $row['count'];
+                                        // Keep track of the latest feedback timestamp
+                                        if ($latest_update === null || strtotime($row['latest_feedback']) > strtotime($latest_update)) {
+                                            $latest_update = $row['latest_feedback'];
+                                        }
                                     }
                                 }
 
                                 // Display rating bars
-                                for($i = 5; $i >= 1; $i--) {
-                                    $percentage = $total > 0 ? ($ratings[$i] / $total) * 100 : 0;
+                                foreach($ratings as $score => $data) {
+                                    $percentage = $total > 0 ? ($data['count'] / $total) * 100 : 0;
                                     ?>
                                     <div class="rating-row">
-                                        <div class="rating-label"><?php echo $i; ?> ★</div>
+                                        <div class="rating-label"><?php echo $data['label']; ?></div>
                                         <div class="rating-bar">
                                             <div class="rating-fill" style="width: <?php echo $percentage; ?>%">
-                                                <?php if($ratings[$i] > 0) echo $ratings[$i] . " users (" . number_format($percentage, 1) . "%)"; ?>
+                                                <?php if($data['count'] > 0) echo $data['count'] . " users (" . number_format($percentage, 1) . "%)"; ?>
                                             </div>
                                         </div>
                                     </div>
@@ -260,7 +277,7 @@
                                 
                                 <div class="rating-summary">
                                     Total Feedback Received: <?php echo $total; ?><br>
-                                    Last Updated: <?php echo date('Y-m-d H:i:s'); ?>
+                                    Last Updated: <?php echo $latest_update ? date('Y-m-d H:i:s', strtotime($latest_update)) : 'No feedback yet'; ?>
                                 </div>
                             </div>
                         </div>

@@ -8192,7 +8192,7 @@ button.contribute-btn:hover {
 
 .rating-distribution {
     width: 100%;
-    max-width: 1000px; /* Increased from 800px */
+    max-width: 1200px; /* Increased from 1000px to give more space */
     margin: 0 auto;
     padding: 20px;
 }
@@ -8205,7 +8205,7 @@ button.contribute-btn:hover {
 }
 
 .rating-label {
-    width: 70px; /* Increased from 50px */
+    width: 120px; /* Increased from 70px to accommodate longer text */
     font-weight: bold;
     color: #333;
     font-size: 16px; /* Added font size */
