@@ -2,114 +2,6 @@
     session_start();
     include('../database/connection.php');
     include('../database/database.php');
-
-    require '../Dompdf/autoload.inc.php';
-    use Dompdf\Dompdf;
-    use Dompdf\Options;
-
-    // Dompdf options
-    $options = new Options();
-    $options->set('isHtml5ParserEnabled', true);
-    $options->set('isPhpEnabled', true);
-    $options->set('isFontSubsettingEnabled', true);
-    $dompdf = new Dompdf($options);
-
-    if (isset($_POST['generate_pdf'])) {
-
-        include('../database/connection.php');
-        $conn = mysqli_connect($servername, $username, $password, $dbname);
-
-        if (isset($_SESSION['register_search']) && !empty($_SESSION['register_search'])) {
-            $search = $_SESSION['register_search'];
-            $sql = "SELECT * FROM Register WHERE Username LIKE '%$search%' ORDER BY Register_Created_At DESC";
-        } else {
-            $sql = "SELECT * FROM Register ORDER BY Register_Created_At DESC";
-        }
-
-        $result = mysqli_query($conn, $sql);
-        
-        $html = '
-        <html>
-        <head>
-            <style>
-                body { font-family: Arial, sans-serif; font-size: 10px; }
-                .header {
-                    text-align: center;
-                    display: flex;
-                    align-items: center;
-                    justify-content: center;
-                    margin-bottom: 20px;
-                }
-                .header img {
-                    width: 50px;
-                    height: auto;
-                    margin-right: 10px;
-                }
-                .header h2 {
-                    font-size: 16px;
-                    color: #4CAF50;
-                    margin: 0;
-                }
-                table { width: 100%; border-collapse: collapse; margin-top: 20px; }
-                th, td { padding: 5px; text-align: left; border: 1px solid #ddd; }
-                th { background-color: #4CAF50; color: white; font-size: 10px; }
-                td { font-size: 9px; }
-            </style>
-        </head>
-        <body>
-            <div class="header">
-                <h2>Registered Users</h2>
-            </div>
-            <table>
-                <tr>
-                    <th>ID</th>
-                    <th>Name</th>
-                    <th>Username</th>
-                    <th>Email</th>
-                    <th>Date Registered</th>
-                </tr>';
-
-        // Generate table rows
-        if (mysqli_num_rows($result) > 0) {
-            while ($row = mysqli_fetch_assoc($result)) {
-                $html .= "<tr>
-                            <td>{$row['Register_ID']}</td>
-                            <td>{$row['Name']}</td>
-                            <td>{$row['Username']}</td>
-                            <td>{$row['Email']}</td>
-                            <td>{$row['Register_Created_At']}</td>
-                        </tr>";
-            }
-        } else {
-            $html .= "<tr><td colspan='5'>No registration records found</td></tr>";
-        }
-
-        $html .= '</table>
-        </body>
-        </html>';
-
-        // Close the database connection
-        mysqli_close($conn);
-
-        // Load HTML into Dompdf
-        $dompdf->loadHtml($html, 'UTF-8');
-
-        // Set paper size and orientation
-        $dompdf->setPaper('A4', 'portrait');
-
-        // Render PDF
-        $dompdf->render();
-        
-        header('Content-Type: application/pdf');
-        header('Content-Disposition: attachment; filename="Register_Report.pdf"');
-        header('Cache-Control: private, max-age=0, must-revalidate');
-        header('Pragma: public');
-
-        // Output the generated PDF
-        echo $dompdf->output();
-
-        exit();
-    }
 ?>
 
 <!DOCTYPE html>
@@ -195,12 +87,6 @@
             <div class="recent-grid">
                 <div class="projects">
                     <div class="card">
-                        <div class="card-header">
-                            <h3>User Feedback Distribution</h3>
-                            <form method="post" action="<?php echo $_SERVER['PHP_SELF']; ?>">
-                                <button class="admin-print-button" name="generate_pdf">Print</button>
-                            </form>
-                        </div>
 
                         <div class="card-body">
                             <div class="rating-distribution">
@@ -263,7 +149,7 @@
                                 
                                 <div class="rating-summary">
                                     Total Feedback Received: <?php echo $total; ?><br>
-                                    Last Updated: <?php echo $latest_update ? date('Y-m-d H:i:s', strtotime($latest_update)) : 'No feedback yet'; ?>
+                                    Last Updated: <?php echo $latest_update ? date('d-m-Y H:i:s', strtotime($latest_update)) : 'No feedback yet'; ?>
                                 </div>
                             </div>
                         </div>
