@@ -54,11 +54,10 @@
     ?>
 
     <?php
-    // Check if there's a message in the session
     if (isset($_SESSION['message'])) {
         $messageClass = strpos($_SESSION['message'], 'Error') !== false ? 'error-message' : 'success-message';
         echo "<div class='admin-message {$messageClass}'>" . $_SESSION['message'] . "</div>";
-        unset($_SESSION['message']); // Clear the message from session after displaying it
+        unset($_SESSION['message']);
     }
     ?>
 
