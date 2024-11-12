@@ -182,17 +182,6 @@
                 Feedback
             </h2>
 
-            <div class="search-wrapper">
-                <form action="<?php echo $_SERVER['PHP_SELF']; ?>" method="post" class="admin-search-form">
-                    <input type="search" name="search" placeholder="Search by name">
-                    <button class="admin-search-button" id="admin-button-activate" type="submit">
-                        <label for="admin-button-activate">
-                            <img src="../images/search_icon.png" alt="Search" class="admin-search-icon">
-                        </label>
-                    </button>
-                </form>
-            </div>
-
             <div class="user-wrapper">
                 <img src="../images/admin-icon.jpg" alt="admin profile picture">
                 <div>
@@ -210,9 +199,6 @@
                             <h3>User Feedback Distribution</h3>
                             <form method="post" action="<?php echo $_SERVER['PHP_SELF']; ?>">
                                 <button class="admin-print-button" name="generate_pdf">Print</button>
-                            </form>
-                            <form action="<?php echo $_SERVER['PHP_SELF']; ?>" method="post">
-                                <button type="submit" name="refresh_table">Refresh</button>
                             </form>
                         </div>
 
