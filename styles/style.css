@@ -7817,14 +7817,8 @@ button.contribute-btn:hover {
     height: auto;
 }
 
-/* View_User_Profile */
-.profile-picture {
-    width: 200px;
-    height: auto;
-}
-
 /* edit_user_profile */
-body {
+.edit_user{
     background-color: #ddf5e1;
 }
 
@@ -7835,16 +7829,13 @@ body {
     background-color: white;
     border-radius: 15px;
     box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    border: 1px solid #4CAF50;
 }
 
 .profile-container {
     width: 150px;
     height: 150px;
     margin: 20px auto;
-    border-radius:50%;
-}
-
-.profile-picture {
     border-radius:50%;
 }
 
@@ -7859,4 +7850,23 @@ body {
 .photo-upload-group {
     margin-top: 10px;
     text-align: center;
+}
+
+/* user_profile */
+.profile-container {
+    width: 20vw;  /* 20% of viewport width */
+    height: 20vw;  /* Keep equal to width for circle */
+    min-width: 150px;  /* Minimum size */
+    min-height: 150px;
+    max-width: 300px;  /* Maximum size */
+    max-height: 300px;
+    margin: 20px auto;
+    position: relative;
+}
+
+/* user profile */
+.user-profile {
+    border-radius:50%;
+    width: 200px;
+    height: auto;
 }
