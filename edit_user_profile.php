@@ -53,8 +53,8 @@
         </div>
         
         <div class="form-group">
-            <label for="StudentID">Student ID:</label>
-            <input class="edit-user-input" type="number" id="StudentID" name="StudentID" placeholder="draft">
+            <label for="Username">Username:</label>
+            <input class="edit-user-input" type="text" id="Username" name="Username" placeholder="It remains the same if nothing changes">
         </div>
         
         <div class="form-group">
