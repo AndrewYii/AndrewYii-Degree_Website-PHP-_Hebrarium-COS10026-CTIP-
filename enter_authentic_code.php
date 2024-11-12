@@ -6,7 +6,14 @@
     // Initialise attempt count if not already set
     if (!isset($_SESSION['otp_attempts'])) {
         $_SESSION['otp_attempts'] = 0;
+    } 
+
+    if (!(isset($_SESSION['forgot_username']))){
+        header('Location: index.php'); 
+        exit();
     }
+
+
 
     // Check if form is submitted
     if ($_SERVER['REQUEST_METHOD'] == 'POST') {
