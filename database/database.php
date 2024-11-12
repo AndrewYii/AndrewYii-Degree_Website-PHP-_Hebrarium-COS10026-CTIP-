@@ -134,6 +134,7 @@
         City VARCHAR(50) NOT NULL,
         Postcode VARCHAR(10) NOT NULL,
         State VARCHAR(30) NOT NULL,
+        Username VARCHAR(60) DEFAULT NULL,
         Enquiry_Created_At TIMESTAMP DEFAULT CURRENT_TIMESTAMP
     )";
 
