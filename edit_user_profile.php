@@ -1,3 +1,6 @@
+<!DOCTYPE html>
+
+<html lang="en">
 <head>
 
 <meta charset="utf-8" />
@@ -41,22 +44,22 @@
     <form class="edit-user-form" action="<?php echo htmlspecialchars($_SERVER['PHP_SELF']); ?>" method="post" enctype="multipart/form-data" autocomplete="off">
         <div class="form-group">
             <label for="First_Name">First Name:</label>
-            <input class="edit-user-input" type="text" id="First_Name" name="First_Name" placeholder="First Name">
+            <input class="edit-user-input" type="text" id="First_Name" name="First_Name" placeholder="It remains the same if nothing changes">
         </div>
         
         <div class="form-group">
             <label for="Last_Name">Last Name:</label>
-            <input class="edit-user-input" type="text" id="Last_Name" name="Last_Name" placeholder="Last Name">
+            <input class="edit-user-input" type="text" id="Last_Name" name="Last_Name" placeholder="It remains the same if nothing changes">
         </div>
         
         <div class="form-group">
-            <label for="StudentID">Student ID:</label>
-            <input class="edit-user-input" type="number" id="StudentID" name="StudentID" placeholder="Student ID">
+            <label for="Username">Username:</label>
+            <input class="edit-user-input" type="text" id="Username" name="Username" placeholder="It remains the same if nothing changes">
         </div>
         
         <div class="form-group">
             <label for="Email">Email:</label>
-            <input class="edit-user-input" type="email" id="Email" name="Email" placeholder="Email">
+            <input class="edit-user-input" type="email" id="Email" name="Email" placeholder="It remains the same if nothing changes">
         </div>
 
         <div class="form-group">
@@ -168,7 +171,7 @@ if(isset($_POST['submit'])) {
     if(mysqli_query($conn, $sql)) {
         // Update the session with new username
         $_SESSION['username'] = $new_username;
-        echo "<div class='success-message'>
+        echo "<div class='edit-success-message fade-out'>
                 <p>Profile updated successfully!</p>
                 <a href='user_profile.php' class='view-profile-btn'>View Profile</a>
               </div>";
@@ -180,3 +183,4 @@ if(isset($_POST['submit'])) {
 }
 ?>
 </body>
+</html>
