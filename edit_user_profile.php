@@ -171,7 +171,7 @@ if(isset($_POST['submit'])) {
     if(mysqli_query($conn, $sql)) {
         // Update the session with new username
         $_SESSION['username'] = $new_username;
-        echo "<div class='edit-success-message fade-out'>
+        echo "<div class='edit-success-message'>
                 <p>Profile updated successfully!</p>
               </div>";
     } else {
