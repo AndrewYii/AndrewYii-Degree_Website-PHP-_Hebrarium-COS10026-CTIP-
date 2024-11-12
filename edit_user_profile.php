@@ -42,34 +42,34 @@
 
         <div>
             <label for="First_Name">First Name:</label>
-            <input type="text" id="First_Name" name="First_Name" placeholder="First Name">
+            <input class="edit-user-input" type="text" id="First_Name" name="First_Name" placeholder="First Name">
         </div>
         
         <div>
             <label for="Last_Name">Last Name:</label>
-            <input type="text" id="Last_Name" name="Last_Name" placeholder="Last Name">
+            <input class="edit-user-input" type="text" id="Last_Name" name="Last_Name" placeholder="Last Name">
         </div>
         
         <div>
             <label for="StudentID">Student ID:</label>
-            <input type="number" id="StudentID" name="StudentID" placeholder="Student ID">
+            <input class="edit-user-input" type="number" id="StudentID" name="StudentID" placeholder="Student ID">
         </div>
         
         <div>
             <label for="Username">Username:</label>
-            <input type="text" id="Username" name="Username" placeholder="Username">
+            <input class="edit-user-input" type="text" id="Username" name="Username" placeholder="Username">
         </div>
         
         <div>
             <label for="Email">Email:</label>
-            <input type="email" id="Email" name="Email" placeholder="Email">
+            <input class="edit-user-input" type="email" id="Email" name="Email" placeholder="Email">
         </div>
 
         <div>
             <label for="upload_photo">Profile Photo:</label>
             <div class="photo-upload-group">
-                <input type="file" id="upload_photo" name="upload_photo" accept="image/*">
-                <button type="button" onclick="document.getElementById('upload_photo').value = ''">Clear</button>
+                <input class="edit-user-input" type="file" id="upload_photo" name="upload_photo" accept="image/*">
+                <button class="edit-user-button" type="button" onclick="document.getElementById('upload_photo').value = ''">Clear</button>
             </div>
         </div>
         

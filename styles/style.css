@@ -7906,7 +7906,7 @@ input[type="submit"] {
     color: white;
 }
 
-button {
+.edit-user-button {
     background-color: #6c757d;
     color: white;
 }
