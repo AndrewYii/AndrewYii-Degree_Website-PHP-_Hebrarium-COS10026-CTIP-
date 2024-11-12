@@ -7136,7 +7136,7 @@ button.contribute-btn:hover {
 }
 
 .main-content-login {
-    margin-top: 50px;
+    margin-top: 29px;
     padding: 2rem 1.5rem;
     background: #f1f5f9;
     min-height: calc(100vh - 90px);
@@ -8020,7 +8020,7 @@ button.contribute-btn:hover {
     }
 }
 
-.success-message {
+.edit-success-message {
     position: fixed;
     top: 50%;
     left: 50%;
@@ -8031,23 +8031,25 @@ button.contribute-btn:hover {
     border-radius: 5px;
     text-align: center;
     z-index: 1000;
+    opacity: 1;
+    animation: fadeOutMessage 2s forwards;
 }
 
-.view-profile-btn {
-    display: inline-block;
-    margin-top: 10px;
-    padding: 8px 16px;
-    background-color: white;
-    color: #4CAF50;
-    text-decoration: none;
-    border-radius: 3px;
+@keyframes fadeOutMessage {
+    0% {
+        opacity: 1;
+        transform: translate(-50%, -50%);
+    }
+    70% {
+        opacity: 1;
+        transform: translate(-50%, -50%);
+    }
+    100% {
+        opacity: 0;
+        transform: translate(-50%, -50%);
+        display: none;
+    }
 }
-
-.view-profile-btn:hover {
-    background-color: #f0f0f0;
-}
-
-/* user_profile */
 
 /* user profile */
 .user-profile {
