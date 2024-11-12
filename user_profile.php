@@ -66,7 +66,7 @@
                 echo "<img src='" . $profilePic . "' alt='Profile Picture' class='user-profile'>";
                 ?>
                 <p class="profile-text">Name: <?php echo isset($user_data['Name']) ? $user_data['Name'] : 'Not set'; ?></p>
-                <p class="profile-text">Email: <?php echo isset($user_data['Email']) ? $user_data['Email'] : 'Not set'; ?></p>
+                <p class="profile-text1">Email: <?php echo isset($user_data['Email']) ? $user_data['Email'] : 'Not set'; ?></p>
                 <?php
                     echo "<a href='edit_user_profile.php'><button>Edit Profile</button></a>";
                 ?>
