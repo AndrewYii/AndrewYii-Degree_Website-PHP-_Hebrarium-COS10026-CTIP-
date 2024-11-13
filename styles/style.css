@@ -6966,10 +6966,6 @@ button.contribute-btn:hover {
     right: 5px;
 }
 
-.register-sidebar-icon:hover {
-    background-color: #28A745;
-}
-
 .admin-register-link {
     display: flex; 
     align-items: center; 
