@@ -8091,6 +8091,17 @@ button.contribute-btn:hover {
 .profile-text1 {
     margin-bottom: 10px;
 }
+
+.user-table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.user-table th, .user-table td {
+    padding: 10px;
+    text-align: left;
+    border: 1px solid #ddd;
+}
 /* view_feedback.php 12.11 */
 
 .card-body {
