@@ -83,7 +83,7 @@
                                 echo "<input type='hidden' name='contribution_id' value='" . $row['Contribute_ID'] . "'>";
                                 echo "<button type='submit' name='delete_contribution' class='delete-btn'>Delete Contribution</button>";
                                 echo "</form>";
-                                echo "<table class='user-table' border='1'>
+                                echo "<table class='profile-tables' border='1'>
                                 <tr>
                                     <th>Contribution</th>   
                                     <th>Details</th>

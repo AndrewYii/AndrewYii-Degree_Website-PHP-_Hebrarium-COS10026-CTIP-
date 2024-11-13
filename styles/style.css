@@ -8092,12 +8092,12 @@ button.contribute-btn:hover {
     margin-bottom: 10px;
 }
 
-.user-table {
+.profile-tables {
     width: 100%;
     border-collapse: collapse;
 }
 
-.user-table th, .user-table td {
+.profile-tables th, .profile-tables td {
     padding: 10px;
     text-align: left;
     border: 1px solid #ddd;
