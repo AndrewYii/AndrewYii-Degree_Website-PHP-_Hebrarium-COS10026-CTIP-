@@ -8094,7 +8094,10 @@ button.contribute-btn:hover {
 
 .profile-tables {
     width: 100%;
+    max-width: 800px;
+    margin: 0 auto;
     border-collapse: collapse;
+    border-spacing: 0;
 }
 
 .profile-tables th, .profile-tables td {
