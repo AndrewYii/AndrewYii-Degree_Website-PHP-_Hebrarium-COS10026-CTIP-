@@ -66,7 +66,7 @@
                 echo "<img src='" . $profilePic . "' alt='Profile Picture' class='user-profile'>";
                 ?>
                 <p class="profile-text">Name: <?php echo isset($user_data['Name']) ? $user_data['Name'] : 'Not set'; ?></p>
-                <p class="profile-text">Email: <?php echo isset($user_data['Email']) ? $user_data['Email'] : 'Not set'; ?></p>
+                <p class="profile-text1">Email: <?php echo isset($user_data['Email']) ? $user_data['Email'] : 'Not set'; ?></p>
                 <?php
                     echo "<a href='edit_user_profile.php'><button>Edit Profile</button></a>";
                 ?>
@@ -83,7 +83,7 @@
                                 echo "<input type='hidden' name='contribution_id' value='" . $row['Contribute_ID'] . "'>";
                                 echo "<button type='submit' name='delete_contribution' class='delete-btn'>Delete Contribution</button>";
                                 echo "</form>";
-                                echo "<table border='1'>
+                                echo "<table class='profile-tables' border='1'>
                                 <tr>
                                     <th>Contribution</th>   
                                     <th>Details</th>

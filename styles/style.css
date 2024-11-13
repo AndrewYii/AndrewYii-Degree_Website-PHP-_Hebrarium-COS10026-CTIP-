@@ -8138,7 +8138,77 @@ button.contribute-btn:hover {
 }
 
 .profile-text{
-    margin: 0px 0;
+    margin-top: 3px;
+    margin-bottom: 5px;
     font-size: 16px;
 }
 
+.profile-text1 {
+    margin-bottom: 10px;
+}
+
+.profile-tables {
+    width: 100%;
+    max-width: 800px;
+    margin: 0 auto;
+    border-collapse: collapse;
+    border-spacing: 0;
+}
+
+.profile-tables th, .profile-tables td {
+    padding: 10px;
+    text-align: left;
+    border: 1px solid #ddd;
+}
+/* view_feedback.php 12.11 */
+
+.card-body {
+    padding: 20px;
+}
+
+.rating-distribution {
+    width: 100%;
+    max-width: 1200px; /* Increased from 1000px to give more space */
+    margin: 0 auto;
+    padding: 20px;
+}
+
+.rating-row {
+    display: flex;
+    align-items: center;
+    margin: 15px 0; /* Increased from 10px */
+    gap: 15px; /* Increased from 10px */
+}
+
+.rating-label {
+    width: 120px; /* Increased from 70px to accommodate longer text */
+    font-weight: bold;
+    color: #333;
+    font-size: 16px; /* Added font size */
+}
+
+.rating-bar {
+    flex-grow: 1;
+    background-color: #f0f0f0;
+    height: 40px; /* Increased from 30px */
+    border-radius: 6px; /* Increased from 4px */
+    overflow: hidden;
+}
+
+.rating-fill {
+    height: 100%;
+    background-color: #4CAF50;
+    display: flex;
+    align-items: center;
+    padding-left: 15px; /* Increased from 10px */
+    color: white;
+    font-size: 16px; /* Increased from 14px */
+}
+
+.rating-summary {
+    text-align: center;
+    margin-top: 30px; /* Increased from 20px */
+    color: #666;
+    font-size: 16px; /* Added font size */
+    line-height: 1.5; /* Added line height */
+}
