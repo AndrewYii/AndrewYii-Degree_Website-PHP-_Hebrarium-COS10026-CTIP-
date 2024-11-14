@@ -2,114 +2,6 @@
     session_start();
     include('../database/connection.php');
     include('../database/database.php');
-
-    require '../Dompdf/autoload.inc.php';
-    use Dompdf\Dompdf;
-    use Dompdf\Options;
-
-    // Dompdf options
-    $options = new Options();
-    $options->set('isHtml5ParserEnabled', true);
-    $options->set('isPhpEnabled', true);
-    $options->set('isFontSubsettingEnabled', true);
-    $dompdf = new Dompdf($options);
-
-    if (isset($_POST['generate_pdf'])) {
-
-        include('../database/connection.php');
-        $conn = mysqli_connect($servername, $username, $password, $dbname);
-
-        if (isset($_SESSION['register_search']) && !empty($_SESSION['register_search'])) {
-            $search = $_SESSION['register_search'];
-            $sql = "SELECT * FROM Register WHERE Username LIKE '%$search%' ORDER BY Register_Created_At DESC";
-        } else {
-            $sql = "SELECT * FROM Register ORDER BY Register_Created_At DESC";
-        }
-
-        $result = mysqli_query($conn, $sql);
-        
-        $html = '
-        <html>
-        <head>
-            <style>
-                body { font-family: Arial, sans-serif; font-size: 10px; }
-                .header {
-                    text-align: center;
-                    display: flex;
-                    align-items: center;
-                    justify-content: center;
-                    margin-bottom: 20px;
-                }
-                .header img {
-                    width: 50px;
-                    height: auto;
-                    margin-right: 10px;
-                }
-                .header h2 {
-                    font-size: 16px;
-                    color: #4CAF50;
-                    margin: 0;
-                }
-                table { width: 100%; border-collapse: collapse; margin-top: 20px; }
-                th, td { padding: 5px; text-align: left; border: 1px solid #ddd; }
-                th { background-color: #4CAF50; color: white; font-size: 10px; }
-                td { font-size: 9px; }
-            </style>
-        </head>
-        <body>
-            <div class="header">
-                <h2>Registered Users</h2>
-            </div>
-            <table>
-                <tr>
-                    <th>ID</th>
-                    <th>Name</th>
-                    <th>Username</th>
-                    <th>Email</th>
-                    <th>Date Registered</th>
-                </tr>';
-
-        // Generate table rows
-        if (mysqli_num_rows($result) > 0) {
-            while ($row = mysqli_fetch_assoc($result)) {
-                $html .= "<tr>
-                            <td>{$row['Register_ID']}</td>
-                            <td>{$row['Name']}</td>
-                            <td>{$row['Username']}</td>
-                            <td>{$row['Email']}</td>
-                            <td>{$row['Register_Created_At']}</td>
-                        </tr>";
-            }
-        } else {
-            $html .= "<tr><td colspan='5'>No registration records found</td></tr>";
-        }
-
-        $html .= '</table>
-        </body>
-        </html>';
-
-        // Close the database connection
-        mysqli_close($conn);
-
-        // Load HTML into Dompdf
-        $dompdf->loadHtml($html, 'UTF-8');
-
-        // Set paper size and orientation
-        $dompdf->setPaper('A4', 'portrait');
-
-        // Render PDF
-        $dompdf->render();
-        
-        header('Content-Type: application/pdf');
-        header('Content-Disposition: attachment; filename="Register_Report.pdf"');
-        header('Cache-Control: private, max-age=0, must-revalidate');
-        header('Pragma: public');
-
-        // Output the generated PDF
-        echo $dompdf->output();
-
-        exit();
-    }
 ?>
 
 <!DOCTYPE html>
@@ -140,6 +32,15 @@
         unset($_SESSION['message']); // Clear the message from session after displaying it
     }
     ?>
+
+    <input type='checkbox' id='logoutCheckbox'>
+    <div class='logout-background'>
+        <div class='logout-content'>
+            <p>Are you sure you want to log out?</p>
+            <a href='../logout.php' class='confirm-logout'>Yes</a>
+            <label for='logoutCheckbox' class='cancel-logout'>No</label>
+        </div>
+    </div>
 
     <input type="checkbox" id="nav-toggle">
     <div class="sidebar">
@@ -173,17 +74,6 @@
                 Feedback
             </h2>
 
-            <div class="search-wrapper">
-                <form action="<?php echo $_SERVER['PHP_SELF']; ?>" method="post" class="admin-search-form">
-                    <input type="search" name="search" placeholder="Search by name">
-                    <button class="admin-search-button" id="admin-button-activate" type="submit">
-                        <label for="admin-button-activate">
-                            <img src="../images/search_icon.png" alt="Search" class="admin-search-icon">
-                        </label>
-                    </button>
-                </form>
-            </div>
-
             <div class="user-wrapper">
                 <img src="../images/admin-icon.jpg" alt="admin profile picture">
                 <div>
@@ -192,3 +82,77 @@
                 </div>
             </div>
         </header>
+
+        <main>
+            <div class="recent-grid">
+                <div class="projects">
+                    <div class="card">
+
+                        <div class="card-body">
+                            <div class="rating-distribution">
+                                <?php
+                                // Establish database connection
+                                include('../database/connection.php');
+                                $conn = mysqli_connect($servername, $username, $password, $dbname);
+
+                                // Check connection
+                                if (!$conn) {
+                                    die("Connection failed: " . mysqli_connect_error());
+                                }
+
+                                // Get rating counts from database
+                                $ratings = array(
+                                    5 => array('label' => 'Very Good', 'count' => 0),
+                                    4 => array('label' => 'Good', 'count' => 0),
+                                    3 => array('label' => 'Average', 'count' => 0),
+                                    2 => array('label' => 'Below Average', 'count' => 0),
+                                    1 => array('label' => 'Poor', 'count' => 0)
+                                );
+                                $total = 0;
+                                
+                                $sql = "SELECT 
+                                    Feedback_Mark, 
+                                    COUNT(*) as count,
+                                    MAX(Feedback_Created_At) as latest_feedback 
+                                FROM Feedback 
+                                GROUP BY Feedback_Mark 
+                                ORDER BY Feedback_Mark DESC";
+                                $result = mysqli_query($conn, $sql);
+                                $latest_update = null;
+
+                                if ($result) {
+                                    while($row = mysqli_fetch_assoc($result)) {
+                                        $ratings[$row['Feedback_Mark']]['count'] = $row['count'];
+                                        $total += $row['count'];
+                                        // Keep track of the latest feedback timestamp
+                                        if ($latest_update === null || strtotime($row['latest_feedback']) > strtotime($latest_update)) {
+                                            $latest_update = $row['latest_feedback'];
+                                        }
+                                    }
+                                }
+
+                                // Display rating bars
+                                foreach($ratings as $score => $data) {
+                                    $percentage = $total > 0 ? ($data['count'] / $total) * 100 : 0;
+                                    ?>
+                                    <div class="rating-row">
+                                        <div class="rating-label"><?php echo $data['label']; ?></div>
+                                        <div class="rating-bar">
+                                            <div class="rating-fill" style="width: <?php echo $percentage; ?>%">
+                                                <?php if($data['count'] > 0) echo $data['count'] . " users (" . number_format($percentage, 1) . "%)"; ?>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <?php
+                                }
+                                ?>
+                                
+                                <div class="rating-summary">
+                                    Total Feedback Received: <?php echo $total; ?><br>
+                                    Last Updated: <?php echo $latest_update ? date('d-m-Y H:i:s', strtotime($latest_update)) : 'No feedback yet'; ?>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
