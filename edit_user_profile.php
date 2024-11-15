@@ -133,12 +133,18 @@ if(isset($_POST['submit'])) {
                 $stmt->bind_param("ss", $proposed_username, $current_username);
                 $stmt->execute();
                 
-                // Update username in Enquiry table
+                // Update username in Contribute table
                 $update_enquiry = "UPDATE contribute SET Username = ? WHERE Username = ?";
                 $stmt = $conn->prepare($update_enquiry);
                 $stmt->bind_param("ss", $proposed_username, $current_username);
                 $stmt->execute();
                 
+                // Update username in Contribute table
+                $update_enquiry = "UPDATE enquiry SET Username = ? WHERE Username = ?";
+                $stmt = $conn->prepare($update_enquiry);
+                $stmt->bind_param("ss", $proposed_username, $current_username);
+                $stmt->execute();
+
                 // If all queries successful, commit transaction
                 mysqli_commit($conn);
                 
