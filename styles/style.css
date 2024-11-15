@@ -8154,6 +8154,7 @@ button.contribute-btn:hover {
     padding: 20px;
     margin: 20px 0;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    overflow-x: auto;
 }
 
 h3 {
@@ -8163,14 +8164,16 @@ h3 {
 
 .profile-tables {
     width: 100%;
+    max-width: 800px;
     border-collapse: collapse;
-    margin-top: 10px;
+    margin: 10px auto;
 }
 
 .profile-tables th, .profile-tables td {
     padding: 12px;
     text-align: left;
     border: 1px solid #4CAF50; /* Green border */
+    word-wrap: break-word;
 }
 
 .profile-tables th {
@@ -8186,6 +8189,17 @@ h3 {
     border-radius: 5px;
     cursor: pointer;
     transition: background-color 0.3s;
+}
+
+@media (max-width: 600px) {
+    .profile-tables {
+        width: 100%; /* Full width on small screens */
+    }
+
+    .profile-tables th, .profile-tables td {
+        font-size: 14px; /* Smaller font size */
+        padding: 8px; /* Less padding */
+    }
 }
 
 .delete-btn:hover {
