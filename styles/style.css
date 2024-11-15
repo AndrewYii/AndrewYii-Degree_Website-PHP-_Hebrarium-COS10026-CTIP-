@@ -8148,18 +8148,48 @@ button.contribute-btn:hover {
     margin-bottom: 10px;
 }
 
+.contribution-container {
+    background-color: #ddf5e1; /* Light green background */
+    border-radius: 10px;
+    padding: 20px;
+    margin: 20px 0;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+h3 {
+    text-align: center;
+    color: #2ECC71; /* Darker green for headings */
+}
+
 .profile-tables {
     width: 100%;
-    max-width: 800px;
-    margin: 0 auto;
     border-collapse: collapse;
-    border-spacing: 0;
+    margin-top: 10px;
 }
 
 .profile-tables th, .profile-tables td {
-    padding: 10px;
+    padding: 12px;
     text-align: left;
-    border: 1px solid #ddd;
+    border: 1px solid #4CAF50; /* Green border */
+}
+
+.profile-tables th {
+    background-color: #4CAF50; /* Green header */
+    color: white;
+}
+
+.delete-btn {
+    background-color: #e74c3c; /* Red for delete button */
+    color: white;
+    border: none;
+    padding: 10px 15px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.delete-btn:hover {
+    background-color: #c0392b; /* Darker red on hover */
 }
 /* view_feedback.php 12.11 */
 
