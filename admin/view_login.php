@@ -129,15 +129,13 @@
         exit();
     }
 
-    // Add this message check and display
     if (isset($_SESSION['message'])) {
         $messageClass = strpos($_SESSION['message'], 'Error') !== false ? 'error-message' : 'success-message';
         echo "<div class='admin-message {$messageClass}'>" . $_SESSION['message'] . "</div>";
-        unset($_SESSION['message']); // Clear the message after displaying
+        unset($_SESSION['message']); 
     }
     ?>
 
-    <!-- Logout HTML moved here -->
     <input type='checkbox' id='logoutCheckbox'>
     <div class='logout-background'>
         <div class='logout-content'>
@@ -147,7 +145,6 @@
         </div>
     </div>
 
-    <!-- Rest of your existing code -->
     <input type="checkbox" id="nav-toggle">
     <div class="sidebar">
         <p class="logo_admin">
@@ -161,14 +158,15 @@
 
         <div class="sidebar-menu">
             <ul>
-                <li><a href="view_register.php"><img src="../images/register_icon.png" alt="Register" class="register-sidebar-icon"><span>Register</span></a></li>
-                <li><a href="view_login.php" class="active"><img src="../images/login_icon.png" alt="Login" class="login-sidebar-icon"><span>Login</span></a></li>
-                <li><a href="view_contribute.php"><img src="../images/contribute_icon.png" alt="contribute" class="contribute-sidebar-icon"><span>Contribute</span></a></li>
-                <li><a href="view_enquiry.php"><img src="../images/enquiry_icon.png" alt="enquiry" class="enquiry-sidebar-icon"><span>Enquiries</span></a></li>
-                <li><a href="view_pre_contribute.php"><img src="../images/pre_contribute_icon.png" alt="pre-contribute" class="pre-contribute-sidebar-icon"><span>Pre-Contribute</span></a></li>
-                <li><a href="view_comments.php"><img src="../images/comments_icon.png" alt="comments" class="comments-sidebar-icon"><span>Comments</span></a></li>
-                <li><a href="view_feedback.php"><img src="../images/feedback_icon.png" alt="feedback" class="feedback-sidebar-icon"><span>Feedback</span></a></li>
+                <li><a href="view_register.php" class="admin-register-link"><div class="register-icon-text"><img src="../images/register_icon.png" alt="Register" class="register-sidebar-icon"><span>Register</span></div></a></li>
+                <li><a href="view_login.php" class="active"><img src="../images/login_icon.png" alt="Login" class="login-sidebar-icon-main"><span>Login</span></a></li>
+                <li><a href="view_contribute.php" class="admin-register-link"><img src="../images/contribute_icon.png" alt="contribute" class="contribute-sidebar-icon"><span>Contribute</span></a></li>
+                <li><a href="view_enquiry.php" class="admin-register-link"><img src="../images/enquiry_icon.png" alt="enquiry" class="enquiry-sidebar-icon"><span>Enquiries</span></a></li>
+                <li><a href="view_pre_contribute.php" class="admin-register-link"><img src="../images/pre_contribute_icon.png" alt="pre-contribute" class="pre-contribute-sidebar-icon"><span>Pre-Contribute</span></a></li>
+                <li><a href="view_comments.php" class="admin-register-link"><img src="../images/comments_icon.png" alt="comments" class="comments-sidebar-icon"><span>Comments</span></a></li>
+                <li><a href="view_feedback.php" class="admin-register-link"><img src="../images/feedback_icon.png" alt="feedback" class="feedback-sidebar-icon"><span>Feedback</span></a></li>
                 <label for='logoutCheckbox' class='admin-logout-button'>Logout</label>
+                <label for='logoutCheckbox'><img src="../images/logout-icon.png" alt="Logout" class="admin-logout-icon"Logout></label>
             </ul>
         </div>
     </div>
@@ -200,18 +198,19 @@
         </header>
 
         <main>
-            <div class="recent-grid">
+        <div class="recent-grid">
                 <div class="projects">
                     <div class="card">
                         <div class="card-header">
                             <h3>Login Records</h3>
-                            <form method="post" action="<?php echo $_SERVER['PHP_SELF']; ?>">
-                                <button class="admin-print-button" name="generate_pdf">Print</button>
-                            </form>
-                            <form action="<?php echo $_SERVER['PHP_SELF']; ?>" method="post">
-                                <button type="submit" name="refresh_table">Refresh</button>
-                            </form>
+                                <form method="post" action="<?php echo $_SERVER['PHP_SELF']; ?>">
+                                    <button class="admin-print-button" name="generate_pdf">Print</button>
+                                </form>
+                                <form action="<?php echo $_SERVER['PHP_SELF']; ?>" method="post">
+                                    <button type="submit" name="refresh_table">Refresh</button>
+                                </form>
                         </div>
+
                     
                         <div class="card-body">
                             <table class="admin-table">
@@ -230,7 +229,6 @@
 
                                 $_SESSION['login_search'] = '';
                                 
-                                // Check if search is submitted
                                 if(isset($_POST['search']) && !empty($_POST['search'])) {
                                     $search = mysqli_real_escape_string($conn, $_POST['search']);
                                     $sql = "SELECT * FROM login WHERE Username LIKE '%$search%' ORDER BY Login_At DESC";

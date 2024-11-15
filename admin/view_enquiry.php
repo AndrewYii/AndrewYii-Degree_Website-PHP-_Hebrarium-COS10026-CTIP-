@@ -160,14 +160,15 @@
 
         <div class="sidebar-menu">
             <ul>
-                <li><a href="view_register.php"><img src="../images/register_icon.png" alt="Register" class="register-sidebar-icon"><span>Register</span></a></li>
-                <li><a href="view_login.php"><img src="../images/login_icon.png" alt="Login" class="login-sidebar-icon"><span>Login</span></a></li>
-                <li><a href="view_contribute.php"><img src="../images/contribute_icon.png" alt="contribute" class="contribute-sidebar-icon"><span>Contribute</span></a></li>
+            <li><a href="view_register.php" class="admin-register-link"><div class="register-icon-text"><img src="../images/register_icon.png" alt="Register" class="register-sidebar-icon"><span>Register</span></div></a></li>
+                <li><a href="view_login.php" class="admin-register-link"><div class="register-icon-text"><img src="../images/login_icon.png" alt="Login" class="login-sidebar-icon"><span>Login</span></div></a></li>
+                <li><a href="view_contribute.php" class="admin-register-link"><div class="register-icon-text"><img src="../images/contribute_icon.png" alt="contribute" class="contribute-sidebar-icon-main"><span>Contribute</span></div></a></li>
                 <li><a href="view_enquiry.php" class="active"><img src="../images/enquiry_icon.png" alt="enquiry" class="enquiry-sidebar-icon"><span>Enquiries</span></a></li>
-                <li><a href="view_pre_contribute.php"><img src="../images/pre_contribute_icon.png" alt="pre-contribute" class="pre-contribute-sidebar-icon"><span>Pre-Contribute</span></a></li>
-                <li><a href="view_comments.php"><img src="../images/comments_icon.png" alt="comments" class="comments-sidebar-icon"><span>Comments</span></a></li>
-                <li><a href="view_feedback.php"><img src="../images/feedback_icon.png" alt="feedback" class="feedback-sidebar-icon"><span>Feedback</span></a></li>
+                <li><a href="view_pre_contribute.php" class="admin-register-link"><div class="register-icon-text"><img src="../images/pre_contribute_icon.png" alt="pre-contribute" class="pre-contribute-sidebar-icon"><span>Pre-Contribute</span></div></a></li>
+                <li><a href="view_comments.php" class="admin-register-link"><div class="register-icon-text"><img src="../images/comments_icon.png" alt="comments" class="comments-sidebar-icon"><span>Comments</span></div></a></li>
+                <li><a href="view_feedback.php" class="admin-register-link"><div class="register-icon-text"><img src="../images/feedback_icon.png" alt="feedback" class="feedback-sidebar-icon"><span>Feedback</span></div></a></li>
                 <label for='logoutCheckbox' class='admin-logout-button'>Logout</label>
+                <label for='logoutCheckbox'><img src="../images/logout-icon.png" alt="Logout" class="admin-logout-icon"Logout></label>
             </ul>
         </div>
     </div>
@@ -217,10 +218,14 @@
                                 <thead>
                                     <tr>
                                         <th>ID</th>
+                                        <th>Status</th>
+                                        <th>Username</th>
                                         <th>Name</th>
                                         <th>Email</th>
                                         <th>Subject</th>
                                         <th class="description-column">Message</th>
+                                        <th class="description-column">Response</th>
+                                        <th>Upload Response</th>
                                         <th>Date Submitted</th>
                                         <th class="admin-delete-option">Action</th>
                                     </tr>
@@ -246,10 +251,71 @@
                                 ?>
                                     <tr>
                                         <td><?php echo $row["Enquiry_ID"]; ?></td>
+                                        <td><?php 
+                                        $currentStatus = $row['Status'];
+                                        echo "<form  action='".$_SERVER['PHP_SELF']."' method='post'>
+                                        <select name='Status' id='status' class='status-select'>
+                                            <option value='Unresolved' " . ($currentStatus == 'Unresolved' ? 'selected' : '') . " class='Unresolved'>Unresolved</option>
+                                            <option value='Pending' " . ($currentStatus == 'Pending' ? 'selected' : '') . " class='Pending'>Pending</option>
+                                            <option value='Solved' " . ($currentStatus == 'Solved' ? 'selected' : '') . " class='Solved'>Solved</option>
+                                        </select>
+                                        <input type='hidden' name='enquiry_id' value='{$row['Enquiry_ID']}'>
+                                        <input type='submit' value='Update Status'></form>"; 
+
+                                        if (isset($_POST['Status']) && isset($_POST['enquiry_id'])) {
+                                            $newStatus = mysqli_real_escape_string($conn, $_POST['Status']);
+                                            $enquiryId = mysqli_real_escape_string($conn, $_POST['enquiry_id']);
+                                            
+                                            $sql = "UPDATE enquiry SET Status = ? WHERE Enquiry_ID = ?";
+                                            $stmt = mysqli_prepare($conn, $sql);
+                                            mysqli_stmt_bind_param($stmt, "si", $newStatus, $enquiryId);
+                                            
+                                            if (mysqli_stmt_execute($stmt)) {
+                                                $_SESSION['message'] = 'Status updated successfully';
+                                            } else {
+                                                $_SESSION['message'] = 'Error updating status: ' . mysqli_error($conn);
+                                            }
+                                            
+                                            mysqli_stmt_close($stmt);
+                                        }
+                                        ?></td>
+                                        <td><?php echo $row["Username"]; ?></td>
                                         <td><?php echo $row["Name"]; ?></td>
                                         <td><?php echo $row["Email"]; ?></td>
                                         <td><?php echo $row["Subject"]; ?></td>
                                         <td class="description-column"><?php echo $row["Message"]; ?></td>
+                                        <td class="description-column"><?php echo $row["Response"]; 
+                                        $email = htmlspecialchars($row["Email"]);
+                                        echo "<a href='mailto:$email?subject=Response to Enquiry&body={$row['Response']}''>Update here</a>";
+                                        ?></td>
+                                        <td class="description-column"><?php 
+                                        $reference_comment = "comment_" . $row['Enquiry_ID'];
+                                        $email = $row["Email"]; // Create a unique name for the textarea
+                                        echo "
+                                                <form class='Response-Form' method='post' action='".$_SERVER['PHP_SELF']."'>
+                                                    <textarea placeholder='Enquiry Response' name='$reference_comment'></textarea>
+                                                    <input type='submit' value='Submit'>
+                                                </form>";
+
+                                                if (isset($_POST[$reference_comment])) {
+                                                    $response = mysqli_real_escape_string($conn, $_POST[$reference_comment]);
+                                                    $enquiry_id = $row['Enquiry_ID'];
+                                            
+                                                    // SQL query to update the enquiry response
+                                                    $sql = "UPDATE enquiry SET Response = ? WHERE Enquiry_ID = ?";
+                                                    $stmt = mysqli_prepare($conn, $sql);
+                                                    mysqli_stmt_bind_param($stmt, "si", $response, $enquiry_id);
+                                            
+                                                    if (mysqli_stmt_execute($stmt)) {
+                                                        $_SESSION['message'] = 'Response submitted successfully';
+                                                    } else {
+                                                        $_SESSION['message'] = 'Error submitting response: ' . mysqli_error($conn);
+                                                    }
+                                            
+                                                    mysqli_stmt_close($stmt);
+                                                }
+                                                ?>
+                                            </td>
                                         <td><?php echo $row["Enquiry_Created_At"]; ?></td>
                                         <td>
                                             <input type="checkbox" id="toggle-<?php echo $row['Enquiry_ID']; ?>" class="toggle-checkbox">

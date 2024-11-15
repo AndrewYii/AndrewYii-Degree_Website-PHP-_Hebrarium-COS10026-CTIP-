@@ -3028,7 +3028,6 @@ button.contribute-btn:hover {
     display: none;
 }
 
-
 #open-comment0:checked~ label .contributor-button-comments,#open-comment1:checked~ label .contributor-button-comments,#open-comment2:checked~ label .contributor-button-comments,#open-comment3:checked~ label .contributor-button-comments,#open-comment4:checked~ label .contributor-button-comments,#open-comment5:checked~ label .contributor-button-comments,#open-comment6:checked~ label .contributor-button-comments,#open-comment7:checked~ label .contributor-button-comments,#open-comment8:checked~ label .contributor-button-comments,#open-comment9:checked~ label .contributor-button-comments{
     display: none;
 }
@@ -3044,7 +3043,6 @@ button.contribute-btn:hover {
 }
 
 .contributor-card-comment-section textarea{
-    position: relative;
     right:30px;
     width: 128%;
     height: 150px; 
@@ -6822,7 +6820,7 @@ button.contribute-btn:hover {
     background-color: #2fa52f;
     color: #fff;
     position: absolute;
-    bottom: 20px;
+    top: 850px;
     left: 20px;
     border-radius: 4px;
     text-decoration: none;
@@ -6837,6 +6835,7 @@ button.contribute-btn:hover {
 
 .sidebar {
     width: 345px;
+    max-height: 1000px;
     position: fixed;
     left: 0;
     top: 0;
@@ -6844,6 +6843,8 @@ button.contribute-btn:hover {
     background-color: #228B22;    
     z-index: 100;
     transition: width 300ms;
+    overflow: hidden;
+    overflow-y: auto;
 }
 
 .sidebar-brand {
@@ -6859,6 +6860,7 @@ button.contribute-btn:hover {
 
 .sidebar-menu {
     margin-top: 1rem;
+
 }
 
 .sidebar-menu li {
@@ -6885,17 +6887,28 @@ button.contribute-btn:hover {
 
 .sidebar-menu a.active {
     background: #fff;
-    padding-top: 1rem;
-    padding-bottom: 1rem;
+    padding: 1rem;
     color: #228B22;
     border-radius: 30px 0 0 30px;
     text-decoration: none;
 }
 
-.sidebar-menu a span:first-child {
-    font-size: 1.5rem;
-    padding-right: 1rem;
+.sidebar::-webkit-scrollbar {
+    width: 8px; 
 }
+
+.sidebar::-webkit-scrollbar-track {
+    background: #f1f1f1; 
+}
+
+.sidebar::-webkit-scrollbar-thumb {
+    background: #888; 
+}
+
+.sidebar::-webkit-scrollbar-thumb:hover {
+    background: #555; 
+}
+
 
 .logo_admin a{
     text-decoration: none;
@@ -6951,8 +6964,39 @@ button.contribute-btn:hover {
     right: 5px;
 }
 
+.admin-register-link {
+    display: flex; 
+    align-items: center; 
+    padding: 1rem; 
+    background: transparent; 
+    border-radius: 30px; 
+    text-decoration: none; 
+    width: 350px;
+}
+
+.admin-register-link:hover {
+    background: rgba(211, 211, 211, 0.7);
+    color: white; 
+}
+
+.register-sidebar-icon-main {
+    width: 30px;
+    height: auto;
+    position: relative;
+    bottom: -5px;
+    right: 5px;
+}
+
 .login-sidebar-icon{
-    width: 40px;
+    width: 30px;
+    height: auto;
+    position: relative;
+    bottom: -12px;
+    right: 10px;
+}
+
+.login-sidebar-icon-main{
+    width: 30px;
     height: auto;
     position: relative;
     bottom: -12px;
@@ -6967,12 +7011,37 @@ button.contribute-btn:hover {
     right: 5px;
 }
 
+.contribute-sidebar-icon-main{
+    width: 30px;
+    height: auto;
+    position: relative;
+    bottom: -5px;
+    right: 5px;
+}
+
 .enquiry-sidebar-icon{
     width: 30px;
     height: auto;
     position: relative;
     bottom: -5px;
     right: 5px;
+}
+
+.enquiry-sidebar-icon-main{
+    width: 30px;
+    height: auto;
+    position: relative;
+    bottom: -5px;
+    right: 5px;
+}
+
+.admin-logout-icon{
+    width: 40px;
+    height: auto;
+    position: relative;
+    bottom: -4px;
+    left: 6px;
+    visibility: hidden;
 }
 
 .card-header form{
@@ -6996,6 +7065,14 @@ button.contribute-btn:hover {
     right: 5px;
 }
 
+.pre-contribute-sidebar-icon-main{
+    width: 30px;
+    height: auto;
+    position: relative;
+    bottom: -10px;
+    right: 5px;
+}
+
 .comments-sidebar-icon{
     width: 30px;
     height: auto;
@@ -7004,7 +7081,23 @@ button.contribute-btn:hover {
     right: 7px;
 }
 
+.comments-sidebar-icon-main{
+    width: 30px;
+    height: auto;
+    position: relative;
+    bottom: -8px;
+    right: 7px;
+}
+
 .feedback-sidebar-icon{
+    width: 30px;
+    height: auto;
+    position: relative;
+    bottom: -8px;
+    right: 7px;
+}
+
+.feedback-sidebar-icon-main{
     width: 30px;
     height: auto;
     position: relative;
@@ -7369,20 +7462,13 @@ button.contribute-btn:hover {
     position: relative;
 }
 
+@media (max-width: 1440px) { 
+    .card .card-header .admin-print-button {
+        margin-left: 450px;
+    }
+}
+
 @media only screen and (max-width: 1200px) {
-    .sidebar {
-        width: 70px;
-    }
-    
-    .sidebar .sidebar-brand,
-    .sidebar li {
-        padding-left: 1rem;
-        text-align: center;
-    }
-    
-    .sidebar li a{
-        padding-left: 0rem;
-    }
     
     .sidebar .sidebar-brand h2 span:last-child,
     .sidebar li a span:last-child{
@@ -7398,20 +7484,6 @@ button.contribute-btn:hover {
         width: calc(100% - 70px);
         transition: left 0.3s ease, width 0.3s ease;
     }
-    
-    .sidebar:hover {
-        width: 345px;
-    }
-    
-    .sidebar:hover ~ .main-content .admin-header {
-        left: 345px;
-        width: calc(100% - 345px);
-    }
-
-    .sidebar:hover ~ .main-content-login .admin-header {
-        left: 345px;
-        width: calc(100% - 345px);
-    }
 
     .sidebar .logo_admin img {
         width: 45px;  
@@ -7419,26 +7491,37 @@ button.contribute-btn:hover {
         transition: width 0.3s ease;  
     }
         
-    .sidebar:hover .logo_admin img {
-        width: 50px;  
-    }
-        
     .sidebar .admin_logo_text {
         display: none;
-    }
-    
-    .sidebar:hover .admin_logo_text {
-        display: inline;
-    }
-
-    .sidebar:hover .admin-logout-button{
-        display: inline;
     }
 
     .admin-logout-button{
         display: none;
     }
+
+    .admin-logout-icon{
+        width: 40px;
+        height: auto;
+        position: relative;
+        bottom: -4px;
+        left: 15px;
+        visibility: visible;
+    }
+
+    .admin-logout-icon:hover {
+        background-color: #28A745;
+        border-radius: 10px;
+    }
+
+    .card .card-header .admin-print-button {
+        margin-left: 350px;
+    }
     
+    .card .card-header form {
+        display: inline-block;
+        margin-left: 10px;
+    }
+
     .main-content {
         margin-left: 70px;
     }
@@ -7455,26 +7538,6 @@ button.contribute-btn:hover {
     .main-content-login header {
         width: calc(100% - 70px);
         left: 70px;
-    }
-
-    .sidebar:hover {
-        width: 345px;
-        z-index: 200;
-    }
-    
-    .sidebar:hover .sidebar-brand,
-    .sidebar:hover li {
-        padding-left: 2rem;
-        text-align: left;
-    }
-    
-    .sidebar:hover li a{
-        padding-left: 1rem;
-    }
-    
-    .sidebar:hover .sidebar-brand h2 span:last-child,
-    .sidebar:hover li a span:last-child{
-        display: inline;
     }
 }
 
@@ -7888,14 +7951,6 @@ button.contribute-btn:hover {
     color: white;
 }
 
-.confirm-logout:hover {
-    background-color: #c82333;
-}
-
-.cancel-logout:hover {
-    background-color: #5a6268;
-}
-
 .enquiry-form img {
     width: 200px;
     height: auto;
@@ -8080,6 +8135,7 @@ button.contribute-btn:hover {
     overflow: hidden;
     box-sizing: border-box;
     background-color: #fff;
+    margin: 20px;
 }
 
 .profile-text{
@@ -8156,4 +8212,77 @@ button.contribute-btn:hover {
     color: #666;
     font-size: 16px; /* Added font size */
     line-height: 1.5; /* Added line height */
+}
+
+.Response-Form{
+    border:none;
+    font-size: 16px;
+    color:#fff;
+    padding: 8px 16px;
+    border-radius: 6px;
+    margin: 14px;
+    display: block;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.Response-Form input[type="submit"]{
+    border:none;
+    font-size: 16px;
+    color:#fff;
+    padding: 8px 16px;
+    border-radius: 6px;
+    background-color: #588970;
+    margin: 4px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+
+.Response-Form textarea{
+    width: 80%;
+    height: 40px; 
+    padding: 10px; 
+    font-size: 16px; 
+    border: 1px solid #ccc; 
+    border-radius: 6px; 
+    box-sizing: border-box;
+}
+
+.status-select{
+    padding: 12px;
+    border: 1px solid;
+    border-radius: 4px;
+    box-sizing: border-box;
+    transition: border-color 0.4s ease, box-shadow 0.4s ease;
+    display: block;
+}
+
+.status-select option:hover{
+    background-color: var(--select-bg, lightgray);
+    display: none;
+}
+
+#status option[value="Unresolved"]:checked {
+--select-bg: red;
+}
+
+#status option[value="Pending"]:checked {
+--select-bg: yellow;
+}
+
+#status option[value="Solved"]:checked {
+--select-bg: green;
+}
+
+.Unresolved{
+    background-color: red;
+}
+
+.Pending{
+    background-color: yellow;
+}
+
+.Solved{
+    background-color: green;
 }

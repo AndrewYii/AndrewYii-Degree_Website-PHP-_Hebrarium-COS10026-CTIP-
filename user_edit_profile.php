@@ -42,11 +42,9 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST['update_username'])) {
     $update_stmt->bind_param("si", $new_username, $register_id);
     
     if ($update_stmt->execute()) {
-        echo "<script>alert('Username updated successfully!');
-        window.location.href='user_view_enquiry.php';</script>";
+        echo "";
     } else {
-        echo "<script>alert('Error updating username.');
-        window.location.href='user_view_enquiry.php';</script>";
+        echo "";
     }
     
     $check_stmt->close();
