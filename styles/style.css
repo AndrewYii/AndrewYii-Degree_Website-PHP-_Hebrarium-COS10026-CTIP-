@@ -8147,64 +8147,6 @@ button.contribute-btn:hover {
 .profile-text1 {
     margin-bottom: 10px;
 }
-
-.contribution-container {
-    background-color: #ddf5e1; /* Light green background */
-    border-radius: 10px;
-    padding: 20px;
-    margin: 20px 0;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    overflow-x: auto;
-}
-
-h3 {
-    text-align: center;
-    color: #2ECC71; /* Darker green for headings */
-}
-
-.profile-tables {
-    width: 100%;
-    max-width: 800px;
-    border-collapse: collapse;
-    margin: 10px auto;
-}
-
-.profile-tables th, .profile-tables td {
-    padding: 12px;
-    text-align: left;
-    border: 1px solid #4CAF50; /* Green border */
-    word-wrap: break-word;
-}
-
-.profile-tables th {
-    background-color: #4CAF50; /* Green header */
-    color: white;
-}
-
-.delete-btn {
-    background-color: #e74c3c; /* Red for delete button */
-    color: white;
-    border: none;
-    padding: 10px 15px;
-    border-radius: 5px;
-    cursor: pointer;
-    transition: background-color 0.3s;
-}
-
-@media (max-width: 600px) {
-    .profile-tables {
-        width: 100%; /* Full width on small screens */
-    }
-
-    .profile-tables th, .profile-tables td {
-        font-size: 14px; /* Smaller font size */
-        padding: 8px; /* Less padding */
-    }
-}
-
-.delete-btn:hover {
-    background-color: #c0392b; /* Darker red on hover */
-}
 /* view_feedback.php 12.11 */
 
 .card-body {

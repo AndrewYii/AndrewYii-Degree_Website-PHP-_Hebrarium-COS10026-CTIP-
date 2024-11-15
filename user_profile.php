@@ -79,23 +79,46 @@
                     if ($plant_result && mysqli_num_rows($plant_result) > 0) {
                         $contribution_count = 1;
                             while ($row = mysqli_fetch_assoc($plant_result)) {
-                                echo "<div class='contribution-container'>";
-                                echo "<h3 class='user_h3'>Contribution #" . $contribution_count . "</h3>";
+                                echo "<h3>Contribution #" . $contribution_count . "</h3>";
                                 echo "<form method='POST' onsubmit='return confirm(\"Are you sure you want to delete this contribution?\");'>";
                                 echo "<input type='hidden' name='contribution_id' value='" . $row['Contribute_ID'] . "'>";
                                 echo "<button type='submit' name='delete_contribution' class='delete-btn'>Delete Contribution</button>";
                                 echo "</form>";
-                                echo "<table class='profile-tables'>";
-                                echo "<tr><th>Contribution</th><th>Details</th></tr>";
-                                echo "<tr><td>Plant's Leaf</td><td><img src='" . htmlspecialchars($row['Plant_Leaf_Photo']) . "' alt='Plant Leaf Photo' class='enquiry-img'></td></tr>";
-                                echo "<tr><td>Herbarium Species</td><td><img src='" . htmlspecialchars($row['Plant_Herbarium_Photo']) . "' alt='Plant Herbarium Photo' class='enquiry-img'></td></tr>";
-                                echo "<tr><td>Plant's Name</td><td>" . htmlspecialchars($row['Plant_Name']) . "</td></tr>";
-                                echo "<tr><td>Plant's Family</td><td>" . htmlspecialchars($row['Plant_Family']) . "</td></tr>";
-                                echo "<tr><td>Plant's Genus</td><td>" . htmlspecialchars($row['Plant_Genus']) . "</td></tr>";
-                                echo "<tr><td>Plant's Species</td><td>" . htmlspecialchars($row['Plant_Species']) . "</td></tr>";
-                                echo "<tr><td>Description</td><td>" . htmlspecialchars($row['Description_Contribute']) . "</td></tr>";
-                                echo "</table><br>";
-                                echo "</div>";
+                                echo "<table class='profile-tables' border='1'>
+                                <tr>
+                                    <th>Contribution</th>   
+                                    <th>Details</th>
+                                </tr>
+                                <tr>
+                                    <td>Plant's Leaf</td>
+                                    <td><img src='" . htmlspecialchars($row['Plant_Leaf_Photo']) . "' alt='Plant Leaf Photo' class='enquiry-img'></td>
+                                </tr>
+                                <tr>
+                                    <td>Herbarium Species</td>
+                                    <td><img src='" . htmlspecialchars($row['Plant_Herbarium_Photo']) . "' alt='Plant Herbarium Photo' class='enquiry-img'></td>
+                                </tr>
+                                <tr>
+                                    <td>Plant's Name</td>
+                                    <td>" . htmlspecialchars($row['Plant_Name']) . "</td>
+                                </tr>
+                                <tr>
+                                    <td>Plant's Family</td>
+                                    <td>" . htmlspecialchars($row['Plant_Family']) . "</td>
+                                </tr>
+                                <tr>
+                                    <td>Plant's Genus</td>
+                                    <td>" . htmlspecialchars($row['Plant_Genus']) . "</td>
+                                </tr>
+                                <tr>
+                                    <td>Plant's Species</td>
+                                    <td>" . htmlspecialchars($row['Plant_Species']) . "</td>
+                                </tr>
+                                <tr>
+                                    <td>Description</td>
+                                    <td>" . htmlspecialchars($row['Description_Contribute']) . "</td>
+                                </tr>
+                            </table>
+                            <br>";
                                 $contribution_count++;
                             }
                             } else {
@@ -117,7 +140,7 @@
                     if ($enquiry_result && mysqli_num_rows($enquiry_result) > 0) {
                         $enquiry_count = 1;
                         while ($row = mysqli_fetch_assoc($enquiry_result)) {
-                            echo "<h3 class='user_h3'>Enquiry #" . $enquiry_count . "</h3>";
+                            echo "<h3>Enquiry #" . $enquiry_count . "</h3>";
                             echo "<form method='POST'>";
                             echo "<input type='hidden' name='enquiry_id' value='" . $row['Enquiry_ID'] . "'>";
                             //echo "<label for='delete_enquiry' class='delete-btn'>Delete Enquiry</label>";
