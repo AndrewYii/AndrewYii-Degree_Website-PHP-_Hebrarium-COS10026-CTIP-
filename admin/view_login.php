@@ -129,15 +129,13 @@
         exit();
     }
 
-    // Add this message check and display
     if (isset($_SESSION['message'])) {
         $messageClass = strpos($_SESSION['message'], 'Error') !== false ? 'error-message' : 'success-message';
         echo "<div class='admin-message {$messageClass}'>" . $_SESSION['message'] . "</div>";
-        unset($_SESSION['message']); // Clear the message after displaying
+        unset($_SESSION['message']); 
     }
     ?>
 
-    <!-- Logout HTML moved here -->
     <input type='checkbox' id='logoutCheckbox'>
     <div class='logout-background'>
         <div class='logout-content'>
@@ -147,7 +145,6 @@
         </div>
     </div>
 
-    <!-- Rest of your existing code -->
     <input type="checkbox" id="nav-toggle">
     <div class="sidebar">
         <p class="logo_admin">
@@ -201,18 +198,19 @@
         </header>
 
         <main>
-            <div class="recent-grid">
+        <div class="recent-grid">
                 <div class="projects">
                     <div class="card">
                         <div class="card-header">
                             <h3>Login Records</h3>
-                            <form method="post" action="<?php echo $_SERVER['PHP_SELF']; ?>">
-                                <button class="admin-print-button" name="generate_pdf">Print</button>
-                            </form>
-                            <form action="<?php echo $_SERVER['PHP_SELF']; ?>" method="post">
-                                <button type="submit" name="refresh_table">Refresh</button>
-                            </form>
+                                <form method="post" action="<?php echo $_SERVER['PHP_SELF']; ?>">
+                                    <button class="admin-print-button" name="generate_pdf">Print</button>
+                                </form>
+                                <form action="<?php echo $_SERVER['PHP_SELF']; ?>" method="post">
+                                    <button type="submit" name="refresh_table">Refresh</button>
+                                </form>
                         </div>
+
                     
                         <div class="card-body">
                             <table class="admin-table">
@@ -231,7 +229,6 @@
 
                                 $_SESSION['login_search'] = '';
                                 
-                                // Check if search is submitted
                                 if(isset($_POST['search']) && !empty($_POST['search'])) {
                                     $search = mysqli_real_escape_string($conn, $_POST['search']);
                                     $sql = "SELECT * FROM login WHERE Username LIKE '%$search%' ORDER BY Login_At DESC";
