@@ -7462,6 +7462,12 @@ button.contribute-btn:hover {
     position: relative;
 }
 
+@media (max-width: 1440px) { 
+    .card .card-header .admin-print-button {
+        margin-left: 450px;
+    }
+}
+
 @media only screen and (max-width: 1200px) {
     
     .sidebar .sidebar-brand h2 span:last-child,
@@ -7507,8 +7513,8 @@ button.contribute-btn:hover {
         border-radius: 10px;
     }
 
-        .card .card-header .admin-print-button {
-        margin-left: 650px;
+    .card .card-header .admin-print-button {
+        margin-left: 350px;
     }
     
     .card .card-header form {
