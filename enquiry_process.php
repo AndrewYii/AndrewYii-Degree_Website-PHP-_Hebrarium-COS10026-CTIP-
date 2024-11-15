@@ -205,7 +205,7 @@
                         else if ($message !== ''){
                             echo "<h1 class='title_confirm'>THANK YOU !</h1>";
                             echo '<p class="confirm_words"><span class="success_words">Success</span>: ' . $message . 'We\'re excited to assist you and have started working on your request. You will receive a confirmation email shortly at our <a href="mailto:104386568@students.swinburne.edu.my">staff\'s email</a>. In the meantime, feel free to browse our latest updates, services, and resources to stay informed and inspired.</p>';
-                            echo '<a class="button_view_confirm" href="user_view_enquiry.php"> View Your Enquiry Details</a>';
+                            echo '<a class="button_view_confirm" href="user_view_enquiry.php" target="_blank"> View Your Enquiry Details</a>';
                         }
                         echo '<p class="small_word_confirm">If you have any further questions or need immediate assistance, please don\'t hesitate to reach out to our <a href="mailto:104386568@students.swinburne.edu.my">customer service team</a>.You will redirect back to the Enquiry Page within 3 seconds.</p>';
                     ?>

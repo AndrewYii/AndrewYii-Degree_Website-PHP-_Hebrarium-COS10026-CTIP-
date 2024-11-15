@@ -35,7 +35,7 @@
 
             <div class="enhancement-layout">
                 <div class="enhancement-welcoming">
-                    <h1 class="enhancement-heading">Our Enhancement</h1>
+                    <h1 class="enhancement-heading">Our Enhancement 2</h1>
                     <p class="enhancement-heading-description">
                         Here, you'll discover the enhancements we've made to our website.
                     </p>

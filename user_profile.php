@@ -130,8 +130,69 @@
                                     echo "";
                                 } else {
                                     echo "";
-                            }
                         }
+                    }
+                    
+                    $enquiry_sql = "SELECT * FROM Enquiry WHERE Username = '$current_user'";
+                    $enquiry_result = mysqli_query($conn, $enquiry_sql);
+                    
+                    if ($enquiry_result && mysqli_num_rows($enquiry_result) > 0) {
+                        $enquiry_count = 1;
+                        while ($row = mysqli_fetch_assoc($enquiry_result)) {
+                            echo "<h3>Enquiry #" . $enquiry_count . "</h3>";
+                            echo "<form method='POST'>";
+                            echo "<input type='hidden' name='enquiry_id' value='" . $row['Enquiry_ID'] . "'>";
+                            //echo "<label for='delete_enquiry' class='delete-btn'>Delete Enquiry</label>";
+                            echo "<button type='submit' name='delete_enquiry' class='delete-btn'><label for='delete_enquiry'>Delete Enquiry</label></button>";
+                            echo "<input type='checkbox' id='delete_enquiry' class='delete_enquiry_checkbox'>";
+                            echo "<div class='delete_enquiry_background'>
+                            <div class='delete_enquiry_content'>
+                                <p>Enquiry is successfully deleted</p>
+                                <a href='user_profile.php' class='confirm-logout'>Refresh Page</a>
+                            </div>
+                            </div>";
+                            echo "</form>";
+                            echo "<table border='1'>
+                            <tr>
+                                <th>Enquiry</th>   
+                                <th>Details</th>
+                            </tr>
+                            <tr>
+                                <td>Name</td>
+                                <td>" . htmlspecialchars($row['Name']) . "</td>
+                            </tr>
+                            <tr>
+                                <td>Email</td>
+                                <td>" . htmlspecialchars($row['Email']) . "</td>
+                            </tr>
+                            <tr>
+                                <td>Date</td>
+                                <td>" . htmlspecialchars($row['Enquiry_Created_At']) . "</td>
+                            </tr>
+                            <tr>
+                                <td>Subject</td>
+                                <td>" . htmlspecialchars($row['Subject']) . "</td>
+                            </tr>
+                            <tr>
+                                <td>Message</td>
+                                <td>" . htmlspecialchars($row['Message']) . "</td>
+                            </tr>
+                        </table>";
+                            $enquiry_count++;   
+                        }
+                    }
+
+                    if (isset($_POST['delete_enquiry'])) {
+                        $enquiry_id = $_POST['enquiry_id'];
+                        $delete_enquiry_sql = "DELETE FROM Enquiry WHERE Enquiry_ID = '$enquiry_id' AND Username = '$current_user'";
+                        if (mysqli_query($conn, $delete_enquiry_sql)) {
+                            echo "";//TODO: Pop up message
+                        } else {
+                            echo "";//TODO: Pop up message
+                        }
+                    }
+
+                    
                 ?>
                 <br>
             </div>
