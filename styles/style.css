@@ -7548,8 +7548,8 @@ button.contribute-btn:hover {
         display: none;
     }
 
-    .sidebar{
-        left: -100% !important;
+    .sidebar {
+        right: 100%; 
     }
 
     .admin-header h2 label{
@@ -7865,13 +7865,10 @@ button.contribute-btn:hover {
     z-index: 100;
 }
 
-/* Menu content z-index (around line 7084) */
 .menu-content {
-    /* ... existing styles ... */
     z-index: 1000;
 }
 
-/* Logout background z-index (around line 6624) */
 .logout-background {
     position: fixed;
     top: 0;
@@ -7882,23 +7879,20 @@ button.contribute-btn:hover {
     display: none;
     justify-content: center;
     align-items: center;
-    z-index: 9999;  /* Very high to cover everything */
+    z-index: 9999;  
 }
 
-/* Add this new style to ensure the logout content is above the overlay */
+
 .logout-content {
-    /* ... existing styles ... */
     position: relative;
-    z-index: 10000;  /* Higher than background */
+    z-index: 10000; 
 }
 
-/* Add this new style to ensure proper stacking */
 #logoutCheckbox:checked ~ .logout-background {
     display: flex;
     z-index: 9999;
 }
 
-/* Update the logout styles */
 .logout-background {
     position: fixed;
     top: 0;
@@ -7932,7 +7926,6 @@ button.contribute-btn:hover {
     display: flex;
 }
 
-/* Style the buttons */
 .confirm-logout,
 .cancel-logout {
     display: inline-block;
