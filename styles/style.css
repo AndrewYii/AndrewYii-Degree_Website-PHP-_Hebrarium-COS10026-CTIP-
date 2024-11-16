@@ -3043,6 +3043,7 @@ button.contribute-btn:hover {
 }
 
 .contributor-card-comment-section textarea{
+    position: relative;
     right:30px;
     width: 128%;
     height: 150px; 
