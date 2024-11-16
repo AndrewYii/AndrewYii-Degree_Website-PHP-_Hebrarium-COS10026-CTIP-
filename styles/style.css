@@ -3028,7 +3028,6 @@ button.contribute-btn:hover {
     display: none;
 }
 
-
 #open-comment0:checked~ label .contributor-button-comments,#open-comment1:checked~ label .contributor-button-comments,#open-comment2:checked~ label .contributor-button-comments,#open-comment3:checked~ label .contributor-button-comments,#open-comment4:checked~ label .contributor-button-comments,#open-comment5:checked~ label .contributor-button-comments,#open-comment6:checked~ label .contributor-button-comments,#open-comment7:checked~ label .contributor-button-comments,#open-comment8:checked~ label .contributor-button-comments,#open-comment9:checked~ label .contributor-button-comments{
     display: none;
 }
@@ -3044,7 +3043,6 @@ button.contribute-btn:hover {
 }
 
 .contributor-card-comment-section textarea{
-    position: relative;
     right:30px;
     width: 128%;
     height: 150px; 
@@ -8130,6 +8128,7 @@ button.contribute-btn:hover {
     overflow: hidden;
     box-sizing: border-box;
     background-color: #fff;
+    margin: 20px;
 }
 
 .profile-text{
@@ -8140,20 +8139,6 @@ button.contribute-btn:hover {
 
 .profile-text1 {
     margin-bottom: 10px;
-}
-
-.profile-tables {
-    width: 100%;
-    max-width: 800px;
-    margin: 0 auto;
-    border-collapse: collapse;
-    border-spacing: 0;
-}
-
-.profile-tables th, .profile-tables td {
-    padding: 10px;
-    text-align: left;
-    border: 1px solid #ddd;
 }
 /* view_feedback.php 12.11 */
 
@@ -8206,4 +8191,77 @@ button.contribute-btn:hover {
     color: #666;
     font-size: 16px; /* Added font size */
     line-height: 1.5; /* Added line height */
+}
+
+.Response-Form{
+    border:none;
+    font-size: 16px;
+    color:#fff;
+    padding: 8px 16px;
+    border-radius: 6px;
+    margin: 14px;
+    display: block;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.Response-Form input[type="submit"]{
+    border:none;
+    font-size: 16px;
+    color:#fff;
+    padding: 8px 16px;
+    border-radius: 6px;
+    background-color: #588970;
+    margin: 4px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+
+.Response-Form textarea{
+    width: 80%;
+    height: 40px; 
+    padding: 10px; 
+    font-size: 16px; 
+    border: 1px solid #ccc; 
+    border-radius: 6px; 
+    box-sizing: border-box;
+}
+
+.status-select{
+    padding: 12px;
+    border: 1px solid;
+    border-radius: 4px;
+    box-sizing: border-box;
+    transition: border-color 0.4s ease, box-shadow 0.4s ease;
+    display: block;
+}
+
+.status-select option:hover{
+    background-color: var(--select-bg, lightgray);
+    display: none;
+}
+
+#status option[value="Unresolved"]:checked {
+--select-bg: red;
+}
+
+#status option[value="Pending"]:checked {
+--select-bg: yellow;
+}
+
+#status option[value="Solved"]:checked {
+--select-bg: green;
+}
+
+.Unresolved{
+    background-color: red;
+}
+
+.Pending{
+    background-color: yellow;
+}
+
+.Solved{
+    background-color: green;
 }

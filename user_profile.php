@@ -51,6 +51,7 @@
             <?php include 'include/chatbot.php';?>
             
             <div class="enquiry-form">
+                <br>
                 <h1>User Profile</h1>
                 <br>
                 <?php
@@ -143,19 +144,12 @@
                             echo "<form method='POST'>";
                             echo "<input type='hidden' name='enquiry_id' value='" . $row['Enquiry_ID'] . "'>";
                             //echo "<label for='delete_enquiry' class='delete-btn'>Delete Enquiry</label>";
-                            echo "<button type='submit' name='delete_enquiry' class='delete-btn'><label for='delete_enquiry'>Delete Enquiry</label></button>";
-                            echo "<input type='checkbox' id='delete_enquiry' class='delete_enquiry_checkbox'>";
-                            echo "<div class='delete_enquiry_background'>
-                            <div class='delete_enquiry_content'>
-                                <p>Enquiry is successfully deleted</p>
-                                <a href='user_profile.php' class='confirm-logout'>Refresh Page</a>
-                            </div>
-                            </div>";
+                            echo "<a href='user_profile.php'><button type='submit' name='delete_enquiry' class='delete-btn'><label for='delete_enquiry'>Delete Enquiry</label></button></a>";
                             echo "</form>";
                             echo "<table border='1'>
                             <tr>
                                 <th>Enquiry</th>   
-                                <th>Details</th>
+                                <th>Details</th> 
                             </tr>
                             <tr>
                                 <td>Name</td>
