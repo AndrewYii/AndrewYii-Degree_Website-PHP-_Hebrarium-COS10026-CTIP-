@@ -7462,13 +7462,25 @@ button.contribute-btn:hover {
     position: relative;
 }
 
-@media (max-width: 1440px) { 
+@media (max-width: 1500px) { 
     .card .card-header .admin-print-button {
-        margin-left: 450px;
+        margin-left: 600px;  
     }
 }
 
-@media only screen and (max-width: 1200px) {
+@media (max-width: 1470px) { 
+    .card .card-header .admin-print-button {
+        margin-left: 600px;  
+    }
+}
+
+@media (max-width: 1440px) { 
+    .card .card-header .admin-print-button {
+        margin-left: 450px;  
+    }
+}
+
+@media only screen and (max-width: 1280px) {
     
     .sidebar .sidebar-brand h2 span:last-child,
     .sidebar li a span:last-child{
@@ -7514,7 +7526,7 @@ button.contribute-btn:hover {
     }
 
     .card .card-header .admin-print-button {
-        margin-left: 350px;
+        margin-left: 750px;
     }
     
     .card .card-header form {
@@ -7541,13 +7553,39 @@ button.contribute-btn:hover {
     }
 }
 
+@media (max-width: 1200px) { 
+.card .card-header .admin-print-button {
+    margin-left: 500px; 
+    }
+}
+
+@media (max-width: 1125px) { 
+    .card .card-header .admin-print-button {
+        margin-left: 600px; 
+    }
+}
+
+@media (max-width: 1050px) { 
+    .card .card-header .admin-print-button {
+        margin-left: 450px; 
+    }
+}
+
+@media (max-width: 970px) { 
+    .card .card-header .admin-print-button {
+        margin-left: 350px; 
+    }
+}
+
+@media (max-width: 850px) { 
+    .card .card-header .admin-print-button {
+        margin-left: 300px; 
+    }
+}
+
 @media only screen and (max-width: 768px) {
     .search-wrapper{
         display: none;
-    }
-
-    .sidebar {
-        right: 100%; 
     }
 
     .admin-header h2 label{
@@ -7562,8 +7600,30 @@ button.contribute-btn:hover {
         justify-content: center;
     }
 
+    .card .card-header .admin-print-button {
+        margin-left: 200px;
+    }
+
     .hamburger-icon{
         left: 0px;
+    }
+}
+
+@media (max-width: 684px) { 
+    .card .card-header .admin-print-button {
+        margin-left: 150px;
+    }
+}
+
+@media (max-width: 600px) { 
+    .card .card-header .admin-print-button {
+        margin-left: 70px;
+    }
+}
+
+@media (max-width: 512px) { 
+    .card .card-header .admin-print-button {
+        margin-left: 50px;
     }
 }
 
