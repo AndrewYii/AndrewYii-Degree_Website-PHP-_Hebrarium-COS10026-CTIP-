@@ -6530,7 +6530,7 @@ button.contribute-btn:hover {
 
 .title_confirm{
     font-size: 36px;
-    font-weight: 3000;
+    font-weight: 1000;
     text-align: center;
     padding-bottom: 5px;
 }
@@ -6620,7 +6620,7 @@ button.contribute-btn:hover {
 
 .snackbar:hover {
     transform: translateX(-50%) scale(1.05); 
-    transition: transform 0.3s ease; /
+    transition: transform 0.3s ease; 
 }
 
 /*Username Display*/
