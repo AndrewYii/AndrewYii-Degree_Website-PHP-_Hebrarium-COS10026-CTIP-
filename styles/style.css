@@ -8453,11 +8453,14 @@ button.contribute-btn:hover {
 .profile-table-enquiry th {
     padding: 12px; 
     text-align: left; 
-    font-weight: bold; 
+    font-weight: bold;
+    background-color: #228B22;
+    color: white; 
 }
 
 .profile-table-enquiry td {
     padding: 12px; 
+    word-wrap: break-word;
 }
 
 .profile-table-enquiry tr {
