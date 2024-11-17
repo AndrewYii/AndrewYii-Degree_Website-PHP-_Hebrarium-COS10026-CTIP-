@@ -8447,6 +8447,7 @@ button.contribute-btn:hover {
     border-collapse: separate;
     border-spacing: 0;
     font-size: 16px;
+    table-layout: fixed;
 }
 
 .profile-table-enquiry th {
