@@ -3043,6 +3043,7 @@ button.contribute-btn:hover {
 }
 
 .contributor-card-comment-section textarea{
+    position: relative;
     right:30px;
     width: 128%;
     height: 150px; 
@@ -6529,7 +6530,7 @@ button.contribute-btn:hover {
 
 .title_confirm{
     font-size: 36px;
-    font-weight: 3000;
+    font-weight: 1000;
     text-align: center;
     padding-bottom: 5px;
 }
@@ -6619,7 +6620,7 @@ button.contribute-btn:hover {
 
 .snackbar:hover {
     transform: translateX(-50%) scale(1.05); 
-    transition: transform 0.3s ease; /
+    transition: transform 0.3s ease; 
 }
 
 /*Username Display*/
@@ -7462,13 +7463,25 @@ button.contribute-btn:hover {
     position: relative;
 }
 
-@media (max-width: 1440px) { 
+@media (max-width: 1500px) { 
     .card .card-header .admin-print-button {
-        margin-left: 450px;
+        margin-left: 600px;  
     }
 }
 
-@media only screen and (max-width: 1200px) {
+@media (max-width: 1470px) { 
+    .card .card-header .admin-print-button {
+        margin-left: 600px;  
+    }
+}
+
+@media (max-width: 1440px) { 
+    .card .card-header .admin-print-button {
+        margin-left: 450px;  
+    }
+}
+
+@media only screen and (max-width: 1280px) {
     
     .sidebar .sidebar-brand h2 span:last-child,
     .sidebar li a span:last-child{
@@ -7514,7 +7527,7 @@ button.contribute-btn:hover {
     }
 
     .card .card-header .admin-print-button {
-        margin-left: 350px;
+        margin-left: 750px;
     }
     
     .card .card-header form {
@@ -7541,13 +7554,39 @@ button.contribute-btn:hover {
     }
 }
 
+@media (max-width: 1200px) { 
+.card .card-header .admin-print-button {
+    margin-left: 500px; 
+    }
+}
+
+@media (max-width: 1125px) { 
+    .card .card-header .admin-print-button {
+        margin-left: 600px; 
+    }
+}
+
+@media (max-width: 1050px) { 
+    .card .card-header .admin-print-button {
+        margin-left: 450px; 
+    }
+}
+
+@media (max-width: 970px) { 
+    .card .card-header .admin-print-button {
+        margin-left: 350px; 
+    }
+}
+
+@media (max-width: 850px) { 
+    .card .card-header .admin-print-button {
+        margin-left: 300px; 
+    }
+}
+
 @media only screen and (max-width: 768px) {
     .search-wrapper{
         display: none;
-    }
-
-    .sidebar{
-        left: -100% !important;
     }
 
     .admin-header h2 label{
@@ -7562,8 +7601,30 @@ button.contribute-btn:hover {
         justify-content: center;
     }
 
+    .card .card-header .admin-print-button {
+        margin-left: 200px;
+    }
+
     .hamburger-icon{
         left: 0px;
+    }
+}
+
+@media (max-width: 684px) { 
+    .card .card-header .admin-print-button {
+        margin-left: 150px;
+    }
+}
+
+@media (max-width: 600px) { 
+    .card .card-header .admin-print-button {
+        margin-left: 70px;
+    }
+}
+
+@media (max-width: 512px) { 
+    .card .card-header .admin-print-button {
+        margin-left: 50px;
     }
 }
 
@@ -7863,13 +7924,10 @@ button.contribute-btn:hover {
     z-index: 100;
 }
 
-/* Menu content z-index (around line 7084) */
 .menu-content {
-    /* ... existing styles ... */
     z-index: 1000;
 }
 
-/* Logout background z-index (around line 6624) */
 .logout-background {
     position: fixed;
     top: 0;
@@ -7880,23 +7938,20 @@ button.contribute-btn:hover {
     display: none;
     justify-content: center;
     align-items: center;
-    z-index: 9999;  /* Very high to cover everything */
+    z-index: 9999;  
 }
 
-/* Add this new style to ensure the logout content is above the overlay */
+
 .logout-content {
-    /* ... existing styles ... */
     position: relative;
-    z-index: 10000;  /* Higher than background */
+    z-index: 10000; 
 }
 
-/* Add this new style to ensure proper stacking */
 #logoutCheckbox:checked ~ .logout-background {
     display: flex;
     z-index: 9999;
 }
 
-/* Update the logout styles */
 .logout-background {
     position: fixed;
     top: 0;
@@ -7930,7 +7985,6 @@ button.contribute-btn:hover {
     display: flex;
 }
 
-/* Style the buttons */
 .confirm-logout,
 .cancel-logout {
     display: inline-block;
@@ -7970,7 +8024,7 @@ button.contribute-btn:hover {
 .profile-update-container {
     max-width: 800px;
     width: 90%;
-    margin: 20px auto;
+    margin: 150px auto;
     padding: 30px;
     background-color: white;
     border-radius: 15px;
@@ -8146,20 +8200,6 @@ button.contribute-btn:hover {
 
 .profile-text1 {
     margin-bottom: 10px;
-}
-
-.profile-tables {
-    width: 100%;
-    max-width: 800px;
-    margin: 0 auto;
-    border-collapse: collapse;
-    border-spacing: 0;
-}
-
-.profile-tables th, .profile-tables td {
-    padding: 10px;
-    text-align: left;
-    border: 1px solid #ddd;
 }
 /* view_feedback.php 12.11 */
 

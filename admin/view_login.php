@@ -120,7 +120,6 @@
 
 <body>
     <?php 
-    session_start(); 
     include ('../database/connection.php');
     include ('../database/database.php');
 
