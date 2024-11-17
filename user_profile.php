@@ -66,34 +66,64 @@
                 // Output the image tag
                 echo "<img src='" . $profilePic . "' alt='Profile Picture' class='user-profile'>";
                 ?>
-                <p class="profile-text">Name: <?php echo isset($user_data['Name']) ? $user_data['Name'] : 'Not set'; ?></p>
-                <p class="profile-text1">Email: <?php echo isset($user_data['Email']) ? $user_data['Email'] : 'Not set'; ?></p>
+                <table class="profile-table-user">
+                    <tr class="odd-row5">
+                        <th>Name</th>
+                        <td><?php echo isset($user_data['Name']) ? $user_data['Name'] : 'Not set'; ?></td>                       
+                    </tr>
+                    <tr class="even-row5">
+                        <th>Phone Number</th>
+                        <td><?php echo isset($user_data['PhoneNumber']) ? $user_data['PhoneNumber'] : 'Not set'; ?></td>
+                    </tr>
+                    <tr class="odd-row5">
+                        <th>Email</th>
+                        <td><?php echo isset($user_data['Email']) ? $user_data['Email'] : 'Not set'; ?></td>
+                    </tr>
+                    <tr>
+                        <?php
+                            if (isset($user_data['Street']) && isset($user_data['City']) && isset($user_data['Postcode']) && isset($user_data['State'])) {
+                                $address = $user_data['Street'] . ', ' . $user_data['City'] . ', ' . $user_data['Postcode'] . ', ' . $user_data['State'];
+                            } else {
+                                $address = 'Not set';
+                            }
+                            echo "<th>Address</th>";
+                            echo "<td>" . $address . "</td>";
+                        ?>
+                    </tr>
+                </table>
                 <?php
-                    echo "<a href='edit_user_profile.php'><button>Edit Profile</button></a>";
+                    echo "<div class='right-align-button'><a href='edit_user_profile.php'><button class='edit-user-button'>Edit Profile</button></a></div>";
                 ?>
+                <input type="radio" id="contribution" name="profile" checked="checked">
+                <input type="radio" id="enquiry" name="profile">
+                <ul class="profile-nav">
+                    <li id="contribution-section"><label for="contribution">Contibution</label></li>
+                    <li>|</li>
+                    <li id="enquiry-section"><label for="enquiry">Enquiry</label></li>   
+                </ul>
                 <?php
                     // Query to get plant contributions for current user
                     $plant_sql = "SELECT * FROM contribute WHERE username = '$current_user'";
                     $plant_result = mysqli_query($conn, $plant_sql);
-
+                    echo "<div class='profile-contribution'>";
                     if ($plant_result && mysqli_num_rows($plant_result) > 0) {
                         $contribution_count = 1;
                             while ($row = mysqli_fetch_assoc($plant_result)) {
                                 echo "<h3>Contribution #" . $contribution_count . "</h3>";
                                 echo "<form method='POST' onsubmit='return confirm(\"Are you sure you want to delete this contribution?\");'>";
                                 echo "<input type='hidden' name='contribution_id' value='" . $row['Contribute_ID'] . "'>";
-                                echo "<button type='submit' name='delete_contribution' class='delete-btn'>Delete Contribution</button>";
+                                echo "<div class='right-align-button2'><button type='submit' name='delete_contribution' class='edit-user-button'>Delete Contribution</button></div>";
                                 echo "</form>";
-                                echo "<table class='profile-tables' border='1'>
-                                <tr>
+                                echo "<table class='profile-table-enquiry'>
+                                <tr class='odd-row5'>
                                     <th>Contribution</th>   
                                     <th>Details</th>
                                 </tr>
-                                <tr>
+                                <tr >
                                     <td>Plant's Leaf</td>
                                     <td><img src='" . htmlspecialchars($row['Plant_Leaf_Photo']) . "' alt='Plant Leaf Photo' class='enquiry-img'></td>
                                 </tr>
-                                <tr>
+                                <tr class='odd-row5'>
                                     <td>Herbarium Species</td>
                                     <td><img src='" . htmlspecialchars($row['Plant_Herbarium_Photo']) . "' alt='Plant Herbarium Photo' class='enquiry-img'></td>
                                 </tr>
@@ -101,7 +131,7 @@
                                     <td>Plant's Name</td>
                                     <td>" . htmlspecialchars($row['Plant_Name']) . "</td>
                                 </tr>
-                                <tr>
+                                <tr class='odd-row5'>
                                     <td>Plant's Family</td>
                                     <td>" . htmlspecialchars($row['Plant_Family']) . "</td>
                                 </tr>
@@ -109,7 +139,7 @@
                                     <td>Plant's Genus</td>
                                     <td>" . htmlspecialchars($row['Plant_Genus']) . "</td>
                                 </tr>
-                                <tr>
+                                <tr class='odd-row5'>
                                     <td>Plant's Species</td>
                                     <td>" . htmlspecialchars($row['Plant_Species']) . "</td>
                                 </tr>
@@ -133,21 +163,22 @@
                                     echo "";
                         }
                     }
-                    
+                    echo "</div>";
+
                     $enquiry_sql = "SELECT * FROM Enquiry WHERE Username = '$current_user'";
                     $enquiry_result = mysqli_query($conn, $enquiry_sql);
                     
+                    echo "<div class='profile-enquiry'>";
                     if ($enquiry_result && mysqli_num_rows($enquiry_result) > 0) {
                         $enquiry_count = 1;
                         while ($row = mysqli_fetch_assoc($enquiry_result)) {
                             echo "<h3>Enquiry #" . $enquiry_count . "</h3>";
                             echo "<form method='POST'>";
                             echo "<input type='hidden' name='enquiry_id' value='" . $row['Enquiry_ID'] . "'>";
-                            //echo "<label for='delete_enquiry' class='delete-btn'>Delete Enquiry</label>";
-                            echo "<a href='user_profile.php'><button type='submit' name='delete_enquiry' class='delete-btn'><label for='delete_enquiry'>Delete Enquiry</label></button></a>";
+                            echo "<div class='right-align-button2'><a href='user_profile.php'><button type='submit' name='delete_enquiry' class='edit-user-button'><label for='delete_enquiry'>Delete Enquiry</label></button></a></div>";
                             echo "</form>";
-                            echo "<table border='1'>
-                            <tr>
+                            echo "<table class='profile-table-enquiry'>
+                            <tr class='odd-row5'>
                                 <th>Enquiry</th>   
                                 <th>Details</th> 
                             </tr>
@@ -155,7 +186,7 @@
                                 <td>Name</td>
                                 <td>" . htmlspecialchars($row['Name']) . "</td>
                             </tr>
-                            <tr>
+                            <tr class='odd-row5'>
                                 <td>Email</td>
                                 <td>" . htmlspecialchars($row['Email']) . "</td>
                             </tr>
@@ -163,7 +194,7 @@
                                 <td>Date</td>
                                 <td>" . htmlspecialchars($row['Enquiry_Created_At']) . "</td>
                             </tr>
-                            <tr>
+                            <tr class='odd-row5'>
                                 <td>Subject</td>
                                 <td>" . htmlspecialchars($row['Subject']) . "</td>
                             </tr>
@@ -171,11 +202,15 @@
                                 <td>Message</td>
                                 <td>" . htmlspecialchars($row['Message']) . "</td>
                             </tr>
+                            <tr class='odd-row5'>
+                                <td>Response</td>
+                                <td>" . htmlspecialchars($row['Response']) . "</td>
+                            </tr>
                         </table>";
                             $enquiry_count++;   
                         }
                     }
-
+                    echo "</div>";
                     if (isset($_POST['delete_enquiry'])) {
                         $enquiry_id = $_POST['enquiry_id'];
                         $delete_enquiry_sql = "DELETE FROM Enquiry WHERE Enquiry_ID = '$enquiry_id' AND Username = '$current_user'";

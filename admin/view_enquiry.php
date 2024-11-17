@@ -299,6 +299,8 @@
                                         <td class="description-column"><?php echo $row["Message"]; ?></td>
                                         <td class="description-column"><?php echo $row["Response"]; 
                                         $email = htmlspecialchars($row["Email"]);
+                                        echo "<br>";
+                                        echo "<br>";
                                         echo "<a href='mailto:$email?subject=Response to Enquiry&body={$row['Response']}'' class='response-mail'>Send Email</a>";
                                         ?></td>
                                         <td class="description-column"><?php 

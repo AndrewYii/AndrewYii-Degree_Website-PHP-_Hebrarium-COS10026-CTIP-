@@ -8341,14 +8341,137 @@ button.contribute-btn:hover {
     transition: background-color 0.3s; /* Smooth transition for hover effect */
 }
 
-/* .Unresolved{
-    background-color: red;
+#contribution:not(:checked) + input + ul + .profile-contribution, #enquiry:not(:checked) + ul + .profile-contribution + .profile-enquiry{
+    display: none;
 }
 
-.Pending{
-    background-color: yellow;
+#contribution:checked + input  + .profile-contribution {
+    display: flex;
 }
 
-.Solved{
-    background-color: green;
-} */
+#enquiry:checked + .profile-enquiry {
+    display: flex;
+}
+
+#contribution:checked + input + ul #contribution-section, #enquiry:checked + ul #enquiry-section{
+    text-decoration: underline;
+    transition: color 0.3s ease, text-decoration 0.3s ease;
+}
+
+.profile-contribution {
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    margin-top: 20px;
+}
+
+.profile-enquiry {
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    margin-top: 20px;
+}
+
+#contribution{
+    display: none;
+}
+
+#enquiry{
+    display: none;
+}
+
+.profile-nav{
+    border: 1px solid darkgreen;
+    padding: 1.04vw;
+    border-radius: 15px;
+    background-color: #228B22;
+    list-style: none;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.profile-nav li{
+    padding: 0.05vw;
+    font-size: 2.8vh;
+    color: #fff;
+    margin: 0 1vw;
+    z-index: 11;
+}
+
+.profile-table-user{
+    margin: 0 auto;
+    width: 70%;
+    border-collapse: separate;
+    border-spacing: 0;
+    font-size: 16px;
+}
+
+.profile-table-user th {
+    padding: 12px; 
+    text-align: left; 
+    font-weight: bold; 
+}
+
+.profile-table-user td {
+    padding: 12px; 
+}
+
+.profile-table-user tr {
+    transition: transform 0.3s ease; 
+}
+
+.profile-table-user tr:hover {
+    transform: scale(1.05);
+}
+
+.odd-row5{
+    background-color: lightgray;
+}
+
+.right-align-button {
+    margin: 20px;
+    width: 70%;
+    text-align: right;
+}
+
+.right-align-button2 {
+    margin: 20px;
+    width: 100%;
+    text-align: right;
+}
+
+.profile-table-enquiry{
+    margin: 0 auto;
+    width: 85%;
+    border-collapse: separate;
+    border-spacing: 0;
+    font-size: 16px;
+}
+
+.profile-table-enquiry th {
+    padding: 12px; 
+    text-align: left; 
+    font-weight: bold; 
+}
+
+.profile-table-enquiry td {
+    padding: 12px; 
+}
+
+.profile-table-enquiry tr {
+    transition: transform 0.3s ease; 
+}
+
+.profile-table-enquiry tr:hover {
+    transform: scale(1.05);
+}
+
+.profile-enquiry-select{
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #4CAF50;
+    border-radius: 8px;
+    box-sizing: border-box;
+    transition: border-color 0.4s ease, box-shadow 0.4s ease;
+}
