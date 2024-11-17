@@ -59,6 +59,11 @@
                 </div>
                 
                 <div class="form-group">
+                    <label for="Last_Name">Phone Number:</label>
+                    <input class="edit-user-input" type="text" id="Phone_Num" name="Phone_Num" placeholder="It remains the same if nothing changes">
+                </div>
+
+                <div class="form-group">
                     <label for="Username">Username:</label>
                     <input class="edit-user-input" type="text" id="Username" name="Username" placeholder="It remains the same if nothing changes">
                 </div>
@@ -66,6 +71,41 @@
                 <div class="form-group">
                     <label for="Email">Email:</label>
                     <input class="edit-user-input" type="email" id="Email" name="Email" placeholder="It remains the same if nothing changes">
+                </div>
+
+                <div class="form-group"> 
+                    <label for="Street">Street:</label>
+                    <input class="edit-user-input" type="text" name="Street" placeholder="2A,Lorong Bindurong"  id="street">
+                </div>
+
+                <div class="form-group">
+                    <label for="City">City:</label>
+                    <input class="edit-user-input" type="text" name="City" placeholder="Bintulu"  id="city">
+                </div>
+
+                <div class="form-group">
+                    <label for="Postcode">Postcode:</label>
+                    <input class="edit-user-input" type="text" name="Postcode"  id="Postcode">
+                </div>
+
+                <div class="form-group">
+                    <label for="State">State:</label>
+                    <select name="State" id="state" class="profile-enquiry-select" >
+                        <option value="">--Select--</option>
+                        <option value="Johor">Johor</option>
+                        <option value="Kedah">Kedah</option>
+                        <option value="Kelantan">Kelantan</option>
+                        <option value="Kuala Lumpur">Kuala Lumpur</option>
+                        <option value="Labuan">Labuan</option>
+                        <option value="Malacca">Malacca</option>
+                        <option value="Negeri Sembilan">Negeri Sembilan</option>
+                        <option value="Pahang">Pahang</option>
+                        <option value="Perak">Perak</option>
+                        <option value="Putrajaya">Putrajaya</option>
+                        <option value="Sabah">Sabah</option>
+                        <option value="Sarawak">Sarawak</option>
+                        <option value="Selangor">Selangor</option>
+                    </select>
                 </div>
 
                 <div class="form-group">
@@ -168,17 +208,33 @@ if(isset($_POST['submit'])) {
         }
         $stmt->close();
     }
-
-
-    $new_name = !empty($_POST['Name']) ? mysqli_real_escape_string($conn, $_POST['Name']) : $current_data['Name'];
-    $new_email = !empty($_POST['Email']) ? mysqli_real_escape_string($conn, $_POST['Email']) : $current_data['Email'];
     
     // Update query including username
-    $sql = "UPDATE register SET 
-            Name='$new_name',
-            Email='$new_email',
-            Profile_Picture='$new_profile_photo'
-            WHERE Username='$current_username'";
+     // Retrieve and sanitize form data
+     $new_first_name = !empty($_POST['FirstName']) ? mysqli_real_escape_string($conn, $_POST['FirstName']) : $current_data['FirstName'];
+     $new_last_name = !empty($_POST['LastName']) ? mysqli_real_escape_string($conn, $_POST['LastName']) : $current_data['LastName'];
+     $new_email = !empty($_POST['Email']) ? mysqli_real_escape_string($conn, $_POST['Email']) : $current_data['Email'];
+     $new_profile_photo = !empty($_POST['Profile_Picture']) ? mysqli_real_escape_string($conn, $_POST['Profile_Picture']) : $current_data['Profile_Picture'];
+     $new_phone_number = !empty($_POST['PhoneNumber']) ? mysqli_real_escape_string($conn, $_POST['PhoneNumber']) : $current_data['PhoneNumber'];
+     $new_street = !empty($_POST['Street']) ? mysqli_real_escape_string($conn, $_POST['Street']) : $current_data['Street'];
+     $new_city = !empty($_POST['City']) ? mysqli_real_escape_string($conn, $_POST['City']) : $current_data['City'];
+     $new_postcode = !empty($_POST['Postcode']) ? mysqli_real_escape_string($conn, $_POST['Postcode']) : $current_data['Postcode'];
+     $new_state = !empty($_POST['State']) ? mysqli_real_escape_string($conn, $_POST['State']) : $current_data['State'];
+ 
+     // Combine first name and last name
+     $full_name = $new_first_name . ' ' . $new_last_name;
+ 
+     // Update query including username
+     $sql = "UPDATE register SET 
+                 Name='$full_name',
+                 Email='$new_email',
+                 Profile_Picture='$new_profile_photo',
+                 Phone='$new_phone_number',
+                 Street='$new_street',
+                 City='$new_city',
+                 Postcode='$new_postcode',
+                 State='$new_state'
+                 WHERE Username='$current_username'";
     
     if(mysqli_query($conn, $sql)) {
         // Update the session with new username

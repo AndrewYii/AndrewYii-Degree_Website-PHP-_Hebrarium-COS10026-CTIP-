@@ -12,9 +12,14 @@
         Register_ID INT(6) UNSIGNED AUTO_INCREMENT PRIMARY KEY,
         Name VARCHAR(60) NOT NULL,
         Username VARCHAR(60) NOT NULL UNIQUE,
+        Phone VARCHAR(15) NOT NULL,
         Email VARCHAR(50) NOT NULL UNIQUE,
         Password VARCHAR(255) NOT NULL,
         Profile_Picture VARCHAR(255) DEFAULT NULL,
+        Street VARCHAR(100) DEFAULT NULL,
+        City VARCHAR(50) DEFAULT NULL,
+        Postcode VARCHAR(10) DEFAULT NULL,
+        State VARCHAR(30) DEFAULT NULL,
         Register_Created_At TIMESTAMP DEFAULT CURRENT_TIMESTAMP
     )";
 
