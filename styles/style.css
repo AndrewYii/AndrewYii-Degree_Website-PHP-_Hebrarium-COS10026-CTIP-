@@ -8249,8 +8249,9 @@ button.contribute-btn:hover {
     box-sizing: border-box;
 }
 
-.status-select{
+.status-select {
     padding: 12px;
+    margin: 6px;
     border: 1px solid;
     border-radius: 4px;
     box-sizing: border-box;
@@ -8258,24 +8259,49 @@ button.contribute-btn:hover {
     display: block;
 }
 
-.status-select option:hover{
-    background-color: var(--select-bg, lightgray);
-    display: none;
+.status-indicator {
+    width: 20px; /* Adjust the size as needed */
+    height: 20px; /* Adjust the size as needed */
+    border-radius: 50%; /* Makes the div circular */
+    display: inline-block; /* Allows the divs to sit next to each other */
 }
 
-#status option[value="Unresolved"]:checked {
---select-bg: red;
+.red {
+    background-color: red; /* Color for 'Unresolved' status */
 }
 
-#status option[value="Pending"]:checked {
---select-bg: yellow;
+.yellow {
+    background-color: yellow; /* Color for 'Pending' status */
 }
 
-#status option[value="Solved"]:checked {
---select-bg: green;
+.green {
+    background-color: green; /* Color for 'Solved' status */
 }
 
-.Unresolved{
+.status-form input[type="submit"]{
+    border:none;
+    font-size: 12px;
+    color:#fff;
+    padding: 8px 16px;
+    border-radius: 6px;
+    background-color: #588970;
+    margin: 4px 12px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.response-mail {
+    display: inline-block; /* Allows padding and margin to be applied */
+    padding: 10px 15px; /* Adjust padding for button size */
+    background-color: #588970; /* Green background color */
+    color: white; /* Text color */
+    text-align: center; /* Center the text */
+    text-decoration: none; /* Remove underline from the link */
+    border-radius: 5px; /* Rounded corners */
+    transition: background-color 0.3s; /* Smooth transition for hover effect */
+}
+
+/* .Unresolved{
     background-color: red;
 }
 
@@ -8285,4 +8311,4 @@ button.contribute-btn:hover {
 
 .Solved{
     background-color: green;
-}
+} */

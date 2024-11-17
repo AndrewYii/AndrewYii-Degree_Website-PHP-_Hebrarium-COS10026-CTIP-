@@ -217,6 +217,7 @@
                             <table class="admin-table">
                                 <thead>
                                     <tr>
+                                        <th></th>
                                         <th>ID</th>
                                         <th>Status</th>
                                         <th>Username</th>
@@ -250,17 +251,29 @@
                                     while($row = mysqli_fetch_assoc($result)) {
                                 ?>
                                     <tr>
+                                        <td>
+                                        <?php
+                                        $currentStatus = $row['Status'];
+                                        if ($currentStatus == 'Unresolved') {
+                                            echo '<div class="status-indicator red"></div>';
+                                        } elseif ($currentStatus == 'Pending') {
+                                            echo '<div class="status-indicator yellow"></div>';
+                                        } elseif ($currentStatus == 'Solved') {
+                                            echo '<div class="status-indicator green"></div>';
+                                        }
+                                        ?>
+                                        </td>
                                         <td><?php echo $row["Enquiry_ID"]; ?></td>
                                         <td><?php 
                                         $currentStatus = $row['Status'];
-                                        echo "<form  action='".$_SERVER['PHP_SELF']."' method='post'>
+                                        echo "<form class='status-form' action='".$_SERVER['PHP_SELF']."' method='post'>
                                         <select name='Status' id='status' class='status-select'>
                                             <option value='Unresolved' " . ($currentStatus == 'Unresolved' ? 'selected' : '') . " class='Unresolved'>Unresolved</option>
                                             <option value='Pending' " . ($currentStatus == 'Pending' ? 'selected' : '') . " class='Pending'>Pending</option>
                                             <option value='Solved' " . ($currentStatus == 'Solved' ? 'selected' : '') . " class='Solved'>Solved</option>
                                         </select>
                                         <input type='hidden' name='enquiry_id' value='{$row['Enquiry_ID']}'>
-                                        <input type='submit' value='Update Status'></form>"; 
+                                        <input type='submit' value='Update'></form>"; 
 
                                         if (isset($_POST['Status']) && isset($_POST['enquiry_id'])) {
                                             $newStatus = mysqli_real_escape_string($conn, $_POST['Status']);
@@ -286,7 +299,7 @@
                                         <td class="description-column"><?php echo $row["Message"]; ?></td>
                                         <td class="description-column"><?php echo $row["Response"]; 
                                         $email = htmlspecialchars($row["Email"]);
-                                        echo "<a href='mailto:$email?subject=Response to Enquiry&body={$row['Response']}''>Update here</a>";
+                                        echo "<a href='mailto:$email?subject=Response to Enquiry&body={$row['Response']}'' class='response-mail'>Send Email</a>";
                                         ?></td>
                                         <td class="description-column"><?php 
                                         $reference_comment = "comment_" . $row['Enquiry_ID'];
