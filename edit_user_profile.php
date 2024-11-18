@@ -191,6 +191,31 @@ if(isset($_POST['submit'])) {
                 $stmt->bind_param("ss", $proposed_username, $current_username);
                 $stmt->execute();
 
+                // Update username in login table
+                $update_enquiry = "UPDATE login SET Username = ? WHERE Username = ?";
+                $stmt = $conn->prepare($update_enquiry);
+                $stmt->bind_param("ss", $proposed_username, $current_username);
+                $stmt->execute();
+
+                // Update username in Pre-Contribute table
+                $update_enquiry = "UPDATE pre_contribute SET Username = ? WHERE Username = ?";
+                $stmt = $conn->prepare($update_enquiry);
+                $stmt->bind_param("ss", $proposed_username, $current_username);
+                $stmt->execute();
+
+                // Update username in contribute_comments table
+                $update_enquiry = "UPDATE contribute_comments SET Username = ? WHERE Username = ?";
+                $stmt = $conn->prepare($update_enquiry);
+                $stmt->bind_param("ss", $proposed_username, $current_username);
+                $stmt->execute();
+
+                // Update username in feedback table
+                $update_enquiry = "UPDATE feedback SET Username = ? WHERE Username = ?";
+                $stmt = $conn->prepare($update_enquiry);
+                $stmt->bind_param("ss", $proposed_username, $current_username);
+                $stmt->execute();
+
+
                 // If all queries successful, commit transaction
                 mysqli_commit($conn);
                 
