@@ -50,12 +50,12 @@
             <form class="edit-user-form" action="<?php echo htmlspecialchars($_SERVER['PHP_SELF']); ?>" method="post" enctype="multipart/form-data" autocomplete="off">
                 <div class="form-group">
                     <label for="First_Name">First Name:</label>
-                    <input class="edit-user-input" type="text" id="First_Name" name="First_Name" placeholder="It remains the same if nothing changes">
+                    <input class="edit-user-input" type="text" id="First_Name" name="FirstName" placeholder="It remains the same if nothing changes">
                 </div>
                 
                 <div class="form-group">
                     <label for="Last_Name">Last Name:</label>
-                    <input class="edit-user-input" type="text" id="Last_Name" name="Last_Name" placeholder="It remains the same if nothing changes">
+                    <input class="edit-user-input" type="text" id="Last_Name" name="LastName" placeholder="It remains the same if nothing changes">
                 </div>
                 
                 <div class="form-group">
@@ -211,30 +211,68 @@ if(isset($_POST['submit'])) {
     
     // Update query including username
      // Retrieve and sanitize form data
-     $new_first_name = !empty($_POST['FirstName']) ? mysqli_real_escape_string($conn, $_POST['FirstName']) : $current_data['FirstName'];
-     $new_last_name = !empty($_POST['LastName']) ? mysqli_real_escape_string($conn, $_POST['LastName']) : $current_data['LastName'];
-     $new_email = !empty($_POST['Email']) ? mysqli_real_escape_string($conn, $_POST['Email']) : $current_data['Email'];
-     $new_profile_photo = !empty($_POST['Profile_Picture']) ? mysqli_real_escape_string($conn, $_POST['Profile_Picture']) : $current_data['Profile_Picture'];
-     $new_phone_number = !empty($_POST['PhoneNumber']) ? mysqli_real_escape_string($conn, $_POST['PhoneNumber']) : $current_data['PhoneNumber'];
-     $new_street = !empty($_POST['Street']) ? mysqli_real_escape_string($conn, $_POST['Street']) : $current_data['Street'];
-     $new_city = !empty($_POST['City']) ? mysqli_real_escape_string($conn, $_POST['City']) : $current_data['City'];
-     $new_postcode = !empty($_POST['Postcode']) ? mysqli_real_escape_string($conn, $_POST['Postcode']) : $current_data['Postcode'];
-     $new_state = !empty($_POST['State']) ? mysqli_real_escape_string($conn, $_POST['State']) : $current_data['State'];
- 
-     // Combine first name and last name
-     $full_name = $new_first_name . ' ' . $new_last_name;
- 
-     // Update query including username
-     $sql = "UPDATE register SET 
-                 Name='$full_name',
-                 Email='$new_email',
-                 Profile_Picture='$new_profile_photo',
-                 Phone='$new_phone_number',
-                 Street='$new_street',
-                 City='$new_city',
-                 Postcode='$new_postcode',
-                 State='$new_state'
-                 WHERE Username='$current_username'";
+     $updates = array();
+
+     // Check and add each field if changed
+     if (!empty($_POST['FirstName']) || !empty($_POST['LastName'])) {
+         $new_first_name = mysqli_real_escape_string($conn, $_POST['FirstName']);
+         $new_last_name = mysqli_real_escape_string($conn, $_POST['LastName']);
+         $full_name = trim($new_first_name . ' ' . $new_last_name);
+         if ($full_name !== $current_data['Name']) {
+             $updates[] = "Name='$full_name'";
+         }
+     }
+     
+     if (!empty($_POST['Email']) && $_POST['Email'] !== $current_data['Email']) {
+         $new_email = mysqli_real_escape_string($conn, $_POST['Email']);
+         $updates[] = "Email='$new_email'";
+     }
+     
+     if (!empty($_POST['PhoneNumber']) && $_POST['PhoneNumber'] !== $current_data['PhoneNumber']) {
+         $new_phone_number = mysqli_real_escape_string($conn, $_POST['PhoneNumber']);
+         $updates[] = "PhoneNumber='$new_phone_number'";
+     }
+     
+     // Address fields
+     if (!empty($_POST['Street']) && $_POST['Street'] !== $current_data['Street']) {
+         $new_street = mysqli_real_escape_string($conn, $_POST['Street']);
+         $updates[] = "Street='$new_street'";
+     }
+     
+     if (!empty($_POST['City']) && $_POST['City'] !== $current_data['City']) {
+         $new_city = mysqli_real_escape_string($conn, $_POST['City']);
+         $updates[] = "City='$new_city'";
+     }
+     
+     if (!empty($_POST['Postcode']) && $_POST['Postcode'] !== $current_data['Postcode']) {
+         $new_postcode = mysqli_real_escape_string($conn, $_POST['Postcode']);
+         $updates[] = "Postcode='$new_postcode'";
+     }
+     
+     if (!empty($_POST['State']) && $_POST['State'] !== $current_data['State']) {
+         $new_state = mysqli_real_escape_string($conn, $_POST['State']);
+         $updates[] = "State='$new_state'";
+     }
+     
+     if (!empty($_POST['Profile_Picture']) && $_POST['Profile_Picture'] !== $current_data['Profile_Picture']) {
+         $new_profile_photo = mysqli_real_escape_string($conn, $_POST['Profile_Picture']);
+         $updates[] = "Profile_Picture='$new_profile_photo'";
+     }
+     
+     // Execute update only if there are changes
+     if (!empty($updates)) {
+         $sql = "UPDATE register SET " . implode(', ', $updates) . " WHERE Username='$current_username'";
+         
+         if(mysqli_query($conn, $sql)) {
+             echo "<div class='success-message'>Profile updated successfully!</div>";
+             echo "<meta http-equiv='refresh' content='1;url=user_profile.php'>";
+         } else {
+             echo "<div class='error-message'>Error updating profile: " . mysqli_error($conn) . "</div>";
+         }
+     } else {
+         echo "<div class='info-message'>No changes were made to the profile.</div>";
+         echo "<meta http-equiv='refresh' content='1;url=user_profile.php'>";
+     }
     
     if(mysqli_query($conn, $sql)) {
         // Update the session with new username

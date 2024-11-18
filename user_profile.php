@@ -209,6 +209,8 @@
                         </table>";
                             $enquiry_count++;   
                         }
+                    } else {
+                        echo "<p>No enquiries found</p>";
                     }
                     echo "</div>";
                     if (isset($_POST['delete_enquiry'])) {
