@@ -26,7 +26,7 @@
         <?php include 'include/header.php';?>
     </header>
 
-    <diV class='edit_user'>
+    <div class='edit_user'>
 
         <div class="profile-update-container">
             <h1 class="edit-user-title">Update Profile</h1>
@@ -119,7 +119,7 @@
                 <input type="submit" name="submit" value="Update" class="update-button">
             </form>
         </div>
-
+    </div>
 <?php
 if(isset($_POST['submit'])) {
     $conn = mysqli_connect($servername,$username,$password,$dbname);
@@ -204,7 +204,7 @@ if(isset($_POST['submit'])) {
                 $stmt->execute();
 
                 // Update username in contribute_comments table
-                $update_enquiry = "UPDATE contribute_comments SET Username = ? WHERE Username = ?";
+                $update_enquiry = "UPDATE contribute_comments SET Commenter_Username = ? WHERE Commenter_Username = ?";
                 $stmt = $conn->prepare($update_enquiry);
                 $stmt->bind_param("ss", $proposed_username, $current_username);
                 $stmt->execute();
@@ -316,8 +316,6 @@ if(isset($_POST['submit'])) {
 }
 ?>
 
-
-</div>
 
 <footer>
     <?php include 'include/footer.php';?>

@@ -8436,9 +8436,9 @@ button.contribute-btn:hover {
 }
 
 .right-align-button2 {
-    margin: 20px;
+    margin: 15px 0px;
     width: 100%;
-    text-align: right;
+    text-align: center;
 }
 
 .profile-table-enquiry {
@@ -8482,4 +8482,8 @@ button.contribute-btn:hover {
     border-radius: 8px;
     box-sizing: border-box;
     transition: border-color 0.4s ease, box-shadow 0.4s ease;
+}
+
+.profile-contribution h3, .profile-enquiry h3{
+    text-align: center;
 }
