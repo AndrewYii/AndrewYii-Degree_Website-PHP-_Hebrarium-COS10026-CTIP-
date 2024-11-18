@@ -8441,22 +8441,26 @@ button.contribute-btn:hover {
     text-align: right;
 }
 
-.profile-table-enquiry{
+.profile-table-enquiry {
     margin: 0 auto;
     width: 85%;
     border-collapse: separate;
     border-spacing: 0;
     font-size: 16px;
+    table-layout: fixed;
 }
 
 .profile-table-enquiry th {
     padding: 12px; 
     text-align: left; 
-    font-weight: bold; 
+    font-weight: bold;
+    background-color: #228B22;
+    color: white; 
 }
 
 .profile-table-enquiry td {
     padding: 12px; 
+    word-wrap: break-word;
 }
 
 .profile-table-enquiry tr {
@@ -8466,6 +8470,10 @@ button.contribute-btn:hover {
 .profile-table-enquiry tr:hover {
     transform: scale(1.05);
 }
+
+.profile-table-enquiry tr:nth-child(2n+1) {
+    background-color: lightgray;    
+  }
 
 .profile-enquiry-select{
     width: 100%;
