@@ -60,7 +60,7 @@
                 
                 <div class="form-group">
                     <label for="Last_Name">Phone Number:</label>
-                    <input class="edit-user-input" type="text" id="Phone_Num" name="Phone_Num" placeholder="It remains the same if nothing changes">
+                    <input class="edit-user-input" type="text" id="Phone" name="Phone" placeholder="It remains the same if nothing changes">
                 </div>
 
                 <div class="form-group">
@@ -253,9 +253,9 @@ if(isset($_POST['submit'])) {
          $updates[] = "Email='$new_email'";
      }
      
-     if (!empty($_POST['PhoneNumber']) && $_POST['PhoneNumber'] !== $current_data['PhoneNumber']) {
-         $new_phone_number = mysqli_real_escape_string($conn, $_POST['PhoneNumber']);
-         $updates[] = "PhoneNumber='$new_phone_number'";
+     if (!empty($_POST['Phone']) && $_POST['Phone'] !== $current_data['Phone']) {
+         $new_phone_number = mysqli_real_escape_string($conn, $_POST['Phone']);
+         $updates[] = "Phone='$new_phone_number'";
      }
      
      // Address fields

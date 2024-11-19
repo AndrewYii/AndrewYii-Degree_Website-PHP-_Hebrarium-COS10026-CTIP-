@@ -22,7 +22,7 @@
 ?>
 
     <body>
-    <?php
+        <?php
             $conn = mysqli_connect($servername,$username,$password,$dbname);
             
             // Check if user is logged in
@@ -73,7 +73,7 @@
                     </tr>
                     <tr class="even-row5">
                         <th>Phone Number</th>
-                        <td><?php echo isset($user_data['PhoneNumber']) ? $user_data['PhoneNumber'] : 'Not set'; ?></td>
+                        <td><?php echo isset($user_data['Phone']) ? $user_data['Phone'] : 'Not set'; ?></td>
                     </tr>
                     <tr class="odd-row5">
                         <th>Email</th>
