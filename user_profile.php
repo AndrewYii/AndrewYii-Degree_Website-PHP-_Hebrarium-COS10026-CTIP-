@@ -40,6 +40,14 @@
                 exit();
             }
         ?>
+        <?php 
+
+        if (isset($_SESSION['message'])) {
+            $messageClass = strpos($_SESSION['message'], 'Error') !== false ? 'error-message' : 'success-message';
+            echo "<div class='admin-message {$messageClass}'>" . $_SESSION['message'] . "</div>";
+            unset($_SESSION['message']); // Clear the message after displaying
+        }
+        ?>
 
         <header id="top_enq">
             <?php include 'include/header.php';
@@ -158,7 +166,7 @@
                                 $contribution_id = $_POST['contribution_id'];
                                 $delete_sql = "DELETE FROM contribute WHERE Contribute_ID = '$contribution_id' AND username = '$current_user'";
                                 if (mysqli_query($conn, $delete_sql)) {
-                                    echo "";
+                                    $_SESSION['message'] = 'Contribution Deleted';
                                     echo "<meta http-equiv='refresh' content='0;url=user_profile.php'>";
                                 } else {
                                     echo "";
@@ -218,10 +226,10 @@
                         $enquiry_id = $_POST['enquiry_id'];
                         $delete_enquiry_sql = "DELETE FROM Enquiry WHERE Enquiry_ID = '$enquiry_id' AND Username = '$current_user'";
                         if (mysqli_query($conn, $delete_enquiry_sql)) {
-                            echo "";//TODO: Pop up message
+                            $_SESSION['message'] = 'Enquiry Deleted';
                             echo "<meta http-equiv='refresh' content='0;url=user_profile.php'>";
                         } else {
-                            echo "";//TODO: Pop up message
+                            echo "";
                         }
                     }
 
