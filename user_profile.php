@@ -97,7 +97,7 @@
                 <input type="radio" id="contribution" name="profile" checked="checked">
                 <input type="radio" id="enquiry" name="profile">
                 <ul class="profile-nav">
-                    <li id="contribution-section"><label for="contribution">Contibution</label></li>
+                    <li id="contribution-section"><label for="contribution">Contribution</label></li>
                     <li>|</li>
                     <li id="enquiry-section"><label for="enquiry">Enquiry</label></li>   
                 </ul>
@@ -159,6 +159,7 @@
                                 $delete_sql = "DELETE FROM contribute WHERE Contribute_ID = '$contribution_id' AND username = '$current_user'";
                                 if (mysqli_query($conn, $delete_sql)) {
                                     echo "";
+                                    echo "<meta http-equiv='refresh' content='0;url=user_profile.php'>";
                                 } else {
                                     echo "";
                         }
@@ -218,6 +219,7 @@
                         $delete_enquiry_sql = "DELETE FROM Enquiry WHERE Enquiry_ID = '$enquiry_id' AND Username = '$current_user'";
                         if (mysqli_query($conn, $delete_enquiry_sql)) {
                             echo "";//TODO: Pop up message
+                            echo "<meta http-equiv='refresh' content='0;url=user_profile.php'>";
                         } else {
                             echo "";//TODO: Pop up message
                         }
