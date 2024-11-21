@@ -50,10 +50,11 @@
                         </div>
                         <div class="enhancement-section-description-content">
                             <p></p>
-                            <p>Applied Page:
-                            <a href="registration.php">Register Page</a>
-                            <a href="forgot_password.php">Forgot Passord Page</a>
-                            <a href="reset_password.php">Reset Passord Page</a>
+                            <p>
+                                Applied Page:
+                                <a href="registration.php">Register Page</a>
+                                <a href="forgot_password.php">Forgot Passord Page</a>
+                                <a href="reset_password.php">Reset Passord Page</a>
                             </p>
                             <p>
                                 Refer Sources:
@@ -73,8 +74,9 @@
                         </div>
                         <div class="enhancement-section-description-content">
                             <p></p>
-                            <p>Applied Page:
-                            <a href="acknowledgment.php">Acknowledgement Page</a>
+                            <p>
+                                Applied Page:
+                                <a href="acknowledgment.php">Acknowledgement Page</a>
                                 <a href="andrew.php">Profile Page(Andrew)</a>
                                 <a href="aniq.php">Profile Page(Aniq)</a>
                                 <a href="assufi.php">Profile Page(Assufi)</a>
@@ -93,13 +95,14 @@
                                 <a href="tutorial-introduction.php">Tutorial Introduction Page</a>
                                 <a href="tutorial.php">Tutorial Page</a>
                                 <a href="profile-introduction.php">Profile Introduction Page</a>
-                                <a href="user_view_enquiry.php">User Temporary View Enquiry Page</a>
+                                <a href="user_view_enquiry.php">Temporary View Enquiry Page</a>
                                 <a href="user_profile.php">User Profile Page</a>
                                 <a href="edit_user_profile.php">Edit User Profile Page</a>
                             </p>
                             <p>
                                 Refer Sources:
-
+                                <a href="https://stackoverflow.com/questions/35752944/php-mysql-search-functionality">Source 1</a>
+                                <a href="https://www.w3schools.com/MySQL/mysql_like.asp">Source 2</a>
                             </p>
                         </div> 
                     </div>
@@ -115,12 +118,14 @@
                         </div>
                         <div class="enhancement-section-description-content">
                             <p></p>
-                            <p>Applied Page:
-
+                            <p>
+                                Applied Page:
+                                <a href="identify.php">Identify Page</a>
                             </p>
                             <p>
                                 Refer Sources:
-
+                                <a href="https://my.plantnet.org/">Source 1</a>
+                                <a href="https://stackoverflow.com/questions/50172723/curl-request-from-api-with-php">Source 2</a>
                             </p>
                         </div> 
                     </div>
@@ -138,12 +143,20 @@
                             <p>
 
                             </p>
-                            <p>Applied Page:
-
+                            <p>
+                                Applied Page:
+                                <a href="./admin/view_comments.php">View Comments Page</a>
+                                <a href="./admin/view_contribute.php">View Contribution Page</a>
+                                <a href="./admin/view_enquiry.php">View Enquiry Page</a>
+                                <a href="./admin/view_feedback.php">View Feedback Page</a>
+                                <a href="./admin/view_login.php">View Login Page</a>
+                                <a href="./admin/view_pre_contribute.php">View Pre Contribution Page</a>
+                                <a href="./admin/view_register.php">View Register Page</a>
                             </p>
                             <p>
                                 Refer Sources:
-
+                                <a href="https://www.youtube.com/watch?v=OJEQaVT45XA&pp=ygUbYWRtaW4gcGFuZWwgaW4gaHRtbCBjc3MgcGhw">Source 1</a>
+                                <a href="https://github.com/dompdf/dompdf">Source 2</a>
                             </p>
                         </div> 
                     </div>
@@ -161,11 +174,12 @@
                             <p></p>
                             <p>
                                 Applied Page:
-
+                                <a href="user_profile.php">User Profile Page</a>
+                                <a href="edit_user_profile.php">Edit User Profile Page</a>
                             </p>
                             <p>
                                 Refer Sources:
-
+                                <a href="https://stackoverflow.com/questions/66816782/php-mysql-user-profile-page">Source 1</a>
                             </p>
                         </div> 
                     </div>
@@ -181,12 +195,13 @@
                         </div>
                         <div class="enhancement-section-description-content">
                             <p></p>
-                            <p>Applied Page:
-
+                            <p>
+                                Applied Page:
+                                <a href="login.php">Login Page</a>
                             </p>
                             <p>
                                 Refer Sources:
-
+                                <a href="https://stackoverflow.com/questions/27499512/how-to-put-remember-me-cookie-in-php">Source 1</a>
                             </p>
                         </div> 
                     </div>
@@ -202,12 +217,13 @@
                         </div>
                         <div class="enhancement-section-description-content">
                             <p></p>
-                            <p>Applied Page:
-
+                            <p>
+                                Applied Page:
+                                <a href="enquiry.php">Enquiry Page</a>
                             </p>
                             <p>
                                 Refer Sources:
-
+                                <a href="https://stackoverflow.com/questions/20693620/using-sessions-to-store-answer-to-anti-spam-query-for-php-contact-form">Source 1</a>
                             </p>
                         </div> 
                     </div>
@@ -215,7 +231,7 @@
 
                 <div class="enhancement-section detect-en">
                     <div class="enhancement-section-heading">
-                        <h3>Upload And Display Module</h3>
+                        <h3> Upload And Display Module </h3>
                     </div>
                     <div class="enhancement-section-description">
                         <div class="enhancement-section-video">
@@ -223,12 +239,21 @@
                             </div>
                         <div class="enhancement-section-description-content">
                             <p></p>
-                            <p>Applied Page:
-
+                            <p>
+                                Applied Page: (Upload)
+                                <a href="contribute.php">Contribute Page</a>
+                                <a href="edit_user_profile.php">Edit User Page</a>
+                                <a href="identify.php">Identify Page</a>
+                            </p>
+                            <p>
+                                Applied Page: (Display)
+                                <a href="contribution.php">Contribution Page</a>
+                                <a href="user_profile.php">User Profile Page</a>
                             </p>
                             <p>
                                 Refer Sources:
-
+                                <a href="https://www.w3schools.com/php/php_file_upload.asp">Source 1</a>
+                                <a href="https://stackoverflow.com/questions/13465929/php-upload-image">Source 2</a>
                             </p>
                         </div> 
                     </div>
@@ -236,7 +261,7 @@
 
                 <div class="enhancement-section detect-en">
                     <div class="enhancement-section-heading">
-                        <h3>Comments</h3>
+                        <h3> Comments (View & Write)</h3>
                     </div>
                     <div class="enhancement-section-description">
                         <div class="enhancement-section-video">
@@ -244,12 +269,18 @@
                         </div>
                         <div class="enhancement-section-description-content">
                             <p></p>
-                            <p>Applied Page:
-
+                            <p>
+                                Applied Page (write):
+                                <a href="contribution.php">Contribution Page</a>
+                            </p>
+                            <p>
+                                Applied Page (view):
+                                <a href="user_profile.php">User Profile Page</a>
+                                <a href="./admin/view_comments.php">View Comments Page</a>
                             </p>
                             <p>
                                 Refer Sources:
-
+                                <a>Figure Up by Ourselves</a>
                             </p>
                         </div> 
                     </div>
