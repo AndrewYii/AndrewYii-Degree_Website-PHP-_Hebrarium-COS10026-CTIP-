@@ -202,7 +202,9 @@
                             <img src="images/overflow.gif" alt="Overflow Demo Video">
                         </div>
                         <div class="enhancement-section-description-content">
-                            <p></p>
+                            <p>
+                                The Remember Me feature uses cookies to store the user's username if they choose to be remembered. This allows the username to be pre-filled in the login form for future visits. However, if the username does not exist or is deleted, the system will not save or recall it. This feature enhances user convenience while maintaining accuracy and security.
+                            </p>
                             <p>
                                 Applied Page:
                                 <a href="login.php">Login Page</a>
