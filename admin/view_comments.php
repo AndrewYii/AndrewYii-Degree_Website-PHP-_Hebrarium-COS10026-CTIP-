@@ -116,6 +116,7 @@
     <meta name="description" content="View Plant's Notebook Comments"/>
     <meta name="keywords" content="Plant's Notebook, Comments, Admin View"/>
     <title>Plant's Notebook | View Comments</title>
+    <meta name="author" content=" Muhammad Faiz bin Halek"  />
     <link rel="stylesheet" href="../styles/style.css">
     <link rel="icon" type="image/x-icon" href="../images/logo.png">
 </head>

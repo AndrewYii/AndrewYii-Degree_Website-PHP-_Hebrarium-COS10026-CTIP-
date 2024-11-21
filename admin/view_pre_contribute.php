@@ -128,6 +128,7 @@
     <meta name="description" content="View Plant's Notebook Pre-Contributions"/>
     <meta name="keywords" content="Plant's Notebook, Pre-Contributions, Admin View"/>
     <title>Plant's Notebook | View Pre-Contributions</title>
+    <meta name="author" content=" Muhammad Faiz bin Halek"  />
     <link rel="stylesheet" href="../styles/style.css">
     <link rel="icon" type="image/x-icon" href="../images/logo.png">
 </head>

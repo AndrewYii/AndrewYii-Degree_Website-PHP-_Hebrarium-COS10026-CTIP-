@@ -1,6 +1,17 @@
+<?php
+    include 'database/connection.php';
+    include 'database/database.php';
+    session_start(); 
+    if(!isset($_SESSION['username'])){
+            header("Location: login.php");
+            exit();
+        }
+?>
+
 <!DOCTYPE html>
 
 <html lang="en">
+    
 <head>
 
 <meta charset="utf-8" />
@@ -17,11 +28,6 @@
 
 <body>
 
-<?php
-    include 'database/connection.php';
-    include 'database/database.php';
-    session_start(); 
-?>
     <header>
         <?php include 'include/header.php';?>
     </header>

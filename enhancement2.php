@@ -42,7 +42,7 @@
                 </div>
                 <div class="enhancement-section">
                     <div class="enhancement-section-heading">
-                        <h3> OTP Email</h3>
+                        <h3> Email ( Register & OTP vertification ) </h3>
                     </div>
                     <div class="enhancement-section-description">
                         <div class="enhancement-section-video">
@@ -51,11 +51,13 @@
                         <div class="enhancement-section-description-content">
                             <p></p>
                             <p>Applied Page:
-
+                            <a href="registration.php">Register Page</a>
+                            <a href="forgot_password.php">Forgot Passord Page</a>
+                            <a href="reset_password.php">Reset Passord Page</a>
                             </p>
                             <p>
                                 Refer Sources:
-
+                                <a href="https://github.com/PHPMailer/PHPMailer">Source 1</a>
                             </p>
                         </div> 
                     </div>
@@ -72,7 +74,28 @@
                         <div class="enhancement-section-description-content">
                             <p></p>
                             <p>Applied Page:
-
+                            <a href="acknowledgment.php">Acknowledgement Page</a>
+                                <a href="andrew.php">Profile Page(Andrew)</a>
+                                <a href="aniq.php">Profile Page(Aniq)</a>
+                                <a href="assufi.php">Profile Page(Assufi)</a>
+                                <a href="care.php">Care Page</a>
+                                <a href="classify.php">Classify Page</a>
+                                <a href="contribute.php">Contribute Form Page</a>
+                                <a href="contribution.php">Contribution Output Page</a>
+                                <a href="enhancement.php1">Enhancement1 Page</a>
+                                <a href="enquiry.php">Enquiry Page</a>
+                                <a href="faiz.php">Profile Page(Faiz)</a>
+                                <a href="identify.php">Identify Page</a>
+                                <a href="index.php">Homepage</a>
+                                <a href="login.php">Login Page</a>
+                                <a href="registration.php">Register Page</a>
+                                <a href="tools.php">Tools Page</a>
+                                <a href="tutorial-introduction.php">Tutorial Introduction Page</a>
+                                <a href="tutorial.php">Tutorial Page</a>
+                                <a href="profile-introduction.php">Profile Introduction Page</a>
+                                <a href="user_view_enquiry.php">User Temporary View Enquiry Page</a>
+                                <a href="user_profile.php">User Profile Page</a>
+                                <a href="edit_user_profile.php">Edit User Profile Page</a>
                             </p>
                             <p>
                                 Refer Sources:
