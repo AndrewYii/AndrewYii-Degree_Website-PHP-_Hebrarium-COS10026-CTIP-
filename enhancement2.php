@@ -226,7 +226,9 @@
                             <img src="images/extend.gif" alt="Extend-box Demo Video">
                         </div>
                         <div class="enhancement-section-description-content">
-                            <p></p>
+                            <p>
+                                The Anti-Spam feature has been integrated into the Enquiry Page for junk avoidance. In case of more than three-time mistakes in filling up information, the user gets blocked temporarily for 10 minutes, and may not be allowed to submit the form during this period. This feature will keep up the integrity of the enquiry system while shying away from spam or repeat invalid submissions.
+                            </p>
                             <p>
                                 Applied Page:
                                 <a href="enquiry.php">Enquiry Page</a>
@@ -248,7 +250,9 @@
                             <img src="images/flip.gif" alt="Flip-box Demo Video">
                             </div>
                         <div class="enhancement-section-description-content">
-                            <p></p>
+                            <p>
+                                The Upload and Display Module provides a feature for uploading a profile picture so users can personalise their account. Additionally, users can upload findings on the contribute page. These findings will be checked by the admin and, once approved, will be displayed on the Contribution Page for all to view. This module offers them the chance to personalise their profiles and share the discoveries they make within the community.
+                            </p>
                             <p>
                                 Applied Page: (Upload)
                                 <a href="contribute.php">Contribute Page</a>
@@ -278,7 +282,9 @@
                             <img src="images/changesection&readmore.gif" alt="Changing-Section Navbar & Read More Demo Video">
                         </div>
                         <div class="enhancement-section-description-content">
-                            <p></p>
+                            <p>
+                                The feature allows viewing and writing comments on other people's contributions. In addition, contributors will have a chance to view comments regarding their work, and this may give them the feeling that their contributions are well appreciated, thus encouraging them to undertake more. This function helps build a sense of community by encouraging feedback and effective interaction among users.
+                            </p>
                             <p>
                                 Applied Page (write):
                                 <a href="contribution.php">Contribution Page</a>
