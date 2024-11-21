@@ -14,7 +14,7 @@
         <meta charset="utf-8" />
     	<meta name="viewport" content="width=device-width, initial-scale=1.0">
         <meta name="description" content="Temporary View User Enquiry After The Appointment" />
-        <meta name="keywords" content="Herbarium Specimen Tutorial, Classify Plant, Herbarium Specimen Preserve, Herbarium Specimen Tools, Plant Identifier, Botany, Plant Preservation, Plant Classification, Botanical Tools, Plant Identification, Botanical Education, Nature Enthusiasts, Botanical Hobbyists, Plant Collection, Herbarium Techniques,Plant Common Name, Plant Scientific Name,Herbarium Specimen" />
+        <meta name="keywords" content="Enquiry View, User, Temporary, Plant's Notebook" />
         <meta name="author" content="Aniq Nazhan bin Mazlan"  />
         <title>Plant's Notebook | View Enquiry</title>
         <link rel="stylesheet" href="styles/style.css">
