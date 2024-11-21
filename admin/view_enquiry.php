@@ -285,6 +285,7 @@
                                             
                                             if (mysqli_stmt_execute($stmt)) {
                                                 $_SESSION['message'] = 'Status updated successfully';
+                                                echo"<meta http-equiv='refresh' content='0 ;url=view_enquiry.php'>";  
                                             } else {
                                                 $_SESSION['message'] = 'Error updating status: ' . mysqli_error($conn);
                                             }

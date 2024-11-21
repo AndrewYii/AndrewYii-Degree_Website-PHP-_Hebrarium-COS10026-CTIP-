@@ -52,7 +52,7 @@
 
             <?php include 'include/chatbot.php';?>
             
-            <div class="enquiry-form">
+            <div class="enquiry-view-form">
                 <h1>View Enquiry</h1>
                 <br>
                 <p>Name: <?php echo $user_data['Name']; ?></p>
