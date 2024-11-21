@@ -177,7 +177,9 @@
                             <img src="images/ratingstar.gif" alt="Rating Star Demo Video">
                         </div>
                         <div class="enhancement-section-description-content">
-                            <p></p>
+                            <p>
+                                This User Management Module (User) will allow the user to manage their profiles by editing their information, such as name, address, and postcode, and customising their profile photo. The updated information will automatically fill in the relevant fields in the enquiry table with matching characteristics. Also, the users can view their contributions, check comments under those contributions, and manage their enquiries, viewing or deleting them at will. The module helps the user update their profiles and monitor all the activities on the site.
+                            </p>
                             <p>
                                 Applied Page:
                                 <a href="user_profile.php">User Profile Page</a>
