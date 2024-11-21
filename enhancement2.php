@@ -147,7 +147,7 @@
                         </div>
                         <div class="enhancement-section-description-content">
                             <p>
-
+                                The User Management Module (Admin) provides a control panel from where administrators can display feedback via bar charts, add enquiries by responding and sending emails, and comment on remarks in user contributions. Admins can approve or reject contributions submitted by users to the pre-contribution section and edit them after approval. They are also allowed to see user login and registration details. The module has a search functionality by username, and admins can generate PDF reports using the Dompdf extension via a specified print button. This manages user activities and content in one easy module.
                             </p>
                             <p>
                                 Applied Page:
