@@ -203,7 +203,7 @@
                         else if ($message !== ''){
                             echo '<h1 class="title_confirm">THANK YOU !</h1>';
                             echo '<p class="confirm_words"><span class="success_words">Success</span>: ' . $message . '</p>';
-                            echo '<a class="button_view_confirm" href="contribute.php"> View Your Contribute Details</a>';
+                            echo '<a class="button_view_confirm" href="user_profile.php"> View Your Contribute Details</a>';
                             echo '<p class="small_word_confirm">If you have any further questions or need immediate assistance, please don\'t hesitate to reach out to our <a href="mailto:104386568@students.swinburne.edu.my">customer service team </a>.You will redirect back to the Contribution Page within 2 seconds.</p>';
                             echo '<meta http-equiv="refresh" content="2 ;url=contribution.php">';
                         }

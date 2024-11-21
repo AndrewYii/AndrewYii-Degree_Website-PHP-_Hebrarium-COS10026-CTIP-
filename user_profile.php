@@ -117,6 +117,9 @@
                     if ($plant_result && mysqli_num_rows($plant_result) > 0) {
                         $contribution_count = 1;
                             while ($row = mysqli_fetch_assoc($plant_result)) {
+                                $contribution_id = $row['Contribute_ID'];
+                                $comment_sql = "SELECT * FROM Contribute_Comments WHERE Contribute_ID = '$contribution_id' ORDER BY Comment_Created_At DESC";
+                                $comment_result = mysqli_query($conn, $comment_sql);
                                 echo "<h3>Contribution #" . $contribution_count . "</h3>";
                                 echo "<form method='POST' onsubmit='return confirm(\"Are you sure you want to delete this contribution?\");'>";
                                 echo "<input type='hidden' name='contribution_id' value='" . $row['Contribute_ID'] . "'>";
@@ -127,7 +130,7 @@
                                     <th>Contribution</th>   
                                     <th>Details</th>
                                 </tr>
-                                <tr >
+                                <tr>
                                     <td>Plant's Leaf</td>
                                     <td><img src='" . htmlspecialchars($row['Plant_Leaf_Photo']) . "' alt='Plant Leaf Photo' class='enquiry-img'></td>
                                 </tr>
@@ -154,9 +157,50 @@
                                 <tr>
                                     <td>Description</td>
                                     <td>" . htmlspecialchars($row['Description_Contribute']) . "</td>
-                                </tr>
-                            </table>
-                            <br>";
+                                </tr>";
+                                if ($comment_result && mysqli_num_rows($comment_result) > 0) {
+                                    $comment_count = 1;
+                                    while ($comment = mysqli_fetch_assoc($comment_result)) {
+                                        if($comment_count%2 != 0){
+                                            echo"<tr class='odd-row5'>
+                                                <td>Comments " . $comment_count . "</td>";
+                                                echo"<td>"  . htmlspecialchars($comment['Comment_Text']) . "</td>
+                                                </tr>";
+                                            echo"<tr>
+                                                    <td>Commenter Username</td>
+                                                    <td>"  . htmlspecialchars($comment['Commenter_Username']) . "</td>
+                                                </tr>";
+                                            echo"<tr class='odd-row5'>
+                                                    <td>Comments Created</td>
+                                                    <td>"  . htmlspecialchars($comment['Comment_Created_At']) . "</td>
+                                                </tr>";
+
+                                        }
+                                        else{
+                                            echo"<tr>
+                                            <td>Comments" . $comment_count . "</td>";
+                                            echo"<td>"  . htmlspecialchars($comment['Comment_Text']) . "</td>
+                                            </tr>";
+                                        echo"<tr class='odd-row5'>
+                                                <td>Commenter Username</td>
+                                                <td>"  . htmlspecialchars($comment['Commenter_Username']) . "</td>
+                                            </tr>";
+                                        echo"<tr>
+                                                <td>Comments Created</td>
+                                                <td>"  . htmlspecialchars($comment['Comment_Created_At']) . "</td>
+                                            </tr>";
+                                        }
+                                        $comment_count++;
+                                    }
+                                }
+                                else{
+                                    echo"<tr class='odd-row5'>
+                                            <td>Comment</td>
+                                            <td>No Comments Found</td>
+                                        </tr>";
+                                }
+                           echo"</table>
+                                <br>";
                                 $contribution_count++;
                             }
                             } else {
@@ -237,9 +281,11 @@
                 ?>
                 <br>
             </div>
+
             <?php   
-            mysqli_close($conn);
+                mysqli_close($conn);
             ?>
+
             <figure class='going-up-container'>
                 <a href='#top_enq'>
                     <img src='images/going_up.png' alt='going-up' class='going-up'  title="going to the top">
@@ -259,4 +305,5 @@
         </figure> 
 
     </body>
+
 </html>
