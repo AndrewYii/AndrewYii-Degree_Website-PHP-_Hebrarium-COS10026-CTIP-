@@ -256,6 +256,9 @@
                                 <td>" . htmlspecialchars($row['Message']) . "</td>
                             </tr>
                             <tr class='odd-row5'>
+                                <td>Status</td>
+                                <td>" . htmlspecialchars($row['Status']) . "</td>
+                            <tr>
                                 <td>Response</td>
                                 <td>" . htmlspecialchars($row['Response']) . "</td>
                             </tr>

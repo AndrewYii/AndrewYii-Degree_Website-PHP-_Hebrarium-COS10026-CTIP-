@@ -7290,7 +7290,6 @@ button.contribute-btn:hover {
 }
 
 .admin-delete-button {
-    padding: 5px 10px;
     border: none;
     background-color: #fff;
     color: #000;
@@ -7354,7 +7353,7 @@ button.contribute-btn:hover {
 
 .admin-table .description-column {
     white-space: normal;     
-    max-width: 200px;        
+    max-width: 100px;        
     word-wrap: break-word;
 }
 
@@ -7381,9 +7380,9 @@ button.contribute-btn:hover {
 }
 
 .description-column {
-    min-width: 500px !important;    
-    max-width: 800px !important;      
-    width: 600px !important;           
+    min-width: 300px !important;    
+    max-width: 500px !important;      
+    width: 400px !important;           
     white-space: normal !important;     
     word-wrap: break-word;
     padding: 15px 25px !important;       
@@ -8280,8 +8279,8 @@ button.contribute-btn:hover {
 
 
 .Response-Form textarea{
-    width: 80%;
-    height: 40px; 
+    width: 100%;
+    height: 150px; 
     padding: 10px; 
     font-size: 16px; 
     border: 1px solid #ccc; 
@@ -8319,6 +8318,7 @@ button.contribute-btn:hover {
 }
 
 .status-form input[type="submit"]{
+    display: none;
     border:none;
     font-size: 12px;
     color:#fff;
@@ -8329,6 +8329,7 @@ button.contribute-btn:hover {
     cursor: pointer;
     transition: all 0.3s ease;
 }
+
 
 .response-mail {
     display: inline-block; /* Allows padding and margin to be applied */
@@ -8513,4 +8514,18 @@ button.contribute-btn:hover {
     margin-top: 5px;
 }
 
+.response-div button{
+    background: #228B22;
+    border-radius: 10px;
+    color: #fff;
+    font-size: .8rem;
+    padding: .5rem 1rem;
+    border: 1px solid #228B22;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
 
+.response-div{
+    display: flex;
+    justify-content: space-between;
+}
