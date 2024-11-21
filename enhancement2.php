@@ -121,7 +121,9 @@
                             <img src="images/responsivenavbar.gif" alt="Responsive Navbar Demo Video">
                         </div>
                         <div class="enhancement-section-description-content">
-                            <p></p>
+                            <p>
+                                The identify module provides a user interface through which images are uploaded for the processing algorithm supported by API calls of the PlantNet. Further, it identifies the plant in a particular image, showing the plant name along with species, common names, and the accuracy percentage. The system will also indicate if there is no match found for the uploaded image. This module enables users to identify plants by simply uploading a photo, thereby giving them all the details relevant to the upload and accuracy score from the image recognition process.
+                            </p>
                             <p>
                                 Applied Page:
                                 <a href="identify.php">Identify Page</a>
