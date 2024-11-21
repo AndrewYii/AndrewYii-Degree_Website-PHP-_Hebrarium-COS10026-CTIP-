@@ -75,7 +75,9 @@
                             <img src="images/chatbox.gif" alt="Chatbot Demo Video">
                         </div>
                         <div class="enhancement-section-description-content">
-                            <p></p>
+                            <p>
+                                This search function/module enables the users to get information about a plant, such as its genus, species, family, and name, through the use of keywords. It makes use of MySQL's LIKE operator with wildcards (%) for finding an approximate match to the terms entered. If no results are found, it routes users to an error page of '404'. However, if matching items are found, these will be shown to the user. This makes it easier for users to find information about the plants they are interested in, through this, one can easily find all relevant details without much hassle. (Edit User Profile, User Profile, Temporary View Enquiry cannot be redirected directly)
+                            </p>
                             <p>
                                 Applied Page:
                                 <a href="acknowledgment.php">Acknowledgement Page</a>
