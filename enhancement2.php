@@ -66,7 +66,7 @@
 
                 <div class="enhancement-section detect-en">
                     <div class="enhancement-section-heading">
-                        <h3> Search </h3>
+                        <h3> Search Module </h3>
                     </div>
                     <div class="enhancement-section-description">
                         <div class="enhancement-section-video">
@@ -164,7 +164,7 @@
 
                 <div class="enhancement-section detect-en">
                     <div class="enhancement-section-heading">
-                        <h3>User Profile</h3>
+                        <h3>User Management Module (User) </h3>
                     </div>
                     <div class="enhancement-section-description">
                         <div class="enhancement-section-video">
