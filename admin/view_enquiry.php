@@ -507,6 +507,7 @@ if (isset($_POST['update_enquiry'])) {
 if (isset($_GET['response_id'])) {
     $conn = mysqli_connect($servername, $username, $password, $dbname);
     $id = mysqli_real_escape_string($conn, $_GET['response_id']);
+    $_SESSION['response-enquiry-id']=$id;
     $sql = "SELECT * FROM enquiry WHERE Enquiry_ID = '$id'";
     $result = mysqli_query($conn, $sql);
     $row = mysqli_fetch_assoc($result);
@@ -526,26 +527,9 @@ if (isset($_GET['response_id'])) {
                         $response = $row["Response"];
                         echo "
                         <form class='Response-Form' method='post' action='".$_SERVER['PHP_SELF']."' id='Response-Form'>
-                            <textarea placeholder='Enquiry Response' name='$reference_comment' >$response</textarea>
-                            <input type='submit' value='Upload Response'>
+                            <textarea placeholder='Enquiry Response' name='response' >$response</textarea>
+                            <input type='submit'   name='response-submit' value='Upload Response'>
                         </form>";
-                        if (isset($_POST[$reference_comment])) {
-                            $response = mysqli_real_escape_string($conn, $_POST[$reference_comment]);
-                            $enquiry_id = $row['Enquiry_ID'];
-                    
-                            // SQL query to update the enquiry response
-                            $sql = "UPDATE enquiry SET Response = ? WHERE Enquiry_ID = ?";
-                            $stmt = mysqli_prepare($conn, $sql);
-                            mysqli_stmt_bind_param($stmt, "si", $response, $enquiry_id);
-                    
-                            if (mysqli_stmt_execute($stmt)) {
-                                $_SESSION['message'] = 'Response submitted successfully';
-                            } else {
-                                $_SESSION['message'] = 'Error submitting response: ' . mysqli_error($conn);
-                            }
-                    
-                            mysqli_stmt_close($stmt);
-                        }
                     ?>
                 </div>
                 <div class="response-bot-bar">
@@ -555,10 +539,35 @@ if (isset($_GET['response_id'])) {
             </div>
         </div>
         <?php
+        mysqli_close($conn);
     }
-    mysqli_close($conn);
 }
 ?>
+
+<?php
+
+    if (isset($_POST['response-submit'])) {
+        $conn = mysqli_connect($servername, $username, $password, $dbname);
+        $response = mysqli_real_escape_string($conn, $_POST['response']);
+
+        $sql = "UPDATE enquiry SET Response = ? WHERE Enquiry_ID = ?";
+        $stmt = mysqli_prepare($conn, $sql);
+        mysqli_stmt_bind_param($stmt, "si", $response,  $_SESSION['response-enquiry-id']);
+
+        if (mysqli_stmt_execute($stmt)) {
+            $_SESSION['message'] = "Response submitted successfully.";
+        } else {
+            $_SESSION['message'] = "Error submitting response: " . mysqli_error($conn);
+        }
+
+        mysqli_stmt_close($stmt);
+        mysqli_close($conn);
+
+        echo "<meta http-equiv='refresh' content='0;url=view_enquiry.php'>";
+
+    }
+?>
+
 </body>
 </html>
 
