@@ -133,7 +133,7 @@
 
                 <div class="enhancement-section detect-en">
                     <div class="enhancement-section-heading">
-                        <h3> User Management Module (admin) + Generate PDF </h3>
+                        <h3> User Management Module (admin) & Generate PDF </h3>
                     </div>
                     <div class="enhancement-section-description">
                         <div class="enhancement-section-video">
