@@ -49,7 +49,9 @@
                             <img src="images/responsivelayout.gif" alt="Responsive Layout Demo Video">
                         </div>
                         <div class="enhancement-section-description-content">
-                            <p></p>
+                            <p> 
+                                OTP verification for the "Forgot Password" feature is done through the PHPMailer extension, which sends OTP emails to the user. This method emulates real-life usage cases to ensure its reliability. For this function, it is recommended to use a private Wi-Fi connection to avoid possible issues in delivering the email function as expected. Also, it has made the password reset process have a stricter flow. First, the user needs to receive the OTP before having access to the password reset page; without an appropriate OTP, access is not allowed. To avoid functionality issues, the Forgot Password page can only be accessed once the user has logged out. Also, upon successful registration, a welcoming email will be sent through PHPMailer, acknowledging the creation of an account. Theseenhance security and allow user experience consistencye across various scenarios.
+                            </p>
                             <p>
                                 Applied Page:
                                 <a href="registration.php">Register Page</a>
