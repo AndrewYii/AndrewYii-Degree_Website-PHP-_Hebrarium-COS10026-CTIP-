@@ -171,7 +171,7 @@
         </div>
     </div>
 
-    <div class="main-content-login">
+    <div class="main-content">
         <header class="admin-header">
             <h2 class="admin-header-text">
                 Login 
