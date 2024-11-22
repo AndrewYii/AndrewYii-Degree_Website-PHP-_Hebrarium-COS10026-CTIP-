@@ -223,14 +223,12 @@
                                         <th>Username</th>
                                         <th>Plant Name</th>
                                         <th>Tag</th>
-                                        <th>Picture Option</th>
                                         <th>Plant Family</th>
                                         <th>Plant Genus</th>
                                         <th>Plant Species</th>
                                         <th>Description</th>
                                         <th>Leaf Image</th>
                                         <th>Herbarium Image</th>
-                                        <th>Date Submitted</th>
                                         <th class="admin-delete-option">Action</th>
                                     </tr>
                                 </thead>
@@ -258,14 +256,23 @@
                                             <td><?php echo $row["Username"]; ?></td>
                                             <td><?php echo $row["Plant_Name"]; ?></td>
                                             <td><?php echo $row["Tag"]; ?></td>
-                                            <td><?php echo $row["Picture_Option"]; ?></td>
                                             <td><?php echo $row["Plant_Family"]; ?></td>
                                             <td><?php echo $row["Plant_Genus"]; ?></td>
                                             <td><?php echo $row["Plant_Species"]; ?></td>
                                             <td class="description-column"><?php echo $row["Description_Contribute"]; ?></td>
-                                            <td><?php echo $row["Plant_Leaf_Photo"]; ?></td>
-                                            <td><?php echo $row["Plant_Herbarium_Photo"]; ?></td>
-                                            <td><?php echo $row["Contribute_Created_At"]; ?></td>
+                                            <td>        
+                                            <?php 
+                                            $contribution = $row["Plant_Leaf_Photo"];
+                                            echo "<img src='$contribution' alt='Leaf Photo'>";
+                                            echo "<p>Leaf Photo Path: $contribution</p>"; 
+                                            ?>
+                                            </td>
+                                            <td>    <?php 
+                                            $contribution = $row["Plant_Herbarium_Photo"];
+                                            echo "<img src='$contribution' alt='Herbarium Photo'>";
+                                            echo "<p>Herbarium Photo Path: $contribution</p>"; 
+                                            ?>
+                                            </td>
                                             <td>
                                                 <input type="checkbox" id="toggle-<?php echo $row['Contribute_ID']; ?>" class="toggle-checkbox">
                                                 <label for="toggle-<?php echo $row['Contribute_ID']; ?>" class="kebab-menu-icon">
