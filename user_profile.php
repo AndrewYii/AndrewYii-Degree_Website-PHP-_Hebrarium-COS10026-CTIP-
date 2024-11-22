@@ -5,8 +5,8 @@
 
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="description" content="Unlock the secrets of plant identification with Plant's Notebook. Learn to identify various plant species, understand their characteristics, and explore the tools and techniques used by botanists. Ideal for botanists, hobbyists, and nature enthusiasts." />
-<meta name="keywords" content="Herbarium Specimen Tutorial, Classify Plant, Herbarium Specimen Preserve, Herbarium Specimen Tools, Plant Identifier, Botany, Plant Preservation, Plant Classification, Botanical Tools, Plant Identification, Botanical Education, Nature Enthusiasts, Botanical Hobbyists, Plant Collection, Herbarium Techniques,Plant Common Name, Plant Scientific Name,Herbarium Specimen" />
+<meta name="description" content="View User Info" />
+<meta name="keywords" content="Plant's Notebook, User Profile" />
 <meta name="author" content="Aniq Nazhan bin Mazlan"  />
 <title>Plant's Notebook | Profile Page</title>
 <link rel="stylesheet" href="styles/style.css">
@@ -22,7 +22,7 @@
 ?>
 
     <body>
-    <?php
+        <?php
             $conn = mysqli_connect($servername,$username,$password,$dbname);
             
             // Check if user is logged in
@@ -39,6 +39,14 @@
                 header("Location: login.php");
                 exit();
             }
+        ?>
+        <?php 
+
+        if (isset($_SESSION['message'])) {
+            $messageClass = strpos($_SESSION['message'], 'Error') !== false ? 'error-message' : 'success-message';
+            echo "<div class='admin-message {$messageClass}'>" . $_SESSION['message'] . "</div>";
+            unset($_SESSION['message']); // Clear the message after displaying
+        }
         ?>
 
         <header id="top_enq">
@@ -73,7 +81,7 @@
                     </tr>
                     <tr class="even-row5">
                         <th>Phone Number</th>
-                        <td><?php echo isset($user_data['PhoneNumber']) ? $user_data['PhoneNumber'] : 'Not set'; ?></td>
+                        <td><?php echo isset($user_data['Phone']) ? $user_data['Phone'] : 'Not set'; ?></td>
                     </tr>
                     <tr class="odd-row5">
                         <th>Email</th>
@@ -97,7 +105,7 @@
                 <input type="radio" id="contribution" name="profile" checked="checked">
                 <input type="radio" id="enquiry" name="profile">
                 <ul class="profile-nav">
-                    <li id="contribution-section"><label for="contribution">Contibution</label></li>
+                    <li id="contribution-section"><label for="contribution">Contribution</label></li>
                     <li>|</li>
                     <li id="enquiry-section"><label for="enquiry">Enquiry</label></li>   
                 </ul>
@@ -109,6 +117,9 @@
                     if ($plant_result && mysqli_num_rows($plant_result) > 0) {
                         $contribution_count = 1;
                             while ($row = mysqli_fetch_assoc($plant_result)) {
+                                $contribution_id = $row['Contribute_ID'];
+                                $comment_sql = "SELECT * FROM Contribute_Comments WHERE Contribute_ID = '$contribution_id' ORDER BY Comment_Created_At DESC";
+                                $comment_result = mysqli_query($conn, $comment_sql);
                                 echo "<h3>Contribution #" . $contribution_count . "</h3>";
                                 echo "<form method='POST' onsubmit='return confirm(\"Are you sure you want to delete this contribution?\");'>";
                                 echo "<input type='hidden' name='contribution_id' value='" . $row['Contribute_ID'] . "'>";
@@ -119,7 +130,7 @@
                                     <th>Contribution</th>   
                                     <th>Details</th>
                                 </tr>
-                                <tr >
+                                <tr>
                                     <td>Plant's Leaf</td>
                                     <td><img src='" . htmlspecialchars($row['Plant_Leaf_Photo']) . "' alt='Plant Leaf Photo' class='enquiry-img'></td>
                                 </tr>
@@ -146,9 +157,50 @@
                                 <tr>
                                     <td>Description</td>
                                     <td>" . htmlspecialchars($row['Description_Contribute']) . "</td>
-                                </tr>
-                            </table>
-                            <br>";
+                                </tr>";
+                                if ($comment_result && mysqli_num_rows($comment_result) > 0) {
+                                    $comment_count = 1;
+                                    while ($comment = mysqli_fetch_assoc($comment_result)) {
+                                        if($comment_count%2 != 0){
+                                            echo"<tr class='odd-row5'>
+                                                <td>Comments " . $comment_count . "</td>";
+                                                echo"<td>"  . htmlspecialchars($comment['Comment_Text']) . "</td>
+                                                </tr>";
+                                            echo"<tr>
+                                                    <td>Commenter Username</td>
+                                                    <td>"  . htmlspecialchars($comment['Commenter_Username']) . "</td>
+                                                </tr>";
+                                            echo"<tr class='odd-row5'>
+                                                    <td>Comments Created</td>
+                                                    <td>"  . htmlspecialchars($comment['Comment_Created_At']) . "</td>
+                                                </tr>";
+
+                                        }
+                                        else{
+                                            echo"<tr>
+                                            <td>Comments" . $comment_count . "</td>";
+                                            echo"<td>"  . htmlspecialchars($comment['Comment_Text']) . "</td>
+                                            </tr>";
+                                        echo"<tr class='odd-row5'>
+                                                <td>Commenter Username</td>
+                                                <td>"  . htmlspecialchars($comment['Commenter_Username']) . "</td>
+                                            </tr>";
+                                        echo"<tr>
+                                                <td>Comments Created</td>
+                                                <td>"  . htmlspecialchars($comment['Comment_Created_At']) . "</td>
+                                            </tr>";
+                                        }
+                                        $comment_count++;
+                                    }
+                                }
+                                else{
+                                    echo"<tr class='odd-row5'>
+                                            <td>Comment</td>
+                                            <td>No Comments Found</td>
+                                        </tr>";
+                                }
+                           echo"</table>
+                                <br>";
                                 $contribution_count++;
                             }
                             } else {
@@ -158,7 +210,8 @@
                                 $contribution_id = $_POST['contribution_id'];
                                 $delete_sql = "DELETE FROM contribute WHERE Contribute_ID = '$contribution_id' AND username = '$current_user'";
                                 if (mysqli_query($conn, $delete_sql)) {
-                                    echo "";
+                                    $_SESSION['message'] = 'Contribution Deleted';
+                                    echo "<meta http-equiv='refresh' content='0;url=user_profile.php'>";
                                 } else {
                                     echo "";
                         }
@@ -203,6 +256,9 @@
                                 <td>" . htmlspecialchars($row['Message']) . "</td>
                             </tr>
                             <tr class='odd-row5'>
+                                <td>Status</td>
+                                <td>" . htmlspecialchars($row['Status']) . "</td>
+                            <tr>
                                 <td>Response</td>
                                 <td>" . htmlspecialchars($row['Response']) . "</td>
                             </tr>
@@ -217,9 +273,10 @@
                         $enquiry_id = $_POST['enquiry_id'];
                         $delete_enquiry_sql = "DELETE FROM Enquiry WHERE Enquiry_ID = '$enquiry_id' AND Username = '$current_user'";
                         if (mysqli_query($conn, $delete_enquiry_sql)) {
-                            echo "";//TODO: Pop up message
+                            $_SESSION['message'] = 'Enquiry Deleted';
+                            echo "<meta http-equiv='refresh' content='0;url=user_profile.php'>";
                         } else {
-                            echo "";//TODO: Pop up message
+                            echo "";
                         }
                     }
 
@@ -227,9 +284,11 @@
                 ?>
                 <br>
             </div>
+
             <?php   
-            mysqli_close($conn);
+                mysqli_close($conn);
             ?>
+
             <figure class='going-up-container'>
                 <a href='#top_enq'>
                     <img src='images/going_up.png' alt='going-up' class='going-up'  title="going to the top">
@@ -249,4 +308,5 @@
         </figure> 
 
     </body>
+
 </html>

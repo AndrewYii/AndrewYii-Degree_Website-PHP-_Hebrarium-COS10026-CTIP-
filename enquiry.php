@@ -1,10 +1,3 @@
-<?php
-    include 'database/connection.php';
-    include 'database/database.php';
-    session_start();
-?>
-
-
 <!DOCTYPE html>
 
 <html lang="en">
@@ -23,8 +16,31 @@
 
     </head>
 
-    <body>
+    <?php
+    include 'database/connection.php';
+    include 'database/database.php';
+    session_start();
+    ?>
 
+    <body>
+        <?php
+            $conn = mysqli_connect($servername,$username,$password,$dbname);
+            
+            // Check if user is logged in
+            if (isset($_SESSION['username'])) {
+                $current_user = $_SESSION['username'];
+                $sql = "SELECT * FROM Register WHERE username = '$current_user'";
+                $result = mysqli_query($conn, $sql);
+
+                if ($result && mysqli_num_rows($result) > 0) {
+                    $user_data = mysqli_fetch_assoc($result);
+                }
+
+                $nameParts = explode(' ', $user_data['Name'], 2); // Limit to 2 parts
+                $firstName = $nameParts[0];
+                $lastName = isset($nameParts[1]) ? $nameParts[1] : '';
+            }
+        ?>
         <header id="top_enq">
             <?php include 'include/header.php';?>
         </header>
@@ -39,25 +55,32 @@
                 
                 <form name="Feedback" method="post" action="enquiry_process.php" novalidate="novalidate">
                     <div class="enquiry-reset"><input class="feedback-butn" type="reset" value="Reset"></div>
-
                         <fieldset class="enquiry-fd">
                             <legend class="enquiry-legend">User's Information</legend>
                             <div class="enquiry-ui">
                                 <div class="enquiry-fname">
                                     <label for="fname" class="feedback-cont">First Name</label>
-                                    <input class="enquiry-data" type="text" name="first_name" placeholder="Lucky Liew Jie" size="22" id="fname">
+                                    <input class="enquiry-data" type="text" name="first_name" 
+                                        value="<?php echo isset($firstName) ? htmlspecialchars($firstName) : ''; ?>" 
+                                        placeholder="Lucky Liew Jie" size="22" id="fname">
                                 </div>
                                 <div class="enquiry-lname">
                                     <label for="lname" class="feedback-cont">Last Name</label>
-                                    <input class="enquiry-data" type="text" name="last_name" placeholder="Ang" size="22"  id="lname">
+                                    <input class="enquiry-data" type="text" name="last_name" 
+                                        value="<?php echo isset($lastName) ? htmlspecialchars($lastName) : ''; ?>" 
+                                        placeholder="Ang" size="22" id="lname">
                                 </div>
                                 <div class="enquiry-email">
                                     <label for="email" class="feedback-cont">Email</label>
-                                    <input class="enquiry-data" type="text" id="email" name="email" placeholder="example@gmail.com" >
+                                    <input class="enquiry-data" type="text" id="email" name="email" 
+                                        value="<?php echo isset($user_data['Email']) ? htmlspecialchars($user_data['Email']) : ''; ?>" 
+                                        placeholder="example@gmail.com">
                                 </div>
                                 <div class="enquiry-pnum">
                                     <label for="pnum" class="feedback-cont">Phone Number</label>
-                                    <input class="enquiry-data" type="text" id="pnum" name="phone"  placeholder="0123456789">
+                                    <input class="enquiry-data" type="text" id="pnum" name="phone" 
+                                        value="<?php echo isset($user_data['Phone']) ? htmlspecialchars($user_data['Phone']) : ''; ?>" 
+                                        placeholder="0123456789">
                                 </div>
                             </div>
                         </fieldset>
@@ -67,34 +90,40 @@
                             <table class="address-table">
                                 <tr>
                                     <td class="feedback-cont">Street: </td>
-                                    <td><input class="enquiry-data" type="text" name="Street" placeholder="2A,Lorong Bindurong"  id="street"></td>
+                                    <td><input class="enquiry-data" type="text" name="Street" 
+                                        value="<?php echo isset($user_data['Street']) ? htmlspecialchars($user_data['Street']) : ''; ?>" 
+                                        id="street"></td>
                                 </tr>
                                 <tr>
                                     <td class="feedback-cont">City: </td>
-                                    <td><input class="enquiry-data" type="text" name="City" placeholder="Bintulu"  id="city"></td>
+                                    <td><input class="enquiry-data" type="text" name="City" 
+                                        value="<?php echo isset($user_data['City']) ? htmlspecialchars($user_data['City']) : ''; ?>" 
+                                        id="city"></td>
                                 </tr>
                                 <tr>
                                     <td class="feedback-cont">Postcode: </td>
-                                    <td><input class="enquiry-data" type="text" name="Postcode"  id="Postcode"></td>
+                                    <td><input class="enquiry-data" type="text" name="Postcode" 
+                                        value="<?php echo isset($user_data['Postcode']) ? htmlspecialchars($user_data['Postcode']) : ''; ?>" 
+                                        id="Postcode"></td>
                                 </tr>
                                 <tr>
                                     <td class="feedback-cont">State: </td>
                                     <td class="enquiry-td">
-                                        <select name="State" id="state" class="enquiry-select" >
+                                        <select name="State" id="state" class="enquiry-select">
                                         <option value="">--Select--</option>
-                                        <option value="Johor">Johor</option>
-                                        <option value="Kedah">Kedah</option>
-                                        <option value="Kelantan">Kelantan</option>
-                                        <option value="Kuala Lumpur">Kuala Lumpur</option>
-                                        <option value="Labuan">Labuan</option>
-                                        <option value="Malacca">Malacca</option>
-                                        <option value="Negeri Sembilan">Negeri Sembilan</option>
-                                        <option value="Pahang">Pahang</option>
-                                        <option value="Perak">Perak</option>
-                                        <option value="Putrajaya">Putrajaya</option>
-                                        <option value="Sabah">Sabah</option>
-                                        <option value="Sarawak">Sarawak</option>
-                                        <option value="Selangor">Selangor</option>
+                                            <option value="Johor" <?php echo (isset($user_data['State']) && $user_data['State'] == 'Johor') ? 'selected' : ''; ?>>Johor</option>
+                                            <option value="Kedah" <?php echo (isset($user_data['State']) && $user_data['State'] == 'Kedah') ? 'selected' : ''; ?>>Kedah</option>
+                                            <option value="Kelantan" <?php echo (isset($user_data['State']) && $user_data['State'] == 'Kelantan') ? 'selected' : ''; ?>>Kelantan</option>
+                                            <option value="Kuala Lumpur" <?php echo (isset($user_data['State']) && $user_data['State'] == 'Kuala Lumpur') ? 'selected' : ''; ?>>Kuala Lumpur</option>
+                                            <option value="Labuan" <?php echo (isset($user_data['State']) && $user_data['State'] == 'Labuan') ? 'selected' : ''; ?>>Labuan</option>
+                                            <option value="Malacca" <?php echo (isset($user_data['State']) && $user_data['State'] == 'Malacca') ? 'selected' : ''; ?>>Malacca</option>
+                                            <option value="Negeri Sembilan" <?php echo (isset($user_data['State']) && $user_data['State'] == 'Negeri Sembilan') ? 'selected' : ''; ?>>Negeri Sembilan</option>
+                                            <option value="Pahang" <?php echo (isset($user_data['State']) && $user_data['State'] == 'Pahang') ? 'selected' : ''; ?>>Pahang</option>
+                                            <option value="Perak" <?php echo (isset($user_data['State']) && $user_data['State'] == 'Perak') ? 'selected' : ''; ?>>Perak</option>
+                                            <option value="Putrajaya" <?php echo (isset($user_data['State']) && $user_data['State'] == 'Putrajaya') ? 'selected' : ''; ?>>Putrajaya</option>
+                                            <option value="Sabah" <?php echo (isset($user_data['State']) && $user_data['State'] == 'Sabah') ? 'selected' : ''; ?>>Sabah</option>
+                                            <option value="Sarawak" <?php echo (isset($user_data['State']) && $user_data['State'] == 'Sarawak') ? 'selected' : ''; ?>>Sarawak</option>
+                                            <option value="Selangor" <?php echo (isset($user_data['State']) && $user_data['State'] == 'Selangor') ? 'selected' : ''; ?>>Selangor</option>
                                         </select>
                                     </td>
                                 </tr>

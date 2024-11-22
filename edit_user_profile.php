@@ -1,12 +1,23 @@
+<?php
+    include 'database/connection.php';
+    include 'database/database.php';
+    session_start(); 
+    if(!isset($_SESSION['username'])){
+            header("Location: login.php");
+            exit();
+        }
+?>
+
 <!DOCTYPE html>
 
 <html lang="en">
+    
 <head>
 
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="description" content="Unlock the secrets of plant identification with Plant's Notebook. Learn to identify various plant species, understand their characteristics, and explore the tools and techniques used by botanists. Ideal for botanists, hobbyists, and nature enthusiasts." />
-<meta name="keywords" content="Herbarium Specimen Tutorial, Classify Plant, Herbarium Specimen Preserve, Herbarium Specimen Tools, Plant Identifier, Botany, Plant Preservation, Plant Classification, Botanical Tools, Plant Identification, Botanical Education, Nature Enthusiasts, Botanical Hobbyists, Plant Collection, Herbarium Techniques,Plant Common Name, Plant Scientific Name,Herbarium Specimen" />
+<meta name="description" content="Plant's Notebook Edit User Info" />
+<meta name="keywords" content="User Edit Profile, Plant's Notebook" />
 <meta name="author" content="Aniq Nazhan bin Mazlan"  />
 <title>Plant's Notebook | Profile Page</title>
 <link rel="stylesheet" href="styles/style.css">
@@ -17,16 +28,11 @@
 
 <body>
 
-<?php
-    include 'database/connection.php';
-    include 'database/database.php';
-    session_start(); 
-?>
     <header>
         <?php include 'include/header.php';?>
     </header>
 
-    <diV class='edit_user'>
+    <div class='edit_user'>
 
         <div class="profile-update-container">
             <h1 class="edit-user-title">Update Profile</h1>
@@ -60,7 +66,7 @@
                 
                 <div class="form-group">
                     <label for="Last_Name">Phone Number:</label>
-                    <input class="edit-user-input" type="text" id="Phone_Num" name="Phone_Num" placeholder="It remains the same if nothing changes">
+                    <input class="edit-user-input" type="text" id="Phone" name="Phone" placeholder="It remains the same if nothing changes">
                 </div>
 
                 <div class="form-group">
@@ -119,7 +125,7 @@
                 <input type="submit" name="submit" value="Update" class="update-button">
             </form>
         </div>
-
+    </div>
 <?php
 if(isset($_POST['submit'])) {
     $conn = mysqli_connect($servername,$username,$password,$dbname);
@@ -191,6 +197,31 @@ if(isset($_POST['submit'])) {
                 $stmt->bind_param("ss", $proposed_username, $current_username);
                 $stmt->execute();
 
+                // Update username in login table
+                $update_enquiry = "UPDATE login SET Username = ? WHERE Username = ?";
+                $stmt = $conn->prepare($update_enquiry);
+                $stmt->bind_param("ss", $proposed_username, $current_username);
+                $stmt->execute();
+
+                // Update username in Pre-Contribute table
+                $update_enquiry = "UPDATE pre_contribute SET Username = ? WHERE Username = ?";
+                $stmt = $conn->prepare($update_enquiry);
+                $stmt->bind_param("ss", $proposed_username, $current_username);
+                $stmt->execute();
+
+                // Update username in contribute_comments table
+                $update_enquiry = "UPDATE contribute_comments SET Commenter_Username = ? WHERE Commenter_Username = ?";
+                $stmt = $conn->prepare($update_enquiry);
+                $stmt->bind_param("ss", $proposed_username, $current_username);
+                $stmt->execute();
+
+                // Update username in feedback table
+                $update_enquiry = "UPDATE feedback SET Username = ? WHERE Username = ?";
+                $stmt = $conn->prepare($update_enquiry);
+                $stmt->bind_param("ss", $proposed_username, $current_username);
+                $stmt->execute();
+
+
                 // If all queries successful, commit transaction
                 mysqli_commit($conn);
                 
@@ -228,9 +259,9 @@ if(isset($_POST['submit'])) {
          $updates[] = "Email='$new_email'";
      }
      
-     if (!empty($_POST['PhoneNumber']) && $_POST['PhoneNumber'] !== $current_data['PhoneNumber']) {
-         $new_phone_number = mysqli_real_escape_string($conn, $_POST['PhoneNumber']);
-         $updates[] = "PhoneNumber='$new_phone_number'";
+     if (!empty($_POST['Phone']) && $_POST['Phone'] !== $current_data['Phone']) {
+         $new_phone_number = mysqli_real_escape_string($conn, $_POST['Phone']);
+         $updates[] = "Phone='$new_phone_number'";
      }
      
      // Address fields
@@ -291,8 +322,6 @@ if(isset($_POST['submit'])) {
 }
 ?>
 
-
-</div>
 
 <footer>
     <?php include 'include/footer.php';?>
