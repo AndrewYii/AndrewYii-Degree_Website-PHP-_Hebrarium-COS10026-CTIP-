@@ -5,8 +5,8 @@
 
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="description" content="Unlock the secrets of plant identification with Plant's Notebook. Learn to identify various plant species, understand their characteristics, and explore the tools and techniques used by botanists. Ideal for botanists, hobbyists, and nature enthusiasts." />
-<meta name="keywords" content="Herbarium Specimen Tutorial, Classify Plant, Herbarium Specimen Preserve, Herbarium Specimen Tools, Plant Identifier, Botany, Plant Preservation, Plant Classification, Botanical Tools, Plant Identification, Botanical Education, Nature Enthusiasts, Botanical Hobbyists, Plant Collection, Herbarium Techniques,Plant Common Name, Plant Scientific Name,Herbarium Specimen" />
+<meta name="description" content="View User Info" />
+<meta name="keywords" content="Plant's Notebook, User Profile" />
 <meta name="author" content="Aniq Nazhan bin Mazlan"  />
 <title>Plant's Notebook | Profile Page</title>
 <link rel="stylesheet" href="styles/style.css">
@@ -256,6 +256,9 @@
                                 <td>" . htmlspecialchars($row['Message']) . "</td>
                             </tr>
                             <tr class='odd-row5'>
+                                <td>Status</td>
+                                <td>" . htmlspecialchars($row['Status']) . "</td>
+                            <tr>
                                 <td>Response</td>
                                 <td>" . htmlspecialchars($row['Response']) . "</td>
                             </tr>

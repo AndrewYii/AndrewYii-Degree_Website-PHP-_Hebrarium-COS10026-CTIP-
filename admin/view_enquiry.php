@@ -116,6 +116,7 @@
     <meta name="description" content="View Plant's Notebook Enquiries"/>
     <meta name="keywords" content="Plant's Notebook, Enquiries, Admin View"/>
     <title>Plant's Notebook | View Enquiries</title>
+    <meta name="author" content=" Muhammad Faiz bin Halek"  />
     <link rel="stylesheet" href="../styles/style.css">
     <link rel="icon" type="image/x-icon" href="../images/logo.png">
 </head>
@@ -209,10 +210,9 @@
                                 <button class="admin-print-button" name="generate_pdf">Print</button>
                             </form>
                             <form action="<?php echo $_SERVER['PHP_SELF']; ?>" method="post">
-                                <button type="submit" name="refresh_table">Refresh</button>
+                                <button type="submit" name="refresh_table" form="status-form">Update</button>
                             </form>
                         </div>
-                    
                         <div class="card-body">
                             <table class="admin-table">
                                 <thead>
@@ -220,14 +220,10 @@
                                         <th></th>
                                         <th>ID</th>
                                         <th>Status</th>
-                                        <th>Username</th>
                                         <th>Name</th>
                                         <th>Email</th>
                                         <th>Subject</th>
                                         <th class="description-column">Message</th>
-                                        <th class="description-column">Response</th>
-                                        <th>Upload Response</th>
-                                        <th>Date Submitted</th>
                                         <th class="admin-delete-option">Action</th>
                                     </tr>
                                 </thead>
@@ -250,7 +246,6 @@
                                 if (mysqli_num_rows($result) > 0) {
                                     while($row = mysqli_fetch_assoc($result)) {
                                 ?>
-                                    <tr>
                                         <td>
                                         <?php
                                         $currentStatus = $row['Status'];
@@ -266,14 +261,14 @@
                                         <td><?php echo $row["Enquiry_ID"]; ?></td>
                                         <td><?php 
                                         $currentStatus = $row['Status'];
-                                        echo "<form class='status-form' action='".$_SERVER['PHP_SELF']."' method='post'>
+                                        echo "<form class='status-form' action='".$_SERVER['PHP_SELF']."' id='status-form' method='post'>
                                         <select name='Status' id='status' class='status-select'>
                                             <option value='Unresolved' " . ($currentStatus == 'Unresolved' ? 'selected' : '') . " class='Unresolved'>Unresolved</option>
                                             <option value='Pending' " . ($currentStatus == 'Pending' ? 'selected' : '') . " class='Pending'>Pending</option>
                                             <option value='Solved' " . ($currentStatus == 'Solved' ? 'selected' : '') . " class='Solved'>Solved</option>
                                         </select>
                                         <input type='hidden' name='enquiry_id' value='{$row['Enquiry_ID']}'>
-                                        <input type='submit' value='Update'></form>"; 
+                                        <input type='submit' id='submit-status' form='status-form' value='Update'></form>"; 
 
                                         if (isset($_POST['Status']) && isset($_POST['enquiry_id'])) {
                                             $newStatus = mysqli_real_escape_string($conn, $_POST['Status']);
@@ -289,50 +284,13 @@
                                             } else {
                                                 $_SESSION['message'] = 'Error updating status: ' . mysqli_error($conn);
                                             }
-                                            
                                             mysqli_stmt_close($stmt);
                                         }
                                         ?></td>
-                                        <td><?php echo $row["Username"]; ?></td>
                                         <td><?php echo $row["Name"]; ?></td>
                                         <td><?php echo $row["Email"]; ?></td>
                                         <td><?php echo $row["Subject"]; ?></td>
                                         <td class="description-column"><?php echo $row["Message"]; ?></td>
-                                        <td class="description-column"><?php echo $row["Response"]; 
-                                        $email = htmlspecialchars($row["Email"]);
-                                        echo "<br>";
-                                        echo "<br>";
-                                        echo "<a href='mailto:$email?subject=Response to Enquiry&body={$row['Response']}'' class='response-mail'>Send Email</a>";
-                                        ?></td>
-                                        <td class="description-column"><?php 
-                                        $reference_comment = "comment_" . $row['Enquiry_ID'];
-                                        $email = $row["Email"]; // Create a unique name for the textarea
-                                        echo "
-                                                <form class='Response-Form' method='post' action='".$_SERVER['PHP_SELF']."'>
-                                                    <textarea placeholder='Enquiry Response' name='$reference_comment'></textarea>
-                                                    <input type='submit' value='Submit'>
-                                                </form>";
-
-                                                if (isset($_POST[$reference_comment])) {
-                                                    $response = mysqli_real_escape_string($conn, $_POST[$reference_comment]);
-                                                    $enquiry_id = $row['Enquiry_ID'];
-                                            
-                                                    // SQL query to update the enquiry response
-                                                    $sql = "UPDATE enquiry SET Response = ? WHERE Enquiry_ID = ?";
-                                                    $stmt = mysqli_prepare($conn, $sql);
-                                                    mysqli_stmt_bind_param($stmt, "si", $response, $enquiry_id);
-                                            
-                                                    if (mysqli_stmt_execute($stmt)) {
-                                                        $_SESSION['message'] = 'Response submitted successfully';
-                                                    } else {
-                                                        $_SESSION['message'] = 'Error submitting response: ' . mysqli_error($conn);
-                                                    }
-                                            
-                                                    mysqli_stmt_close($stmt);
-                                                }
-                                                ?>
-                                            </td>
-                                        <td><?php echo $row["Enquiry_Created_At"]; ?></td>
                                         <td>
                                             <input type="checkbox" id="toggle-<?php echo $row['Enquiry_ID']; ?>" class="toggle-checkbox">
                                             <label for="toggle-<?php echo $row['Enquiry_ID']; ?>" class="kebab-menu-icon">
@@ -346,6 +304,10 @@
                                             <form action="<?php echo $_SERVER['PHP_SELF']; ?>" method="get">
                                                 <input type="hidden" name="edit_id" value="<?php echo $row['Enquiry_ID']; ?>">
                                                 <button type="submit" class="admin-edit-button menu-button">Edit</button>
+                                            </form>
+                                            <form action="<?php echo $_SERVER['PHP_SELF']; ?>" method="get">
+                                                <input type="hidden" name="response_id" value="<?php echo $row['Enquiry_ID']; ?>">
+                                                <button type="submit" class="admin-response-button menu-button">Response</button>
                                             </form>
                                             <form action="<?php echo $_SERVER['PHP_SELF']; ?>" method="get">
                                                 <input type="hidden" name="id" value="<?php echo $row['Enquiry_ID']; ?>">
@@ -362,6 +324,7 @@
                                 mysqli_close($conn);
                                 ?>
                             </table>
+                            <br>
                         </div>
                     </div>
                 </div>
@@ -539,5 +502,72 @@ if (isset($_POST['update_enquiry'])) {
     exit();
 }
 ?>
+
+<?php
+    if (isset($_GET['response_id'])) {
+        $conn = mysqli_connect($servername, $username, $password, $dbname);
+        $id = mysqli_real_escape_string($conn, $_GET['response_id']);
+        $_SESSION['response-enquiry-id']=$id;
+        $sql = "SELECT * FROM enquiry WHERE Enquiry_ID = '$id'";
+        $result = mysqli_query($conn, $sql);
+        $row = mysqli_fetch_assoc($result);
+        
+        if ($row) {
+            ?>
+            <div class="view-modal-overlay">
+                <div class="view-modal-content">
+                    <div class="view-modal-header">
+                        <h2>Response Form</h2>
+                    </div>
+                    <div class="detail-row">
+                        <?php  
+                            $email = htmlspecialchars($row["Email"]);
+                            $reference_comment = "comment_" . $row['Enquiry_ID'];
+                            $email = $row["Email"]; // Create a unique name for the textarea
+                            $response = $row["Response"];
+                            echo "
+                            <form class='Response-Form' method='post' action='".$_SERVER['PHP_SELF']."' id='Response-Form'>
+                                <textarea placeholder='Enquiry Response' name='response' >$response</textarea>
+                                <input type='submit'   name='response-submit' value='Upload Response'>
+                            </form>";
+                        ?>
+                    </div>
+                    <div class="response-bot-bar">
+                        <a href="<?php echo $_SERVER['PHP_SELF']; ?>" class="close-view-button">Close</a>
+                        <?php echo "<a href='mailto:$email?subject=Response to Enquiry&body={$row['Response']}'' class='response-mail'>Send Email</a>";?>
+                    </div>
+                </div>
+            </div>
+            <?php
+            mysqli_close($conn);
+        }
+    }
+?>
+
+<?php
+
+    if (isset($_POST['response-submit'])) {
+        $conn = mysqli_connect($servername, $username, $password, $dbname);
+        $response = mysqli_real_escape_string($conn, $_POST['response']);
+
+        $sql = "UPDATE enquiry SET Response = ? WHERE Enquiry_ID = ?";
+        $stmt = mysqli_prepare($conn, $sql);
+        mysqli_stmt_bind_param($stmt, "si", $response,  $_SESSION['response-enquiry-id']);
+
+        if (mysqli_stmt_execute($stmt)) {
+            $_SESSION['message'] = "Response submitted successfully.";
+        } else {
+            $_SESSION['message'] = "Error submitting response: " . mysqli_error($conn);
+        }
+
+        mysqli_stmt_close($stmt);
+        mysqli_close($conn);
+
+        echo "<meta http-equiv='refresh' content='0;url=view_enquiry.php'>";
+
+    }
+?>
+
 </body>
 </html>
+

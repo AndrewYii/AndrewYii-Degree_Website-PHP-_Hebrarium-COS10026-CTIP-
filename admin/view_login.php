@@ -114,6 +114,7 @@
     <meta name="description" content="View Plant's Notebook Login Records"/>
     <meta name="keywords" content="Plant's Notebook, Login Records, Admin View"/>
     <title>Plant's Notebook | View Login Records</title>
+    <meta name="author" content=" Muhammad Faiz bin Halek"  />
     <link rel="stylesheet" href="../styles/style.css">
     <link rel="icon" type="image/x-icon" href="../images/logo.png">
 </head>
