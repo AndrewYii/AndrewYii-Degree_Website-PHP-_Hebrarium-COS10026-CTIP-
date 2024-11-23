@@ -60,7 +60,7 @@
             <form class="edit-user-form" action="<?php echo htmlspecialchars($_SERVER['PHP_SELF']); ?>" method="post" enctype="multipart/form-data" autocomplete="off">
                 <div class="form-group">
                     <label for="First_Name">First Name:</label>
-                    <input class="edit-user-input" type="text" id="First_Name" name="FirstName" placeholder="It remains the same if nothing changes">
+                    <input class="edit-user-input" type="text" id="First_Name" name="FirstName" pattern="[A-Za-z ]+" title="Only letters and spaces allowed" placeholder="It remains the same if nothing changes">
                 </div>
                 
                 <div class="form-group">
