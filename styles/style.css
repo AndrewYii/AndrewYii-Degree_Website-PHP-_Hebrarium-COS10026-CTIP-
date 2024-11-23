@@ -7359,6 +7359,42 @@ button.contribute-btn:hover {
     word-wrap: break-word;
 }
 
+.admin-description-table {
+    width: 100%;
+    border-collapse: separate;  
+    border-spacing: 0 15px;   
+    position: relative;
+}
+
+.admin-description-table th,
+.admin-description-table td {
+    padding: 15px;           
+    text-align: left;
+    white-space: nowrap;      
+    overflow: hidden;
+}
+
+.admin-description-table th:first-child,
+.admin-description-table td:first-child {
+    width: 5%; 
+}
+
+.admin-description-table th:last-child {
+    width: 8%; 
+    position: relative; 
+}
+
+.admin-description-table td:last-child {
+    position: relative;
+    overflow: visible !important; 
+}
+
+.admin-description-table .description-column {
+    white-space: normal;     
+    max-width: 100px;        
+    word-wrap: break-word;
+}
+
 
 .card-body {
     overflow-x: auto;
@@ -7381,6 +7417,21 @@ button.contribute-btn:hover {
     border-bottom: 2px solid #dee2e6;
 }
 
+.admin-description-table tbody tr {
+    background: #fff;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+.admin-description-table tbody tr:hover {
+    background: #f8f9fa;
+}
+
+.admin-description-table th {
+    background: #f8f9fa;
+    font-weight: bold;
+    border-bottom: 2px solid #dee2e6;
+}
+
 .description-column {
     min-width: 300px !important;    
     max-width: 500px !important;      
@@ -7398,6 +7449,18 @@ button.contribute-btn:hover {
 }
 
 .admin-table td.description-column {
+    line-height: 1.5;        
+    text-align: left;
+}
+
+.admin-description-table th.description-column {
+    background-color: #f3f3f3;
+    font-weight: bold;
+    text-align: left;
+    padding: 15px 25px;
+}
+
+.admin-description-table td.description-column {
     line-height: 1.5;        
     text-align: left;
 }
@@ -7462,6 +7525,25 @@ button.contribute-btn:hover {
     overflow-y: auto;
     overflow-x: auto;  
     position: relative;
+}
+
+.admin_leaf_photo img{
+    height: 100px;
+    width: 100px;
+}
+
+.admin_herbarium_photo img{
+    height: 100px;
+    width: 10
+    0px;
+}
+
+.admin-description {
+    font-style: italic; /* Makes the text italic */
+    color: #666; /* A lighter gray color for the text */
+    margin-top: 10px; /* Space above the description */
+    border-left: 2px solid #ccc; /* Optional: adds a left border */
+    padding-left: 10px; /* Space between the border and text */
 }
 
 @media (max-width: 1500px) { 
