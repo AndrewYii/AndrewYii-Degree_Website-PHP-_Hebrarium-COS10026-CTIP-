@@ -191,7 +191,7 @@ if(isset($_POST['submit'])) {
         }
     }
 
-    // Validate Phone if provided
+    // Validate Phone number
     if (!empty($phone)) {
         if (!preg_match('/^[0-9]{10,11}$/', $phone)) {
             $error .= "Please enter a valid phone number (10-11 digits).<br>";
@@ -205,10 +205,12 @@ if(isset($_POST['submit'])) {
         }
     }
 
-    // Add city validation
+    // Validate City
     if (!empty($city)) {
         if (!preg_match('/^[a-zA-Z\s]+$/', $city)) {
             $error .= "City name can only contain letters and spaces.<br>";
+        } else if (strlen($city) > 50) {
+            $error .= "City name is too long. Maximum 50 characters allowed.<br>";
         }
     }
 
