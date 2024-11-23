@@ -40,11 +40,6 @@
                     justify-content: center;
                     margin-bottom: 20px;
                 }
-                .header img {
-                    width: 50px;
-                    height: auto;
-                    margin-right: 10px;
-                }
                 .header h2 {
                     font-size: 16px;
                     color: #4CAF50;
@@ -109,7 +104,7 @@
         $dompdf->render();
 
         header('Content-Type: application/pdf');
-        header('Content-Disposition: attachment; filename="Login_Report.pdf"');
+        header('Content-Disposition: attachment; filename="Pre_Contribute_Report.pdf"');
         header('Cache-Control: private, max-age=0, must-revalidate');
         header('Pragma: public');
 
@@ -135,7 +130,7 @@
 
 <body>
     <?php 
-    if ($_SESSION['username'] != 'admin') {
+    if ($_SESSION['username'] != 'Admin') {
         header('Location: ../index.php'); 
         exit();
     }

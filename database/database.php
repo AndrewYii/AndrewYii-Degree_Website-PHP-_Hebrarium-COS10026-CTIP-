@@ -28,9 +28,9 @@
     }
 
     // Insert admin
-    $default_username = 'admin'; 
+    $default_username = 'Admin'; 
     $default_email = '104386568@students.swinburne.edu.my'; 
-    $default_password = password_hash('admin', PASSWORD_DEFAULT); 
+    $default_password = password_hash('Admin', PASSWORD_DEFAULT); 
 
     $insert_default_user = "INSERT INTO Register (Name, Username, Email, Password)
                             SELECT 'Admin', '$default_username', '$default_email', '$default_password'
