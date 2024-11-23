@@ -127,7 +127,7 @@
     ?>
 
     <?php
-        if ($_SESSION['username'] != 'admin') {
+        if ($_SESSION['username'] != 'Admin') {
             header('Location: ../index.php'); 
             exit();
         }

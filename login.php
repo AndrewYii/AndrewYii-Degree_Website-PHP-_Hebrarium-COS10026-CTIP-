@@ -89,7 +89,7 @@
                 $_SESSION['login_id'] = $login_id; 
                 $_SESSION['username'] = $username;
 
-                if($username=="admin"){
+                if($username=="Admin"){
                     $message =" Welcome back, admin! You will be redirected to admin control panel within 2 seconds";
                 }
                 else{
