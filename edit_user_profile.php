@@ -70,7 +70,7 @@
                 
                 <div class="form-group">
                     <label for="Last_Name">Phone Number:</label>
-                    <input class="edit-user-input" type="text" id="Phone" name="Phone" placeholder="It remains the same if nothing changes">
+                    <input class="edit-user-input" type="text" id="Phone" name="Phone" pattern="[0-9]{10,11}" title="Please enter 10-11 digits phone number" placeholder="It remains the same if nothing changes">
                 </div>
 
                 <div class="form-group">
@@ -95,7 +95,7 @@
 
                 <div class="form-group">
                     <label for="Postcode">Postcode:</label>
-                    <input class="edit-user-input" type="text" name="Postcode"  id="Postcode">
+                    <input class="edit-user-input" type="text" name="Postcode" pattern="[0-9]{5}" title="Please enter 5 digits postcode" id="Postcode">
                 </div>
 
                 <div class="form-group">
