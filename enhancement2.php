@@ -76,7 +76,7 @@
                         </div>
                         <div class="enhancement-section-description-content">
                             <p>
-                                This search function/module enables the users to get information about a plant, such as its genus, species, family, and name, through the use of keywords. It makes use of MySQL's LIKE operator with wildcards (%) for finding an approximate match to the terms entered. If no results are found, it routes users to an error page of '404'. However, if matching items are found, these will be shown to the user. This makes it easier for users to find information about the plants they are interested in, through this, one can easily find all relevant details without much hassle. (Edit User Profile, User Profile, Temporary View Enquiry cannot be redirected directly)
+                                This search function/module enables the users to get information about a plant, such as its genus, species, family, and name, through the use of keywords. It makes use of MySQL's LIKE operator with wildcards (%) for finding an approximate match to the terms entered. If no results are found, it routes users to an error page of '404'. However, if matching items are found, these will be shown to the user. This makes it easier for users to find information about the plants they are interested in, through this, one can easily find all relevant details without much hassle. (Edit User Profile, User Profile, Temporary View Enquiry cannot be redirected directly, Admin cannot redirect to User Profile Page and Edit User Profile Page.)
                             </p>
                             <p>
                                 Applied Page:
@@ -147,7 +147,7 @@
                         </div>
                         <div class="enhancement-section-description-content">
                             <p>
-                                The User Management Module (Admin) provides a control panel from where administrators can display feedback via bar charts, add enquiries by responding and sending emails, and comment on remarks in user contributions. Admins can approve or reject contributions submitted by users to the pre-contribution section and edit them after approval. They are also allowed to see user login and registration details. The module has a search functionality by username, and admins can generate PDF reports using the Dompdf extension via a specified print button. This manages user activities and content in one easy module.
+                                The User Management Module (Admin) provides a control panel from where administrators can display feedback via bar charts, add enquiries by responding and sending emails, and comment on remarks in user contributions. Admins can approve or reject contributions submitted by users to the pre-contribution section and edit them after approval. They are also allowed to see user login and registration details. The module has a search functionality by username, and admins can generate PDF reports using the Dompdf extension via a specified print button. This manages user activities and content in one easy module. (Other users cannot redirect to these pages except Admin.)
                             </p>
                             <p>
                                 Applied Page:
@@ -178,7 +178,7 @@
                         </div>
                         <div class="enhancement-section-description-content">
                             <p>
-                                This User Management Module (User) will allow the user to manage their profiles by editing their information, such as name, address, and postcode, and customising their profile photo. The updated information will automatically fill in the relevant fields in the enquiry table with matching characteristics. Also, the users can view their contributions, check comments under those contributions, and manage their enquiries, viewing or deleting them at will. The module helps the user update their profiles and monitor all the activities on the site.
+                                This User Management Module (User) will allow the user to manage their profiles by editing their information, such as name, address, and postcode, and customising their profile photo. The updated information will automatically fill in the relevant fields in the enquiry table with matching characteristics. Also, the users can view their contributions, check comments under those contributions, and manage their enquiries, viewing or deleting them at will. The module helps the user update their profiles and monitor all the activities on the site. (Admin cannot redirect to User Profile Page and Edit User Profile Page)
                             </p>
                             <p>
                                 Applied Page:
@@ -251,7 +251,7 @@
                             </div>
                         <div class="enhancement-section-description-content">
                             <p>
-                                The Upload and Display Module provides a feature for uploading a profile picture so users can personalise their account. Additionally, users can upload findings on the contribute page. These findings will be checked by the admin and, once approved, will be displayed on the Contribution Page for all to view. This module offers them the chance to personalise their profiles and share the discoveries they make within the community.
+                                The Upload and Display Module provides a feature for uploading a profile picture so users can personalise their account. Additionally, users can upload findings on the contribute page. These findings will be checked by the admin and, once approved, will be displayed on the Contribution Page for all to view. This module offers them the chance to personalise their profiles and share the discoveries they make within the community. (Admin cannot redirect to the user profile page)
                             </p>
                             <p>
                                 Applied Page: (Upload)
@@ -283,7 +283,7 @@
                         </div>
                         <div class="enhancement-section-description-content">
                             <p>
-                                The feature allows viewing and writing comments on other people's contributions. In addition, contributors will have a chance to view comments regarding their work, and this may give them the feeling that their contributions are well appreciated, thus encouraging them to undertake more. This function helps build a sense of community by encouraging feedback and effective interaction among users.
+                                The feature allows viewing and writing comments on other people's contributions. In addition, contributors will have a chance to view comments regarding their work, and this may give them the feeling that their contributions are well appreciated, thus encouraging them to undertake more. This function helps build a sense of community by encouraging feedback and effective interaction among users. (Admin cannot redirect to the User Profile Page)
                             </p>
                             <p>
                                 Applied Page (write):

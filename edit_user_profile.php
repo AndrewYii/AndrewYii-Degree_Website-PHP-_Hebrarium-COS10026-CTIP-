@@ -6,6 +6,10 @@
             header("Location: login.php");
             exit();
         }
+    if($_SESSION['username'] == "Admin"){
+        header("Location: index.php");
+        exit();
+    }
 ?>
 
 <!DOCTYPE html>
