@@ -216,7 +216,7 @@
                         </div>
                     
                         <div class="card-body">
-                            <table class="admin-description-table">
+                            <table class="admin-table">
                                 <thead>
                                     <tr>
                                         <th>Username</th>
@@ -284,13 +284,6 @@
                                                         <input type="hidden" name="id" value="<?php echo $row['Contribute_ID']; ?>">
                                                         <button type="submit" class="admin-delete-button menu-button">Delete</button>
                                                     </form>
-                                                </div>
-                                            </td>
-                                        </tr>
-                                        <tr>
-                                            <td colspan="8" class="description-column">
-                                                <div class="description">
-                                                    <?php echo $row["Description_Contribute"]; ?>
                                                 </div>
                                             </td>
                                         </tr>
@@ -396,11 +389,15 @@ if (isset($_GET['view_id'])) {
                 <div class="detail-row">
                     <strong>Description:</strong> <?php echo htmlspecialchars($row['Description_Contribute']); ?>
                 </div>
-                <div class="detail-row">
-                    <strong>Leaf Image:</strong> <?php echo htmlspecialchars($row['Plant_Leaf_Photo']); ?>
+                <div class="detail-row admin_leaf_photo">
+                    <strong>Leaf Image:</strong> <?php $contribution = $row["Plant_Leaf_Photo"];
+                    echo "<img src='../$contribution' alt='Leaf Photo'>";
+                     ?>
                 </div>
-                <div class="detail-row">
-                    <strong>Herbarium Image:</strong> <?php echo htmlspecialchars($row['Plant_Herbarium_Photo']); ?>
+                <div class="detail-row admin_herbarium_photo">
+                    <strong>Herbarium Image:</strong> <?php $contribution = $row["Plant_Herbarium_Photo"];
+                    echo "<img src='../$contribution' alt='Herbarium Photo'>";
+                     ?>
                 </div>
                 <div class="detail-row">
                     <strong>Date Submitted:</strong> <?php echo htmlspecialchars($row['Contribute_Created_At']); ?>

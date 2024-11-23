@@ -223,18 +223,13 @@
                             <table class="admin-table">
                                 <thead>
                                     <tr>
-                                        <th>ID</th>
                                         <th>Username</th>
                                         <th>Plant Name</th>
-                                        <th>Tag</th>
-                                        <th>Picture Option</th>
                                         <th>Plant Family</th>
                                         <th>Plant Genus</th>
                                         <th>Plant Species</th>
-                                        <th>Description</th>
                                         <th>Leaf Image</th>
                                         <th>Herbarium Image</th>
-                                        <th>Created At</th>
                                         <th class="admin-delete-option">Action</th>
                                     </tr>
                                 </thead>
@@ -258,17 +253,23 @@
                                     while($row = mysqli_fetch_assoc($result)) {
                                         ?>
                                         <tr>
-                                            <td><?php echo htmlspecialchars($row['Pre_Contribute_ID']); ?></td>
                                             <td><?php echo htmlspecialchars($row['Username']); ?></td>
                                             <td><?php echo htmlspecialchars($row['Plant_Name']); ?></td>
-                                            <td><?php echo htmlspecialchars($row['Tag']); ?></td>
-                                            <td><?php echo htmlspecialchars($row['Picture_Option']); ?></td>
                                             <td><?php echo htmlspecialchars($row['Plant_Family']); ?></td>
                                             <td><?php echo htmlspecialchars($row['Plant_Genus']); ?></td>
                                             <td><?php echo htmlspecialchars($row['Plant_Species']); ?></td>
-                                            <td class="description-column"><?php echo htmlspecialchars($row['Description_Contribute']); ?></td>
-                                            <td><?php echo htmlspecialchars($row['Plant_Leaf_Photo']); ?></td>
-                                            <td><?php echo htmlspecialchars($row['Plant_Herbarium_Photo']); ?></td>
+                                            <td class='admin_leaf_photo'>
+                                                <?php 
+                                                $contribution = $row["Plant_Leaf_Photo"];
+                                                echo "<img src='../$contribution' alt='Leaf Photo'>";
+                                                ?>
+                                            </td>
+                                            <td class='admin_herbarium_photo'>    
+                                                <?php 
+                                                $contribution = $row["Plant_Herbarium_Photo"];
+                                                echo "<img src='../$contribution' alt='Herbarium Photo'>";
+                                                ?>
+                                            </td>
                                             <td><?php echo isset($row['Contribute_Created_At']) ? htmlspecialchars($row['Contribute_Created_At']) : date('Y-m-d H:i:s'); ?></td>
                                             <td>
                                                 <label class="menu-label">
@@ -353,11 +354,15 @@ if (isset($_GET['view_id'])) {
                 <div class="detail-row">
                     <strong>Description:</strong> <?php echo htmlspecialchars($row['Description_Contribute']); ?>
                 </div>
-                <div class="detail-row">
-                    <strong>Leaf Image:</strong> <?php echo htmlspecialchars($row['Plant_Leaf_Photo']); ?>
+                <div class="detail-row admin_leaf_photo">
+                    <strong>Leaf Image:</strong> <?php $contribution = $row["Plant_Leaf_Photo"];
+                    echo "<img src='../$contribution' alt='Leaf Photo'>";
+                     ?>
                 </div>
-                <div class="detail-row">
-                    <strong>Herbarium Image:</strong> <?php echo htmlspecialchars($row['Plant_Herbarium_Photo']); ?>
+                <div class="detail-row admin_herbarium_photo">
+                    <strong>Herbarium Image:</strong> <?php $contribution = $row["Plant_Herbarium_Photo"];
+                    echo "<img src='../$contribution' alt='Herbarium Photo'>";
+                     ?>
                 </div>
                 <div class="detail-row">
                     <strong>Created At:</strong> <?php echo htmlspecialchars($row['Contribute_Created_At']); ?>
