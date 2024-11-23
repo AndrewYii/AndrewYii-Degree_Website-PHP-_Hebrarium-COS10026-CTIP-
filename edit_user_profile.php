@@ -134,188 +134,160 @@ if(isset($_POST['submit'])) {
         die("Connection failed: " . mysqli_connect_error());
     }
     
-    $upload_dir = "profilepic/";
-    if (!file_exists($upload_dir)) {
-        mkdir($upload_dir, 0777, true);
-    }
+    $error = '';
+    $message = '';
     
-    $current_username = $_SESSION['username'];
-    $query = "SELECT * FROM register WHERE Username='$current_username'";
-    $result = mysqli_query($conn, $query);
-    $current_data = mysqli_fetch_assoc($result);
-
-    // Handle file upload
-    $new_profile_photo = $current_data['Profile_Picture']; // Default to current photo
-    if(isset($_FILES['upload_photo']) && $_FILES['upload_photo']['error'] === 0) {
-        $file_tmp = $_FILES['upload_photo']['tmp_name'];
-        $file_name = time() . '_' . $_FILES['upload_photo']['name']; // Add timestamp to prevent duplicate names
-        $file_destination = $upload_dir . $file_name;
-        
-        // Move uploaded file to destination
-        if(move_uploaded_file($file_tmp, $file_destination)) {
-            $new_profile_photo = mysqli_real_escape_string($conn, $file_destination);
+    // Get form data and sanitize
+    $first_name = !empty($_POST['FirstName']) ? mysqli_real_escape_string($conn, $_POST['FirstName']) : '';
+    $last_name = !empty($_POST['LastName']) ? mysqli_real_escape_string($conn, $_POST['LastName']) : '';
+    $new_username = !empty($_POST['Username']) ? mysqli_real_escape_string($conn, $_POST['Username']) : '';
+    $email = !empty($_POST['Email']) ? mysqli_real_escape_string($conn, $_POST['Email']) : '';
+    $phone = !empty($_POST['Phone']) ? mysqli_real_escape_string($conn, $_POST['Phone']) : '';
+    
+    // Validate First Name if provided
+    if (!empty($first_name)) {
+        if (!preg_match('/^[a-zA-Z\s]+$/', $first_name)) {
+            $error .= "Only alphabetic characters and space are allowed in the first name.<br>";
+        } else if (strlen($first_name) > 25) {
+            $error .= "First name too long. It cannot exceed 25 characters.<br>";
         }
-    }    
+    }
 
+    // Validate Last Name if provided
+    if (!empty($last_name)) {
+        if (!preg_match('/^[a-zA-Z\s]+$/', $last_name)) {
+            $error .= "Only alphabetic characters and space are allowed in the last name.<br>";
+        } else if (strlen($last_name) > 25) {
+            $error .= "Last name too long. It cannot exceed 25 characters.<br>";
+        }
+    }
 
+    // Validate Username if provided
+    if (!empty($new_username)) {
+        if (str_word_count($new_username) > 25) {
+            $error .= "Username cannot exceed 25 words.<br>";
+        }
+        // Check if username already exists (excluding current user)
+        $current_username = $_SESSION['username'];
+        $query = "SELECT * FROM Register WHERE Username='$new_username' AND Username != '$current_username'";
+        $result = mysqli_query($conn, $query);
+        if (mysqli_num_rows($result) > 0) {
+            $error .= "Username already exists. Please choose a different username.<br>";
+        }
+    }
 
-    $new_username = $current_data['Username']; // Default to current username
-    if (!empty($_POST['Username'])) {
-        $proposed_username = mysqli_real_escape_string($conn, $_POST['Username']);
+    // Validate Email if provided
+    if (!empty($email)) {
+        if (!preg_match('/^[\w\.-]+@[a-zA-Z\d\.-]+\.[a-zA-Z]{2,}$/', $email)) {
+            $error .= "Please enter a valid email address.<br>";
+        }
+        // Check if email already exists (excluding current user)
+        $query = "SELECT * FROM Register WHERE Email='$email' AND Username != '$current_username'";
+        $result = mysqli_query($conn, $query);
+        if (mysqli_num_rows($result) > 0) {
+            $error .= "Email already exists. Please choose a different email.<br>";
+        }
+    }
+
+    // Validate Phone if provided
+    if (!empty($phone)) {
+        if (!preg_match('/^[0-9]{10,11}$/', $phone)) {
+            $error .= "Please enter a valid phone number (10-11 digits).<br>";
+        }
+    }
+
+    // If there are no errors, proceed with the update
+    if ($error == '') {
+        $upload_dir = "profilepic/";
+        if (!file_exists($upload_dir)) {
+            mkdir($upload_dir, 0777, true);
+        }
         
-        // Check if the new username already exists (excluding current user)
-        $check_username = "SELECT * FROM register WHERE Username = ? AND Username != ?";
-        $stmt = $conn->prepare($check_username);
-        $stmt->bind_param("ss", $proposed_username, $current_username);
-        $stmt->execute();
-        $result = $stmt->get_result();
-        
-        if ($result->num_rows > 0) {
-            echo "<script>alert('Username already taken. Please choose another.');
-            window.location.href='edit_user_profile.php';</script>";
-            exit();
-        } else {
-            // Begin transaction to ensure all updates complete successfully
-            mysqli_begin_transaction($conn);
+        $current_username = $_SESSION['username'];
+        $query = "SELECT * FROM register WHERE Username='$current_username'";
+        $result = mysqli_query($conn, $query);
+        $current_data = mysqli_fetch_assoc($result);
+
+        // Handle file upload
+        $new_profile_photo = $current_data['Profile_Picture']; // Default to current photo
+        if(isset($_FILES['upload_photo']) && $_FILES['upload_photo']['error'] === 0) {
+            $file_tmp = $_FILES['upload_photo']['tmp_name'];
+            $file_name = time() . '_' . $_FILES['upload_photo']['name']; // Add timestamp to prevent duplicate names
+            $file_destination = $upload_dir . $file_name;
             
-            try {
-                // Update username in Register table
-                $update_register = "UPDATE register SET Username = ? WHERE Username = ?";
-                $stmt = $conn->prepare($update_register);
-                $stmt->bind_param("ss", $proposed_username, $current_username);
-                $stmt->execute();
-                
-                // Update username in Contribute table
-                $update_enquiry = "UPDATE contribute SET Username = ? WHERE Username = ?";
-                $stmt = $conn->prepare($update_enquiry);
-                $stmt->bind_param("ss", $proposed_username, $current_username);
-                $stmt->execute();
-                
-                // Update username in Contribute table
-                $update_enquiry = "UPDATE enquiry SET Username = ? WHERE Username = ?";
-                $stmt = $conn->prepare($update_enquiry);
-                $stmt->bind_param("ss", $proposed_username, $current_username);
-                $stmt->execute();
-
-                // Update username in login table
-                $update_enquiry = "UPDATE login SET Username = ? WHERE Username = ?";
-                $stmt = $conn->prepare($update_enquiry);
-                $stmt->bind_param("ss", $proposed_username, $current_username);
-                $stmt->execute();
-
-                // Update username in Pre-Contribute table
-                $update_enquiry = "UPDATE pre_contribute SET Username = ? WHERE Username = ?";
-                $stmt = $conn->prepare($update_enquiry);
-                $stmt->bind_param("ss", $proposed_username, $current_username);
-                $stmt->execute();
-
-                // Update username in contribute_comments table
-                $update_enquiry = "UPDATE contribute_comments SET Commenter_Username = ? WHERE Commenter_Username = ?";
-                $stmt = $conn->prepare($update_enquiry);
-                $stmt->bind_param("ss", $proposed_username, $current_username);
-                $stmt->execute();
-
-                // Update username in feedback table
-                $update_enquiry = "UPDATE feedback SET Username = ? WHERE Username = ?";
-                $stmt = $conn->prepare($update_enquiry);
-                $stmt->bind_param("ss", $proposed_username, $current_username);
-                $stmt->execute();
-
-
-                // If all queries successful, commit transaction
-                mysqli_commit($conn);
-                
-                // Update session with new username
-                $_SESSION['username'] = $proposed_username;
-                $new_username = $proposed_username;
-                
-            } catch (Exception $e) {
-                // If any query fails, rollback all changes
-                mysqli_rollback($conn);
-                echo "<script>alert('Error updating username. Please try again.');
-                window.location.href='edit_user_profile.php';</script>";
-                exit();
+            // Move uploaded file to destination
+            if(move_uploaded_file($file_tmp, $file_destination)) {
+                $new_profile_photo = mysqli_real_escape_string($conn, $file_destination);
             }
-        }
-        $stmt->close();
-    }
-    
-    // Update query including username
-     // Retrieve and sanitize form data
-     $updates = array();
+        }    
 
-     // Check and add each field if changed
-     if (!empty($_POST['FirstName']) || !empty($_POST['LastName'])) {
-         $new_first_name = mysqli_real_escape_string($conn, $_POST['FirstName']);
-         $new_last_name = mysqli_real_escape_string($conn, $_POST['LastName']);
-         $full_name = trim($new_first_name . ' ' . $new_last_name);
-         if ($full_name !== $current_data['Name']) {
-             $updates[] = "Name='$full_name'";
+        // Update query including username
+         // Retrieve and sanitize form data
+         $updates = array();
+
+         // Check and add each field if changed
+         if (!empty($_POST['FirstName']) || !empty($_POST['LastName'])) {
+             $new_first_name = mysqli_real_escape_string($conn, $_POST['FirstName']);
+             $new_last_name = mysqli_real_escape_string($conn, $_POST['LastName']);
+             $full_name = trim($new_first_name . ' ' . $new_last_name);
+             if ($full_name !== $current_data['Name']) {
+                 $updates[] = "Name='$full_name'";
+             }
          }
-     }
-     
-     if (!empty($_POST['Email']) && $_POST['Email'] !== $current_data['Email']) {
-         $new_email = mysqli_real_escape_string($conn, $_POST['Email']);
-         $updates[] = "Email='$new_email'";
-     }
-     
-     if (!empty($_POST['Phone']) && $_POST['Phone'] !== $current_data['Phone']) {
-         $new_phone_number = mysqli_real_escape_string($conn, $_POST['Phone']);
-         $updates[] = "Phone='$new_phone_number'";
-     }
-     
-     // Address fields
-     if (!empty($_POST['Street']) && $_POST['Street'] !== $current_data['Street']) {
-         $new_street = mysqli_real_escape_string($conn, $_POST['Street']);
-         $updates[] = "Street='$new_street'";
-     }
-     
-     if (!empty($_POST['City']) && $_POST['City'] !== $current_data['City']) {
-         $new_city = mysqli_real_escape_string($conn, $_POST['City']);
-         $updates[] = "City='$new_city'";
-     }
-     
-     if (!empty($_POST['Postcode']) && $_POST['Postcode'] !== $current_data['Postcode']) {
-         $new_postcode = mysqli_real_escape_string($conn, $_POST['Postcode']);
-         $updates[] = "Postcode='$new_postcode'";
-     }
-     
-     if (!empty($_POST['State']) && $_POST['State'] !== $current_data['State']) {
-         $new_state = mysqli_real_escape_string($conn, $_POST['State']);
-         $updates[] = "State='$new_state'";
-     }
-     
-     if (!empty($_POST['Profile_Picture']) && $_POST['Profile_Picture'] !== $current_data['Profile_Picture']) {
-         $new_profile_photo = mysqli_real_escape_string($conn, $_POST['Profile_Picture']);
-         $updates[] = "Profile_Picture='$new_profile_photo'";
-     }
-     
-     // Execute update only if there are changes
-     if (!empty($updates)) {
-         $sql = "UPDATE register SET " . implode(', ', $updates) . " WHERE Username='$current_username'";
          
-         if(mysqli_query($conn, $sql)) {
-             echo "<div class='success-message'>Profile updated successfully!</div>";
-             echo "<meta http-equiv='refresh' content='1;url=user_profile.php'>";
-         } else {
-             echo "<div class='error-message'>Error updating profile: " . mysqli_error($conn) . "</div>";
+         if (!empty($_POST['Email']) && $_POST['Email'] !== $current_data['Email']) {
+             $new_email = mysqli_real_escape_string($conn, $_POST['Email']);
+             $updates[] = "Email='$new_email'";
          }
-     } else {
-         echo "<div class='info-message'>No changes were made to the profile.</div>";
-         echo "<meta http-equiv='refresh' content='1;url=user_profile.php'>";
-     }
-    
-    if(mysqli_query($conn, $sql)) {
-        // Update the session with new username
-        $_SESSION['username'] = $new_username;
-        echo "<div class='edit-success-message'>
-                <p>Profile updated successfully!</p>
-                <p>You will be redirected to your profile page soon!</p>
-              </div>
-              <meta http-equiv='refresh' content='1 ;url=user_profile.php'>
-              ";
+         
+         if (!empty($_POST['Phone']) && $_POST['Phone'] !== $current_data['Phone']) {
+             $new_phone_number = mysqli_real_escape_string($conn, $_POST['Phone']);
+             $updates[] = "Phone='$new_phone_number'";
+         }
+         
+         // Address fields
+         if (!empty($_POST['Street']) && $_POST['Street'] !== $current_data['Street']) {
+             $new_street = mysqli_real_escape_string($conn, $_POST['Street']);
+             $updates[] = "Street='$new_street'";
+         }
+         
+         if (!empty($_POST['City']) && $_POST['City'] !== $current_data['City']) {
+             $new_city = mysqli_real_escape_string($conn, $_POST['City']);
+             $updates[] = "City='$new_city'";
+         }
+         
+         if (!empty($_POST['Postcode']) && $_POST['Postcode'] !== $current_data['Postcode']) {
+             $new_postcode = mysqli_real_escape_string($conn, $_POST['Postcode']);
+             $updates[] = "Postcode='$new_postcode'";
+         }
+         
+         if (!empty($_POST['State']) && $_POST['State'] !== $current_data['State']) {
+             $new_state = mysqli_real_escape_string($conn, $_POST['State']);
+             $updates[] = "State='$new_state'";
+         }
+         
+         if (!empty($_POST['Profile_Picture']) && $_POST['Profile_Picture'] !== $current_data['Profile_Picture']) {
+             $new_profile_photo = mysqli_real_escape_string($conn, $_POST['Profile_Picture']);
+             $updates[] = "Profile_Picture='$new_profile_photo'";
+         }
+         
+         // Execute update only if there are changes
+         if (!empty($updates)) {
+             $sql = "UPDATE register SET " . implode(', ', $updates) . " WHERE Username='$current_username'";
+             
+             if(mysqli_query($conn, $sql)) {
+                 $message = "Profile updated successfully! You will be redirected to your profile page soon!";
+                 echo "<div class='snackbar show success'>" . $message . "</div>";
+                 echo "<meta http-equiv='refresh' content='2;url=user_profile.php'>";
+             } else {
+                 echo "<div class='snackbar show error'>Error updating profile: " . mysqli_error($conn) . "</div>";
+             }
+         } else {
+             echo "<div class='info-message'>No changes were made to the profile.</div>";
+             echo "<meta http-equiv='refresh' content='1;url=user_profile.php'>";
+         }
     } else {
-        echo "Error: " . $sql . "<br>" . mysqli_error($conn);
+        echo "<div class='snackbar show error'>" . $error . "Please try again.</div>";
     }
     
     mysqli_close($conn);
