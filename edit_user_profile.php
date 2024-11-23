@@ -143,6 +143,7 @@ if(isset($_POST['submit'])) {
     $new_username = !empty($_POST['Username']) ? mysqli_real_escape_string($conn, $_POST['Username']) : '';
     $email = !empty($_POST['Email']) ? mysqli_real_escape_string($conn, $_POST['Email']) : '';
     $phone = !empty($_POST['Phone']) ? mysqli_real_escape_string($conn, $_POST['Phone']) : '';
+    $postcode = !empty($_POST['Postcode']) ? mysqli_real_escape_string($conn, $_POST['Postcode']) : '';
     
     // Validate First Name if provided
     if (!empty($first_name)) {
@@ -193,6 +194,13 @@ if(isset($_POST['submit'])) {
     if (!empty($phone)) {
         if (!preg_match('/^[0-9]{10,11}$/', $phone)) {
             $error .= "Please enter a valid phone number (10-11 digits).<br>";
+        }
+    }
+
+    // Add postcode validation
+    if (!empty($postcode)) {
+        if (!preg_match('/^[0-9]{5}$/', $postcode)) {
+            $error .= "Postcode must be exactly 5 digits.<br>";
         }
     }
 
