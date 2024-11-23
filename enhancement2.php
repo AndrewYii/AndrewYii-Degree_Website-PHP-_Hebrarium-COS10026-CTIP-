@@ -231,7 +231,7 @@
                             </p>
                             <p>
                                 Applied Page:
-                                <a href="enquiry.php">Enquiry Page</a>
+                                <a href="enquiry_process.php">Enquiry Process Page</a>
                             </p>
                             <p>
                                 Refer Sources:
