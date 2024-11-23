@@ -219,27 +219,24 @@
                             <table class="admin-table">
                                 <thead>
                                     <tr>
-                                        <th>ID</th>
                                         <th>Username</th>
                                         <th>Plant Name</th>
-                                        <th>Tag</th>
                                         <th>Plant Family</th>
                                         <th>Plant Genus</th>
                                         <th>Plant Species</th>
-                                        <th>Description</th>
                                         <th>Leaf Image</th>
                                         <th>Herbarium Image</th>
                                         <th class="admin-delete-option">Action</th>
                                     </tr>
                                 </thead>
                                 <?php
-                                $conn = mysqli_connect($servername,$username,$password,$dbname);
+                                $conn = mysqli_connect($servername, $username, $password, $dbname);
 
                                 $_SESSION['contribute_search'] = ''; 
                                 
                                 $sql = "SELECT * FROM contribute";
                                 
-                                if(isset($_POST['search']) && !empty($_POST['search'])) {
+                                if (isset($_POST['search']) && !empty($_POST['search'])) {
                                     $search = mysqli_real_escape_string($conn, $_POST['search']);
                                     $sql .= " WHERE Username LIKE '%$search%'";
                                     $_SESSION['contribute_search'] = $search; 
@@ -249,29 +246,25 @@
                                 $result = mysqli_query($conn, $sql);
 
                                 if (mysqli_num_rows($result) > 0) {
-                                    while($row = mysqli_fetch_assoc($result)) {
+                                    while ($row = mysqli_fetch_assoc($result)) {
                                 ?>
                                         <tr>
-                                            <td><?php echo $row["Contribute_ID"]; ?></td>
                                             <td><?php echo $row["Username"]; ?></td>
                                             <td><?php echo $row["Plant_Name"]; ?></td>
-                                            <td><?php echo $row["Tag"]; ?></td>
                                             <td><?php echo $row["Plant_Family"]; ?></td>
                                             <td><?php echo $row["Plant_Genus"]; ?></td>
                                             <td><?php echo $row["Plant_Species"]; ?></td>
-                                            <td class="description-column"><?php echo $row["Description_Contribute"]; ?></td>
-                                            <td>        
-                                            <?php 
-                                            $contribution = $row["Plant_Leaf_Photo"];
-                                            echo "<img src='../$contribution' alt='Leaf Photo'>";
-                                            echo "<p>Leaf Photo Path: $contribution</p>"; 
-                                            ?>
+                                            <td class='admin_leaf_photo'>        
+                                                <?php 
+                                                $contribution = $row["Plant_Leaf_Photo"];
+                                                echo "<img src='../$contribution' alt='Leaf Photo'>";
+                                                ?>
                                             </td>
-                                            <td>    <?php 
-                                            $contribution = $row["Plant_Herbarium_Photo"];
-                                            echo "<img src='../$contribution' alt='Herbarium Photo'>";
-                                            echo "<p>Herbarium Photo Path: $contribution</p>"; 
-                                            ?>
+                                            <td class='admin_herbarium_photo'>    
+                                                <?php 
+                                                $contribution = $row["Plant_Herbarium_Photo"];
+                                                echo "<img src='../$contribution' alt='Herbarium Photo'>";
+                                                ?>
                                             </td>
                                             <td>
                                                 <input type="checkbox" id="toggle-<?php echo $row['Contribute_ID']; ?>" class="toggle-checkbox">
@@ -279,19 +272,19 @@
                                                     <img src="../images/kebab-menu.webp" alt="kebab menu" class="kebab-menu-icon">
                                                 </label>
                                                 <div class="menu-content">
-                                                <form action="<?php echo $_SERVER['PHP_SELF']; ?>" method="get">
-                                                    <input type="hidden" name="view_id" value="<?php echo $row['Contribute_ID']; ?>">
-                                                    <button type="submit" class="admin-view-button menu-button">View</button>
-                                                </form>
-                                                <form action="<?php echo $_SERVER['PHP_SELF']; ?>" method="get">
-                                                    <input type="hidden" name="edit_id" value="<?php echo $row['Contribute_ID']; ?>">
-                                                    <button type="submit" class="admin-edit-button menu-button">Edit</button>
-                                                </form>
-                                                <form action="<?php echo $_SERVER['PHP_SELF']; ?>" method="get">
-                                                    <input type="hidden" name="id" value="<?php echo $row['Contribute_ID']; ?>">
-                                                    <button type="submit" class="admin-delete-button menu-button">Delete</button>
-                                                </form>
-                                            </div>
+                                                    <form action="<?php echo $_SERVER['PHP_SELF']; ?>" method="get">
+                                                        <input type="hidden" name="view_id" value="<?php echo $row['Contribute_ID']; ?>">
+                                                        <button type="submit" class="admin-view-button menu-button">View</button>
+                                                    </form>
+                                                    <form action="<?php echo $_SERVER['PHP_SELF']; ?>" method="get">
+                                                        <input type="hidden" name="edit_id" value="<?php echo $row['Contribute_ID']; ?>">
+                                                        <button type="submit" class="admin-edit-button menu-button">Edit</button>
+                                                    </form>
+                                                    <form action="<?php echo $_SERVER['PHP_SELF']; ?>" method="get">
+                                                        <input type="hidden" name="id" value="<?php echo $row['Contribute_ID']; ?>">
+                                                        <button type="submit" class="admin-delete-button menu-button">Delete</button>
+                                                    </form>
+                                                </div>
                                             </td>
                                         </tr>
                                 <?php
@@ -396,11 +389,15 @@ if (isset($_GET['view_id'])) {
                 <div class="detail-row">
                     <strong>Description:</strong> <?php echo htmlspecialchars($row['Description_Contribute']); ?>
                 </div>
-                <div class="detail-row">
-                    <strong>Leaf Image:</strong> <?php echo htmlspecialchars($row['Plant_Leaf_Photo']); ?>
+                <div class="detail-row admin_leaf_photo">
+                    <strong>Leaf Image:</strong> <?php $contribution = $row["Plant_Leaf_Photo"];
+                    echo "<img src='../$contribution' alt='Leaf Photo'>";
+                     ?>
                 </div>
-                <div class="detail-row">
-                    <strong>Herbarium Image:</strong> <?php echo htmlspecialchars($row['Plant_Herbarium_Photo']); ?>
+                <div class="detail-row admin_herbarium_photo">
+                    <strong>Herbarium Image:</strong> <?php $contribution = $row["Plant_Herbarium_Photo"];
+                    echo "<img src='../$contribution' alt='Herbarium Photo'>";
+                     ?>
                 </div>
                 <div class="detail-row">
                     <strong>Date Submitted:</strong> <?php echo htmlspecialchars($row['Contribute_Created_At']); ?>

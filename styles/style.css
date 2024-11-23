@@ -7464,6 +7464,16 @@ button.contribute-btn:hover {
     position: relative;
 }
 
+.admin_leaf_photo img{
+    height: auto;
+    width: 100px;
+}
+
+.admin_herbarium_photo img{
+    height: auto;
+    width: 100px;
+}
+
 @media (max-width: 1500px) { 
     .card .card-header .admin-print-button {
         margin-left: 600px;  
