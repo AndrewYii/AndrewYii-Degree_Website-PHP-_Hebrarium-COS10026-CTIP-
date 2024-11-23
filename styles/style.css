@@ -6796,23 +6796,23 @@ button.contribute-btn:hover {
 .sidebar .logo_admin span{
     color: #fff;
     position: relative;
-    top: -35px;
-    left: 10px;
-    font-size: 25px;
+    top: -10px;
+    left: 2 px;
+    font-size: 20px;
     font-weight: bold;
     font-family: 'Outfit', Arial, Helvetica, sans-serif;
 }
 
 .logo_admin img{
-    margin-left: 10px;
+    margin-left: 5px;
     position: relative;
-    width: 65px;
+    width: 40px;
     height: auto;
 }
 
 .logo_admin {
-    position: relative; /* Add this */
-    height: 90px;      /* Add this if needed */
+    position: relative; 
+    height: 80px;      
 }
 
 .admin-logout-button {
@@ -6835,7 +6835,7 @@ button.contribute-btn:hover {
 }
 
 .sidebar {
-    width: 345px;
+    width: 245px;
     max-height: 1000px;
     position: fixed;
     left: 0;
@@ -6849,14 +6849,16 @@ button.contribute-btn:hover {
 }
 
 .sidebar-brand {
-    height: 90px;
+    height: 100px;
     padding: 1rem 0rem 1rem 2rem;
     color: #fff;
 }
 
 .sidebar-brand span {
     display: inline-block;
+    margin-left: -20px;
     padding-right: 1rem;
+    font-size: 20px;
 }
 
 .sidebar-menu {
@@ -7145,12 +7147,12 @@ button.contribute-btn:hover {
 
 .main-content {
     transition: margin-left 300ms;
-    margin-left: 345px;
+    margin-left: 245px;
 }
 
 .main-content-login {
     transition: margin-left 300ms;
-    margin-left: 345px;
+    margin-left: 245px;
 }
 
 .admin-header {
@@ -7161,8 +7163,8 @@ button.contribute-btn:hover {
     box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2);
     position: fixed;
     top: 0;
-    left: 345px;
-    width: calc(100% - 345px);
+    left: 245px;
+    width: calc(100% - 245px);
     z-index: 99;  
 }
 
@@ -7406,7 +7408,7 @@ button.contribute-btn:hover {
 }
 
 .recent-grid {
-    margin-top: 1.5rem;
+    margin-top: 0rem;
     display: grid;
     grid-template-columns: 100%;  
     grid-gap: 2rem;
@@ -7458,7 +7460,7 @@ button.contribute-btn:hover {
     padding: 1rem;
     height: 1000px;
     overflow-y: auto;
-    overflow-x: auto;  /* Added to handle wide tables */
+    overflow-x: auto;  
     position: relative;
 }
 
@@ -7537,20 +7539,12 @@ button.contribute-btn:hover {
     .main-content {
         margin-left: 70px;
     }
-
-    .main-content-login {
-        margin-left: 70px;
-    }
     
     .main-content header {
         width: calc(100% - 70px);
         left: 70px;
     }
 
-    .main-content-login header {
-        width: calc(100% - 70px);
-        left: 70px;
-    }
 }
 
 @media (max-width: 1200px) { 
