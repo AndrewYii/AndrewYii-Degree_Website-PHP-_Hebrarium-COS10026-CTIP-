@@ -28,17 +28,11 @@
             // Check if user is logged in
             if (isset($_SESSION['username'])) {
                 $current_user = $_SESSION['username'];
-                if($current_user == "Admin"){
-                    header("Location: index.php");
-                    exit();
-                }
-                else{
-                    $sql = "SELECT * FROM Register WHERE username = '$current_user'";
-                    $result = mysqli_query($conn, $sql);
-    
-                    if ($result && mysqli_num_rows($result) > 0) {
-                        $user_data = mysqli_fetch_assoc($result);
-                    }
+                $sql = "SELECT * FROM Register WHERE username = '$current_user'";
+                $result = mysqli_query($conn, $sql);
+
+                if ($result && mysqli_num_rows($result) > 0) {
+                    $user_data = mysqli_fetch_assoc($result);
                 }
             } else {
                 // Redirect to login page if not logged in
