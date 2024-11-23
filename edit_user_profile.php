@@ -6,10 +6,6 @@
             header("Location: login.php");
             exit();
         }
-    if($_SESSION['username'] == "Admin"){
-        header("Location: index.php");
-        exit();
-    }
 ?>
 
 <!DOCTYPE html>
@@ -60,7 +56,7 @@
             <form class="edit-user-form" action="<?php echo htmlspecialchars($_SERVER['PHP_SELF']); ?>" method="post" enctype="multipart/form-data" autocomplete="off">
                 <div class="form-group">
                     <label for="First_Name">First Name:</label>
-                    <input class="edit-user-input" type="text" id="First_Name" name="FirstName" pattern="[A-Za-z ]+" title="Only letters and spaces allowed" placeholder="It remains the same if nothing changes">
+                    <input class="edit-user-input" type="text" id="First_Name" name="FirstName" placeholder="It remains the same if nothing changes">
                 </div>
                 
                 <div class="form-group">
@@ -69,8 +65,8 @@
                 </div>
                 
                 <div class="form-group">
-                    <label for="Phone">Phone Number:</label>
-                    <input class="edit-user-input" type="tel" id="Phone" name="Phone" pattern="[0-9]{10,11}" title="Please enter 10-11 digits phone number" placeholder="It remains the same if nothing changes">
+                    <label for="Last_Name">Phone Number:</label>
+                    <input class="edit-user-input" type="text" id="Phone" name="Phone" placeholder="It remains the same if nothing changes">
                 </div>
 
                 <div class="form-group">
@@ -95,7 +91,7 @@
 
                 <div class="form-group">
                     <label for="Postcode">Postcode:</label>
-                    <input class="edit-user-input" type="text" name="Postcode" pattern="[0-9]{5}" title="Please enter 5 digits postcode" id="Postcode">
+                    <input class="edit-user-input" type="text" name="Postcode"  id="Postcode">
                 </div>
 
                 <div class="form-group">
@@ -132,57 +128,6 @@
     </div>
 <?php
 if(isset($_POST['submit'])) {
-    $errors = [];
-    
-    // Validate First Name
-    if (!empty($_POST['FirstName'])) {
-        if (!preg_match("/^[A-Za-z ]+$/", $_POST['FirstName'])) {
-            $errors[] = "First Name should contain only letters and spaces";
-        }
-    }
-    
-    // Validate Phone
-    if (!empty($_POST['Phone'])) {
-        if (!preg_match("/^[0-9]{10,11}$/", $_POST['Phone'])) {
-            $errors[] = "Phone number should be 10-11 digits";
-        }
-    }
-    
-    // Validate Postcode
-    if (!empty($_POST['Postcode'])) {
-        if (!preg_match("/^[0-9]{5}$/", $_POST['Postcode'])) {
-            $errors[] = "Postcode should be 5 digits";
-        }
-    }
-    
-    // Validate Email
-    if (!empty($_POST['Email'])) {
-        if (!filter_var($_POST['Email'], FILTER_VALIDATE_EMAIL)) {
-            $errors[] = "Invalid email format";
-        }
-    }
-    
-    // Validate File Upload
-    if (isset($_FILES['upload_photo']) && $_FILES['upload_photo']['error'] === 0) {
-        $maxSize = 5 * 1024 * 1024; // 5MB
-        if ($_FILES['upload_photo']['size'] > $maxSize) {
-            $errors[] = "File size must be less than 5MB";
-        }
-        
-        $allowedTypes = ['image/jpeg', 'image/png', 'image/gif'];
-        if (!in_array($_FILES['upload_photo']['type'], $allowedTypes)) {
-            $errors[] = "Only JPG, PNG & GIF files are allowed";
-        }
-    }
-    
-    // If there are errors, display them and stop processing
-    if (!empty($errors)) {
-        foreach ($errors as $error) {
-            echo "<div class='error-message'>$error</div>";
-        }
-        exit();
-    }
-    
     $conn = mysqli_connect($servername,$username,$password,$dbname);
     
     if (!$conn) {
