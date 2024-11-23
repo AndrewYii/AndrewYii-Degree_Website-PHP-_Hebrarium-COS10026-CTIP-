@@ -205,7 +205,7 @@
                         </ul>
                     </li>";
                     if (isset($_SESSION['username'])) {
-                        if($_SESSION['username'] === 'admin'){
+                        if($_SESSION['username'] === 'Admin'){
                             echo "<li>
                                     <a href='admin/view_register.php'>
                                         <img src='images/user_icon.jpg' alt='User_Icon' title='Go To Admin Control Panel Page'>
