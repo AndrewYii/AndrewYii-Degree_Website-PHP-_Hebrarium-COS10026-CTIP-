@@ -53,7 +53,7 @@
                     alt="Profile Picture">
             </div>
 
-            <form class="edit-user-form" action="<?php echo htmlspecialchars($_SERVER['PHP_SELF']); ?>" method="post" enctype="multipart/form-data" autocomplete="off" novalidate="nonvalidate">
+            <form class="edit-user-form" action="<?php echo htmlspecialchars($_SERVER['PHP_SELF']); ?>" method="post" enctype="multipart/form-data" autocomplete="off" novalidate="novalidate">
                 <div class="form-group">
                     <label for="First_Name">First Name:</label>
                     <input class="edit-user-input" type="text" id="First_Name" name="FirstName" placeholder="It remains the same if nothing changes">
