@@ -263,13 +263,13 @@
                                             <td>        
                                             <?php 
                                             $contribution = $row["Plant_Leaf_Photo"];
-                                            echo "<img src='$contribution' alt='Leaf Photo'>";
+                                            echo "<img src='../$contribution' alt='Leaf Photo'>";
                                             echo "<p>Leaf Photo Path: $contribution</p>"; 
                                             ?>
                                             </td>
                                             <td>    <?php 
                                             $contribution = $row["Plant_Herbarium_Photo"];
-                                            echo "<img src='$contribution' alt='Herbarium Photo'>";
+                                            echo "<img src='../$contribution' alt='Herbarium Photo'>";
                                             echo "<p>Herbarium Photo Path: $contribution</p>"; 
                                             ?>
                                             </td>

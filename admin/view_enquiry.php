@@ -41,11 +41,6 @@
                     justify-content: center;
                     margin-bottom: 20px;
                 }
-                .header img {
-                    width: 50px;
-                    height: auto;
-                    margin-right: 10px;
-                }
                 .header h2 {
                     font-size: 16px;
                     color: #4CAF50;
