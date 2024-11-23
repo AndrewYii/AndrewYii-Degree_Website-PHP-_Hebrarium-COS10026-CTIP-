@@ -12,6 +12,15 @@
     }
 ?>
 
+<?php 
+
+    if (isset($_SESSION['message'])) {
+        $messageClass = strpos($_SESSION['message'], 'Error') !== false ? 'error-message' : 'success-message';
+        echo "<div class='admin-message {$messageClass}'>" . $_SESSION['message'] . "</div>";
+        unset($_SESSION['message']); // Clear the message after displaying
+    }
+    ?>
+
 <!DOCTYPE html>
 
 <html lang="en">
@@ -175,8 +184,13 @@ if(isset($_POST['submit'])) {
         $result = $stmt->get_result();
         
         if ($result->num_rows > 0) {
-            echo "<script>alert('Username already taken. Please choose another.');
-            window.location.href='edit_user_profile.php';</script>";
+            echo 
+                "<div class='edit-fail-message'>
+                <p>Username was Taken</p>   
+                <p>Please Choose another username</p>
+                </div>
+                <meta http-equiv='refresh' content='1 ;url=edit_user_profile.php'>
+                ";
             exit();
         } else {
             // Begin transaction to ensure all updates complete successfully
@@ -236,8 +250,13 @@ if(isset($_POST['submit'])) {
             } catch (Exception $e) {
                 // If any query fails, rollback all changes
                 mysqli_rollback($conn);
-                echo "<script>alert('Error updating username. Please try again.');
-                window.location.href='edit_user_profile.php';</script>";
+                echo 
+                "<div class='edit-fail-message'>
+                <p>Error Updating Username</p>   
+                <p>Please Try Again</p>
+                </div>
+                <meta http-equiv='refresh' content='1 ;url=edit_user_profile.php'>
+                ";
                 exit();
             }
         }
