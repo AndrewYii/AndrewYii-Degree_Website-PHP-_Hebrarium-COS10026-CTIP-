@@ -39,11 +39,6 @@
                     justify-content: center;
                     margin-bottom: 20px;
                 }
-                .header img {
-                    width: 50px;
-                    height: auto;
-                    margin-right: 10px;
-                }
                 .header h2 {
                     font-size: 16px;
                     color: #4CAF50;
@@ -124,7 +119,7 @@
     include ('../database/connection.php');
     include ('../database/database.php');
 
-    if ($_SESSION['username'] != 'admin') {
+    if ($_SESSION['username'] != 'Admin') {
         header('Location: ../index.php'); 
         exit();
     }
@@ -171,7 +166,7 @@
         </div>
     </div>
 
-    <div class="main-content-login">
+    <div class="main-content">
         <header class="admin-header">
             <h2 class="admin-header-text">
                 Login 
