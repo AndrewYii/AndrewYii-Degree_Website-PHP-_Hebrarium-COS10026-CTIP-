@@ -144,8 +144,9 @@ if(isset($_POST['submit'])) {
     $email = !empty($_POST['Email']) ? mysqli_real_escape_string($conn, $_POST['Email']) : '';
     $phone = !empty($_POST['Phone']) ? mysqli_real_escape_string($conn, $_POST['Phone']) : '';
     $postcode = !empty($_POST['Postcode']) ? mysqli_real_escape_string($conn, $_POST['Postcode']) : '';
+    $city = !empty($_POST['City']) ? mysqli_real_escape_string($conn, $_POST['City']) : '';
     
-    // Validate First Name if provided
+    // Validate First Name
     if (!empty($first_name)) {
         if (!preg_match('/^[a-zA-Z\s]+$/', $first_name)) {
             $error .= "Only alphabetic characters and space are allowed in the first name.<br>";
@@ -154,7 +155,7 @@ if(isset($_POST['submit'])) {
         }
     }
 
-    // Validate Last Name if provided
+    // Validate Last Name
     if (!empty($last_name)) {
         if (!preg_match('/^[a-zA-Z\s]+$/', $last_name)) {
             $error .= "Only alphabetic characters and space are allowed in the last name.<br>";
@@ -163,7 +164,7 @@ if(isset($_POST['submit'])) {
         }
     }
 
-    // Validate Username if provided
+    // Validate Username
     if (!empty($new_username)) {
         if (str_word_count($new_username) > 25) {
             $error .= "Username cannot exceed 25 words.<br>";
@@ -177,7 +178,7 @@ if(isset($_POST['submit'])) {
         }
     }
 
-    // Validate Email if provided
+    // Validate email
     if (!empty($email)) {
         if (!preg_match('/^[\w\.-]+@[a-zA-Z\d\.-]+\.[a-zA-Z]{2,}$/', $email)) {
             $error .= "Please enter a valid email address.<br>";
@@ -201,6 +202,13 @@ if(isset($_POST['submit'])) {
     if (!empty($postcode)) {
         if (!preg_match('/^[0-9]{5}$/', $postcode)) {
             $error .= "Postcode must be exactly 5 digits.<br>";
+        }
+    }
+
+    // Add city validation
+    if (!empty($city)) {
+        if (!preg_match('/^[a-zA-Z\s]+$/', $city)) {
+            $error .= "City name can only contain letters and spaces.<br>";
         }
     }
 
