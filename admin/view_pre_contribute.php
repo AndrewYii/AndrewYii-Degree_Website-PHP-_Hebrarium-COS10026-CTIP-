@@ -270,7 +270,6 @@
                                                 echo "<img src='../$contribution' alt='Herbarium Photo'>";
                                                 ?>
                                             </td>
-                                            <td><?php echo isset($row['Contribute_Created_At']) ? htmlspecialchars($row['Contribute_Created_At']) : date('Y-m-d H:i:s'); ?></td>
                                             <td>
                                                 <label class="menu-label">
                                                     <input type="checkbox" class="toggle-checkbox">

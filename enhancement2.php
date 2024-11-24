@@ -46,7 +46,7 @@
                     </div>
                     <div class="enhancement-section-description">
                         <div class="enhancement-section-video">
-                            <img src="images/responsivelayout.gif" alt="Responsive Layout Demo Video">
+                            <img src="images/emailingdemo.gif" alt="Welcoming and OTP Email Demo">
                         </div>
                         <div class="enhancement-section-description-content">
                             <p> 
@@ -72,7 +72,7 @@
                     </div>
                     <div class="enhancement-section-description">
                         <div class="enhancement-section-video">
-                            <img src="images/chatbox.gif" alt="Chatbot Demo Video">
+                            <img src="images/searchdemo.gif" alt="Search Demo Video">
                         </div>
                         <div class="enhancement-section-description-content">
                             <p>
@@ -118,7 +118,7 @@
                     </div>
                     <div class="enhancement-section-description">
                         <div class="enhancement-section-video">
-                            <img src="images/responsivenavbar.gif" alt="Responsive Navbar Demo Video">
+                            <img src="images/identifydemo.gif" alt="Identify Module Demo Video">
                         </div>
                         <div class="enhancement-section-description-content">
                             <p>
@@ -143,7 +143,7 @@
                     </div>
                     <div class="enhancement-section-description">
                         <div class="enhancement-section-video">
-                            <img src="images/buttonhover.gif" alt="Button Hover Demo Video">
+                            <img src="images/admincontrolpanel.gif" alt="Admin Control Panel + Generate PDF Demo Video">
                         </div>
                         <div class="enhancement-section-description-content">
                             <p>
@@ -199,7 +199,7 @@
                     </div>
                     <div class="enhancement-section-description">
                         <div class="enhancement-section-video">
-                            <img src="images/overflow.gif" alt="Overflow Demo Video">
+                            <img src="images/rememberme.gif" alt="Remember Me Demo Video">
                         </div>
                         <div class="enhancement-section-description-content">
                             <p>
@@ -247,7 +247,7 @@
                     </div>
                     <div class="enhancement-section-description">
                         <div class="enhancement-section-video">
-                            <img src="images/flip.gif" alt="Flip-box Demo Video">
+                            <img src="images/uploadanddisplay.gif" alt="Upload and Display Demo Video">
                             </div>
                         <div class="enhancement-section-description-content">
                             <p>
