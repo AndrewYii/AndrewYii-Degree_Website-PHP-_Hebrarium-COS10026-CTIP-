@@ -284,10 +284,9 @@ if(isset($_POST['submit'])) {
              $updates[] = "State='$new_state'";
          }
          
-         if (!empty($_POST['Profile_Picture']) && $_POST['Profile_Picture'] !== $current_data['Profile_Picture']) {
-             $new_profile_photo = mysqli_real_escape_string($conn, $_POST['Profile_Picture']);
-             $updates[] = "Profile_Picture='$new_profile_photo'";
-         }
+         if (isset($_FILES['upload_photo']) && $_FILES['upload_photo']['error'] === 0) {
+            $updates[] = "Profile_Picture='$new_profile_photo'";
+        }
          
          // Execute update only if there are changes
          if (!empty($updates)) {
