@@ -174,7 +174,7 @@
                     </div>
                     <div class="enhancement-section-description">
                         <div class="enhancement-section-video">
-                            <img src="images/ratingstar.gif" alt="Rating Star Demo Video">
+                            <img src="images/userprofile.gif" alt="User Management Module (User) Demo Video">
                         </div>
                         <div class="enhancement-section-description-content">
                             <p>
@@ -223,7 +223,7 @@
                     </div>
                     <div class="enhancement-section-description">
                         <div class="enhancement-section-video">
-                            <img src="images/extend.gif" alt="Extend-box Demo Video">
+                            <img src="images/antispam.gif" alt="Anti Spam Demo Video">
                         </div>
                         <div class="enhancement-section-description-content">
                             <p>
@@ -279,11 +279,11 @@
                     </div>
                     <div class="enhancement-section-description">
                         <div class="enhancement-section-video">
-                            <img src="images/changesection&readmore.gif" alt="Changing-Section Navbar & Read More Demo Video">
+                            <img src="images/comments.gif" alt="Comments View and Write Demo Video">
                         </div>
                         <div class="enhancement-section-description-content">
                             <p>
-                                The feature allows viewing and writing comments on other people's contributions. In addition, contributors will have a chance to view comments regarding their work, and this may give them the feeling that their contributions are well appreciated, thus encouraging them to undertake more. This function helps build a sense of community by encouraging feedback and effective interaction among users. (Admin cannot redirect to the User Profile Page)
+                                The feature allows viewing and writing comments on other people's contributions. In addition, contributors will have a chance to view comments regarding their work, and this may give them the feeling that their contributions are well appreciated, thus encouraging them to undertake more. This function helps build a sense of community by encouraging feedback and effective interaction among users. IF you not login your account, you still can comment!  (Admin cannot redirect to the User Profile Page) 
                             </p>
                             <p>
                                 Applied Page (write):
