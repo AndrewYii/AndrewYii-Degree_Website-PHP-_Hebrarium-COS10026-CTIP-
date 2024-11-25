@@ -46,7 +46,7 @@
                     </div>
                     <div class="enhancement-section-description">
                         <div class="enhancement-section-video">
-                            <img src="images/responsivelayout.gif" alt="Responsive Layout Demo Video">
+                            <img src="images/emailingdemo.gif" alt="Welcoming and OTP Email Demo">
                         </div>
                         <div class="enhancement-section-description-content">
                             <p> 
@@ -72,7 +72,7 @@
                     </div>
                     <div class="enhancement-section-description">
                         <div class="enhancement-section-video">
-                            <img src="images/chatbox.gif" alt="Chatbot Demo Video">
+                            <img src="images/searchdemo.gif" alt="Search Demo Video">
                         </div>
                         <div class="enhancement-section-description-content">
                             <p>
@@ -118,7 +118,7 @@
                     </div>
                     <div class="enhancement-section-description">
                         <div class="enhancement-section-video">
-                            <img src="images/responsivenavbar.gif" alt="Responsive Navbar Demo Video">
+                            <img src="images/identifydemo.gif" alt="Identify Module Demo Video">
                         </div>
                         <div class="enhancement-section-description-content">
                             <p>
@@ -143,7 +143,7 @@
                     </div>
                     <div class="enhancement-section-description">
                         <div class="enhancement-section-video">
-                            <img src="images/buttonhover.gif" alt="Button Hover Demo Video">
+                            <img src="images/admincontrolpanel.gif" alt="Admin Control Panel + Generate PDF Demo Video">
                         </div>
                         <div class="enhancement-section-description-content">
                             <p>
@@ -174,7 +174,7 @@
                     </div>
                     <div class="enhancement-section-description">
                         <div class="enhancement-section-video">
-                            <img src="images/ratingstar.gif" alt="Rating Star Demo Video">
+                            <img src="images/userprofile.gif" alt="User Management Module (User) Demo Video">
                         </div>
                         <div class="enhancement-section-description-content">
                             <p>
@@ -199,7 +199,7 @@
                     </div>
                     <div class="enhancement-section-description">
                         <div class="enhancement-section-video">
-                            <img src="images/overflow.gif" alt="Overflow Demo Video">
+                            <img src="images/rememberme.gif" alt="Remember Me Demo Video">
                         </div>
                         <div class="enhancement-section-description-content">
                             <p>
@@ -223,7 +223,7 @@
                     </div>
                     <div class="enhancement-section-description">
                         <div class="enhancement-section-video">
-                            <img src="images/extend.gif" alt="Extend-box Demo Video">
+                            <img src="images/antispam.gif" alt="Anti Spam Demo Video">
                         </div>
                         <div class="enhancement-section-description-content">
                             <p>
@@ -247,7 +247,7 @@
                     </div>
                     <div class="enhancement-section-description">
                         <div class="enhancement-section-video">
-                            <img src="images/flip.gif" alt="Flip-box Demo Video">
+                            <img src="images/uploadanddisplay.gif" alt="Upload and Display Demo Video">
                             </div>
                         <div class="enhancement-section-description-content">
                             <p>
@@ -279,11 +279,11 @@
                     </div>
                     <div class="enhancement-section-description">
                         <div class="enhancement-section-video">
-                            <img src="images/changesection&readmore.gif" alt="Changing-Section Navbar & Read More Demo Video">
+                            <img src="images/comments.gif" alt="Comments View and Write Demo Video">
                         </div>
                         <div class="enhancement-section-description-content">
                             <p>
-                                The feature allows viewing and writing comments on other people's contributions. In addition, contributors will have a chance to view comments regarding their work, and this may give them the feeling that their contributions are well appreciated, thus encouraging them to undertake more. This function helps build a sense of community by encouraging feedback and effective interaction among users. (Admin cannot redirect to the User Profile Page)
+                                The feature allows viewing and writing comments on other people's contributions. In addition, contributors will have a chance to view comments regarding their work, and this may give them the feeling that their contributions are well appreciated, thus encouraging them to undertake more. This function helps build a sense of community by encouraging feedback and effective interaction among users. IF you not login your account, you still can comment!  (Admin cannot redirect to the User Profile Page) 
                             </p>
                             <p>
                                 Applied Page (write):
@@ -296,7 +296,7 @@
                             </p>
                             <p>
                                 Refer Sources:
-                                <a>Figure Up by Ourselves</a>
+                                <a>Figure Out by Ourselves</a>
                             </p>
                         </div> 
                     </div>

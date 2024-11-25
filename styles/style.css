@@ -8163,6 +8163,21 @@ button.contribute-btn:hover {
     animation: fadeOutMessage 2s forwards;
 }
 
+.edit-fail-message {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: #dc3545;
+    color: white;
+    padding: 20px;
+    border-radius: 5px;
+    text-align: center;
+    z-index: 1000;
+    opacity: 1;
+    animation: fadeOutMessage 3s forwards;
+}
+
 @keyframes fadeOutMessage {
     0% {
         opacity: 1;
