@@ -7168,6 +7168,19 @@ button.contribute-btn:hover {
     z-index: 99;  
 }
 
+.admin-feedback-header {
+    background: #fff;
+    display: flex;
+    justify-content: space-between;
+    padding: 1.3rem 1.5rem;
+    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2);
+    position: fixed;
+    top: 0;
+    left: 245px;
+    width: calc(100% - 245px);
+    z-index: 99;  
+}
+
 .admin-header-text{
     padding-top: 10px;
 }
@@ -7180,7 +7193,11 @@ button.contribute-btn:hover {
     color: #222;
 }
 
-.admin-header label span {
+.admin-feedback-header h2 {
+    color: #222;
+}
+
+.admin-feedback-header label span {
     font-size: 1.7rem;
     padding-left: 1rem;
 }
@@ -7509,6 +7526,12 @@ button.contribute-btn:hover {
         transition: left 0.3s ease, width 0.3s ease;
     }
 
+    .admin-feedback-header {
+        left: 70px;
+        width: calc(100% - 70px);
+        transition: left 0.3s ease, width 0.3s ease;
+    }
+
     .sidebar .logo_admin img {
         width: 45px;  
         height: auto;
@@ -7593,6 +7616,18 @@ button.contribute-btn:hover {
     }
 
     .admin-header h2 label{
+        display: inline-block;
+        text-align: center;
+        background: #228B22;
+        padding-right: 0rem;
+        margin-right: 1rem;
+        height: 40px;
+        width: 40px;
+        border-radius: 50%;
+        justify-content: center;
+    }
+
+    .admin-feedback-header h2 label{
         display: inline-block;
         text-align: center;
         background: #228B22;
@@ -7924,6 +7959,10 @@ button.contribute-btn:hover {
 }
 
 .admin-header {
+    z-index: 100;
+}
+
+.admin-feedback-header {
     z-index: 100;
 }
 
