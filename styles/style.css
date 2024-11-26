@@ -6797,7 +6797,6 @@ button.contribute-btn:hover {
     color: #fff;
     position: relative;
     top: -10px;
-    left: 2 px;
     font-size: 20px;
     font-weight: bold;
     font-family: 'Outfit', Arial, Helvetica, sans-serif;
@@ -8560,7 +8559,6 @@ button.contribute-btn:hover {
     display: flex;
     flex-direction: column;
     justify-content: center;
-    align-items: left;
     transition: border-color 0.4s ease, box-shadow 0.4s ease, transform 0.4s ease;
 }
 
