@@ -296,7 +296,7 @@
                             </p>
                             <p>
                                 Refer Sources:
-                                <a>Figure Up by Ourselves</a>
+                                <a>Figure Out by Ourselves</a>
                             </p>
                         </div> 
                     </div>

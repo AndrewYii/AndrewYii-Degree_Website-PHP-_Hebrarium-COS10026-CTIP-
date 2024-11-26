@@ -214,7 +214,7 @@
                                         <th>Comment ID</th>
                                         <th>Contribute ID</th>
                                         <th>Username</th>
-                                        <th>Comment</th>
+                                        <th class="description-column">Comment</th>
                                         <th>Date Submitted</th>
                                         <th class="admin-delete-option">Action</th>
                                     </tr>
@@ -242,7 +242,7 @@
                                                 <td><?php echo htmlspecialchars($row['Comment_ID']); ?></td>
                                                 <td><?php echo htmlspecialchars($row['Contribute_ID']); ?></td>
                                                 <td><?php echo htmlspecialchars($row['Commenter_Username']); ?></td>
-                                                <td><?php echo htmlspecialchars($row['Comment_Text']); ?></td>
+                                                <td class="description-column"><?php echo htmlspecialchars($row['Comment_Text']); ?></td>
                                                 <td><?php echo htmlspecialchars($row['Comment_Created_At']); ?></td>
                                                 <td>
                                                     <label class="menu-label">
