@@ -7348,7 +7348,7 @@ button.contribute-btn:hover {
 
 .admin-table th,
 .admin-table td {
-    padding: 15px;           
+    padding: 10px;           
     text-align: left;
     white-space: nowrap;      
     overflow: hidden;
@@ -7481,12 +7481,12 @@ button.contribute-btn:hover {
 }
 
 .admin_leaf_photo img{
-    height: auto;
+    height: 100px;
     width: 100px;
 }
 
 .admin_herbarium_photo img{
-    height: auto;
+    height: 100px;
     width: 100px;
 }
 
