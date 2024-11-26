@@ -205,7 +205,7 @@
                                 <button class="admin-print-button" name="generate_pdf">Print</button>
                             </form>
                             <form action="<?php echo $_SERVER['PHP_SELF']; ?>" method="post">
-                                <button type="submit" name="refresh_table" form="status-form">Update</button>
+                                <button type="submit" name="refresh_table" form="status-form">Refresh</button>
                             </form>
                         </div>
                         <div class="card-body">

@@ -71,7 +71,7 @@
 
     
     <div class="main-content">
-        <header class="admin-header">
+        <header class="admin-feedback-header">
             <h2 class="admin-header-text">
                 Feedback
             </h2>
