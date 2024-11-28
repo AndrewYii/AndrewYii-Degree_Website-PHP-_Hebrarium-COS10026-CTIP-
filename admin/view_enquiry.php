@@ -205,9 +205,14 @@
                                 <button class="admin-print-button" name="generate_pdf">Print</button>
                             </form>
                             <form action="<?php echo $_SERVER['PHP_SELF']; ?>" method="post">
-                                <button type="submit" name="refresh_table" form="status-form">Refresh</button>
+                                <button type="submit" name="refresh_table">Refresh</button>
                             </form>
                         </div>
+                        <?php
+                            if (isset($_POST['refresh_table'])){
+                                echo"<meta http-equiv='refresh' content='0 ;url=view_enquiry.php'>";
+                            }
+                        ?>
                         <div class="card-body">
                             <table class="admin-table">
                                 <thead>
