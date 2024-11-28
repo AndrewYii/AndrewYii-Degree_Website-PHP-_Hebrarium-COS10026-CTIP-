@@ -6797,7 +6797,6 @@ button.contribute-btn:hover {
     color: #fff;
     position: relative;
     top: -10px;
-    left: 2 px;
     font-size: 20px;
     font-weight: bold;
     font-family: 'Outfit', Arial, Helvetica, sans-serif;
@@ -7349,7 +7348,7 @@ button.contribute-btn:hover {
 
 .admin-table th,
 .admin-table td {
-    padding: 15px;           
+    padding: 10px;           
     text-align: left;
     white-space: nowrap;      
     overflow: hidden;
@@ -7482,12 +7481,12 @@ button.contribute-btn:hover {
 }
 
 .admin_leaf_photo img{
-    height: auto;
+    height: 100px;
     width: 100px;
 }
 
 .admin_herbarium_photo img{
-    height: auto;
+    height: 100px;
     width: 100px;
 }
 
@@ -8560,7 +8559,6 @@ button.contribute-btn:hover {
     display: flex;
     flex-direction: column;
     justify-content: center;
-    align-items: left;
     transition: border-color 0.4s ease, box-shadow 0.4s ease, transform 0.4s ease;
 }
 

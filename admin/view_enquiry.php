@@ -565,4 +565,3 @@ if (isset($_POST['update_enquiry'])) {
 
 </body>
 </html>
-
