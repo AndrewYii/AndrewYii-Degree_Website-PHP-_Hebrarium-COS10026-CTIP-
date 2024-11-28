@@ -288,23 +288,69 @@ if(isset($_POST['submit'])) {
             $updates[] = "Profile_Picture='$new_profile_photo'";
         }
          
+         if (!empty($new_username) && $new_username !== $current_username) {
+            $updates[] = "Username='$new_username'";
+            $_SESSION['username'] = $new_username;
+        }
+         
          // Execute update only if there are changes
          if (!empty($updates)) {
-            // Add username update if it was changed
-            if (!empty($new_username) && $new_username !== $current_username) {
-                $updates[] = "Username='$new_username'";
-                $_SESSION['username'] = $new_username; // Update the session with new username
-            }
 
-            $sql = "UPDATE register SET " . implode(', ', $updates) . " WHERE Username='$current_username'";
-            
-            if(mysqli_query($conn, $sql)) {
-                $message = "Profile updated successfully! You will be redirected to your profile page soon!";
-                echo "<div class='snackbar show success'>" . $message . "</div>";
-                echo "<meta http-equiv='refresh' content='2;url=user_profile.php'>";
-            } else {
-                echo "<div class='snackbar show error'>Error updating profile: " . mysqli_error($conn) . "</div>";
-            }
+             $sql = "UPDATE register SET " . implode(', ', $updates) . " WHERE Username='$current_username'";
+
+
+             if($current_username != $new_username){
+
+                // Update username in Contribute table
+                $update_enquiry = "UPDATE contribute SET Username = ? WHERE Username = ?";
+                $stmt = $conn->prepare($update_enquiry);
+                $stmt->bind_param("ss", $new_username, $current_username);
+                $stmt->execute();
+
+                // Update username in Contribute table
+                $update_enquiry = "UPDATE enquiry SET Username = ? WHERE Username = ?";
+                $stmt = $conn->prepare($update_enquiry);
+                $stmt->bind_param("ss", $new_username, $current_username);
+                $stmt->execute();
+
+                // Update username in login table
+                $update_enquiry = "UPDATE login SET Username = ? WHERE Username = ?";
+                $stmt = $conn->prepare($update_enquiry);
+                $stmt->bind_param("ss", $new_username, $current_username);
+                $stmt->execute();
+
+                // Update username in Pre-Contribute table
+                $update_enquiry = "UPDATE pre_contribute SET Username = ? WHERE Username = ?";
+                $stmt = $conn->prepare($update_enquiry);
+                $stmt->bind_param("ss", $new_username, $current_username);
+                $stmt->execute();
+
+                // Update username in contribute_comments table
+                $update_enquiry = "UPDATE contribute_comments SET Username = ? WHERE Username = ?";
+                $update_enquiry = "UPDATE contribute_comments SET Commenter_Username = ? WHERE Commenter_Username = ?";
+                $stmt = $conn->prepare($update_enquiry);
+                $stmt->bind_param("ss", $new_username, $current_username);
+                $stmt->execute();
+
+                // Update username in feedback table
+                $update_enquiry = "UPDATE feedback SET Username = ? WHERE Username = ?";
+                $stmt = $conn->prepare($update_enquiry);
+                $stmt->bind_param("ss", $new_username, $current_username);
+                $stmt->execute();
+
+             }
+
+             // If all queries successful, commit transaction
+             mysqli_commit($conn);
+
+             
+             if(mysqli_query($conn, $sql)) {
+                 $message = "Profile updated successfully! You will be redirected to your profile page soon!";
+                 echo "<div class='snackbar show success'>" . $message . "</div>";
+                 echo "<meta http-equiv='refresh' content='2;url=user_profile.php'>";
+             } else {
+                 echo "<div class='snackbar show error'>Error updating profile: " . mysqli_error($conn) . "</div>";
+             }
          } else {
              echo "<div class='info-message'>No changes were made to the profile.</div>";
              echo "<meta http-equiv='refresh' content='1;url=user_profile.php'>";
