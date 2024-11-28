@@ -205,7 +205,7 @@
                                 <button class="admin-print-button" name="generate_pdf">Print</button>
                             </form>
                             <form action="<?php echo $_SERVER['PHP_SELF']; ?>" method="post">
-                                <button type="submit" name="refresh_table" form="status-form">Refresh</button>
+                                <button type="submit" name="refresh_table" form="status-form">Update</button>
                             </form>
                         </div>
                         <div class="card-body">
@@ -499,44 +499,44 @@ if (isset($_POST['update_enquiry'])) {
 ?>
 
 <?php
-    if (isset($_GET['response_id'])) {
-        $conn = mysqli_connect($servername, $username, $password, $dbname);
-        $id = mysqli_real_escape_string($conn, $_GET['response_id']);
-        $_SESSION['response-enquiry-id']=$id;
-        $sql = "SELECT * FROM enquiry WHERE Enquiry_ID = '$id'";
-        $result = mysqli_query($conn, $sql);
-        $row = mysqli_fetch_assoc($result);
-        
-        if ($row) {
-            ?>
-            <div class="view-modal-overlay">
-                <div class="view-modal-content">
-                    <div class="view-modal-header">
-                        <h2>Response Form</h2>
-                    </div>
-                    <div class="detail-row">
-                        <?php  
-                            $email = htmlspecialchars($row["Email"]);
-                            $reference_comment = "comment_" . $row['Enquiry_ID'];
-                            $email = $row["Email"]; // Create a unique name for the textarea
-                            $response = $row["Response"];
-                            echo "
-                            <form class='Response-Form' method='post' action='".$_SERVER['PHP_SELF']."' id='Response-Form'>
-                                <textarea placeholder='Enquiry Response' name='response' >$response</textarea>
-                                <input type='submit'   name='response-submit' value='Upload Response'>
-                            </form>";
-                        ?>
-                    </div>
-                    <div class="response-bot-bar">
-                        <a href="<?php echo $_SERVER['PHP_SELF']; ?>" class="close-view-button">Close</a>
-                        <?php echo "<a href='mailto:$email?subject=Response to Enquiry&body={$row['Response']}'' class='response-mail'>Send Email</a>";?>
-                    </div>
+if (isset($_GET['response_id'])) {
+    $conn = mysqli_connect($servername, $username, $password, $dbname);
+    $id = mysqli_real_escape_string($conn, $_GET['response_id']);
+    $_SESSION['response-enquiry-id']=$id;
+    $sql = "SELECT * FROM enquiry WHERE Enquiry_ID = '$id'";
+    $result = mysqli_query($conn, $sql);
+    $row = mysqli_fetch_assoc($result);
+    
+    if ($row) {
+        ?>
+        <div class="view-modal-overlay">
+            <div class="view-modal-content">
+                <div class="view-modal-header">
+                    <h2>Response Form</h2>
+                </div>
+                <div class="detail-row">
+                    <?php  
+                        $email = htmlspecialchars($row["Email"]);
+                        $reference_comment = "comment_" . $row['Enquiry_ID'];
+                        $email = $row["Email"]; // Create a unique name for the textarea
+                        $response = $row["Response"];
+                        echo "
+                        <form class='Response-Form' method='post' action='".$_SERVER['PHP_SELF']."' id='Response-Form'>
+                            <textarea placeholder='Enquiry Response' name='response' >$response</textarea>
+                            <input type='submit'   name='response-submit' value='Upload Response'>
+                        </form>";
+                    ?>
+                </div>
+                <div class="response-bot-bar">
+                    <a href="<?php echo $_SERVER['PHP_SELF']; ?>" class="close-view-button">Close</a>
+                    <?php echo "<a href='mailto:$email?subject=Response to Enquiry&body={$row['Response']}'' class='response-mail'>Send Email</a>";?>
                 </div>
             </div>
-            <?php
-            mysqli_close($conn);
-        }
+        </div>
+        <?php
+        mysqli_close($conn);
     }
+}
 ?>
 
 <?php
