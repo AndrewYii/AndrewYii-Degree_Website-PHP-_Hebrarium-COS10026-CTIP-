@@ -28,7 +28,7 @@
             // Check if user is logged in
             if (isset($_SESSION['username'])) {
                 $current_user = $_SESSION['username'];
-                $sql = "SELECT * FROM Register WHERE username = '$current_user'";
+                $sql = "SELECT * FROM register WHERE Username = '$current_user'";
                 $result = mysqli_query($conn, $sql);
 
                 if ($result && mysqli_num_rows($result) > 0) {
