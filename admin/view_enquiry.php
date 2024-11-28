@@ -256,14 +256,15 @@
                                         <td><?php echo $row["Enquiry_ID"]; ?></td>
                                         <td><?php 
                                         $currentStatus = $row['Status'];
-                                        echo "<form class='status-form' action='".$_SERVER['PHP_SELF']."' id='status-form' method='post'>
-                                        <select name='Status' id='status' class='status-select'>
-                                            <option value='Unresolved' " . ($currentStatus == 'Unresolved' ? 'selected' : '') . " class='Unresolved'>Unresolved</option>
-                                            <option value='Pending' " . ($currentStatus == 'Pending' ? 'selected' : '') . " class='Pending'>Pending</option>
-                                            <option value='Solved' " . ($currentStatus == 'Solved' ? 'selected' : '') . " class='Solved'>Solved</option>
-                                        </select>
-                                        <input type='hidden' name='enquiry_id' value='{$row['Enquiry_ID']}'>
-                                        <input type='submit' id='submit-status' form='status-form' value='Update'></form>"; 
+                                        echo "<form class='status-form' action='".$_SERVER['PHP_SELF']."' id='status-form-".$row['Enquiry_ID']."' method='post'>
+                                            <select name='Status' id='status-".$row['Enquiry_ID']."' class='status-select'>
+                                                <option value='Unresolved' " . ($currentStatus == 'Unresolved' ? 'selected' : '') . " class='Unresolved'>Unresolved</option>
+                                                <option value='Pending' " . ($currentStatus == 'Pending' ? 'selected' : '') . " class='Pending'>Pending</option>
+                                                <option value='Solved' " . ($currentStatus == 'Solved' ? 'selected' : '') . " class='Solved'>Solved</option>
+                                            </select>
+                                            <input type='hidden' name='enquiry_id' value='{$row['Enquiry_ID']}'>
+                                            <input type='submit' id='submit-status-".$row['Enquiry_ID']."' form='status-form-".$row['Enquiry_ID']."' value='Update'>
+                                        </form>";
 
                                         if (isset($_POST['Status']) && isset($_POST['enquiry_id'])) {
                                             $newStatus = mysqli_real_escape_string($conn, $_POST['Status']);
@@ -292,6 +293,10 @@
                                                 <img src="../images/kebab-menu.webp" alt="kebab menu" class="kebab-menu-icon">
                                             </label>
                                             <div class="menu-content">
+                                            <form action="<?php echo $_SERVER['PHP_SELF']; ?>" method="get">
+                                                <input type="hidden" name="update_id" value="<?php echo $row['Enquiry_ID']; ?>">
+                                                <button type="submit" class="admin-update-button menu-button" form="status-form-<?php echo $row['Enquiry_ID']; ?>">Update Status</button>
+                                            </form>
                                             <form action="<?php echo $_SERVER['PHP_SELF']; ?>" method="get">
                                                 <input type="hidden" name="view_id" value="<?php echo $row['Enquiry_ID']; ?>">
                                                 <button type="submit" class="admin-view-button menu-button">View</button>
@@ -371,6 +376,7 @@
     ?>
 
 <?php
+
 if (isset($_GET['view_id'])) {
     $conn = mysqli_connect($servername, $username, $password, $dbname);
     $id = mysqli_real_escape_string($conn, $_GET['view_id']);
