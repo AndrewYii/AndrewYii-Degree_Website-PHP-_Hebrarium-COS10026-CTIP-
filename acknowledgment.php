@@ -555,6 +555,52 @@
                                     Plant's Net API for plant identification
                                 </a>
                             </div>
+                            <div class="acknowledgment-heading">
+                                <h1>Admin Control Panel</h1>
+                            </div>
+                            <div class="acknowledgment-text">
+                                <a href="https://images.app.goo.gl/wrhPeT3KXDK7fEuR8">
+                                    Register Icon
+                                </a>
+                            </div>
+                            <div class="acknowledgment-text">
+                                <a href="https://images.app.goo.gl/bzxNEwTu9Jy3TqaZ8">
+                                    Login Icon
+                                </a>
+                            </div>
+                            <div class="acknowledgment-text">
+                                <a href="https://images.app.goo.gl/YxqcWiEwH6Q5PbRn7">
+                                    Contribute Icon
+                                </a>
+                            </div>
+                            <div class="acknowledgment-text">
+                                <a href="https://images.app.goo.gl/ktuscpiWrrufBkp78">
+                                    Precontribute Icon
+                                </a>
+                            </div>
+                            <div class="acknowledgment-text">
+                                <a href="https://images.app.goo.gl/6VJUZtqKxJ4HY67B7">
+                                    Comments Icon
+                                </a>
+                            </div>
+                            <div class="acknowledgment-text">
+                                <a href="https://images.app.goo.gl/MRfdRJqcUhNxZNeBA">
+                                    Feedback Icon
+                                </a>
+                            </div>
+                            <div class="acknowledgment-text">
+                                <a href="https://images.app.goo.gl/uKNZuF8U2AJgeL4S6">
+                                    Logout Icon
+                                </a>
+                            </div>
+                            <div class="acknowledgment-heading">
+                                <h1>Search Module</h1>
+                            </div>
+                            <div class="acknowledgment-text">
+                                <a href="https://images.app.goo.gl/CNY8J7ToddXHLS1S9">
+                                    No Found Picture
+                                </a>
+                            </div>
                         </div>
                         <figure class='going-up-container'>
                             <a href='#top_ack'>

@@ -219,7 +219,7 @@
                         <strong>
                             Last updated:
                         </strong>
-                        10/10/2024
+                        29/11/2024
                     </div>
                 </div>
             </div>";
@@ -423,7 +423,7 @@
                         <strong>
                             Last updated:
                         </strong>
-                        10/10/2024
+                        29/11/2024
                     </div>
                 </div>
             </div>";
