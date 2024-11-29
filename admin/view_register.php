@@ -309,6 +309,18 @@
                     $stmt = mysqli_prepare($conn, $delete_pre_contributions);
                     mysqli_stmt_bind_param($stmt, "s", $user['Username']);
                     mysqli_stmt_execute($stmt);
+
+                    // Delete their comments
+                    $delete_comments = "DELETE FROM Contribute_Comments WHERE Commenter_Username = ?";
+                    $stmt = mysqli_prepare($conn, $delete_comments);
+                    mysqli_stmt_bind_param($stmt, "s", $user['Username']);
+                    mysqli_stmt_execute($stmt);
+
+                    // Delete their feedback
+                    $delete_feedback = "DELETE FROM Feedback WHERE Username = ?";
+                    $stmt = mysqli_prepare($conn, $delete_feedback);
+                    mysqli_stmt_bind_param($stmt, "s", $user['Username']);
+                    mysqli_stmt_execute($stmt);
                     
                     // Delete their profile
                     $delete_profile = "DELETE FROM register WHERE Register_ID = ?";
