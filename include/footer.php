@@ -41,8 +41,8 @@
                                 Video Assignment 2:
                             </strong>
                         </a>
-                        <a href='https://youtu.be/sO7JLc35WlU' title='Our Group Assignment 2 Presentation Link'>
-                            https://youtu.be/sO7JLc35WlU
+                        <a href='https://youtu.be/Z3gFp-e5w7g' title='Our Group Assignment 2 Presentation Link'>
+                            https://youtu.be/Z3gFp-e5w7g
                         </a>
                     </div>
                 </div>
