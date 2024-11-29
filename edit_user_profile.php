@@ -243,7 +243,18 @@ if(isset($_POST['submit'])) {
          // Retrieve and sanitize form data
          $updates = array();
 
-         // Check and add each field if changed
+         // Modified username check - only update if a new username is provided
+         if (!empty($_POST['Username'])) {
+             $new_username = mysqli_real_escape_string($conn, $_POST['Username']);
+             if ($new_username !== $current_username) {
+                 $updates[] = "Username='$new_username'";
+                 $_SESSION['username'] = $new_username;
+             }
+         } else {
+             $new_username = $current_username; // Keep current username if no new one provided
+         }
+
+         // Rest of the update checks
          if (!empty($_POST['FirstName']) || !empty($_POST['LastName'])) {
              $new_first_name = mysqli_real_escape_string($conn, $_POST['FirstName']);
              $new_last_name = mysqli_real_escape_string($conn, $_POST['LastName']);
@@ -286,11 +297,6 @@ if(isset($_POST['submit'])) {
          
          if (isset($_FILES['upload_photo']) && $_FILES['upload_photo']['error'] === 0) {
             $updates[] = "Profile_Picture='$new_profile_photo'";
-        }
-         
-         if (!empty($new_username) && $new_username !== $current_username) {
-            $updates[] = "Username='$new_username'";
-            $_SESSION['username'] = $new_username;
         }
          
          // Execute update only if there are changes
