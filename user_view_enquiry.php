@@ -55,11 +55,11 @@
             <div class="enquiry-view-form">
                 <h1>View Enquiry</h1>
                 <br>
-                <p>Name: <?php echo $user_data['Name']; ?></p>
-                <p>Email: <?php echo $user_data['Email']; ?></p>
-                <p>Created At: <?php echo $user_data['Enquiry_Created_At']; ?></p>
-                <p>Subject: <?php echo $user_data['Subject']; ?></p>
-                <p>Enquiry: <?php echo $user_data['Message']; ?></p>
+                <p><strong>Name:</strong> <?php echo $user_data['Name']; ?></p>
+                <p><strong>Email:</strong> <?php echo $user_data['Email']; ?></p>
+                <p><strong> At:</strong> <?php echo $user_data['Enquiry_Created_At']; ?></p>
+                <p><strong>Subject:</strong> <?php echo $user_data['Subject']; ?></p>
+                <p><strong>Enquiry:</strong> <?php echo $user_data['Message']; ?></p>
             </div>
             <?php   
             mysqli_close($conn);

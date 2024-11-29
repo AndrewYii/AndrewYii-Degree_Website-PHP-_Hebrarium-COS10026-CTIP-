@@ -152,7 +152,7 @@
                                             </td>
                                         </tr>
                                         <tr>
-                                            <td><textarea name="comment" rows="4" cols="70" placeholder="Comment.Does not exceed 500 words" id="comment" class="enquiry-comment"></textarea></td>
+                                            <td><textarea name="comment" rows="4" cols="70" placeholder="Comment.Does not exceed 500 characters" id="comment" class="enquiry-comment"></textarea></td>
                                         </tr>
                                     </table>
                         </fieldset>

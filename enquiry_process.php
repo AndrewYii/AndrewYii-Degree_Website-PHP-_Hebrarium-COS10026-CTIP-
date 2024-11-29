@@ -144,7 +144,7 @@
                         $error .= "Comment is required.<br>";
                     }
                     else if(!preg_match('/^.{1,500}$/', $comment)){
-                        $error .= "Comment too long. It cannot exceed 500 words.<br>";
+                        $error .= "Comment too long. It cannot exceed 500 characters.<br>";
                     }
 
                     // No error
